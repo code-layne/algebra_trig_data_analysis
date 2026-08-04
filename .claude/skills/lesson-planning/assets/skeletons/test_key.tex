@@ -14,7 +14,10 @@
 \pageheader{Unit @@UNITINT@@: @@UNITTITLE@@}{@@TESTKIND@@ --- Answer Key}
 
 % Mirror the blank test EXACTLY, filling each answer with \ans{...} (inline) or
-% \ansline{...} (on a write-line). Use teachernote for scoring/teacher guidance.
+% \ansline{...} (on a write-line), worked steps in a byte-identical work block.
+% NO teachernote here: the practice test rides in the STUDENT packet, and the
+% key must stay the same length as its blank. Answer rationale and Part D
+% scoring go on page 2 of unit@@UNITINT@@/unit_cover_key/main.tex (key packet only).
 % ======================================================================
 \parthead{Part A --- Vocabulary}
 % TODO: answers via \ans{...}
@@ -26,6 +29,6 @@
 % TODO: worked answers via \ans{...}
 
 \parthead{Part D --- Extended Response}
-% TODO: sample response + scoring notes in a teachernote.
+% TODO: sample response in a work block; scoring rubric on unit_cover_key p2.
 
 \end{document}

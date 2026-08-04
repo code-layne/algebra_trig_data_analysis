@@ -133,6 +133,12 @@ the unit is created:
 `sample_test_key` into the unit **key** packet (falling back to `sample_test` if no key has been
 published). The **actual** test/key are never merged.
 
+A unit's optional cover is the other bookend `unit.mk` discovers: **`unitXX/unit_cover/`** goes
+into the student packet, and **`unitXX/unit_cover_key/`** (same page 1 by `\input`, plus a page
+of exam scoring notes) replaces it in the key packet. A unit with no `unit_cover_key/` gets the
+plain cover in both. Both are compiled by `unit.mk` itself — there is no separate make target to
+run first. See `components.md` ("Unit cover").
+
 ```bash
 make -C unitXX/tests all         # compile practice + actual tests, publish sample_test/main.pdf
 make -C unitXX/test_keys all     # compile both keys, publish sample_test_key/main.pdf

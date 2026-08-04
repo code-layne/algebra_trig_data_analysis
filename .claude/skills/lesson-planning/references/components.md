@@ -150,14 +150,53 @@ are taken in a testing setting, not stapled behind a lesson cover, so they keep 
   It is **never** merged into a packet — it is distributed separately.
 - **`test_keys/practice_test_key/main.tex`**, **`test_keys/actual_test_key/main.tex`** — the
   keys, each mirroring its blank test exactly (preamble swaps `-boxes` for `-key`), answers in
-  `\ans{...}`, correct MC options tagged, extended-response scoring in a `teachernote`. The
-  practice key is published as `sample_test_key` (unit key packet only).
+  `\ans{...}`, correct MC options tagged, worked solutions in byte-identical `work` blocks. **No
+  `teachernote`** — a test key's answer rationale and extended-response scoring go on page 2 of
+  `unitXX/unit_cover_key/`, so they reach the key packet only; the practice key is published as
+  `sample_test_key` and its blank rides in the *student* packet.
 
 Content comes from across the whole unit's standards (it is summative) — sample every lettered
 skill the unit's lessons taught. Cover the same
 priority ideas the lessons taught; keep the interpret-and-justify emphasis in the extended
 response. The practice and actual versions must stay parallel so the practice test is honest
 preparation. Build/publish with `make -C unitXX/tests all` and `make -C unitXX/test_keys all`.
+
+## Unit cover (optional pair)
+
+`unitXX/unit_cover/` and `unitXX/unit_cover_key/` — the front matter of the unit packets,
+discovered by `shared/unit.mk` and merged ahead of the lesson packets. The student cover goes
+into the student packet; the key cover replaces it in the key packet (a unit with no
+`unit_cover_key/` gets the plain cover in both).
+
+The sheet itself lives in **`unit_cover/body.tex`**; both wrappers `\input` it, so page 1 cannot
+drift between them. Edit the cover there, never in a wrapper.
+
+```latex
+% unit_cover/main.tex — 1pp student cover
+\documentclass[10pt]{article}
+\usepackage{atda-article}
+\usepackage{atda-boxes}
+\begin{document}
+\input{body.tex}
+\end{document}
+
+% unit_cover_key/main.tex — the same page 1, plus one page of scoring notes
+\documentclass[10pt]{article}
+\usepackage{atda-article}
+\usepackage{atda-boxes}
+\begin{document}
+\input{../unit_cover/body.tex}
+\newpage
+\begin{headlinebox}{royal}{\color{white}\bfseries Unit X --- Exam Scoring Notes (Teacher Copy)}\end{headlinebox}
+\begin{teachernote}[Practice Test --- Part B] ... \end{teachernote}
+\end{document}
+```
+
+Page 1 carries the unit banner, an overview, a lesson table, and the unit's big ideas — student
+facing, so no scoring information. Page 2 is teacher-only: the answer rationale and Part D
+scoring for **both** unit assessments, the prose that must not sit in a `*_test_key` (the
+practice test is bound into the student packet). Keep it to one page — cover + notes is a single
+double-sided sheet.
 
 ## Answer-key discipline
 
@@ -175,10 +214,10 @@ test keys too):
 - **Worked solutions go in a `\begin{work}` block, authored byte-identically in the blank and
   the key** (the work rule). The blank reserves the block's exact height and prints nothing; the
   key prints the same block in `keyred`, so the two cannot drift.
-- **No `teachernote` in a lesson component key.** It is the one block with no counterpart in the
-  blank, so it makes the key longer than the blank. Teacher prose goes in the lesson plan as
-  `\begin{teachernote}[Component]`. *(Unit tests and the finals are the exception — they are not
-  page-matched into a student packet, so their keys keep scoring notes in a `teachernote`.)*
+- **No `teachernote` in any key — lesson component, unit test, or final.** It is the one block
+  with no counterpart in the blank, so it makes the key longer than the blank. Teacher prose goes
+  in the lesson plan as `\begin{teachernote}[Component]`; a unit test's answer rationale and
+  scoring go on **page 2 of `unitXX/unit_cover_key/main.tex`**, which reaches the key packet only.
 - Because the key matches the blank line-for-line, the two paginate identically. **Verify with
   `make -C unitXX/lessonYY check`**, which fails on a blank/key page mismatch, a warm-up or exit
   ticket over one page, `\ans` inside math, a `teachernote` in a key, and a name row on a
