@@ -191,8 +191,15 @@ The plan closes with one note per component, in packet order, each titled for it
 \begin{teachernote}[Homework]       ... \end{teachernote}
 ```
 
-**Exemption:** unit tests (`unitXX/test_keys/`) and the course finals (`finals/*_key/`) are not
-page-matched into a student packet, so their keys keep scoring guidance in a `teachernote`.
+**There is no exemption — this applies to assessment keys too.** A unit test's answer rationale
+and Part D scoring go on **page 2 of `unitXX/unit_cover_key/main.tex`**, not at the foot of
+`practice_test_key`/`actual_test_key`. That document shares its page 1 with the student cover by
+`\input`-ing the same `unit_cover/body.tex` (so the two can never drift) and is merged by
+`shared/unit.mk` into the **key packet only** — which matters, because the practice test *is*
+bound into the student packet, and its rationale must not ride along. One unit, one notes page:
+cover + notes = a single double-sided sheet. A unit with no `unit_cover_key/` falls back to the
+plain cover in both packets. The course finals (`finals/*_key/`) are merged into no packet at
+all and have no cover, so their scoring notes stay in the key.
 
 The environment lives in **`atda-boxes`** (the lesson plan does not load `-key`) and the title
 argument is **optional** — a bare `\begin{teachernote}` renders plain "Teacher Note". If a note
@@ -348,9 +355,13 @@ Run it standalone (source checks only, no build required) with:
 python3 shared/lesson_check.py unit08/lesson03 --no-pages
 ```
 
-**Unit tests and `finals/` are outside the gate** by design: they are not page-matched into a
-student packet, so their keys legitimately carry `teachernote` scoring blocks and their blanks
-legitimately carry a name row.
+**Unit tests and `finals/` are outside the gate** by design — the gate walks `unitXX/lessonMM/`
+only, and those blanks legitimately carry a name row. That is a limit of the checker, **not an
+exemption from the conventions**: a unit test key must still carry no `teachernote` (its scoring
+notes belong on page 2 of `unitXX/unit_cover_key/`) and must still paginate identically to its
+blank, because `unit.mk` swaps `sample_test_key` in for `sample_test` at the tail of the key
+packet. Check both by hand. Only `finals/*_key/`, merged into no packet at all, keeps its
+scoring notes in a `teachernote`.
 
 ## Answer-key macros (from `-key`)
 

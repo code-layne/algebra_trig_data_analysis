@@ -94,6 +94,18 @@ automatically when the unit is first created (Step 2):
 So the practice test is what students study from (in the packet); the actual test is authored
 alongside it, shares the format, but is distributed separately at test time.
 
+A unit may also carry an optional **cover pair**, discovered by `shared/unit.mk` and merged ahead
+of the lesson packets. Both wrappers `\input` one shared **`unit_cover/body.tex`**, so page 1
+cannot drift between them:
+
+- **`unit_cover/`** — the 1-page student cover (banner, overview, lesson table, big ideas), merged
+  into the unit **student** packet.
+- **`unit_cover_key/`** — the same page 1 plus a **page 2 of exam scoring notes** (answer rationale
+  and Part D scoring for both tests), merged into the unit **key** packet only. This is where a
+  test's teacher prose lives — never at the foot of a `*_test_key`, which would put the rationale
+  in front of students via the bound practice test. Keep it to one notes page: cover + notes = one
+  double-sided sheet. A unit with no `unit_cover_key/` falls back to the plain cover in both packets.
+
 ## What a course final is
 
 A **cumulative final exam** for the whole course lives in a single top-level **`finals/`**
@@ -280,7 +292,8 @@ It enforces page parity per component, the one-page warm-up and exit ticket, `\a
 no `teachernote` in a key, and no name row on a component. **`boxguard` is the one convention it
 cannot see** — a stranded stub changes no page count — so also look at the built PDF. Details in
 `references/conventions.md` ("The convention gate"). Unit tests and `finals/` are outside the gate
-by design.
+(it walks lesson dirs only) — but the conventions still bind a unit test: no `teachernote` in its
+key, and its key paginates like its blank. Check those by hand.
 
 ### Step 6 — Update the course planning log (always do this last)
 
@@ -326,7 +339,7 @@ a page" verdict is only valid for the box heights it was measured against.
 | # | Name | The rule | How to apply | Gated? |
 | --- | --- | --- | --- | --- |
 | — | **vocabpar** | `\par` before the first term in a `vocabbox` | **Nothing to do** — the term macros carry it | n/a |
-| 1 | **teachernote** | Teacher prose in the lesson plan, one titled note per component — never in a `_key` | `python3 .claude/skills/lesson-planning/scripts/movenotes.py unitNN/lessonMM` (`--check` to preview) | ✅ |
+| 1 | **teachernote** | Teacher prose in the lesson plan, one titled note per component — never in a `_key`. A unit test's rationale/scoring goes on p2 of `unitXX/unit_cover_key/` (key packet only) | `python3 .claude/skills/lesson-planning/scripts/movenotes.py unitNN/lessonMM` (`--check` to preview); test keys by hand | ✅ (lessons only) |
 | 2 | **namestrip** | Name/date/period row on the cover (and tests) only | `python3 .claude/skills/lesson-planning/scripts/namestrip.py --project . --unit NN --lesson MM` (`--check` to preview) | ✅ |
 | 3 | **work rule** | A component is the same length blank and keyed | `work` blocks authored byte-identically in both files; `\writelines{n}` only for prose `\ansline` drift | ✅ |
 | 4 | **boxguard** | No box stranded as a ~1in sliver across a page break | `\boxguard` (or `\boxguard[n]`) on its own line before the `\begin{...}` — blank **and** key | ❌ **eyes only** |

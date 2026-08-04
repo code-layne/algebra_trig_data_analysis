@@ -16,7 +16,9 @@ What it enforces, per lesson:
                 — \\ans is a text-mode macro and the compile error it throws is
                 unhelpful, so catch it at the source
   teachernote   no \\begin{teachernote} in a lesson component's _key (it belongs
-                in the lesson plan; tests/ and finals/ are exempt by design)
+                in the lesson plan). tests/ and finals/ are outside this gate,
+                but only finals/ is exempt from the rule — a unit test's scoring
+                notes go on page 2 of unitXX/unit_cover_key/, checked by hand.
   namestrip     no live \\namedateperiod / \\namepartnerperiod on a worksheet
                 component — the cover carries it, and tests keep it
 
