@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,187 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\boxguard[24]
+\begin{notesbox}{Practice --- The Skills Unit 2 Is Built On}
+\small
+Items 1--4 are the diagnostic skills again with new numbers. Show your work.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item Let $g(x)=5x-8$. Find $g(-2)$, then find the value of $x$ for which $g(x)=7$.
+\begin{work}
+  g(-2) &= 5(-2)-8 \\
+        &= -18 \\
+  5x-8  &= 7 \\
+    5x  &= 15 \\
+     x  &= 3
+\end{work}
+
+\item For which value of $x$ is $\dfrac{x-6}{x+2}$ undefined?
+\begin{work}
+  x+2 &= 0 \\
+    x &= -2
+\end{work}
+
+\item Find the $x$-intercept and the $y$-intercept of $4x-5y=20$. Write each as an ordered pair.
+\begin{work}
+  \text{set } y=0: \quad 4x &= 20 \\
+                         x &= 5 \\
+  \text{set } x=0: \quad -5y &= 20 \\
+                          y &= -4
+\end{work}
+
+\item A tank is draining. Its volume $V$ (gallons) after $t$ minutes:
+\smallskip
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}|c|c|c|c|c|@{}}
+\hline
+$t$ (minutes) & $0$ & $2$ & $4$ & $6$ \\ \hline
+$V$ (gallons) & $250$ & $220$ & $190$ & $160$ \\ \hline
+\end{tabular}
+\smallskip
+
+By how much does $V$ change per minute, and what is $V$ when $t=10$?
+\begin{work}
+  \text{change per minute} &= \dfrac{220-250}{2} \\
+                           &= -15 \text{ gallons per minute} \\
+                     V(10) &= 250-15(10) \\
+                           &= 100 \text{ gallons}
+\end{work}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{scenariobox}[In Context --- A Video Takes Off]{royal}
+\small
+A club posts a video. The graph shows $V$, its total views \textbf{in hundreds}, $d$ days after
+posting.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.8cm, height=4.8cm,
+    xlabel={$d$ (days after posting)}, ylabel={$V$ (views, hundreds)},
+    xmin=0, xmax=4.4, ymin=0, ymax=18,
+    xtick={0,1,2,3,4}, ytick={0,4,8,12,16},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:4, samples=60]{2^x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=5]
+
+\item Where does the graph meet the vertical axis, and how many actual views is that?
+
+\ansline{At $(0,1)$ --- one hundred views on the day it was posted.}\\
+
+\item Is $V$ increasing or decreasing on $0<d<4$? Does this graph have an absolute maximum over
+the four days shown? Explain.
+
+\ansline{Increasing the whole way. Its absolute maximum over these four days is}\\
+\ansline{$V=16$ (1600 views) at $d=4$, the right end --- it is still climbing there.}\\
+
+\item Read $V$ off the graph at $d=0,1,2,3,4$ and fill in the table. Then say which family this
+is, and what in the table proves it is \emph{not} linear.
+\smallskip
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+\hline
+$d$ & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+$V$ & \ans{1} & \ans{2} & \ans{4} & \ans{8} & \ans{16} \\ \hline
+\end{tabular}
+\smallskip
+
+\ansline{Exponential: each day the views are multiplied by $2$.}\\
+\ansline{Not linear --- the amounts added are $1, 2, 4, 8$, never a constant.}\\
+
+\item Estimate the day the video passes $1000$ views, and say how you used the graph.
+
+\ansline{Between day 3 and day 4: $1000$ views is $V=10$, and the curve passes $10$ there.}\\
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+% [20] was tested and broke this box, stranding item 9(c) alone atop p3.
+% The box measures ~23 baselines, so the guard must exceed that.
+\boxguard[24]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=9]
+
+\item In Lesson 1.7 you found the excluded values of a rational expression. Let
+$f(x)=\dfrac{x+1}{x-3}$.
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item Which input must be left out, and why? That input is missing from the
+        \textbf{domain} of $f$ --- Lesson 2.1's word for it.
+\begin{work}
+  x-3 &= 0 \\
+    x &= 3
+\end{work}
+
+  \item Here are four outputs near that input. What is happening to $f(x)$?
+        \smallskip
+
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabular}{@{}|c|c|c|c|c|@{}}
+        \hline
+        $x$ & $2.9$ & $2.99$ & $3.01$ & $3.1$ \\ \hline
+        $f(x)$ & $-39$ & $-399$ & $401$ & $41$ \\ \hline
+        \end{tabular}
+        \smallskip
+
+\ansline{The outputs blow up --- huge negative just left of $3$, huge positive just right.}\\
+
+  \item The graph of $f$ runs alongside the vertical line $x=3$ forever without ever touching it.
+        Lesson 2.5 has a name for that line. Guess it, or describe it in your own words.
+
+\ansline{A vertical asymptote (accept any description of the graph shooting off at $x=3$).}\\
+\end{enumerate}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[22]
+\begin{extensionbox}
+\small
+\textbf{Two savings plans.} Plan A starts at \$100 and adds \$50 every month. Plan B starts at
+\$20 and \emph{doubles} every month. Fill in the table, then answer.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+\hline
+Month $m$ & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+Plan A & \ans{100} & \ans{150} & \ans{200} & \ans{250} & \ans{300} \\ \hline
+Plan B & \ans{20} & \ans{40} & \ans{80} & \ans{160} & \ans{320} \\ \hline
+\end{tabular}
+\smallskip
+
+Plan A is ahead for the first three months. In which month does Plan B pass it, and what does
+that tell you about adding a constant versus multiplying by one?
+
+\ansline{Month $4$: \$320 beats \$300. A constant multiplier eventually overtakes}\\
+\ansline{any constant addition, no matter how far behind it starts.}\\
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{Next: Lesson 2.1 --- Function Fundamentals: Notation, Domain, and Range in Context}
+(\texttt{AFDA.AF.2a, e}). Today you read domain and range off a picture. Lesson 2.1 makes them
+precise, gives you the notation to write them down, and shows how a situation --- or an excluded
+value --- cuts a domain short.
+\end{remindbox}
 
 \end{document}

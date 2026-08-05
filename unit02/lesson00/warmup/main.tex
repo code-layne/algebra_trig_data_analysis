@@ -3,18 +3,79 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
-\pageheader{Unit 2, Lesson 2.0}{Warm-Up}
+\pageheader{Unit 2, Lesson 2.0}{Warm-Up --- Unit 2 Diagnostic}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
 % cover this component is stapled behind. See references/conventions.md.
 
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\begin{notesbox}{Where Are You Starting? --- Five Skills Unit 2 Builds On}
+\small
+This is a \textbf{diagnostic, not a quiz}. Each item checks one skill this unit is built on. Show
+your work; we score it together and you will record the results on your unit roadmap.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+
+\item \textbf{Function notation.} Let $f(x)=-2x+7$. Find $f(-3)$, then find the value of $x$ for
+which $f(x)=1$.
+\begin{work}
+  f(-3) &= -2(-3)+7 \\
+        &= 13 \\
+  -2x+7 &= 1 \\
+    -2x &= -6 \\
+      x &= 3
+\end{work}
+
+\item \textbf{A value a formula will not take.} For which value of $x$ is
+$\dfrac{x+4}{x-5}$ undefined?
+\begin{work}
+  x-5 &= 0 \\
+    x &= 5
+\end{work}
+
+\item \textbf{Rate of change.} A table of a car's distance $d$ (miles) after $t$ hours:
+\smallskip
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}|c|c|c|c|c|@{}}
+\hline
+$t$ (hours) & $0$ & $1$ & $2$ & $3$ \\ \hline
+$d$ (miles) & $12$ & $20$ & $28$ & $36$ \\ \hline
+\end{tabular}
+\smallskip
+
+By how much does $d$ change per hour, and what is $d$ when $t=5$?
+\begin{work}
+  \text{change per hour} &= 20-12 \\
+                         &= 8 \text{ miles per hour} \\
+                    d(5) &= 12+8(5) \\
+                         &= 52 \text{ miles}
+\end{work}
+
+\item \textbf{Intercepts of a line.} Find the $x$-intercept and the $y$-intercept of
+$3x+2y=12$. Write each as an ordered pair.
+\begin{work}
+  \text{set } y=0: \quad 3x &= 12 \\
+                         x &= 4 \\
+  \text{set } x=0: \quad 2y &= 12 \\
+                         y &= 6
+\end{work}
+
+\item \textbf{Evaluating in context.} A rental car costs \$45 plus \$0.35 per mile driven, so the
+cost in dollars for $m$ miles is $C(m)=0.35m+45$. Find $C(80)$, then write one sentence saying
+what that number means for the driver.
+\begin{work}
+  C(80) &= 0.35(80)+45 \\
+        &= 28+45 \\
+        &= 73
+\end{work}
+\writeline
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

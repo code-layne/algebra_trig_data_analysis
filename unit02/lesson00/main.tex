@@ -16,79 +16,327 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can read a graph in context and name what it tells me --- the
+    domain and range, where the function is increasing, decreasing, or constant, and its highest
+    and lowest points. I can recognize the linear, quadratic, and exponential families from a
+    graph or a table, name each parent function, and say what each lesson of Unit 2 teaches.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{This opener (no new K\&S codes):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Read \textbf{domain}, \textbf{range}, \textbf{intervals} of increase/decrease/constancy,
+        \textbf{absolute extremes}, and \textbf{intercepts} off a graph in context.
+  \item Recognize the three families and their \textbf{parent functions}: $f(x)=x$, $g(x)=x^2$,
+        $h(x)=2^x$.
+  \item Tell the families apart from a table: constant difference, constant \emph{second}
+        difference, constant ratio.
+  \item Diagnose the toolkit Unit 2 assumes: function notation, excluded values, rate of change,
+        and the intercepts of a line.
+  \item Name the unit's destinations and set a personal goal for Unit 2.
+\end{itemize}
+\textbf{Coming attractions --- the codes Unit 2 covers:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{AFDA.AF.2a, e} --- domain, range, and points on a graph (2.1)
+  \item \texttt{AFDA.AF.1a--b} --- parent functions and transformations (2.2)
+  \item \texttt{AFDA.AF.1d, f} --- equation $\leftrightarrow$ graph, verified on the TI-84 (2.3)
+  \item \texttt{AFDA.AF.2b--d} --- intervals, extremes, intercepts and zeros (2.4)
+  \item \texttt{AFDA.AF.2f--g} --- end behavior and asymptotes (2.5)
+  \item \texttt{AFDA.AF.2} --- piecewise-defined functions (2.6)
+  \item \texttt{AFDA.AF.1c, e, g}, \texttt{AF.2h} --- choosing and comparing models (2.7)
+\end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{In this course, a function's characteristics are read from its graph.} That is not
+        a shortcut --- it is the standard. The AFDA guidance says so explicitly: analysis from
+        equations belongs to Algebra 2. Unit 2 trains the eye, and the language that goes with it.
+  \item \textbf{One picture answers every question this unit asks.} The trail graph in the notes
+        yields domain, range, a constant stretch, an absolute maximum, an intercept, and a
+        comparison of rates --- with no formula anywhere.
+  \item \textbf{A context sets the domain.} A model is only in force where the situation is. The
+        hike stops at six hours; the ball lands at four seconds. Computing a value is not the same
+        as that value meaning something (\texttt{AFDA.AF.2a}).
+  \item \textbf{A family is a parent function plus what was done to it.} Naming the parent is what
+        makes a strange-looking graph readable (\texttt{AFDA.AF.1a--b}).
+  \item \textbf{Unit 1 does not end here.} An excluded value becomes a domain restriction in 2.1
+        and a vertical asymptote in 2.5. Say that out loud today so 2.5 is a payoff, not a
+        surprise.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Function & A rule pairing each input with exactly one output. $f(x)$ is the output at input $x$,
+    and $(x, f(x))$ is a point on the graph. \\
+Domain / range & Every input the function is allowed to take / every output it produces. A
+    context can shrink both. \\
+Increasing / decreasing / constant & Read left to right: outputs rise / fall / hold steady over an
+    interval. \\
+Absolute maximum / minimum & The highest and lowest points over the \emph{whole} domain. Report
+    the value \emph{and} where it occurs. \\
+Intercept & Where a graph meets an axis. The $y$-intercept is the starting value; an
+    $x$-intercept is a zero. \\
+Zero & An input where the output is $0$. A graph may have none, one, or many --- the trail graph
+    has none. \\
+Parent function & The simplest member of a family: $f(x)=x$, $g(x)=x^2$, $h(x)=2^x$. \\
+Transformation & A shift, stretch, or flip carrying the parent to another member of the family
+    (named in Lesson 2.2). \\
+Asymptote & A line a graph approaches without touching. Previewed today; defined in Lesson 2.5. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{The warm-up is this unit's diagnostic} --- five items, one per prerequisite skill:
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Function notation: evaluate, then solve $f(x)=k$ (feeds 2.1)
+  \item An excluded value of a rational expression (feeds 2.1, 2.5)
+  \item Rate of change from a table (feeds 2.2, 2.7)
+  \item Intercepts of a line (feeds 2.4)
+  \item Evaluating and interpreting in context (feeds every lesson)
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} score it with the class, item by item, and have students record
+which items they missed on the Unit 2 roadmap in their notes. Any item missed by more than a
+third of the class becomes the do-now for the lesson it feeds.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{The Saturday hike.} A friend hikes a mountain trail. Their watch records one thing ---
+elevation, every minute, for six hours --- and at the end it hands you a \emph{picture}. No
+formula, no table, just the curve.
+\textbf{Pose it this way:} ``I want to know four things: how long they hiked, how high they got,
+when they stopped for lunch, and whether they came down faster than they went up. \emph{Can a
+picture tell me all four?}'' Take answers before revealing the graph. Then reveal it and let the
+class answer all four in about ninety seconds. That speed is the point: this unit is about
+reading, and the whole vocabulary list is just names for what they already did. Close the hook by
+saying the rule of the unit out loud --- \emph{in this course we read a function's characteristics
+off its graph} --- because it is the AFDA standard, not a teaching preference.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Answer the four hook questions off the picture (8 min).} Work the notes table together
+and \emph{name} each read as you make it: how long $\to$ domain ($0 \le t \le 6$ hours); starting
+elevation $\to$ the $E$-intercept ($800$ ft); lunch $\to$ the constant stretch ($t=2$ to $t=3$);
+how high $\to$ the absolute maximum ($2000$ ft at $t=4$). \textbf{Ask:} ``Why is `$2000$ feet' only
+half an answer?'' (An extreme needs a value \emph{and} a location.)
+
+\textbf{2. The graph with no zeros (3 min).} The curve never meets the $t$-axis. \textbf{Ask:}
+``What would a zero have meant here?'' (Sea level --- they never get there.) Students arrive
+believing every graph crosses; kill that today, cheaply.
+
+\textbf{3. Compare two rates by eye (4 min).} They climbed $400$ ft/hr and came down $500$ ft/hr.
+\textbf{Ask:} ``Which piece is steepest, and how did you decide without computing?'' Steepness as
+rate of change is the bridge to 2.2 and 2.7.
+
+\textbf{4. Three families, three shapes (10 min).} Put up the three parent graphs. Fill the table:
+a line adds the same amount each step; a parabola has one turning point and a line of symmetry; an
+exponential multiplies by the same factor and flattens toward a line it never touches.
+\textbf{Ask:} ``Both a line and an exponential can rise forever. What separates them?'' (Adding
+versus multiplying --- exactly the Tier E tables.)
+
+\textbf{5. Walk the roadmap (8 min).} Move through the Unit 2 table, naming what each lesson
+unlocks. Keep it concrete: 2.1--2.2 build the language, 2.3 makes the calculator a checking tool,
+2.4--2.6 read graphs of every kind, 2.7 asks which model to trust. Then say where it is spent:
+Unit 3's exponential graphs are read with today's words, Unit 6's normal curve is a shape read the
+same way, and Unit 8's sine wave is transformation language on a new parent.
+
+\textbf{6. Self-assess (4 min).} Students mark each roadmap row \emph{Confident / Rusty / New}
+from their warm-up results, then write one goal. Collect nothing --- this page stays in the packet
+and gets revisited before the unit test.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: The Five Reads --- and Two Words That Get Swapped]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The routine students record --- five reads, always in this order:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Domain:} how far left and right does the graph run? Say it with units.
+  \item \textbf{Range:} how far down and up? Say it with units.
+  \item \textbf{Intercepts:} where does it meet each axis, and what does each mean in the story?
+  \item \textbf{Intervals:} rising, falling, or flat --- and on which stretch of the input?
+  \item \textbf{Extremes:} the highest and lowest points, each reported as \emph{value at
+        location}.
+\end{enumerate}
+\textbf{Say this out loud:} ``An interval is a set of \emph{inputs}. An extreme is an
+\emph{output}, plus the input where it happens.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The two errors to name before they happen:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Domain and range, swapped.} Students report the $y$-values as the domain. Fix by
+        pointing at the axis while saying the word --- domain lives on the horizontal axis, always.
+  \item \textbf{``Absolute'' dropped.} On the battery graph, students call $80\%$ the maximum
+        because it is the top of the \emph{charging} stretch. \emph{Absolute} means over the whole
+        domain --- $100\%$ at $t=0$. Both errors are Tier E item 1 by design, so the activity puts
+        them in students' hands rather than yours.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Warm-up, item 1:} watch for students who evaluate $f(-3)$ correctly and then stall
+        on ``find $x$ so that $f(x)=1$.'' That is the input/output confusion 2.1 is built to fix ---
+        note those names.
+  \item \textbf{Warm-up, item 4:} an $x$-intercept reported as $4$ rather than $(4,0)$ is fine
+        today; ask for the ordered pair and move on.
+  \item \textbf{Notes, box 1:} listen for ``the maximum is $2000$'' with no location. Push every
+        time: \emph{value and where}.
+  \item \textbf{Activity, Tier A item 2:} students who list only one decreasing interval have
+        stopped at the first one. Ask, ``Is it still falling after lunch?''
+  \item \textbf{Cold-call prompts:} ``Which axis does the domain live on?'' ``What would a zero
+        mean for these hikers?'' ``Both graphs go up forever --- what makes one exponential?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item A rideshare's cost graph: read $C(4)$, read the vertical intercept and say what the
+        pickup fee is.
+  \item Work backwards from a \$13 fare to the mileage.
+  \item Support: a finger on the axis for each read, saying the word out loud.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item A phone battery over ten hours: domain, range, every interval, both absolute extremes,
+        and the charging rate.
+  \item Convert each $t$ to a clock time --- the interpretation move.
+  \item Identify the airplane-mode stretch as a \emph{constant} interval.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique two wrong answers: domain/range swapped, and ``absolute'' dropped.
+  \item Classify three tables by family using differences, second differences, and ratios.
+  \item Refute ``anything that goes up is exponential'' with two of those tables.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} on a pre-drawn graph of a kicked ball ---
+(1) domain and range with units; (2) the absolute maximum, reported as value \emph{and} location,
+interpreted; (3) \textbf{the conceptual check} --- ``A classmate says the domain of every function
+is all real numbers. Do you agree?'' A proficient response says a context limits the domain and
+points at $0 \le t \le 4$ seconds.
+
+\textbf{Using the results:} sort the tickets into three piles --- \emph{reads both axes
+correctly}, \emph{swaps domain and range}, \emph{cannot start}. The second pile is your Tier R
+group for Lesson 2.1, where domain and range get their notation. Item 3 is scored for reasoning,
+not vocabulary.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (9 items): four fluency items mirroring the diagnostic (function notation,
+excluded value, intercepts, rate of change), a four-part read of a viral-video graph that ends by
+classifying the family from a table students fill in themselves, and a look-ahead item.
+
+\textbf{Item 9 is the bridge and is worth grading closely.} It takes Lesson 1.7's
+$f(x)=\frac{x+1}{x-3}$, names $x=3$ a \emph{domain} restriction, then shows outputs blowing up on
+both sides of it. Accept any description of the graph shooting off near $x=3$ ---
+\emph{asymptote} is Lesson 2.5's word to introduce, not today's to demand.
+
+\textbf{Extension (optional):} two savings plans, \$100 $+$ \$50/month against \$20 doubling.
+Plan B is behind for three months and passes in month 4 (\$320 vs.\ \$300) --- a constant
+multiplier eventually beats any constant addition. It is the honest preview of Unit 3.
+
+\textbf{Preview of Lesson 2.1 (\texttt{AFDA.AF.2a, e}):} function notation, and domain and range
+in context --- the precise version of every read students made today.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 % Teacher-only prose lives HERE, never in a _key: a note is the one block in a
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
+\boxguard[18]
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{8 minutes, then score it together.} This is a diagnostic, not a quiz --- say so before
+    students start. Answers: (1) $f(-3)=13$ and $x=3$; (2) $x=5$; (3) $8$ miles per hour, $d=52$;
+    (4) $(4,0)$ and $(0,6)$; (5) $C(80)=\$73$. Item 1's second half is the one that predicts the
+    period: evaluating is automatic, \emph{solving} $f(x)=1$ requires knowing which slot the
+    number goes in, and that is exactly Lesson 2.1's work. Item 2 is deliberately a Lesson 1.7
+    question --- it returns in the notes as a domain restriction and in the homework as an
+    asymptote preview. Record the class miss-rate per item; anything above a third becomes the
+    do-now for the lesson that item feeds (1 and 2 $\to$ 2.1, 3 $\to$ 2.2, 4 $\to$ 2.4).
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{Do not let the vocabulary box become a copying exercise.} Fill \emph{function} and
+    \emph{domain and range} together; assign the other three to pairs and share out. Box 1 is the
+    lesson --- work all five rows aloud, and insist every extreme is reported as \emph{value at
+    location}. The ``no zeros'' line is worth thirty seconds of its own: students arrive assuming
+    every graph crosses the $x$-axis. In box 2, resist defining transformations; naming the three
+    parents and their giveaways is enough for today, and 2.2 does the rest. The guided-practice
+    wristband parabola is the one to work at the board --- students who say ``charge more to make
+    more'' are the reason the graph turns around. If time runs short, assign box 4 as reading, but
+    do not cut box 1.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is short on purpose
+    --- a group that clears it in three minutes should move straight to Tier A. Tier A item 2 is
+    where groups slow down: expect lists with one decreasing interval instead of three, and expect
+    the flat stretch to be called ``nothing happening'' rather than \emph{constant}. Item 3's
+    clock conversion ($t=7$ is 2 p.m.) is the interpretation move --- do not let groups stop at
+    the number. Tier E item 1 is the share-out: read both wrong answers aloud and have the class
+    diagnose them before the group explains. Tier E item 2's table $C$ is $3x^2$; groups that only
+    check first differences will call it ``not linear'' and stall --- prompt them to difference the
+    differences.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Item 3 is the one that matters:
+    it tells you who understands that a model has a jurisdiction. Expect several students to
+    answer ``yes, you can plug in any number'' --- which is true about the \emph{formula} and false
+    about the \emph{situation}, and that distinction is Lesson 2.1's whole first half. Answers:
+    (1) domain $0 \le t \le 4$ seconds, range $0 \le h \le 64$ feet; (2) $64$ feet at $t=2$
+    seconds. Do not grade this for points on the first day of the unit; use it to build the
+    Lesson 2.1 groups.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 20--25 minutes.} Items 1--4 are the diagnostic skills again with new numbers,
+    so a student who missed one in class gets a second, low-stakes attempt the same night. Item 6
+    is subtler than it looks: the video's maximum over the four days shown sits at the
+    \emph{right endpoint}, which is the first time students meet an extreme that is not a turning
+    point. Item 7 is the payoff --- students fill the table from the graph, then see the doubling
+    themselves; do not give them the word \emph{exponential} first. Item 9 is the Unit 1 bridge
+    described in the plan above. The extension is genuinely optional; assign it to groups that
+    finished Tier E early, and if a student asks whether Plan B is realistic, that is the right
+    question and Unit 3 answers it.
 \end{teachernote}
 \end{document}

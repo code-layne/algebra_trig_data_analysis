@@ -1,6 +1,8 @@
 %! Unit Opener: Functions as Models — Unit 2, Lesson 2.0 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{atda-beamer}   % provides \royalheader{} and \sectionlabel[color]{}
+\usepackage{pgfplots}      % atda-beamer does NOT load pgfplots
+\pgfplotsset{compat=1.18}
 
 \begin{document}
 
@@ -17,10 +19,171 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{The Saturday Hike}
+  \sectionlabel[goldacc]{hook}
+  A friend hikes a mountain trail. Their watch records one thing --- elevation, every minute, for
+  six hours --- and hands you a \textbf{picture}. No formula. No table.
+  \begin{block}{Four things I want to know}
+    How long did they hike? \quad How high did they get?\\
+    When did they stop for lunch? \quad Did they come down faster than they went up?\\[2pt]
+    \textbf{Can a picture answer all four?}
+  \end{block}
+\end{frame}
+
+% ── THE GRAPH ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{One Graph, Every Question}
+  \sectionlabel{read it, do not solve it}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=10.4cm, height=4.9cm,
+      xlabel={$t$ (hours)}, ylabel={$E$ (feet)},
+      xmin=0, xmax=6.4, ymin=0, ymax=2300,
+      xtick={0,1,2,3,4,5,6}, ytick={0,800,1600,2000},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[royal, very thick, mark=*, mark size=1.4pt]
+      coordinates {(0,800) (2,1600) (3,1600) (4,2000) (6,1000)};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.2cm}
+  Domain $0 \le t \le 6$ h \quad$\cdot$\quad starts at $800$ ft \quad$\cdot$\quad flat from
+  $t=2$ to $3$ \quad$\cdot$\quad max $2000$ ft \textbf{at $t=4$}
+\end{frame}
+
+% ── THE RULE OF THE UNIT ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Rule of This Unit}
+  \sectionlabel[goldacc]{why it matters}
+  \begin{itemize}
+    \setlength{\itemsep}{0.35cm}
+    \item In this course a function's characteristics are read \textbf{from its graph}. That is
+          the standard, not a shortcut.
+    \item Every extreme gets reported two ways: \textbf{the value and where it happens}.
+          ``$2000$ feet'' is half an answer.
+    \item A graph may have \textbf{no zeros}. The hikers never reach sea level, so the curve
+          never touches the $t$-axis.
+    \item A \textbf{context sets the domain}. The model is in force for six hours and not one
+          minute longer.
+  \end{itemize}
+\end{frame}
+
+% ── THREE FAMILIES ────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Three Families, Three Shapes}
+  \sectionlabel{the parent functions}
+  \begin{center}
+  \begin{tabular}{@{}c@{\hspace{0.9cm}}c@{\hspace{0.9cm}}c@{}}
+  \begin{tikzpicture}
+  \begin{axis}[width=4.4cm, height=3.9cm, xmin=-3.2, xmax=3.2, ymin=-3.2, ymax=3.2,
+      axis lines=middle, xtick=\empty, ytick=\empty]
+    \addplot[royal, very thick, domain=-3:3, samples=2]{x};
+  \end{axis}
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+  \begin{axis}[width=4.4cm, height=3.9cm, xmin=-3.2, xmax=3.2, ymin=-1.2, ymax=5.2,
+      axis lines=middle, xtick=\empty, ytick=\empty]
+    \addplot[royal, very thick, domain=-2.2:2.2, samples=60]{x^2};
+  \end{axis}
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+  \begin{axis}[width=4.4cm, height=3.9cm, xmin=-3.2, xmax=3.2, ymin=-1.2, ymax=5.2,
+      axis lines=middle, xtick=\empty, ytick=\empty]
+    \addplot[royal, very thick, domain=-3:2.2, samples=60]{2^x};
+  \end{axis}
+  \end{tikzpicture}
+  \\[-2pt]
+  $f(x)=x$ & $g(x)=x^2$ & $h(x)=2^x$ \\
+  linear & quadratic & exponential \\
+  \end{tabular}
+  \end{center}
+\end{frame}
+
+% ── HOW TO TELL THEM APART ────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Adding or Multiplying?}
+  \sectionlabel{telling the families apart}
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabularx}{\textwidth}{@{}p{3.0cm} p{4.6cm} X@{}}
+    \textbf{Family} & \textbf{On a graph} & \textbf{In a table} \\
+    \hline
+    Linear & a straight line & adds the same amount each step \\
+    Quadratic & one turning point, symmetric & the \emph{differences} change by the same amount \\
+    Exponential & flattens toward a line it never touches & \textbf{multiplies} by the same
+      factor each step \\
+  \end{tabularx}
+  \vspace{0.4cm}
+
+  A line and an exponential both rise forever. \textbf{Adding versus multiplying is what
+  separates them.}
+\end{frame}
+
+% ── ROADMAP ───────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Unit 2 Roadmap}
+  \sectionlabel{where we are going}
+  \renewcommand{\arraystretch}{1.2}
+  \small
+  \begin{tabularx}{\textwidth}{@{}c p{2.9cm} X@{}}
+    \textbf{Lesson} & \textbf{Standard} & \textbf{What you will be able to do} \\
+    \hline
+    2.1 & \texttt{AF.2a, e}      & Function notation; domain and range in context \\
+    2.2 & \texttt{AF.1a--b}      & Parent functions and transformations \\
+    2.3 & \texttt{AF.1d, f}      & Equation $\leftrightarrow$ graph, checked on the TI-84 \\
+    2.4 & \texttt{AF.2b--d}      & Intercepts, zeros, extremes, intervals \\
+    2.5 & \texttt{AF.2f--g}      & End behavior and asymptotes \\
+    2.6 & \texttt{AF.2}          & Piecewise-defined functions \\
+    2.7 & \texttt{AF.1c, e, g}, \texttt{AF.2h} & Choosing and comparing models \\
+  \end{tabularx}
+\end{frame}
+
+% ── WHERE THIS LANGUAGE GETS SPENT ────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Where This Language Gets Spent}
+  \sectionlabel[goldacc]{the bridge}
+  \begin{itemize}
+    \setlength{\itemsep}{0.4cm}
+    \item \textbf{Unit 1 is still underneath.} An excluded value becomes a \textbf{domain
+          restriction} in 2.1 --- and in 2.5 it becomes a \textbf{vertical asymptote}.
+    \item \textbf{Unit 3} takes the exponential family and asks how to undo it: logarithms, read
+          with today's words.
+    \item \textbf{Unit 6}'s normal curve and \textbf{Unit 8}'s sine wave are shapes you will read
+          with these same five questions.
+  \end{itemize}
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: Reading the Day off a Graph}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  Nobody hands you an equation today. You get pictures, and every answer is in the picture.
+  \begin{block}{Your job}
+    A rideshare fare, then a phone battery over ten hours: domain, range, every interval, and
+    \textbf{both} absolute extremes --- value \emph{and} location. Then convert the clock times.
+  \end{block}
+  \vspace{0.2cm}
+  Tier E: two students got it wrong. Find out how.
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  A soccer ball is kicked from the ground; you get the graph of its height.
+  \begin{enumerate}
+    \setlength{\itemsep}{0.35cm}
+    \item Domain and range, with units.
+    \item The absolute maximum: value, location, and what it means.
+    \item ``The domain of every function is all real numbers.'' Do you agree?
+  \end{enumerate}
+  \vspace{0.3cm}
+  {\color{royal}\bfseries Next: Lesson 2.1 --- Function Notation, Domain, and Range in Context.}
 \end{frame}
 
 \end{document}
