@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,43 @@
 
 \vspace{0.15in}
 
-% TODO: author the Exit Ticket. See references/components.md for the expected structure.
-\begin{notesbox}{Exit Ticket}
-\writelines{4}
+\begin{notesbox}{Both Directions --- On Your Own}
+\small
+Notes closed. Three items. A swimming pool is drained at a steady rate. $W$ is the water left in
+the pool, in gallons, $t$ hours after the pump was switched on.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.8cm, height=4.4cm,
+    xlabel={$t$ (hours after the pump starts)}, ylabel={$W$ (gallons)},
+    xmin=0, xmax=8.6, ymin=0, ymax=2650,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={0,600,1200,1800,2400},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:8, samples=2]{2400-300*x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=4pt]
+
+\item Read $W(2)$ off the graph. Write it as a point, then as a sentence about the pool.
+
+\writelines{2}
+
+\item Now the other direction: find the value of $t$ for which $W(t)=600$, and say what that
+number means for whoever is draining the pool.
+
+\writelines{2}
+
+\item State the domain and the range in this situation, with units, in inequality notation
+\emph{and} in interval notation. Then explain why $t=10$ is not in the domain, even though
+$2400-300(10)$ is a number you can compute.
+
+\writelines{3}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

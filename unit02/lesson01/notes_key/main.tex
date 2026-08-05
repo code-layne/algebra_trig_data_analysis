@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,261 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item read a graph in \textbf{both directions} --- given an input, find the output $f(x)$; given
+        an output, find the input that produced it --- and write either read as a point
+        $(x, f(x))$;
+  \item state the \textbf{domain} and \textbf{range} of a function from its graph, with units, in
+        inequality notation, set notation, and interval notation;
+  \item explain what cuts a domain short: the situation being modeled, where the graph stops, or a
+        value the algebra will not allow;
+  \item turn a point on a graph into a sentence about the situation, and justify why one output
+        can come from two different inputs but one input can never give two outputs.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together. Lesson 2.0 pointed at these on a picture; today they
+get precise.
+\vocabans{Function notation}{The shorthand $f(x)$ for the output the rule $f$ gives the input $x$.
+The statement $f(a)=b$ and the point $(a,b)$ on the graph carry the same information.}
+\vocabans{Domain}{Every input the function is allowed to take --- read left to right along the
+horizontal axis.}
+\vocabans{Range}{Every output the function actually produces --- read bottom to top along the
+vertical axis.}
+\vocabans{Interval notation}{Writing a set as its two endpoints, smaller first: a square bracket
+includes the endpoint, a parenthesis leaves it out, and $\infty$ never takes a bracket.}
+\vocabans{Restricted domain}{A domain cut short by the situation, by where the graph stops, or by
+a value the algebra will not allow (such as a zero denominator).}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{The downtown garage.} You park at a garage that charges \textbf{\$4 to enter} plus
+\textbf{\$2 for every hour}, billed by the minute, and it will not let you stay past
+\textbf{8 hours}. Posted by the gate is a single graph.
+
+Two people walk up to it. One asks, \emph{``What will three hours cost me?''} The other asks,
+\emph{``I only have \$16 --- how long can I stay?''} \textbf{One graph, two questions. Are you
+reading it the same way both times?}
+
+\ansline{No. The first starts at an hour and looks for a cost; the second}\\
+\ansline{starts at a cost and looks for an hour. Same graph, opposite motions.}\\
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{1. Two Questions, One Graph}
+\small
+Here is the sign by the gate. $C$ is the cost in dollars for a stay of $h$ hours.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11.4cm, height=5.2cm,
+    xlabel={$h$ (hours parked)}, ylabel={$C$ (cost, dollars)},
+    xmin=0, xmax=8.6, ymin=0, ymax=23,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={0,4,8,12,16,20},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:8, samples=2]{2*x+4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+\textbf{The one sentence this lesson is built on:} ``$C(3)=10$'' and ``the point $(3,10)$ is on
+the graph'' say \emph{exactly the same thing}. The first is the sentence; the second is where it
+lives.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}X p{2.9cm} p{2.4cm}@{}}
+\rowcolor{mist}
+\textbf{The question, in words} & \textbf{Function notation} & \textbf{The point} \\
+\hline
+What does a $3$-hour stay cost? & \ans{$C(3)=10$} & \ans{$(3,10)$} \\
+I have \$16 --- how long can I stay? & \ans{$C(6)=16$} & \ans{$(6,16)$} \\
+What do I pay before I have parked at all? & \ans{$C(0)=4$} & \ans{$(0,4)$} \\
+What does the longest stay the garage allows cost? & \ans{$C(8)=20$} & \ans{$(8,20)$} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{The two reads --- and they are not the same motion:}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item \textbf{Given the input} (find $C(3)$): start on the \ans{horizontal} axis, go \emph{up} to
+        the graph, then across to the other axis.
+  \item \textbf{Given the output} (solve $C(h)=16$): start on the \ans{vertical} axis, go
+        \emph{across} to the graph, then down to the other axis.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Warning --- the notation does not flip.} $C(3)=10$ does \emph{not} mean $C(10)=3$. The
+number inside the parentheses is always the \ans{input}; the number after the equals sign is
+always the \ans{output}.
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[22]
+\begin{notesbox}{2. Domain and Range Off the Same Graph}
+\small
+Both are read straight off the picture, and each one lives on its own axis.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}p{2.0cm} X p{2.4cm} p{3.0cm}@{}}
+\rowcolor{mist}
+& \textbf{What it is} & \textbf{Which axis} & \textbf{For this garage} \\
+\hline
+Domain & every \ans{input} the function is allowed to take --- how far the graph runs left to
+    right & \ans{horizontal} & \ans{$0 \le h \le 8$} \\
+Range & every \ans{output} the function produces --- how far the graph runs bottom to top
+    & \ans{vertical} & \ans{$4 \le C \le 20$} \\
+\end{tabularx}
+\vspace{-2pt}
+{\scriptsize ($h$ is measured in hours, $C$ in dollars.)}
+
+\vspace{6pt}
+\textbf{Why does the range not start at \$0?} Look at the left end of the segment --- the graph
+never gets below \$4.
+
+\ansline{The \$4 entry fee is charged the moment you pull in, before the clock starts.}\\
+
+\textbf{Why does the domain stop at $h=8$?} Nothing in the arithmetic breaks at nine hours;
+$2(9)+4=22$ is a perfectly good number.
+
+\ansline{The garage will not let you stay that long --- the context stops it, not the algebra.}\\
+
+A formula will happily accept a number the \emph{situation} refuses. Deciding which numbers the
+situation allows is your job, not the formula's.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[26]
+\begin{notesbox}{3. Three Ways to Write the Same Set}
+\small
+A domain or a range is a \emph{set of numbers}, and there are three standard ways to write one
+down. All three appear on the SOL test, so learn to move between them.
+
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{}X p{2.6cm} p{4.0cm} p{2.2cm}@{}}
+\rowcolor{mist}
+\textbf{In words} & \textbf{Inequality} & \textbf{Set notation} & \textbf{Interval} \\
+\hline
+Every hour from $0$ to $8$, both ends counted & $0 \le h \le 8$ & $\{h \mid 0 \le h \le 8\}$ &
+    \ans{$[0,8]$} \\
+Every cost from \$4 to \$20 & \ans{$4 \le C \le 20$} & \ans{$\{C \mid 4 \le C \le 20\}$} &
+    \ans{$[4,20]$} \\
+Every number bigger than $3$, with $3$ left out & $x > 3$ & \ans{$\{x \mid x > 3\}$} &
+    \ans{$(3,\infty)$} \\
+Exactly the two numbers $2$ and $5$ & $x=2$ or $x=5$ & $\{2, 5\}$ & \ans{none} \\
+Nothing at all --- no number works & (no solution) & $\{\;\}$ & \ans{$\emptyset$} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Four rules that settle every one of these:}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item A \textbf{square bracket} means the endpoint is \ans{included}; a \textbf{parenthesis}
+        means it is left out.
+  \item $\infty$ is not a number, it is a direction, so it \emph{never} gets a square bracket.
+        Write $(3, \infty)$ --- never $(3, \infty]$.
+  \item In an interval the \ans{smaller} number always comes first, no matter which way the graph
+        runs. A candle burning from $20$ cm down to $0$ cm still has range $[0,20]$.
+  \item A short \emph{list} of separate numbers is not an interval at all. Use set notation for
+        those, and $\emptyset$ when there is nothing to list.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{notesbox}{4. What Cuts a Domain Short}
+\small
+A domain gets restricted for exactly three reasons. Name each one beside its example.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}p{2.6cm} X@{}}
+\rowcolor{mist}
+\textbf{The reason} & \textbf{An example, and the domain it leaves behind} \\
+\hline
+\ans{the context} & The garage shuts you out after 8 hours, and you cannot park for a negative
+    number of hours. Domain: $0 \le h \le 8$. \\
+\ans{the graph} & The picture you were handed runs from one end to the other and stops. Outside it
+    there is simply nothing to read. \\
+\ans{the algebra} & In Lesson 1.7, $\dfrac{x+1}{x-3}$ had an excluded value. As a function that is
+    a hole in the domain: $\{x \mid x \ne 3\}$. \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{And one more thing a context can do: force the inputs to be whole numbers.} A field trip
+costs a flat bus fee plus one museum ticket per student. You cannot send $17.4$ students, so the
+domain is a \emph{list} --- $\{0, 1, 2, 3, \dots\}$ --- and the graph is a row of separate
+\ans{dots}, not a connected line. A domain like that \emph{cannot} be written in interval
+notation.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{practicebox}
+\small
+A camera drone takes off from the ground, rises, and lands again. Its altitude $A$, in feet, $t$
+seconds after takeoff, is graphed below.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.6cm, height=4.8cm,
+    xlabel={$t$ (seconds after takeoff)}, ylabel={$A$ (altitude, feet)},
+    xmin=0, xmax=8.6, ymin=0, ymax=36,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={0,8,16,24,32},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:8, samples=80]{-2*x^2+16*x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt]
+  \item Read $A(2)$ off the graph. Write it as a point, then as a sentence about the drone.
+
+\ansline{$A(2)=24$, so $(2,24)$ is on the graph.}\\
+\ansline{Two seconds after takeoff the drone is 24 feet up.}\\
+
+  \item Now go the other way: find \emph{every} $t$ for which $A(t)=24$. There are two. Explain
+        why two different inputs can share one output --- and why one input could never give two
+        outputs.
+
+\ansline{$t=2$ and $t=6$: the drone passes 24 feet on the way up and again on the way down.}\\
+\ansline{One height can happen twice, because nothing stops a rule from repeating an output.}\\
+\ansline{But at one instant the drone has one altitude --- one input, one output. That is the rule.}\\
+
+  \item State the domain and the range in this situation, with units, in inequality notation and
+        in interval notation.
+
+\ansline{Domain: $0 \le t \le 8$ seconds, or $[0,8]$.}\\
+\ansline{Range: $0 \le A \le 32$ feet, or $[0,32]$.}\\
+
+  \item The formula behind this graph is $A(t)=-2t^2+16t$. Check the highest point you read off
+        the picture against the formula.
+\begin{work}
+  A(4) &= -2(4)^2+16(4) \\
+       &= -32+64 \\
+       &= 32
+\end{work}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

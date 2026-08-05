@@ -1,6 +1,8 @@
 %! Function Fundamentals: Notation, Domain, and Range — Unit 2, Lesson 2.1 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{atda-beamer}   % provides \royalheader{} and \sectionlabel[color]{}
+\usepackage{pgfplots}      % atda-beamer does NOT load pgfplots
+\pgfplotsset{compat=1.18}
 
 \begin{document}
 
@@ -17,10 +19,162 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{The Downtown Garage}
+  \sectionlabel[goldacc]{hook}
+  A garage charges \textbf{\$4 to enter} plus \textbf{\$2 an hour}, billed by the minute, and will
+  not let you stay past \textbf{8 hours}. One graph is posted by the gate.
+  \begin{block}{Two people walk up}
+    ``What will three hours cost me?''\\
+    ``I only have \$16 --- how long can I stay?''\\[2pt]
+    \textbf{One graph, two questions. Are you reading it the same way both times?}
+  \end{block}
+\end{frame}
+
+% ── THE GRAPH ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{One Graph, Two Directions}
+  \sectionlabel{read it both ways}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=10.2cm, height=4.7cm,
+      xlabel={$h$ (hours)}, ylabel={$C$ (dollars)},
+      xmin=0, xmax=8.6, ymin=0, ymax=23,
+      xtick={0,1,2,3,4,5,6,7,8}, ytick={0,4,8,12,16,20},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[royal, very thick, domain=0:8, samples=2]{2*x+4};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.2cm}
+  \textbf{Given the input:} $C(3)=10$, the point $(3,10)$. \quad
+  \textbf{Given the output:} $C(6)=16$, the point $(6,16)$.
+\end{frame}
+
+% ── THE ONE SENTENCE ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Sentence This Lesson Is Built On}
+  \sectionlabel[goldacc]{why it matters}
+  \begin{block}{Same information, written two ways}
+    \centering\large
+    $C(3)=10$ \qquad$\Longleftrightarrow$\qquad the point $(3,10)$ is on the graph
+  \end{block}
+  \begin{itemize}
+    \setlength{\itemsep}{0.3cm}
+    \item The number \textbf{inside} the parentheses is the input. The number \textbf{after the
+          equals sign} is the output.
+    \item So $C(3)=10$ does \textbf{not} mean $C(10)=3$. The notation does not flip.
+    \item Two inputs may share one output. \textbf{One input may never have two.}
+  \end{itemize}
+\end{frame}
+
+% ── DOMAIN AND RANGE ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Domain and Range, Off the Same Picture}
+  \sectionlabel{each one lives on its own axis}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{@{}p{2.2cm} X p{2.6cm} p{3.0cm}@{}}
+    & \textbf{What it is} & \textbf{Which axis} & \textbf{The garage} \\
+    \hline
+    Domain & every input allowed --- how far the graph runs left to right & horizontal
+      & $0 \le h \le 8$ \\
+    Range & every output produced --- how far it runs bottom to top & vertical
+      & $4 \le C \le 20$ \\
+  \end{tabularx}
+  \vspace{0.35cm}
+
+  The range starts at \$4, not \$0: \textbf{you pay to enter before the clock ever starts.}
+\end{frame}
+
+% ── THREE NOTATIONS ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Three Ways to Write the Same Set}
+  \sectionlabel{all three are on the SOL test}
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabularx}{\textwidth}{@{}X p{2.4cm} p{3.2cm} p{2.8cm}@{}}
+    \textbf{In words} & \textbf{Inequality} & \textbf{Set notation} & \textbf{Interval} \\
+    \hline
+    hours $0$ to $8$, ends counted & $0 \le h \le 8$ & $\{h \mid 0 \le h \le 8\}$ & $[0,8]$ \\
+    bigger than $3$, $3$ left out & $x > 3$ & $\{x \mid x > 3\}$ & $(3,\infty)$ \\
+    just the numbers $2$ and $5$ & $x=2$ or $x=5$ & $\{2,5\}$ & not an interval \\
+    nothing at all & (no solution) & $\{\;\}$ & $\emptyset$ \\
+  \end{tabularx}
+  \vspace{0.3cm}
+
+  Bracket $=$ endpoint counted. Parenthesis $=$ endpoint left out. \textbf{$\infty$ never gets a
+  bracket.}
+\end{frame}
+
+% ── WHAT CUTS A DOMAIN SHORT ──────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{What Cuts a Domain Short}
+  \sectionlabel[goldacc]{three reasons --- and only three}
+  \begin{itemize}
+    \setlength{\itemsep}{0.3cm}
+    \item \textbf{The context.} The garage shuts you out after 8 hours; you cannot park for a
+          negative time. Nothing in the arithmetic objects --- the \emph{situation} does.
+    \item \textbf{The graph.} The picture runs from one end to the other and stops. Outside it
+          there is nothing to read.
+    \item \textbf{The algebra.} Lesson 1.7's excluded value: $\dfrac{x+1}{x-3}$ leaves a hole at
+          $x=3$, so the domain is $\{x \mid x \ne 3\}$.
+  \end{itemize}
+  \vspace{0.2cm}
+  And a context can force \textbf{whole numbers} --- then the graph is dots, and interval notation
+  is the wrong tool.
+\end{frame}
+
+% ── GUIDED PRACTICE ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Guided Practice: The Drone}
+  \sectionlabel{one output, two inputs}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.6cm, height=4.4cm,
+      xlabel={$t$ (seconds)}, ylabel={$A$ (feet)},
+      xmin=0, xmax=8.6, ymin=0, ymax=36,
+      xtick={0,1,2,3,4,5,6,7,8}, ytick={0,8,16,24,32},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[royal, very thick, domain=0:8, samples=80]{-2*x^2+16*x};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.2cm}
+  $A(2)=24$, the point $(2,24)$. \quad $A(t)=24$ at \textbf{both} $t=2$ and $t=6$ --- up, then
+  down. \quad Domain $[0,8]$ s, range $[0,32]$ ft.
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: Reading in Both Directions}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  Every graph gets asked both questions, and every answer gets written as a point.
+  \begin{block}{Your job}
+    A burning candle, then a skate bowl: read an input, read an output, and state the domain and
+    range in \textbf{two} notations each.
+  \end{block}
+  \vspace{0.15cm}
+  Tier E: a graph made of \textbf{dots} --- and a classmate who thinks the bowl is not a function.
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  A pool is draining; you get the graph of the water left in it.
+  \begin{enumerate}
+    \setlength{\itemsep}{0.3cm}
+    \item Read $W(2)$: as a point, and as a sentence.
+    \item Solve $W(t)=600$, and say what it means.
+    \item Domain and range two ways --- and why $t=10$ is not in the domain even though the
+          arithmetic works.
+  \end{enumerate}
+  \vspace{0.25cm}
+  {\color{royal}\bfseries Next: Lesson 2.2 --- Parent Functions and Transformations.}
 \end{frame}
 
 \end{document}

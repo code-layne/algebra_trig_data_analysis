@@ -5,15 +5,21 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-05** — Authored **Unit 2 Lesson 2.0 (Unit Opener: Functions as Models)** in full — plan,
-cover, warm-up, guided notes, activity, exit ticket, homework, all five keys, and the deck. This is
-**the first lesson of the AFDA half** and the course's **first graph-reading lesson**:
-seven pre-drawn `pgfplots` figures, no sketching anywhere. `make -C unit02/lesson00 all` and
-`check` both pass; every numeric claim in both blank and key was verified in Python first. The
-boxguard eyeball pass found **one real violation invisible to the gate** (a stranded stub atop
-homework p3) plus two dead-space wins; all resolved. **9 of 59 lessons authored.**
+**2026-08-05** — Authored **Unit 2 Lesson 2.1 (Function Fundamentals: Notation, Domain, and Range,
+`AFDA.AF.2a, e`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework,
+all five keys, and the deck. This is the unit's **first content lesson** and the first to teach
+**set and interval notation**. `make -C unit02/lesson01 all` and `check` both pass; every numeric
+claim in both blank and key was verified in pure Python first. The boxguard eyeball pass found
+**no violations** — the guard set transferred from 2.0 clean on the first pass. **10 of 59 lessons
+authored.**
 
-*Previous run (same day): built **Unit 1's summative layer** — the `unit01/unit_cover/` +
+*Previous run (same day): authored **Unit 2 Lesson 2.0 (Unit Opener: Functions as Models)** in full.
+This is **the first lesson of the AFDA half** and the course's **first graph-reading lesson**:
+seven pre-drawn `pgfplots` figures, no sketching anywhere. The boxguard eyeball pass found **one
+real violation invisible to the gate** (a stranded stub atop homework p3) plus two dead-space wins;
+all resolved.*
+
+*Earlier run (same day): built **Unit 1's summative layer** — the `unit01/unit_cover/` +
 `unit_cover_key/` pair (the course's first unit cover) and all four unit assessments
 (`tests/practice_test`, `tests/actual_test`, `test_keys/practice_test_key`,
 `test_keys/actual_test_key`). All four are 4 pages blank and key; the cover is 1 pp student /
@@ -39,8 +45,85 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (9 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete) and
-  `unit02/lesson00`.** Every component written, built, and gated.
+- **Authored (10 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`
+  and `unit02/lesson01`.** Every component written, built, and gated.
+- **`unit02/lesson01` — Function Fundamentals: Notation, Domain, and Range (`AFDA.AF.2a, e`).**
+  Unit 2's first content lesson.
+  - Spine: **``$f(3)=10$'' and ``the point $(3,10)$ is on the graph'' are one sentence in two
+    costumes.** That equivalence *is* `AF.2e`, and it is what makes a graph readable. The second
+    sentence is **a domain is a decision, not a calculation** — `AF.2a`'s phrase "*including those
+    limited by contexts*" is the standard asking for exactly that.
+  - **The lesson's organizing move is that a graph gets read in two opposite motions**, and they are
+    named out loud: input given $\to$ horizontal axis, up, across; output given $\to$ vertical axis,
+    across, down. This is the fix for the input/output stall 2.0's diagnostic found (its warm-up
+    item 1: evaluate fine, then freeze on "solve $f(x)=1$").
+  - Hook is the **downtown garage**, $C(h)=2h+4$ on $0 \le h \le 8$: \$4 to enter, \$2 an hour,
+    billed by the minute (stated, so continuity is honest). Two people ask the same sign two
+    different questions --- "what will three hours cost" ($C(3)=10$) and "I have \$16, how long can
+    I stay" ($C(6)=16$). Every read lands on a gridline (ticks $1$ in $h$, $4$ in $C$).
+  - **The garage's range starting at \$4, not \$0, is the best small idea in the lesson** — the low
+    end of a range can be a fact about the *story* (you pay before the clock starts), not about the
+    formula. Pair it with "why does the domain stop at $h=8$ when $2(9)+4=22$ computes fine?"
+  - Notes = 5 vocab terms (function notation, domain, range, interval notation, restricted domain)
+    + four boxes: the notation$\leftrightarrow$point table (4 rows, ending in the **warning that
+    the notation does not flip**, $C(3)=10 \ne C(10)=3$); domain/range off the same graph; **the
+    three-spellings table**; and what cuts a domain short. In-text blanks: *horizontal*, *vertical*,
+    *input*, *output*, *included*, *smaller*, *dots*.
+  - **Notes box 3 is the SOL-notation box and its row set comes straight from the AFDA "Understanding
+    the Standards" table on p5** (equation/inequality, set notation, interval notation, $\emptyset$).
+    Two rows are deliberately **not intervals** — the list $\{2,5\}$ and the empty set — because
+    those are the ones students skip. Four rules close it: bracket includes, parenthesis excludes,
+    **$\infty$ never takes a bracket**, and **an interval is written smaller-number-first no matter
+    which way the graph runs** (the candle case, which Tier E then assesses as an error).
+  - Notes box 4's **three reasons a domain gets cut short — the context, the graph, the algebra —
+    are worth memorizing as a list**; the third lands on 1.7's $\frac{x+1}{x-3}$, so the excluded
+    value the class already found becomes a hole in a domain. The whole-number paragraph under it
+    (a field trip cannot take $17.4$ students) is what Tier E item 2 tests.
+  - Guided practice is the **drone** $A(t)=-2t^2+16t$ on $[0,8]$ (peak $32$ ft at $t=4$; ytick $8$).
+    Its item 2 is the reasoning item of the day: $A(t)=24$ has **two** answers ($t=2$ and $t=6$),
+    which is allowed, because a function promises one output per *input* and nothing in reverse.
+    Warm-up item 4 plants this on a table first — **do not resolve it during the warm-up.**
+  - Context thread is one both-directions read per component, and every asked value lands on a
+    gridline: notes/garage $C(h)=2h+4$; practice/drone $-2t^2+16t$; activity Tier R candle
+    $L(t)=20-2t$ on $[0,10]$ ($L(6)=8$, $L(t)=4$ at $t=8$); Tier A skate bowl $H(x)=(x-6)^2/3$ on
+    $[0,12]$ ($H(3)=H(9)=3$, and $H=0$ at $x=6$ is **the one height with a single input**);
+    exit ticket pool $W(t)=2400-300t$ on $[0,8]$ ($W(2)=1800$, $W(t)=600$ at $t=6$); homework arch
+    $y=20-x^2/5$ on $[-10,10]$ ($y(\pm5)=15$).
+  - **The homework arch is the course's first graph with negative inputs** — expect the domain
+    reported as $0 \le x \le 10$ by students who read only the right half. Its item 9 (a 12-ft truck,
+    edges at $x=\pm5$, clears by 3 ft) must be justified from a value on the graph.
+  - Activity tiers R/A/E. Tier E is error critique (**flipped notation** $L(6)=8 \Rightarrow L(8)=6$,
+    and **an interval written backwards** $[20,0]$), a **dot graph** (hot dogs at \$3, at most 8) whose
+    domain and range are lists that interval notation cannot express, and a justify item refuting
+    "the bowl is not a function because one height happens twice."
+  - Homework 10 items (notation both ways, a table read both ways, interval $\leftrightarrow$
+    inequality in each direction, a three-part "what restricts this domain?", the four-part arch,
+    and the look-ahead) + an extension. **Item 10 bridges to 2.2**: tabulate $f(x)=x^2$ against
+    $g(x)=x^2+3$, watch every output rise by 3, and find the **range** moved $[0,\infty) \to
+    [3,\infty)$ while the domain did not move at all. Accept plain English; *translation* is 2.2's
+    word to introduce.
+  - Extension reuses **1.7's own booster-club $A(x)=\frac{6x+240}{x}$**, now asked as a domain
+    question: restricted **twice** (algebra forbids $x=0$; context forbids fractions and caps at
+    200), so the answer is $\{1,2,\dots,200\}$ and no interval can express it. First time students
+    meet a doubly-restricted domain.
+  - Guard sizes, all clean first pass: bare on vocab, `[12]` hook, `[30]`/`[22]`/`[26]`/`[20]` on
+    notesboxes 1--4, `[30]` practice, `[30]` on all three activity tiers, `[24]`/`[30]`/`[24]`/`[22]`
+    on the homework's boxes, `[18]` on the plan's Reinforcement box and each of the five teachernotes.
+    That is 2.0's set transferred verbatim. **No `\tcbbreak` was needed** — the sixth lesson
+    confirming it must never be authored before a build proves it necessary.
+  - **Two pagination findings, both consistent with prior rules.** (1) Notes p4 holds only the
+    practice box; lowering its guard to `[16]` was tested and still gave 4 pages, so the break is
+    natural — restored to `[30]` per 1.5's "test, then restore." (2) The homework look-ahead box at
+    `[24]` again sits alone-ish on p3 while p2 ends at ~63%; measured, the box needs ~24 baselines
+    against ~22 free, so `[24]` is correct and lowering it would strand an item — **2.0's finding
+    reproduced exactly.**
+  - **Two table-width fixes worth carrying.** A `tabularx` whose `X` column is the *last* content
+    column pushes all slack there and squeezes the words column into two-line wraps. Put `X` on the
+    **prose** column and fix the notation columns (`X p{2.6cm} p{4.0cm} p{2.2cm}` in notes box 3).
+    Same fix on the deck's notation frame (`X p{2.4cm} p{3.2cm} p{2.8cm}`), where "not an interval"
+    was hyphenating.
+  - Page counts: cover 1, warm-up 1/1, notes 4/4, activity 3/3, exit ticket 1/1, homework 3/3;
+    student and key packets 18 pages each. Plan 5 pp, slides 10 frames (4 pp printed 3-up).
 - **`unit02/lesson00` — Unit 2 opener (no new content). The course's first graph-reading lesson.**
   - Spine: **in Unit 1 you were handed an expression and asked to rewrite it; in Unit 2 you are
     handed a graph and asked what it says.** That is not a teaching preference — the AFDA
@@ -522,27 +605,30 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
 - **Confirmed while authoring 1.3:** the 1.2 guard sizes transferred verbatim to a lesson of the
   same shape (listed in the 1.3 entry above) with no re-measuring and no `\tcbbreak`. Treat that
   set as the default opening bid for an ordinary Unit 1 lesson, then tune per box.
-- **Everything else is still scaffold skeletons**: `unit02/lesson01`–`lesson07`, units 03–08 in
+- **Everything else is still scaffold skeletons**: `unit02/lesson02`–`lesson07`, units 03–08 in
   full, plus each unit's `tests/`, `test_keys/`, `sample_test/`, `sample_test_key/`.
 - **Unit 1 is the only unit with a `unit_cover/` pair or authored tests.** `finals/` has not been
   created.
 - Lessons 1.0–1.6 are merged to `main` (PR #4, commit `ca47f7e`; PR #6, commit `248c0c8`; PR #8,
   commit `6a72235`; PR #9, commit `c6b1e1d`; PR #10, commit `5c04bb1`). Lesson 1.7 is merged
   (PR #11, commit `6578d42`); the Unit 1 cover pair and the four test files are merged
-  (PR #12, commit `4ba8611`). Lesson 2.0 is on worktree branch
-  `claude/lesson-planning-generation-2-df1f67`, **not yet committed**.
+  (PR #12, commit `4ba8611`). Lesson 2.0 is merged (PR #13, commit `129173e`). Lesson 2.1 is on
+  worktree branch `claude/lesson-2-1-generation-78f4b7`, **not yet committed**.
 
 ## Next steps
 
-1. Commit / PR **Lesson 2.0** (user to confirm).
-2. Then author **Unit 2's content lessons, 2.1 → 2.7**, in order. 2.0 has already planted every
-   thread they need: 2.1 gets the excluded value and the "a context sets the domain" line, 2.2 gets
-   the three parents, 2.4 gets the five reads, 2.5 gets the asymptote preview from homework item 9,
-   and 2.7 gets the adding-vs-multiplying test.
-   **2.1 is `AFDA.AF.2a, e` — function notation, and domain and range in context.** Its first job is
-   the input/output confusion 2.0's warm-up item 1 diagnoses, and its second is set and interval
-   notation (the "Understanding the Standards" table on p4 of `12AFDAUnderstanding the Standards.pdf`
-   is the scope: equation/inequality, set notation, interval notation, and $\emptyset$).
+1. Commit / PR **Lesson 2.1** (user to confirm).
+2. Then author **Unit 2's remaining content lessons, 2.2 → 2.7**, in order. The threads are planted:
+   2.2 gets the three parents from 2.0 *and* 2.1's homework item 10 (the $x^2 \to x^2+3$ shift,
+   already described in students' own words); 2.4 gets 2.0's five reads; 2.5 gets the asymptote
+   preview from 2.0's homework item 9 and 2.1's restricted-domain box; 2.7 gets 2.0's
+   adding-vs-multiplying test.
+   **2.2 is `AFDA.AF.1a–b` — parent functions and transformations.** Its first job is naming the
+   move 2.1's homework item 10 made students describe. The notation scope is the AFDA guidance's
+   own list: $f(x)+k$, $f(x+k)$, $-f(x)$, $f(-x)$, $kf(x)$, $f(kx)$, with the $|k|>1$ / $0<|k|<1$
+   stretch-vs-compress rules stated there.
+   **Carry 2.1's domain/range language forward**: every transformation lesson should say which of
+   the domain and the range moved, since that is the cheapest check a student has.
 3. **Every Unit 2 lesson is a graph-reading lesson — pre-draw and pre-scale every axis.** 2.0's
    seven `pgfplots` figures are the model for style (`axis lines=left`, `grid=both` at
    `linegray!45`, `\scriptsize` tick/label fonts, `royal` plot, integer-friendly tick marks). The
@@ -562,6 +648,8 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
    Tell them a `teachernote` in the plan needs a guard too (1.7), that `\ans` cells holding
    fractions need `\dfrac` (1.7), and — from 2.0 — that a guard must **exceed** its box, never
    approximate it, and that **no `\tcbbreak` may be authored until a build proves it is needed**.
+   From 2.1, add the `tabularx` rule: **put the `X` column on the prose column, not on the last
+   notation column**, or all the slack lands in one place and the words wrap.
 6. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
    For every later unit, check by hand what the gate would have caught: blank/key page parity on
    both test forms, no `teachernote` in any test key, no `\ans` inside math. The Unit 1 run's two
