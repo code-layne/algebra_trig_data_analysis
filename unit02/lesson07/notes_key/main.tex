@@ -1,8 +1,9 @@
-%! Choosing and Comparing Models — Unit 2, Lesson 2.7 — Guided Notes (Answer Key)
+%! Choosing and Comparing Models in Context — Unit 2, Lesson 2.7 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,361 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item decide whether a \textbf{linear}, \textbf{quadratic}, or \textbf{exponential} function best
+        models a table, a graph, or a story --- and say which test decided it;
+  \item run the two table tests in order --- \textbf{first differences}, then \textbf{second
+        differences}, then \textbf{ratios} --- and know that they only work on \emph{equal} steps in
+        the input;
+  \item compare and contrast the three families across every representation I have: parent function,
+        table, graph, characteristics, and the story itself;
+  \item use a model to answer a question in context, \textbf{graphically} and \textbf{algebraically};
+  \item say what a model \emph{cannot} tell me --- where its answers stop being trustworthy, and why.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together. The first one is the word this whole lesson is about.
+\vocabans{Mathematical model}{a function chosen to describe a real situation. It is a
+    \emph{choice}, not a fact --- a different choice can fit the same data, and a model can be
+    wrong.}
+\vocabans{First differences}{the changes from one output to the next, when the inputs go up in equal
+    steps. Constant first differences mean the model is \textbf{linear}.}
+\vocabans{Second differences}{the changes in the first differences. Constant second differences
+    (when the first ones are not constant) mean the model is \textbf{quadratic}.}
+\vocabans{Common ratio}{the number each output is multiplied by to get the next one, when the inputs
+    go up in equal steps. A constant ratio means the model is \textbf{exponential}.}
+\vocabans{Extrapolation}{using a model to predict beyond the inputs the data actually covered. It is
+    where a wrong choice of family shows up --- and where even a right one stops being believable.}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{Two students, one table, and both of them are right about what they checked.} A school posts
+a video on Monday. Here are the views, in thousands, on each of the first four days.
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}|l|c|c|c|c|@{}}
+\hline
+Day $d$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+Views $V$ (thousands) & $3$ & $6$ & $12$ & $24$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+Student A: \textbf{``The views go up by $3$, then by $6$, then by $12$. The jumps keep getting
+bigger, and a parabola's jumps get bigger too --- so this is \emph{quadratic}.''}
+
+\smallskip
+Student B: \textbf{``Every day is double the day before --- so this is \emph{exponential}.''}
+
+\smallskip
+\textbf{Everything both students said about these numbers is true.} The jumps really do get bigger,
+and each value really is double the one before. Decide which family models the video, and say what
+Student A checked that was not enough.
+
+\ansline{Student B. The jumps $3, 6, 12$ are not growing by a constant amount --- they are \emph{doubling} --- so the}\\
+\ansline{second differences are not constant and the model is not quadratic. Growing jumps only rule out linear.}\\
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{1. Two Tests, Run in Order}
+\small
+Choosing a family is a \textbf{decision}, and you can decide wrong. When you have a table, two tests
+make the decision for you --- and you run them in a fixed order.
+
+\vspace{4pt}
+For each table below, fill the three rows: the \textbf{change} from one output to the next, the
+\textbf{change in those changes}, and the \textbf{ratio} of each output to the one before it.
+
+\vspace{6pt}
+\textbf{(a) A rideshare fare.} $F$ is the fare in dollars for a ride of $m$ miles.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|@{}}
+\hline
+$m$ (miles) & $0$ & $1$ & $2$ & $3$ \\ \hline
+$F$ (\$) & $3$ & $5$ & $7$ & $9$ \\ \hline
+First differences & --- & \ans{$+2$} & \ans{$+2$} & \ans{$+2$} \\ \hline
+Second differences & --- & --- & \ans{$0$} & \ans{$0$} \\ \hline
+Ratios & --- & \ans{$\approx 1.67$} & \ans{$1.4$} & \ans{$\approx 1.29$} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\textbf{(b) Braking distance.} $D$ is the distance in feet a car travels after the brakes are hit,
+at a speed of $v$ miles per hour. \emph{The input steps are $10$, not $1$ --- that is fine, as long
+as they are all the same.}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|@{}}
+\hline
+$v$ (mi/h) & $20$ & $30$ & $40$ & $50$ \\ \hline
+$D$ (feet) & $20$ & $45$ & $80$ & $125$ \\ \hline
+First differences & --- & \ans{$+25$} & \ans{$+35$} & \ans{$+45$} \\ \hline
+Second differences & --- & --- & \ans{$+10$} & \ans{$+10$} \\ \hline
+Ratios & --- & \ans{$2.25$} & \ans{$\approx 1.78$} & \ans{$\approx 1.56$} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\textbf{(c) A shared post.} $P$ is the number of people who have seen a post, $n$ hours after it
+went up.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|@{}}
+\hline
+$n$ (hours) & $0$ & $1$ & $2$ & $3$ \\ \hline
+$P$ (people) & $5$ & $15$ & $45$ & $135$ \\ \hline
+First differences & --- & \ans{$+10$} & \ans{$+30$} & \ans{$+90$} \\ \hline
+Second differences & --- & --- & \ans{$+20$} & \ans{$+60$} \\ \hline
+Ratios & --- & \ans{$3$} & \ans{$3$} & \ans{$3$} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\textbf{Now write the rule.} Exactly one row came out constant in each table.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}p{6.0cm} X@{}}
+\rowcolor{mist}
+\textbf{If this row is constant\dots} & \textbf{\dots the model is} \\
+\hline
+the first differences & \ans{linear --- like the rideshare fare} \\
+the second differences (but not the first) & \ans{quadratic --- like the braking distance} \\
+the ratios & \ans{exponential --- like the shared post} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{The one condition, and it is not optional.} Both tests only work when the inputs go up in
+\ans{equal} steps. If the table jumps $1, 2, 5, 10$, the differences mean nothing.
+
+\vspace{6pt}
+\textbf{Now settle the hook.} Run both tests on the video table.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|@{}}
+\hline
+Day $d$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+$V$ (thousands) & $3$ & $6$ & $12$ & $24$ \\ \hline
+First differences & --- & \ans{$+3$} & \ans{$+6$} & \ans{$+12$} \\ \hline
+Second differences & --- & --- & \ans{$+3$} & \ans{$+6$} \\ \hline
+Ratios & --- & \ans{$2$} & \ans{$2$} & \ans{$2$} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+The second differences are \ans{not constant}, so the model is \emph{not} quadratic. The ratios are all
+\ans{$2$}, so the video is modelled by an \ans{exponential} function. \textbf{Student
+\ans{B} is right.}
+
+\vspace{4pt}
+\textbf{And here is what Student A actually checked.} ``The jumps get bigger'' rules out
+\ans{linear} --- and nothing else. \emph{Every} family except that one has growing jumps, so that
+observation cannot tell quadratic from exponential. \textbf{You have to check which row is
+constant, not just which row is growing.}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{2. The Same Three Families, Five Ways}
+\small
+This is the summary sheet for the whole unit. Fill the empty cells --- everything in them you have
+already met.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{@{}p{2.9cm}|X|X|X@{}}
+\rowcolor{mist}
+& \textbf{Linear} & \textbf{Quadratic} & \textbf{Exponential} \\
+\hline
+Parent (2.2) & $f(x)=x$ & $g(x)=x^2$ & $h(x)=b^{\,x}$ \\
+\hline
+Table test & \ans{first differences} constant & \ans{second differences} constant & \ans{ratios} constant \\
+\hline
+Graph shape & \ans{a straight line --- it never turns and never bends} & one turning point, and the two sides are mirror images &
+    \ans{no turning point; it bends harder and harder at one end} \\
+\hline
+Increasing / decreasing (2.4) & one or the other, on the whole domain & one of each, meeting at the
+    turning point & one or the other, on the whole domain \\
+\hline
+Absolute max / min (2.4) & neither, unless the domain stops & exactly one, at the
+    \ans{turning point} & neither, unless the domain stops \\
+\hline
+Asymptote (2.5) & none & none & \ans{exactly one, horizontal} \\
+\hline
+End behavior (2.5) & one end runs up, the other runs down & both ends run the \emph{same} way &
+    one end runs off; the other flattens toward the asymptote \\
+\hline
+What the story says & the same \ans{amount} is added each step & something rises and then falls
+    (or falls and then rises) --- there is a turnaround & the same \ans{factor} multiplies each
+    step \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{The two rows that do the most work.} A story that says ``\emph{plus \$30 a month}'' and a
+story that says ``\emph{up $30\%$ a month}'' sound almost the same out loud and are two different
+families --- the first \ans{linear}, the second \ans{exponential}. And the fastest thing to look for on
+a graph is a \textbf{turning point}: if the graph turns around, the model is \ans{quadratic}, and if it
+never turns you still have two families left to separate.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{3. Using the Model --- and What It Cannot Tell You}
+\small
+The video is exponential, and the model that fits the table is
+\[
+  V(d) = 3 \cdot 2^{\,d}, \qquad V \text{ in thousands of views, } d \text{ in days.}
+\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.6cm,
+    xlabel={$d$ (days since the video was posted)}, ylabel={$V$ (thousands of views)},
+    xmin=0, xmax=6, ymin=0, ymax=200,
+    xtick={0,1,2,3,4,5,6}, ytick={0,25,50,75,100,125,150,175,200},
+    minor x tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:6, samples=80]{3*2^x};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(4,48) (5,96)};
+  \addplot[keyred, thick, dashed] coordinates {(0,50) (6,50)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+\textbf{Algebraically --- how many views on day $5$?} Put $5$ in for $d$:
+
+\vspace{2pt}
+\begin{work}
+  V(5) &= 3 \cdot 2^{5} \\
+       &= 3 \cdot 32 \\
+       &= 96 \text{ thousand views}
+\end{work}
+
+\vspace{2pt}
+\textbf{Graphically --- when does the video first pass $50$ thousand views?} Draw across from $50$ on
+the vertical axis until you meet the curve, then read straight down. It happens between day
+\ans{$4$} and day \ans{$5$}, because $V(4)=$ \ans{$48$} and $V(5)=$ \ans{$96$}.
+
+\vspace{6pt}
+% Unbroken, notes box 3 spilled just its last two lines onto p4 -- a stub with the
+% whole box on the page before. \boxguard is inert inside a breakable box, so
+% \tcbbreak is the lever; breaking here gives p4 a substantial chunk instead.
+% Mirrored in notes_key.
+\tcbbreak
+\textbf{Now the question that matters most.} Use the model to predict the views on day $20$:
+$3 \cdot 2^{20} = 3{,}145{,}728$ thousand, which is about \textbf{$3.1$ billion views}. That is more
+views than any video has ever had, from a school video, in three weeks.
+
+\vspace{4pt}
+\textbf{The model is not broken --- it is being used outside the days the data covers.} Reading a
+model beyond the inputs your data covered is called \ans{extrapolation}, and it is where wrong family
+choices show up. Doubling has to stop: the school runs out of \ans{people} to show the video to.
+
+\vspace{4pt}
+\textbf{Write down the sentence.} A model is a \ans{choice}, not a fact, and every model has a
+\ans{window} of inputs where it works. Say what the model predicts \emph{and} whether you believe it.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{practicebox}
+\small
+Three quantities were measured. Each one is modelled well by one of our three families.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+\textbf{(a)} $t$ (hours draining) & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+Water left (gallons) & $4000$ & $3650$ & $3300$ & $2950$ & $2600$ \\
+\hline
+\end{tabular}
+
+\smallskip
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+\textbf{(b)} $t$ (seconds after the punt) & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+Height of the ball (feet) & $0$ & $48$ & $64$ & $48$ & $0$ \\
+\hline
+\end{tabular}
+
+\smallskip
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+\textbf{(c)} $h$ (hours since the dose) & $0$ & $5$ & $10$ & $15$ & $20$ \\ \hline
+Caffeine in the blood (mg) & $160$ & $80$ & $40$ & $20$ & $10$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=6pt]
+  \item Run the tests on each measurement and fill the table. Name the family, and name the row that
+        came out constant.
+\smallskip
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}p{1.0cm}|X|X|X@{}}
+\rowcolor{mist}
+& \textbf{Which row is constant?} & \textbf{Its constant value} & \textbf{The family} \\
+\hline
+(a) & \ans{first differences} & \ans{$-350$ gal/hour} & \ans{linear} \\
+(b) & \ans{second differences} & \ans{$-32$ ft} & \ans{quadratic} \\
+(c) & \ans{ratios} & \ans{$0.5$ every $5$ h} & \ans{exponential} \\
+\end{tabularx}
+
+  \item Use (b). Give the maximum height of the punt and the time it happens, then give the two
+        zeros and say what each one means about the football.
+
+\ansline{Maximum height $64$ feet, at $t=2$ seconds --- the turning point, with the two sides mirroring each other.}\\
+\ansline{Zeros at $t=0$ and $t=4$ seconds. The zero at $t=0$ is the instant the ball is punted, and the zero}\\
+\ansline{at $t=4$ is the instant it hits the ground --- the two times the ball's height is $0$.}\\
+
+  \item Use (c). The dose halves every $5$ hours, so the model is $C(h) = 160 \cdot (0.5)^{h/5}$
+        milligrams. How much caffeine is left after $25$ hours? Does this model ever say the caffeine
+        reaches \emph{exactly} zero? Answer with a Lesson 2.5 word.
+
+\ansline{$25$ hours is five half-lives, so $C(25) = 160 \cdot (0.5)^5 = 160 \div 32 = 5$ milligrams.}\\
+\ansline{No. Half of a positive number is still positive, so the amount never reaches $0$ --- it only gets}\\
+\ansline{closer and closer. The line $C=0$ is a \textbf{horizontal asymptote}: approaching is not arriving.}\\
+
+  \item Both (a) and (c) go \emph{down}. Suppose you had only the first two readings of each. Could
+        you tell the two families apart? Say what the smallest amount of extra information would be
+        that settles it, and what you would check.
+
+\ansline{No --- any two points fit both a linear model and an exponential one, so two readings can never decide.}\\
+\ansline{One more reading, at the same equal step, settles it: subtract to get the second difference and divide}\\
+\ansline{to get the second ratio. Constant difference means linear; constant ratio means exponential.}\\
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

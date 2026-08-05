@@ -1,8 +1,9 @@
-%! Choosing and Comparing Models — Unit 2, Lesson 2.7 — Warm-Up (Answer Key)
+%! Choosing and Comparing Models in Context — Unit 2, Lesson 2.7 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
@@ -12,9 +13,69 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Adding, Multiplying, and Three Families}
+\small
+Five quick items. Items 2 and 3 are the two tests the whole lesson runs on --- do them carefully.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+
+\item \textbf{Last night's item 10.} You picked a function family for four stories. Do two of them
+again: (a) a gym charges \$50 to join plus \$30 a month; (b) a colony of bacteria doubles every hour.
+Name the family for each, and the characteristic of the graph that gives it away.
+
+\ansline{(a) \textbf{Linear} --- the same \$30 is added every month, so the rate of change never changes and the graph is a straight line.}\\
+\ansline{(b) \textbf{Exponential} --- the count is \emph{multiplied} by $2$ every hour, so the graph curves upward faster and faster and never turns around.}\\
+
+\item \textbf{The adding test} (Lesson 2.0). Fill the bottom row with the change from one output to
+the next. Then say whether the rate of change is constant.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$x$ & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+$y$ & $7$ & $11$ & $15$ & $19$ & $23$ \\ \hline
+Change in $y$ & --- & \ans{$+4$} & \ans{$+4$} & \ans{$+4$} & \ans{$+4$} \\
+\hline
+\end{tabular}
+
+\ansline{Yes --- the same $4$ is added every step, so the rate of change is constant.}\\
+
+\item \textbf{The multiplying test} (Lesson 2.0). Fill the bottom row by dividing each output by the
+one before it. Then say whether that ratio is constant.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|@{}}
+\hline
+$n$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+$P$ & $5$ & $15$ & $45$ & $135$ \\ \hline
+Ratio to previous & --- & \ans{$3$} & \ans{$3$} & \ans{$3$} \\
+\hline
+\end{tabular}
+
+\ansline{Yes --- every output is $3$ times the one before it, so the ratio is constant.}\\
+
+\item \textbf{Parent functions} (Lesson 2.2). Match each parent to its shape. Write the letter.
+\smallskip
+
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{2.6cm} X p{1.6cm}@{}}
+\rowcolor{mist}
+\textbf{Parent} & \textbf{Shape} & \textbf{Match} \\
+\hline
+$f(x)=x$ & (A) a curve that never turns around, and flattens out toward one end &
+    \ans{(B)} \\
+$g(x)=x^2$ & (B) a straight line, with no turn and no flattening & \ans{(C)} \\
+$h(x)=2^x$ & (C) a U-shaped curve with exactly one turning point & \ans{(A)} \\
+\end{tabularx}
+
+\item \textbf{Asymptotes} (Lesson 2.5). Which \emph{one} of the three parents above has a horizontal
+asymptote? Give the equation of that asymptote.
+
+\ansline{Only $h(x)=2^x$. Its horizontal asymptote is the line $y=0$ --- the outputs get closer and closer to $0$ on the left and never reach it.}\\
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

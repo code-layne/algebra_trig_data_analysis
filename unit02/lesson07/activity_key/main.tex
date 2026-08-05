@@ -1,8 +1,9 @@
-%! Choosing and Comparing Models — Unit 2, Lesson 2.7 — Group Activity (Answer Key)
+%! Choosing and Comparing Models in Context — Unit 2, Lesson 2.7 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,303 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+\textbf{The rule for the whole activity: never name a family without naming the test.} ``Linear,
+because the first differences are all $+4$'' is an answer. ``Linear, because it looks straight'' is a
+guess. When the evidence is a graph instead of a table, the test is the \textbf{feature} --- a
+turning point, a straight edge, a flattening end. \textbf{Everyone starts at Tier R.} When your whole
+group can do Tier R without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Two patches of duckweed are measured on the same pond every week. Both are given in square meters.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}|l|c|c|c|c|c|c|@{}}
+\hline
+Week $w$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline
+\textbf{Patch A} (m$^2$) & $6$ & $10$ & $14$ & $18$ & $22$ & $26$ \\ \hline
+First differences & --- & \ans{$+4$} & \ans{$+4$} & \ans{$+4$} & \ans{$+4$} &
+    \ans{$+4$} \\ \hline
+Ratios & --- & \ans{$1.67$} & \ans{$1.4$} & \ans{$1.29$} & \ans{$1.22$} & \ans{$1.18$} \\
+\hline
+\end{tabular}
+
+\smallskip
+\begin{tabular}{@{}|l|c|c|c|c|c|c|@{}}
+\hline
+Week $w$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline
+\textbf{Patch B} (m$^2$) & $2$ & $6$ & $18$ & $54$ & $162$ & $486$ \\ \hline
+First differences & --- & \ans{$+4$} & \ans{$+12$} & \ans{$+36$} & \ans{$+108$} &
+    \ans{$+324$} \\ \hline
+Ratios & --- & \ans{$3$} & \ans{$3$} & \ans{$3$} & \ans{$3$} & \ans{$3$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Name the family for each patch, and say which row of its table decided it.
+
+\ansline{Patch A is \textbf{linear} --- its first differences are all $+4$, and its ratios are not constant.}\\
+\ansline{Patch B is \textbf{exponential} --- its ratios are all $3$, and its first differences are not constant.}\\
+
+  \item Say in plain English what each patch is doing week to week. One of them \emph{adds} the same
+        thing each week; the other \emph{multiplies} by the same thing.
+
+\ansline{Patch A \textbf{adds} $4$ square meters every week, no matter how big it already is.}\\
+\ansline{Patch B \textbf{triples} every week --- it multiplies by $3$, so the bigger it gets the faster it grows.}\\
+
+  \item Patch A is the bigger patch in week $0$ and in week $1$. In which week does Patch B pass it?
+        How much bigger is B in week $5$? Then predict both patches in week $8$.
+
+\ansline{Patch B passes Patch A in \textbf{week 2} ($18$ m$^2$ against $14$ m$^2$).}\\
+\ansline{In week $5$, B is $486-26 = 460$ m$^2$ bigger --- almost $19$ times the size of A.}\\
+\ansline{Week $8$: A is $6+4(8)=38$ m$^2$; B is $2 \cdot 3^8 = 13{,}122$ m$^2$. Multiplying always wins eventually.}\\
+
+  \item Match each patch to its graph below, and name the feature of the graph that gives it away.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.6cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.8cm, height=3.8cm, title={\scriptsize (i)},
+    xlabel={$w$ (weeks)}, ylabel={area (m$^2$)},
+    xmin=0, xmax=5, ymin=0, ymax=500,
+    xtick={0,1,2,3,4,5}, ytick={0,100,200,300,400,500},
+    grid=both, grid style={linegray!45},
+    axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+  \addplot[royal, very thick, domain=0:5, samples=60]{2*3^x};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.8cm, height=3.8cm, title={\scriptsize (ii)},
+    xlabel={$w$ (weeks)}, ylabel={area (m$^2$)},
+    xmin=0, xmax=5, ymin=0, ymax=30,
+    xtick={0,1,2,3,4,5}, ytick={0,5,10,15,20,25,30},
+    grid=both, grid style={linegray!45},
+    axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+  \addplot[royal, very thick] coordinates {(0,6) (5,26)};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\ansline{Patch B is graph (i): it bends upward more and more steeply and never turns around --- exponential.}\\
+\ansline{Patch A is graph (ii): a perfectly straight edge, so the rate of change never changes --- linear.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Three graphs, three stories. Every answer here is read off a picture.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.3cm}}c@{\hspace{0.3cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=4.6cm, height=3.6cm, title={\scriptsize (a)},
+    xlabel={$m$}, ylabel={$F$ (\$)},
+    xmin=0, xmax=10, ymin=0, ymax=25,
+    xtick={0,2,4,6,8,10}, ytick={0,5,10,15,20,25}, minor x tick num=1, minor y tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+  \addplot[royal, very thick] coordinates {(0,3) (10,23)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(7,17)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=4.6cm, height=3.6cm, title={\scriptsize (b)},
+    xlabel={$t$ (s)}, ylabel={height (ft)},
+    xmin=0, xmax=4, ymin=0, ymax=70,
+    xtick={0,1,2,3,4}, ytick={0,16,32,48,64}, minor x tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+  \addplot[royal, very thick, domain=0:4, samples=60]{64*x-16*x^2};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(2,64)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=4.6cm, height=3.6cm, title={\scriptsize (c)},
+    xlabel={$t$ (h)}, ylabel={temp ($^\circ$C)},
+    xmin=0, xmax=8, ymin=0, ymax=90,
+    xtick={0,2,4,6,8}, ytick={0,20,40,60,80}, minor x tick num=1, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+  \addplot[royal, very thick, domain=0:8, samples=80]{20+64*0.5^x};
+  \addplot[keyred, thick, dashed] coordinates {(0,20) (8,20)};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item Match each graph to its story, then name the \emph{feature of the graph} that gives the
+        family away --- not just ``it looks like it.''
+        \begin{enumerate}[label=(\roman*), leftmargin=1.6em, itemsep=2pt, topsep=3pt]
+          \item A rideshare charges a fixed pickup fee plus a fixed amount per mile.
+          \item A football is punted: it rises, turns over, and comes back down.
+          \item A cup of coffee is left on a desk and cools toward room temperature.
+        \end{enumerate}
+
+\ansline{(i) $\to$ graph (a), \textbf{linear}: a straight edge, so the same amount is added per mile. The $y$-intercept \$3 is the pickup fee.}\\
+\ansline{(ii) $\to$ graph (b), \textbf{quadratic}: exactly one turning point, with the two sides mirroring each other.}\\
+\ansline{(iii) $\to$ graph (c), \textbf{exponential}: no turning point, and it flattens toward a horizontal line it never reaches.}\\
+
+  \item \textbf{Graph (a), used two ways.} A rider was charged \$17. Read off the graph how many
+        miles that was. Then check it algebraically: the fare rule is $F(m)=3+2m$, so solve
+        $3+2m=17$.
+
+\begin{work}
+  3 + 2m &= 17 \\
+      2m &= 14 \\
+       m &= 7 \text{ miles}
+\end{work}
+
+  \item \textbf{Graph (b).} Give the maximum height and the time it happens, then say when the ball
+        lands. Then answer this: the model is $h(t)=64t-16t^2$, and $h(10)=-960$. Explain in one
+        sentence why that is \emph{not} a mistake in the algebra.
+
+\ansline{Maximum height $64$ feet at $t=2$ seconds; the ball lands at $t=4$ seconds, the second zero.}\\
+\ansline{The algebra is fine --- the \emph{model} stopped applying at $t=4$, when the ball hit the ground.}\\
+\ansline{Asking it about $t=10$ is extrapolating past the domain the situation allows, and $-960$ feet is the warning.}\\
+
+  \item \textbf{Graph (c).} The coffee cools fast at first, then slower and slower. What temperature
+        does it approach and never reach? Give the \emph{equation} of that line, and say what it is
+        physically.
+
+\ansline{It approaches $20^\circ$C and never reaches it. The horizontal asymptote is the line $C=20$.}\\
+\ansline{Physically that line is \textbf{room temperature} --- coffee can cool down to the room, but no further.}\\
+
+% Unguarded, item 5's stem sat at the foot of p2 with the figure it describes
+% opening p3. \boxguard is inert inside a breakable tcolorbox, so \tcbbreak is
+% the only lever. Mirrored in the other file.
+\tcbbreak
+  \item \textbf{The stretch --- two points are never enough.} A biologist counts $4$ cells on day
+        $0$ and $8$ cells on day $1$. Both models below go exactly through those two points.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=8.0cm, height=3.6cm,
+    xlabel={$x$ (days)}, ylabel={cells},
+    xmin=0, xmax=3, ymin=0, ymax=36,
+    xtick={0,1,2,3}, ytick={0,4,8,12,16,20,24,28,32,36}, minor x tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+  \addplot[royal, very thick] coordinates {(0,4) (3,16)};
+  \addplot[goldacc, very thick, domain=0:3, samples=60]{4*2^x};
+  \addplot[royal, only marks, mark=*, mark size=2pt] coordinates {(0,4) (1,8)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(2,12) (2,16)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Say which curve is the linear model and which is the exponential one. Then: what \emph{one} extra
+measurement would settle which model is right, and what does each model predict for it?
+
+\ansline{The straight blue segment is the linear model $4+4x$; the gold curve bending upward is the exponential $4 \cdot 2^{x}$.}\\
+\ansline{Count the cells on \textbf{day 2}. The linear model predicts $4+4(2)=12$ cells; the exponential predicts $4 \cdot 2^2 = 16$.}\\
+\ansline{One reading separates two families that agreed perfectly on every day before it. Two points can never decide.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{A claim to knock down.} A classmate writes: \emph{``The data curves upward instead of
+        going straight, so the model has to be exponential.''} Name a graph from today that curves
+        upward and is \textbf{not} exponential, and say what the classmate would have to check
+        instead.
+
+\ansline{The braking-distance graph in the notes curves upward and is \textbf{quadratic} --- so does the left half of any parabola.}\\
+\ansline{``Curves upward'' only rules out linear. To finish, check whether the \emph{second differences} or the \emph{ratios} are constant.}\\
+
+  \item \textbf{Two errors in one prediction.} A shop's sales, in units, for the first four months:
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}|l|c|c|c|c|@{}}
+\hline
+Month $m$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+Sales & $100$ & $200$ & $400$ & $800$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The manager looks at months $0$ and $1$, says ``sales go up by $100$ a month,'' and predicts
+$100+100(12)=1300$ units in month $12$. \textbf{There are two separate errors here.} Name both, and
+say what the exponential model predicts for month $12$ instead. Then say why \emph{that} number
+should not be trusted either.
+
+\ansline{\textbf{Error 1 --- the wrong family.} The manager used only two points. All four ratios are $2$, so the model is exponential, not linear.}\\
+\ansline{\textbf{Error 2 --- extrapolating.} Month $12$ is nine months past the last month of data, whichever family is right.}\\
+\ansline{The exponential model gives $100 \cdot 2^{12} = 409{,}600$ units in month $12$.}\\
+\ansline{No shop grows like that for a year --- it runs out of customers, stock, or staff. Doubling always stops; the data just does not say when.}\\
+
+% Unbroken, Tier E overran p3 by a single write-line and its closing rule, so p4
+% held nothing but that one line -- the worst stub in the lesson. Breaking before
+% item 3 gives p4 the whole coffee item instead. Mirrored in the other file.
+\tcbbreak
+  \item \textbf{The coffee, done properly.} Here are the actual readings for graph (c). Room
+        temperature is $20^\circ$C.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}|l|c|c|c|c|c|c|c|@{}}
+\hline
+$t$ (hours) & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ \hline
+$C$ (temperature, $^\circ$C) & $84$ & $52$ & $36$ & $28$ & $24$ & $22$ & $21$ \\ \hline
+Ratios of $C$ & --- & \ans{$.62$} & \ans{$.69$} & \ans{$.78$} & \ans{$.86$} &
+    \ans{$.92$} & \ans{$.95$} \\ \hline
+Gap above $20^\circ$ & \ans{$64$} & \ans{$32$} & \ans{$16$} & \ans{$8$} &
+    \ans{$4$} & \ans{$2$} & \ans{$1$} \\ \hline
+Ratios of the gap & --- & \ans{$.5$} & \ans{$.5$} & \ans{$.5$} & \ans{$.5$} &
+    \ans{$.5$} & \ans{$.5$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=4pt]
+  \item The ratios of $C$ are not constant --- so is the ratio test telling you the coffee is
+        \emph{not} exponential? Look at the last row before you answer.
+
+\ansline{No. The \emph{gap above room temperature} halves every hour --- that ratio is exactly $0.5$ every time.}\\
+\ansline{The coffee is still exponential; what is decaying is the gap, not the temperature reading itself.}\\
+
+  \item The gap between the coffee and the room is what halves. Write down what transformation
+        (Lesson 2.2) turns the parent exponential into this graph, and give the equation of the
+        horizontal asymptote.
+
+\ansline{$C(t) = 20 + 64(0.5)^t$: a vertical stretch by $64$ and a \textbf{vertical translation up $20$} of the parent $(0.5)^t$.}\\
+\ansline{The translation carries the asymptote up with it, so the asymptote is $C=20$ instead of $C=0$ --- room temperature.}\\
+\end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

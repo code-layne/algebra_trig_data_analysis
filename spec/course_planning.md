@@ -5,17 +5,27 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-05** — Authored **Unit 2 Lesson 2.6 (Piecewise-Defined Functions, `AFDA.AF.2`, esp.
+**2026-08-05** — Authored **Unit 2 Lesson 2.7 (Choosing and Comparing Models in Context,
+`AFDA.AF.1c, e, g`; `AFDA.AF.2h`)** in full — plan, cover, warm-up, guided notes, activity, exit
+ticket, homework, all five keys, and the deck. **This closes Unit 2 as lessons.** It is the unit's
+only lesson whose content is a *decision procedure* rather than a reading skill: the family is chosen
+by how the outputs **change**, not by what the graph looks like. `make -C unit02/lesson07 all` and
+`check` both pass; every numeric claim in both blank and key was verified in pure Python first. The
+boxguard eyeball pass found **four real violations invisible to the gate** — one of them the worst
+stub the course has produced (an activity page 4 holding a single write-line) — plus **two
+table defects on the projected deck** (`flat-tens`, `ver-tex` hyphenated mid-word). **16 of 59
+lessons authored.**
+
+*Previous run (same day): authored **Unit 2 Lesson 2.6 (Piecewise-Defined Functions, `AFDA.AF.2`, esp.
 `AF.2h`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework, all five
 keys, and the deck. This is the unit's **synthesis lesson**: the whole `AF.2` checklist run once more
 on a graph that takes more than one rule. `make -C unit02/lesson06 all` and `check` both pass; every
 numeric claim in both blank and key was verified in pure Python first. The boxguard eyeball pass
 found **one real violation invisible to the gate** (homework item 4's stem and figure at the foot of
 p1 with its question and all four answer lines opening p2) plus **the first slide-deck defect in the
-course that no log reports** (two text lines overprinting under a `\[...\]` display). **15 of 59
-lessons authored.**
+course that no log reports** (two text lines overprinting under a `\[...\]` display).*
 
-*Previous run (same day): authored **Unit 2 Lesson 2.5 (End Behavior and Asymptotes,
+*Earlier run (same day): authored **Unit 2 Lesson 2.5 (End Behavior and Asymptotes,
 `AFDA.AF.2f–g`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework, all
 five keys, and the deck. This is the lesson where **five lessons' worth of plants get harvested at
 once** (2.0's rational table, 2.1's excluded value, 2.2's $(0,\infty)$ range, 2.3's asymptote
@@ -80,9 +90,98 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (15 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`,
-  `unit02/lesson01`, `unit02/lesson02`, `unit02/lesson03`, `unit02/lesson04`, `unit02/lesson05`, and
-  `unit02/lesson06`.** Every component written, built, and gated.
+- **Authored (16 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete) and
+  `unit02/lesson00`–`unit02/lesson07` (Unit 2 complete as lessons).** Every component written, built,
+  and gated. **Unit 2 still needs its summative layer** — `unit_cover/` + `unit_cover_key/` and the
+  four files in `tests/` and `test_keys/`, all still scaffold skeletons.
+- **`unit02/lesson07` — Choosing and Comparing Models in Context (`AFDA.AF.1c, e, g`;
+  `AFDA.AF.2h`).** Unit 2's **closing lesson**, and the only one whose content is a *decision
+  procedure* rather than a reading skill.
+  - Spine: **the family is chosen by how the outputs \emph{change}, not by what the graph looks
+    like.** The second sentence is **``it curves upward'' rules out linear and nothing else** — that
+    single confusion is the hook, the exit ticket's item 3, Tier E item 1, and homework item 3. The
+    habit installed is 2.6's ``which piece owns this input?'' generalized: **which family owns this
+    situation, and what would have to be true for a different one to fit?**
+  - **The hook is a new \emph{mechanism} for the seventh lesson running, and it is about evidence.**
+    A school video runs $3, 6, 12, 24$ thousand views over days $0$–$3$. Student A: the jumps are
+    $3, 6, 12$, they keep growing, a parabola's jumps grow too, so quadratic. Student B: each day
+    doubles, so exponential. **Everything both said about the numbers is literally true** — and A
+    checked something that is not \emph{enough}. Resolve on notes box 1 after all three tables are
+    filled, never earlier. 2.6's hook turned on \emph{where a rule lives}; this one turns on
+    \emph{what counts as evidence}.
+  - **The plants from 2.0/2.2/2.6 all land.** 2.0's adding-vs-multiplying test (restated in 2.2's
+    notes box 1) is the ratio test with the vocabulary withheld; 2.6's homework item 10 — the four
+    stories, and *which two could be confused from part of the graph* — is the warm-up's item 1 and
+    the whole lesson in miniature; 2.5's coffee returns twice (Tier A graph (c), and Tier E item 3).
+  - Notes = 5 vocab terms (mathematical model, first differences, second differences, common ratio,
+    extrapolation) + three boxes + practice. **`mathematical model` is the SOL's own phrase**
+    (`AFDA.DA.1d`), which is what licenses the extrapolation caution inside AFDA scope; the term is
+    *not* in the AFDA guidance, so it is taught plainly and never assessed for its own sake.
+  - **Box 1 is three tables filled before anyone says a family name.** (a) rideshare fare
+    $3,5,7,9$; (b) braking distance $20,45,80,125$ at $v=20,30,40,50$; (c) a shared post
+    $5,15,45,135$. Each gets a first-difference, second-difference, \emph{and} ratio row, so the
+    pattern — exactly one row constant per table, every other row not — is only visible with all
+    three on the page. **If you let the class classify (a) as soon as it is filled, the pattern is
+    lost.** (b) deliberately steps by $10$: **equal steps, not unit steps**, is the condition that
+    gets skipped.
+  - **Box 2 is the unit's summary sheet** (`AF.1g` + `AF.2h`): parent, table test, graph shape,
+    inc/dec, max/min, asymptote, end behavior, and what the story says, across all three families.
+    Every cell is 2.2, 2.4, or 2.5, so it fills fast. Tell students to keep it for the unit test.
+  - **Box 3 is `AF.1e` done explicitly both ways** — $V(5)=96$ algebraically, the $50$-thousand
+    crossing graphically — with the instruction to *name which method you are using*, because
+    students do not notice they have done two different things. It closes on $V(20) \approx 3.1$
+    billion views: **the model is not wrong, it is being read outside its window.**
+  - **Two ideas that generate the most argument, both worth the time.** (1) *Two points are never
+    enough* — Tier A item 5 draws a line and an exponential through $(0,4)$ and $(1,8)$; groups will
+    try to pick a model, and the item has no model-picking answer, only a \emph{measurement} answer
+    (count day 2: $12$ vs $16$). (2) *Three points never rule out a quadratic* — the homework
+    extension gives a tree at $3, 6, 12$ feet with $Q(x)=1.5x^2+1.5x+3$ and $E(x)=3\cdot2^x$ fitting
+    **all three exactly**, differing by $3$ feet at year $3$ and $2{,}904$ feet at year $10$.
+  - **Tier E item 3 is the sharpest item in the lesson and the honest answer to ``why does the ratio
+    test fail on real data.''** 2.5's coffee runs $84, 52, 36, 28, 24, 22, 21$; its ratios are
+    $0.62, 0.69, 0.78, \dots$ — not constant. Subtract room temperature and the **gap** is
+    $64, 32, 16, 8, 4, 2, 1$, ratio exactly $0.5$. Still exponential: a vertical translation up $20$
+    (2.2) that carries the asymptote with it (2.5), and the asymptote *is* room temperature.
+  - **Homework items 6–9 are the argument for the lesson.** Two \$24{,}000 trucks: L written down by
+    a fixed \$3{,}000/yr (linear), E by a fixed $20\%$/yr (exponential). L is worth more in years
+    $1$–$5$, they cross between years $5$ and $6$, and at year $8$ L's model says **\$0** — false of
+    any truck that runs — while E approaches \$0 and never arrives. **Item 9's buyer has the numbers
+    right and the \emph{question} wrong:** ``holds its value better'' has no answer until a time
+    horizon is named. Grade on whether one is named.
+  - Exit ticket = a gym at $64, 96, 144, 216, 324$ (ratio $1.5$). **Items 1 and 3 are built on the
+    same observation on purpose**, the 2.4/2.5/2.6 pattern used a fourth time: noticing the growing
+    jumps is *correct* in item 1 and the *wrong conclusion* in item 3. Item 2 predicts months $5$ and
+    $6$ ($486$, $729$) against a building licensed for $500$.
+  - Guard sizes: bare on vocab, `[12]` hook, `[30]`$\times$3 on the notesboxes, `[30]` practice,
+    `[30]` on all three activity tiers, `[24]`/`[30]`/`[24]`/`[26]` on the homework's boxes, `[18]`
+    on the plan's five teachernotes, `[16]` on the plan's Individual Work box, bare on the plan's
+    Lesson, Explicit Instruction and Group Work boxes. **2.4's set has now transferred verbatim for
+    the fourth lesson running, clean on the plan first pass.**
+  - **Boxguard findings — four real violations, and the worst stub the course has produced.**
+    (1) **Activity p4 held a single write-line** and nothing else: Tier E overran p3 by one line plus
+    the box's closing rule. `\tcbbreak` before Tier E item 3 gives p4 the whole coffee item instead.
+    (2) Tier A item 5's stem sat at the foot of p2 with its figure opening p3 — the 2.4/2.5/2.6
+    defect class again, fixed with `\tcbbreak`. (3) Homework item 4's stem sat alone at the foot of
+    p1 with its whole table on p2 — `\tcbbreak`. (4) Notes box 3 spilled **just its last two lines**
+    onto p4; `\tcbbreak` before the day-$20$ paragraph moved a substantial chunk instead. All four
+    were invisible to `make check` (each stranded identically in the key, so parity was perfect).
+    **The rule this run confirms: a nearly blank page is a boxguard violation, not a page count.**
+  - **Key-length finding, and the first time `\ansline` \emph{width} cost a page.** The homework key
+    first came out 5 pages against a 4-page blank with **every `\writelines{n}` correctly matched by
+    $n$ `\ansline`s** — thirteen of them simply wrapped to two printed lines. Diagnose it by grepping
+    `pdftotext -layout` output for answer lines with **no dotted trail** (a wrapped `\ansline` puts
+    the trail only on its last line). Two `\ans` table cells were also wider than their `\blank`
+    counterparts. The fix is three-part and worth reusing: **trim the long `\ansline`s to one printed
+    line, widen the column an `\ans` cell overflows** (in the blank too), and **shorten shared prose
+    such as the `remindbox`**, which shrinks the key without costing the blank a page.
+  - **Deck defect no check can see, the second in the course.** The comparison-table frame hyphenated
+    two cells mid-word (`flat-tens`, `ver-tex`) at projection size. Widening the label column and
+    rewording fixed it. `grep Overfull` on the deck log returns **zero** — as it did for 2.6's
+    overprint. **Always look at the deck.**
+  - Page counts: cover 1, warm-up 1/1, notes 4/4, activity 4/4, exit ticket 1/1, homework 4/4;
+    student and key packets **18 pages each**. Plan 6 pp, slides 11 frames (4 pp printed 3-up). No
+    overfull box anywhere beyond the structural page banner (6.0pt) and the cover's name row
+    (10.77pt), and **none at all in the deck**.
 - **`unit02/lesson06` — Piecewise-Defined Functions (`AFDA.AF.2`, esp. `AF.2h`).** The unit's
   **synthesis lesson**: no new characteristic is introduced, the whole `AF.2` checklist is simply run
   once more on a graph that takes more than one rule.
@@ -1152,41 +1251,38 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
 - **Confirmed while authoring 1.3:** the 1.2 guard sizes transferred verbatim to a lesson of the
   same shape (listed in the 1.3 entry above) with no re-measuring and no `\tcbbreak`. Treat that
   set as the default opening bid for an ordinary Unit 1 lesson, then tune per box.
-- **Everything else is still scaffold skeletons**: `unit02/lesson03`–`lesson07`, units 03–08 in
-  full, plus each unit's `tests/`, `test_keys/`, `sample_test/`, `sample_test_key/`.
+- **Everything else is still scaffold skeletons**: units 03–08 in full, plus every unit's `tests/`,
+  `test_keys/`, `sample_test/`, `sample_test_key/` (Unit 1's excepted) and Unit 2's `unit_cover`
+  pair.
 - **Unit 1 is the only unit with a `unit_cover/` pair or authored tests.** `finals/` has not been
   created.
 - Lessons 1.0–1.6 are merged to `main` (PR #4, commit `ca47f7e`; PR #6, commit `248c0c8`; PR #8,
   commit `6a72235`; PR #9, commit `c6b1e1d`; PR #10, commit `5c04bb1`). Lesson 1.7 is merged
   (PR #11, commit `6578d42`); the Unit 1 cover pair and the four test files are merged
-  (PR #12, commit `4ba8611`). Lesson 2.0 is merged (PR #13, commit `129173e`); Lesson 2.1 is
-  merged (commit `dec3b9b`). Lesson 2.2 is on worktree branch
-  `claude/lesson-2-2-generation-1331c7`, **not yet committed**.
+  (PR #12, commit `4ba8611`). Lessons 2.0–2.6 are merged to `main` (2.6 via PR #19, commit
+  `535a5c3`). **Lesson 2.7 is on worktree branch `claude/lesson-planning-2-7-00ca0b`, built and
+  gated, not yet committed.**
 
 ## Next steps
 
-1. Commit / PR **Lesson 2.6** (user to confirm). Lesson 2.5 is already merged to `main`.
-2. Then author **Unit 2's last content lesson, 2.7 — Choosing and Comparing Models in Context**
-   (`AFDA.AF.1c, e, g`; `AFDA.AF.2h`), which closes the unit. Its plants are already down:
-   **2.6's homework item 10** is the whole lesson in miniature (four stories, one family each, plus
-   *which two could be confused if you only saw part of the graph* — the gym and the tiered tax,
-   because below the boundary the tax graph *is* a straight line), and **2.0's adding-vs-multiplying
-   test**, restated in 2.2's notes box 1 and assessed in 2.2's homework item 2, is the tool that
-   separates linear from exponential off a table. 2.7 opens by naming what 2.6's item 10 produced —
-   the sixth consecutive lesson using the move (2.2 named 2.1's translation, 2.3 named 2.2's
-   parentheses, 2.4 named 2.3's extremes, 2.5 named 2.4's "gets closer and never arrives", 2.6 named
-   2.5's "two rules on two stretches").
-   **Three habits must carry into 2.7:** 2.4's axis discipline; **2.5's rule that an asymptote is a
-   line and gets an equation**; and 2.6's **"which piece owns this input?"**, which generalizes in 2.7
-   to *which family owns this situation, and what would have to be true for a different one to fit?*
-   2.6's exit-ticket pile 3 (the students who agreed a corner was a break) is the **Tier R roster** —
-   choosing a model starts with reading a graph's shape correctly in the first place.
-   `AF.2h` is deliberately cited by **both** 2.6 and 2.7: 2.6 *describes* the characteristics of a
-   piecewise graph, 2.7 *relates* them across families.
-3. After 2.7, **Unit 2 is complete as lessons** and the remaining work is its summative layer —
-   `unit02/unit_cover/` + `unit_cover_key/` and the four assessments in `unit02/tests/` and
-   `unit02/test_keys/` (scaffolded, still skeletons). Copy the shape from Unit 1 rather than
-   re-deriving it; see item 6 below.
+1. Commit / PR **Lesson 2.7** (user to confirm). Lessons 2.5 and 2.6 are already merged to `main`.
+2. **Unit 2 is now complete as lessons (2.0–2.7).** The remaining Unit 2 work is its **summative
+   layer**, all four dirs scaffolded and still skeletons:
+   `unit02/unit_cover/` + `unit_cover_key/`, and `unit02/tests/{practice_test,actual_test}` +
+   `unit02/test_keys/{practice_test_key,actual_test_key}`. Copy the shape from Unit 1 rather than
+   re-deriving it; see item 5 below. **Part C's one-item-per-lesson spine maps cleanly onto this
+   unit:** 2.1 domain/range in interval notation, 2.2 name the transformation, 2.3 equation$\to$graph
+   and back, 2.4 intercepts/zeros/extrema off a graph, 2.5 end behavior and an asymptote's
+   \emph{equation}, 2.6 a piecewise read with a boundary point, 2.7 classify a table and justify with
+   the row that came out constant. **Part D should be 2.7-flavoured** — choose a model from a
+   representation and defend the choice — since that is the unit's only justify-first standard.
+3. After Unit 2's summative layer, author **Unit 3 — Exponential and Logarithmic Functions**, opening
+   with **Lesson 3.0 (unit opener: growth stories; diagnostic)**. 2.7's plants are already down for
+   it: the **common ratio** is named and drilled, the **horizontal asymptote at $y=0$** has now
+   decided a real question twice (the truck at year 8, the decay stories in homework item 10), and
+   homework item 10 is a growth-or-decay-plus-multiplier table that is literally 3.1's warm-up.
+   **The multiplier confusion to fix on day one of Unit 3** — flagged in 2.7's homework note — is
+   students writing "$10\%$" where the model needs "$1.10$".
 4. **Every Unit 2 lesson is a graph-reading lesson — pre-draw and pre-scale every axis.** 2.0's
    seven `pgfplots` figures are the model for style (`axis lines=left`, `grid=both` at
    `linegray!45`, `\scriptsize` tick/label fonts, `royal` plot, integer-friendly tick marks).
@@ -1202,7 +1298,7 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
    Part C's one-item-per-lesson spine, `work`-blocks-not-`\vspace` for parity, `\workrowsep` at
    8pt as the opening bid, `\parthead` carrying `\boxguard[9]`, and the rationale on
    `unit_cover_key` page 2.
-6. The model now holds across fifteen lessons. If the parallel-dispatch pattern is used from here on
+6. The model now holds across sixteen lessons. If the parallel-dispatch pattern is used from here on
    (coordinator scaffolds, one subagent per lesson, coordinator builds and gates), give each agent
    the boxguard tuning rule, the 1.2–1.7 guard sizes above, 1.5's "test the guard, then restore it"
    finding, **and 1.6's and 1.7's finding that `make check` passes on a stranded stub** — guard
@@ -1241,13 +1337,25 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
    family as 2.4's item 4 and 2.5's item 8, and `\tcbbreak` fixed it free); and **when a guard change
    produces no change at all, the break is natural and the guard is not the lever** — measure the
    box's first unbreakable chunk against the page's free space before touching the number, which is
-   2.4's rule in its sharpest form.
-6. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
+   2.4's rule in its sharpest form. **From 2.7, add three, and the first is the most general finding
+   of the unit:** (a) **a nearly blank page is a boxguard violation** — 2.7's activity p4 held one
+   write-line and nothing else because Tier E overran p3 by a single line plus its closing rule, and
+   `make check` passed at 4/4 because the key stranded identically; scan every component's *last*
+   page, not just its break points. (b) **`\ansline` \emph{width} can cost a page even when every
+   `\writelines{n}` is matched by exactly $n$ answer lines** — 2.7's homework key came out 5 against
+   4 because thirteen `\ansline`s wrapped to two printed lines each. Diagnose it by grepping
+   `pdftotext -layout` output for answer lines carrying **no dotted trail** (a wrapped `\ansline`
+   trails only on its last line), then trim to one line each; widening a column an `\ans` cell
+   overflows and shortening shared prose such as the `remindbox` both shrink the key **without**
+   costing the blank a page, which is the only kind of saving that closes a parity gap. (c) **a
+   Beamer table can hyphenate a cell mid-word at projection size** (`flat-tens`, `ver-tex`) with the
+   deck log clean — the second deck defect in a row that `grep Overfull` cannot see.
+7. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
    For every later unit, check by hand what the gate would have caught: blank/key page parity on
    both test forms, no `teachernote` in any test key, no `\ans` inside math. The Unit 1 run's two
    real findings were *both* boxguard problems that no count could see (a stub page, and a split
    multiple-choice item), so **open all four test PDFs page by page** — that is the only way.
-7. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
+8. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
    guidance in the skill). Unit 1's Part D prompts are the model for the final's synthesis items.
 
 ### Open questions

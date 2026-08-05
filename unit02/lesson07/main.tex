@@ -1,4 +1,4 @@
-%! Choosing and Comparing Models — Unit 2, Lesson 2.7 — Lesson Plan
+%! Choosing and Comparing Models in Context — Unit 2, Lesson 2.7 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{atda-article}
 \usepackage{atda-boxes}
@@ -6,7 +6,7 @@
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 2: Functions, Transformations, and Graph Analysis \quad}
-\newcommand{\LessonNumberName}{Lesson 2.7: Choosing and Comparing Models}
+\newcommand{\LessonNumberName}{Lesson 2.7: Choosing and Comparing Models in Context}
 
 \begin{document}
 \begin{center}
@@ -16,79 +16,370 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can decide whether a \textbf{linear}, \textbf{quadratic}, or
+    \textbf{exponential} function best models a table, a graph, or a story, and name the test that
+    decided it --- first differences, second differences, or ratios from a table, and a straight edge,
+    a turning point, or a flattening end from a graph. I can compare the three families across every
+    representation I have, use the model I chose to answer a question in context both graphically and
+    algebraically, and say where the model's answers stop being trustworthy.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Standards covered:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{AFDA.AF.1c} --- determine and analyze whether a linear, quadratic, or exponential
+        function \textbf{best models} a given representation, including in context. This is the whole
+        lesson.
+  \item \texttt{AFDA.AF.1e} --- use a graphical or algebraic representation of a function to
+        \textbf{solve problems within a context}, both ways, as appropriate.
+  \item \texttt{AFDA.AF.1g} --- \textbf{compare and contrast} the three families using multiple
+        representations: graphs, tables, equations, and verbal descriptions.
+  \item \texttt{AFDA.AF.2h} --- \emph{relate} the characteristics of the graphs across families,
+        including in context. (2.6 \emph{described} them; today they get compared.)
+\end{itemize}
+\textbf{Skills students leave with:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Run the table tests \textbf{in order} --- first differences, then second differences, then
+        ratios --- on \textbf{equal} input steps.
+  \item Choose a family off a \textbf{graph} by naming a feature, not a vibe.
+  \item Choose a family off a \textbf{story} by hearing ``the same amount added'' versus ``the same
+        percent.''
+  \item Answer a contextual question from the chosen model, graphically \emph{and} algebraically.
+  \item Say where the model stops being believable, and why.
+\end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{The family is chosen by how the outputs \emph{change}, not by what the graph looks
+        like.} That is the sentence the whole lesson runs on, and it is what makes the tests
+        necessary rather than optional.
+  \item \textbf{``It curves upward'' rules out linear and nothing else.} Quadratic and exponential
+        both have growing first differences. This single confusion is the hook, the exit ticket, and
+        two homework items.
+  \item \textbf{A model is a choice, not a fact.} The guidance's own phrase is
+        \emph{mathematical model} (\texttt{AFDA.DA.1d}); a different choice can fit the same data.
+  \item \textbf{Two points never decide a family, and three points never rule out a quadratic.}
+        Agreement on the data you have is not evidence.
+  \item \textbf{Every model has a window of inputs where it works.} Reading past it is where a wrong
+        family choice --- or a right one --- produces nonsense.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{4.1cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Mathematical model & A function chosen to describe a real situation. It is a \emph{choice}, not a
+    fact --- and it can be wrong. \\
+First differences & The changes from one output to the next, on equal input steps. Constant $\to$
+    \textbf{linear}. \\
+Second differences & The changes in those changes. Constant (when the first are not) $\to$
+    \textbf{quadratic}. \\
+Common ratio & What each output is multiplied by to reach the next, on equal input steps. Constant
+    $\to$ \textbf{exponential}. \\
+Extrapolation & Using a model beyond the inputs the data covered. Where a wrong family choice shows
+    up --- and where a right one still stops being believable. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{The warm-up is five items, and items 2 and 3 are the plants:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Last night's item 10 again --- the gym and the bacteria
+  \item The adding test: fill a row of first differences (Lesson 2.0)
+  \item The multiplying test: fill a row of ratios (Lesson 2.0)
+  \item Match the three parents to their shapes (Lesson 2.2)
+  \item Which parent has a horizontal asymptote, and what is its equation? (Lesson 2.5)
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} items 2 and 3 are the two tests with the vocabulary withheld --- a
+class that can fill both rows in ninety seconds will spend notes box 1 on the \emph{decision} rather
+than on arithmetic. Item 5 is the answer to the last row of box 2's comparison table, and item 1
+tells you who is still guessing from the picture rather than from the numbers.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{Two students, one table, and both of them are right about what they checked.} A school video
+gets $3$, $6$, $12$, $24$ thousand views on days $0$ through $3$. \quad Student A: \textbf{``The
+views go up by $3$, then $6$, then $12$. The jumps keep getting bigger, and a parabola's jumps get
+bigger too --- so it's quadratic.''} \ Student B: \textbf{``Every day is double the day before --- so
+it's exponential.''} \textbf{Pose it this way:} ``Everything both of them said about these numbers is
+true. The jumps really do get bigger, and each value really is double the last. So one of them
+checked something that was not \emph{enough}.'' \textbf{Do not resolve it.} 2.6's hook turned on
+\emph{where a rule lives}; this one turns on \emph{what counts as evidence}, which is the only
+genuinely new idea in the lesson. Settle it on notes box 1, after the three tables.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Two tests, run in order (16 min).} Fill all three tables before saying a single family
+name --- the pattern only shows up when all three are on the page at once. Then write the rule, then
+the condition (\textbf{equal} input steps; say it out loud, it is the one that gets skipped). Only
+then run the tests on the video table and \textbf{resolve the hook}. Close on what Student A actually
+checked: ``the jumps get bigger'' rules out \emph{linear} and nothing else.
+
+\textbf{2. The comparison sheet (12 min).} This is the summary of the whole unit and students should
+keep it. Fill it fast --- every cell is something they already know from 2.2, 2.4, or 2.5. The two
+rows that pay: ``\emph{plus \$30 a month}'' versus ``\emph{up $30\%$ a month},'' and \emph{look for a
+turning point first}.
+
+\textbf{3. Using the model, and its window (12 min).} $V(5)=96$ algebraically, then the $50$-thousand
+crossing graphically --- \textbf{do both, and name which one you are doing}, because that is
+\texttt{AF.1e}. Then day $20$: $3.1$ billion views from a school video. \textbf{The model is not
+broken; it is being read outside the days the data covers.}
+
+\textbf{4. Guided practice --- three measurements (10 min).} One of each family, and item 4 is the one
+that earns the time: two decreasing data sets, two readings each, and no way to tell them apart.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Choosing a Model]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The one-page summary students should be able to reproduce:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item \textbf{Check the input steps first.} Equal, or the tests mean nothing.
+  \item \textbf{First differences constant?} $\to$ linear. Stop.
+  \item \textbf{Second differences constant?} $\to$ quadratic. Stop.
+  \item \textbf{Ratios constant?} $\to$ exponential.
+  \item \textbf{From a graph, name a feature:} straight edge $\to$ linear; one turning point $\to$
+        quadratic; no turn but a flattening end $\to$ exponential.
+  \item \textbf{From a story, listen for the verb:} adds the same \emph{amount} $\to$ linear;
+        multiplies by the same \emph{factor or percent} $\to$ exponential; turns around $\to$
+        quadratic; ``for the first \dots\ then'' $\to$ piecewise.
+  \item \textbf{Then say where it works.} What is the window, and does the prediction pass the
+        laugh test?
+\end{enumerate}
+\textbf{Say this out loud:} ``Never name a family without naming the test.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four errors to name before they happen:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{``It curves up, so it's exponential.''} The hook, the exit ticket's item 3, Tier E
+        item 1, homework item 1(b). \emph{Quadratics curve up too.}
+  \item \textbf{Stopping at the first differences.} A student who sees $3, 6, 12$ growing and calls
+        it quadratic never checked whether the \emph{second} differences were constant.
+  \item \textbf{Running the tests on unequal steps.} Watch for it on the caffeine table (steps of
+        $5$) and the braking table (steps of $10$) --- those are fine; a table stepping $1, 2, 5, 10$
+        is not.
+  \item \textbf{Extrapolating without saying so.} The video at day $20$, the truck at year $8$, the
+        shop at month $12$, the tree at year $10$.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes box 1, table (a):} the ratio row for the rideshare comes out $1.67, 1.4, 1.29$.
+        Students want to round those to ``about the same.'' \emph{They are not the same} --- that is
+        the point of computing all three.
+  \item \textbf{Notes box 1, the hook table:} listen for ``the second differences are $3$ and $6$, so
+        it \emph{is} constant-ish.'' Ask: ``Is $3$ equal to $6$?''
+  \item \textbf{Notes box 3:} after the day-$20$ number, ask two students ``so is the model wrong?''
+        The answer to insist on is \emph{no --- it is being used outside its window}.
+  \item \textbf{Activity Tier A item 5:} groups will pick a model. The item does not have a
+        model-picking answer --- it has a \emph{measurement} answer. Prompt: ``What would you go
+        measure?''
+  \item \textbf{Cold-call prompts:} ``Which row was constant?'' ``What feature told you?'' ``Adding
+        or multiplying?'' ``Would you bet money on that prediction?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Two duckweed patches: one adds $4$ m$^2$, one triples.
+  \item Fill the difference and ratio rows for both.
+  \item The week the multiplier passes the adder.
+  \item Match each patch to its graph, and name the feature.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Three graphs, three stories, and a feature for each.
+  \item A \$17 fare, read off a graph \emph{and} solved.
+  \item $h(10)=-960$ feet --- and why that is not an algebra mistake.
+  \item Two points, two models, and the one measurement that settles it.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Knock down ``it curves, so it's exponential.''
+  \item A manager who made \emph{two} errors in one prediction.
+  \item The coffee, whose ratios are not constant --- until you subtract the room.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard[16]
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} a gym counting members over five months --- $64$, $96$,
+$144$, $216$, $324$. (1) Fill the three test rows, name the family, name the row that decided it
+(\texttt{AF.1c}); (2) predict months $5$ and $6$ ($486$ and $729$) against a building licensed for
+$500$, and say how far ahead the model can be trusted (\texttt{AF.1e}); (3) \textbf{the conceptual
+check} --- a classmate says the gains speed up, so the model is quadratic.
+
+\textbf{Using the results:} items 1 and 3 are built on the same observation on purpose --- the
+2.4/2.5/2.6 pattern used a fourth time. Noticing that the jumps grow is \emph{correct} in item 1 and
+the \emph{wrong conclusion} in item 3, so a student who agrees with the classmate because it matches
+what they just wrote has told you exactly what they are doing. Sort into three piles: \emph{ran the
+ratio test}, \emph{named exponential with no test cited}, and \emph{agreed with the classmate}. The
+third pile needs the tests re-taught before the unit test; the second pile needs only the habit.
+\textbf{Item 2 is the second read} --- accept any answer that notices $729$ people cannot fit in the
+building.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (10 items): five fluency items --- three tables to test, four stories with no
+numbers, four graphs to classify by feature, the whole comparison sheet from memory, and a full
+characteristics read of a fence-and-pen quadratic --- then a four-part read of \textbf{two delivery
+trucks depreciated two different ways}, which is the best context in the unit for
+\texttt{AF.1c}, \texttt{e}, and \texttt{g} at once.
+
+\textbf{Items 6--9 are the argument for the lesson.} Both trucks cost \$24{,}000. L loses a fixed
+\$3{,}000 a year (linear); E loses a fixed $20\%$ a year (exponential). L is worth more in years $1$
+through $5$, E is worth more from year $6$ on, and at year $8$ L's model says \textbf{\$0} --- which
+no working truck is --- while E's graph approaches \$0 and never reaches it. That is Lesson 2.5's
+asymptote arriving in a bank statement.
+
+\textbf{Item 9 is the interpret item of the set.} The buyer's numbers are right and the
+\emph{question} is wrong: ``holds its value better'' has no answer until you say \emph{for how long}.
+Grade it on whether the answer names a time horizon.
+
+\textbf{Item 10 previews Unit 3:} growth or decay, and the number you multiply by. Two of the four
+fall toward an asymptote at $y=0$.
+
+\textbf{Extension (optional):} a tree measured at $3$, $6$, $12$ feet, and two models --- a quadratic
+and an exponential --- that fit \textbf{all three points exactly}. They differ by $3$ feet at year $3$
+and by $2{,}904$ feet at year $10$. \textbf{Three points can always be fitted by some quadratic}, so
+agreeing with the data is not evidence.
+
+\textbf{After this lesson Unit 2 is complete.} The homework's closing box points students at the unit
+test and then at \textbf{Unit 3, Exponential and Logarithmic Functions}, where today's constant-ratio
+family gets a unit of its own.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 % Teacher-only prose lives HERE, never in a _key: a note is the one block in a
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
+\boxguard[18]
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{7 minutes, then score it together.} Answers: (1) (a) linear --- the same \$30 is added
+    each month; (b) exponential --- the count is multiplied by $2$ each hour; (2) $+4, +4, +4, +4$,
+    yes, constant; (3) $3, 3, 3$, yes, constant; (4) $f \to$ (B), $g \to$ (C), $h \to$ (A); (5) only
+    $h(x)=2^x$, asymptote $y=0$. \textbf{Items 2 and 3 are the whole lesson with the vocabulary
+    withheld}, and they are deliberately easy --- if the room needs more than ninety seconds on them,
+    notes box 1 will run long, because box 1 asks for the same two rows three times over. \textbf{Do
+    not name ``first differences'' or ``common ratio'' while scoring}; call them ``the change'' and
+    ``the ratio'' and let box 1 supply the words. Item 4 is worth watching: a student who matches
+    $g(x)=x^2$ to (A) rather than (C) is thinking ``curved'' rather than ``turns around,'' which is
+    exactly the error the hook is about to exploit. Item 5's answer is the last row of the comparison
+    table in notes box 2, so it will be quoted back within twenty minutes.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{Fill all three tables in box 1 before anyone says a family name.} The rule the students
+    write is only visible when the three are side by side --- one table has a constant first-difference
+    row, one a constant second-difference row, one a constant ratio row, and every \emph{other} row in
+    all three tables is not constant. If you let the class classify table (a) as soon as it is filled,
+    you lose the pattern. \textbf{The condition on equal input steps is not a footnote} --- table (b)
+    steps by $10$ and the caffeine table in the practice steps by $5$, and both are fine; a table
+    stepping $1, 2, 5, 10$ is not. Say the difference out loud. \textbf{Resolve the hook only after
+    the video table is filled}, and resolve it in these words: the second differences are $3$ then
+    $6$, so they are \emph{not} constant, and the ratios are all $2$. Then the sentence that matters
+    more than the answer: \textbf{``the jumps get bigger'' rules out linear and nothing else}. Put it
+    on the board and leave it there --- it is the exit ticket. Box 2 is the unit's summary sheet;
+    tell students to keep it for the test. It fills fast because every cell is 2.2, 2.4, or 2.5. In
+    box 3, \textbf{name which method you are using out loud each time} --- ``this one is algebraic,
+    this one is graphical'' --- because \texttt{AF.1e} asks for both and students do not notice they
+    have done two different things. The day-$20$ number ($3.1$ billion views) is the moment of the
+    lesson; ask ``is the model wrong?'' and hold out for \emph{no, it is being used outside its
+    window}. If time runs short, assign practice item 3 as reading, but never cut item 4 --- two
+    decreasing data sets and two readings each is the cleanest statement of ``the data you have does
+    not settle it.''
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is one comparison run
+    four ways and a fluent group clears it in six minutes; the item that slows them is item 3, where
+    Patch A is bigger for two weeks and then loses forever. That is 2.0's adding-versus-multiplying
+    with a winner. \textbf{Tier A item 1 is the fastest diagnostic in the lesson} --- if a group
+    writes ``(b) is quadratic because it's curved,'' they have matched the shape without naming the
+    feature, and the feature is \emph{one turning point}. Graph (c) is curved too. \textbf{Tier A item
+    3 is the one worth the argument}: $h(10)=-960$ feet is correct algebra and a meaningless answer,
+    because the model stopped applying when the ball hit the ground at $t=4$. \textbf{Tier A item 5 is
+    the stretch and most groups will answer the wrong kind of question} --- they will pick a model.
+    The item has no model-picking answer; it has a \emph{measurement} answer, and the prompt that
+    fixes it is ``what would you go and measure?'' \textbf{Tier E item 3 is the best item in the
+    activity and the hardest.} The coffee's ratios are not constant, which looks like a failed test
+    --- until you subtract room temperature and find that the \emph{gap} halves exactly. That is a
+    vertical translation (2.2) carrying the asymptote up with it (2.5), and it is the honest answer to
+    ``why does the ratio test sometimes fail on real data.'' Share it out even if only one group gets
+    there.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Answers: (1) first differences
+    $32, 48, 72, 108$; second differences $16, 24, 36$; ratios all $1.5$. \textbf{Exponential},
+    decided by the ratio row --- a $50\%$ gain each month. (2) Month $5$: $486$; month $6$: $729$.
+    Month $6$ is the first over $500$, and the building cannot hold $729$ people, so the model is
+    already predicting something impossible two months past the data. (3) Growing jumps only rule out
+    linear; the second differences $16, 24, 36$ are not constant; the ratios are, so the model is
+    exponential. \textbf{Items 1 and 3 are built on the same observation on purpose}, the pattern 2.4,
+    2.5 and 2.6 all used: noticing the growing jumps is \emph{correct} in item 1 and the \emph{wrong
+    conclusion} in item 3. A student who agrees with the classmate because it matches what they wrote
+    twelve lines earlier has told you exactly what they are doing. \textbf{Grade item 1 on whether a
+    test is cited at all} --- ``exponential'' with no row named is half an answer and should be
+    corrected on the spot, because the unit test will ask for the justification. Item 2 needs only
+    that the student notices $729$ people will not fit; the arithmetic is the easy part. Do not grade
+    for points; use it to decide whether the tests need one more pass before the unit test.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 30--35 minutes.} Item 3 is the fastest to grade and the most diagnostic: a student
+    who writes ``exponential'' under graph (ii) has classified by curvature rather than by the turning
+    point. Item 4 is the comparison sheet from memory and is worth reminding students about before the
+    unit test --- it is the single densest revision page in the unit. \textbf{Items 6--9 are the
+    argument for the whole lesson}, and item 8 is where to spend your attention: Truck L's model says
+    the truck is worth \textbf{\$0} at year $8$, which is not true of any truck that still runs, while
+    Truck E's graph approaches \$0 and never gets there. Students have met that sentence twice --- as
+    the coffee gap in 2.5 and as the open circle in 2.6 --- and this is the first time it decides a
+    real question. \textbf{Item 9 must be graded on the reasoning, not the verdict}: the buyer's
+    numbers are right, and the fault is that ``holds its value better'' has no answer until you name a
+    time horizon. Accept any answer that names one. Item 10 is the Unit 3 on-ramp; ``multiplied by
+    $1.10$'' and ``multiplied by $0.70$'' are what to look for, and a student who writes ``$10\%$''
+    instead of ``$1.10$'' has not yet seen that the multiplier includes the original amount --- fix
+    that now, it is the first thing Unit 3 needs. \textbf{The extension is genuinely optional and is
+    the sharpest item in the set}: two models fit all three measurements \emph{exactly} and differ by
+    almost three thousand feet at year $10$. Students who finish it understand something most adults
+    do not, which is that agreeing with the data is not evidence.
 \end{teachernote}
 \end{document}

@@ -1,8 +1,9 @@
-%! Choosing and Comparing Models — Unit 2, Lesson 2.7 — Exit Ticket (Answer Key)
+%! Choosing and Comparing Models in Context — Unit 2, Lesson 2.7 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,50 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{One Gym, Two Tests, and a Building That Holds $500$}
+\small
+Notes closed. Three items. A gym opened five months ago and counted its members at the end of each
+month.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+Month $m$ & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+Members & $64$ & $96$ & $144$ & $216$ & $324$ \\ \hline
+First differences & --- & \ans{$+32$} & \ans{$+48$} & \ans{$+72$} & \ans{$+108$} \\ \hline
+Second differences & --- & --- & \ans{$+16$} & \ans{$+24$} & \ans{$+36$} \\ \hline
+Ratios & --- & \ans{$1.5$} & \ans{$1.5$} & \ans{$1.5$} & \ans{$1.5$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=7pt, topsep=6pt]
+
+\item Fill the three rows above. Then name the family that models this gym, and name the row that
+decided it.
+
+\ansline{\textbf{Exponential.} The \textbf{ratios} row is the constant one --- every month is $1.5$ times the month before,}\\
+\ansline{which is a $50\%$ gain each month. The first and second differences both keep growing.}\\
+
+\item Use your model to predict the membership at the end of month $5$ and month $6$. The building
+is licensed to hold $500$ members. According to the model, which month is the first one over the
+limit --- and what does that tell you about how far ahead this model can be trusted?
+
+\ansline{Month $5$: $324 \times 1.5 = 486$ members. Month $6$: $486 \times 1.5 = 729$ members.}\\
+\ansline{\textbf{Month 6} is the first one over $500$ --- and the building cannot hold $729$ people.}\\
+\ansline{So the model is already predicting something impossible two months past the data: growth of $50\%$ a month has to stop.}\\
+
+\item A classmate writes: \emph{``The gym gains more members every month --- $32$, then $48$, then
+$72$. Growth that speeds up is quadratic.''} Noticing that the jumps get bigger was correct in item
+1. Explain what is wrong with the conclusion anyway, and write the correct statement.
+
+\ansline{Growing jumps only rule out \emph{linear}. Quadratic and exponential both have growing first differences,}\\
+\ansline{so that observation cannot choose between them. The second differences here are $16, 24, 36$ --- not constant.}\\
+\ansline{Correct: the \textbf{ratios} are constant at $1.5$, so the model is \textbf{exponential}, not quadratic.}\\
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}
