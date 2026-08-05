@@ -16,79 +16,351 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can read a graph for its $y$-intercept, its $x$-intercepts, and its
+    zeros, and say each time whether my answer is an input, an output, or a point. I can name the
+    intervals where a graph is increasing, decreasing, or constant, in interval notation, on the
+    input axis. I can give the absolute maximum and minimum over the domain as a value \emph{and} a
+    location, and I can explain why a function may have no zeros, no absolute maximum, or one extreme
+    value at two different places --- interpreting every one of these in the situation the graph
+    models.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Standards covered:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{AFDA.AF.2b} --- identify intervals on a graph for which a function is increasing,
+        decreasing, or constant.
+  \item \texttt{AFDA.AF.2c} --- given a graph, identify the \emph{location} and \emph{value} of the
+        absolute maximum and absolute minimum over the domain of the function.
+  \item \texttt{AFDA.AF.2d} --- given a graph, determine the zeros and intercepts of a function.
+\end{itemize}
+\textbf{Skills students leave with:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Report the $y$-intercept and $x$-intercepts as \textbf{points} and the zeros as
+        \textbf{numbers}, and say which axis each came from.
+  \item Write increasing / decreasing / constant intervals in \textbf{interval notation}, on the
+        input axis, with parentheses at turning points.
+  \item Give each absolute extreme as a \textbf{value and a location}, checking endpoints as well as
+        turning points.
+  \item Answer ``\textbf{none}'' correctly --- no zeros, no absolute maximum --- and defend it.
+  \item Interpret every characteristic in the context the graph models.
+\end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Every mistake in this lesson is an axis mistake.} An interval of inputs and a stretch
+        of outputs can be the same two numbers, in the same units, and mean different things. The
+        instruction that fixes it is one sentence: \emph{before you write a number down, say which
+        axis it came from.}
+  \item \textbf{2.0's rule finally gets its notation.} An extreme is a value \emph{and} a location.
+        The AFDA guidance says so in the standard itself --- \texttt{2c} names ``the location and
+        value.''
+  \item \textbf{A zero is an input; an $x$-intercept is a point.} The guidance's chain --- $k$ is a
+        zero $\Leftrightarrow$ $f(k)=0$ $\Leftrightarrow$ $(k,0)$ is on the graph --- is what makes
+        the two interchangeable \emph{once you say which form you are using}.
+  \item \textbf{``Absolute'' is a claim about the whole domain}, which is why cutting the domain can
+        create a maximum that did not exist and delete a zero that did.
+  \item \textbf{``None'' is a real answer.} The guidance states that exponentials are strictly
+        increasing or strictly decreasing; it follows that $y=2^x$ has no zeros and no extremes at
+        all. Students who believe every graph crosses the axis will guess.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Zero of a function & An \emph{input} $x$ with $f(x)=0$. A number, not a point --- it sits in the
+    first slot of an $x$-intercept. \\
+$x$-intercept, $y$-intercept & \emph{Points} where the graph meets an axis: $(k,0)$ and $(0,b)$. At
+    most one $y$-intercept; any number of $x$-intercepts, including none. \\
+Increasing, decreasing, constant & Read left to right: the graph consistently rises, consistently
+    falls, or stays level. Always reported as intervals of \emph{inputs}. \\
+Turning point & A point where the graph changes from increasing to decreasing, or the reverse. It
+    belongs to neither interval, so intervals get parentheses there. \\
+Absolute maximum, absolute minimum & The highest and lowest \emph{outputs} over the \emph{entire}
+    domain, each reported with the input where it happens. \\
+Endpoint & Where a restricted domain stops. An extreme sits at an endpoint at least as often as at a
+    turning point --- check both. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{The warm-up is five items, and items 1 and 4 ask today's question twice:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item A table for $f(x)=3x-6$: which input gives $0$, and what is the output at $0$ --- both of
+        \texttt{AF.2d}'s questions, unnamed
+  \item Last night's item 10(b): the highest yearbook profit and where it happens
+  \item Interval notation, both directions (Lesson 2.1 spiral)
+  \item Vertex $(4,-9)$ to an equation, then solve for the two zeros (Lesson 2.3 spiral)
+  \item Order $-1, -6, 0, -4, 2$ from lowest to highest
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 1 is a zero and a $y$-intercept in table form --- anyone who
+answers (a) with $-6$ has the axes crossed and will do it all period. Item 5 looks trivial and is
+not: a student who calls $-1$ ``lower'' than $-6$ will misread every absolute minimum today.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{Two students, one question, and both answers are in dollars.} Put last night's yearbook facts
+on the board: profit \$0 at prices \$0 and \$60, peak \$1800 at a price of \$30. The question was
+\emph{over which prices is the profit going up?} \quad Student A: \textbf{``from 0 to 1800.''}
+Student B: \textbf{``from 0 to 30.''} \textbf{Pose it this way:} ``Neither of them made an arithmetic
+mistake, and every number either one wrote is really on that graph. So which one answered the
+question I asked --- and notice you cannot settle it by checking the units, because all four numbers
+are dollars.'' \textbf{Let them sit with it.} The units trick is what makes this hook work: the only
+thing that distinguishes the two answers is which \emph{axis} the numbers were read from. That
+sentence is the whole lesson, and every error in the packet is a violation of it.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Intercepts and zeros (12 min).} Fill the four in-text blanks, then the equivalence chain,
+then the three-panel table as a class. \textbf{Two things to land:} panel (b) has \emph{no} zeros,
+and panel (c)'s $y$-intercept and zero are both $3$ and mean nothing alike. \textbf{Ask:} ``If I hand
+you the number $3$ with no label, what have I told you?''
+
+\textbf{2. Rising, falling, holding steady (14 min).} The temperature graph. Fill the table together,
+naming the axis out loud on every row. \textbf{Then resolve the hook} on rule 1 --- do not resolve it
+earlier; the table is what makes the resolution obvious rather than asserted. Rule 2 (parentheses at
+a turning point) takes thirty seconds. Rule 3 is the guidance's own claim about exponentials and it
+pays off twice in the activity. Close on the zeros: $t=3$ and $t=7$ bracket the time below freezing.
+\textbf{Two zeros gave you an interval} --- that is what zeros are \emph{for}.
+
+\textbf{3. Absolute maximum and minimum (12 min).} Value and location, and the phrase to repeat is
+``two different axes in one sentence.'' Then the two $x^2$ panels. \textbf{Ask before you explain:}
+``Which point of this curve moved when I cut the domain?'' None did --- and the function now has a
+maximum it did not have. Finish with the four cases.
+
+\textbf{4. Guided practice --- the cistern (12 min).} Every characteristic, each one interpreted.
+Item 4's claim (``the water was highest at the start of the week'') is false because the maximum is
+at the \emph{other} endpoint. \textbf{Ask:} ``Where do you have to look that you did not look?''
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Which Axis Answers Which Question]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The one-page summary students should be able to reproduce:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item \textbf{Zeros} --- inputs (numbers). \textbf{Intercepts} --- points.
+  \item \textbf{Increasing / decreasing / constant} --- intervals of inputs, parentheses at turning
+        points.
+  \item \textbf{Absolute max / min} --- an output (the value) plus an input (the location).
+  \item \textbf{Always check the endpoints}, not just the turns.
+  \item \textbf{``None'' is an answer} --- and it needs a reason.
+\end{enumerate}
+\textbf{Say this out loud:} ``Every number on this page came off one of two axes. Tell me which
+before you tell me what.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four errors to name before they happen:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{An interval reported in outputs.} ``Increasing from $0$ to $1800$.'' The hook, Tier E
+        item 1(a), and exit-ticket item 3.
+  \item \textbf{An extreme with no location.} ``The maximum is \$1800.'' Half an answer, every time,
+        all year.
+  \item \textbf{Reading the end of a graph as the extreme.} On the temperature graph the curve is
+        falling at $t=12$ and the minimum is at $t=5$. Tier E item 1(b).
+  \item \textbf{Assuming every graph has a zero.} $y=2^x$ does not. Tier A item 4 and Tier E item 3.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes box 1, the table:} anybody writing a bare number in the intercept columns has
+        missed the point/number distinction. Ask ``is that a point?''
+  \item \textbf{Notes box 2, the interval table:} listen for temperatures in the middle column. The
+        prompt is ``which axis did you read that off?''
+  \item \textbf{Notes box 3, panel (b):} students say the maximum is at the turning point out of
+        habit. Ask them to point at the highest ink on the picture.
+  \item \textbf{Activity Tier A item 3:} most groups give one location for the minimum. The prompt is
+        ``is there anywhere else on this graph that is exactly that low?''
+  \item \textbf{Cold-call prompts:} ``Input or output?'' ``Point or number?'' ``What is the location?''
+        ``Did you check the endpoints?'' ``Why is the answer none?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item The gym graph: $y$-intercept, the zero, and what closing time means.
+  \item The three-row interval table, in interval notation.
+  \item Absolute max and min with locations, then a staffing decision.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item A start-up's profit: zeros as \emph{break-even months}.
+  \item Its maximum \$9000 in month 4 --- value and location.
+  \item Its minimum $-7$ at \emph{two} endpoints.
+  \item An exponential where four answers are ``none.''
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Two claims, two wrong axes.
+  \item Cut the domain to months 5--8 and watch three things change.
+  \item Justify: not every graph has a zero, and one minimum can happen twice.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard[16]
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} one creek graph, $L(t)$ inches above or below normal.
+(1) the $y$-intercept, both zeros \emph{and what a zero means here}, and the two intervals
+(\texttt{AF.2b}, \texttt{AF.2d}); (2) the absolute maximum and minimum as value and location, each
+labelled turning point or endpoint --- \textbf{the maximum is at an endpoint} (\texttt{AF.2c});
+(3) \textbf{the conceptual check} --- a classmate writes ``increasing from $-3$ to $9$,'' which are
+\emph{the two numbers the student just wrote as answers to item 2}.
+
+\textbf{Using the results:} item 3 is the one to read, and its pairing with item 2 is deliberate. The
+same two numbers are correct for one question and wrong for the next, so nobody can pattern-match
+through both. Sort into three piles: \emph{named the axis}, \emph{restated the definition}, and
+\emph{agreed with the classmate}. The third pile goes to Tier R in 2.5, where end behavior is another
+question about what the graph does as the \emph{input} runs off the page. A student who writes ``it
+goes from $-3$ up to $9$, so it is increasing'' has described the outputs accurately and answered
+nothing.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (10 items): five fluency items --- an intercepts-and-zeros table off three graphs,
+one equation from 2.3 solved for its zeros, an \emph{input/output/point} classification table, a
+``how many zeros and why'' set with no graphing at all, and a restricted-domain extreme --- then a
+four-part read of \textbf{the bike-share station}, whose absolute minimum of zero bikes happens
+\emph{twice} and whose absolute maximum sits at an endpoint.
+
+\textbf{Item 10 is the bridge to Lesson 2.5.} Coffee in an insulated flask cools from $84^\circ$C
+toward the room's $20^\circ$C: $84, 52, 36, 28, 24, 22, 21$. It has no zeros, an absolute maximum at
+$t=0$, and \textbf{no absolute minimum at all} --- every hour is lower than the last, so no output is
+the lowest. Then: what number do they approach, and does the graph ever get there? Accept plain
+English; \emph{asymptote} and \emph{end behavior} are 2.5's words to introduce.
+
+\textbf{Extension (optional):} $y=x^2-4$ on all real numbers, then on $1 \le x \le 4$ and nothing else
+changed. One zero instead of two, the minimum moved from $-4$ at the turning point to $-3$ at an
+endpoint, and an absolute maximum of $12$ appeared where there had been none. \textbf{One domain
+change, three consequences, and the rule was never touched} --- which is the cleanest argument in the
+lesson that the domain is part of the function.
+
+\textbf{Preview of Lesson 2.5 (\texttt{AFDA.AF.2f--g}):} end behavior, and horizontal and vertical
+asymptotes --- what a graph does at the far left and far right, and the lines it approaches without
+reaching.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 % Teacher-only prose lives HERE, never in a _key: a note is the one block in a
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
+\boxguard[18]
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{8 minutes, then score it together.} Answers: (1) $-6, -3, 0, 3, 6$, with (a) $x=2$ and
+    (b) $f(0)=-6$; (2) \$1800 of profit at a price of \$30; (3) (a) $(2,7)$, (b) $0 \le x \le 5$;
+    (4) $y=(x-4)^2-9$ with zeros $x=1$ and $x=7$; (5) $-6, -4, -1, 0, 2$. \textbf{Item 1 is the whole
+    lesson in table form and it is the item to score slowly.} Parts (a) and (b) are the two questions
+    \texttt{AF.2d} asks, and a student who answers (a) with $-6$ has swapped the axes before the
+    lesson has started --- note those names now, because they will swap them again in notes box 1 and
+    in every interval today. \textbf{Do not name anything yet}: ``zero'' and ``$y$-intercept'' are the
+    notes' words, and the warm-up is worth more if the vocabulary arrives after the arithmetic. Item 2
+    is homework accountability \emph{and} the hook's setup --- if the room cannot produce both
+    numbers, the hook will fall flat and you should put the yearbook graph back on the board before
+    starting it. Item 5 looks like filler and is the best predictor in the set: a student who orders
+    $-1$ below $-6$ will report the wrong absolute minimum on every graph with negative outputs, and
+    there are four of those in this packet.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{Resolve the hook in box 2, not before.} It is tempting to settle it the moment somebody
+    says ``prices are on the bottom,'' but the interval table is what turns that from an assertion
+    into an obvious fact --- four rows, each one a set of \emph{times}, and then rule 1 lands on its
+    own. \textbf{In box 1, the two paragraphs after the table matter more than the table.} Panel (b)
+    having no zeros contradicts something most of the room believes, so say it out loud and let
+    somebody object; the objection is ``but it gets so close,'' which is exactly the sentence 2.5 is
+    built on. Panel (c) is the sharpest thing in the box: the $y$-intercept and the zero are both $3$
+    and mean nothing alike, so ask what the bare number $3$ tells you. \textbf{Box 3's two panels are
+    the argument, and the question comes before the explanation:} ``which point of this curve moved
+    when I cut the domain?'' Nobody can find one, and the function has a maximum it did not have.
+    Insist on \emph{value and location} in every spoken answer from here to the end of the unit --- it
+    is \texttt{2c}'s own wording and it is the habit this lesson exists to build. If time runs short,
+    assign box 3's four cases as reading, but never cut the cistern practice: it is the only place the
+    characteristics are all read off one graph and interpreted.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is one graph read five
+    ways and a fluent group should clear it in five minutes. Watch the interval table: temperatures
+    and headcounts appearing in the middle column is the error of the day, and the fix is a question
+    --- \emph{which axis did you read that off?} \textbf{Tier A item 3 is where groups reliably stop
+    early}: they find the minimum $-7$ at $x=0$, write it down, and never look at $x=8$. The prompt is
+    ``is there anywhere else on this graph that is exactly that low?'' A group that produces both
+    endpoints has understood that a value and a location are different kinds of thing. Tier A item 4
+    is four ``none'' answers in a row and groups will assume they have misread the question --- tell
+    them in advance that ``none'' is a legitimate answer that needs a reason. \textbf{Tier E item 2 is
+    the share-out that matters.} Cutting the domain to months 5--8 deletes a zero, moves the minimum to
+    an endpoint, and creates a maximum, all without touching the curve; part (c) asks what the buyer
+    would believe that is false, and the answer --- that the company has only ever declined --- is the
+    one sentence to get on the board before the exit ticket. Item 1(b) is worth reading aloud too: the
+    graph really is falling at $t=12$, and that fact is irrelevant.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Answers: (1) $y$-intercept $(0,6)$;
+    zeros $t=2$ and $t=4$, meaning the creek is exactly at its normal level those days; decreasing on
+    $(0,3)$, increasing on $(3,7)$. (2) Absolute maximum $9$ inches at $t=7$, at an \textbf{endpoint};
+    absolute minimum $-3$ inches at $t=3$, at the \textbf{turning point}. (3) $-3$ and $9$ are levels
+    --- outputs --- so the sentence answers ``how far'' when the question is ``which days''; correct:
+    increasing on $(3,7)$. \textbf{Items 2 and 3 are the same two numbers on purpose.} Item 2 makes
+    $-3$ and $9$ correct answers; item 3 shows them failing a different question, so a student who
+    marks item 3 acceptable because it matches what they just wrote has told you exactly what they
+    are doing. \textbf{Item 2's maximum being at an endpoint is the second trap} --- students trained
+    on parabolas hunt for the turn, find $t=3$, and report $-3$ as the maximum. Grade item 3 on
+    whether the word \emph{input}, \emph{day}, or \emph{axis} appears at all. Do not grade for points;
+    use it to build the 2.5 groups, where end behavior asks what happens as the \emph{input} runs off
+    the page and a student who cannot tell the axes apart will be lost quietly.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 25--30 minutes.} Item 3 (input / output / point) is the fastest to grade and the
+    most diagnostic: answers run input, point, output, input, set of inputs, and a student who calls a
+    zero a point has the confusion this whole lesson is about. Item 4 needs no graphing and is the
+    hardest fluency item here --- (a) two, (b) none, (c) none, (d) none --- and if it fails, reteach
+    from notes box 1 rather than from the homework. \textbf{The bike-share items (6--9) are the
+    argument for the lesson}, and item 8 is where to spend your attention: the minimum of zero bikes
+    happens at $t=3$ \emph{and} $t=12$, and half the class will give one. Item 9 wants a time
+    justified by \emph{two} characteristics, one from each axis. \textbf{Item 10 is the 2.5 bridge and
+    must be graded on the mathematics, not the vocabulary} --- ``it keeps getting closer to 20 but
+    never gets there'' is a complete answer today, and \emph{asymptote} is next lesson's word. Its
+    part (c) is the subtle one: there is no absolute minimum, because every hour is lower than the
+    last, and students who answer $21^\circ$ have read the edge of the picture instead of the domain.
+    The extension is genuinely optional and its part (c) is the best item in the set --- one domain
+    change, three consequences, and the rule $y=x^2-4$ never touched.
 \end{teachernote}
 \end{document}
