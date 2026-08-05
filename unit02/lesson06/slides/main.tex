@@ -1,6 +1,8 @@
 %! Piecewise-Defined Functions — Unit 2, Lesson 2.6 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{atda-beamer}   % provides \royalheader{} and \sectionlabel[color]{}
+\usepackage{pgfplots}      % atda-beamer does NOT load pgfplots
+\pgfplotsset{compat=1.18}
 
 \begin{document}
 
@@ -17,10 +19,225 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{Two Students, One Paycheck, and \$60 Nobody Can Find}
+  \sectionlabel[goldacc]{hook --- \$12 an hour for the first $40$ hours, \$18 an hour after that}
+  A student worked \textbf{$45$ hours} last week. What is the pay?
+  \begin{block}{Both used both rates, and neither made an arithmetic mistake}
+    \small
+    \textbf{A:} ``$45$ hours at \$12 is \$540, plus $5$ overtime hours at \$18 is \$90. \textbf{So
+    \$630.}''\\[0.15cm]
+    \textbf{B:} ``$40$ hours at \$12 is \$480, plus $5$ hours at \$18 is \$90. \textbf{So \$570.}''
+  \end{block}
+  \vspace{0.1cm}
+  \textbf{So the only question left is: which hours does each rate apply to?}
+\end{frame}
+
+% ── THE RESOLUTION ────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{A Rule Owns Only Its Own Stretch of Inputs}
+  \sectionlabel{that sentence is the entire content of the word ``piecewise''}
+  \begin{block}{Student B answered it}
+    \centering\large
+    \textbf{Hours $41$--$45$ are paid at \$18 \emph{instead of} \$12 --- not on top of it.}
+  \end{block}
+  \begin{itemize}
+    \setlength{\itemsep}{0.3cm}
+    \item Student A charged the \$12 rate to \emph{all} $45$ hours, so those $5$ hours got paid
+          twice: $5 \times \$12 = \$60$ too much.
+    \item Before you use a rule, ask: \textbf{which piece owns this input?}
+    \item That is the only new step today. Everything else is Unit 2, unchanged.
+  \end{itemize}
+\end{frame}
+
+% ── WHAT A PIECEWISE FUNCTION IS ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{One Function, Written in Pieces}
+  \sectionlabel{\texttt{AFDA.AF.2} --- last night's delivery fee, now with a name}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.2cm, height=3.4cm,
+      xlabel={$m$ (miles)}, ylabel={$F$ (fee, \$)},
+      xmin=0, xmax=8, ymin=0, ymax=16,
+      xtick={0,1,2,3,4,5,6,7,8}, ytick={0,5,10,15}, minor y tick num=4,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[royal, very thick] coordinates {(0,5) (3,5) (8,15)};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.35cm}
+  \[
+    F(m) = \begin{cases}
+      5 & \text{if } 0 \le m \le 3,\\
+      5 + 2(m-3) & \text{if } 3 < m \le 8.
+    \end{cases}
+  \]
+  % A negative \vspace between a \[...\] display and the paragraph that follows it
+  % collided the paragraph's first two lines (the display's depth is already
+  % absorbed by \belowdisplayskip). Never pull text up under a display on a frame
+  % -- shrink the figure instead, as done above.
+  \small
+  \textbf{Read the brace as ``if.''} $F(2)=5$ from the first piece; $F(6)=11$ from the second.
+  \textbf{The pieces never overlap}, so every input still has exactly one output --- Lesson 2.1's
+  definition of a function, unchanged.
+\end{frame}
+
+% ── CONTINUITY: CORNER VS BREAK ───────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{At the Boundary: Do the Two Rules Agree?}
+  \sectionlabel{the paycheck --- and the answer settles the hook}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.4cm, height=3.6cm,
+      xlabel={$h$ (hours worked)}, ylabel={$P$ (pay, \$)},
+      xmin=0, xmax=50, ymin=0, ymax=700,
+      xtick={0,10,20,30,40,50}, ytick={0,240,480}, minor y tick num=1, minor x tick num=4,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[goldacc, thick, dashed] coordinates {(40,0) (40,700)};
+    \addplot[royal, very thick] coordinates {(0,0) (40,480) (50,660)};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.35cm}
+  \small
+  At $h=40$: \ $12(40)=480$, \ and the second rule starts at $480$ too. \textbf{They agree}, so the
+  graph has no gap --- it is \textbf{continuous}, traceable without lifting the pencil.\\[0.1cm]
+  \textbf{The graph turns a sharp corner at $(40,480)$ --- and a corner is \emph{not} a break.} The
+  slope changed because the pay rate did. \quad And $P(45)=\$570$, which is student B.
+\end{frame}
+
+% ── THE JUMP AND THE DOTS ─────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{When the Pieces Disagree: a Jump, and Two Circles}
+  \sectionlabel[goldacc]{shipping by weight --- \$6, then \$10, then \$16}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.4cm, height=3.6cm,
+      xlabel={$w$ (pounds)}, ylabel={$S$ (\$)},
+      xmin=0, xmax=10.6, ymin=0, ymax=20,
+      xtick={0,1,2,3,4,5,6,7,8,9,10}, ytick={0,6,10,16},
+      grid=both, grid style={linegray!45},
+      axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[royal, very thick] coordinates {(0,6) (2,6)};
+    \addplot[royal, very thick] coordinates {(2,10) (5,10)};
+    \addplot[royal, very thick] coordinates {(5,16) (10,16)};
+    \addplot[royal, only marks, mark=*, mark size=2pt] coordinates {(2,6) (5,10) (10,16)};
+    \addplot[royal, only marks, mark=*, mark size=2pt, mark options={fill=white}]
+      coordinates {(0,6) (2,10) (5,16)};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.35cm}
+  \small
+  \textbf{What is $S(2)$?} Look straight up from $w=2$: one \textbf{filled} circle at \$6, one
+  \textbf{open} circle at \$10. \quad \textbf{$S(2)=\$6$.}\\[0.1cm]
+  \textbf{Exactly one filled circle sits above every input --- and it has to.} Two would mean two
+  outputs for one input, and then it would not be a function at all.
+\end{frame}
+
+% ── THREE CONSEQUENCES ────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Three Things a Step Graph Does That Surprise People}
+  \sectionlabel{all three read straight off the shipping picture}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.28cm}
+    \item \textbf{It breaks.} You lift the pencil at $w=2$ and $w=5$: \textbf{discontinuous}, with
+          jumps of \$4 and \$6.
+    \item \textbf{Its range is a list, not an interval:} $\{6, 10, 16\}$. No interval notation can
+          say that --- exactly like the hot dogs in Lesson 2.1.
+    \item \textbf{It is never increasing.} Every piece is \emph{constant}, and a piece is the only
+          place ``increasing'' can be measured.
+  \end{enumerate}
+  \vspace{0.2cm}
+  \textbf{The cost really does go up --- but it goes up \emph{at} the jumps, and a jump happens over
+  no interval at all.}
+\end{frame}
+
+% ── THE WHOLE CHECKLIST STILL WORKS ───────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Every Characteristic in This Unit Still Works}
+  \sectionlabel{\texttt{AFDA.AF.2h} --- one function, so you ask each question once}
+  \renewcommand{\arraystretch}{1.3}
+  \small
+  \begin{tabularx}{\textwidth}{@{}p{4.2cm} p{4.4cm} X@{}}
+    \textbf{Question} & \textbf{The paycheck $P$} & \textbf{The shipping cost $S$} \\
+    \hline
+    Domain, range (2.1) & $[0,50]$, \ $[0,660]$ & $(0,10]$, \ the list $\{6,10,16\}$ \\
+    Zeros, intercept (2.4) & one zero at $h=0$; $(0,0)$ & no zeros at all \\
+    Inc.\ / dec.\ / const.\ (2.4) & increasing on all of $[0,50]$ & constant on each piece; never
+      increasing \\
+    Absolute max, min (2.4) & \$660 at $h=50$; \$0 at $h=0$ & \$16 on $(5,10]$; \$6 on $(0,2]$ \\
+    End behavior (2.5) & none --- the domain stops & none --- the domain stops \\
+  \end{tabularx}
+  \vspace{0.25cm}
+
+  \textbf{Notice the two right-hand extremes are attained on a whole \emph{stretch}, not at one
+  point.} An extreme is still a value \emph{and} a location --- the location just got wider.
+\end{frame}
+
+% ── GUIDED PRACTICE ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Guided Practice: The Delivery Drone}
+  \sectionlabel{climb, cruise, descend --- three pieces, one flight}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.6cm, height=3.6cm,
+      xlabel={$t$ (seconds after take-off)}, ylabel={$A$ (feet)},
+      xmin=0, xmax=14, ymin=0, ymax=60,
+      xtick={0,2,4,6,8,10,12,14}, ytick={0,10,20,30,40,50}, minor x tick num=1,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[royal, very thick, domain=0:5, samples=60]{20*x-2*x^2};
+    \addplot[royal, very thick] coordinates {(5,50) (9,50) (14,0)};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.35cm}
+  \small
+  Increasing on $[0,5]$, constant on $[5,9]$, decreasing on $[9,14]$. \quad Zeros at $t=0$ and
+  $t=14$ --- take-off and landing.\\[0.1cm]
+  \textbf{Absolute maximum: $50$ feet --- and read its \emph{location} carefully.} The drone is at
+  $50$ feet at every second from $t=5$ to $t=9$, so the maximum is attained on the whole interval
+  $[5,9]$, not at one point.
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: Which Piece Owns This Input?}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  Every answer is still read off a picture.
+  \begin{block}{The rule for the whole activity}
+    Before you use a rule or read a value, \textbf{say out loud which piece owns the input}. And at
+    a boundary, \textbf{let the dots decide} --- filled means included, open means not.
+  \end{block}
+  \vspace{0.1cm}
+  Tier A closes on a graph with an \textbf{open circle at the top}, where the outputs get as close to
+  $6$ as you like and never reach it --- so there is \emph{no absolute maximum}. That is Lesson 2.5's
+  sentence in a completely new costume.
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.3cm}
+    \item The babysitting rate: $B(3)$ and $B(6)$, which piece owns each, and the \textbf{boundary
+          point}.
+    \item Absolute maximum? Absolute minimum? \textbf{Read the minimum's location carefully} --- it
+          is not a single point.
+    \item Somebody wrote ``the graph has a break at $h=4$, because that is where the rule changes.''
+          Naming $h=4$ was \emph{correct} in item 1. Say what is wrong anyway.
+  \end{enumerate}
+  \vspace{0.2cm}
+  {\color{royal}\bfseries Next: Lesson 2.7 --- Choosing and Comparing Models in Context.}
 \end{frame}
 
 \end{document}

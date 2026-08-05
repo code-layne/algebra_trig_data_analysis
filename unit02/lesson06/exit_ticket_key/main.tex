@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,53 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{One Babysitting Rate, and a Corner Called a Break}
+\small
+Notes closed. Three items. A babysitter charges a flat \$40 for a job of up to and including $4$
+hours, and \$15 for each hour after the fourth. The graph shows $B(h)$, the charge in dollars for a
+job of $h$ hours. No job runs longer than $8$ hours.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.2cm, height=4.4cm,
+    xlabel={$h$ (hours of the job)}, ylabel={$B$ (charge, \$)},
+    xmin=0, xmax=8, ymin=0, ymax=110,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={0,20,40,60,80,100}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,40) (4,40) (8,100)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(0,40) (3,40) (4,40) (6,70) (8,100)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=7pt, topsep=4pt]
+
+\item Give $B(3)$ and $B(6)$, and for each one name which piece owns that input --- the flat piece or
+the hourly piece. Then give the \emph{boundary point} of this function.
+
+\ansline{$B(3)=\$40$ --- the \textbf{flat} piece owns $h=3$, since $3$ is inside the first four hours.}\\
+\ansline{$B(6)=\$70$ --- the \textbf{hourly} piece owns $h=6$: $40+15(6-4)=40+30=70$.}\\
+\ansline{Boundary point: $h=4$ hours, where the flat rule hands off to the hourly rule.}\\
+
+\item Does $B$ have an absolute maximum? Does it have an absolute minimum? For each, give a value
+\emph{and} a location. Read the location of the minimum carefully.
+
+\ansline{Absolute maximum \$100 at $h=8$ --- a single point, at the right endpoint of the domain.}\\
+\ansline{Absolute minimum \$40, attained at \emph{every} $h$ from $0$ to $4$ --- the whole interval $[0,4]$.}\\
+
+\item A classmate writes: \emph{``The graph of $B$ has a break at $h=4$, because that is where the
+rule changes.''} Naming $h=4$ was correct in item 1. Explain what is wrong with the sentence anyway,
+and write the correct statement.
+
+\ansline{A change of rule is not a break. Both pieces give \$40 at $h=4$, so they meet at the single}\\
+\ansline{point $(4,40)$ with no gap and no open circle --- the graph can be traced without lifting the pencil.}\\
+\ansline{Correct: $B$ is \textbf{continuous} at $h=4$; the graph turns a \textbf{corner} there, and a corner is not a break.}\\
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}
