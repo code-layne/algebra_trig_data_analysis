@@ -16,56 +16,269 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can simplify a radical with a numeric or algebraic radicand by
+    pulling out every perfect $n$th-power factor, and I can add, subtract, multiply, and divide
+    radicals --- including clearing a radical out of a denominator. I can move between a radical
+    and a rational exponent in both directions and evaluate expressions like $27^{2/3}$ without a
+    calculator. I can use a square-root model from a real situation --- speed from a skid mark,
+    fall time from a tower height --- to answer a question and say what the answer means.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Knowledge \& Skills covered --- \texttt{A2.EO.2a--c}:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{2a} --- Simplify and determine equivalent radical expressions with
+        \textbf{numeric and algebraic radicands}.
+  \item \texttt{2b} --- \textbf{Add, subtract, multiply, and divide} radical expressions,
+        simplifying the result; includes \textbf{rationalizing the denominator}.
+  \item \texttt{2c} --- \textbf{Convert} between radical expressions and expressions containing
+        \textbf{rational exponents}, in both directions.
+\end{itemize}
+\textbf{Supporting fluency (Lesson 1.1, not a new code):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item The five exponent rules and the zero/negative exponents --- all of them survive
+        unchanged when the exponent becomes a fraction.
+  \item Like terms and ``every term times every term'' --- both reappear verbatim, with
+        $\sqrt3$ in the role of $x$.
+\end{itemize}
+\textbf{Where these codes go next:} \texttt{A2.EO.3b} in Lessons 1.3--1.5 (pulling out a common
+factor is the same habit as pulling out a perfect square); \texttt{A2.EO.1} in 1.7, where
+rationalizing becomes a rational-expression move; \texttt{A2.F.1} in Unit 3, where $a^{m/n}$ is
+what makes an exponential function defined between the integers.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{A radical undoes a power, so it scales the opposite way.} Lesson 1.1's hook said
+        doubling a radius quadruples the area. Today four times the skid length gives only twice
+        the speed. Same machinery, run backwards.
+  \item \textbf{``Simplified'' means the \emph{largest} perfect power came out.}
+        $\sqrt{72}=\sqrt4\cdot\sqrt{18}$ is a true statement and a wrong answer --- the usual
+        cause is grabbing the first square factor instead of the biggest.
+  \item \textbf{Rational exponents are forced, not defined.} $9^{1/2}\cdot 9^{1/2}=9$ by the
+        product rule, so $9^{1/2}$ \emph{has} to be $\sqrt9$. Presenting $a^{m/n}$ as a
+        definition to memorize is what produces $16^{1/2}=8$.
+  \item \textbf{Like radicals are like terms.} $\sqrt3$ behaves exactly like $x$ --- which is why
+        the instruction is always \emph{simplify first, then decide what combines}.
+  \item \textbf{A root splits over a product, never over a sum.} $\sqrt{9+16}=5$, not $7$. This
+        is the single most durable error in the lesson and it returns in Unit 7 the moment
+        students meet the Pythagorean Theorem.
+  \item \textbf{Exact beats rounded.} $30\sqrt2$ carries more information than $42.4$; the
+        decimal is for the sentence at the end, not for the work in the middle.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Radical, radicand, index & In $\sqrt[n]{a}$ the whole symbol is the radical, $a$ is the radicand,
+    and $n$ is the index. A missing index means $2$. \\
+Principal square root & The non-negative root: $\sqrt{49}=7$. The other one is written
+    $-\sqrt{49}$. \\
+Product \& quotient properties & $\sqrt[n]{ab}=\sqrt[n]{a}\sqrt[n]{b}$ and
+    $\sqrt[n]{a/b}=\sqrt[n]{a}/\sqrt[n]{b}$ for $b \ne 0$. There is \emph{no} such property for
+    sums. \\
+Simplified radical form & No perfect $n$th-power factor remains inside, and no radical remains in
+    a denominator. \\
+Like radicals & Same index \emph{and} same radicand --- the only radicals that may be added or
+    subtracted. \\
+Rational exponent & $a^{m/n}=\sqrt[n]{a^m}=\left(\sqrt[n]{a}\right)^m$. Denominator $=$ index,
+    numerator $=$ power. \\
+Rationalizing the denominator & Multiplying by a form of $1$ to clear a radical downstairs:
+    $\dfrac{6}{\sqrt3}\cdot\dfrac{\sqrt3}{\sqrt3}=2\sqrt3$. \\
+Conjugate & $\sqrt a + b$ and $\sqrt a - b$. Their product is $a-b^2$ --- no radical --- which is
+    why it clears a two-term denominator (Tier E). \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{Four items, about 6 minutes:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Spiral from 1.1: simplify $\left(5y^3\right)^2$
+  \item Evaluate $\sqrt{144}$, $\sqrt[3]{64}$, $\sqrt{81}$ (perfect-power recall)
+  \item Rewrite $72$, $48$, $200$ as (largest perfect square) $\times$ (the rest)
+  \item \emph{Discovery}: apply the product rule to $9^{1/2}\cdot 9^{1/2}$
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 3 is the whole simplification algorithm in disguise --- if a
+student writes $72=4\cdot 18$, that is exactly the error that will cost them box 1, so catch it
+here. Item 4 is not review at all; it is the lesson's first two minutes. Take it out loud
+\emph{before} the hook and let a student say ``so $9^{1/2}$ is $3$.''
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{Reading a skid mark.} Crash investigators estimate a car's speed from the length of its
+skid marks: on a road with drag factor $f$, a skid of $d$ feet means the car was going about
+$s=\sqrt{30fd}$ mph. Two cars skid to a stop on the same dry asphalt ($f=0.8$): Car A leaves a
+$60$-foot skid, Car B a $240$-foot skid --- \textbf{four times as long}. \textbf{Pose it this
+way:} ``Four times the skid. Was Car B going four times as fast? Vote before you compute.'' Most
+rooms vote yes. Then compute:
+\[ \sqrt{30(0.8)(60)} = \sqrt{1440} = 12\sqrt{10} \approx 37.9 \qquad
+   \sqrt{30(0.8)(240)} = \sqrt{5760} = 24\sqrt{10} \approx 75.9. \]
+Four times the skid, exactly \emph{twice} the speed, because $\sqrt4=2$. \textbf{Name the
+connection to Lesson 1.1 out loud:} yesterday doubling a radius quadrupled an area; today
+quadrupling a distance only doubles a speed. A radical is that machinery running backwards --- and
+$\sqrt{1440}=12\sqrt{10}$ is the first reason simplifying a radical is worth doing.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Simplifying (12 min).} Start from warm-up item 3 --- the largest perfect square, not
+the first one. State both properties, then fill the table together. \textbf{Ask:} ``Why is
+$\sqrt4\cdot\sqrt{18}$ a wrong answer even though it is a true statement?'' Do the algebraic
+radicands slowly: $\sqrt{72x^5}$ works because $x^5=x^4\cdot x$, and students who see the even
+exponent as the ``perfect square part'' generalize correctly to $\sqrt[3]{40y^7}$. Close the box
+by simplifying the hook's $\sqrt{1440}$.
+
+\textbf{2. Rational exponents (12 min).} Run warm-up item 4 back on the board. The point is that
+nobody chose $a^{1/n}=\sqrt[n]{a}$ --- the product rule forces it, exactly as the quotient rule
+forced $x^0=1$ in Lesson 1.1. \textbf{Ask:} ``Which part of $\tfrac23$ is the root and which is
+the power?'' Then $27^{2/3}$: take the root \emph{first} and the arithmetic stays at $3^2$
+instead of $\sqrt[3]{729}$. Finish with $\left(32x^{10}\right)^{3/5}$ to show every 1.1 rule
+survived intact.
+
+\textbf{3. Operations (12 min).} Frame adding as the like-terms rule with $\sqrt3$ in place of
+$x$; that one sentence does most of the work. \textbf{Ask:} ``Are $\sqrt{12}$ and $\sqrt{75}$
+like radicals?'' --- they look unlike and are not, which is why \emph{simplify first} is the
+standing instruction. Multiplication is 1.1's ``every term times every term'' unchanged. For
+rationalizing, insist on the phrase ``multiplying by $1$'' so nobody believes the value changed.
+
+\textbf{4. Guided practice (8 min).} The accident report. Item 1 is the computation, item 2 is
+the interpretation (a number \emph{and} a sentence), item 3 is the justification --- and item 3
+is the one to protect if time runs short, because it is the hook's idea stated in the students'
+own words.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Simplifying Any Radical]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four steps students record:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Read the index. It tells you which perfect powers to hunt: squares for $n=2$, cubes for
+        $n=3$.
+  \item Find the \textbf{largest} perfect $n$th-power factor of the radicand --- numbers and
+        variables both. For a variable, that is the largest multiple of $n$ in its exponent.
+  \item Split the radical over that product and take the root of the perfect part.
+  \item Check: is anything left inside that is still a perfect $n$th power? If yes, you did not
+        take the largest one.
+\end{enumerate}
+\textbf{Say this out loud:} ``$\sqrt{a+b}$ is not $\sqrt a + \sqrt b$. The property is about
+products.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example (algebraic radicand):}
+\[
+\begin{aligned}
+\sqrt[3]{40y^7} &= \sqrt[3]{8y^6 \cdot 5y} \\
+                &= \sqrt[3]{8y^6}\cdot\sqrt[3]{5y} \\
+                &= 2y^2\sqrt[3]{5y}
+\end{aligned}
+\]
+Index $3$, so hunt cubes: $8$ is the largest cube factor of $40$, and $y^6$ is the largest
+multiple-of-$3$ power inside $y^7$. \textbf{The error to name before it happens:} pulling out
+$y^7$ whole, or writing $2y^2\sqrt[3]{5}\,y$. The leftover $y$ stays \emph{inside} the radical.
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes, box 1:} watch for $\sqrt{50}=25\sqrt2$ --- the root was never taken --- and
+        for $\sqrt{72x^5}$ answered $6x^2\sqrt2\,x$ with the leftover $x$ escaping the radical.
+  \item \textbf{Notes, box 2:} watch for $16^{-1/2}=-4$. It is Lesson 1.1's negative-exponent
+        misconception wearing a fraction; ask ``did the exponent ever change a sign yesterday?''
+  \item \textbf{Notes, box 3:} the giveaway error is $\sqrt{12}+\sqrt{75}$ declared ``cannot be
+        combined.'' Point at the radicands and say nothing else.
+  \item \textbf{Activity, Tier A item 3:} students will answer $256$ feet. The fall time depends
+        on $\sqrt h$, so doubling it takes \emph{four} times the height. Expect this to be the
+        sticking point for a third of the room --- it is the hook again, inverted.
+  \item \textbf{Cold-call prompts:} ``Why is $\sqrt4\cdot\sqrt{18}$ not an answer?'' ``Is
+        $16^{1/2}$ eight?'' ``Which part of $\tfrac32$ is the root?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Five one-line fluency items: a numeric square root, a cube root, an algebraic radicand, a
+        sum of like radicals, and one radical-to-exponent conversion.
+  \item Support: have the group list the perfect squares to $144$ on scratch paper first.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Derive $t=\sqrt h/4$ from $h=16t^2$, then evaluate it at $h=128$.
+  \item Double the fall time --- the $512$-foot item, and a sentence on what it costs.
+  \item A rationalizing item ($12/\sqrt6$) and a binomial product with radicals.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique two wrong answers, $\sqrt{9+16}=7$ and $16^{1/2}=8$, and name each mistake.
+  \item Rationalize $6/\left(\sqrt5-2\right)$ with a conjugate, and say why it works.
+  \item Justify: eight times the volume of a cube is only twice the edge.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} (1) simplify $\sqrt{98x^7}$ --- answer $7x^3\sqrt{2x}$;
+(2) combine $\sqrt{27}+\sqrt{12}$ --- answer $5\sqrt3$; (3) \textbf{the conceptual check} --- write
+$8^{2/3}$ in radical form, evaluate it ($4$), and say in one sentence what the $3$ does and what
+the $2$ does.
+
+\textbf{Using the results:} the three items sample the three lettered skills in order --- $2a$,
+$2b$, $2c$ --- so a wrong item names the code to reteach, not just a score out of three. Item 1
+failing usually means the largest perfect power was not taken; item 2 failing means the student
+never simplified before comparing; item 3 failing means the fraction is still being read as a
+fraction rather than as root-and-power. Sort the tickets by \emph{which} item is wrong; that sort
+is your Tier R grouping for Lesson 1.3.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (13 items): nine fluency items covering all three lettered skills --- simplify
+(numeric, cube-root, two-variable algebraic), the four operations including a binomial product and
+a rationalized quotient, and conversion in both directions plus two evaluations without a
+calculator --- then a three-part Kepler's-third-law model ($T=a^{3/2}$), and one look-ahead item.
+
+\textbf{Extension (optional):} a square gate of side $s$ needs a diagonal brace of $s\sqrt2$;
+compute it for $6$ and $12$ feet and explain why doubling the side \emph{doubles} the brace here,
+even though quadrupling the drop tower's height only doubled the fall time. The distinction is
+that $s\sqrt2$ is $s$ times a constant while $\sqrt h$ is not.
+
+\textbf{Preview of Lesson 1.3 (\texttt{A2.EO.3b}):} factoring by GCF and grouping. Homework item
+13 makes the link explicit --- pulling the largest perfect square out of a radicand and pulling
+the largest common factor out of a polynomial are the same habit applied to different objects.
+
+\textbf{Connections.} Covers \texttt{A2.EO.2a} (simplify numeric and algebraic radicands),
+\texttt{A2.EO.2b} (add, subtract, multiply, divide, rationalize), and \texttt{A2.EO.2c} (convert
+radicals $\leftrightarrow$ rational exponents). Builds directly on \texttt{A2.EO.3a} (Lesson 1.1);
+feeds \texttt{A2.EO.3b} (1.3--1.5), \texttt{A2.EO.1a--b} (1.7, where rationalizing returns as a
+rational-expression move), and \texttt{A2.F.1} in Unit 3, where $a^{m/n}$ is what lets an
+exponential function have values between the integers.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +286,58 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{6 minutes, and take item 4 out loud before anything else.} Answers: (1) $25y^6$;
+    (2) $12$, $4$, $9$; (3) $36\cdot2$, $16\cdot3$, $100\cdot2$; (4) $9^{1/2}\cdot9^{1/2}=9^1=9$,
+    so $9^{1/2}=3$. Item 4 is the pivot of the whole lesson --- if you collect it silently you
+    have spent the discovery and bought nothing. Put $9^{\frac12+\frac12}$ on the board and ask
+    who can finish the sentence. Item 3 is the diagnostic that matters most: a student who writes
+    $72=4\cdot18$ will produce $\sqrt{72}=2\sqrt{18}$ within ten minutes, so correct the habit
+    now, at the level of whole numbers, where it is cheap.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{The tables in boxes 1 and 2 are fill-ins, not handouts.} Answers, box 1:
+    $5\sqrt2$, $3\sqrt[3]2$, $6x^2\sqrt{2x}$, $2y^2\sqrt[3]{5y}$, $\dfrac74$; the in-text blank is
+    \emph{simplified}. Box 2: $x^{5/3}$, $y^{3/4}$, $t^{5/6}$ down the left, and $9$, $\dfrac14$,
+    $27$ down the right; the blank is \emph{index}. Box 3's blank is \emph{radicand}. Box 2 is the
+    box that pays off all year --- it is why Unit 3's exponential functions have values between
+    the integers --- so do not cut it for time. If the period is running behind, cut the binomial
+    product in box 3 (keep the rationalizing example) rather than shortening guided practice. On
+    the practice item 3, expect ``$240$ feet''; let the group compute $\sqrt{30(0.5)(240)}$ and
+    watch the mismatch send them back.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is five one-liners; a
+    group still working on it at six minutes needs you, not more time. Tier A item 1 is worth
+    doing on the board first if more than two groups stall --- solving $h=16t^2$ for $t$ is the
+    algebra, and the rest of the tier is arithmetic once it is done. Item 3 is the lesson's real
+    assessment: doubling the fall time takes $512$ feet, not $256$, and roughly a third of the
+    room will write $256$. Do not correct it --- ask them to compute $\sqrt{256}/4$ and compare it
+    to $2\sqrt2$. Tier E item 1 is the one to share out; both errors ($\sqrt{9+16}=7$ and
+    $16^{1/2}=8$) will be in the room whether or not anyone admits to them.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} The three items are
+    \texttt{2a}, \texttt{2b}, \texttt{2c} in order, so read the tickets by \emph{which} item is
+    wrong rather than by a score. A student who misses only item 1 is grabbing the first perfect
+    square instead of the largest; only item 2 means they compared $\sqrt{27}$ and $\sqrt{12}$
+    before simplifying; only item 3 means the fraction is still being read as a fraction. Item 3
+    asks for a sentence: accept anything that identifies the $3$ as the root and the $2$ as the
+    power, and do not require the words ``index'' or ``radicand.''
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 20--25 minutes.} Items 1--9 are deliberately unmixed by type so a student can
+    tell you which \emph{kind} of problem broke. Item 3 is the only one with two variables and an
+    odd exponent under a square root, so check it first when you spot-grade --- $y^3$ splitting
+    into $y^2\cdot y$ is the step most likely to be skipped. Items 10--12 are the first place in
+    this course where a rational exponent does real scientific work; item 12 needs a calculator
+    and item 11 deliberately does not, so students see that $4^{3/2}$ is exact arithmetic. Item 13
+    is the bridge into Lesson 1.3 --- students are asked to pull out a shared factor, framed as
+    the same move they spent all period making with perfect squares, so nobody needs vocabulary
+    they have not met. The extension is genuinely optional and is the best follow-up for whoever
+    finished Tier E early.
 \end{teachernote}
 \end{document}

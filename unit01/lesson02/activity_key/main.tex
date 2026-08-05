@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,145 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+An amusement park is designing a free-fall drop tower. Ignoring air resistance, an object dropped
+from rest falls $h=16t^2$ feet in $t$ seconds --- so the length of the free fall depends on the
+height of the tower.
+
+Work with your group. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R
+without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Five fluency moves. Every one of them shows up again in Tier A.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Simplify: $\sqrt{75}$
+\begin{work}
+  \sqrt{75} &= \sqrt{25 \cdot 3} \\
+            &= 5\sqrt{3}
+\end{work}
+
+  \item Simplify: $\sqrt[3]{16}$
+\begin{work}
+  \sqrt[3]{16} &= \sqrt[3]{8 \cdot 2} \\
+               &= 2\sqrt[3]{2}
+\end{work}
+
+  \item Simplify: $\sqrt{45x^4}$
+\begin{work}
+  \sqrt{45x^4} &= \sqrt{9x^4 \cdot 5} \\
+               &= 3x^2\sqrt{5}
+\end{work}
+
+  \item Combine: $\sqrt{20}+\sqrt{5}$
+\begin{work}
+  \sqrt{20}+\sqrt{5} &= 2\sqrt{5}+\sqrt{5} \\
+                     &= 3\sqrt{5}
+\end{work}
+
+  \item Rewrite with a rational exponent: $\sqrt[3]{n^7}$
+\begin{work}
+  \sqrt[3]{n^7} &= n^{7/3}
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Now build the ride's model. A tower of height $h$ feet gives a free fall of $t$ seconds.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Start from $h=16t^2$ and solve for $t$. Show that the model can be written
+        $t=\dfrac{\sqrt{h}}{4}$.
+\begin{work}
+  h &= 16t^2 \\
+  \dfrac{h}{16} &= t^2 \\
+  t &= \sqrt{\dfrac{h}{16}} = \dfrac{\sqrt{h}}{4}
+\end{work}
+
+  \item The park's first design is $128$ feet tall. Find the fall time exactly, then round to the
+        nearest hundredth of a second.
+\begin{work}
+  t &= \dfrac{\sqrt{128}}{4} \\
+    &= \dfrac{8\sqrt{2}}{4} \\
+    &= 2\sqrt{2} \approx 2.83 \text{ seconds}
+\end{work}
+
+  \item Marketing wants a fall that lasts \emph{twice} as long. How tall must the tower be? Find
+        the height, then write one sentence about what that costs the park.
+\begin{work}
+  4\sqrt{2} &= \dfrac{\sqrt{h}}{4} \\
+  16\sqrt{2} &= \sqrt{h} \\
+  h &= \left(16\sqrt{2}\right)^2 = 512 \text{ feet}
+\end{work}
+\ansline{Twice the thrill costs four times the tower --- $512$ ft instead of $128$ ft.}
+
+  \item A second park writes its model as $t=\dfrac{12}{\sqrt{6}}$ seconds for its own tower.
+        Rationalize the denominator and give the exact value.
+\begin{work}
+  \dfrac{12}{\sqrt{6}} &= \dfrac{12}{\sqrt{6}}\cdot\dfrac{\sqrt{6}}{\sqrt{6}} \\
+                       &= \dfrac{12\sqrt{6}}{6} \\
+                       &= 2\sqrt{6} \approx 4.90 \text{ seconds}
+\end{work}
+
+  \item The ride's safety fence is a rectangle measuring $\left(\sqrt{5}+2\right)$ meters by
+        $\left(\sqrt{5}-4\right)$ meters on the plans. Multiply the two and simplify.
+\begin{work}
+  \left(\sqrt{5}+2\right)\left(\sqrt{5}-4\right) &= 5-4\sqrt{5}+2\sqrt{5}-8 \\
+                                                 &= -3-2\sqrt{5}
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item \textbf{Critique the work.} A student turned in these two answers. Both are wrong.
+        Write the correct value for each, then name the mistake.
+        \[ \sqrt{9+16} = 3+4 = 7 \qquad\text{and}\qquad 16^{1/2} = 8 \]
+\begin{work}
+  \sqrt{9+16} &= \sqrt{25} = 5 \\
+  16^{1/2} &= \sqrt{16} = 4
+\end{work}
+\ansline{A root splits over a product, never over a sum; and $a^{1/2}$ is a root, not half of $a$.}
+
+  \item \textbf{A tougher denominator.} Rationalize $\dfrac{6}{\sqrt{5}-2}$ by multiplying top and
+        bottom by $\sqrt{5}+2$. Why does that particular factor clear the radical?
+\begin{work}
+  \dfrac{6}{\sqrt{5}-2} &= \dfrac{6\left(\sqrt{5}+2\right)}{\left(\sqrt{5}-2\right)\left(\sqrt{5}+2\right)} \\
+                        &= \dfrac{6\sqrt{5}+12}{5-4} \\
+                        &= 6\sqrt{5}+12 \approx 25.42
+\end{work}
+\ansline{The middle terms cancel, leaving $\left(\sqrt5\right)^2-2^2=5-4$ --- no radical left.}
+
+  \item \textbf{Justify.} A cube-shaped water tank of volume $V$ cubic feet has edge length
+        $s=V^{1/3}$. A second tank holds \emph{eight times} the water. Show that its edge is only
+        twice as long, and explain why ``eight times the water'' does not mean ``eight times as
+        tall.''
+\begin{work}
+  (8V)^{1/3} &= 8^{1/3}V^{1/3} \\
+             &= 2V^{1/3} = 2s
+\end{work}
+\ansline{Volume grows with the \emph{cube} of the edge, so the edge grows with the cube root.}\\
+\ansline{Doubling every edge already multiplies the volume by $2^3=8$ --- Lesson 1.1's tub again.}\\
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

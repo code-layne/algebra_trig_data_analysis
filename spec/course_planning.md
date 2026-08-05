@@ -5,12 +5,13 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-04** — Authored **Unit 1 Lesson 1.1 (Simplifying Algebraic Expressions and Exponent
-Rules, `A2.EO.3a`)** in full: lesson plan, cover, warm-up, guided notes, group activity, exit
-ticket, homework, all five keys, and the slide deck. `make -C unit01/lesson01 all` and
-`make -C unit01/lesson01 check` both pass; every page of every blank, plus key spot-checks,
-eyeballed for boxguard. All arithmetic verified in Python before authoring. Lesson 1.0 remains
-the structural model; 1.1 confirms it holds.
+**2026-08-04** — Authored **Unit 1 Lesson 1.2 (Radicals and Rational Exponents,
+`A2.EO.2a--c`)** in full: lesson plan, cover, warm-up, guided notes, group activity, exit ticket,
+homework, all five keys, and the slide deck. `make -C unit01/lesson02 all` and
+`make -C unit01/lesson02 check` both pass (`✓ check passed — 1 lesson, no convention
+violations`); every page of every blank plus key spot-checks eyeballed for boxguard — no stranded
+stubs, every guard moved its box whole on the first pass. All arithmetic verified in Python
+before authoring. The structural model set by 1.0/1.1 held with no adjustment.
 
 ## Course-wide rules set by the user (2026-08-04)
 
@@ -30,8 +31,31 @@ the structural model; 1.1 confirms it holds.
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (2 of 59): `unit01/lesson00`, `unit01/lesson01`.** Every component written, built,
-  and gated.
+- **Authored (3 of 59): `unit01/lesson00`, `unit01/lesson01`, `unit01/lesson02`.** Every component
+  written, built, and gated.
+- **`unit01/lesson02` — Radicals and Rational Exponents (`A2.EO.2a--c`).**
+  - Spine: **a radical is 1.1's machinery run backwards.** Hook is the skid mark,
+    $s=\sqrt{30fd}$: on dry asphalt ($f=0.8$) a $60$-ft skid gives $\sqrt{1440}=12\sqrt{10}
+    \approx 37.9$ mph and a $240$-ft skid gives $24\sqrt{10}\approx 75.9$ — four times the skid,
+    only twice the speed. 1.1 doubled a radius and quadrupled an area; 1.2 inverts it. That
+    inversion recurs in the activity (fall time) and Tier E (cube edge).
+  - Notes = 5 vocab terms + simplifying (fill-in table: $5\sqrt2$, $3\sqrt[3]2$, $6x^2\sqrt{2x}$,
+    $2y^2\sqrt[3]{5y}$, $\tfrac74$) + rational exponents **forced by the product rule**
+    ($9^{1/2}\cdot9^{1/2}=9$), conversion table ($x^{5/3}$, $y^{3/4}$, $t^{5/6}$ / $9$, $\tfrac14$,
+    $27$) + the four operations incl. rationalizing; guided practice is the accident report,
+    $\sqrt{1800}=30\sqrt2\approx 42.4$ mph in a $35$ zone, and $480$ ft (not $240$) to double it.
+  - The three in-text blanks are *simplified*, *index*, *radicand*.
+  - Context thread is one square-root model per component: notes/skid marks; activity/drop tower
+    $t=\sqrt h/4$ ($h=128 \to 2\sqrt2 \approx 2.83$ s; doubling the fall needs $512$ ft, not
+    $256$); homework/Kepler $T=a^{3/2}$ ($a=4\to 8$ yr exactly, Jupiter $a=5.2 \to 11.9$ yr).
+  - Activity tiers R/A/E; Tier E is error critique ($\sqrt{9+16}=7$, $16^{1/2}=8$), conjugate
+    rationalizing $6/(\sqrt5-2)=6\sqrt5+12$, and the $8\times$-volume/$2\times$-edge justification.
+  - Homework 13 items + the gate-brace extension ($s\sqrt2$ scales linearly, $\sqrt h$ does not);
+    item 13 asks for $12x^3-18x^2=6x^2(2x-3)$, framed as the same "pull out the largest factor"
+    habit as simplifying $\sqrt{72}$ — so it bridges to 1.3 without new vocabulary.
+  - Exit ticket samples `2a`/`2b`/`2c` in order, so a wrong item names the code to reteach.
+  - Page counts: cover 1, warm-up 1/1, notes 3/3, activity 3/3, exit ticket 1/1, homework 2/2;
+    student and key packets 16 pages each. Plan 5 pp, slides 10 frames.
 - **`unit01/lesson01` — Simplifying Algebraic Expressions and Exponent Rules (`A2.EO.3a`).**
   - Spine: **scaling**. Hook is the Party Size popcorn tub — twice as wide and twice as tall at
     three times the price, so $\pi(2r)^2(2h)=8\pi r^2h$ is eight times the popcorn. The exponent
@@ -50,6 +74,7 @@ the structural model; 1.1 confirms it holds.
     students to *check* $7x^3$ by squaring, so it bridges to 1.2 without needing a radical symbol.
   - Page counts: cover 1, warm-up 1/1, notes 4/4, activity 3/3, exit ticket 1/1, homework 3/3;
     student and key packets 18 pages each. Plan 5 pp, slides 10 frames.
+- **`unit01/lesson00` — Unit 1 opener (no new content).**
   - Spine: one quadratic model, two equivalent forms —
     $h(t)=-16t^2+48t+64 = -16(t-4)(t+1)$ (fireworks shell off a 64-ft cliff). Expanded form
     shows the launch height, factored form shows the landing time; neither is "better."
@@ -96,22 +121,35 @@ the structural model; 1.1 confirms it holds.
   4. Guards must be re-measured after *any* content change, and always applied to blank and key
      together (a scripted pass keyed on the guard line plus the following `\begin{...}` line is
      the reliable way; note `tcolorbox` options can push the title onto the *second* line).
-- **Everything else is still scaffold skeletons**: unit01 lessons 1.2–1.7, units 02–08 in full,
+- **Conventions confirmed while authoring 1.2 — the guard sizes that worked:**
+  1. The 1.1 tuning rule ("size each guard to its own box") produced a clean first pass with no
+     re-measuring. Working values for a lesson of this shape: `\boxguard` bare on the vocab box,
+     `[12]` on a hook box with two write-lines, `[20]`–`[24]` on a full notesbox carrying a
+     fill-in table plus `work` blocks, `[16]` on Tier R/Tier A, `[30]` on Tier E, `[14]`–`[22]`
+     on the homework's trailing scenario/extension boxes.
+  2. **No `\tcbbreak` was needed** — consistent with the 1.1 finding that it is a per-lesson
+     judgement, not a carried convention.
+  3. A tall `tabularx` inside a breakable `skillbox` will move the *whole* box, because the table
+     itself cannot split. That is why the lesson plan's page 1 ends with roughly a third empty —
+     correct behaviour, not a missed guard.
+- **Everything else is still scaffold skeletons**: unit01 lessons 1.3–1.7, units 02–08 in full,
   plus each unit's `tests/`, `test_keys/`, `sample_test/`, `sample_test_key/`.
 - No `unit_cover/` pair exists for any unit yet, and `finals/` has not been created.
-- Lesson 1.0 is merged to `main` (PR #4). Lesson 1.1 is on worktree branch
-  `claude/lesson-1-1-generation-460932`, **not yet committed**.
+- Lesson 1.0 is merged to `main` (PR #4). Lesson 1.1 is merged to `main` (commit `ca47f7e`).
+  Lesson 1.2 is on worktree branch `claude/lesson-1-2-generation-8b2f58`, **not yet committed**.
 
 ## Next steps
 
-1. Commit / PR Lesson 1.1 (user to confirm).
-2. Author **Unit 1 Lesson 1.2 — Radicals and Rational Exponents** (`A2.EO.2a–c`). Lesson 1.1's
-   homework item 12, its remind box, and its closing slide all promise it as the next lesson,
-   and its notes explicitly set up "the same exponent rules survive fractional exponents."
-3. Then 1.3–1.7 in order. The model now holds across two lessons, so the parallel-dispatch
+1. Commit / PR Lesson 1.2 (user to confirm).
+2. Author **Unit 1 Lesson 1.3 — Factoring: GCF and Grouping** (`A2.EO.3b`). Lesson 1.2's homework
+   item 13, its remind box, and its closing slide all promise it as the next lesson, and item 13
+   already has students pull $6x^2$ out of $12x^3-18x^2$ — framed as the same "largest common
+   factor out front" habit as simplifying $\sqrt{72}$, so 1.3 can open by naming a move they have
+   already made.
+3. Then 1.4–1.7 in order. The model now holds across three lessons, so the parallel-dispatch
    pattern (coordinator scaffolds, one subagent per lesson, coordinator builds and gates) is
-   reasonable to try — but give each agent the boxguard tuning rule above, since guard sizing is
-   the one thing `make check` cannot catch and it cost the most iteration on 1.1.
+   reasonable to try — but give each agent the boxguard tuning rule and the 1.2 guard sizes above,
+   since guard sizing is the one thing `make check` cannot catch.
 4. After the Unit 1 lessons: author `unit01/tests/` (practice + actual) and `unit01/test_keys/`,
    and add the `unit01/unit_cover/` + `unit_cover_key/` pair (the test rationale and Part D
    scoring go on page 2 of the key cover, never in a test key).
