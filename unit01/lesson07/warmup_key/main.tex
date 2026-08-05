@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{3pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
@@ -12,9 +13,50 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Four Moves Today's Lesson Runs On}
+\small
+Item 4 uses your answers from items 1, 2, and 3 --- do them in order. Show your work on all four.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+
+\item \textbf{Spiral --- Lessons 1.4 and 1.5.} Factor: \quad (a) $x^2+7x+12$ \quad
+(b) $x^2-16$
+\begin{work}
+  x^2+7x+12 &= (x+3)(x+4) \\
+  x^2-16 &= (x+4)(x-4)
+\end{work}
+
+\item \textbf{Spiral --- Lesson 1.6.} Solve $x^2-16=0$.
+\begin{work}
+  (x+4)(x-4) &= 0 \\
+  x &= -4 \quad \text{or} \quad x = 4
+\end{work}
+
+\item \textbf{Number sense --- the whole lesson is hiding here.} Work with plain numbers.
+(a) Simplify $\frac{12}{18}$ and say what you divided out. \
+(b) A student simplifies $\frac{3+4}{3+5}$ to $\frac{4}{5}$ by ``cancelling the $3$s.'' Compute the
+real value and show the student is wrong. \
+(c) Now simplify $\frac{3 \cdot 4}{3 \cdot 5}$. In which of the two did the $3$s cancel --- the one
+joined by \textbf{plus} or the one joined by \textbf{times}?
+\begin{work}
+  \frac{12}{18} &= \frac{6 \cdot 2}{6 \cdot 3} = \frac{2}{3}
+      \quad \text{(divided out the common factor } 6\text{)} \\
+  \frac{3+4}{3+5} &= \frac{7}{8}, \; \text{but ``cancelling'' gives } \frac{4}{5},
+      \; \text{and } \frac78 \ne \frac45 \\
+  \frac{3 \cdot 4}{3 \cdot 5} &= \frac{4}{5} \quad \text{--- here the } 3\text{s are }
+      \textbf{factors}, \text{ so they divide out}
+\end{work}
+
+\item \textbf{Discovery.} Use item 1 to rewrite \ \TallMath{\frac{x^2+7x+12}{x^2-16}}, then use
+item 3 to decide what is allowed to cancel. Finish the simplification --- and then use item 2 to
+name every value of $x$ that you must \emph{not} substitute into the original expression.
+\begin{work}
+  \frac{x^2+7x+12}{x^2-16} &= \frac{(x+3)(x+4)}{(x+4)(x-4)} = \frac{x+3}{x-4} \\
+  \text{forbidden: } x &= 4 \text{ and } x = -4 \quad \text{--- they make the bottom } 0,
+      \text{ and you cannot divide by } 0
+\end{work}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

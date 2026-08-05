@@ -5,16 +5,15 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-04** — Authored **Unit 1 Lesson 1.6 (Solving Polynomial Equations by Factoring,
-`A2.EI.2b`, `A2.EI.6a–b`)** in full: lesson plan, cover, warm-up, guided notes, group activity,
-exit ticket, homework, all five keys, and the slide deck. `make -C unit01/lesson06 all` and
-`make -C unit01/lesson06 check` both pass (`✓ check passed — 1 lesson, no convention violations`);
-every page of both packets and the plan eyeballed for boxguard, and **one real violation was found
-and fixed** (see the 1.6 entry). Every factorization, root set, and height evaluation verified in
-pure Python before authoring (coefficient-list polynomial arithmetic: expand the factored form and
-compare term-by-term, then integer-root scan). This is the **first lesson of the course to leave
-`A2.EO` for `A2.EI`**, the first to carry a **graph** (pgfplots), and the first to name **imaginary**
-solutions.
+**2026-08-05** — Authored **Unit 1 Lesson 1.7 (Simplifying Rational Expressions, `A2.EO.1a–b`)** in
+full: lesson plan, cover, warm-up, guided notes, group activity, exit ticket, homework, all five
+keys, and the slide deck. `make -C unit01/lesson07 all` and `make -C unit01/lesson07 check` both
+pass (`✓ check passed — 1 lesson, no convention violations`); every page of both packets and the
+plan eyeballed for boxguard, and **two real violations were found and fixed** (see the 1.7 entry).
+All 90 numeric claims — factorizations, cancellations, excluded values, the four operations, and
+every contextual evaluation — verified in pure Python before authoring, by **cross-multiplication
+of the rational functions plus agreement at ~58 sampled rational points per identity**.
+**This completes Unit 1's seven content lessons plus the opener (8 of 59).**
 
 ## Course-wide rules set by the user (2026-08-04)
 
@@ -34,8 +33,80 @@ solutions.
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (7 of 59): `unit01/lesson00` through `unit01/lesson06`.** Every component written,
-  built, and gated.
+- **Authored (8 of 59): `unit01/lesson00` through `unit01/lesson07` — Unit 1's lessons are
+  complete.** Every component written, built, and gated.
+- **`unit01/lesson07` — Simplifying Rational Expressions (`A2.EO.1a–b`).** The last content lesson
+  of Unit 1.
+  - Spine: **nothing about fractions changed — the letters are the only new thing.** $12/18 = 2/3$
+    and $\frac{(x+3)(x-3)}{(x+3)(x+4)} = \frac{x-3}{x+4}$ are one move. The sentence being taught is
+    *only factors cancel* — a factor is being multiplied, terms joined by $+$ or $-$ are not.
+  - **The unit's error streak changes family here, and that is deliberate.** 1.3–1.6 ran "true but
+    incomplete" four times. 1.7's error is a *different* belief with its own three-lesson streak:
+    1.1's $(2m+3)^2 \ne 4m^2+9$, 1.2's $\sqrt{9+16} \ne 7$, and now cancelling across a $+$. The
+    plan, the slides, and the exit-ticket note all name it as **"an operation does not reach inside
+    a sum."** Say the streak out loud — students hear three unrelated mistakes otherwise.
+  - **Scope decision, deliberate and recorded.** `EO.1a` (all four operations) is covered in full;
+    unlike denominators appear, but only where the common denominator is a **product of binomials
+    already in front of the student** — no LCM algorithm. Complex fractions (`EO.1c`) are not in the
+    lesson map and are not taught. Every denominator is linear or quadratic, per `EO.1b`.
+  - Warm-up **item 3 is the diagnostic and the theorem at once** (1.6's pattern, reused): pure
+    arithmetic — $\tfrac{12}{18}$, then $\tfrac{3+4}{3+5}=\tfrac78 \ne \tfrac45$, then
+    $\tfrac{3\cdot4}{3\cdot5}=\tfrac45$. Item 4 is the pivot onto letters. **Unlike 1.6, a student
+    who cannot factor item 1 genuinely cannot start** — factoring is the only way to see what
+    cancels; note those names for Tier R before the notes begin.
+  - Hook is the **booster club's T-shirts**, $A(x)=\frac{6x+240}{x}$: the "cancel the $x$'s" claim
+    of \$246 is refuted by arithmetic ($A(10)=30$, $A(40)=12$, $A(240)=7$), and $x=0$ is the
+    course's first excluded value — one the *story itself* explains. This expression deliberately
+    **does not cancel**, which is how "simplify does not mean shorten" gets stated on minute one.
+  - Notes = 5 vocab terms (rational expression, excluded value, **factor vs. term**, simplest form,
+    equivalent rational expressions) + four boxes: excluded values (5-row table whose **row 5,
+    $\frac{3x}{x^2+9}$, has no excluded values at all** — 1.5's prime sum of squares paying a third
+    dividend); simplifying, whose two closing paragraphs (**the scar** and **the error of the day**)
+    matter more than its table; multiply/divide, where $x \ne -1$ survives into an answer with no
+    fraction in it; and add/subtract, like denominators then one unlike pair. The three in-text
+    blanks are *zero*, *factors*, *original*.
+  - **"The scar" is the lesson's best idea and it is exactly `EO.1b`'s word *justify*.** Excluded
+    values are read from the **original** denominator: $\frac{x^2-9}{x^2+7x+12}$ is $\tfrac00$ at
+    $x=-3$ while $\tfrac{x-3}{x+4}$ returns $-6$. Cancelling hides a restriction; it never removes
+    one. Tier E item 1(b) is a *correct* simplification asserted "for every $x$" — a student being
+    wrong while their algebra is right, which most have never had to distinguish.
+  - Context thread is one per-unit-rate model per component, and the **interpretation move is
+    two-sided** (1.6's rejected-vs-kept, restated): an excluded value may be *meaningful* ($x=0$
+    shirts) or *unreachable* ($x=-4$ feet of width). Notes/T-shirts $\frac{6x+240}{x}$ (no cancel);
+    guided practice/banner $A=x^2+9x+20$, width $x+4$, length $x+5$, $C/A = \$7$/sq ft
+    ($770/110$ at $x=6$); activity/backdrop $A=x^2+3x-28=(x+7)(x-4)$, $5 \times 16 = 80$ sq ft at
+    $x=9$, $C/A = \$2$ ($160/80$); homework/garden bed $A=2x^2+14x+20=2(x+5)(x+2)$, length $2x+10$,
+    $5 \times 16 = 80$ at $x=3$, $M/A = \$3$ ($240/80$). **Per-unit-cost models with a fixed fee
+    never cancel** — only the "bill built as a multiple of the area" ones do, which is why the hook
+    and the practice item are deliberately opposite.
+  - Activity tiers R/A/E; Tier E is error critique (cancelling terms, and the "for every $x$"
+    claim), a division whose $x \ne -1$ vanishes from the answer, and subtract-then-**verify-at-a-
+    number** ($x^2/(x-5) - 25/(x-5) = x+5$, checked at $x=7$).
+  - Homework 13 items (2 excluded-value, a monomial, 3 binomial simplifications incl. a **PST
+    denominator** $x^2-14x+49$ and GCF-first $5x-20$, one of each operation, the garden bed, the
+    look-ahead) + an extension adding $\frac{3}{x-2}+\frac{5}{x^2-4}$, where one denominator
+    **factors into** the other, verified at $x=3$. **Item 13 bridges to Unit 2**: the excluded value
+    of $f(x)=\frac{x+1}{x-3}$ is a **domain** restriction (`AFDA.AF.2a`) and becomes a vertical
+    asymptote (`AF.2g`) — accept any description of the graph shooting off; *asymptote* is Unit 2's
+    word to introduce.
+  - Guard sizes: bare on vocab, `[12]` hook, `[24]`×4 on the notesboxes, `[20]` practice,
+    `[16]`/`[16]`/`[30]` on Tiers R/A/E, `[16]`–`[18]` on the homework's trailing boxes, `[18]` on
+    the plan's Reinforcement box — the 1.2–1.6 set again, transferred verbatim for the sixth time.
+  - **Two boxguard findings, both invisible to `make check` (which passed clean throughout).**
+    (1) Notes box 2 split leaving **one line** atop notes p3; `\tcbbreak` before the "why the
+    original denominator" paragraph sends both closing paragraphs over together, and the page count
+    held at 4 while p4 improved from *practice box alone* to *box 4 + practice*. A `\tcbbreak` that
+    costs nothing and fixes two pages at once is rare — this is the fourth lesson confirming it is a
+    per-lesson judgement. (2) The **lesson plan's Guided Notes teacher note** stranded three lines
+    atop plan p5; `\boxguard[18]` before it moved the note whole and the plan held at 5 pages.
+    **A teachernote is a breakable box like any other and needs a guard** — 1.0 found this on the
+    Reinforcement box; it applies to the notes too.
+  - **A `\frac` inside `\ans{...}` in a table cell renders at script size and is too small to read
+    on a teacher key.** The eight fraction cells in notes box 2's table were switched to `\dfrac`;
+    because the row height is set by the blank's `\TallMath` strut (identical in both files), this
+    changed no page count. Use `\dfrac` in any `\ans` cell whose row is already `\TallMath`-sized.
+  - Page counts: cover 1, warm-up 1/1, notes 4/4, activity 3/3, exit ticket 1/1, homework 3/3;
+    student and key packets 18 pages each. Plan 5 pp, slides 11 frames (4 pp printed 3-up).
 - **`unit01/lesson06` — Solving Polynomial Equations by Factoring (`A2.EI.2b`, `A2.EI.6a–b`).**
   - Spine: **factoring did not change; the question did.** 1.3–1.5 asked "what are the dimensions?"
     1.6 asks "*when*?" The engine is the **zero product property**, and the sentence being taught is
@@ -328,32 +399,34 @@ solutions.
 - **Confirmed while authoring 1.3:** the 1.2 guard sizes transferred verbatim to a lesson of the
   same shape (listed in the 1.3 entry above) with no re-measuring and no `\tcbbreak`. Treat that
   set as the default opening bid for an ordinary Unit 1 lesson, then tune per box.
-- **Everything else is still scaffold skeletons**: unit01 lesson 1.7, units 02–08 in full,
-  plus each unit's `tests/`, `test_keys/`, `sample_test/`, `sample_test_key/`.
+- **Everything else is still scaffold skeletons**: units 02–08 in full, plus each unit's `tests/`,
+  `test_keys/`, `sample_test/`, `sample_test_key/`.
 - No `unit_cover/` pair exists for any unit yet, and `finals/` has not been created.
-- Lessons 1.0–1.5 are merged to `main` (PR #4, commit `ca47f7e`; PR #6, commit `248c0c8`; PR #8,
-  commit `6a72235`; PR #9, commit `c6b1e1d`). Lesson 1.6 is on worktree branch
-  `claude/lesson-1-6-generation-872a0f`, **not yet committed**.
+- Lessons 1.0–1.6 are merged to `main` (PR #4, commit `ca47f7e`; PR #6, commit `248c0c8`; PR #8,
+  commit `6a72235`; PR #9, commit `c6b1e1d`; PR #10, commit `5c04bb1`). Lesson 1.7 is on worktree
+  branch `claude/lesson-1-7-generation-dfe2d4`, **not yet committed**.
 
 ## Next steps
 
-1. Commit / PR Lesson 1.6 (user to confirm).
-2. Author **Unit 1 Lesson 1.7 — Simplifying Rational Expressions** (`A2.EO.1a–b`), the last content
-   lesson of the unit. 1.6's homework item 13 and its remind box both promise it: students solved
-   $x^2-4=0$ and were told those two values are the **excluded values** of $\frac{x+5}{x^2-4}$, so
-   1.7 opens by naming that and then cancels. Pull the numerators and denominators from **1.5's**
-   item bank — differences of squares are the single most common thing that cancels — and from 1.4's
-   trinomials. The excluded-values step is 1.6's method verbatim, so it costs no new machinery.
-3. After 1.7: author `unit01/tests/` (practice + actual) and `unit01/test_keys/`, and add the
+1. Commit / PR Lesson 1.7 (user to confirm).
+2. Author `unit01/tests/` (practice + actual) and `unit01/test_keys/`, and add the
    `unit01/unit_cover/` + `unit_cover_key/` pair (the test rationale and Part D scoring go on page 2
-   of the key cover, never in a test key). Unit 1's test will have seven lessons of item banks to
-   sample; `A2.EO.3d` (verifying an identity) and `A2.EI.6b` (number and type of solutions) are the
-   two natural Part D prompts.
-4. The model now holds across seven lessons. If the parallel-dispatch pattern is used from Unit 2 on
+   of the key cover, never in a test key). **Unit 1 now has eight lessons of item banks to sample.**
+   `A2.EO.3d` (verifying an identity), `A2.EI.6b` (number and type of solutions), and
+   `A2.EO.1b` (justify that a simplified rational expression is equivalent — *and name where it is
+   not*) are the three natural Part D prompts. The unit's two error streaks are ready-made
+   critique items: "true but incomplete" (1.3–1.6) and "an operation does not reach inside a sum"
+   (1.1, 1.2, 1.7).
+3. Then start **Unit 2 — Functions, Transformations, and Graph Analysis** (`AFDA.AF.1`,
+   `AFDA.AF.2`). 1.7's homework item 13 already hands it the opening: an excluded value is a domain
+   restriction, and in 2.5 it becomes a vertical asymptote.
+4. The model now holds across eight lessons. If the parallel-dispatch pattern is used from Unit 2 on
    (coordinator scaffolds, one subagent per lesson, coordinator builds and gates), give each agent
-   the boxguard tuning rule, the 1.2–1.6 guard sizes above, 1.5's "test the guard, then restore it"
-   finding, **and 1.6's finding that `make check` passes on a stranded stub** — guard placement is
-   the one thing no automated check can catch, so the coordinator must open every PDF.
+   the boxguard tuning rule, the 1.2–1.7 guard sizes above, 1.5's "test the guard, then restore it"
+   finding, **and 1.6's and 1.7's finding that `make check` passes on a stranded stub** — guard
+   placement is the one thing no automated check can catch, so the coordinator must open every PDF.
+   Tell them a `teachernote` in the plan needs a guard too (1.7), and that `\ans` cells holding
+   fractions need `\dfrac` (1.7).
 5. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
    guidance in the skill).
 

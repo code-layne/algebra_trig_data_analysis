@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{4pt}
 
 \begin{document}
 
@@ -12,9 +13,245 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item find the \textbf{excluded values} of a rational expression by setting its denominator equal
+        to zero and solving --- Lesson 1.6's method, with a new name;
+  \item \textbf{simplify a rational expression} by factoring the top and the bottom and dividing
+        out common \textbf{factors}, and explain why terms joined by $+$ or $-$ never cancel;
+  \item \textbf{multiply, divide, add, and subtract} rational expressions, simplifying the result;
+  \item \textbf{justify} that a simplified expression is equivalent to the original one --- for
+        every value except the excluded ones --- and interpret a rational expression in context.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together.
+\vocabans{Rational expression}{A quotient of two polynomials --- a fraction whose top and bottom
+are each polynomials, such as $\frac{x+1}{x^2-4}$.}
+\vocabans{Excluded value}{A value of the variable that makes the denominator $0$; the expression is
+undefined there, so it is barred from the expression.}
+\vocabans{Factor (as opposed to a term)}{Something being \emph{multiplied}. Terms are joined by
+$+$ or $-$; only common factors may be divided out.}
+\vocabans{Simplest form (lowest terms)}{The top and bottom share no common factor except $1$.}
+\vocabans{Equivalent rational expressions}{Two expressions with the same value for every value of
+the variable that both allow --- the excluded values still apply.}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{The booster club's T-shirt order.} The print shop charges a one-time \$$240$ setup fee plus
+\$$6$ per shirt, so printing $x$ shirts costs $6x+240$ dollars. What the club actually cares about
+is the \textbf{average cost per shirt}:
+\[ A(x) = \frac{6x+240}{x} \quad \text{dollars per shirt.} \]
+A student ``simplifies'' this by cancelling the $x$'s and announces that every shirt costs \$$246$.
+Test that claim: compute $A(10)$, $A(40)$, and $A(240)$. What is the one order size the club can
+never ask about, and why?
+
+\ansline{$A(10)=\frac{300}{10}=\$30$; \; $A(40)=\frac{480}{40}=\$12$; \; $A(240)=\frac{1680}{240}=\$7$ --- never \$246.}\\
+\ansline{$x=0$: with no shirts there is no cost \emph{per shirt}, and $\frac{240}{0}$ is undefined.}\\
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{1. What a Rational Expression Is --- and What Breaks It}
+\small
+A \textbf{rational expression} is a fraction whose top and bottom are polynomials. Everything you
+know about ordinary fractions still applies --- including the one rule fractions have always had:
+\textbf{you may never divide by zero.}
+
+\vspace{2pt}
+So before anything else, ask which values of the variable make the \emph{denominator}
+\ans{zero}. Those values are the \textbf{excluded values}: the expression is undefined there.
+Finding them is exactly Lesson 1.6 --- set the bottom equal to zero, factor, and use the zero
+product property.
+
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{2.6cm} p{5.4cm} X@{}}
+\rowcolor{mist}
+\textbf{Expression} & \textbf{Denominator $=0$, factored} & \textbf{Excluded values} \\
+\hline
+\TallMath{\frac{4}{3x}}              & \ans{$3x=0$}                & \ans{$x=0$} \\
+\TallMath{\frac{5}{x-3}}             & \ans{$x-3=0$}               & \ans{$x=3$} \\
+\TallMath{\frac{x+1}{x^2-4}}         & \ans{$(x+2)(x-2)=0$}        & \ans{$x=-2$, $x=2$} \\
+\TallMath{\frac{x-7}{x^2+3x-10}}     & \ans{$(x+5)(x-2)=0$}        & \ans{$x=-5$, $x=2$} \\
+\TallMath{\frac{3x}{x^2+9}}          & \ans{$x^2+9=0$ --- no real solution} & \ans{none} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Row 5 is worth a pause.} Lesson 1.5 proved that a \emph{sum} of squares does not factor,
+and Lesson 1.6 turned that into ``no real number makes $x^2+9$ equal to zero.'' Here it pays a
+dividend: this expression has \textbf{no excluded values at all}. Nothing you can substitute breaks
+it. Only the \emph{bottom} matters --- a zero on top is perfectly legal and just makes the whole
+expression $0$.
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{2. Simplifying --- Cancel Factors, Never Terms}
+\small
+Warm-up item 3 is the whole idea, in numbers you already trust:
+\[ \frac{12}{18} = \frac{6 \cdot 2}{6 \cdot 3} = \frac{2}{3}, \qquad\text{but}\qquad
+   \frac{3+4}{3+5} = \frac{7}{8} \; \ne \; \frac{4}{5}. \]
+The $6$ divided out because it was \emph{multiplying}. The $3$s did not, because they were being
+\emph{added}. Same rule, letters instead of numbers: you may divide out only common
+\ans{factors} --- never terms joined by $+$ or $-$.
+
+\vspace{2pt}
+\textbf{The method.} Factor the top completely. Factor the bottom completely. Divide out every
+factor they share. \textbf{An expression is in simplest form when the only common factor left is
+$1$.}
+
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{2.9cm} X p{3.0cm}@{}}
+\rowcolor{mist}
+\textbf{Expression} & \textbf{Top and bottom, factored} & \textbf{Simplest form} \\
+\hline
+\TallMath{\frac{5x}{15x^2}}                & \ans{$\dfrac{5x \cdot 1}{5x \cdot 3x}$}       & \ans{$\dfrac{1}{3x}$} \\
+\TallMath{\frac{x^2-9}{x^2+7x+12}}         & \ans{$\dfrac{(x+3)(x-3)}{(x+3)(x+4)}$}        & \ans{$\dfrac{x-3}{x+4}$} \\
+\TallMath{\frac{x^2+5x+6}{x^2-4}}          & \ans{$\dfrac{(x+2)(x+3)}{(x+2)(x-2)}$}        & \ans{$\dfrac{x+3}{x-2}$} \\
+\TallMath{\frac{2x+8}{x^2-16}}             & \ans{$\dfrac{2(x+4)}{(x+4)(x-4)}$}            & \ans{$\dfrac{2}{x-4}$} \\
+\end{tabularx}
+
+\vspace{4pt}
+Now go back and list the excluded values for each row. Read them from the \ans{original}
+denominator --- the one you started with, before anything cancelled.
+
+\ansline{Row 1: $x \ne 0$. \quad Row 2: $x \ne -3$ and $x \ne -4$. \quad Row 3: $x \ne -2$ and $x \ne 2$.}\\
+\ansline{Row 4: $x \ne -4$ and $x \ne 4$. In rows 2--4 one excluded value came from a factor that cancelled.}\\
+
+% BOXGUARD: \boxguard is inert inside a breakable tcolorbox, and without this
+% break the box splits after the final paragraph, stranding a single line at the
+% top of the next page. Breaking here sends both closing paragraphs over
+% together. Mirrored in notes.
+\tcbbreak
+\vspace{2pt}
+\textbf{Why the original denominator, and not the simplified one?} Look at row 2. The original is
+undefined at $x=-3$ (it reads $\tfrac00$ there), but the simplified $\tfrac{x-3}{x+4}$ happily
+returns $-6$. Cancelling a factor \emph{leaves a scar}: the two expressions are
+\textbf{equivalent} at every value the original allows, and $x=-3$ was never one of them. Carry the
+restriction along with the answer.
+
+\vspace{2pt}
+\textbf{And the error of the day:} $\dfrac{x+3}{x+5}$ does \emph{not} simplify to $\dfrac35$. Test
+it at $x=1$: the real value is $\tfrac46 = \tfrac23$, and $\tfrac35$ is something else. That
+expression is already in simplest form --- ``simplify'' does not mean ``make shorter,'' it means
+``divide out common factors,'' and sometimes there are none.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{3. Multiplying and Dividing --- Factor First, Cancel Across}
+\small
+Numbers again: $\dfrac{2}{3} \cdot \dfrac{9}{10} = \dfrac{3}{5}$, because the $3$ cancels the $9$
+and the $2$ cancels the $10$ \emph{before} you multiply anything out. Rational expressions work the
+same way, and cancelling first is what keeps the numbers small.
+
+\vspace{2pt}
+\textbf{To multiply:} factor every top and every bottom, divide out any factor that appears on both
+levels --- \emph{across} the multiplication sign is allowed --- then multiply what is left.
+\begin{work}
+  \frac{x+2}{x-5} \cdot \frac{x^2-25}{x^2-4}
+      &= \frac{x+2}{x-5} \cdot \frac{(x+5)(x-5)}{(x+2)(x-2)} \\
+      &= \frac{x+5}{x-2} \qquad (x \ne 5, \; x \ne 2, \; x \ne -2)
+\end{work}
+
+\textbf{To divide:} multiply by the \textbf{reciprocal} of the second expression --- flip it over,
+change $\div$ to $\times$, then proceed exactly as above.
+\begin{work}
+  \frac{x^2-1}{3x} \div \frac{x+1}{6x^2}
+      &= \frac{x^2-1}{3x} \cdot \frac{6x^2}{x+1} \\
+      &= \frac{(x+1)(x-1)}{3x} \cdot \frac{6x^2}{x+1} \\
+      &= 2x(x-1) \qquad (x \ne 0, \; x \ne -1)
+\end{work}
+
+\textbf{Where the excluded values come from here:} every denominator you \emph{ever wrote down},
+including the one you flipped. In the division above, $x+1$ started life on the bottom of the
+divisor's reciprocal, so $x \ne -1$ survives even though the finished answer shows no fraction at
+all.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{4. Adding and Subtracting --- A Common Denominator First}
+\small
+Once more, numbers set the rule: $\dfrac38 + \dfrac18 = \dfrac48 = \dfrac12$ needed no work because
+the bottoms already matched, while $\dfrac12 + \dfrac16 = \dfrac36 + \dfrac16 = \dfrac46 =
+\dfrac23$ needed a common denominator first.
+
+\vspace{2pt}
+\textbf{Same denominator?} Combine the tops, keep the bottom --- then \textbf{simplify}, because the
+new top very often factors.
+\begin{work}
+  \frac{x^2}{x-3} - \frac{9}{x-3}
+      &= \frac{x^2-9}{x-3} \\
+      &= \frac{(x+3)(x-3)}{x-3} \\
+      &= x+3 \qquad (x \ne 3)
+\end{work}
+
+\textbf{Different denominators?} Build the common denominator by multiplying each fraction, top and
+bottom, by whatever it is missing. Then combine the tops and simplify.
+\begin{work}
+  \frac{4}{x-1} + \frac{3}{x+2}
+      &= \frac{4(x+2)}{(x-1)(x+2)} + \frac{3(x-1)}{(x-1)(x+2)} \\
+      &= \frac{4x+8+3x-3}{(x-1)(x+2)} \\
+      &= \frac{7x+5}{(x-1)(x+2)} \qquad (x \ne 1, \; x \ne -2)
+\end{work}
+
+\textbf{Check it with a number.} At $x=2$ the original is $\tfrac41 + \tfrac34 = \tfrac{19}{4}$, and
+the answer is $\tfrac{7(2)+5}{(1)(4)} = \tfrac{19}{4}$. Two expressions that agree at a value you
+picked at random are almost certainly the same expression --- and one that disagrees is certainly
+not.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{practicebox}
+\small
+\textbf{The same club orders a banner.} The printer's rectangular banner covers
+$A(x) = x^2+9x+20$ square feet, and the shop tells the club the banner's \textbf{width} is $(x+4)$
+feet.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+  \item Factor $A(x)$ completely, then find the banner's \textbf{length} by simplifying
+        \ \TallMath{\frac{A(x)}{x+4}}.
+\begin{work}
+  A(x) &= x^2+9x+20 = (x+4)(x+5) \\
+  \frac{A(x)}{x+4} &= \frac{(x+4)(x+5)}{x+4} = x+5 \quad \text{feet}
+\end{work}
+
+  \item State the excluded value of that quotient. Then say why the banner shop never has to worry
+        about it.
+\begin{work}
+  x+4 &= 0 \quad\Rightarrow\quad x = -4 \\
+  \text{but } x+4 &\text{ is a \emph{width}, so it is positive --- the story never reaches } x=-4
+\end{work}
+
+  \item The printer bills $C(x) = 7x^2+63x+140$ dollars for the whole banner. Find the
+        \textbf{cost per square foot} by simplifying \ \TallMath{\frac{C(x)}{A(x)}}, then say in one
+        sentence what your answer means for the club. (Check yourself at $x=6$.)
+\begin{work}
+  \frac{C(x)}{A(x)} &= \frac{7\left(x^2+9x+20\right)}{x^2+9x+20}
+      = \frac{7(x+4)(x+5)}{(x+4)(x+5)} = 7 \\
+  \text{at } x=6: \; \frac{770}{110} &= 7 \quad\checkmark
+\end{work}
+\ansline{The banner costs a flat \$7 per square foot --- the same rate no matter what $x$ is.}\\
+\ansline{Unlike the shirts, there is no setup fee here, so the per-unit cost does not change.}\\
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

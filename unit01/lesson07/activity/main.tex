@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{4pt}
 
 \begin{document}
 
@@ -12,9 +13,143 @@
 
 \vspace{0.15in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+The drama club is building a rectangular backdrop for the spring musical. The shop teacher measures
+the finished panel and reports its area as
+\[ A(x) = x^2+3x-28 \quad \text{square feet,} \]
+and the frame drawing says the backdrop's \textbf{width} is $(x-4)$ feet. Nobody wrote down the
+length, and the club has to order edge trim. Every question today is the same question:
+\textbf{factor, then divide out what the top and bottom share.}
+
+Work with your group. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R
+without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Items 1--2: state every excluded value. Items 3--5: simplify completely \emph{and} state every
+excluded value, read from the original denominator.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item \TallMath{\frac{7}{x-5}}
+\begin{work}
+  x-5 &= 0 \quad\Rightarrow\quad x = 5 \quad \text{(excluded)}
+\end{work}
+
+  \item \TallMath{\frac{x+1}{x^2-9}}
+\begin{work}
+  (x+3)(x-3) &= 0 \\
+  x &= -3 \quad \text{or} \quad x = 3 \quad \text{(both excluded)}
+\end{work}
+
+  \item \TallMath{\frac{6x^3}{8x}}
+\begin{work}
+  \frac{6x^3}{8x} &= \frac{2x \cdot 3x^2}{2x \cdot 4} = \frac{3x^2}{4} \qquad (x \ne 0)
+\end{work}
+
+  \item \TallMath{\frac{x^2-4}{x^2+5x+6}}
+\begin{work}
+  \frac{x^2-4}{x^2+5x+6} &= \frac{(x+2)(x-2)}{(x+2)(x+3)} \\
+      &= \frac{x-2}{x+3} \qquad (x \ne -2, \; x \ne -3)
+\end{work}
+
+  \item \TallMath{\frac{3x+12}{x^2-16}}
+\begin{work}
+  \frac{3x+12}{x^2-16} &= \frac{3(x+4)}{(x+4)(x-4)} \\
+      &= \frac{3}{x-4} \qquad (x \ne -4, \; x \ne 4)
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+The backdrop's area is $A(x) = x^2+3x-28$ square feet and its width is $(x-4)$ feet.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Factor $A(x)$ completely.
+\begin{work}
+  A(x) &= x^2+3x-28 \\
+       &= (x+7)(x-4)
+\end{work}
+
+  \item Find the backdrop's \textbf{length} by simplifying \ \TallMath{\frac{A(x)}{x-4}}. State the
+        excluded value, and say why the shop teacher never has to worry about it.
+\begin{work}
+  \frac{A(x)}{x-4} &= \frac{(x+7)(x-4)}{x-4} = x+7 \quad \text{feet} \\
+  x-4 &= 0 \; \Rightarrow \; x = 4 \; \text{excluded --- but a width must be positive}
+\end{work}
+
+  \item The shop teacher's drawing uses $x=9$. Give the backdrop's width, its length, and its area,
+        then check your area against $A(9)$.
+\begin{work}
+  \text{width} &= 9-4 = 5 \text{ ft}, \qquad \text{length} = 9+7 = 16 \text{ ft} \\
+  5 \cdot 16 &= 80 \text{ sq ft}, \qquad A(9) = 81+27-28 = 80 \quad\checkmark
+\end{work}
+
+  \item The paint order comes to $C(x) = 2x^2+6x-56$ dollars. Find the \textbf{cost per square
+        foot} by simplifying \ \TallMath{\frac{C(x)}{A(x)}}, then say what that number means.
+\begin{work}
+  \frac{C(x)}{A(x)} &= \frac{2\left(x^2+3x-28\right)}{x^2+3x-28} = \frac{2(x+7)(x-4)}{(x+7)(x-4)} = 2 \\
+  \text{at } x=9: \; \frac{160}{80} &= 2 \quad\checkmark
+\end{work}
+\writeline
+
+  \item Multiply and simplify: \ \TallMath{\frac{x+3}{x-4} \cdot \frac{x^2-16}{x^2-9}}. State every
+        excluded value.
+\begin{work}
+  \frac{x+3}{x-4} \cdot \frac{(x+4)(x-4)}{(x+3)(x-3)}
+      &= \frac{x+4}{x-3} \qquad (x \ne 4, \; x \ne 3, \; x \ne -3)
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item \textbf{Critique the work.} Two students turned in these claims. Neither is acceptable as
+        written. Correct each one, then name the mistake.
+        \[ \text{(a) } \frac{x+10}{x+5} = \frac{10}{5} = 2 \qquad\qquad
+           \text{(b) } \frac{x^2-9}{x-3} = x+3 \text{ \emph{for every} } x \]
+\begin{work}
+  \text{(a) at } x=5: \; \frac{15}{10} &= \frac32 \ne 2 \; \text{--- } x \text{ is a \emph{term}, so nothing cancels} \\
+  \text{(b) } \frac{(x+3)(x-3)}{x-3} &= x+3 \; \text{is right, but only for } x \ne 3 \\
+  \text{at } x=3 \text{ the original reads } \tfrac00 \; &\text{(undefined) while } x+3 \text{ gives } 6
+\end{work}
+\writelines{2}
+
+  \item \textbf{Divide.} Simplify \ \TallMath{\frac{x^2-1}{2x+6} \div \frac{x+1}{x^2-9}} \ and state
+        every excluded value --- including the ones that vanish along the way.
+\begin{work}
+  \frac{x^2-1}{2x+6} \cdot \frac{x^2-9}{x+1}
+      &= \frac{(x+1)(x-1)}{2(x+3)} \cdot \frac{(x+3)(x-3)}{x+1} \\
+      &= \frac{(x-1)(x-3)}{2} \qquad (x \ne -3, \; x \ne -1, \; x \ne 3)
+\end{work}
+
+  \item \textbf{Subtract, then justify.} Show that \ \TallMath{\frac{x^2}{x-5} - \frac{25}{x-5}} \
+        simplifies to $x+5$. Then \emph{verify} your claim by evaluating both the original
+        expression and $x+5$ at $x=7$, and state the one value of $x$ for which the two are
+        \textbf{not} interchangeable.
+\begin{work}
+  \frac{x^2}{x-5} - \frac{25}{x-5} &= \frac{x^2-25}{x-5} = \frac{(x+5)(x-5)}{x-5} = x+5 \\
+  \text{at } x=7: \; \frac{49}{2} - \frac{25}{2} &= \frac{24}{2} = 12, \qquad 7+5 = 12 \quad\checkmark
+\end{work}
+\writeline
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
