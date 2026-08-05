@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,368 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item describe the \textbf{end behavior} of a graph --- what the \emph{outputs} do as the
+        \emph{inputs} run off to the far left and the far right --- with one of three answers: climbs
+        without bound, falls without bound, or levels off toward a number;
+  \item identify a \textbf{horizontal asymptote} from a graph and name it as an \emph{equation} of a
+        line, never as a bare number;
+  \item identify a \textbf{vertical asymptote} from a graph, connect it to the input missing from the
+        domain, and explain why the graph can never cross it;
+  \item explain why ``gets closer and closer'' is not ``arrives'' --- and interpret both kinds of
+        asymptote in the situation the graph models.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together. Every one of them is read straight off a graph.
+\vocabans{End behavior}{a description of what the \emph{outputs} do as the \emph{inputs} run off to
+    the far left and the far right of the graph --- that is, as $x \to -\infty$ and as $x \to \infty$.}
+\vocabans{Horizontal asymptote}{a horizontal line $y=c$ that the graph gets arbitrarily close to at
+    one end or both, without ever reaching it. It is a \emph{line}, so it is named with an equation.}
+\vocabans{Vertical asymptote}{a vertical line $x=a$ at which the outputs run off without bound as the
+    inputs close in on $a$. The input $a$ is \emph{not} in the domain, so the graph has no point
+    there and can never cross the line.}
+\vocabans{Approaches ($\to$)}{gets closer and closer to, without necessarily arriving. ``$x \to
+    \infty$'' is read ``as $x$ approaches infinity''; ``$f(x) \to 20$'' is read ``the outputs
+    approach $20$.''}
+\vocabans{Without bound}{past every ceiling you could name (or below every floor). Outputs that grow
+    without bound have no absolute maximum; outputs that fall without bound have no absolute minimum.}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{Two students, and both of them are telling the truth.} Last night's coffee cooled in an
+insulated flask in a $20^\circ$C room. Each hour, the gap between the coffee and the room is cut in
+half: the gap runs $64, 32, 16, 8, 4, 2, 1, \dots$ degrees. The question is simple:
+\emph{does the coffee ever actually reach $20^\circ$C?}
+
+\smallskip
+Student A: \textbf{``Yes. After 12 hours the gap is $\tfrac{1}{64}$ of a degree. No thermometer in
+this school can read that --- the coffee \emph{is} at room temperature.''}
+
+\smallskip
+Student B: \textbf{``No. The gap starts at $64$ and gets halved every hour. Half of a positive number
+is positive. It is never zero.''}
+
+\smallskip
+\textbf{Here is the question: are they disagreeing about the thermometer, or about the function?}
+Decide which one answered the question that was asked, and say what the other one is right about.
+
+\ansline{Student B answered the question. ``Does it reach $20$?'' is about the function, and halving}\\
+\ansline{a positive number never gives $0$. A is right about the \emph{thermometer} --- a different question.}\\
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{1. End Behavior --- Reading the Ends You Cannot See}
+\small
+Every characteristic you have read so far was somewhere you could put a finger: an intercept, a
+turning point, an interval. \textbf{End behavior is the one question about the part of the graph that
+runs off the page.} It always comes in the same two halves.
+
+\vspace{4pt}
+\textbf{As the inputs run off to the \ans{right}} --- written $x \to \infty$, read ``as $x$
+approaches infinity'' --- what do the outputs do?
+
+\vspace{2pt}
+\textbf{As the inputs run off to the \ans{left}} --- written $x \to -\infty$ --- what do the
+outputs do?
+
+\vspace{4pt}
+And for each end there are only \textbf{three} possible answers:
+\begin{enumerate}[leftmargin=1.5em, itemsep=1pt, topsep=3pt]
+  \item the outputs climb \ans{without bound} (they pass every ceiling you could name);
+  \item the outputs fall without bound;
+  \item the outputs \ans{level off} toward a single number.
+\end{enumerate}
+
+\vspace{4pt}
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.4cm}}c@{\hspace{0.4cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=4.2cm, title={\scriptsize (a) $y=x^2$},
+    xmin=-3.4, xmax=3.4, ymin=-1.0, ymax=10.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={0,2,4,6,8,10}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-3.15:3.15, samples=90]{x^2};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=4.2cm, title={\scriptsize (b) $y=2x-4$},
+    xmin=-3.4, xmax=3.4, ymin=-10.4, ymax=4.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={-10,-8,-6,-4,-2,0,2,4}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-3.3:3.3, samples=2]{2*x-4};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=4.2cm, title={\scriptsize (c) $y=2^x$},
+    xmin=-3.4, xmax=3.4, ymin=-1.4, ymax=8.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={0,2,4,6,8}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[keyred, thick, dashed, domain=-3.3:3.3, samples=2]{0};
+  \addplot[royal, very thick, domain=-3.3:3, samples=90]{2^x};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.5}
+% 2.4's rule: a label column narrow enough to wrap breaks in the wrong place. At
+% \small "(b) $y=2x-4$" overran p{1.5cm} and broke as "(b) y =" / "2x-4".
+% p{2.3cm} holds every row on one line. Mirrors notes.
+\begin{tabularx}{\linewidth}{@{}p{2.3cm} X X@{}}
+\rowcolor{mist}
+\textbf{Graph} & \textbf{Far left}\newline\textbf{(as $x \to -\infty$)} &
+    \textbf{Far right}\newline\textbf{(as $x \to \infty$)} \\
+\hline
+(a) $y=x^2$ & \ans{climbs without bound} & \ans{climbs without bound} \\
+(b) $y=2x-4$ & \ans{falls without bound} & \ans{climbs without bound} \\
+(c) $y=2^x$ & \ans{levels off toward $0$} & \ans{climbs without bound} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Panel (c)'s left end is the new idea, and it is the one to write down.} Going left, the
+outputs of $y=2^x$ never become \ans{$0$} and never become negative --- every output is
+\ans{positive}, exactly as your warm-up showed. The curve keeps dropping toward the horizontal axis
+and \ans{never} arrives. That single fact explains two things you already met: in Lesson 2.4 this
+graph had \textbf{no zeros}, and in Lesson 2.2 its range was $(0,\infty)$ --- with a parenthesis.
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{2. Horizontal Asymptotes --- The Line It Never Reaches}
+\small
+When an end of a graph levels off toward a number, that number names a \textbf{line}, and the line
+has a name.
+
+\vspace{4pt}
+A \textbf{horizontal asymptote} is a horizontal line $y=c$ that a graph gets \ans{closer and closer}
+to as the inputs run off to the left or to the right, without ever \ans{reaching} it.
+
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.8cm,
+    xlabel={$t$ (hours after pouring)}, ylabel={$C$ (degrees C)},
+    xmin=0, xmax=6, ymin=0, ymax=90,
+    xtick={0,1,2,3,4,5,6}, ytick={0,20,40,60,80}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=0:6, samples=2]{20};
+  \addplot[royal, very thick, domain=0:6, samples=100]{64*(0.5)^x+20};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-4pt}
+{\scriptsize Last night's flask: $C(t)$ is the coffee's temperature in degrees Celsius, $t$ hours
+after pouring, in a room held at $20^\circ$C. The dashed line is a landmark, not part of the graph.}
+
+\vspace{4pt}
+\textbf{Fill the bottom row --- how far above the room the coffee still is.}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}|l|c|c|c|c|c|c|c|@{}}
+\hline
+$t$ (hours) & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ \hline
+$C(t)$ & $84$ & $52$ & $36$ & $28$ & $24$ & $22$ & $21$ \\ \hline
+Gap above $20$ & \ans{$64$} & \ans{$32$} & \ans{$16$} & \ans{$8$} & \ans{$4$} &
+    \ans{$2$} & \ans{$1$} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\textbf{Three rules that settle the hook.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt, topsep=3pt]
+  \item \textbf{A horizontal asymptote is a statement about \ans{end behavior}.} It describes the far
+        left or the far right of the picture (or both) and promises nothing about the middle.
+  \item \textbf{The graph never gets there.} The gap halves every hour, and half of a positive number
+        is \ans{positive}. There is no hour at which the gap equals $0$. \textbf{Student B answered
+        the question}; student A is right about the thermometer, which is a fact about measuring, not
+        about the function.
+  \item \textbf{It is a line, so it gets an equation.} Write $y=$ \ans{$20$}, not the bare number.
+        This is Lesson 2.4's habit in new clothes: an intercept is a \emph{point}, a zero is a
+        \emph{number}, and an asymptote is a \emph{line}.
+\end{enumerate}
+
+\vspace{4pt}
+\textbf{One asymptote settles three questions at once} --- all of them from last night:
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item $C$ has no \ans{zeros}: the outputs never drop below $20$, so they certainly never reach $0$.
+  \item $C$ has no absolute \ans{minimum}: every hour is lower than the one before, so no output is
+        the lowest one.
+  \item The range of $C$ is \ans{$(20,84]$} --- a parenthesis at $20$ because it is never attained, and
+        a bracket at $84$ because it is.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{And the asymptote travels with the graph} (Lessons 2.2 and 2.3):
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.4}
+% 2.4's header rule: "Horizontal asymptote" at \small overran p{3.2cm} and broke
+% mid-word as "asymp-/tote". Break a two-part header explicitly. Mirrors notes.
+\begin{tabularx}{\linewidth}{@{}p{4.6cm} p{3.2cm} X@{}}
+\rowcolor{mist}
+\textbf{Function} & \textbf{Horizontal}\newline\textbf{asymptote} & \textbf{What moved it} \\
+\hline
+$y=2^x$ & $y=0$ & --- \\
+$y=2^x-4$ (Lesson 2.3) & \ans{$y=-4$} & \ans{every output dropped $4$} \\
+$y=64(0.5)^t+20$ & \ans{$y=20$} & \ans{every output rose $20$} \\
+\end{tabularx}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{3. Vertical Asymptotes --- Where an Input Goes Missing}
+\small
+In Lesson 2.0 you tabulated $f(x)=\dfrac{x+1}{x-3}$ on either side of $x=3$ and watched the outputs
+explode. Here is the graph those numbers came from.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=5.4cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-8, xmax=12, ymin=-9, ymax=11,
+    xtick={-8,-6,-4,-2,0,2,4,6,8,10,12}, ytick={-8,-6,-4,-2,0,2,4,6,8,10},
+    minor x tick num=1, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=-8:12, samples=2]{1};
+  \addplot[linegray, thick, dashed] coordinates {(3,-9) (3,11)};
+  \addplot[royal, very thick, domain=-8:2.5, samples=140]{(x+1)/(x-3)};
+  \addplot[royal, very thick, domain=3.5:12, samples=140]{(x+1)/(x-3)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(-1,0)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-4pt}
+{\scriptsize Your Lesson 2.0 table, unchanged: $f(2.9)=-39$, \ $f(2.99)=-399$, \ $f(3.01)=401$, \
+$f(3.1)=41$. Those four outputs are far off the top and bottom of this picture --- which is the point.}
+
+\vspace{4pt}
+A \textbf{vertical asymptote} is a vertical line $x=a$ at which the outputs run off
+\ans{without bound} as the inputs close in on $a$ --- upward on one side, downward on the other.
+
+\vspace{4pt}
+\textbf{Three things are true every single time.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt, topsep=3pt]
+  \item \textbf{The input $a$ is not in the \ans{domain}.} Here $x=3$ makes the denominator $0$, so
+        there is no point on this graph at $x=3$ at all. The domain is every real number
+        \ans{except $3$}.
+  \item \textbf{The graph can never cross it} --- not because the line is a wall, but because there
+        is \ans{no point} there to plot.
+  \item \textbf{Name it with an equation:} $x=$ \ans{$3$}.
+\end{enumerate}
+
+\vspace{4pt}
+\textbf{The trap, and it is worth a line in your notes.} A zero and a vertical asymptote both make
+you point at a spot on the horizontal axis, so they get confused. They are opposites:
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item At a \textbf{zero} the function \emph{has} a value, and that value is \ans{$0$}. On this
+        graph the zero is $x=$ \ans{$-1$}.
+  \item At a \textbf{vertical asymptote} the function has \ans{no value at all}. On this graph that is
+        $x=3$.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{This graph has a horizontal asymptote too, and that is why \texttt{AF.2g} says ``and/or.''}
+Read the far right: the outputs come down toward \ans{$1$}. Read the far left: they come up
+toward the same number. So $y=1$ is a horizontal asymptote, and one graph can carry both kinds at
+once.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{practicebox}
+\small
+The booster club prints spirit shirts. A one-time setup fee of \$240 is charged no matter how many
+shirts are ordered, and each shirt costs \$6 to print. The graph shows $A(x)$, the \emph{average cost
+per shirt} in dollars, when $x$ shirts are ordered.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.6cm, height=4.8cm,
+    xlabel={$x$ (shirts ordered)}, ylabel={$A$ (average cost per shirt, \$)},
+    xmin=0, xmax=130, ymin=0, ymax=45,
+    xtick={0,20,40,60,80,100,120}, ytick={0,5,10,15,20,25,30,35,40,45},
+    minor x tick num=1, minor y tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=0:130, samples=2]{6};
+  \addplot[royal, very thick, domain=6.5:130, samples=200]{6+240/x};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(10,30) (20,18) (40,12) (60,10) (120,8)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt]
+  \item Read these average costs off the graph.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$x$ (shirts) & $10$ & $20$ & $40$ & $60$ & $120$ \\ \hline
+$A(x)$ (\$ each) & \ans{$30$} & \ans{$18$} & \ans{$12$} & \ans{$10$} & \ans{$8$} \\
+\hline
+\end{tabular}
+
+  \item Describe the end behavior as $x$ runs off to the right. Give the horizontal asymptote as an
+        \emph{equation}, and say what that number is in this story.
+
+\ansline{As $x \to \infty$ the average cost levels off toward $6$: the horizontal asymptote is $y=6$.}\\
+\ansline{\$6 is the printing cost of one shirt. The \$240 setup fee is split among more and more}\\
+\ansline{shirts, so each shirt's share of it shrinks --- but it never becomes nothing.}\\
+
+  \item What happens to the average cost as $x$ gets close to $0$? Give the vertical asymptote as an
+        equation, and say why $x=0$ is not in the domain of this model.
+
+\ansline{As $x$ closes in on $0$ the average cost climbs without bound: the vertical asymptote is}\\
+\ansline{$x=0$ --- here it sits right on top of the vertical axis, which is normal for average cost.}\\
+\ansline{You cannot split a \$240 setup fee among zero shirts, so $x=0$ is not in the domain.}\\
+
+  \item A club member says: \emph{``If we order enough shirts, we can get the average cost down to
+        \$5 each.''} Settle it, and use the asymptote in your reason.
+
+\ansline{False, and not just hard --- impossible. Every shirt costs \$6 to print before the setup fee}\\
+\ansline{is counted at all, so $A(x)$ is always \emph{above} \$6. The graph approaches $y=6$ from}\\
+\ansline{above and never reaches it, and \$5 is below the asymptote. Ordering more cannot help.}\\
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

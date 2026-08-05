@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,47 @@
 
 \vspace{0.15in}
 
-% TODO: author the Exit Ticket. See references/components.md for the expected structure.
-\begin{notesbox}{Exit Ticket}
-\writelines{4}
+\begin{notesbox}{One Warming Soda, and a Graph Put On the Line}
+\small
+Notes closed. Three items. A cold soda is taken out of the refrigerator into a room held at
+$72^\circ$F. The graph shows $T(t)$, its temperature in degrees Fahrenheit, $t$ hours later. The
+dashed line is a landmark, not part of the graph.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.2cm, height=4.6cm,
+    xlabel={$t$ (hours out of the refrigerator)}, ylabel={$T$ (degrees F)},
+    xmin=0, xmax=5, ymin=0, ymax=80,
+    xtick={0,1,2,3,4,5}, ytick={0,20,40,60,80}, minor y tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=0:5, samples=2]{72};
+  \addplot[royal, very thick, domain=0:5, samples=120]{72-64*(0.5)^x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=7pt, topsep=4pt]
+
+\item Describe the end behavior of $T$ as $t$ runs off to the right. Give the horizontal asymptote as
+an \emph{equation}, and say in a sentence what that line means about the soda.
+
+\writelines{3}
+
+\item Does $T$ have an absolute maximum? Does it have an absolute minimum? For each, give a value
+\emph{and} a location, or explain why there is none.
+
+\writelines{2}
+
+\item A classmate writes: \emph{``The soda reaches $72^\circ$F at $t=5$ hours --- you can see the
+graph sitting on the dashed line there.''} The number $72$ and the line are both correct answers to
+item 1. Explain what is wrong with the sentence anyway, and write the correct statement.
+
+\writelines{3}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

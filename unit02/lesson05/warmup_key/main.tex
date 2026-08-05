@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
@@ -12,9 +13,60 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Halving Forever, and a Number That Is Never Negative}
+\small
+Five quick items. Items 1 and 4 both ask a question you will answer properly today: \emph{can this
+ever get to zero?}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+
+\item \textbf{Keep halving.} Fill in the next three numbers.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|c|c|c|c|c|c|c|@{}}
+\hline
+Step & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline
+Value & $64$ & $32$ & $16$ & $8$ & \ans{$4$} & \ans{$2$} \\
+\hline
+\end{tabular}
+\smallskip
+
+(a) Give the value at step $6$: \ans{$1$} \quad (b) Will this list ever reach exactly $0$?
+Answer in one sentence.
+
+\ansline{No. Half of a positive number is still positive, so every value stays above $0$ forever.}\\
+
+\item \textbf{Last night's homework.} Item 10 graphed coffee cooling in an insulated flask. What
+number did the temperatures get closer and closer to, and did the graph ever reach it?
+
+\ansline{$20^\circ$C, the temperature of the room. The graph never reaches it --- it only gets nearer.}\\
+
+\item \textbf{An input the rule will not take} (Lessons 1.7 and 2.1). For which input is
+$\dfrac{4}{x-2}$ undefined? Then write the domain of that expression in words.
+
+\ansline{Undefined at $x=2$ (that would divide by $0$). Domain: every real number except $2$.}\\
+
+\item \textbf{Evaluating an exponential} (Lesson 2.2). Let $g(x)=2^x$. Fill in every cell.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|c|c|c|c|c|@{}}
+\hline
+$x$ & $3$ & $0$ & $-2$ & $-4$ \\ \hline
+$g(x)=2^x$ & \ans{$8$} & \ans{$1$} & \ans{$\tfrac14$} & \ans{$\tfrac{1}{16}$} \\
+\hline
+\end{tabular}
+\smallskip
+
+Is any one of those four outputs zero or negative? \ans{No --- all four are positive.}
+
+\item \textbf{Infinity in interval notation} (Lesson 2.1). \quad (a) Write ``all real numbers greater
+than $20$'' in interval notation. \quad (b) Write $(-\infty,0)$ as an inequality.
+
+\ansline{(a) $(20,\infty)$ --- and $\infty$ never takes a bracket. \quad (b) $x<0$.}\\
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

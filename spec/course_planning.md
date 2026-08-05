@@ -5,17 +5,28 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-05** — Authored **Unit 2 Lesson 2.4 (Intercepts, Zeros, and Extrema, `AFDA.AF.2b–d`)** in
+**2026-08-05** — Authored **Unit 2 Lesson 2.5 (End Behavior and Asymptotes, `AFDA.AF.2f–g`)** in
 full — plan, cover, warm-up, guided notes, activity, exit ticket, homework, all five keys, and the
+deck. This is the lesson where **five lessons' worth of plants get harvested at once** (2.0's
+rational table, 2.1's excluded value, 2.2's $(0,\infty)$ range, 2.3's asymptote landmark, 2.4's
+coffee). `make -C
+unit02/lesson05 all` and `check` both pass; every numeric claim in both blank and key was verified in
+pure Python first. The boxguard eyeball pass found **one real violation invisible to the gate**
+(homework item 8's answer space split 2+1 across a page break) plus **two table defects no check can
+see** (a label column wrapping mid-equation, and a header wrapping mid-word). **14 of 59 lessons
+authored.**
+
+*Previous run (same day): authored **Unit 2 Lesson 2.4 (Intercepts, Zeros, and Extrema,
+`AFDA.AF.2b–d`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework, all five keys, and the
 deck. This is the unit's **first pure graph-reading lesson**: no equation is required anywhere in the
 activity, exit ticket, or the context items, which is the AFDA guidance's own scope
 (characteristics are investigated "from only a graph"). `make -C unit02/lesson04 all` and `check`
 both pass; every numeric claim in both blank and key was verified in pure Python first. The boxguard
 eyeball pass found **one real violation invisible to the gate** (homework item 4's answer space split
 across a page break) plus a **table defect no check can see** (a two-line header wrapping
-mid-parenthesis), both fixed. **13 of 59 lessons authored.**
+mid-parenthesis), both fixed.*
 
-*Previous run (same day): authored **Unit 2 Lesson 2.3 (Equations and Graphs in Both Directions,
+*Earlier run (same day): authored **Unit 2 Lesson 2.3 (Equations and Graphs in Both Directions,
 `AFDA.AF.1d, f`)** in full — the unit's first both-directions lesson and the course's first
 technology lesson (the TI-84 as a verification tool, not an oracle). The boxguard pass found one real
 violation invisible to the gate (the homework's remindbox alone on p4) plus a figure defect no check
@@ -62,9 +73,114 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (13 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`,
-  `unit02/lesson01`, `unit02/lesson02`, `unit02/lesson03`, and `unit02/lesson04`.** Every component
-  written, built, and gated.
+- **Authored (14 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`,
+  `unit02/lesson01`, `unit02/lesson02`, `unit02/lesson03`, `unit02/lesson04`, and
+  `unit02/lesson05`.** Every component written, built, and gated.
+- **`unit02/lesson05` — End Behavior and Asymptotes (`AFDA.AF.2f–g`).** The lesson where **four
+  lessons' worth of plants get harvested at once**, and the only one in the unit whose whole content
+  is a distinction rather than a procedure.
+  - Spine: **getting closer and closer is not arriving.** That is the honest answer to the objection
+    2.4's log flagged ("but it gets so close"), and it is what makes ``none'' the correct answer to so
+    many questions. The second sentence is **an asymptote is a \emph{line}, so it gets an equation** —
+    the third member of 2.4's set (an intercept is a point, a zero is a number, an asymptote is a
+    line). Drill it out loud every single time; it is the habit the rest of the year runs on.
+  - **The hook's design is deliberately \emph{not} 2.4's.** 2.4 was settled by naming an axis; this one
+    cannot be settled that way, because both students are talking about degrees. The coffee gap runs
+    $64, 32, 16, 8, 4, 2, 1$ and the question is *does it ever reach $20^\circ$C?* Student A: after 12
+    hours the gap is $\tfrac{1}{64}$ of a degree and no thermometer can read it. Student B: half of a
+    positive number is positive, so it is never zero. **Neither is wrong about a fact** — they answered
+    \emph{different questions}, and only B answered the one asked. A is right about \emph{measuring},
+    which is a claim about instruments, not about $C$. Students trained for a week to check units will
+    want a units answer and there is not one. Resolve it on notes box 2 rule 2, not earlier.
+  - **Four plants harvested, and this is the payoff lesson for all of them**: 2.0's homework item 9
+    table for $f(x)=\frac{x+1}{x-3}$ ($-39, -399, 401, 41$) is reused \emph{unchanged} as notes box 3's
+    opening — the class already made those numbers, box 3 only supplies the picture; 2.1's excluded
+    value becomes the vertical asymptote (**the excluded input \emph{is} the answer**); 2.2's
+    $(0,\infty)$ range and 2.4's "no zeros" for $2^x$ are both explained by one fact about its left end;
+    and 2.4's homework item 10 coffee becomes the hook and notes box 2.
+  - Notes = 5 vocab terms (end behavior, horizontal asymptote, vertical asymptote, approaches $\to$,
+    without bound) + three boxes. In-text blanks: *right*, *left*, *without bound*, *level off*, *0*,
+    *positive*, *never*, *closer and closer*, *reaching*, *end behavior*, *positive*, *20*, *zeros*,
+    *minimum*, *$(20,84]$*, *without bound*, *domain*, *except 3*, *no point*, *3*, *0*, *$-1$*,
+    *no value at all*, *1*.
+  - **Box 1's form of answer matters more than the answers.** Two questions ($x \to -\infty$,
+    $x \to \infty$), **three** possible phrases each: climbs without bound, falls without bound, levels
+    off toward a number. Panels $x^2$ / $2x-4$ / $2^x$; **panel (c)'s left end is the only new thing in
+    the box** and it is what closes the 2.2/2.4 loop.
+  - **Box 2's gap row is the definition written in numbers** — fill $64, 32, 16, 8, 4, 2, 1$
+    \emph{before} defining anything, and the class will not need the definition read to them. Its best
+    five minutes are the **three consequences settled by one line**: no zeros, no absolute minimum, and
+    range $(20,84]$ with a parenthesis — all three questions the class already asked about this exact
+    graph. Closes on the travelling asymptote ($2^x \to y=0$; $2^x-4 \to y=-4$; $64(0.5)^t+20 \to
+    y=20$).
+  - **Box 3's sharpest idea — and the best single sentence in the lesson — is that a zero and a
+    vertical asymptote are opposites.** Both make you point at a spot on the horizontal axis. At a zero
+    the function \emph{has} a value and it is $0$ ($x=-1$ here); at a vertical asymptote it has
+    \emph{no value at all} ($x=3$). Ask **"what is $f(3)$?"** before explaining anything — there is no
+    such number, and that one fact generates all three rules, including why nothing can cross a
+    vertical asymptote (there is no point there to cross with). The same graph carries a horizontal
+    asymptote $y=1$, which is why `AF.2g` says "and/or."
+  - **Guided practice is the booster club's $A(x)=6+240/x$ — 1.7's and 2.1's own function, harvested a
+    third time**, now as the one context where \emph{both} kinds of asymptote mean something: $y=6$ is
+    the printing cost with the \$240 setup split ever thinner and never gone, and $x=0$ is "you cannot
+    split a setup fee among zero shirts." Reads all integers: $30, 18, 12, 10, 8$ at $x=10,20,40,60,120$.
+    Item 4 ("we can get it down to \$5") is the payoff — **\$5 is \emph{below} the asymptote, so it is
+    impossible, not merely hard.** Note the vertical asymptote sits on top of the vertical axis; that is
+    normal for average cost and worth saying out loud rather than hiding.
+  - **Every context was chosen so the asymptote is a different \emph{kind} of thing.** Tier R **drug**
+    $D(t)=64(0.5)^t$ (floor at $y=0$; "out of your system in 24 hours" is false as written and still
+    good advice — the hook's distinction in a second costume). Tier A **typing speed**
+    $S(w)=80-64(0.5)^w$ (ceiling at $y=80$) and **$h(x)=4/(x+2)$** (both kinds, and the parent $4/x$
+    moved left 2). Exit ticket **warming soda** $T(t)=72-64(0.5)^t$ (ceiling $y=72$). Homework
+    **reservoir** $R(w)=100-64(0.5)^w$ (ceiling $y=100$) and **$h(x)=6/(x-2)$**.
+  - **Tier A item 2 is the item that separates the room**: "will they ever type 80? 85?" Both answers
+    are no and **the reasons are different** — 80 is approached and never reached; 85 is on the far
+    side of the asymptote entirely. Groups reliably give one reason twice.
+  - **Tier A item 5 pays 2.2 back and is the cleanest transformation item in the unit.** Sliding
+    $4/x$ left 2 moves the \emph{vertical} asymptote ($x=0 \to x=-2$) and leaves the horizontal one at
+    $y=0$: a horizontal slide changes inputs, and a vertical asymptote is named by an input. Same rule
+    assessed again in homework item 2 ($2^x+3, 2^x-1, 2^{x+4}, -2^x$ → $y=3, y=-1, y=0, y=0$) and
+    Tier E item 3.
+  - **Exit ticket items 1 and 3 are the same number on purpose**, the 2.4 pattern reused: $72$ and
+    $y=72$ are \emph{correct} answers to item 1 and wrong ones in item 3 ("the soda reaches $72^\circ$
+    at $t=5$, the graph is on the line"). At $t=5$ the gap is $2^\circ$ and the curve looks welded to
+    the line. **Item 2 is the second trap and it flips the period's rhythm** — everything all day has
+    answered "no maximum" or "no minimum," and here there is a genuine absolute minimum ($8^\circ$F at
+    $t=0$) sitting at the left endpoint. Students answer from rhythm and miss it.
+  - **Homework item 5 has a sting in the tail that is worth stealing for later lessons**: after three
+    questions about the input that is \emph{missing} from the domain, it asks why the graph has no
+    $y$-intercept — and it has one, at $(0,-3)$. **A vertical asymptote deletes one input, not the
+    whole axis.** Expect students to answer the question they were primed for.
+  - **Homework item 10 bridges to 2.6 and needs no asymptote at all.** A delivery fee, flat \$5 for
+    three miles then \$2 a mile ($F(2)=5$, $F(6)=11$), takes **two rules on two stretches with a
+    hand-off at $m=3$** — and part (d) checks that outputs climbing without bound rule a horizontal
+    asymptote \emph{out}. *Piecewise* is 2.6's word.
+  - **The extension is the honest limit of the whole lesson**: $2^x$ against $x^2$ for
+    $x=1,\dots,5,10$. They tie at $x=2$ and $x=4$, $x^2$ leads at $x=3$ ($9>8$), and by $x=10$ it is
+    $1024$ against $100$. **Same end behavior, wildly different graphs** — end behavior tells you the
+    direction, never the rate. That is also Unit 3's opening argument.
+  - Guard sizes: bare on vocab, `[12]` hook, `[30]`$\times$3 on the notesboxes, `[30]` practice,
+    `[30]` on all three activity tiers, `[24]`/`[30]`/`[24]`/`[26]` on the homework's boxes, `[18]` on
+    the plan's five teachernotes, `[16]` on the plan's Individual Work box, bare on the plan's Lesson,
+    Explicit Instruction and Group Work boxes. **2.4's set transferred verbatim and clean first pass.**
+  - **Boxguard finding, and the third lesson running where `\tcbbreak` was right on the first build.**
+    Homework item 8's stem plus **two** of its three write-line slots sat at the foot of p2 with the
+    third opening p3 — the same defect class as 2.4's item 4, and again invisible to `make check`
+    (the key stranded the same line, so parity was perfect at 4/4). `\tcbbreak` before item 8 **cost
+    nothing**: still 4 pages, and p3 now opens with item 8 whole. Note this still does not repeal
+    2.0's rule — no `\tcbbreak` was authored until the build proved one necessary.
+  - **Two table defects no check and no page count can see, and they are the same family as 2.4's.**
+    (1) Notes box 1's label column at `p{1.5cm}` broke "(b) $y=2x-4$" as "(b) $y=$ / $2x-4$" —
+    **a label column narrow enough to wrap breaks in the wrong place**; `p{2.3cm}` fixed it. (2) Notes
+    box 2's travelling-asymptote header "Horizontal asymptote" at `\small` wrapped **mid-word** as
+    "asymp-/tote" in `p{3.2cm}`; the fix is 2.4's rule generalized — **any two-word header near its
+    column width needs an explicit `\newline`**, not just a parenthetical one.
+  - Pagination: notes pp. 2–5 each run ~55–60% full, and per 2.4's measured verdict that is arithmetic,
+    not slack — every box here exceeds half a page, so no two can share one. Activity p3 (Tier E
+    complete) and plan p6 (one complete teachernote) are dead space, accepted per 2.3's rule.
+  - Page counts: cover 1, warm-up 1/1, notes 5/5, activity 3/3, exit ticket 1/1, homework 4/4;
+    student and key packets 20 pages each. Plan 6 pp, slides 12 frames (4 pp printed 3-up). No
+    overfull box anywhere over 10.8pt (the standard page banner), and **none at all in the deck**.
 - **`unit02/lesson04` — Intercepts, Zeros, and Extrema (`AFDA.AF.2b–d`).** Unit 2's **first pure
   graph-reading lesson** — no equation is needed anywhere in the activity or the exit ticket.
   - Spine: **every mistake in this lesson is an axis mistake, so before you write a number down, say
@@ -944,21 +1060,23 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
 
 ## Next steps
 
-1. Commit / PR **Lesson 2.4** (user to confirm).
-2. Then author **Unit 2's remaining content lessons, 2.5 → 2.7**, in order. The threads are planted:
-   **2.5 gets four separate plants** — the asymptote preview from 2.0's homework item 9, 2.1's
-   restricted-domain box, **2.2's $(0,\infty)$ range for $2^x$** (flagged in 2.2's notes as "Lesson
-   2.5 gives that behaviour a name"), **2.3's asymptote-as-a-landmark box 2 row**, where students
-   already read a shifted asymptote off a graph, and now **2.4's homework item 10** (coffee cooling
-   toward $20^\circ$C, which already produced "it gets closer and closer and never arrives" *and* a
-   function with no absolute minimum) together with **2.4's notes box 1 panel (b)**, the exponential
-   with no zeros. 2.7 gets 2.0's adding-vs-multiplying test, restated in 2.2's notes box 1 and
-   assessed in 2.2's homework item 2.
-   **2.5 is `AFDA.AF.2f–g` — end behavior, and horizontal and vertical asymptotes.** Two habits must
-   carry forward: **2.4's axis discipline** (end behavior is another question about what happens as
-   the *input* runs off the page, and 2.4's exit-ticket pile 3 — the students who agreed with the
-   wrong-axis claim — is the Tier R roster), and **2.0's/2.4's rule that an extreme is a value
-   \emph{and} a location**.
+1. Commit / PR **Lesson 2.5** (user to confirm).
+2. Then author **Unit 2's remaining content lessons, 2.6 and 2.7**, in order. The threads are planted:
+   **2.6 is `AFDA.AF.2` — piecewise-defined functions**, and its plant is **2.5's homework item 10**
+   (the delivery fee, flat \$5 for three miles then \$2 a mile, which already made students write
+   *two rules on two stretches with a hand-off at $m=3$* in plain English). 2.6 opens by naming that
+   **piecewise** — the fifth consecutive lesson using the move (2.2 named 2.1's translation, 2.3 named
+   2.2's parentheses, 2.4 named 2.3's extremes, 2.5 named 2.4's "gets closer and never arrives").
+   2.6 is also the natural place to run **every Unit 2 characteristic on one piecewise graph** —
+   domain and range, intercepts and zeros, intervals, extremes, end behavior — since it is the last
+   content lesson before 2.7's model-choosing.
+   2.7 gets 2.0's adding-vs-multiplying test, restated in 2.2's notes box 1 and assessed in 2.2's
+   homework item 2.
+   **Three habits must carry into 2.6:** 2.4's axis discipline; **2.5's rule that an asymptote is a
+   line and gets an equation** (drill it in 2.6 too — a piecewise graph can carry one); and 2.5's
+   exit-ticket pile 3 (the students who agreed the graph was "on the line") is the **Tier R roster**,
+   because a student who reads a picture as "close enough" will smear a piecewise graph's stretches
+   together at the hand-off point.
 3. **Every Unit 2 lesson is a graph-reading lesson — pre-draw and pre-scale every axis.** 2.0's
    seven `pgfplots` figures are the model for style (`axis lines=left`, `grid=both` at
    `linegray!45`, `\scriptsize` tick/label fonts, `royal` plot, integer-friendly tick marks).
@@ -999,7 +1117,12 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
    or at `\small` it overruns its column and wraps mid-parenthesis (no check and no page count sees
    it); and **measure the boxes before reaching for a guard** — when every box in a component is
    taller than half a page, half-empty pages are arithmetic, not a guard problem, and no guard
-   setting will reclaim them.
+   setting will reclaim them. From 2.5, generalize 2.4's header rule and add one: **any two-word
+   header near its column width needs an explicit `\newline`** (not just a parenthetical one — 2.5's
+   "Horizontal asymptote" wrapped mid-word as "asymp-/tote"), and **a table's label column must be
+   wide enough to hold its longest entry on one line**, or it breaks in the wrong place (2.5's
+   `p{1.5cm}` split "(b) $y=2x-4$" after the equals sign). Both are invisible to `make check` and to
+   every page count; only the rendered PDF shows them.
 6. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
    For every later unit, check by hand what the gate would have caught: blank/key page parity on
    both test forms, no `teachernote` in any test key, no `\ans` inside math. The Unit 1 run's two

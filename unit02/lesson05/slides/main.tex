@@ -1,6 +1,8 @@
 %! End Behavior and Asymptotes — Unit 2, Lesson 2.5 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{atda-beamer}   % provides \royalheader{} and \sectionlabel[color]{}
+\usepackage{pgfplots}      % atda-beamer does NOT load pgfplots
+\pgfplotsset{compat=1.18}
 
 \begin{document}
 
@@ -17,10 +19,259 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{Two Students, and Both Are Telling the Truth}
+  \sectionlabel[goldacc]{hook --- does the coffee ever actually reach $20^\circ$C?}
+  Last night's flask, in a $20^\circ$C room. Each hour the gap between the coffee and the room is cut
+  in half: \quad $64, \ 32, \ 16, \ 8, \ 4, \ 2, \ 1, \ \dots$
+  \begin{block}{Neither student is wrong about a fact}
+    \small
+    \textbf{A:} ``Yes. After 12 hours the gap is $\tfrac{1}{64}$ of a degree --- no thermometer here
+    can read that.''\\[0.15cm]
+    \textbf{B:} ``No. Half of a positive number is positive. The gap is never zero.''
+  \end{block}
+  \vspace{0.1cm}
+  \textbf{So are they disagreeing about the thermometer, or about the function?}
+\end{frame}
+
+% ── THE RESOLUTION ────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{They Answered Different Questions}
+  \sectionlabel{getting closer and closer is not the same as arriving}
+  \begin{block}{``Does it \emph{reach} $20$?'' is a question about the function}
+    \centering\large
+    \textbf{Student B answered it. The coffee approaches $20^\circ$C and never gets there.}
+  \end{block}
+  \begin{itemize}
+    \setlength{\itemsep}{0.3cm}
+    \item Student A is right about \textbf{measuring} --- a fact about thermometers, not about $C$.
+    \item You cannot settle this one by checking units. Both students are talking about degrees.
+    \item That one distinction generates everything today: no zeros, no absolute minimum, and a range
+          written with a \textbf{parenthesis}.
+  \end{itemize}
+\end{frame}
+
+% ── END BEHAVIOR: THE TWO QUESTIONS ───────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{End Behavior: Two Questions, Three Answers Each}
+  \sectionlabel{\texttt{AFDA.AF.2f} --- what the outputs do when the inputs run off the page}
+  \begin{block}{Ask both ends, every time}
+    \centering
+    \textbf{As $x \to -\infty$ (far left)\dots} \qquad\qquad \textbf{As $x \to \infty$ (far
+    right)\dots}
+  \end{block}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.3cm}
+    \item the outputs \textbf{climb without bound} --- past every ceiling you could name;
+    \item the outputs \textbf{fall without bound};
+    \item the outputs \textbf{level off toward a number}.
+  \end{enumerate}
+  \vspace{0.15cm}
+  \textbf{The question is about inputs. The answer is about outputs.} That is Lesson 2.4's rule,
+  extended past the edge of the picture.
+\end{frame}
+
+% ── THREE PARENTS ─────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Three Graphs, Six Ends}
+  \sectionlabel[goldacc]{the exponential's left end is the new one}
+  \begin{center}
+  \begin{tabular}{@{}c@{\hspace{0.9cm}}c@{\hspace{0.9cm}}c@{}}
+  \begin{tikzpicture}
+  \begin{axis}[width=4.6cm, height=3.6cm, title={\tiny $y=x^2$},
+      xmin=-3.4, xmax=3.4, ymin=-1.0, ymax=10.4,
+      xtick={-2,0,2}, ytick={0,4,8}, minor x tick num=1, minor y tick num=1,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}]
+    \addplot[royal, very thick, domain=-3.15:3.15, samples=90]{x^2};
+  \end{axis}
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+  \begin{axis}[width=4.6cm, height=3.6cm, title={\tiny $y=2x-4$},
+      xmin=-3.4, xmax=3.4, ymin=-10.4, ymax=4.4,
+      xtick={-2,0,2}, ytick={-8,-4,0,4}, minor x tick num=1, minor y tick num=1,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}]
+    \addplot[royal, very thick, domain=-3.3:3.3, samples=2]{2*x-4};
+  \end{axis}
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+  \begin{axis}[width=4.6cm, height=3.6cm, title={\tiny $y=2^x$},
+      xmin=-3.4, xmax=3.4, ymin=-1.4, ymax=8.4,
+      xtick={-2,0,2}, ytick={0,4,8}, minor x tick num=1, minor y tick num=1,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}]
+    \addplot[goldacc, thick, dashed, domain=-3.3:3.3, samples=2]{0};
+    \addplot[royal, very thick, domain=-3.3:3, samples=90]{2^x};
+  \end{axis}
+  \end{tikzpicture}
+  \end{tabular}
+  \end{center}
+  \vspace{-0.25cm}
+  \small
+  Climbs both ways. \quad Falls left, climbs right. \quad \textbf{Levels off toward $0$ on the left},
+  climbs right.\\
+  \textbf{Going left, $2^x$ never becomes $0$ and never becomes negative} --- which is why Lesson 2.4
+  found no zeros and Lesson 2.2 found the range $(0,\infty)$.
+\end{frame}
+
+% ── HORIZONTAL ASYMPTOTE ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{A Horizontal Asymptote Is a Line It Never Reaches}
+  \sectionlabel{\texttt{AFDA.AF.2g} --- and the gap row is the definition}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.6cm, height=3.8cm,
+      xlabel={$t$ (hours after pouring)}, ylabel={$C$ (degrees C)},
+      xmin=0, xmax=6, ymin=0, ymax=90,
+      xtick={0,1,2,3,4,5,6}, ytick={0,20,40,60,80}, minor y tick num=1,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[goldacc, thick, dashed, domain=0:6, samples=2]{20};
+    \addplot[royal, very thick, domain=0:6, samples=100]{64*(0.5)^x+20};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.3cm}
+  \small
+  $C(t)$: \quad $84, \ 52, \ 36, \ 28, \ 24, \ 22, \ 21$ \qquad
+  \textbf{Gap above 20:} \quad $64, \ 32, \ 16, \ 8, \ 4, \ 2, \ 1$\\[0.15cm]
+  \textbf{Horizontal asymptote: $y=20$.} An intercept is a \emph{point}. A zero is a \emph{number}.
+  \textbf{An asymptote is a \emph{line}, so it gets an equation.}
+\end{frame}
+
+% ── ONE LINE, THREE ANSWERS ───────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{One Asymptote Settles Three Questions}
+  \sectionlabel{all three were asked about this exact graph last night}
+  \renewcommand{\arraystretch}{1.35}
+  \small
+  \begin{tabularx}{\textwidth}{@{}p{5.2cm} p{2.6cm} X@{}}
+    \textbf{Question} & \textbf{Answer} & \textbf{Because} \\
+    \hline
+    Does $C$ have any zeros? & \textbf{none} &
+      the outputs never drop below $20$, let alone to $0$ \\
+    Does $C$ have an absolute minimum? & \textbf{none} &
+      every hour is lower than the last, so no output is the lowest \\
+    What is the range of $C$? & $(20,84]$ &
+      parenthesis at $20$ (never attained), bracket at $84$ (attained) \\
+  \end{tabularx}
+  \vspace{0.3cm}
+
+  \textbf{And the asymptote travels with the graph:} \quad $y=2^x \Rightarrow y=0$ \quad$\cdot$\quad
+  $y=2^x-4 \Rightarrow y=-4$ \quad$\cdot$\quad $y=64(0.5)^t+20 \Rightarrow y=20$.
+\end{frame}
+
+% ── VERTICAL ASYMPTOTE ────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{A Vertical Asymptote Sits Where an Input Went Missing}
+  \sectionlabel{your own Lesson 2.0 table: $-39$, $-399$, $401$, $41$}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.2cm, height=4.2cm,
+      xlabel={$x$}, ylabel={$y$},
+      xmin=-8, xmax=12, ymin=-9, ymax=11,
+      xtick={-8,-4,0,4,8,12}, ytick={-8,-4,0,4,8},
+      minor x tick num=1, minor y tick num=1,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[goldacc, thick, dashed, domain=-8:12, samples=2]{1};
+    \addplot[goldacc, thick, dashed] coordinates {(3,-9) (3,11)};
+    \addplot[royal, very thick, domain=-8:2.5, samples=140]{(x+1)/(x-3)};
+    \addplot[royal, very thick, domain=3.5:12, samples=140]{(x+1)/(x-3)};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.3cm}
+  \small
+  $f(x)=\dfrac{x+1}{x-3}$. \quad \textbf{Vertical asymptote $x=3$} --- and $3$ is \emph{not in the
+  domain}. \quad \textbf{Horizontal asymptote $y=1$}, both ends.\\
+  \textbf{The graph cannot cross $x=3$} --- not because the line is a wall, but because there is no
+  point there to plot.
+\end{frame}
+
+% ── THE TRAP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{A Zero and a Vertical Asymptote Are Opposites}
+  \sectionlabel[goldacc]{both make you point at the horizontal axis --- and that is the whole problem}
+  \begin{block}{Ask one question and it settles instantly: \emph{does the function have a value here?}}
+    \centering\large
+    \textbf{At a zero: yes, and the value is $0$.} \qquad \textbf{At a vertical asymptote: no value
+    at all.}
+  \end{block}
+  \begin{itemize}
+    \setlength{\itemsep}{0.3cm}
+    \item On $f(x)=\dfrac{x+1}{x-3}$ the zero is $x=-1$ --- the graph \emph{crosses} the axis there.
+    \item At $x=3$, $f(3)$ is not a number. There is nothing to plot, so nothing to cross.
+    \item A vertical asymptote deletes \textbf{one input}, not the whole axis --- the graph can still
+          have a $y$-intercept.
+  \end{itemize}
+\end{frame}
+
+% ── GUIDED PRACTICE ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Guided Practice: The Booster Club's Spirit Shirts}
+  \sectionlabel{\$240 setup, \$6 a shirt --- both asymptotes, both meaning something}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.6cm, height=3.8cm,
+      xlabel={$x$ (shirts ordered)}, ylabel={$A$ (\$ per shirt)},
+      xmin=0, xmax=130, ymin=0, ymax=45,
+      xtick={0,20,40,60,80,100,120}, ytick={0,10,20,30,40},
+      minor x tick num=1, minor y tick num=1,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[goldacc, thick, dashed, domain=0:130, samples=2]{6};
+    \addplot[royal, very thick, domain=6.5:130, samples=200]{6+240/x};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.3cm}
+  \small
+  $A(10)=30$, \ $A(20)=18$, \ $A(40)=12$, \ $A(60)=10$, \ $A(120)=8$.\\
+  \textbf{Horizontal asymptote $y=6$} --- the printing cost of one shirt, with the setup fee split
+  ever thinner and never gone. \textbf{Vertical asymptote $x=0$} --- you cannot split \$240 among
+  zero shirts.\\
+  \textbf{So ``we can get it down to \$5'' is impossible}, not merely hard: \$5 is \emph{below} the
+  asymptote.
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: Lines a Graph Never Reaches}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  Every answer is still read off a picture.
+  \begin{block}{The rule for the whole activity}
+    Every asymptote you name gets written as an \textbf{equation of a line} --- $y=$ something or
+    $x=$ something --- never as a bare number. \emph{And check whether the graph reaches a value or
+    only gets closer.}
+  \end{block}
+  \vspace{0.1cm}
+  Tier E: two claims that confuse ``close'' with ``there,'' one impossible request (crossing a
+  vertical asymptote), and what happens to an asymptote under $+3$, $-1$, and $x-3$.
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.3cm}
+    \item The warming soda: end behavior as $t \to \infty$, the horizontal asymptote \textbf{as an
+          equation}, and what that line means.
+    \item Absolute maximum? Absolute minimum? \textbf{Read this one carefully} --- the two answers
+          are not the same kind.
+    \item Somebody wrote ``the soda reaches $72^\circ$ at $t=5$, the graph is on the line.'' Those
+          are your own item-1 answers. Say what is wrong anyway.
+  \end{enumerate}
+  \vspace{0.2cm}
+  {\color{royal}\bfseries Next: Lesson 2.6 --- Piecewise-Defined Functions.}
 \end{frame}
 
 \end{document}
