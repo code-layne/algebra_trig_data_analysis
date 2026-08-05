@@ -16,56 +16,279 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can recognize and factor the three special forms --- a
+    \textbf{difference of squares}, a \textbf{perfect square trinomial}, and a \textbf{sum or
+    difference of cubes} --- and I can explain why a \emph{sum} of squares is prime over the
+    integers. I can factor completely, GCF first, checking every factor for a form hiding inside
+    another. I can \textbf{verify a polynomial identity} by multiplying the factored form back out,
+    and say why doing that once with letters settles it for every number. I can read a factored area
+    model --- a lobby, a platform, a courtyard --- to recover the dimensions of the figure it
+    describes and say what they mean.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Knowledge \& Skills covered --- \texttt{A2.EO.3b}, \texttt{A2.EO.3d}:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{3b} --- Factor polynomials \textbf{completely}, in \textbf{one and two variables},
+        with \textbf{no more than four terms}, \textbf{over the integers}. This lesson closes the
+        code with the \textbf{two-term} case (squares and cubes) and the trinomial shortcut.
+  \item \texttt{3d} --- \textbf{Represent and demonstrate equality} of polynomial expressions
+        written in different forms, and \textbf{verify polynomial identities} including the
+        difference of squares, sum and difference of cubes, and perfect square trinomials. This is
+        the new code, and it is why ``check by multiplying back'' stops being a habit and becomes
+        the mathematics.
+  \item Note what \texttt{3d} names: exactly the three forms this lesson teaches. The standard
+        wants the identity \emph{verified}, not just applied.
+\end{itemize}
+\textbf{Supporting fluency (Lessons 1.1--1.4, not new codes):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Binomial products (\texttt{A2.EO.3a}) --- every pattern today is a product the class has
+        already multiplied out, read backwards.
+  \item Product-and-sum (Lesson 1.4) --- still finds $x^2-9$ and $x^2+10x+25$; it is also the
+        argument that settles \emph{prime}.
+  \item ``GCF first'' (Lessons 1.3--1.4) --- unchanged, and today it is what \emph{exposes} the
+        pattern in $3x^3-27x$.
+\end{itemize}
+\textbf{Where these codes go next:} \texttt{A2.EI.2b}, \texttt{A2.EI.6a--b} in 1.6, where a factored
+polynomial set equal to zero is a solved equation (tonight's item 13 does it once already);
+\texttt{A2.EO.1a--b} in 1.7, where a difference of squares is the single most common thing that
+cancels in a rational expression.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{These are not new rules --- they are shortcuts the class already earned.} Last
+        night's item 13 factored $x^2-9$ and $x^2+10x+25$ with the 1.4 search. Say this in the first
+        two minutes: today we \emph{name} what they already produced.
+  \item \textbf{What a pattern buys is speed and certainty, not permission.} The search still works;
+        it is just slower. The cubes are the one case the search cannot reach at all.
+  \item \textbf{The middle terms cancel.} $(a+b)(a-b)$ loses $-ab+ab$ --- that single cancellation
+        is the entire content of the difference of squares.
+  \item \textbf{A sum of squares is prime; a sum of cubes is not.} Students will over-generalize
+        from one to the other. Both facts are provable, and both proofs are short.
+  \item \textbf{Test the middle term, not the ends.} $x^2+8x+25$ has two perfect squares on the ends
+        and is still prime. This is the most common wrong answer of the day.
+  \item \textbf{Verifying an identity is a proof, not a check.} Multiplying out with \emph{letters}
+        settles every number at once --- the second genuinely deductive move of the unit, after
+        1.4's finite-list argument for \emph{prime}.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Perfect square (of a term) & A term that is some other term squared: $49 = 7^2$, $9x^2 = (3x)^2$. \\
+Difference of squares & $a^2-b^2$, which always factors as $(a+b)(a-b)$. A \emph{sum} of squares,
+    $a^2+b^2$, is prime over the integers. \\
+Perfect square trinomial & $a^2 \pm 2ab + b^2$ --- the square of a binomial --- factoring as
+    $(a \pm b)^2$. The test is the middle term, not the ends. \\
+Sum and difference of cubes & $a^3+b^3 = (a+b)(a^2-ab+b^2)$ and $a^3-b^3 = (a-b)(a^2+ab+b^2)$;
+    the second factor is prime over the integers. \\
+Polynomial identity & An equation between two polynomial expressions true for \emph{every} value of
+    the variable; verified by multiplying out and comparing like terms (\texttt{A2.EO.3d}). \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{Four items, about 6 minutes:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Spiral from 1.1: multiply $(x+5)(x-5)$ and $(2x+3)^2$
+  \item Spiral from 1.4: factor $x^2-49$ via $x^2+0x-49$
+  \item Recall: which numbers in each list are perfect squares? perfect cubes?
+  \item \emph{Discovery}: multiply $(x+b)(x-b)$ --- what happens to the middle terms, and what does
+        $x^2-b^2$ always factor into?
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 4 is the lesson, discovered rather than delivered --- the
+$-bx+bx$ cancellation \emph{is} the difference of squares. Take it out loud before the hook. Item 3
+is the diagnostic that matters most: a student who does not know $121$ is $11^2$ or $125$ is $5^3$
+will not recognize a single pattern today, and the fix is arithmetic, not algebra. Have the squares
+to $15^2$ and the cubes to $5^3$ visible on the board all period.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{The lobby with a planter in the middle.} A school is retiling a \textbf{square} lobby, $x$
+feet on a side, with a \textbf{square} $4$-foot planter at the center that is not tiled --- so the
+tiled region is $A(x)=x^2-16$ square feet. The supplier will not quote an L-shape; they quote
+\textbf{rectangles}. \textbf{Pose it this way:} ``Cut the leftover into two pieces and slide one
+against the other. It fits a rectangle exactly --- what are its dimensions?'' Cut the $x$-by-$x$
+square's leftover along the planter's edge and the two pieces reassemble into
+\[ x^2-16 = (x+4)(x-4), \]
+a rectangle $(x+4)$ ft by $(x-4)$ ft --- at $x=10$, $14$ ft by $6$ ft and $84$ square feet either
+way. \textbf{Name the through-line:} 1.3 and 1.4 recovered a rectangle from an area with three or
+four terms. This one has \textbf{two}, and it took no search at all.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Difference of squares (10 min).} Run warm-up item 4 back as the students' discovery, then
+work the hook. Fill the table together. \textbf{Ask:} ``What is the entire reason there is no middle
+term?'' Row 5 is the sum-of-squares trap --- do not rush it; it is 1.4's finite-list argument
+reused, and the payoff is that students can \emph{prove} a negative twice now.
+
+\textbf{2. Perfect square trinomials (10 min).} Warm-up item 1(b) already produced one. Give the
+recognition test, then insist on the middle-term check every time. Row 4 ($x^2+8x+25$) is where the
+period is won or lost --- the ends are both perfect squares and the answer is still \emph{prime}.
+
+\textbf{3. Sum and difference of cubes (14 min).} The only genuinely new content. State SOAP, then
+\textbf{immediately verify the identity} on the board --- this is \texttt{A2.EO.3d} and it should
+not be optional. \textbf{Ask:} ``Why does checking it with letters settle every number?'' Then work
+$x^3-8$ on the packing block and check numerically at $x=5$ ($117$ both ways). Warn once, loudly,
+that $x^2+2x+4$ does \emph{not} factor again.
+
+\textbf{4. Factoring completely (7 min).} The order from 1.3--1.4 with the two-term line filled in.
+Work $2x^3-50x$, then $x^4-16$ --- the second is where ``check every factor'' finally earns its
+place in the list.
+
+\textbf{5. Guided practice (8 min).} The second lobby. Item 3 is the one to protect if time runs
+short: pulling $3x$ out of $3x^3-27x$ is what \emph{creates} the pattern.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Recognize Before You Factor]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The three tests students record:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{GCF first.} Always --- and today it often \emph{creates} the pattern.
+  \item \textbf{Two terms?} Both perfect squares with a minus $\Rightarrow$ $(a+b)(a-b)$. Both
+        perfect cubes $\Rightarrow$ SOAP. Sum of squares $\Rightarrow$ \textbf{prime}.
+  \item \textbf{Three terms?} Ends both positive perfect squares \emph{and} middle $=2ab$
+        $\Rightarrow$ $(a \pm b)^2$. Otherwise fall back to Lesson 1.4.
+  \item \textbf{Four terms?} Group --- Lesson 1.3, unchanged.
+  \item \textbf{Then check every factor again}, and multiply back.
+\end{enumerate}
+\textbf{Say this out loud:} ``A pattern is a shortcut, not a permission slip. If you cannot name
+$a$ and $b$, you do not have the pattern.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example (verifying the identity):}
+\[
+\begin{aligned}
+(a-b)\left(a^2+ab+b^2\right) &= a^3+a^2b+ab^2-a^2b-ab^2-b^3 \\
+                             &= a^3-b^3
+\end{aligned}
+\]
+Four middle terms, cancelling in two pairs. \textbf{The point to make:} the letters stand for any
+numbers at all, so this one calculation covers every case --- that is what makes it an
+\emph{identity} rather than an equation to solve.
+
+\textbf{The error to name before it happens:} factoring the second factor again.
+$x^2+2x+4$ has $ab$, not $2ab$, so it is not a perfect square, and no integer pair has product $4$
+and sum $2$. It is prime, every time.
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes, box 1:} watch for students who write $(x-6)(x-6)$ for $x^2-36$. Send them
+        back to the multiplication --- that product has a middle term and theirs must not.
+  \item \textbf{Notes, box 1, row 5:} a student who writes ``$(x+7)(x+7)$'' for $x^2+49$ has
+        matched the ends and ignored the sign. Ask them to multiply it back; the $14x$ appears.
+  \item \textbf{Notes, box 2, row 4:} the whole point of the box. A student who factors
+        $x^2+8x+25$ at all has skipped the middle-term test.
+  \item \textbf{Notes, box 3:} watch for SOAP applied to the \emph{first} factor's sign correctly
+        and the middle sign flipped anyway. Also watch for a second round of factoring on
+        $x^2+2x+4$.
+  \item \textbf{Activity, Tier A item 2:} the interpretation item. A group that factors $9x^2-25$
+        correctly but cannot say the sides sit $5$ ft either side of $3x$ has the algebra and not
+        the meaning --- that is the conversation to have, not more items.
+  \item \textbf{Cold-call prompts:} ``Name $a$ and $b$.'' ``Is that a sum or a difference?''
+        ``Is the middle term twice the product?'' ``How do you know it is prime?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Five one-line fluency items: two differences of squares (one with a coefficient), two
+        perfect square trinomials (both signs), and one sum of cubes.
+  \item Support: have the group \emph{name $a$ and $b$ out loud} before writing any parentheses,
+        and multiply every answer back.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Factor the platform's $A(x)=9x^2-25$ and say what the two factors mean.
+  \item Evaluate at $x=4$: $17$ ft by $7$ ft, $119$ sq ft, $48$ ft of edge trim.
+  \item A second platform, then a third that needs the GCF pulled before any pattern appears.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique two wrong answers --- a sum of squares ``factored'' and a perfect square given
+        opposite signs --- and name each mistake.
+  \item Factor $x^4-81$ completely and say which factor stops, and why.
+  \item \textbf{Verify} $a^3-b^3=(a-b)(a^2+ab+b^2)$ in general letters, and explain why one
+        verification covers every pair of numbers.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} (1) factor $x^2-14x+49$ --- answer $(x-7)^2$, with the
+middle-term check $2(x)(7)=14x$; (2) factor $x^3-64$ --- answer $(x-4)\left(x^2+4x+16\right)$;
+(3) \textbf{the conceptual check} --- a student factors $2x^2-18$ as $(2x+6)(x-3)$; is it correct,
+is it complete, and what is the complete factorization ($2(x+3)(x-3)$)?
+
+\textbf{Using the results:} the three items sample the day's three patterns in order --- perfect
+square trinomial, cubes, difference of squares behind a GCF --- so a wrong item names what to
+reteach. Item 1 wrong is almost always a missing middle-term check; item 2 wrong is a SOAP sign or
+$64$ not recognized as $4^3$, and the student's own work shows which. Item 3 is the one that
+matters most: it is the \emph{third} appearance of the same belief --- $5x(4x+6)$ in 1.3,
+$(2x+4)(x+6)$ in 1.4, $(2x+6)$ today --- so a student still missing it needs the GCF habit
+retaught, not the pattern. Sort the tickets by \emph{which} item is wrong; that sort is your Tier R
+grouping for Lesson 1.6.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (13 items): nine fluency items --- four differences of squares and perfect square
+trinomials, one \textbf{prime} sum of squares ($x^2+36$), three cubes (including $8x^3+1$), and one
+that needs the GCF pulled first ($3x^3-75x = 3x(x+5)(x-5)$) --- then a three-part courtyard-garden
+model ($A(x)=25x^2-4$, factoring to $(5x+2)(5x-2)$, evaluated at $x=3$ as $17$ ft $\times$ $13$ ft
+$=221$ square feet with $60$ ft of border fencing), and one two-part look-ahead item.
+
+\textbf{Extension (optional):} factor $4x^2-9y^2$ into $(2x+3y)(2x-3y)$ and \textbf{multiply it back
+out to verify the identity} --- the standard's \textbf{two-variable} case (\texttt{3b}) and its
+\textbf{verification} clause (\texttt{3d}) in one item. The pattern never cared that $b$ carried a
+variable.
+
+\textbf{Preview of Lesson 1.6 (\texttt{A2.EI.2b}, \texttt{A2.EI.6a--b}):} solving polynomial
+equations by factoring. Homework item 13 makes the link explicit --- students factor $x^2-36$ and
+then find the value of $x$ making the paved area \emph{zero}, using only the fact that a product is
+zero when a factor is. In 1.6 that move gets its name, the \textbf{zero product property}.
+
+\textbf{Connections.} Covers \texttt{A2.EO.3b} (factor completely, one and two variables, at most
+four terms, over the integers) --- specifically the two-term forms and the trinomial shortcut ---
+and \texttt{A2.EO.3d} (represent and demonstrate equality of polynomial expressions in different
+forms; verify the difference-of-squares, sum-and-difference-of-cubes, and perfect-square-trinomial
+identities). Builds directly on \texttt{A2.EO.3a} (Lesson 1.1, binomial products, which supply every
+pattern and every verification) and on Lesson 1.4's product-and-sum search, which still settles
+\emph{prime}; feeds \texttt{A2.EI.2b} and \texttt{A2.EI.6a--b} in 1.6 and \texttt{A2.EO.1a--b} in
+1.7.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +296,74 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{6 minutes, and do the items in order --- item 4 depends on item 1.} Answers:
+    (1) $x^2-25$ and $4x^2+12x+9$; (2) $7$ and $-7$, giving $(x+7)(x-7)$; (3) squares $36, 64, 81,
+    121$ and cubes $8, 27, 64, 125$ --- note that $64$ is on both lists, which is worth ten seconds;
+    (4) $(x+b)(x-b) = x^2-bx+bx-b^2 = x^2-b^2$, the middle terms cancelling. Item 4 is the pivot:
+    the class derives the difference of squares from a multiplication they just did, so the pattern
+    arrives as \emph{their} observation. Put $(x+5)(x-5)$ and $(x+7)(x-7)$ on the board one above
+    the other and let a student say ``the middle terms cancel.'' Item 3 is the cheap diagnostic and
+    it predicts the whole period: a student who cannot see $121 = 11^2$ or $125 = 5^3$ will not
+    recognize a single pattern today. Write the squares to $15^2$ and the cubes to $5^3$ in a corner
+    of the board and leave them up.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{The tables in boxes 1, 2, and 3 are fill-ins, not handouts.} Answers, box 1:
+    $x^2-6^2$ / $(x+6)(x-6)$; $x^2-11^2$ / $(x+11)(x-11)$; $(3x)^2-4^2$ / $(3x+4)(3x-4)$;
+    $(5x)^2-9^2$ / $(5x+9)(5x-9)$; not a difference / \emph{prime}. Box 2: $x, 6$, $2ab=12x$ /
+    $(x+6)^2$; $x, 8$, $2ab=16x$ / $(x-8)^2$; $2x, 5$, $2ab=20x$ / $(2x+5)^2$; $x, 5$ with
+    $2ab=10x \ne 8x$ / not a perfect square, prime. Box 3: $a=x, b=4$ / $(x+4)(x^2-4x+16)$;
+    $a=3x, b=1$ / $(3x-1)(9x^2+3x+1)$; $a=2x, b=5$ / $(2x+5)(4x^2-10x+25)$. The three in-text blanks
+    are \emph{prime}, \emph{twice}, and \emph{every}. Box 2's row 4 deserves more time than the
+    other three rows combined --- it is the difference between recognizing a pattern and hoping for
+    one. Box 3's verification is the \texttt{A2.EO.3d} moment and should be done on the board with
+    the class watching the four middle terms cancel; do not hand it over as a printed result. If the
+    period runs behind, cut box 4's $x^4-16$ example (keep $2x^3-50x$) rather than shortening guided
+    practice.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is five one-liners, one
+    per pattern plus a cube; a group still on it at six minutes needs you, not more time --- and the
+    fix is almost always item 5, where they do not recognize $27$ as $3^3$. In Tier A, item 2 is the
+    real assessment: a group can factor $9x^2-25$ into $(3x+5)(3x-5)$ and still not be able to say
+    that the two sides sit $5$ feet either side of $3x$, and that gap is the point of the whole
+    activity. Item 3's edge-trim figure ($48$ ft) is what makes the factored form feel useful, and
+    its check against the polynomial ($119$ square feet both ways) is what convinces the skeptics.
+    Item 5 is the one groups rush: they hunt for perfect squares in $5x^2-45$ and stall, because
+    neither term is one until the $5$ comes out. Tier E item 3 is the one to share out --- verifying
+    an identity in general letters is the deepest idea in the unit and most students will not
+    produce the ``one calculation covers every number'' sentence unprompted.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} The three items are the perfect
+    square trinomial, the cubes, and a difference of squares hiding behind a GCF, in that order, so
+    read the tickets by \emph{which} item is wrong rather than by a score out of three. Item 1 wrong
+    is nearly always a skipped middle-term check --- look for $(x-7)(x+7)$, which is the sign error,
+    not an arithmetic one. Item 2 wrong splits two ways: a SOAP sign slip (accept the work, reteach
+    the mnemonic) or $64$ not recognized as $4^3$ (that is the warm-up's item 3 coming back, and it
+    is an arithmetic fix). Item 3 is the one to act on: it is the third appearance of the same
+    belief in three lessons --- $5x(4x+6)$, then $(2x+4)(x+6)$, now $(2x+6)$ --- so a student who
+    misses it needs the GCF habit retaught, not today's patterns. Accept any sentence saying the
+    multiplication checks out but $2x+6$ still shares a $2$; the required evidence is the complete
+    factorization $2(x+3)(x-3)$, not the vocabulary.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 20--25 minutes.} Items 1--4 are squares, 5 is the prime one, 6--8 are cubes, and
+    9 needs both moves --- deliberately unmixed, so a student can tell you which \emph{kind} of
+    problem broke. Item 5 is the sum-of-squares trap: a student who writes $(x+6)(x-6)$ has produced
+    $x^2-36$ and not noticed, so send them to the check rather than to the rule. Item 8 ($8x^3+1$)
+    is the only one where \emph{both} $a$ and $b$ need reading off ($2x$ and $1$), and it is the
+    best single predictor of who has the cube pattern. Items 10--12 are the courtyard garden: item
+    12 asks what the factored form tells the class that the expanded form does not, and the answer
+    wanted is the two dimensions, with the $60$ ft of fencing as the evidence. Item 13 is the bridge
+    into Lesson 1.6 --- part (b) has students reason to $x=6$ from the factored form alone, and the
+    rejection of $x=-6$ on the grounds that a length cannot be negative is worth naming out loud
+    tomorrow; that is the domain reasoning 1.6 will lean on. The extension is the standard's
+    two-variable case \emph{and} its verification clause in a single item, and is the best follow-up
+    for whoever finished Tier E early.
 \end{teachernote}
 \end{document}

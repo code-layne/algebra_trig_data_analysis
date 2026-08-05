@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,221 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item recognize and factor a \textbf{difference of squares}, $a^2-b^2 = (a+b)(a-b)$, and explain
+        why a \textbf{sum} of squares is prime over the integers;
+  \item recognize and factor a \textbf{perfect square trinomial}, $a^2 \pm 2ab + b^2 =
+        (a \pm b)^2$, by testing the middle term;
+  \item factor a \textbf{sum or difference of cubes}, $a^3 \pm b^3 = (a \pm b)(a^2 \mp ab + b^2)$;
+  \item factor \textbf{completely}, GCF first, and \textbf{verify a polynomial identity} by
+        multiplying the factored form back out.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together.
+\termblanklong{Perfect square (of a term)}
+\termblanklong{Difference of squares}
+\termblanklong{Perfect square trinomial}
+\termblanklong{Sum and difference of cubes}
+\termblanklong{Polynomial identity}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{The lobby with a planter in the middle.} A school is retiling a \textbf{square} lobby that
+measures $x$ feet on each side. A \textbf{square} planter, $4$ feet on each side, sits at the center
+and is not tiled, so the tiled region is
+\[ A(x) = x^2-16 \quad \text{square feet.} \]
+The tile supplier will not quote an L-shaped region --- they quote \textbf{rectangles}, and they
+want two dimensions.
+
+Cut the tiled region into two pieces and slide one against the other: it fits a rectangle exactly.
+What are that rectangle's two dimensions? (Check yourself at $x=10$, where the tiled area is $84$
+square feet.)
+
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{1. Difference of Squares --- $a^2-b^2 = (a+b)(a-b)$}
+\small
+Multiply $(a+b)(a-b)$ and watch the middle:
+\[ (a+b)(a-b) = a^2 - ab + ab - b^2 = a^2-b^2. \]
+The two middle terms are \emph{opposites}, so they cancel and a \textbf{two-term} polynomial is
+left. Run that backwards and the factoring takes no search at all --- you read it off.
+
+\textbf{The recognition test --- all three must hold:} exactly \textbf{two} terms; both terms are
+\textbf{perfect squares}; the sign between them is a \textbf{minus}.
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{}p{3.0cm} p{3.8cm} X@{}}
+\rowcolor{mist}
+\textbf{Binomial} & \textbf{Written as $a^2-b^2$} & \textbf{Factored form} \\
+\hline
+$x^2-36$    & \blank{3.2cm} & \blank{3.2cm} \\
+$x^2-121$   & \blank{3.2cm} & \blank{3.2cm} \\
+$9x^2-16$   & \blank{3.2cm} & \blank{3.2cm} \\
+$25x^2-81$  & \blank{3.2cm} & \blank{3.2cm} \\
+$x^2+49$    & \blank{3.2cm} & \blank{3.2cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{The last row is the trap, and it is the same argument as Lesson 1.4.} A \emph{sum} of
+squares gives the pattern no minus sign to use, and the product-and-sum search settles it: the only
+integer pairs with product $49$ are
+\begin{work}
+  1 \cdot 49 &= 49, \quad \text{but } 1+49 = 50 \\
+  7 \cdot 7 &= 49, \quad \text{but } 7+7 = 14 \\
+  (-1)(-49) &= 49, \quad \text{but } -1+(-49) = -50 \\
+  (-7)(-7) &= 49, \quad \text{but } -7+(-7) = -14
+\end{work}
+and none of them sums to $0$. So $x^2+49$ is \blank{2.2cm} over the integers.
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[22]
+\begin{notesbox}{2. Perfect Square Trinomials --- $a^2 \pm 2ab + b^2 = (a \pm b)^2$}
+\small
+This one also comes straight off a multiplication you already did --- warm-up item 1(b) squared a
+binomial:
+\[ (a+b)^2 = a^2+2ab+b^2 \qquad\text{and}\qquad (a-b)^2 = a^2-2ab+b^2. \]
+
+\textbf{The recognition test --- all three must hold:} exactly \textbf{three} terms; the
+\textbf{first and last} terms are perfect squares and both \textbf{positive}; the middle term is
+exactly \blank{2.0cm} the product of $a$ and $b$. The sign of the middle term is the sign that goes
+inside the parentheses.
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{}p{3.0cm} p{3.8cm} X@{}}
+\rowcolor{mist}
+\textbf{Trinomial} & \textbf{$a$, $b$, and $2ab$} & \textbf{Factored form} \\
+\hline
+$x^2+12x+36$    & \blank{3.2cm} & \blank{3.2cm} \\
+$x^2-16x+64$    & \blank{3.2cm} & \blank{3.2cm} \\
+$4x^2+20x+25$   & \blank{3.2cm} & \blank{3.2cm} \\
+$x^2+8x+25$     & \blank{3.2cm} & \blank{3.2cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Row 4 is why you test the middle term instead of trusting the ends.} Both $x^2$ and $25$ are
+perfect squares, so the row \emph{looks} like a match --- but $2ab = 2(x)(5) = 10x$, not $8x$. Fall
+back on Lesson 1.4: no integer pair has product $25$ and sum $8$, so this one is prime.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{3. Sum and Difference of Cubes --- the One Genuinely New Pattern}
+\small
+Two terms again, but now both are perfect \textbf{cubes}. Unlike a sum of squares, a \textbf{sum of
+cubes does factor}:
+\[ a^3+b^3 = (a+b)\left(a^2-ab+b^2\right) \qquad
+   a^3-b^3 = (a-b)\left(a^2+ab+b^2\right) \]
+
+\textbf{SOAP} keeps the signs straight: \textbf{S}ame sign as the original, \textbf{O}pposite sign
+in the middle, \textbf{A}lways \textbf{P}ositive at the end.
+
+\textbf{Why should you believe it?} Multiply the right-hand side out --- that is exactly what
+``verify an identity'' means:
+\begin{work}
+  (a-b)\left(a^2+ab+b^2\right) &= a^3+a^2b+ab^2-a^2b-ab^2-b^3 \\
+                               &= a^3-b^3
+\end{work}
+Everything except the two cubes cancels in pairs. A statement like this, true for
+\blank{2.2cm} value of $a$ and $b$, is a \textbf{polynomial identity}, and multiplying out is how
+you prove one.
+
+\textbf{The packing block.} A solid foam cube $x$ inches on an edge has a $2$-inch cube cut out of
+its center, so the foam left is $x^3-8$ cubic inches:
+\begin{work}
+  x^3-8 &= x^3-2^3 \\
+        &= (x-2)\left(x^2+2x+4\right)
+\end{work}
+At $x=5$ that is $125-8 = 117$ cubic inches, and $(3)(25+10+4) = 3(39) = 117$ as well.
+
+\textbf{Do not factor the second factor again.} It is \emph{not} a perfect square trinomial --- it
+carries $ab$, not $2ab$ --- and $x^2+2x+4$ is prime over the integers.
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{}p{3.0cm} p{3.8cm} X@{}}
+\rowcolor{mist}
+\textbf{Binomial} & \textbf{$a$ and $b$} & \textbf{Factored form} \\
+\hline
+$x^3+64$     & \blank{3.2cm} & \blank{3.2cm} \\
+$27x^3-1$    & \blank{3.2cm} & \blank{3.2cm} \\
+$8x^3+125$   & \blank{3.2cm} & \blank{3.2cm} \\
+\end{tabularx}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{notesbox}{4. Factoring Completely --- The Order, Finished}
+\small
+Lesson 1.3 started this list and Lesson 1.4 added a line. Today it is complete:
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=3pt]
+  \item \textbf{GCF first, always.}
+  \item \textbf{Count the terms.} \textbf{Two} $\Rightarrow$ difference of squares, or sum or
+        difference of cubes (a sum of squares is prime). \textbf{Three} $\Rightarrow$ test for a
+        perfect square trinomial first, then Lesson 1.4. \textbf{Four} $\Rightarrow$ group.
+  \item \textbf{Check every factor again} --- a special form can hide inside another one --- then
+        multiply back.
+\end{enumerate}
+\begin{work}
+  2x^3-50x &= 2x\left(x^2-25\right) \\
+           &= 2x(x+5)(x-5)
+\end{work}
+Step 3 finally has teeth. Here the first factor is finished, but the second is not:
+\begin{work}
+  x^4-16 &= \left(x^2+4\right)\left(x^2-4\right) \\
+         &= \left(x^2+4\right)(x+2)(x-2)
+\end{work}
+$x^2-4$ was still a difference of squares; $x^2+4$ is a sum of squares, so it stops there.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{practicebox}
+\small
+\textbf{The second lobby.} The same crew takes a second job: a square lobby $2x$ feet on a side with
+a square planter $7$ feet on a side at its center, so the tiled region is $A(x) = 4x^2-49$ square
+feet.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+  \item Factor $A(x)$ to give the supplier the rectangle's two dimensions.
+\begin{work}
+  4x^2-49 &= (2x)^2-7^2 \\
+          &= (2x+7)(2x-7)
+\end{work}
+
+  \item The lobby is built at $x=6$. Give both dimensions and the tiled area, in feet, with units
+        --- then check the area against the original polynomial.
+
+\writeline
+
+  \item A third job is quoted as $3x^3-27x$ square feet of tile. Factor it \textbf{completely}, then
+        say what step 1 of the order saved you.
+\begin{work}
+  3x^3-27x &= 3x\left(x^2-9\right) \\
+           &= 3x(x+3)(x-3)
+\end{work}
+\writelines{2}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}
