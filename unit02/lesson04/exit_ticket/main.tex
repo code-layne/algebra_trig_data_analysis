@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,47 @@
 
 \vspace{0.15in}
 
-% TODO: author the Exit Ticket. See references/components.md for the expected structure.
-\begin{notesbox}{Exit Ticket}
-\writelines{4}
+\begin{notesbox}{One Creek, and One Claim in the Wrong Units}
+\small
+Notes closed. Three items. The graph shows $L(t)$, the water level of Miller's Creek in inches
+\emph{above or below its normal level}, $t$ days after Monday.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.2cm, height=4.6cm,
+    xlabel={$t$ (days after Monday)}, ylabel={$L$ (inches from normal)},
+    xmin=0, xmax=7, ymin=-4.4, ymax=10.4,
+    xtick={0,1,2,3,4,5,6,7}, ytick={-4,-2,0,2,4,6,8,10}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,6) (3,-3) (7,9)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=7pt, topsep=4pt]
+
+\item Give the $y$-intercept as a point, give the two zeros of $L$ as numbers, and say what a zero
+means about this creek. Then name the interval where $L$ is decreasing and the interval where it is
+increasing.
+
+\writelines{3}
+
+\item Give the absolute maximum and the absolute minimum of $L$ over the week, each as a
+\emph{value and a location}. For each one, say whether it happens at a turning point or at an
+endpoint.
+
+\writelines{2}
+
+\item A classmate writes: \emph{``The water level is increasing from $-3$ to $9$.''} Both of those
+numbers are answers you just wrote down in item 2. Explain what is wrong with the sentence anyway,
+and write the correct statement.
+
+\writelines{3}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

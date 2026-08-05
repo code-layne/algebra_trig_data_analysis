@@ -5,16 +5,23 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-05** — Authored **Unit 2 Lesson 2.3 (Equations and Graphs in Both Directions,
-`AFDA.AF.1d, f`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework,
-all five keys, and the deck. This is the unit's **first both-directions lesson** and the course's
-**first technology lesson** (the TI-84 as a verification tool, not an oracle).
-`make -C unit02/lesson03 all` and `check` both pass; every numeric claim in both blank and key was
-verified in pure Python first. The boxguard eyeball pass found **one real violation invisible to the
-gate** (the homework's remindbox alone on p4) plus a **figure defect no check can see** (a pgfplots
-legend printing on top of its own panel title), both fixed. **12 of 59 lessons authored.**
+**2026-08-05** — Authored **Unit 2 Lesson 2.4 (Intercepts, Zeros, and Extrema, `AFDA.AF.2b–d`)** in
+full — plan, cover, warm-up, guided notes, activity, exit ticket, homework, all five keys, and the
+deck. This is the unit's **first pure graph-reading lesson**: no equation is required anywhere in the
+activity, exit ticket, or the context items, which is the AFDA guidance's own scope
+(characteristics are investigated "from only a graph"). `make -C unit02/lesson04 all` and `check`
+both pass; every numeric claim in both blank and key was verified in pure Python first. The boxguard
+eyeball pass found **one real violation invisible to the gate** (homework item 4's answer space split
+across a page break) plus a **table defect no check can see** (a two-line header wrapping
+mid-parenthesis), both fixed. **13 of 59 lessons authored.**
 
-*Previous run (same day): authored **Unit 2 Lesson 2.2 (Parent Functions and Transformations,
+*Previous run (same day): authored **Unit 2 Lesson 2.3 (Equations and Graphs in Both Directions,
+`AFDA.AF.1d, f`)** in full — the unit's first both-directions lesson and the course's first
+technology lesson (the TI-84 as a verification tool, not an oracle). The boxguard pass found one real
+violation invisible to the gate (the homework's remindbox alone on p4) plus a figure defect no check
+can see (a pgfplots legend printing on top of its own panel title), both fixed.*
+
+*Earlier run (same day): authored **Unit 2 Lesson 2.2 (Parent Functions and Transformations,
 `AFDA.AF.1a–b`)** in full — the unit's first transformation lesson and the first to use the AFDA
 guidance's own six-notation list. The boxguard pass found two real violations invisible to the gate
 (a stranded write-line atop homework p4, a stranded single line atop plan p4), both fixed.*
@@ -55,9 +62,103 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (12 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`,
-  `unit02/lesson01`, `unit02/lesson02`, and `unit02/lesson03`.** Every component written, built, and
-  gated.
+- **Authored (13 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`,
+  `unit02/lesson01`, `unit02/lesson02`, `unit02/lesson03`, and `unit02/lesson04`.** Every component
+  written, built, and gated.
+- **`unit02/lesson04` — Intercepts, Zeros, and Extrema (`AFDA.AF.2b–d`).** Unit 2's **first pure
+  graph-reading lesson** — no equation is needed anywhere in the activity or the exit ticket.
+  - Spine: **every mistake in this lesson is an axis mistake, so before you write a number down, say
+    which axis it came from.** An interval of *inputs* and a stretch of *outputs* can be the same two
+    numbers, in the same units, and mean different things. The second sentence is **2.0's rule
+    finally gets its notation: an extreme is a value \emph{and} a location** — which is `AF.2c`'s own
+    wording ("the location and value").
+  - **The hook is the best one in the unit so far, because the units do not save you.** It reuses
+    2.3's homework yearbook curve (profit \$0 at \$0 and \$60, peak \$1800 at \$30) and asks *over
+    which prices is profit going up?* Student A answers "from $0$ to $1800$," student B "from $0$ to
+    $30$." **Neither made an arithmetic mistake and all four numbers are dollars**, so the only thing
+    that distinguishes the answers is which axis they were read from. **Do not resolve it before
+    notes box 2** — the interval table makes the resolution obvious instead of asserted, and it is
+    rule 1 of that box.
+  - **2.3's homework item 10 was the plant and it paid**: the class already answered all three of
+    today's questions about that curve in plain English, so 2.4 opens by *naming* what they produced.
+    Third consecutive lesson using that move (2.2 named 2.1's translation, 2.3 named 2.2's parentheses).
+  - Notes = 5 vocab terms (zero of a function, $x$- and $y$-intercept, increasing/decreasing/constant,
+    turning point, absolute max and min) + three boxes. In-text blanks: *vertical*, *0*,
+    *horizontal*, *0*, *zero*, *output*, *input*, *input*, *horizontal*, *B*, *strictly*, *strictly*,
+    *value*, *location*, *entire domain*.
+  - **Box 1's three panels are chosen for two traps, not for variety**: $y=2^x$ has **no zeros at
+    all** (most of the room believes every graph crosses the axis — kill it here, and the objection
+    "but it gets so close" is the sentence 2.5 is built on), and $y=3-x$ has **$y$-intercept $3$ and
+    zero $3$**, the same number meaning nothing alike. Ask what the bare number $3$ tells you.
+  - **Box 2's figure is a twelve-hour temperature graph** $(0,2),(2,2),(5,-4),(9,4),(12,1)$ — it
+    carries a constant stretch, two decreasing stretches, one increasing, **two zeros ($t=3$, $t=7$)
+    that together give an interval of time below freezing**, and an interior max and min. Every read
+    is on an integer gridline. **Two zeros producing an interval is what zeros are \emph{for}** and
+    is the box's closing line.
+  - **Box 3's argument is two panels of the same rule $y=x^2$, on domains all-reals and
+    $-1 \le x \le 3$.** Nothing about the curve moves and the restricted version has an absolute
+    maximum ($9$ at $x=3$) it did not have. Ask *which point of this curve moved when I cut the
+    domain?* before explaining anything. This is the cleanest statement in the unit that **the domain
+    is part of the function**.
+  - **Every context deliberately puts an extreme somewhere students will not look.** Guided practice
+    **cistern** $(0,6),(3,0),(5,4),(6,4),(7,7)$: max $7$ ft at the *last* endpoint, so "the water was
+    highest at the start of the week" is false. Tier R **gym** $(0,10),(1,10),(4,40),(6,0)$: zero =
+    closing time. Tier A **start-up profit** $-(x-4)^2+9$ on $[0,8]$: zeros $1$ and $7$ are
+    *break-even months*, max \$9000 at month 4, and **the minimum $-7$ happens at two locations**
+    ($x=0$ and $x=8$) — where groups reliably stop early. Exit ticket **creek** $(0,6),(3,-3),(7,9)$:
+    zeros $2$ and $4$, max at an endpoint. Homework **bike share**
+    $(0,12),(3,0),(5,8),(8,8),(12,0)$: max at an endpoint *and* the minimum $0$ twice.
+  - **Tier A item 4 is four "none" answers in a row** ($2^x+1$: no zeros, no absolute max, no
+    absolute min, one interval). Tell groups in advance that "none" is a legitimate answer that needs
+    a reason, or they will assume they misread the question.
+  - **Tier E item 2 is the share-out**: cut the start-up's domain to months 5–8 and **three things
+    change at once** — a zero disappears, the minimum moves to an endpoint, and a maximum appears —
+    with the curve untouched. Part (c) ("what would the buyer believe that is false?") is the sentence
+    to get on the board before the exit ticket.
+  - **Exit ticket items 2 and 3 are the same two numbers on purpose**, the 2.3 pattern reused: item 2
+    makes $-3$ and $9$ correct answers (the extremes), item 3 shows them failing "increasing from
+    $-3$ to $9$." A student who accepts item 3 because it matches what they just wrote has told you
+    exactly what they are doing. **Item 2's maximum sitting at an endpoint is the second trap** —
+    students trained on parabolas hunt for the turn and report the minimum as the maximum.
+  - **Homework item 10 bridges to 2.5 and produces a genuine "no absolute minimum."** Coffee cooling
+    in an insulated flask, $C(t)=64(0.5)^t+20$, giving integer reads $84, 52, 36, 28, 24, 22, 21$.
+    Domain is $t \ge 0$ while the graph shows six hours — **that gap is deliberate**, and students who
+    answer $21^\circ$ have read the edge of the picture instead of the domain. Then: what number do
+    they approach, and does the graph reach it? *Asymptote* and *end behavior* are 2.5's words.
+  - Extension: $y=x^2-4$ on all reals, then on $1 \le x \le 4$ (reads $-3, 0, 5, 12$) — one zero
+    instead of two, the minimum moved from $-4$ at the turn to $-3$ at an endpoint, and a maximum of
+    $12$ appeared. **One domain change, three consequences, and the rule never touched.**
+  - Guard sizes: bare on vocab, `[12]` hook, `[30]`$\times$3 on the notesboxes, `[30]` practice,
+    `[30]` on all three activity tiers, `[24]`/`[30]`/`[24]`/`[26]` on the homework's boxes, `[18]` on
+    the plan's five teachernotes, `[16]` on the plan's Individual Work box, bare on the plan's Lesson,
+    Explicit Instruction and Group Work boxes. That is 2.3's set transferred, and it was clean on the
+    plan first pass.
+  - **Boxguard finding, and the second lesson running where `\tcbbreak` was right on the first
+    build.** Homework item 4's stem and its (a)–(d) list sat at the foot of p1 with **one** of its
+    four write-line slots, the other three opening p2 — an answer a student starts at the bottom of
+    one page and finishes at the top of the next. `\boxguard` is inert inside a breakable
+    `tcolorbox`, so `\tcbbreak` is the only lever, and here **it cost nothing**: still 4 pages, and p2
+    improved from *two orphan write-lines* to *items 4 and 5 plus the whole bike-share box*. Note
+    this still does not repeal 2.0's rule — no `\tcbbreak` was authored until the build proved one
+    necessary.
+  - **A table defect no check and no page count can see: a multi-word header wrapping
+    mid-parenthesis.** Notes box 1's header `\textbf{$y$-intercept (a point)}` at `\small` overran
+    `p{3.0cm}` and broke as "$y$-intercept (a / point)". **Break a two-part header explicitly with
+    `\newline` and widen the column** rather than letting it wrap: `\textbf{$y$-intercept}\newline
+    \textbf{(a point)}` in `p{3.4cm}`. The general rule — **any header carrying a parenthetical
+    qualifier needs an explicit break** — belongs with 2.1's `X`-on-the-prose-column finding.
+  - **Pagination verdict, measured and recorded in comments in both files.** Notes runs 5 pages with
+    pp. 2–5 each about 60% full, and that is the natural break, not slack: **each of the four boxes is
+    taller than half a page** (~5.5in, ~6.5in, ~6in, ~5.5in against ~9in of column), so no two can
+    share one. Lowering box 2's guard to let it start on p2 was measured and rejected — p2 has ~2.5in
+    free and box 2's first unbreakable chunk (intro line + the 5.4cm axis) is ~2.9in, so it would
+    strand the intro line alone. **When every box exceeds half a page, a half-empty page is arithmetic,
+    not a guard problem** — measure the boxes before reaching for a guard.
+  - Homework p4 (extension + remindbox, ~4.5in of real content) and plan p6 (two complete
+    teachernotes) are dead space rather than boxguard violations, both accepted per 2.3's rule.
+  - Page counts: cover 1, warm-up 1/1, notes 5/5, activity 3/3, exit ticket 1/1, homework 4/4;
+    student and key packets 20 pages each. Plan 6 pp, slides 12 frames (4 pp printed 3-up). No
+    overfull box anywhere over 10.8pt (the standard page banner), and none at all in the deck.
 - **`unit02/lesson03` — Equations and Graphs in Both Directions (`AFDA.AF.1d, f`).** Unit 2's
   first both-directions lesson, and **the course's first technology lesson.**
   - Spine: **2.2 asked students to *describe* a move they were shown; 2.3 asks them to *produce* the
@@ -843,20 +944,21 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
 
 ## Next steps
 
-1. Commit / PR **Lesson 2.3** (user to confirm).
-2. Then author **Unit 2's remaining content lessons, 2.4 → 2.7**, in order. The threads are planted:
-   **2.4 gets 2.0's five reads *and* 2.3's homework item 10**, which already asked the yearbook curve
-   for its zeros, its absolute maximum with location, and its two rising/falling stretches in plain
-   English — so 2.4 opens by *naming* what the class produced itself, which is the move 2.2 and 2.3
-   both used; 2.5 gets the asymptote preview from 2.0's homework item 9, 2.1's restricted-domain box,
-   **2.2's $(0,\infty)$ range for $2^x$** (flagged in 2.2's notes as "Lesson 2.5 gives that behaviour
-   a name"), and **2.3's asymptote-as-a-landmark box 2 row**, where students already read a shifted
-   asymptote off a graph; 2.7 gets 2.0's adding-vs-multiplying test, restated in 2.2's notes box 1 and
+1. Commit / PR **Lesson 2.4** (user to confirm).
+2. Then author **Unit 2's remaining content lessons, 2.5 → 2.7**, in order. The threads are planted:
+   **2.5 gets four separate plants** — the asymptote preview from 2.0's homework item 9, 2.1's
+   restricted-domain box, **2.2's $(0,\infty)$ range for $2^x$** (flagged in 2.2's notes as "Lesson
+   2.5 gives that behaviour a name"), **2.3's asymptote-as-a-landmark box 2 row**, where students
+   already read a shifted asymptote off a graph, and now **2.4's homework item 10** (coffee cooling
+   toward $20^\circ$C, which already produced "it gets closer and closer and never arrives" *and* a
+   function with no absolute minimum) together with **2.4's notes box 1 panel (b)**, the exponential
+   with no zeros. 2.7 gets 2.0's adding-vs-multiplying test, restated in 2.2's notes box 1 and
    assessed in 2.2's homework item 2.
-   **2.4 is `AFDA.AF.2b–d` — intercepts, zeros, absolute max/min, and increasing/decreasing
-   intervals.** Two habits must carry forward: **2.0's rule that an extreme is a value \emph{and} a
-   location** (\$1800 alone is half an answer — 2.3's homework item 10(b) already drilled it), and
-   **2.3's substitution check**, since `AF.2d`'s zeros are exactly where a substitution gives $0$.
+   **2.5 is `AFDA.AF.2f–g` — end behavior, and horizontal and vertical asymptotes.** Two habits must
+   carry forward: **2.4's axis discipline** (end behavior is another question about what happens as
+   the *input* runs off the page, and 2.4's exit-ticket pile 3 — the students who agreed with the
+   wrong-axis claim — is the Tier R roster), and **2.0's/2.4's rule that an extreme is a value
+   \emph{and} a location**.
 3. **Every Unit 2 lesson is a graph-reading lesson — pre-draw and pre-scale every axis.** 2.0's
    seven `pgfplots` figures are the model for style (`axis lines=left`, `grid=both` at
    `linegray!45`, `\scriptsize` tick/label fonts, `royal` plot, integer-friendly tick marks).
@@ -892,7 +994,12 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
    counter-case to Unit 1's tests), so when a trailing box strands, reach for a `\tcbbreak` that
    sends a *substantial* chunk over rather than shaving row separation; and **five teachernotes at
    full length overflow a 5-page plan** — a complete note alone on a final page is dead space, not a
-   boxguard violation, and is worth accepting once pp. 3–5 are measured full.
+   boxguard violation, and is worth accepting once pp. 3–5 are measured full. From 2.4, add two:
+   **a table header carrying a parenthetical qualifier must be broken explicitly with `\newline`**,
+   or at `\small` it overruns its column and wraps mid-parenthesis (no check and no page count sees
+   it); and **measure the boxes before reaching for a guard** — when every box in a component is
+   taller than half a page, half-empty pages are arithmetic, not a guard problem, and no guard
+   setting will reclaim them.
 6. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
    For every later unit, check by hand what the gate would have caught: blank/key page parity on
    both test forms, no `teachernote` in any test key, no `\ans` inside math. The Unit 1 run's two

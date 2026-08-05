@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,354 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item find the \textbf{$y$-intercept} and the \textbf{$x$-intercepts} of a graph and give the
+        \textbf{zeros} of the function --- saying each time whether my answer is an input, an output,
+        or a point;
+  \item name the intervals where a graph is \textbf{increasing}, \textbf{decreasing}, or
+        \textbf{constant}, and write them in interval notation using the \emph{input} axis;
+  \item identify the \textbf{absolute maximum} and \textbf{absolute minimum} over the domain,
+        reporting a \emph{value} and a \emph{location} every time;
+  \item explain why a function may have no zeros, no absolute maximum, or two places where the same
+        extreme value happens --- and interpret every characteristic in context.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together. Every one of them is read straight off a graph.
+\vocabans{Zero of a function}{an \emph{input} $x$ whose output is $0$ --- that is, $f(x)=0$. It is a
+    number, and it sits in the first slot of an $x$-intercept.}
+\vocabans{$x$-intercept and $y$-intercept}{\emph{points} where the graph meets an axis. An
+    $x$-intercept has the form $(k,0)$; the $y$-intercept has the form $(0,b)$. A function has at
+    most one $y$-intercept and may have any number of $x$-intercepts, including none.}
+\vocabans{Increasing, decreasing, and constant}{read left to right, a graph is \emph{increasing}
+    where it consistently rises, \emph{decreasing} where it consistently falls, and \emph{constant}
+    where it stays level. These are always reported as intervals of \emph{inputs}.}
+\vocabans{Turning point}{a point where the graph changes from increasing to decreasing, or from
+    decreasing to increasing.}
+\vocabans{Absolute maximum and absolute minimum}{the highest and lowest \emph{outputs} the function
+    reaches over its \emph{entire domain}. Each is reported as a value together with the location
+    where it happens.}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{Two students, one question, and both answers are in dollars.} Last night you worked with the
+yearbook's profit curve: profit is \$0 at prices of \$0 and \$60, and the profit climbs to a high of
+\$1800 at a price of \$30. The question was: \emph{over which prices is the profit going up?}
+
+\smallskip
+Student A wrote \quad \textbf{``from $0$ to $1800$''} \qquad Student B wrote \quad
+\textbf{``from $0$ to $30$''}
+
+\smallskip
+Neither of them made an arithmetic mistake, and every number either one wrote is really on that
+graph. \textbf{Here is the question: which one answered the question that was asked, and how would
+you convince the other one?} Notice that you cannot settle it by checking the units --- all four
+numbers are dollars.
+
+\ansline{Student B. The question asks \emph{over which prices}, and a price is an input --- the horizontal axis.}\\
+\ansline{A's $0$ and $1800$ are profits (outputs): they say how high the graph climbed, not where.}\\
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{1. Intercepts and Zeros}
+\small
+The first thing you look for on any graph is where it meets the axes. There are only two such
+questions, and each one is really a question about a \emph{coordinate that is zero}.
+
+\vspace{4pt}
+\textbf{The $y$-intercept} is the point where the graph crosses the \ans{vertical} axis. Getting
+there means the input is $x=$ \ans{$0$}. A function has \emph{at most one} $y$-intercept --- one
+input, one output.
+
+\vspace{2pt}
+\textbf{An $x$-intercept} is a point where the graph crosses the \ans{horizontal} axis. Being there
+means the output is $y=$ \ans{$0$}. A graph may have one, several, or \emph{none at all}.
+
+\vspace{2pt}
+\textbf{A \ans{zero}} is the \emph{input} at an $x$-intercept. So the $x$-intercept is a
+\textbf{point} and the zero is the \textbf{number} in its first slot: if $(5,0)$ is on the graph,
+then $5$ is a zero. These three sentences say the same thing:
+\begin{itemize}[leftmargin=1.3em, itemsep=1pt, topsep=3pt]
+  \item $k$ is a \textbf{zero} of $f$; \quad $f(k)=0$; \quad the point $(k,0)$ is on the graph of $f$.
+\end{itemize}
+
+\vspace{4pt}
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.4cm}}c@{\hspace{0.4cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=4.2cm, title={\scriptsize (a) $y=x^2-4$},
+    xmin=-3.4, xmax=3.4, ymin=-5.4, ymax=5.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={-4,-2,0,2,4}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-3:3, samples=90]{x^2-4};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(-2,0) (2,0) (0,-4)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=4.2cm, title={\scriptsize (b) $y=2^x$},
+    xmin=-3.4, xmax=3.4, ymin=-1.4, ymax=8.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={0,2,4,6,8}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-3.3:3, samples=90]{2^x};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(0,1)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=4.2cm, title={\scriptsize (c) $y=3-x$},
+    xmin=-1.4, xmax=5.4, ymin=-2.4, ymax=4.4,
+    xtick={-1,0,1,2,3,4,5}, ytick={-2,0,2,4}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-1.3:5.3, samples=2]{3-x};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(3,0) (0,3)};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.5}
+% Headers break explicitly: at \small the one-line form "y-intercept (a point)"
+% overran its column and wrapped mid-parenthesis. Mirrored in notes.
+\begin{tabularx}{\linewidth}{@{}p{1.5cm} p{3.4cm} p{4.4cm} X@{}}
+\rowcolor{mist}
+\textbf{Graph} & \textbf{$y$-intercept}\newline\textbf{(a point)} &
+    \textbf{$x$-intercept(s)}\newline\textbf{(points)} &
+    \textbf{Zero(s)}\newline\textbf{(numbers)} \\
+\hline
+(a) & \ans{$(0,-4)$} & \ans{$(-2,0)$ and $(2,0)$} & \ans{$-2$ and $2$} \\
+(b) & \ans{$(0,1)$} & \ans{none} & \ans{none} \\
+(c) & \ans{$(0,3)$} & \ans{$(3,0)$} & \ans{$3$} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Two things worth writing down.} Graph (b) has \emph{no} zeros: the curve gets closer and
+closer to the horizontal axis on the left, but it never arrives. \textbf{Not every graph crosses the
+$x$-axis.} And in graph (c) the $y$-intercept and the zero are both the number $3$, which is a
+coincidence and nothing more --- one of them is an \ans{output} and the other is an
+\ans{input}. \textbf{Before you write a number down, say which axis it came from.}
 \end{notesbox}
+
+\vspace{0.10in}
+
+% Pagination verdict, measured: notes runs 5 pages with each of pp. 2--5 about 60%
+% full, and that is the natural break, not slack to reclaim. Each of the four boxes
+% is taller than half a page, so no two can share a page. Lowering this guard to let
+% box 2 start on p2 was measured and rejected -- it would strand the intro line alone.
+% Mirrors notes. Restored per 1.5's test-then-restore rule.
+\boxguard[30]
+\begin{notesbox}{2. Rising, Falling, and Holding Steady}
+\small
+A graph is read \textbf{left to right} --- always, in the direction the \ans{input} increases. As
+you sweep across, the curve is doing one of exactly three things.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11.0cm, height=5.4cm,
+    xlabel={$t$ (hours after midnight)}, ylabel={$T$ (degrees C)},
+    xmin=0, xmax=12, ymin=-6.4, ymax=6.4,
+    xtick={0,2,4,6,8,10,12}, ytick={-6,-4,-2,0,2,4,6},
+    minor x tick num=1, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,2) (2,2) (5,-4) (9,4) (12,1)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(3,0) (7,0) (5,-4) (9,4)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-4pt}
+{\scriptsize A cold front moved through overnight and clouds rolled in mid-morning. $T(t)$ is the
+temperature in degrees Celsius, $t$ hours after midnight, for the twelve hours to noon.}
+
+\vspace{4pt}
+\textbf{Fill the table from the graph. Every interval is a set of \emph{times}.}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}p{2.4cm} p{3.2cm} X@{}}
+\rowcolor{mist}
+\textbf{Behavior} & \textbf{On these inputs} & \textbf{What it means here} \\
+\hline
+Constant & \ans{$(0,2)$} & \ans{steady at $2^\circ$C from midnight to 2 a.m.} \\
+Decreasing & \ans{$(2,5)$} & \ans{the front arrives; it cools to $-4^\circ$C by 5 a.m.} \\
+Increasing & \ans{$(5,9)$} & \ans{the sun comes up; it warms to $4^\circ$C by 9 a.m.} \\
+Decreasing & \ans{$(9,12)$} & \ans{clouds roll in; it cools to $1^\circ$C by noon} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Three rules that decide every one of these.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt, topsep=3pt]
+  \item \textbf{Report the interval on the \ans{horizontal} axis.} Increasing, decreasing and constant
+        are answers about \emph{which inputs}, never about how high the graph got. This is the whole
+        hook: student \ans{B} answered the question that was asked, because prices are the
+        input. Student A described the outputs the graph swept through --- true, and not the
+        question.
+  \item \textbf{Use parentheses at the ends.} At $t=5$ the graph is neither falling nor rising --- it
+        is turning. A point where the graph changes from decreasing to increasing (or the other way)
+        is a \textbf{turning point}, and we leave it out of both intervals.
+  \item \textbf{An exponential never changes its mind.} $y=2^x$ rises across its entire domain and
+        $y=\left(\tfrac12\right)^x$ falls across its entire domain. An exponential is
+        \ans{strictly} increasing or \ans{strictly} decreasing --- one interval, and it is all of
+        $(-\infty,\infty)$.
+\end{enumerate}
+
+\vspace{4pt}
+\textbf{And read the zeros back into the story.} This graph has zeros at $t=3$ and $t=7$. Between
+them the curve is below the axis, so the temperature was below freezing from $3$~a.m.\ to
+$7$~a.m. \textbf{Two zeros gave you an interval of time} --- that is what zeros are for.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{3. The Highest and the Lowest --- and Why the Domain Decides}
+\small
+The \textbf{absolute maximum} of a function is its highest output over the \emph{entire domain};
+the \textbf{absolute minimum} is its lowest. Both answers come in two pieces.
+
+\vspace{4pt}
+\textbf{Report a \ans{value} and a \ans{location}.} ``The maximum is $4$ degrees'' is half an
+answer; ``$4$ degrees, at $t=9$'' is the whole one. The value is read on the vertical axis and the
+location on the horizontal axis --- \emph{two different axes in one sentence}, which is exactly why
+this is where people slip.
+
+\vspace{2pt}
+\textbf{``Absolute'' means over the \ans{entire domain}.} A high point in the middle of a graph is not
+automatically the absolute maximum; you have to look at the whole picture, endpoints included.
+
+\vspace{4pt}
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.8cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.2cm, height=4.4cm, title={\scriptsize (a) $y=x^2$, domain all real numbers},
+    xmin=-3.4, xmax=3.4, ymin=-1.0, ymax=10.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={0,2,4,6,8,10}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-3.15:3.15, samples=90]{x^2};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(0,0)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.2cm, height=4.4cm, title={\scriptsize (b) $y=x^2$, domain $-1 \le x \le 3$},
+    xmin=-3.4, xmax=3.4, ymin=-1.0, ymax=10.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={0,2,4,6,8,10}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-1:3, samples=90]{x^2};
+  \addplot[royal, only marks, mark=*, mark size=1.7pt] coordinates {(-1,1) (3,9)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(0,0) (3,9)};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-2pt}
+{\scriptsize The same rule, $y=x^2$, on two different domains. Nothing about the formula changed.}
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}p{4.2cm} X X@{}}
+\rowcolor{mist}
+ & \textbf{Absolute minimum} & \textbf{Absolute maximum} \\
+\hline
+(a) domain all real numbers & \ans{$0$, at $x=0$} & \ans{none --- it climbs forever} \\
+(b) domain $-1 \le x \le 3$ & \ans{$0$, at $x=0$} & \ans{$9$, at $x=3$} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{So the domain is part of the question, not decoration.} Cutting the domain down to
+$-1 \le x \le 3$ did not move a single point of the curve, and it handed the function an absolute
+maximum it did not have before --- at an \textbf{endpoint}, not at the turning point.
+
+\vspace{4pt}
+\textbf{Four cases to keep in your notes.}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item A parabola opening \textbf{upward} has an absolute minimum at its turning point and
+        \emph{no} absolute maximum (unless the domain is cut).
+  \item A parabola opening \textbf{downward} has an absolute maximum at its turning point and no
+        absolute minimum.
+  \item An exponential on its full domain has \emph{neither}: $y=2^x$ climbs forever, and going left
+        it gets closer to $0$ without ever reaching it, so there is no lowest output.
+  \item On a \textbf{restricted domain}, always check the \textbf{endpoints} --- an extreme is often
+        sitting at one of them.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{practicebox}
+\small
+The school greenhouse collects rainwater in a cistern. The graph shows $W(t)$, the depth of the
+water in feet, $t$ days after Monday morning, for one week.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.6cm, height=4.8cm,
+    xlabel={$t$ (days after Monday morning)}, ylabel={$W$ (depth, feet)},
+    xmin=0, xmax=7, ymin=0, ymax=8,
+    xtick={0,1,2,3,4,5,6,7}, ytick={0,1,2,3,4,5,6,7,8},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,6) (3,0) (5,4) (6,4) (7,7)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(0,6) (3,0) (7,7)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt]
+  \item Give the $y$-intercept as a point, and say what it means about the cistern.
+
+\ansline{$(0,6)$: the cistern held $6$ feet of water on Monday morning, when the week started.}\\
+
+  \item Give the zero of $W$, and say what it means about the cistern. Is it an input or an output?
+
+\ansline{$t=3$. On Thursday morning the cistern ran completely dry --- the depth was $0$ feet.}\\
+\ansline{The zero is an \textbf{input} (a time). The $x$-intercept is the \emph{point} $(3,0)$.}\\
+
+  \item Name every interval on which $W$ is increasing, decreasing, or constant. Write each one in
+        interval notation, and remember which axis they live on.
+
+\ansline{Decreasing on $(0,3)$ --- they irrigated all week and no rain fell.}\\
+\ansline{Increasing on $(3,5)$ and again on $(6,7)$ --- two storms refilled it.}\\
+\ansline{Constant on $(5,6)$. All four are intervals of \emph{days}, read on the horizontal axis.}\\
+
+  \item Give the absolute maximum and the absolute minimum, each as a \emph{value and a location}.
+        Then settle this claim: \emph{``The water was at its highest at the start of the week.''}
+
+\ansline{Absolute maximum $7$ feet, at $t=7$. \quad Absolute minimum $0$ feet, at $t=3$.}\\
+\ansline{The claim is false. Monday's $6$ feet is beaten by Sunday's $7$ feet, so the highest}\\
+\ansline{point is at the \emph{end} of the week --- an endpoint, not the start and not a turn.}\\
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

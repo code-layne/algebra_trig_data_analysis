@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,212 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+Every question today is answered by reading a graph --- no equations required, and none given.
+\textbf{The rule for the whole activity: every time you write a number, say out loud whether it came
+from the horizontal axis or the vertical one.} An interval of inputs and a stretch of outputs can be
+the same two numbers and mean completely different things. \textbf{Everyone starts at Tier R.} When
+your whole group can do Tier R without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+The graph shows $P(t)$, the number of people in the school gym, $t$ hours after it opens at
+6~a.m. The gym closes when the last person leaves.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.8cm,
+    xlabel={$t$ (hours after opening)}, ylabel={$P$ (people in the gym)},
+    xmin=0, xmax=6, ymin=0, ymax=45,
+    xtick={0,1,2,3,4,5,6}, ytick={0,5,10,15,20,25,30,35,40,45},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,10) (1,10) (4,40) (6,0)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(0,10) (4,40) (6,0)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item Give the $y$-intercept as a point, and say in a sentence what it means about the gym.
+
+\ansline{$(0,10)$ --- ten people were already waiting and came in the moment the gym opened.}\\
+
+  \item Give the zero of $P$. Is your answer an input or an output? What does it mean here?
+
+\ansline{$t=6$, an \textbf{input} (a time). The $x$-intercept is the point $(6,0)$.}\\
+\ansline{Six hours after opening --- at noon --- the gym is empty and closes.}\\
+
+  \item Fill in the table from the graph. Write each interval in interval notation.
+\smallskip
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}p{2.4cm} p{3.0cm} X@{}}
+\rowcolor{mist}
+\textbf{Behavior} & \textbf{On these inputs} & \textbf{What it means about the gym} \\
+\hline
+Constant & \ans{$(0,1)$} & \ans{the first hour holds steady at ten people} \\
+Increasing & \ans{$(1,4)$} & \ans{it fills up steadily, ten more people every hour} \\
+Decreasing & \ans{$(4,6)$} & \ans{it empties out, twenty people leaving every hour} \\
+\end{tabularx}
+
+  \item Give the absolute maximum and the absolute minimum of $P$, each as a \emph{value and a
+        location}. Then answer the manager's actual question: \emph{when should the second staff
+        member be scheduled?}
+
+\ansline{Absolute maximum $40$ people, at $t=4$ (10 a.m.). Absolute minimum $0$ people, at $t=6$.}\\
+\ansline{Both answers need the value \emph{and} the location --- ``40 people'' alone is half of one.}\\
+\ansline{Schedule the second person for roughly $t=3$ to $t=5$, around the busiest hour.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Graph (a) shows $M(x)$, a start-up's monthly profit in \emph{thousands} of dollars, $x$ months after
+it launched, for its first eight months. Graph (b) shows a function $g$ with no context attached.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.6cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.8cm, height=4.6cm, title={\scriptsize (a) $M$, a start-up's monthly profit},
+    xlabel={$x$ (months)}, ylabel={$M$ (thousands of \$)},
+    xmin=0, xmax=8, ymin=-8.4, ymax=10.4,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={-8,-6,-4,-2,0,2,4,6,8,10},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}, label style={font=\tiny}]
+  \addplot[royal, very thick, domain=0:8, samples=90]{-(x-4)^2+9};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(1,0) (7,0) (4,9) (0,-7) (8,-7)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.0cm, height=4.6cm, title={\scriptsize (b) $g$},
+    xmin=-3.4, xmax=3.4, ymin=0, ymax=9.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={0,1,2,3,4,5,6,7,8,9},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}]
+  \addplot[linegray, thick, dashed, domain=-3.3:3.3, samples=2]{1};
+  \addplot[royal, very thick, domain=-3.3:3, samples=90]{2^x+1};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(0,2)};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-4pt}
+{\scriptsize In (b) the dashed gray line is a landmark, not part of the graph of $g$.}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Graph (a).} Give the $y$-intercept as a point and the zeros of $M$ as numbers. Then
+        say what a zero of $M$ means to the people running this company.
+
+\ansline{$y$-intercept $(0,-7)$: the launch month lost \$7000. \quad Zeros: $x=1$ and $x=7$.}\\
+\ansline{A zero of $M$ is a month where profit is exactly \$0 --- the company \textbf{broke even}.}\\
+\ansline{It broke even at the end of month 1 on the way up, and again at month 7 on the way down.}\\
+
+  \item \textbf{Graph (a).} Name the interval where $M$ is increasing and the interval where it is
+        decreasing. Then give the absolute maximum as a value and a location, and write it as a
+        sentence about money and time.
+
+\ansline{Increasing on $(0,4)$; decreasing on $(4,8)$. Both are intervals of \emph{months}.}\\
+\ansline{Absolute maximum $9$ --- that is \$9000 --- at $x=4$, the turning point.}\\
+\ansline{``The best month was month 4, when the company made \$9000.'' Value and location.}\\
+
+  \item \textbf{Graph (a), the careful one.} What is the absolute \emph{minimum} of $M$, and where
+        does it happen? Read the whole graph before you answer --- there is more than one right
+        location, and you need both.
+
+\ansline{Absolute minimum $-7$ (a loss of \$7000), and it happens \textbf{twice}: at $x=0$ and $x=8$.}\\
+\ansline{Both are endpoints. One extreme \emph{value} can sit at two different \emph{locations}.}\\
+
+  \item \textbf{Graph (b).} Answer each question, and where the answer is ``none,'' say why in a
+        few words.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item The $y$-intercept, and the zeros of $g$.
+
+\ansline{$y$-intercept $(0,2)$. \quad Zeros: \textbf{none}.}\\
+\ansline{The curve stays above the dashed line $y=1$, so its output is never $0$.}\\
+
+          \item The intervals where $g$ is increasing, decreasing, or constant.
+
+\ansline{Increasing on all of $(-\infty,\infty)$; never decreasing, never constant.}\\
+
+          \item The absolute maximum and the absolute minimum of $g$.
+
+\ansline{Absolute maximum: \textbf{none} --- it climbs without stopping.}\\
+\ansline{Absolute minimum: \textbf{none} --- going left it gets nearer $1$ but never reaches it.}\\
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Two claims, two wrong axes.} Each classmate below read a real number off a real
+        graph and still answered the wrong question. Name the mistake and give the correct answer.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item About graph (a) in Tier A: \emph{``The profit is increasing from $-7$ to $9$.''}
+
+\ansline{$-7$ and $9$ are \emph{profits} --- outputs, read on the vertical axis. They describe how}\\
+\ansline{far the graph climbed, not where. Correct: $M$ is increasing on $(0,4)$, in months.}\\
+
+          \item About the temperature graph in your notes: \emph{``The absolute minimum is $1$
+                degree, at $t=12$, because the graph is still going down when it ends.''}
+
+\ansline{``Absolute'' means over the whole domain, not at the end. Falling at $t=12$ says nothing.}\\
+\ansline{The lowest output anywhere is $-4$ degrees, at $t=5$ --- and $-4$ is less than $1$.}\\
+        \end{enumerate}
+
+  \item \textbf{Cut the domain and watch three things change.} Suppose the start-up in Tier A graph
+        (a) is sold, and the buyer only ever sees months $5$ through $8$ --- that is, the domain is
+        cut down to $5 \le x \le 8$ and nothing about the curve is changed.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item How many zeros does the buyer see, and how many were there before?
+
+\ansline{One ($x=7$) instead of two. The zero at $x=1$ is outside the new domain, so it is gone.}\\
+
+          \item Give the absolute maximum and absolute minimum the buyer would report, each with its
+                location. Are they at turning points or at endpoints?
+
+\ansline{Maximum $8$ (that is \$8000) at $x=5$; minimum $-7$ at $x=8$. Both at \textbf{endpoints}.}\\
+\ansline{The turning point at $x=4$ is not in the domain, so it cannot be either extreme.}\\
+
+          \item In one sentence: what would the buyer believe about this company that the founders
+                know is false?
+
+\ansline{That the company has only ever declined --- the buyer never sees the climb to \$9000 in}\\
+\ansline{month 4, so the same curve, on a shorter domain, tells the opposite story.}\\
+        \end{enumerate}
+
+  \item \textbf{Justify.} A classmate says: \emph{``Every graph has at least one zero --- it has to
+        cross the $x$-axis somewhere.''} Decide whether that is true, and defend your answer with a
+        specific graph from today's work. Then give an example of a function whose absolute minimum
+        happens at \emph{two} different locations.
+
+\ansline{False. Graph (b) above stays above $y=1$ forever, and $y=2^x$ in the notes gets closer}\\
+\ansline{and closer to the axis on the left without ever touching it --- neither has a zero.}\\
+\ansline{Two locations: $M$ in graph (a), whose minimum $-7$ occurs at both $x=0$ and $x=8$.}\\
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
