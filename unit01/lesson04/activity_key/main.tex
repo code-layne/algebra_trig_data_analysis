@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,152 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+The art club is painting a \textbf{rectangular mural} on the cafeteria wall. The district approved
+the job by \emph{area} only --- one polynomial, no drawing, no dimensions --- and the club has to
+order border tape before it can start. Your job is to recover the shape from the polynomial.
+
+Work with your group. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R
+without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Five fluency moves. Every one of them shows up again in Tier A. Check each answer by multiplying
+back.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Factor: $x^2+7x+12$
+\begin{work}
+  3 \cdot 4 &= 12, \quad 3+4 = 7 \\
+  x^2+7x+12 &= (x+3)(x+4)
+\end{work}
+
+  \item Factor: $x^2-9x+20$
+\begin{work}
+  (-4)(-5) &= 20, \quad -4+(-5) = -9 \\
+  x^2-9x+20 &= (x-4)(x-5)
+\end{work}
+
+  \item Factor: $x^2+2x-24$
+\begin{work}
+  6(-4) &= -24, \quad 6+(-4) = 2 \\
+  x^2+2x-24 &= (x+6)(x-4)
+\end{work}
+
+  \item Factor: $x^2-3x-28$
+\begin{work}
+  (-7)(4) &= -28, \quad -7+4 = -3 \\
+  x^2-3x-28 &= (x-7)(x+4)
+\end{work}
+
+  \item Factor: $2x^2+9x+4$ \quad (leading coefficient is not $1$ --- use $ac$)
+\begin{work}
+  ac &= 2 \cdot 4 = 8, \quad 1+8 = 9 \\
+  2x^2+9x+4 &= 2x^2+x+8x+4 \\
+            &= x(2x+1) + 4(2x+1) \\
+            &= (2x+1)(x+4)
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+The approved mural has area
+\[ A(x) = 6x^2+17x+5 \quad \text{square feet.} \]
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Factor $A(x)$ by splitting the middle term.
+\begin{work}
+  ac &= 6 \cdot 5 = 30, \quad 2+15 = 17 \\
+  6x^2+17x+5 &= 6x^2+2x+15x+5 \\
+             &= 2x(3x+1) + 5(3x+1) \\
+             &= (3x+1)(2x+5)
+\end{work}
+
+  \item The club is told the mural stands $(3x+1)$ feet tall. Which factor is its width, and how do
+        you know?
+
+\ansline{$(2x+5)$ ft --- the two factors multiply to the area, so the other one is the width.}
+
+  \item The wall allows $x=3$. Find the height, the width, the area, and the length of border tape
+        the club must order --- then check your area against the original polynomial.
+\begin{work}
+  3x+1 &= 10 \text{ ft} \qquad 2x+5 = 11 \text{ ft} \\
+  10 \cdot 11 &= 110 \text{ sq ft} \\
+  6(9)+17(3)+5 &= 110 \text{ sq ft} \quad\checkmark \\
+  \text{tape} &= 2(10)+2(11) = 42 \text{ ft}
+\end{work}
+
+  \item A second wall is offered with area $A(x)=10x^2+29x+21$. Factor it and give both
+        dimensions.
+\begin{work}
+  ac &= 10 \cdot 21 = 210, \quad 14+15 = 29 \\
+  10x^2+29x+21 &= 10x^2+14x+15x+21 \\
+               &= 2x(5x+7) + 3(5x+7) \\
+               &= (5x+7)(2x+3)
+\end{work}
+
+  \item A third wall is offered as $A(x)=4x^2+22x+24$. Factor it \textbf{completely} --- look at
+        what all three terms share before you compute $ac$.
+\begin{work}
+  4x^2+22x+24 &= 2\left(2x^2+11x+12\right) \\
+              &= 2\left(2x^2+3x+8x+12\right) \\
+              &= 2\left[x(2x+3) + 4(2x+3)\right] \\
+              &= 2(2x+3)(x+4)
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item \textbf{Critique the work.} A student turned in these two answers. Neither is acceptable.
+        Write the correct factorization for each, then name the mistake.
+        \[ 3x^2+15x+18 = (3x+6)(x+3) \qquad\text{and}\qquad x^2-x-12 = (x-4)(x-3) \]
+\begin{work}
+  3x^2+15x+18 &= 3\left(x^2+5x+6\right) = 3(x+2)(x+3) \\
+  x^2-x-12 &= (x-4)(x+3)
+\end{work}
+\ansline{First: true, but not complete --- $3x+6$ still shares a $3$, so the GCF came out late.}\\
+\ansline{Second: sign error --- the product must be $-12$, so the two numbers need opposite signs.}\\
+
+  \item \textbf{A negative out front.} A design is quoted as $A(x) = -2x^2+2x+24$ because the
+        planner measured the wall from the far edge. Factor it completely by pulling out the
+        negative GCF first.
+\begin{work}
+  -2x^2+2x+24 &= -2\left(x^2-x-12\right) \\
+              &= -2(x-4)(x+3)
+\end{work}
+
+  \item \textbf{Justify.} A supplier claims every quadratic trinomial splits into two whole-number
+        panels. The club asks for a panel of area $x^2+4x+6$ square feet with sides $(x+p)$ and
+        $(x+q)$ for integers $p$ and $q$. Show that this order cannot be filled, and explain why
+        checking a handful of pairs is enough to be certain.
+\begin{work}
+  1 \cdot 6 &= 6, \quad 1+6 = 7 \\
+  2 \cdot 3 &= 6, \quad 2+3 = 5 \\
+  (-1)(-6) &= 6, \quad -1+(-6) = -7 \\
+  (-2)(-3) &= 6, \quad -2+(-3) = -5
+\end{work}
+\ansline{No pair sums to $4$, so $x^2+4x+6$ is prime and the order cannot be filled.}\\
+\ansline{Only finitely many integer pairs multiply to $6$, so the four checked are all of them.}\\
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

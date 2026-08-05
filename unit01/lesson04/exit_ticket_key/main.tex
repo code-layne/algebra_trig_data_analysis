@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{12pt}
 
 \begin{document}
 
@@ -12,9 +13,35 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Factoring Trinomials --- On Your Own}
+\small
+Notes closed. Three items. Factor completely, and check each answer by multiplying back.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=6pt]
+
+\item Factor: $x^2+9x+18$
+\begin{work}
+  3 \cdot 6 &= 18, \quad 3+6 = 9 \\
+  x^2+9x+18 &= (x+3)(x+6)
+\end{work}
+
+\item Factor: $3x^2+11x+6$
+\begin{work}
+  ac &= 3 \cdot 6 = 18, \quad 2+9 = 11 \\
+  3x^2+11x+6 &= 3x^2+2x+9x+6 \\
+             &= x(3x+2) + 3(3x+2) \\
+             &= (3x+2)(x+3)
+\end{work}
+
+\item A student factors $2x^2+16x+24$ as $(2x+4)(x+6)$. Is the answer correct? Is it complete?
+Explain in one sentence, then give the complete factorization.
+\begin{work}
+  2x^2+16x+24 &= 2\left(x^2+8x+12\right) \\
+              &= 2(x+2)(x+6)
+\end{work}
+\ansline{Correct but not complete --- $2x+4$ still shares a $2$; the GCF belonged out front first.}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}
