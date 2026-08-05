@@ -17,10 +17,149 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{The Blueprint with the Dimensions Erased}
+  \sectionlabel[goldacc]{hook --- decide before you compute}
+  A contractor's plan gives the area of a rectangular patio as
+  \[ A(x) = 24x^2+36x \quad \text{square feet.} \]
+  The tile crew does not need the area. They need the two \textbf{side lengths} --- and
+  multiplying erased them.
+  \begin{block}{Can you get the dimensions back out of the area?}
+    Decide first. Then we check it.
+  \end{block}
+\end{frame}
+
+% ── HOOK PAYOFF ───────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Factoring Is Multiplying, Run Backwards}
+  \sectionlabel{the distributive property in reverse}
+  \[
+  \begin{aligned}
+    24x^2+36x &= 12x(2x) + 12x(3) \\
+              &= 12x(2x+3)
+  \end{aligned}
+  \]
+  A width of $12x$ feet and a length of $(2x+3)$ feet. At $x=5$: $60$ ft by $13$ ft, and
+  $60 \cdot 13 = 780$ square feet.
+  \begin{block}{The check costs ten seconds}
+    Multiply it back out. If you do not land on $24x^2+36x$, you are not done.
+  \end{block}
+\end{frame}
+
+% ── GCF ───────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Finding the Greatest Common Factor}
+  \sectionlabel{numbers and variables, taken separately}
+  \begin{itemize}
+    \setlength{\itemsep}{0.25cm}
+    \item \textbf{Numbers:} the largest integer dividing every coefficient.
+    \item \textbf{Variables:} every variable in \emph{every} term, with its \textbf{smallest}
+          exponent.
+  \end{itemize}
+  \vspace{0.25cm}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{@{}p{3.6cm} p{2.4cm} X@{}}
+    \textbf{Polynomial} & \textbf{GCF} & \textbf{Factored} \\
+    \hline
+    $15x^3-25x^2$    & $5x^2$  & $5x^2(3x-5)$ \\
+    $6a^2b+9ab^2$    & $3ab$   & $3ab(2a+3b)$ \\
+    $-4y^3-12y^2$    & $-4y^2$ & $-4y^2(y+3)$ \\
+  \end{tabularx}
+\end{frame}
+
+% ── LARGEST, NOT FIRST ────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Largest, Not First --- Lesson 1.2's Warning Again}
+  \sectionlabel[goldacc]{true statements can still be wrong answers}
+  \[ 24x^2+36x = 6x(4x+6) \]
+  Multiply it back: it is correct. It is also \textbf{not complete} --- the leftover $4x+6$ still
+  shares a factor of $2$.
+  \begin{block}{The same mistake, one lesson apart}
+    $\sqrt{72}=\sqrt4\cdot\sqrt{18}$ was true and unsimplified, because a perfect square was still
+    hiding inside. Grab the \textbf{largest} shared piece or you will be back for the rest.
+  \end{block}
+\end{frame}
+
+% ── GROUPING ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Four Terms, Nothing Shared by All of Them}
+  \sectionlabel{split into pairs --- your warm-up already did this}
+  \[
+  \begin{aligned}
+    2x^3+6x^2+5x+15 &= \left(2x^3+6x^2\right) + (5x+15) \\
+                    &= 2x^2(x+3) + 5(x+3) \\
+                    &= (x+3)\left(2x^2+5\right)
+  \end{aligned}
+  \]
+  \begin{block}{The leftovers must match}
+    Both pairs left behind $(x+3)$. A whole binomial comes out front exactly the way a monomial
+    does. If the two leftovers disagree, the \textbf{pairing} was wrong --- not the method.
+  \end{block}
+\end{frame}
+
+% ── SIGNS ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Sign Trap}
+  \sectionlabel[goldacc]{where grouping actually breaks}
+  \[
+  \begin{aligned}
+    x^3-5x^2-3x+15 &= x^2(x-5) \;{\color{goldacc}-\;3(x-5)} \\
+                   &= (x-5)\left(x^2-3\right)
+  \end{aligned}
+  \]
+  When the third term is negative, factor a \textbf{negative} GCF out of the second pair:
+  $-3x+15 = -3(x-5)$, \emph{not} $-3(x+5)$.
+  \begin{block}{Diagnosis}
+    If your two leftovers do not match, check this first. Nine times out of ten it is the sign,
+    not the pairing.
+  \end{block}
+\end{frame}
+
+% ── FACTOR COMPLETELY ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Factoring Completely: The Order to Work In}
+  \sectionlabel{GCF first --- always}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.2cm}
+    \item \textbf{GCF first.} It makes every number after it smaller.
+    \item \textbf{Count the terms.} Four $\Rightarrow$ group. (Three and two come in 1.4 and 1.5.)
+    \item \textbf{Check every factor}, then multiply back.
+  \end{enumerate}
+  \vspace{0.2cm}
+  \[
+  \begin{aligned}
+    2x^3+10x^2+6x+30 &= 2\left(x^3+5x^2+3x+15\right) \\
+                     &= 2\left[x^2(x+5)+3(x+5)\right] \;=\; 2(x+5)\left(x^2+3\right)
+  \end{aligned}
+  \]
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: The Stage Extension}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  Two rectangular platforms, pushed together along one edge. The builder sends the total floor
+  area and nothing else:
+  \[ A(x) = 6x^3+9x^2+8x+12 \quad \text{square feet.} \]
+  \begin{block}{Your job}
+    Recover the shape from the polynomial. Which factor is the \textbf{shared edge}, and how do
+    you know?
+  \end{block}
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.35cm}
+    \item Factor completely: $18x^3-24x^2$.
+    \item Factor by grouping: $x^3+7x^2+2x+14$.
+    \item A student factors $20x^2+30x$ as $5x(4x+6)$. Correct? Complete? Explain.
+  \end{enumerate}
+  \vspace{0.3cm}
+  {\color{royal}\bfseries Next: Lesson 1.4 --- Factoring Trinomials.}
 \end{frame}
 
 \end{document}

@@ -5,13 +5,13 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-04** — Authored **Unit 1 Lesson 1.2 (Radicals and Rational Exponents,
-`A2.EO.2a--c`)** in full: lesson plan, cover, warm-up, guided notes, group activity, exit ticket,
-homework, all five keys, and the slide deck. `make -C unit01/lesson02 all` and
-`make -C unit01/lesson02 check` both pass (`✓ check passed — 1 lesson, no convention
-violations`); every page of every blank plus key spot-checks eyeballed for boxguard — no stranded
-stubs, every guard moved its box whole on the first pass. All arithmetic verified in Python
-before authoring. The structural model set by 1.0/1.1 held with no adjustment.
+**2026-08-04** — Authored **Unit 1 Lesson 1.3 (Factoring: GCF and Grouping, `A2.EO.3b`)** in full:
+lesson plan, cover, warm-up, guided notes, group activity, exit ticket, homework, all five keys,
+and the slide deck. `make -C unit01/lesson03 all` and `make -C unit01/lesson03 check` both pass
+(`✓ check passed — 1 lesson, no convention violations`); every page of both packets and the plan
+eyeballed for boxguard — no stranded stubs, every guard moved its box whole on the first pass.
+All 46 factorizations verified in pure Python (random rational evaluation) before authoring. The
+structural model set by 1.0--1.2 held with no adjustment.
 
 ## Course-wide rules set by the user (2026-08-04)
 
@@ -31,8 +31,40 @@ before authoring. The structural model set by 1.0/1.1 held with no adjustment.
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (3 of 59): `unit01/lesson00`, `unit01/lesson01`, `unit01/lesson02`.** Every component
-  written, built, and gated.
+- **Authored (4 of 59): `unit01/lesson00`, `unit01/lesson01`, `unit01/lesson02`,
+  `unit01/lesson03`.** Every component written, built, and gated.
+- **`unit01/lesson03` — Factoring: GCF and Grouping (`A2.EO.3b`).**
+  - Spine: **multiplying erases the dimensions; factoring puts them back.** Hook is the blueprint
+    with the dimensions erased — a patio quoted only as $A(x)=24x^2+36x$, which factors to
+    $12x(2x+3)$ ($60$ ft $\times$ $13$ ft $= 780$ sq ft at $x=5$). The trap $6x(4x+6)$ is true and
+    incomplete, deliberately the same structure as 1.2's $\sqrt{72}=\sqrt4\cdot\sqrt{18}$ —
+    "largest, not first," one lesson later on a different object.
+  - Warm-up item 2(b) has students expand $(x+2)(x^2+3)$; item 4 hands that answer back and asks
+    them to group it. Grouping therefore arrives as **their own multiplication reversed**, not as a
+    procedure. Item 3 (numeric GCF: $12$, $5$, $7$) is the cheap diagnostic for stopping early.
+  - Notes = 5 vocab terms + GCF fill-in table ($4$, $5x^2$, $3ab$, $7x$, $-4y^2$ — including the
+    two-variable and negative-GCF cases) + grouping table
+    ($(x+4)(x^2+3)$, $(2x-3)(3x^2+2)$, $(x-5)(x^2-3)$, the third being the sign case) + the
+    factor-completely order, worked on $2x^3+10x^2+6x+30 = 2(x+5)(x^2+3)$; guided practice is the
+    deck job, $30x^2+42x=6x(5x+7)$, $24$ ft $\times$ $27$ ft $=648$ sq ft at $x=4$.
+  - The two in-text blanks are *complete* and *pairing*.
+  - Context thread is one recovered figure per component: notes/patio and deck; activity/two stage
+    platforms sharing an edge, $6x^3+9x^2+8x+12=(2x+3)(3x^2+4)$, $7 \times 16 = 112$ sq ft at
+    $x=2$; homework/shipping crate $8x^3+12x^2+10x+15=(2x+3)(4x^2+5)$, $9$ ft $\times$ $41$ sq ft
+    $=369$ cu ft at $x=3$.
+  - Activity tiers R/A/E; Tier E is error critique (incomplete GCF $3x^2(6x-8)$ and the sign slip
+    $-2(x-3)$), a rearrange-then-group item ($2x^3-15-5x^2+6x$), and the storage-box justification
+    that a factor divides the volume exactly.
+  - Homework 13 items (5 GCF, 4 grouping, the crate, the look-ahead) + a binomial-GCF extension
+    ($x(x+4)+3(x+4)=(x+4)(x+3)$); item 13 splits $7x$ into $5x+2x$ so $x^2+7x+10$ becomes a
+    grouping problem — the engine of 1.4, with no new vocabulary.
+  - Exit ticket samples GCF / grouping / "completely" in order; item 3 critiques $5x(4x+6)$, so a
+    wrong item names what to reteach.
+  - Guard sizes that worked first pass: bare on vocab, `[12]` hook, `[24]`/`[22]`/`[20]` on the
+    three notesboxes, `[20]` practice, `[16]`/`[16]`/`[30]` on Tiers R/A/E, `[16]`--`[18]` on the
+    homework's trailing boxes, `[18]` on the plan's Reinforcement box. No `\tcbbreak` needed.
+  - Page counts: cover 1, warm-up 1/1, notes 3/3, activity 3/3, exit ticket 1/1, homework 2/2;
+    student and key packets 16 pages each. Plan 5 pp, slides 10 frames.
 - **`unit01/lesson02` — Radicals and Rational Exponents (`A2.EO.2a--c`).**
   - Spine: **a radical is 1.1's machinery run backwards.** Hook is the skid mark,
     $s=\sqrt{30fd}$: on dry asphalt ($f=0.8$) a $60$-ft skid gives $\sqrt{1440}=12\sqrt{10}
@@ -132,24 +164,26 @@ before authoring. The structural model set by 1.0/1.1 held with no adjustment.
   3. A tall `tabularx` inside a breakable `skillbox` will move the *whole* box, because the table
      itself cannot split. That is why the lesson plan's page 1 ends with roughly a third empty —
      correct behaviour, not a missed guard.
-- **Everything else is still scaffold skeletons**: unit01 lessons 1.3–1.7, units 02–08 in full,
+- **Confirmed while authoring 1.3:** the 1.2 guard sizes transferred verbatim to a lesson of the
+  same shape (listed in the 1.3 entry above) with no re-measuring and no `\tcbbreak`. Treat that
+  set as the default opening bid for an ordinary Unit 1 lesson, then tune per box.
+- **Everything else is still scaffold skeletons**: unit01 lessons 1.4–1.7, units 02–08 in full,
   plus each unit's `tests/`, `test_keys/`, `sample_test/`, `sample_test_key/`.
 - No `unit_cover/` pair exists for any unit yet, and `finals/` has not been created.
-- Lesson 1.0 is merged to `main` (PR #4). Lesson 1.1 is merged to `main` (commit `ca47f7e`).
-  Lesson 1.2 is on worktree branch `claude/lesson-1-2-generation-8b2f58`, **not yet committed**.
+- Lessons 1.0–1.2 are merged to `main` (PR #4, commit `ca47f7e`, PR #6). Lesson 1.3 is on worktree
+  branch `claude/lesson-1-3-generation-305294`, **not yet committed**.
 
 ## Next steps
 
-1. Commit / PR Lesson 1.2 (user to confirm).
-2. Author **Unit 1 Lesson 1.3 — Factoring: GCF and Grouping** (`A2.EO.3b`). Lesson 1.2's homework
-   item 13, its remind box, and its closing slide all promise it as the next lesson, and item 13
-   already has students pull $6x^2$ out of $12x^3-18x^2$ — framed as the same "largest common
-   factor out front" habit as simplifying $\sqrt{72}$, so 1.3 can open by naming a move they have
-   already made.
-3. Then 1.4–1.7 in order. The model now holds across three lessons, so the parallel-dispatch
+1. Commit / PR Lesson 1.3 (user to confirm).
+2. Author **Unit 1 Lesson 1.4 — Factoring Trinomials** (`A2.EO.3b`). Lesson 1.3's homework item 13,
+   its remind box, and its closing slide all promise it, and item 13 already has students split
+   $7x$ into $5x+2x$ and group $x^2+7x+10$ into $(x+5)(x+2)$ — so 1.4 opens by giving them a
+   reliable way to *find* that split (the $ac$ method) rather than a new method.
+3. Then 1.5–1.7 in order. The model now holds across four lessons, so the parallel-dispatch
    pattern (coordinator scaffolds, one subagent per lesson, coordinator builds and gates) is
-   reasonable to try — but give each agent the boxguard tuning rule and the 1.2 guard sizes above,
-   since guard sizing is the one thing `make check` cannot catch.
+   reasonable to try — but give each agent the boxguard tuning rule and the 1.2/1.3 guard sizes
+   above, since guard sizing is the one thing `make check` cannot catch.
 4. After the Unit 1 lessons: author `unit01/tests/` (practice + actual) and `unit01/test_keys/`,
    and add the `unit01/unit_cover/` + `unit_cover_key/` pair (the test rationale and Part D
    scoring go on page 2 of the key cover, never in a test key).
