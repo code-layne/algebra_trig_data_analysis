@@ -5,13 +5,14 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-04** — Authored **Unit 1 Lesson 1.4 (Factoring Trinomials, `A2.EO.3b`)** in full:
+**2026-08-04** — Authored **Unit 1 Lesson 1.5 (Factoring Special Forms, `A2.EO.3b, d`)** in full:
 lesson plan, cover, warm-up, guided notes, group activity, exit ticket, homework, all five keys,
-and the slide deck. `make -C unit01/lesson04 all` and `make -C unit01/lesson04 check` both pass
+and the slide deck. `make -C unit01/lesson05 all` and `make -C unit01/lesson05 check` both pass
 (`✓ check passed — 1 lesson, no convention violations`); every page of both packets and the plan
-eyeballed for boxguard. All 45 factorizations verified in pure Python (random rational evaluation)
-before authoring, including that every $ac$-pair used in the lesson is **unique**. The structural
-model set by 1.0--1.3 held, with one new pagination finding recorded under 1.4 below.
+eyeballed for boxguard. All **50 identities** and every primality claim verified in pure Python
+before authoring (random rational evaluation for the identities; exhaustive integer factor-pair
+search for the primes). This is the **first lesson of the course to carry a second standard code**
+(`3d`, verify polynomial identities), and the first with **four** notes boxes.
 
 ## Course-wide rules set by the user (2026-08-04)
 
@@ -31,8 +32,64 @@ model set by 1.0--1.3 held, with one new pagination finding recorded under 1.4 b
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (5 of 59): `unit01/lesson00`, `unit01/lesson01`, `unit01/lesson02`,
-  `unit01/lesson03`, `unit01/lesson04`.** Every component written, built, and gated.
+- **Authored (6 of 59): `unit01/lesson00`, `unit01/lesson01`, `unit01/lesson02`,
+  `unit01/lesson03`, `unit01/lesson04`, `unit01/lesson05`.** Every component written, built, and
+  gated.
+- **`unit01/lesson05` — Factoring Special Forms (`A2.EO.3b`, `A2.EO.3d`).**
+  - Spine: **these are not new rules — they are shortcuts the class already earned.** 1.4's homework
+    item 13 factored $x^2-9$ and $x^2+10x+25$ with the product-and-sum search, so 1.5 opens by
+    *naming* two patterns the class produced itself. What a pattern buys is **speed and certainty,
+    not permission** — and the cubes are the one case the search cannot reach at all.
+  - **`3d` is the new code and it reframes the course's oldest habit.** "Check by multiplying back"
+    stops being a check and becomes the mathematics: the notes verify $a^3-b^3=(a-b)(a^2+ab+b^2)$
+    on the board, Tier E item 3 has students verify it themselves in general letters, and the
+    homework extension verifies the two-variable difference of squares. The sentence being taught is
+    *one calculation with letters settles every pair of numbers* — the second genuinely deductive
+    move of the unit after 1.4's finite-list argument for *prime*.
+  - Hook is the **square lobby with a square planter**, $A(x)=x^2-16$: the supplier quotes only
+    rectangles, so the L-shaped leftover is cut and slid into $(x+4)(x-4)$ — at $x=10$, $14 \times 6
+    = 84$ sq ft. The cut-and-slide is the geometric proof and is stated once, here.
+  - Warm-up item 1(a) multiplies $(x+5)(x-5)$ and item 2 factors $x^2-49$; item 4 hands both back and
+    asks what happens to the middle terms of $(x+b)(x-b)$ — so the difference of squares is
+    *derived*, same pivot structure as 1.3 and 1.4. **Item 3 (perfect squares to $121$, cubes to
+    $125$) is the diagnostic that predicts the whole period** — a student who cannot see $121=11^2$
+    or $125=5^3$ recognizes no pattern today, and the fix is arithmetic.
+  - Notes = 5 vocab terms (perfect square, difference of squares, perfect square trinomial, sum and
+    difference of cubes, **polynomial identity**) + **four** boxes: squares
+    ($x^2-36$, $x^2-121$, $9x^2-16$, $25x^2-81$, and **$x^2+49$ prime** as row 5, proved by the 1.4
+    search); perfect square trinomials ($(x+6)^2$, $(x-8)^2$, $(2x+5)^2$, and **$x^2+8x+25$ prime**
+    as row 4 — both ends are squares and $2ab=10x \ne 8x$, the day's most common wrong answer);
+    cubes (SOAP, the identity verified, $x^3-8$ on a foam packing block checked at $x=5$ as $117$
+    both ways, then $x^3+64$, $27x^3-1$, $8x^3+125$); and the finished factoring order, where
+    $x^4-16=(x^2+4)(x+2)(x-2)$ finally gives "check every factor" teeth.
+  - The three in-text blanks are *prime*, *twice*, *every*.
+  - Context thread is one square-minus-a-square per component: notes/lobby ($x^2-16$, then
+    $4x^2-49$ in guided practice, $19 \times 5 = 95$ sq ft at $x=6$); activity/stage platform
+    $9x^2-25=(3x+5)(3x-5)$, $17 \times 7 = 119$ sq ft and $48$ ft of edge trim at $x=4$;
+    homework/courtyard garden $25x^2-4=(5x+2)(5x-2)$, $17 \times 13 = 221$ sq ft and $60$ ft of
+    fencing at $x=3$.
+  - Activity tiers R/A/E; Tier E is error critique ($x^2+64=(x+8)(x-8)$ and $x^2-6x+9=(x-3)(x+3)$),
+    the double difference of squares $x^4-81$, and the general-letters identity verification.
+  - Homework 13 items (4 squares/PSTs, **$x^2+36$ prime**, 3 cubes incl. $8x^3+1$ where *both* $a$
+    and $b$ must be read off, GCF-first $3x^3-75x$, the courtyard garden, the look-ahead) + a
+    two-variable extension ($4x^2-9y^2$, factored **and verified** — `3b` and `3d` in one item).
+    Item 13(b) has students reason from $(x+6)(x-6)$ to $x=6$, rejecting $x=-6$ as a length — the
+    zero product property one lesson early, with no new vocabulary.
+  - Exit ticket samples PST / cubes / "completely" in order; item 3 critiques $(2x+6)(x-3)$ for
+    $2x^2-18$ — **the exact expression 1.4's exit-ticket note predicted**, making this the third
+    appearance of one belief in three lessons ($5x(4x+6)$ → $(2x+4)(x+6)$ → $(2x+6)$).
+  - Guard sizes: bare on vocab, `[12]` hook, `[24]`/`[22]`/`[24]`/`[20]` on the four notesboxes,
+    `[20]` practice, `[16]`/`[16]`/`[30]` on Tiers R/A/E, `[16]`--`[18]` on the homework's trailing
+    boxes, `[18]` on the plan's Reinforcement box — the 1.2/1.3/1.4 set again, extended by one
+    notesbox. No `\tcbbreak` needed.
+  - **Pagination finding — a guard that cannot buy a page back.** Notes run **4 pages**, with p4
+    holding only the (complete) practice box. Lowering its guard to `[16]` was tested and still gave
+    4 pages, so the break is the natural one, not a missed guard; the same test on the homework's
+    extension box (`[18]` → `[12]`) also held at 3 pages. Both guards were restored to their
+    box-sized values, since a lower guard that gains nothing only risks a stub when content shifts.
+    **Test before accepting dead space, then restore the guard — that is the cheap check.**
+  - Page counts: cover 1, warm-up 1/1, notes 4/4, activity 3/3, exit ticket 1/1, homework 3/3;
+    student and key packets 18 pages each. Plan 5 pp, slides 13 frames (5 pp printed 3-up).
 - **`unit01/lesson04` — Factoring Trinomials (`A2.EO.3b`).**
   - Spine: **nothing new is introduced today.** A trinomial has three terms; splitting the middle
     term gives four; four terms group — 1.3, unedited. The only new move is knowing *which* split
@@ -213,28 +270,34 @@ model set by 1.0--1.3 held, with one new pagination finding recorded under 1.4 b
 - **Confirmed while authoring 1.3:** the 1.2 guard sizes transferred verbatim to a lesson of the
   same shape (listed in the 1.3 entry above) with no re-measuring and no `\tcbbreak`. Treat that
   set as the default opening bid for an ordinary Unit 1 lesson, then tune per box.
-- **Everything else is still scaffold skeletons**: unit01 lessons 1.5–1.7, units 02–08 in full,
+- **Everything else is still scaffold skeletons**: unit01 lessons 1.6–1.7, units 02–08 in full,
   plus each unit's `tests/`, `test_keys/`, `sample_test/`, `sample_test_key/`.
 - No `unit_cover/` pair exists for any unit yet, and `finals/` has not been created.
-- Lessons 1.0–1.3 are merged to `main` (PR #4, commit `ca47f7e`, PR #6, commit `248c0c8`). Lesson
-  1.4 is on worktree branch `claude/lesson-1-4-generation-76a895`, **not yet committed**.
+- Lessons 1.0–1.4 are merged to `main` (PR #4, commit `ca47f7e`; PR #6, commit `248c0c8`; PR #8,
+  commit `6a72235`). Lesson 1.5 is on worktree branch `claude/lesson-1-5-generation-e5a466`,
+  **not yet committed**.
 
 ## Next steps
 
-1. Commit / PR Lesson 1.4 (user to confirm).
-2. Author **Unit 1 Lesson 1.5 — Special Forms** (`A2.EO.3b, d`): difference of squares, sum and
-   difference of cubes, perfect square trinomials. Lesson 1.4's homework item 13, its remind box,
-   and its closing slide all promise it — item 13 already has students factor $x^2-9$ (rewritten
-   $x^2+0x-9$) into $(x+3)(x-3)$ and $x^2+10x+25$ into $(x+5)^2$ with the product-and-sum search,
-   so 1.5 opens by *naming* two patterns the class has already produced, then adds the cubes.
-3. Then 1.6–1.7 in order. The model now holds across five lessons, so the parallel-dispatch
-   pattern (coordinator scaffolds, one subagent per lesson, coordinator builds and gates) is
-   reasonable to try — but give each agent the boxguard tuning rule and the 1.2/1.3 guard sizes
-   above, since guard sizing is the one thing `make check` cannot catch.
-4. After the Unit 1 lessons: author `unit01/tests/` (practice + actual) and `unit01/test_keys/`,
+1. Commit / PR Lesson 1.5 (user to confirm).
+2. Author **Unit 1 Lesson 1.6 — Solving Polynomial Equations by Factoring** (`A2.EI.2b`,
+   `A2.EI.6a–b`). Lesson 1.5's homework item 13(b), its remind box, and its closing slide all
+   promise it: students already factored $x^2-36$ and reasoned to $x=6$ from the factored form,
+   **rejecting $x=-6$ because a length cannot be negative**. So 1.6 opens by *naming* the move as
+   the **zero product property** and by picking up that domain-rejection reasoning, which the
+   context problems will need throughout.
+3. Then 1.7 (`A2.EO.1a–b`, rational expressions) — note that 1.5's differences of squares are the
+   single most common thing that cancels there, so pull examples from 1.5's item bank.
+4. The model now holds across six lessons, so the parallel-dispatch pattern (coordinator scaffolds,
+   one subagent per lesson, coordinator builds and gates) is reasonable to try for 1.6–1.7 — but
+   give each agent the boxguard tuning rule, the 1.2/1.3/1.4/1.5 guard sizes above, **and 1.5's
+   "test the guard, then restore it" finding**, since guard sizing is the one thing `make check`
+   cannot catch.
+5. After the Unit 1 lessons: author `unit01/tests/` (practice + actual) and `unit01/test_keys/`,
    and add the `unit01/unit_cover/` + `unit_cover_key/` pair (the test rationale and Part D
-   scoring go on page 2 of the key cover, never in a test key).
-5. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
+   scoring go on page 2 of the key cover, never in a test key). Unit 1's test now has six lessons
+   of item banks to sample, and `A2.EO.3d` (verifying an identity) is the natural Part D prompt.
+6. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
    guidance in the skill).
 
 ### Open questions

@@ -17,10 +17,189 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{The Lobby with a Planter in the Middle}
+  \sectionlabel[goldacc]{hook --- the supplier only quotes rectangles}
+  A square lobby, $x$ feet on a side. A square planter, $4$ feet on a side, at the center. The
+  tiled region is
+  \[ A(x) = x^2-16 \quad \text{square feet.} \]
+  \begin{block}{Cut it into two pieces and slide one over}
+    The L-shaped leftover fits a rectangle exactly. What are its two dimensions? At $x=10$ the
+    tiled area is $84$ square feet --- check yourself against that.
+  \end{block}
+\end{frame}
+
+% ── WHERE THE PATTERN COMES FROM ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Your Warm-Up Already Produced the Pattern}
+  \sectionlabel{multiply first, then read it backwards}
+  \[ (a+b)(a-b) = a^2 \;{\color{goldacc}-\;ab\;+\;ab}\; - b^2 = a^2-b^2 \]
+  The middle terms are \textbf{opposites}, so they cancel. Two terms are left --- and running it
+  backwards takes \textbf{no search at all}.
+  \begin{block}{The recognition test --- all three}
+    Exactly \textbf{two} terms \quad$\cdot$\quad both are \textbf{perfect squares}
+    \quad$\cdot$\quad the sign between them is a \textbf{minus}.
+  \end{block}
+\end{frame}
+
+% ── DIFFERENCE OF SQUARES PRACTICE ────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Difference of Squares --- Read It Off}
+  \sectionlabel{name $a$, name $b$, write two binomials}
+  \vspace{0.2cm}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{@{}p{3.0cm} p{4.2cm} X@{}}
+    \textbf{Binomial} & \textbf{As $a^2-b^2$} & \textbf{Factored} \\
+    \hline
+    $x^2-36$    & $x^2-6^2$      & $(x+6)(x-6)$ \\
+    $x^2-121$   & $x^2-11^2$     & $(x+11)(x-11)$ \\
+    $9x^2-16$   & $(3x)^2-4^2$   & $(3x+4)(3x-4)$ \\
+    $25x^2-81$  & $(5x)^2-9^2$   & $(5x+9)(5x-9)$ \\
+  \end{tabularx}
+  \vspace{0.3cm}
+
+  Nothing to search. The only work is \textbf{recognizing the squares}.
+\end{frame}
+
+% ── THE SUM OF SQUARES TRAP ───────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{But a \emph{Sum} of Squares Is Prime}
+  \sectionlabel[goldacc]{same argument you used yesterday}
+  \[ x^2+49 \]
+  There is no minus sign for the pattern to use --- and Lesson 1.4 settles it. The integer pairs
+  with product $49$:
+  \[ 1 \cdot 49 \;(\text{sum } 50) \qquad 7 \cdot 7 \;(\text{sum } 14) \qquad
+     (-1)(-49) \qquad (-7)(-7) \]
+  \begin{block}{None of them sums to $0$}
+    The list is \textbf{finite}, so checking it is a proof. $x^2+49$ is \textbf{prime} over the
+    integers.
+  \end{block}
+\end{frame}
+
+% ── PERFECT SQUARE TRINOMIALS ─────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Perfect Square Trinomials}
+  \sectionlabel{the ends tell you $a$ and $b$; the middle decides}
+  \[ (a+b)^2 = a^2+2ab+b^2 \qquad (a-b)^2 = a^2-2ab+b^2 \]
+  \vspace{0.1cm}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{@{}p{3.2cm} p{4.6cm} X@{}}
+    \textbf{Trinomial} & \textbf{$a$, $b$, and $2ab$} & \textbf{Factored} \\
+    \hline
+    $x^2+12x+36$  & $x$, $6$; \ $2ab=12x$ & $(x+6)^2$ \\
+    $x^2-16x+64$  & $x$, $8$; \ $2ab=16x$ & $(x-8)^2$ \\
+    $4x^2+20x+25$ & $2x$, $5$; \ $2ab=20x$ & $(2x+5)^2$ \\
+  \end{tabularx}
+\end{frame}
+
+% ── THE MIDDLE-TERM TRAP ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Always Test the Middle Term}
+  \sectionlabel[goldacc]{the ends can lie}
+  \[ x^2+8x+25 \]
+  $x^2$ is a perfect square. $25$ is a perfect square. It \emph{looks} like a match.
+  \begin{block}{But $2ab = 2(x)(5) = 10x$, not $8x$}
+    So it is not a perfect square trinomial --- and no integer pair has product $25$ and sum $8$,
+    so it is \textbf{prime}. Check the middle \textbf{before} you write parentheses.
+  \end{block}
+\end{frame}
+
+% ── CUBES ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Sum and Difference of Cubes --- the New One}
+  \sectionlabel{two terms, both perfect cubes}
+  \[ a^3+b^3 = (a+b)\left(a^2-ab+b^2\right) \qquad
+     a^3-b^3 = (a-b)\left(a^2+ab+b^2\right) \]
+  \begin{block}{SOAP}
+    \textbf{S}ame sign as the original \quad$\cdot$\quad \textbf{O}pposite sign in the middle
+    \quad$\cdot$\quad \textbf{A}lways \textbf{P}ositive at the end.
+  \end{block}
+  \vspace{0.15cm}
+  {\color{goldacc}\bfseries A sum of cubes \emph{does} factor --- unlike a sum of squares.}
+\end{frame}
+
+% ── VERIFY THE IDENTITY ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Why Believe It? Multiply It Out}
+  \sectionlabel{\texttt{A2.EO.3d} --- verifying a polynomial identity}
+  \[
+  \begin{aligned}
+    (a-b)\left(a^2+ab+b^2\right)
+      &= a^3 \;{\color{goldacc}+\;a^2b\;+\;ab^2\;-\;a^2b\;-\;ab^2}\; - b^3 \\
+      &= a^3-b^3
+  \end{aligned}
+  \]
+  Everything except the two cubes cancels in pairs.
+  \begin{block}{What an identity is}
+    A statement true for \textbf{every} value of $a$ and $b$. Doing this once with \emph{letters}
+    settles every pair of numbers at once --- that is the whole point.
+  \end{block}
+\end{frame}
+
+% ── CUBE WORKED EXAMPLE ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Packing Block}
+  \sectionlabel{a foam cube with a cube cut out of it}
+  A solid foam cube $x$ inches on an edge, with a $2$-inch cube removed:
+  \[
+  \begin{aligned}
+    x^3-8 &= x^3-2^3 \;=\; (x-2)\left(x^2+2x+4\right)
+  \end{aligned}
+  \]
+  At $x=5$: \; $125-8 = 117$ cubic inches, \; and \; $3(25+10+4) = 117$. \quad\checkmark
+  \begin{block}{Do not factor the second factor again}
+    $x^2+2x+4$ carries $ab$, \textbf{not} $2ab$ --- it is not a perfect square trinomial, and it is
+    prime over the integers.
+  \end{block}
+\end{frame}
+
+% ── FACTOR COMPLETELY ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Factoring Completely: The Order, Finished}
+  \sectionlabel{GCF first --- still}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.15cm}
+    \item \textbf{GCF first.} Always.
+    \item \textbf{Count the terms.} \textbf{Two} $\Rightarrow$ squares or cubes. \textbf{Three}
+          $\Rightarrow$ test for a perfect square, then 1.4. \textbf{Four} $\Rightarrow$ group.
+    \item \textbf{Check every factor again}, then multiply back.
+  \end{enumerate}
+  \vspace{0.15cm}
+  \[
+  \begin{aligned}
+    x^4-16 &= \left(x^2+4\right)\left(x^2-4\right)
+            \;=\; \left(x^2+4\right)(x+2)(x-2)
+  \end{aligned}
+  \]
+  {\color{goldacc}\bfseries Step 3 finally has teeth:} $x^2-4$ was still a difference of squares.
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: The Stage Platform}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  The shop teacher approves the platform by \textbf{area only}, and the drama club has to order
+  edge trim:
+  \[ A(x) = 9x^2-25 \quad \text{square feet.} \]
+  \begin{block}{Your job}
+    Recover both side lengths. They are not equal --- but they sit the \textbf{same distance}
+    either side of $3x$ feet. How far, and how does the factored form tell you?
+  \end{block}
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.35cm}
+    \item Factor: $x^2-14x+49$.
+    \item Factor: $x^3-64$.
+    \item A student factors $2x^2-18$ as $(2x+6)(x-3)$. Correct? Complete? Explain.
+  \end{enumerate}
+  \vspace{0.3cm}
+  {\color{royal}\bfseries Next: Lesson 1.6 --- Solving Polynomial Equations by Factoring.}
 \end{frame}
 
 \end{document}

@@ -3,18 +3,53 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.5}{Warm-Up}
+\pageheader{Unit 1, Lesson 1.5}{Warm-Up --- A Pattern You Already Produced}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
 % cover this component is stapled behind. See references/conventions.md.
 
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\begin{notesbox}{Four Moves Today's Lesson Runs On}
+\small
+Item 4 uses your answers from items 1 and 2 --- do them in order. Show your work on all four.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item \textbf{Spiral --- Lesson 1.1.} Multiply out: \quad (a) $(x+5)(x-5)$ \quad
+(b) $(2x+3)^2$
+\begin{work}
+  (x+5)(x-5) &= x^2-25 \\
+  (2x+3)^2 &= 4x^2+12x+9
+\end{work}
+
+\item \textbf{Spiral --- Lesson 1.4.} Factor $x^2-49$ by first rewriting it as $x^2+0x-49$, then
+finding two integers with product $-49$ and sum $0$.
+\begin{work}
+  7(-7) &= -49, \quad 7+(-7) = 0 \\
+  x^2-49 &= (x+7)(x-7)
+\end{work}
+
+\item \textbf{Know them on sight.} Which of $36, \; 48, \; 64, \; 81, \; 90, \; 121$ are perfect
+squares? Which of $8, \; 12, \; 27, \; 64, \; 100, \; 125$ are perfect cubes?
+\begin{work}
+  \text{squares:} \; &36 = 6^2, \quad 64 = 8^2, \quad 81 = 9^2, \quad 121 = 11^2 \\
+  \text{cubes:} \; &8 = 2^3, \quad 27 = 3^3, \quad 64 = 4^3, \quad 125 = 5^3
+\end{work}
+
+\item \textbf{Discovery.} Item 1(a) multiplied to $x^2-25$ and item 2 factored $x^2-49$. Both
+factored forms are the same two binomials apart from one sign. Multiply $(x+b)(x-b)$ for a general
+number $b$: what happens to the middle terms, and what is $x^2-b^2$ always going to factor into?
+\begin{work}
+  (x+b)(x-b) &= x^2-bx+bx-b^2 \\
+             &= x^2-b^2 \\
+  \text{so} \quad x^2-b^2 &= (x+b)(x-b), \; \text{because the middle terms cancel}
+\end{work}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,143 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+The drama club is ordering a \textbf{rectangular plywood platform} for the spring show. As usual,
+the shop teacher hands over the \emph{area} and nothing else --- and the club has to order edge trim
+before the build starts. Same job as last week, one difference: today the polynomial usually has
+only \textbf{two} terms, so there is nothing to group and no middle term to split.
+
+Work with your group. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R
+without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Five fluency moves --- one for each pattern, and one more. Name the pattern before you factor, and
+check every answer by multiplying back.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Factor: $x^2-144$
+\begin{work}
+  x^2-144 &= x^2-12^2 \\
+          &= (x+12)(x-12)
+\end{work}
+
+  \item Factor: $x^2+14x+49$
+\begin{work}
+  2(x)(7) &= 14x \quad\checkmark \\
+  x^2+14x+49 &= (x+7)^2
+\end{work}
+
+  \item Factor: $x^2-10x+25$
+\begin{work}
+  2(x)(5) &= 10x \quad\checkmark \\
+  x^2-10x+25 &= (x-5)^2
+\end{work}
+
+  \item Factor: $9x^2-4$
+\begin{work}
+  9x^2-4 &= (3x)^2-2^2 \\
+         &= (3x+2)(3x-2)
+\end{work}
+
+  \item Factor: $x^3+27$ \quad (two terms, both perfect cubes --- use SOAP)
+\begin{work}
+  x^3+27 &= x^3+3^3 \\
+         &= (x+3)\left(x^2-3x+9\right)
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+The approved platform has area
+\[ A(x) = 9x^2-25 \quad \text{square feet.} \]
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Factor $A(x)$ to recover the platform's two side lengths.
+\begin{work}
+  9x^2-25 &= (3x)^2-5^2 \\
+          &= (3x+5)(3x-5)
+\end{work}
+
+  \item The two sides are not equal, but they are the same distance from $3x$ feet --- one longer,
+        one shorter. How far, and how does the factored form tell you?
+
+\ansline{$5$ feet: the factors are $3x+5$ and $3x-5$, so one side is $5$ ft over $3x$ and the other $5$ ft under.}
+
+  \item The club builds at $x=4$. Find both side lengths, the area, and the edge trim the club must
+        order --- then check your area against the original polynomial.
+\begin{work}
+  3x+5 &= 17 \text{ ft} \qquad 3x-5 = 7 \text{ ft} \\
+  17 \cdot 7 &= 119 \text{ sq ft} \\
+  9(16)-25 &= 119 \text{ sq ft} \quad\checkmark \\
+  \text{trim} &= 2(17)+2(7) = 48 \text{ ft}
+\end{work}
+
+  \item A second platform is offered with area $A(x)=16x^2-81$. Factor it and give both dimensions.
+\begin{work}
+  16x^2-81 &= (4x)^2-9^2 \\
+           &= (4x+9)(4x-9)
+\end{work}
+
+  \item A third is quoted as $A(x)=5x^2-45$. Factor it \textbf{completely} --- look at what the two
+        terms share before you reach for a pattern.
+\begin{work}
+  5x^2-45 &= 5\left(x^2-9\right) \\
+          &= 5(x+3)(x-3)
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item \textbf{Critique the work.} A student turned in these two answers. Neither is acceptable.
+        Write the correct answer for each, then name the mistake.
+        \[ x^2+64 = (x+8)(x-8) \qquad\text{and}\qquad x^2-6x+9 = (x-3)(x+3) \]
+\begin{work}
+  (x+8)(x-8) &= x^2-64 \ne x^2+64 \\
+  x^2+64 &\text{ is a sum of squares, so it is prime} \\
+  x^2-6x+9 &= (x-3)^2
+\end{work}
+\ansline{First: the pattern needs a \emph{minus}; a sum of squares does not factor over the integers.}\\
+\ansline{Second: opposite signs give $x^2-9$; a perfect square trinomial repeats the same sign.}\\
+
+  \item \textbf{One pattern, twice.} A backdrop panel is quoted as $A(x)=x^4-81$ square feet. Factor
+        it \textbf{completely}, and say which factor stops and why.
+\begin{work}
+  x^4-81 &= \left(x^2\right)^2-9^2 \\
+         &= \left(x^2+9\right)\left(x^2-9\right) \\
+         &= \left(x^2+9\right)(x+3)(x-3)
+\end{work}
+
+  \item \textbf{Verify the identity.} The difference-of-cubes rule claims that
+        $a^3-b^3 = (a-b)\left(a^2+ab+b^2\right)$ for \emph{every} pair of numbers. Multiply the
+        right-hand side out to check it, then explain why doing this once with letters settles it
+        for every pair of numbers at once.
+\begin{work}
+  (a-b)\left(a^2+ab+b^2\right) &= a^3+a^2b+ab^2-a^2b-ab^2-b^3 \\
+                               &= a^3-b^3
+\end{work}
+\ansline{The four middle terms cancel in pairs, leaving exactly $a^3-b^3$.}\\
+\ansline{The letters stand for any numbers at all, so one verification covers every case --- that is what makes it an identity.}\\
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

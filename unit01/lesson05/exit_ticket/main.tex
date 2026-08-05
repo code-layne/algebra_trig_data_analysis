@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{12pt}
 
 \begin{document}
 
@@ -12,9 +13,33 @@
 
 \vspace{0.15in}
 
-% TODO: author the Exit Ticket. See references/components.md for the expected structure.
-\begin{notesbox}{Exit Ticket}
-\writelines{4}
+\begin{notesbox}{Special Forms --- On Your Own}
+\small
+Notes closed. Three items. Name the pattern, factor completely, and check by multiplying back.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=6pt]
+
+\item Factor: $x^2-14x+49$
+\begin{work}
+  2(x)(7) &= 14x \quad\checkmark \\
+  x^2-14x+49 &= (x-7)^2
+\end{work}
+
+\item Factor: $x^3-64$
+\begin{work}
+  x^3-64 &= x^3-4^3 \\
+         &= (x-4)\left(x^2+4x+16\right)
+\end{work}
+
+\item A student factors $2x^2-18$ as $(2x+6)(x-3)$. Is the answer correct? Is it complete?
+Explain in one sentence, then give the complete factorization.
+\begin{work}
+  2x^2-18 &= 2\left(x^2-9\right) \\
+          &= 2(x+3)(x-3)
+\end{work}
+\writeline
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}
