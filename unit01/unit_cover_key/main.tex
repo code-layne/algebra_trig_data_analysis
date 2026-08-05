@@ -1,0 +1,95 @@
+%! Unit 1: Algebraic Expressions and Factoring — Unit Packet Cover (KEY, 2pp)
+%
+% Page 1 is byte-identical to the student cover: both wrappers \input the same
+% unit_cover/body.tex, so the two packets cannot drift.
+%
+% Page 2 is TEACHER-ONLY and is the reason this file exists. Per the teachernote
+% convention, a unit test's answer rationale and Part D scoring must NOT sit at
+% the foot of practice_test_key/actual_test_key: the practice test is bound into
+% the STUDENT packet, so its rationale would ride along in front of students, and
+% a note in a key also makes the key longer than its blank. shared/unit.mk merges
+% this file into the KEY packet only. Keep the notes to ONE page — cover + notes
+% is a single double-sided sheet.
+\documentclass[10pt]{article}
+\usepackage{atda-article}
+\usepackage{atda-boxes}
+\usepackage{ltablex}
+\keepXColumns
+
+\begin{document}
+
+\input{../unit_cover/body.tex}
+
+\newpage
+
+\begin{headlinebox}{royal}{\color{white}\bfseries Unit 1 --- Exam Scoring Notes (Teacher Copy)}\end{headlinebox}
+
+\vspace{4pt}
+\noindent\footnotesize
+Both unit assessments are parallel forms: same blueprint, same ideas, different numbers and
+reshuffled vocabulary letters. \textbf{P} = practice test (bound in the student packet),
+\textbf{A} = actual test (distributed at test time only). 100 points each.
+
+\vspace{4pt}
+
+\boxguard[10]
+\begin{teachernote}[Part A --- Vocabulary (8 pts, 1 each)]
+\footnotesize
+\textbf{P:} 1--C, 2--F, 3--J, 4--B, 5--G, 6--H, 7--D, 8--A. \qquad
+\textbf{A:} 1--G, 2--D, 3--J, 4--H, 5--F, 6--A, 7--E, 8--B.\\[2pt]
+Both forms carry \textbf{two distractor definitions} that match no term (P: E and I; A: C and I) ---
+``factored form'' and ``exponent.'' They are there so a student who knows six terms cannot
+back into the last two by elimination. Do not award part credit for a near miss on
+\emph{prime polynomial}: ``cannot be factored'' without \emph{over the integers} is the whole
+misconception behind $x^2-2$, and it is worth one sentence at review.
+\end{teachernote}
+
+\boxguard[10]
+\begin{teachernote}[Part B --- Multiple Choice (12 pts, 2 each)]
+\footnotesize
+\textbf{P:} 1--C, 2--B, 3--C, 4--B, 5--B, 6--C. \qquad \textbf{A:} 1--C, 2--B, 3--C, 4--B, 5--B, 6--C.
+(The keys match by design --- the two forms differ in numbers, not in option order, so a
+student who memorized letters from the practice test gains nothing, because the stems changed.)\\[2pt]
+\textbf{Items 1, 2 and 6 are one item asked three ways}, and that is the point: each distractor
+(A) is the belief that squaring, rooting, or cancelling reaches inside a sum. A student who
+misses all three has one problem, not three. \textbf{Item 3}'s wrong answers are all \emph{true}
+statements that stop early --- score them zero, but name them ``incomplete,'' not ``wrong.''
+\textbf{Item 5} needs only ``a square is never negative'' from the factor $x^2+k$, $k>0$; students
+do not need complex arithmetic and should not be shown any.
+\end{teachernote}
+
+\boxguard[10]
+\begin{teachernote}[Part C --- Short Answer \& Computation (50 pts, 5 each)]
+\footnotesize
+One item per lesson, in lesson order: C1 exponent rules (1.1), C2 radicals and rational
+exponents (1.2), C3 grouping (1.3), C4 trinomial with $a\ne1$ (1.4), C5 special forms (1.5),
+C6 solving (1.6), C7 simplifying (1.7), C8 dividing (1.7), C9 applied area, C10 factor
+completely. \textbf{Suggested split: 3 pts method, 2 pts answer.}\\[2pt]
+\textbf{Two deductions to apply consistently.} (i) On C7 and C8, a correct expression with
+\emph{no excluded values stated} is 3 of 5 --- the restriction is half the standard
+(\texttt{A2.EO.1b}), and on C8 the excluded value $x\ne-2$ (P) / $x\ne5$ (A) comes from a factor
+that has already cancelled. (ii) On C10, a factorization that stops one step early
+(e.g.\ $2(x^4-16)$) is 3 of 5. On C6, students may leave $x=-\tfrac32$ (P) / $x=-\tfrac23$ (A)
+as a fraction --- do not require a decimal.
+\end{teachernote}
+
+\boxguard[10]
+\begin{teachernote}[Part D --- Extended Response (30 pts, 15 each)]
+\footnotesize
+\textbf{D1 (\texttt{A2.EO.3d}, \texttt{A2.EO.1b}) --- 15 pts:} 5 pts the identity verified by
+multiplying (all six products shown, middle terms cancelling); 5 pts the numerical test at both
+values; 5 pts the sentence. \textbf{Full credit requires the student to say the algebra is
+\emph{correct} and the claim is still \emph{wrong}} --- the two expressions agree everywhere
+except at the excluded value, where the original is $\tfrac00$ and the simplified form returns a
+number. A student who only writes ``you can't divide by zero'' without connecting it to the word
+\emph{every} earns 3 of those 5.\\[2pt]
+\textbf{D2 (\texttt{A2.EI.6a--b}, \texttt{A2.EI.2b}) --- 15 pts:} 4 pts factoring to
+$-16(t-5)(t+1)$ (P) / $-16(t-7)(t+1)$ (A); 4 pts both zeros; 4 pts the two-sided interpretation;
+3 pts number and type. \textbf{The two-sided interpretation is the assessed idea}: $t=-1$ is
+rejected because it is before the launch, but in part (c) \emph{both} $t=0$ and $t=4$ (P) /
+$t=6$ (A) are kept --- one is the launch, the other is the way down. A student who discards the
+extra solution by reflex loses those 4 points; ``throw out the negative one'' is a judgement,
+not a rule.
+\end{teachernote}
+
+\end{document}

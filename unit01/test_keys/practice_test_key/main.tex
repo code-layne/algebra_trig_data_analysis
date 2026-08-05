@@ -1,10 +1,24 @@
 %! Unit 1: Algebraic Expressions and Factoring — Summative Assessment — Practice Test --- Study Copy (KEY)
+%
+% This file mirrors ../../tests/practice_test/main.tex line for line: same
+% preamble (with -key swapped in for -boxes), same \parthead, same \namedateperiod
+% and remindbox, same items, and byte-identical \begin{work} blocks. Only the
+% answers differ — blanks become \ans{...}, write-lines become \ansline{...}.
+%
+% NO teachernote in this file. The practice test rides in the STUDENT packet
+% (tests.mk publishes it as sample_test), so its rationale must not be attached
+% here; and a note in a key is the one block with no counterpart in the blank,
+% which would break page parity. The answer rationale and Part C/D scoring live
+% on page 2 of unit01/unit_cover_key/main.tex — key packet only.
 \documentclass[10pt]{article}
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
-% Part-divider strip
+% Part-divider strip — identical to the blank, guard included.
 \newcommand{\parthead}[1]{%
+  \par\boxguard[9]%
   \vspace{6pt}\noindent
   \begin{headlinebox}{royal}{\color{white}\bfseries #1}\end{headlinebox}%
   \vspace{4pt}}
@@ -12,23 +26,264 @@
 \begin{document}
 
 \pageheader{Unit 1: Algebraic Expressions and Factoring}{Practice Test --- Study Copy --- Answer Key}
+\namedateperiod
 
-% Mirror the blank test EXACTLY, filling each answer with \ans{...} (inline) or
-% \ansline{...} (on a write-line), worked steps in a byte-identical work block.
-% NO teachernote here: the practice test rides in the STUDENT packet, and the
-% key must stay the same length as its blank. Answer rationale and Part D
-% scoring go on page 2 of unit1/unit_cover_key/main.tex (key packet only).
+\vspace{0.10in}
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is a practice test.} It mirrors the real Unit 1 test in length, format,
+and the ideas it covers, but the numbers and contexts differ. Work every problem
+with no notes, then check your answers against the key.
+\end{remindbox}
+
 % ======================================================================
-\parthead{Part A --- Vocabulary}
-% TODO: answers via \ans{...}
+\parthead{Part A --- Vocabulary \quad (8 items, 1 point each --- 8 points)}
 
-\parthead{Part B --- Multiple Choice}
-% TODO: mark correct options, e.g. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\noindent\small
+Write the letter of the best definition on the line beside each term. \textbf{Two definitions
+will not be used.}
 
-\parthead{Part C --- Short Answer \& Computation}
-% TODO: worked answers via \ans{...}
+\vspace{5pt}
+\noindent
+\begin{tabularx}{\linewidth}{@{} p{0.95cm} X p{0.95cm} X @{}}
+\ans{C} & \textbf{1.} Greatest common factor (GCF)
+  & \ans{G} & \textbf{5.} Zero product property \\[4pt]
+\ans{F} & \textbf{2.} Prime polynomial
+  & \ans{H} & \textbf{6.} Double root \\[4pt]
+\ans{J} & \textbf{3.} Perfect square trinomial
+  & \ans{D} & \textbf{7.} Excluded value \\[4pt]
+\ans{B} & \textbf{4.} Difference of squares
+  & \ans{A} & \textbf{8.} Rational expression \\
+\end{tabularx}
 
-\parthead{Part D --- Extended Response}
-% TODO: sample response in a work block; scoring rubric on unit_cover_key p2.
+\vspace{6pt}
+\begin{enumerate}[label=(\Alph*), leftmargin=2.4em, itemsep=1pt, topsep=2pt, font=\bfseries]
+  \small
+  \item A quotient of two polynomials.
+  \item A binomial of the form $a^2-b^2$; it factors as $(a+b)(a-b)$.
+  \item The largest factor shared by every term of a polynomial.
+  \item A number that makes a denominator zero, so the expression is undefined there.
+  \item An expression written as a product of two or more expressions.
+  \item A polynomial with integer coefficients that cannot be factored any further over the integers.
+  \item If a product equals zero, then at least one of its factors equals zero.
+  \item A solution that appears twice because the factor producing it is squared.
+  \item The exponent that tells how many times a base is used as a factor.
+  \item A trinomial of the form $a^2 \pm 2ab + b^2$; it factors as $(a \pm b)^2$.
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part B --- Multiple Choice \quad (6 items, 2 points each --- 12 points)}
+
+\noindent\small Circle the best answer.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=6pt, topsep=5pt]
+\small
+
+\item Which expression is equal to $(2m+3)^2$?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item $4m^2+9$
+  \item $4m^2+6m+9$
+  \item $4m^2+12m+9$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $2m^2+12m+9$
+\end{enumerate}
+
+\item What is the value of $\sqrt{9+16}$?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item $7$
+  \item $5$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $25$
+  \item $12$
+\end{enumerate}
+
+\item Which is the \textbf{complete} factorization of $6x^2+9x$?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item $x(6x+9)$
+  \item $3(2x^2+3x)$
+  \item $3x(2x+3)$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $3x(2x^2+3)$
+\end{enumerate}
+
+\item Which polynomial is \textbf{prime} over the integers?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item $x^2-49$
+  \item $x^2+49$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $x^2-14x+49$
+  \item $x^2+14x+49$
+\end{enumerate}
+
+\item How many solutions does $x^3+9x=0$ have, and of what type?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item $3$ solutions: $3$ real
+  \item $3$ solutions: $1$ real and $2$ imaginary \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $1$ solution: $1$ real
+  \item $2$ solutions: $2$ real
+\end{enumerate}
+
+\item Which simplification is \textbf{correct}?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item $\dfrac{x+5}{x+7} = \dfrac{5}{7}$
+  \item $\dfrac{x+5}{5} = x$
+  \item $\dfrac{5(x+5)}{5(x+7)} = \dfrac{x+5}{x+7}$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $\dfrac{x^2+5}{x^2} = 5$
+\end{enumerate}
+
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part C --- Short Answer \& Computation \quad (10 items, 5 points each --- 50 points)}
+
+\noindent\small Show all work. An answer with no supporting work earns no credit.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=4pt, topsep=5pt]
+\small
+
+\item Simplify completely. Write your answer with positive exponents only.
+\ \TallMath{\frac{\left(3x^2y^3\right)^2 \cdot 2xy}{6x^3y^4}}
+\begin{work}
+  \frac{\left(3x^2y^3\right)^2 \cdot 2xy}{6x^3y^4}
+      &= \frac{9x^4y^6 \cdot 2xy}{6x^3y^4} \\
+      &= \frac{18x^5y^7}{6x^3y^4} \\
+      &= 3x^2y^3
+\end{work}
+
+\item (a) Simplify $\sqrt{75x^3}$, where $x>0$. \quad (b) Write $\sqrt[3]{x^5}$ using a rational
+exponent. \quad (c) Evaluate $16^{3/4}$.
+\begin{work}
+  \text{(a)} \quad \sqrt{75x^3} &= \sqrt{25x^2}\cdot\sqrt{3x} = 5x\sqrt{3x} \\
+  \text{(b)} \quad \sqrt[3]{x^5} &= x^{5/3} \\
+  \text{(c)} \quad 16^{3/4} &= \left(\sqrt[4]{16}\right)^3 = 2^3 = 8
+\end{work}
+
+\item Factor completely by grouping: \ $3x^3+12x^2+2x+8$
+\begin{work}
+  3x^3+12x^2+2x+8 &= 3x^2(x+4) + 2(x+4) \\
+      &= (x+4)\left(3x^2+2\right)
+\end{work}
+
+\item Factor completely: \ $4x^2+11x+6$
+\begin{work}
+  ac = 4\cdot 6 &= 24, \quad \text{and } 3+8 = 11 \\
+  4x^2+11x+6 &= 4x^2+8x+3x+6 \\
+      &= 4x(x+2) + 3(x+2) \\
+      &= (x+2)(4x+3)
+\end{work}
+
+\item Factor completely. \quad (a) $49x^2-64$ \qquad (b) $x^3-27$
+\begin{work}
+  \text{(a)} \quad 49x^2-64 &= (7x)^2 - 8^2 = (7x+8)(7x-8) \\
+  \text{(b)} \quad x^3-27 &= x^3 - 3^3 = (x-3)\left(x^2+3x+9\right)
+\end{work}
+
+\item Solve by factoring: \ $2x^2 = 5x+12$
+\begin{work}
+  2x^2-5x-12 &= 0 \\
+  (x-4)(2x+3) &= 0 \\
+  x-4 = 0 \quad \text{or} \quad 2x+3 &= 0 \\
+  x = 4 \quad \text{or} \quad x &= -\tfrac{3}{2}
+\end{work}
+
+\item Simplify, and state \textbf{every} excluded value.
+\ \TallMath{\frac{x^2-16}{x^2-x-12}}
+\begin{work}
+  \frac{x^2-16}{x^2-x-12} &= \frac{(x+4)(x-4)}{(x-4)(x+3)} \\
+      &= \frac{x+4}{x+3} \qquad (x \ne 4, \; x \ne -3)
+\end{work}
+
+\item Divide and simplify, and state \textbf{every} excluded value.
+\ \TallMath{\frac{x^2-4}{x^2+6x+9} \div \frac{x+2}{x+3}}
+\begin{work}
+  \frac{(x+2)(x-2)}{(x+3)^2} \cdot \frac{x+3}{x+2}
+      &= \frac{x-2}{x+3} \qquad (x \ne -3, \; x \ne -2)
+\end{work}
+
+\item A rectangular banner has area $A(x) = 2x^2+11x+12$ square feet and width $x+4$ feet.
+(a) Find an expression for its length. (b) Find the length, width, and area when $x=5$.
+\begin{work}
+  2x^2+11x+12 &= (x+4)(2x+3) \\
+  \text{(a)} \quad \text{length} &= 2x+3 \text{ feet} \\
+  \text{(b) at } x=5: \quad \text{width} &= 9 \text{ ft}, \quad \text{length} = 13 \text{ ft} \\
+  \text{area} &= 9 \cdot 13 = 117 \text{ square feet}
+\end{work}
+
+\item Factor completely. \quad (a) $5x^3-45x$ \qquad (b) $2x^4-32$
+\begin{work}
+  \text{(a)} \quad 5x^3-45x &= 5x\left(x^2-9\right) = 5x(x+3)(x-3) \\
+  \text{(b)} \quad 2x^4-32 &= 2\left(x^4-16\right) \\
+      &= 2\left(x^2+4\right)\left(x^2-4\right) \\
+      &= 2\left(x^2+4\right)(x+2)(x-2)
+\end{work}
+
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part D --- Extended Response \quad (2 items, 15 points each --- 30 points)}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=8pt, topsep=5pt]
+\small
+
+\item \textbf{Verify, then judge a claim.}
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=4pt, topsep=4pt]
+  \item Verify the identity $(x-4)\left(x^2+4x+16\right) = x^3-64$ by multiplying.
+\begin{work}
+  (x-4)\left(x^2+4x+16\right)
+      &= x^3+4x^2+16x - 4x^2-16x-64 \\
+      &= x^3-64
+\end{work}
+
+  \item A student writes: ``$\dfrac{x^3-64}{x-4}$ simplifies to $x^2+4x+16$, \emph{for every value
+        of $x$}.'' Test both expressions at $x=5$ and at $x=4$.
+\begin{work}
+  \text{at } x=5: \quad \frac{125-64}{1} &= 61, \qquad 25+20+16 = 61 \\
+  \text{at } x=4: \quad \frac{64-64}{0} &= \frac{0}{0} \text{ --- undefined} \\
+  \text{but} \quad 16+16+16 &= 48
+\end{work}
+
+  \item Is the student's algebra correct? Is the student's \emph{claim} correct? Explain in one or
+        two sentences, using the word \textbf{excluded}.
+
+\ansline{Yes --- the algebra is right; part (a) proves the two expressions match.}\\
+\ansline{No --- the claim is wrong: $x=4$ is an excluded value of the original.}\\
+\ansline{At $x=4$ the original is $0/0$, but the simplified form returns $48$.}\\
+\end{enumerate}
+
+\item \textbf{A rocket is launched from a platform.} Its height in feet after $t$ seconds is
+$h(t) = -16t^2+64t+80$.
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=4pt, topsep=4pt]
+  \item Factor $h(t)$ completely and find both values of $t$ for which $h(t)=0$.
+\begin{work}
+  h(t) &= -16t^2+64t+80 \\
+      &= -16\left(t^2-4t-5\right) \\
+      &= -16(t-5)(t+1) \\
+  t &= 5 \quad \text{or} \quad t = -1
+\end{work}
+
+  \item Which of those two values describes when the rocket lands? What does the other value mean
+        here, and why is it rejected?
+
+\ansline{$t=5$: the rocket lands $5$ seconds after launch, when its height is $0$.}\\
+\ansline{$t=-1$ is one second before launch, so it is rejected --- time starts at $0$.}\\
+
+  \item Solve $h(t)=80$. Interpret \textbf{both} solutions --- this time neither one is rejected.
+\begin{work}
+  -16t^2+64t+80 &= 80 \\
+  -16t^2+64t &= 0 \\
+  -16t(t-4) &= 0 \\
+  t = 0 \quad \text{or} \quad t &= 4
+\end{work}
+
+\ansline{$t=0$ is the launch: the rocket starts at $80$ feet, on the platform.}\\
+\ansline{$t=4$ is on the way down, passing $80$ feet again --- both are kept.}\\
+
+  \item How many solutions does the equation $h(t)=0$ have, and of what type? How does the degree
+        of $h(t)$ tell you this before you factor anything?
+
+\ansline{Two solutions, both real: $t=5$ and $t=-1$.}\\
+\ansline{$h$ has degree $2$, and the degree gives the number of solutions.}\\
+\end{enumerate}
+
+\end{enumerate}
 
 \end{document}
