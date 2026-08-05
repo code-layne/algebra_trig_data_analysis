@@ -1,6 +1,8 @@
-%! Choosing and Comparing Models — Unit 2, Lesson 2.7 — Slides (Beamer)
+%! Choosing and Comparing Models in Context — Unit 2, Lesson 2.7 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{atda-beamer}   % provides \royalheader{} and \sectionlabel[color]{}
+\usepackage{pgfplots}      % atda-beamer does NOT load pgfplots
+\pgfplotsset{compat=1.18}
 
 \begin{document}
 
@@ -11,16 +13,230 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.7}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Choosing and Comparing Models}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Choosing and Comparing Models in Context}\\[1.2cm]
     {\color{mistmid}\small Algebra, Trigonometry, and Data Analysis~$\cdot$~Unit 2}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{Two Students, One Table, and Both Are Right About What They Checked}
+  \sectionlabel[goldacc]{hook --- a school video, views in thousands}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabular}{@{}|l|c|c|c|c|@{}}
+  \hline
+  Day $d$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+  Views $V$ (thousands) & $3$ & $6$ & $12$ & $24$ \\
+  \hline
+  \end{tabular}
+  \end{center}
+  \begin{block}{Everything both of them said about these numbers is true}
+    \small
+    \textbf{A:} ``The jumps are $3$, then $6$, then $12$. They keep getting bigger, and a parabola's
+    jumps get bigger too. \textbf{So it's quadratic.}''\\[0.15cm]
+    \textbf{B:} ``Every day is double the day before. \textbf{So it's exponential.}''
+  \end{block}
+  \vspace{0.1cm}
+  \textbf{So one of them checked something that was not \emph{enough}. Which one?}
+\end{frame}
+
+% ── THE RESOLUTION ────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{``The Jumps Get Bigger'' Rules Out Linear --- and Nothing Else}
+  \sectionlabel{that sentence is the whole lesson}
+  \begin{block}{Student B answered it}
+    \centering\large
+    \textbf{Second differences $3, 6$: not constant. \quad Ratios $2, 2, 2$: constant.}
+  \end{block}
+  \begin{itemize}
+    \setlength{\itemsep}{0.3cm}
+    \item \emph{Every} family except linear has growing first differences --- so ``it speeds up''
+          cannot tell quadratic from exponential.
+    \item You have to check which row comes out \textbf{constant}, not which row is growing.
+    \item \textbf{Never name a family without naming the test.}
+  \end{itemize}
+\end{frame}
+
+% ── THE TWO TESTS ─────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Two Tests, Run in Order}
+  \sectionlabel{\texttt{AFDA.AF.1c} --- run them on a table with \emph{equal} input steps}
+  \renewcommand{\arraystretch}{1.35}
+  \small
+  \begin{center}
+  \begin{tabular}{@{}|l|c|c|c|c||l|@{}}
+  \hline
+  \textbf{(a) rideshare fare} & $3$ & $5$ & $7$ & $9$ & first differences $+2, +2, +2$ \\ \hline
+  \textbf{(b) braking distance} & $20$ & $45$ & $80$ & $125$ & second differences $+10, +10$ \\ \hline
+  \textbf{(c) a shared post} & $5$ & $15$ & $45$ & $135$ & ratios $3, 3, 3$ \\
+  \hline
+  \end{tabular}
+  \end{center}
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.2cm}
+    \item First differences constant $\Rightarrow$ \textbf{linear.} \quad (a)
+    \item Not those, but second differences constant $\Rightarrow$ \textbf{quadratic.} \quad (b)
+    \item Ratios constant $\Rightarrow$ \textbf{exponential.} \quad (c)
+  \end{enumerate}
+  \vspace{0.15cm}
+  \textbf{The condition, and it is not optional: the inputs must go up in equal steps.} (b) steps by
+  $10$, and that is fine. A table stepping $1, 2, 5, 10$ is not.
+\end{frame}
+
+% ── THE COMPARISON SHEET ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Same Three Families, Five Ways}
+  \sectionlabel{\texttt{AFDA.AF.1g} and \texttt{AF.2h} --- the summary sheet for the whole unit}
+  \renewcommand{\arraystretch}{1.3}
+  \small
+  \begin{tabularx}{\textwidth}{@{}p{2.6cm}|X|X|X@{}}
+    & \textbf{Linear} & \textbf{Quadratic} & \textbf{Exponential} \\
+    \hline
+    Parent (2.2) & $f(x)=x$ & $g(x)=x^2$ & $h(x)=b^{\,x}$ \\
+    Table test & first differences & second differences & ratios \\
+    Graph shape & straight edge & one turning point & no turn; it levels off \\
+    Max, min (2.4) & neither & one, at the vertex & neither \\
+    Asymptote (2.5) & none & none & exactly one, horizontal \\
+    The story says & same \emph{amount} added & it turns around & same \emph{factor} multiplied \\
+  \end{tabularx}
+  \vspace{0.3cm}
+
+  \textbf{``Plus \$30 a month'' and ``up $30\%$ a month'' sound almost the same out loud --- and they
+  are two different families.} Look for a turning point first; if it turns, you are done.
+\end{frame}
+
+% ── USING THE MODEL ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Using the Model: Algebraically \emph{and} Graphically}
+  \sectionlabel{\texttt{AFDA.AF.1e} --- the video model is $V(d) = 3 \cdot 2^{\,d}$}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.2cm, height=3.4cm,
+      xlabel={$d$ (days)}, ylabel={$V$ (thousands)},
+      xmin=0, xmax=6, ymin=0, ymax=200,
+      xtick={0,1,2,3,4,5,6}, ytick={0,50,100,150,200}, minor x tick num=1,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[goldacc, thick, dashed] coordinates {(0,50) (6,50)};
+    \addplot[royal, very thick, domain=0:6, samples=80]{3*2^x};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.35cm}
+  \small
+  \textbf{Algebraically:} $V(5) = 3 \cdot 2^5 = 3 \cdot 32 = 96$ thousand views.\\[0.1cm]
+  \textbf{Graphically:} across from $50$, down to the axis --- it passes $50$ thousand between day
+  $4$ and day $5$, because $V(4)=48$ and $V(5)=96$.\\[0.1cm]
+  \textbf{Name which one you are doing.} The standard asks for both.
+\end{frame}
+
+% ── THE WINDOW ────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{$3.1$ Billion Views --- Is the Model Wrong?}
+  \sectionlabel[goldacc]{the same model, read at day $20$}
+  \begin{block}{$V(20) = 3 \cdot 2^{20} = 3{,}145{,}728$ thousand $\approx 3.1$ billion views}
+    \centering\large
+    \textbf{No. The model is being used outside the days the data covers.}
+  \end{block}
+  \begin{itemize}
+    \setlength{\itemsep}{0.28cm}
+    \item Predicting beyond the inputs your data covered is called \textbf{extrapolation}.
+    \item Doubling has to stop --- the school runs out of \emph{people}.
+    \item \textbf{A model is a choice, not a fact, and every model has a window where it works.}
+  \end{itemize}
+  \vspace{0.15cm}
+  Say what the model predicts \emph{and} whether you believe it.
+\end{frame}
+
+% ── GUIDED PRACTICE ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Guided Practice: Three Measurements, Three Families}
+  \sectionlabel{a draining pool, a punted football, a dose of caffeine}
+  \renewcommand{\arraystretch}{1.3}
+  \small
+  \begin{center}
+  \begin{tabular}{@{}|l|c|c|c|c|c||l|@{}}
+  \hline
+  (a) water left (gal) & $4000$ & $3650$ & $3300$ & $2950$ & $2600$ & \textbf{linear} \\ \hline
+  (b) ball height (ft) & $0$ & $48$ & $64$ & $48$ & $0$ & \textbf{quadratic} \\ \hline
+  (c) caffeine (mg) & $160$ & $80$ & $40$ & $20$ & $10$ & \textbf{exponential} \\
+  \hline
+  \end{tabular}
+  \end{center}
+  \vspace{0.3cm}
+  \textbf{(b)} maximum $64$ feet at $t=2$; zeros at $t=0$ and $t=4$ --- the punt and the landing.\\[0.1cm]
+  \textbf{(c)} $C(25) = 160 \cdot (0.5)^5 = 5$ mg, and it \emph{never} reaches zero --- horizontal
+  asymptote, Lesson 2.5.\\[0.1cm]
+  \textbf{Item 4 is the one that earns the time:} (a) and (c) both go down. With only two readings of
+  each, \textbf{you cannot tell them apart.}
+\end{frame}
+
+% ── TWO POINTS ARE NEVER ENOUGH ───────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Two Points Are Never Enough}
+  \sectionlabel{$4$ cells on day $0$, $8$ cells on day $1$ --- both models fit exactly}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=8.6cm, height=3.4cm,
+      xlabel={$x$ (days)}, ylabel={cells},
+      xmin=0, xmax=3, ymin=0, ymax=36,
+      xtick={0,1,2,3}, ytick={0,8,16,24,32}, minor x tick num=1,
+      grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+      axis lines=left, tick label style={font=\tiny}, label style={font=\tiny}]
+    \addplot[royal, very thick] coordinates {(0,4) (3,16)};
+    \addplot[goldacc, very thick, domain=0:3, samples=60]{4*2^x};
+    \addplot[royal, only marks, mark=*, mark size=2pt] coordinates {(0,4) (1,8)};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.35cm}
+  \small
+  \textbf{Blue: $4+4x$. \quad Gold: $4 \cdot 2^{x}$.} They agree perfectly on every day the biologist
+  measured.\\[0.1cm]
+  \textbf{The question is not ``which model?'' --- it is ``what would you go and measure?''} Count the
+  cells on day $2$: linear says $12$, exponential says $16$.
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: Which Family Owns This Situation?}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  \begin{block}{The rule for the whole activity}
+    \textbf{Never name a family without naming the test.} From a table that is a \emph{row}; from a
+    graph it is a \emph{feature} --- a straight edge, a turning point, a flattening end.
+  \end{block}
+  \vspace{0.1cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.25cm}
+    \item \textbf{Tier R:} two patches of duckweed --- one adds $4$ m$^2$ a week, one triples. Find
+          the week the multiplier passes the adder.
+    \item \textbf{Tier A:} a \$17 fare read two ways, and a football model that says $-960$ feet.
+    \item \textbf{Tier E:} a coffee cup whose ratios are \emph{not} constant --- until you subtract
+          the room.
+  \end{itemize}
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  A gym counted its members: $64$, $96$, $144$, $216$, $324$ over five months.
+  \begin{enumerate}
+    \setlength{\itemsep}{0.3cm}
+    \item Fill the three test rows. Name the family --- \textbf{and name the row that decided it}.
+    \item Predict months $5$ and $6$. The building holds $500$. How far ahead can this model be
+          trusted?
+    \item Somebody wrote ``the gains speed up, so it's quadratic.'' Noticing the growing jumps was
+          \emph{correct} in item 1. Say what is wrong anyway.
+  \end{enumerate}
+  \vspace{0.2cm}
+  {\color{royal}\bfseries That is Unit 2. Next: the unit test, then Unit 3 --- Exponential and
+  Logarithmic Functions.}
 \end{frame}
 
 \end{document}

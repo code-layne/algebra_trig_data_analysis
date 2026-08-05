@@ -1,8 +1,9 @@
-%! Choosing and Comparing Models — Unit 2, Lesson 2.7 — Homework (Answer Key)
+%! Choosing and Comparing Models in Context — Unit 2, Lesson 2.7 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,353 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\boxguard[24]
+\begin{notesbox}{Practice --- Which Family Owns This Situation?}
+\small
+Never name a family without naming the test. From a table it is a row; from a graph it is a feature.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item \textbf{Three tables.} For each one, run the tests and fill the last two columns.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+(a) $t$ (months saving) & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+Balance (\$) & $250$ & $310$ & $370$ & $430$ & $490$ \\
+\hline
+\end{tabular}
+
+\smallskip
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+(b) $s$ (side of a square patio, ft) & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline
+Area (sq ft) & $1$ & $4$ & $9$ & $16$ & $25$ \\
+\hline
+\end{tabular}
+
+\smallskip
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+(c) $n$ (hours since a rumor started) & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+People who have heard it & $4$ & $12$ & $36$ & $108$ & $324$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}p{1.0cm}|X|X|X@{}}
+\rowcolor{mist}
+& \textbf{Which row is constant?} & \textbf{Its constant value} & \textbf{The family} \\
+\hline
+(a) & \ans{first differences} & \ans{$+\$60$ per month} & \ans{linear} \\
+(b) & \ans{second differences} & \ans{$+2$ sq ft} & \ans{quadratic} \\
+(c) & \ans{ratios} & \ans{$3$ per hour} & \ans{exponential} \\
+\end{tabularx}
+
+\item \textbf{Four stories, no numbers.} Name the family and the words in the story that decided it.
+\smallskip
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}X p{2.0cm} p{4.6cm}@{}}
+\rowcolor{mist}
+\textbf{The situation} & \textbf{Family} & \textbf{The words that decided it} \\
+\hline
+A phone loses $25\%$ of its trade-in value every year. & \ans{exponential} & \ans{``$25\%$ \emph{of} its value'' --- a percent} \\
+A pool fills at $12$ gallons a minute. & \ans{linear} & \ans{the same $12$ gallons a minute} \\
+A drone is launched straight up, rises, and falls back to the ground. & \ans{quadratic} &
+    \ans{``rises and falls back'' --- a turnaround} \\
+A tutor charges \$40 for the first hour and \$25 for each hour after that. & \ans{piecewise} &
+    \ans{``the first hour\dots then'' --- two rules} \\
+\end{tabularx}
+
+\item \textbf{Four graphs.} Write the family under each, and the \emph{feature} that gives it away.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.25cm}}c@{\hspace{0.25cm}}c@{\hspace{0.25cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3.9cm, height=3.0cm, title={\scriptsize (i)},
+    xmin=0, xmax=6, ymin=0, ymax=12, xtick={0,2,4,6}, ytick={0,4,8,12},
+    grid=both, grid style={linegray!45}, axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick] coordinates {(0,2) (6,11)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=3.9cm, height=3.0cm, title={\scriptsize (ii)},
+    xmin=0, xmax=6, ymin=0, ymax=12, xtick={0,2,4,6}, ytick={0,4,8,12},
+    grid=both, grid style={linegray!45}, axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=0:6, samples=60]{9-(x-3)^2};
+  \addplot[keyred, only marks, mark=*, mark size=1.6pt] coordinates {(3,9)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=3.9cm, height=3.0cm, title={\scriptsize (iii)},
+    xmin=0, xmax=6, ymin=0, ymax=12, xtick={0,2,4,6}, ytick={0,4,8,12},
+    grid=both, grid style={linegray!45}, axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=0:6, samples=80]{10*0.6^x};
+  \addplot[keyred, thick, dashed] coordinates {(0,0) (6,0)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=3.9cm, height=3.0cm, title={\scriptsize (iv)},
+    xmin=0, xmax=6, ymin=0, ymax=12, xtick={0,2,4,6}, ytick={0,4,8,12},
+    grid=both, grid style={linegray!45}, axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick] coordinates {(0,3) (2,3)};
+  \addplot[royal, very thick] coordinates {(2,7) (4,7)};
+  \addplot[royal, very thick] coordinates {(4,10) (6,10)};
+  \addplot[royal, only marks, mark=*, mark size=1.7pt] coordinates {(2,3) (4,7) (6,10)};
+  \addplot[royal, only marks, mark=*, mark size=1.7pt, mark options={fill=white}]
+    coordinates {(0,3) (2,7) (4,10)};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\ansline{(i) \textbf{Linear} --- a straight edge with no bend and no turn, so the rate of change never changes.}\\
+\ansline{(ii) \textbf{Quadratic} --- exactly one turning point, a maximum at $(3,9)$, with symmetric sides.}\\
+\ansline{(iii) \textbf{Exponential} --- no turning point, and it flattens toward the line $y=0$.}\\
+\ansline{(iv) \textbf{Piecewise} --- flat pieces with jumps between them, and an open circle at each jump.}\\
+
+% Unguarded, item 4's stem sat alone at the foot of p1 with its whole table
+% opening p2. \boxguard is inert inside a breakable box; \tcbbreak is the lever.
+% Mirrored in homework_key.
+\tcbbreak
+\item \textbf{The comparison sheet, from memory.} Fill every empty cell.
+\smallskip
+
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{@{}p{2.7cm}|X|X|X@{}}
+\rowcolor{mist}
+& \textbf{Linear} & \textbf{Quadratic} & \textbf{Exponential} \\
+\hline
+Parent function & \ans{$f(x)=x$} & \ans{$g(x)=x^2$} & \ans{$h(x)=b^{\,x}$} \\
+\hline
+Table test & \ans{first differences} & \ans{second differences} & \ans{ratios} \\
+\hline
+Turning points & \ans{none} & \ans{exactly one} & \ans{none} \\
+\hline
+Horizontal asymptote & \ans{none} & \ans{none} & \ans{exactly one} \\
+\end{tabularx}
+
+\item \textbf{The full read.} A farmer has $80$ feet of fence for a rectangular pen. If the pen is
+$x$ feet wide, the other side must be $40-x$ feet, so its area is $A(x) = x(40-x)$ square feet.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.8cm, height=4.2cm,
+    xlabel={$x$ (width of the pen, feet)}, ylabel={$A$ (area, sq ft)},
+    xmin=0, xmax=40, ymin=0, ymax=450,
+    xtick={0,5,10,15,20,25,30,35,40}, ytick={0,100,200,300,400}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:40, samples=80]{x*(40-x)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(0,0) (20,400) (40,0)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item Which family is this, and what feature of the graph gives it away?
+  \item Domain and range, taking the context into account.
+  \item The zeros and the $y$-intercept. Say what each zero means about the pen.
+  \item The interval on which $A$ is increasing and the interval on which it is decreasing.
+  \item The absolute maximum, with a value \emph{and} a location. What width should the farmer use?
+  \item Does $A$ have a horizontal asymptote? Answer with a reason.
+\end{enumerate}
+
+\ansline{(a) \textbf{Quadratic} --- exactly one turning point, and the graph is symmetric about it.}\\
+\ansline{(b) Domain $[0,40]$ feet (a wider pen would need more fence than there is); range $[0,400]$ square feet.}\\
+\ansline{(c) Zeros at $x=0$ and $x=40$; $y$-intercept $(0,0)$ --- a pen with no width, or none left for depth.}\\
+\ansline{(d) Increasing on $[0,20]$, decreasing on $[20,40]$.}\\
+\ansline{(e) Absolute maximum $400$ square feet at $x=20$ feet --- the farmer should build a $20 \times 20$ square.}\\
+\ansline{(f) No. A parabola has no asymptote, and the domain stops at $40$ anyway.}\\
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{scenariobox}[In Context --- Two Trucks, Two Models]{royal}
+\small
+Two delivery trucks are bought new on the same day, both for \$24{,}000. The accountant values them
+differently. \textbf{Truck L} is written down by a fixed \$3{,}000 every year. \textbf{Truck E} is
+written down by a fixed $20\%$ of its current value every year.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}|l|c|c|c|c|c|c|c|@{}}
+\hline
+Year $t$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ \hline
+Truck L (\$) & $24{,}000$ & $21{,}000$ & $18{,}000$ & $15{,}000$ & $12{,}000$ & $9{,}000$ &
+    $6{,}000$ \\ \hline
+Truck E (\$) & $24{,}000$ & $19{,}200$ & $15{,}360$ & $12{,}288$ & $9{,}830$ & $7{,}864$ &
+    $6{,}291$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{2pt}
+{\scriptsize Truck E's values are rounded to the nearest dollar.}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.4cm,
+    xlabel={$t$ (years owned)}, ylabel={value (\$)},
+    xmin=0, xmax=8, ymin=0, ymax=26000,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={0,4000,8000,12000,16000,20000,24000},
+    minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,24000) (8,0)};
+  \addplot[goldacc, very thick, domain=0:8, samples=80]{24000*0.8^x};
+  \node[font=\tiny, royal] at (axis cs:2.4,20500) {L};
+  \node[font=\tiny, goldacc] at (axis cs:3.4,9000) {E};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt] coordinates {(5.82,6540)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=6]
+
+\item Run the tests on years $0$ through $3$ of each truck. Name the family for each, and the row
+that decided it. Then say, in plain English, what ``a fixed \$3{,}000'' and ``a fixed $20\%$'' each
+mean about how the value changes.
+
+\ansline{\textbf{Truck L is linear:} its first differences are all $-\$3{,}000$; its ratios are not constant.}\\
+\ansline{\textbf{Truck E is exponential:} its ratios are all $0.8$ ($19200/24000 = 15360/19200 = 12288/15360 = 0.8$).}\\
+\ansline{``A fixed \$3{,}000'': the same dollar amount comes off yearly, whatever the truck is worth.}\\
+\ansline{``A fixed $20\%$'': the amount coming off \emph{shrinks} every year --- $20\%$ of less is less.}\\
+
+\item Read the graph. Which truck is worth more at year $3$? At year $6$? Between which two years do
+the models cross? Explain in one sentence why the crossing had to happen.
+
+\ansline{Year $3$: \textbf{Truck L} (\$15{,}000 against \$12{,}288). \quad Year $6$: \textbf{Truck E} (\$6{,}291 against \$6{,}000).}\\
+\ansline{The two graphs cross between year $5$ and year $6$.}\\
+\ansline{It had to happen: L loses \$3{,}000 a year and heads straight to \$0, while E's losses keep shrinking.}\\
+
+\item Extend both models to year $8$. What is Truck L worth then, and what is Truck E worth? One of
+those two answers is not believable for a real truck --- say which, and why. Then give the equation
+of the line Truck E's graph approaches and never reaches.
+
+\ansline{Truck L: $24{,}000 - 3{,}000(8) = \$0$. \quad Truck E: $24{,}000(0.8)^8 \approx \$4{,}027$.}\\
+\ansline{\textbf{Truck L's \$0 is the unbelievable one.} A truck that still runs is worth something, and even a}\\
+\ansline{wrecked one has scrap value. The linear model is being read past the years where it makes sense.}\\
+\ansline{Truck E's graph approaches the line $y=0$ and never reaches it --- a horizontal asymptote.}\\
+
+\item A buyer reads the table and says: \emph{``Truck L holds its value better --- look, it is worth
+more than Truck E in every year from $1$ to $5$. I'll take the truck the accountant writes down by a
+fixed dollar amount.''} Settle the claim. Is the buyer reading the numbers wrong, or asking the wrong
+question? Say what \emph{would} decide it.
+
+\ansline{The buyer reads the numbers \textbf{correctly} --- L really is worth more in years $1$ through $5$.}\\
+\ansline{The \emph{question} is what is wrong: ``holds its value better'' has no answer until you say \textbf{for how long}.}\\
+\ansline{L wins for a short ownership; from year $6$ on E wins forever, because L reaches \$0 and E never does.}\\
+\ansline{What would decide it: how long the buyer keeps the truck, and what such trucks really sell for.}\\
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=10]
+
+\item Unit 3 is a whole unit on the family you met today: the exponential. Every story below is
+exponential. For each, say whether it is \textbf{growth} or \textbf{decay}, and give the number the
+quantity is multiplied by each step.
+\smallskip
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}X p{2.4cm} p{3.0cm}@{}}
+\rowcolor{mist}
+\textbf{The situation} & \textbf{Growth or decay?} & \textbf{Multiplied by} \\
+\hline
+A population of deer rises $10\%$ a year. & \ans{growth} & \ans{$1.10$ each year} \\
+A drug leaves the body at $30\%$ per hour. & \ans{decay} & \ans{$0.70$ each hour} \\
+A savings account earns $5\%$ a year. & \ans{growth} & \ans{$1.05$ each year} \\
+A radioactive sample halves every $12$ years. & \ans{decay} & \ans{$0.5$ every $12$ years} \\
+\end{tabularx}
+
+\smallskip
+Then answer: two of these four have graphs that fall toward a horizontal asymptote. Which two, and
+what is the equation of that asymptote in each case?
+
+\ansline{The two \textbf{decay} stories --- the drug and the radioactive sample. Both asymptotes are the line $y=0$.}\\
+\ansline{Multiplying by $0.7$ or $0.5$ never reaches zero: the body never quite finishes clearing the drug.}\\
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[26]
+\begin{extensionbox}
+\small
+\textbf{Three points, and two models that both fit perfectly.} A young tree is measured once a year:
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{}|l|c|c|c|@{}}
+\hline
+Year $x$ & $0$ & $1$ & $2$ \\ \hline
+Height (feet) & $3$ & $6$ & $12$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+Two people model the tree. One writes $Q(x) = 1.5x^2 + 1.5x + 3$; the other writes
+$E(x) = 3 \cdot 2^{\,x}$.
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item Check both models at $x=0$, $x=1$, and $x=2$. Confirm that \emph{both} of them give the three
+        measured heights exactly.
+
+\ansline{$Q(0)=3$, $Q(1)=1.5+1.5+3=6$, $Q(2)=6+3+3=12$. \quad $E(0)=3$, $E(1)=6$, $E(2)=12$ --- both fit exactly.}\\
+\ansline{That is no coincidence: three points can always be fitted by \emph{some} quadratic.}\\
+
+  \item Now evaluate both at $x=3$ and at $x=10$. How far apart are the two predictions in each case?
+
+\ansline{$x=3$: $Q(3)=13.5+4.5+3=21$ feet and $E(3)=3 \cdot 8 = 24$ feet --- only $3$ feet apart.}\\
+\ansline{$x=10$: $Q(10)=150+15+3=168$ feet and $E(10)=3 \cdot 1024 = 3{,}072$ feet.}\\
+\ansline{The gap grows from $3$ to $2{,}904$ feet: the further you extrapolate, the more the choice matters.}\\
+
+  \item The data cannot tell the two models apart, because both fit it perfectly. Name two different
+        things that \emph{could} settle which model to use --- one of them a measurement, and one of
+        them a fact about trees.
+
+\ansline{\textbf{A measurement:} go back at year $3$ --- quadratic says $21$ feet, exponential says $24$.}\\
+\ansline{\textbf{A fact about trees:} trees do not keep doubling --- they slow down and stop at a mature height.}\\
+\ansline{So neither survives to year $10$: a $168$-foot tree is just possible; a $3{,}072$-foot one is not.}\\
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{That is Unit 2.} \textbf{Next comes the Unit 2 test} --- go back through your packets and
+check that you can do every learning target on every cover sheet. \textbf{After that: Unit 3,
+Exponential and Logarithmic Functions}, where today's constant-ratio family gets a unit of its own.
+\end{remindbox}
 
 \end{document}
