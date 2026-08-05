@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,248 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\boxguard[24]
+\begin{notesbox}{Practice --- Both Directions}
+\small
+Half of these go equation $\to$ graph and half go graph $\to$ equation. Every equation you write
+gets a substitution check.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item \textbf{Anchor points.} Give the anchor point of each image. For the exponential, give the
+equation of its flat line (asymptote) as well.
+\quad (a) $y=(x-6)^2+2$ \quad (b) $y=2^x+4$ \quad (c) $y=(x+1)^2-5$
+
+\ansline{(a) $(6,2)$. \quad (b) $(0,5)$, since $2^0+4=5$; asymptote $y=4$. \quad (c) $(-1,-5)$.}\\
+\ansline{In every case the anchor is the parent's landmark with both slides applied to it.}\\
+
+\item \textbf{Equation $\to$ graph.} For $y=(x-3)^2-2$, complete the table, then plot the five points
+on the grid and join them. The parent is drawn.
+\smallskip
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+\hline
+$x$ & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline
+$y=(x-3)^2-2$ & \ans{$2$} & \ans{$-1$} & \ans{$-2$} & \ans{$-1$} & \ans{$2$} \\
+\hline
+\end{tabular}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.2cm, height=4.6cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-3.4, xmax=6.4, ymin=-3.4, ymax=5.4,
+    xtick={-3,-2,-1,0,1,2,3,4,5,6}, ytick={-3,-2,-1,0,1,2,3,4,5},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize},
+    legend entries={{$y=x^2$ (the parent)},{$y=(x-3)^2-2$}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=2}]
+  \addplot[royal, very thick, domain=-2.2:2.2, samples=80]{x^2};
+  \addplot[keyred, very thick, dashed, domain=0.4:5.6, samples=80]{(x-3)^2-2};
+  \addplot[keyred, only marks, mark=*, mark size=1.6pt] coordinates
+    {(1,2) (2,-1) (3,-2) (4,-1) (5,2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\item \textbf{Graph $\to$ equation, in words.} Write the equation of each function described.
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item A parabola with exactly the parent's shape, lowest point at $(-4,3)$.
+  \item An exponential whose asymptote is $y=5$ and which passes through $(0,6)$.
+  \item A line through $(0,-1)$ and $(4,7)$.
+\end{enumerate}
+
+\ansline{(a) $y=(x+4)^2+3$. \quad (b) $y=2^x+5$, since the asymptote rose by $5$ and $2^0+5=6$.}\\
+\ansline{(c) Steepness $=(7-(-1))/(4-0)=8/4=2$, and it crosses at $-1$, so $y=2x-1$.}\\
+\ansline{Check (c) at $x=4$: $2(4)-1=7$, which is the second point given --- correct.}\\
+
+\item \textbf{Finding $a$.} A parabola has vertex $(1,2)$ and passes through $(2,5)$. Find $a$, write
+the equation in transformation form, then check it at $x=3$.
+\begin{work}
+  5 &= a(2-1)^2+2 \\
+  5 &= a+2 \\
+  3 &= a
+\end{work}
+
+\ansline{$y=3(x-1)^2+2$. Check at $x=3$: $3(3-1)^2+2=3(4)+2=14$, so the graph passes through $(3,14)$.}\\
+\ansline{Because $|a|=3>1$, this parabola is steeper (narrower) than the parent.}\\
+
+\item \textbf{Keystrokes.} Match each thing typed into a graphing calculator with what its screen
+actually shows. Write the letter next to each description.
+\smallskip
+
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.0cm} X@{}}
+\rowcolor{mist}
+\textbf{Typed} & \textbf{What the screen shows} \\
+\hline
+(a) \texttt{2\^{}X-3} & \ans{(d)} the parent $y=x^2$, unchanged \\
+(b) \texttt{2\^{}(X-3)} & \ans{(a)} $y=2^x$ slid down $3$ \\
+(c) \texttt{-X\^{}2} & \ans{(b)} $y=2^x$ slid right $3$ \\
+(d) \texttt{(-X)\^{}2} & \ans{(c)} $y=x^2$ flipped over the $x$-axis \\
+\end{tabularx}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{scenariobox}[In Context --- The Yearbook's Profit Curve]{royal}
+\small
+The yearbook staff has to pick a price. The graph below came from three years of sales records:
+$P(x)$ is the yearbook's profit, in dollars, when the price is $x$ dollars. The staff wants the
+profit at a price of \$35, and \$35 is not marked.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.6cm, height=4.6cm,
+    xlabel={$x$ (price of a yearbook, dollars)}, ylabel={profit (dollars)},
+    xmin=0, xmax=62, ymin=0, ymax=2000,
+    xtick={0,10,20,30,40,50,60},
+    ytick={0,200,400,600,800,1000,1200,1400,1600,1800,2000},
+    grid=both, grid style={linegray!45}, minor x tick num=1,
+    minor grid style={linegray!30}, axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize},
+    legend entries={{$P$ (profit from the sales records)}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=1}]
+  \addplot[royal, very thick, domain=0:60, samples=100]{-2*(x-30)^2+1800};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=6]
+
+\item Read the vertex and both points where the curve meets the horizontal axis. Starting from the
+parent $f(x)=x^2$, name the two translations and the reflection that put the curve there.
+
+\ansline{Vertex $(30,1800)$; the curve meets the horizontal axis at $(0,0)$ and $(60,0)$.}\\
+\ansline{Translated \textbf{right $30$} and \textbf{up $1800$}, and reflected over the $x$-axis (it opens downward).}\\
+
+\item The shape is not the parent's, so find $a$. Use the right-hand point where the curve meets the
+horizontal axis, $(60,0)$.
+\begin{work}
+  0 &= a(60-30)^2+1800 \\
+  0 &= 900a+1800 \\
+  -1800 &= 900a \\
+  -2 &= a
+\end{work}
+
+\item Write $P(x)$ in transformation form, then answer the staff's question: what is the profit at a
+price of \$35? Show the substitution.
+\begin{work}
+  P(x) &= -2(x-30)^2+1800 \\
+  P(35) &= -2(35-30)^2+1800 \\
+        &= -2(25)+1800 \\
+        &= 1750
+\end{work}
+
+\item Say why the graph alone could not have given you item 8's answer. Then: what would you type
+into the calculator, what window would you set, and what must the \textsc{table} show at
+$\texttt{X}=35$? Finally, which of the domain and the range did the $+1800$ move?
+
+\ansline{$\$35$ falls between the marked prices and $\$1750$ falls between the marked profits, so the graph}\\
+\ansline{can only be read to the nearest gridline. Type \texttt{Y1=-2(X-30)\^{}2+1800} with the \texttt{(-)} key; set}\\
+\ansline{\texttt{Xmin}$=0$, \texttt{Xmax}$=60$, \texttt{Ymin}$=0$, \texttt{Ymax}$=2000$; the \textsc{table} must read $1750$ at $\texttt{X}=35$.}\\
+\ansline{The $+1800$ sits outside the parentheses, so it moved the \textbf{range}, not the domain.}\\
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=10]
+
+\item Use the yearbook graph above --- no new equation needed. Answer in plain English where you do
+not have the vocabulary yet; Lesson 2.4 will give you the words.
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item At which two prices is the profit exactly \$0? (These inputs have a name coming next
+        lesson.)
+
+\ansline{At $x=0$ and $x=60$ dollars. (Next lesson calls these the \emph{zeros}.)}\\
+
+  \item What is the highest profit the staff can reach, and at what price does it happen? Give
+        \emph{both} numbers --- a value and a location.
+
+\ansline{\$1800, reached at a price of \$30. Value \emph{and} location --- \$1800 on its own is half an answer.}\\
+
+  \item Over which prices is the profit \emph{going up} as the price goes up, and over which is it
+        \emph{going down}? Describe the two stretches of prices.
+
+\ansline{Going up from \$0 to \$30; going down from \$30 to \$60. (Next lesson writes these as the}\\
+\ansline{intervals where the function is increasing and decreasing.)}\\
+\end{enumerate}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[26]
+\begin{extensionbox}
+\small
+\textbf{A stretch, a flip, and two slides at once --- plus a window.} Consider
+$y=-2(x-4)^2+8$.
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item Name the parent and all three things done to it. Give the vertex, and say whether the
+        parabola is narrower or wider than the parent.
+
+\ansline{Parent $f(x)=x^2$: stretched vertically by $2$, reflected over the $x$-axis, slid right $4$ and up $8$.}\\
+\ansline{Vertex $(4,8)$. Since $|a|=2>1$, it is \textbf{narrower} (steeper) than the parent.}\\
+
+  \item Find the two inputs where $y=0$ by solving. Then give four window values that would show
+        both of them and the vertex.
+\begin{work}
+  0 &= -2(x-4)^2+8 \\
+  -8 &= -2(x-4)^2 \\
+  4 &= (x-4)^2 \\
+  x-4 &= \pm 2 \\
+  x &= 2 \text{ or } x = 6
+\end{work}
+
+\ansline{Window: \texttt{Xmin}$=0$, \texttt{Xmax}$=10$, \texttt{Ymin}$=-10$, \texttt{Ymax}$=10$ shows $x=2$, $x=6$ and the vertex $(4,8)$.}\\
+
+% Unguarded, the extension box fit whole on p3 and pushed the remindbox ALONE onto
+% p4 -- a ~1in strip on a blank page, invisible to make check (the key stranded the
+% same box, so parity was perfect at 4/4). \workrowsep was swept 8pt->0pt and never
+% bought the page back, so the 4th page is unavoidable; this \tcbbreak instead sends
+% part (c) over with the remindbox so p4 carries substantial content. Mirrored in
+% homework_key. Breaking one item earlier (before part (b)) was also tested: still
+% 4 pages, but it left half of p3 empty, so this placement is the better balance.
+% See references/conventions.md ("boxguard").
+\tcbbreak
+  \item Now change the $-2$ to $-\tfrac{1}{2}$ and nothing else. Name what changed about the shape,
+        then find the two new inputs where $y=0$.
+\begin{work}
+  0 &= -\tfrac{1}{2}(x-4)^2+8 \\
+  -8 &= -\tfrac{1}{2}(x-4)^2 \\
+  16 &= (x-4)^2 \\
+  x-4 &= \pm 4 \\
+  x &= 0 \text{ or } x = 8
+\end{work}
+
+\ansline{Since $0<|a|<1$ the parabola became \textbf{flatter and wider}, so it takes longer to fall to $0$:}\\
+\ansline{the two inputs spread from $2$ and $6$ out to $0$ and $8$. The vertex $(4,8)$ never moved.}\\
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{Next: Lesson 2.4 --- Intercepts, Zeros, Maximums and Minimums, and Where a Graph Rises and
+Falls} (\texttt{AFDA.AF.2b--d}). Item 10 asked all three of those questions about the yearbook curve
+in ordinary words. Next lesson gives each one its name and its notation --- and everything you name
+will be read straight off a graph, which is exactly how this unit works.
+\end{remindbox}
 
 \end{document}

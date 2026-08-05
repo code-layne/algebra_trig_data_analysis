@@ -16,79 +16,364 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can graph a linear, quadratic, or exponential function from its
+    equation by moving the parent's anchor point, and I can write the equation of a function from its
+    graph by reading the vertex, the asymptote, or two points. When the shape is not the parent's, I
+    can find the stretch factor $a$ from one extra point. I can use a graphing calculator to verify a
+    transformation --- typing it correctly and setting a window that actually shows it --- and I can
+    explain why a matching screen is not proof and a substitution is.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Standards covered:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{AFDA.AF.1d} --- write the equation of a linear, quadratic, or exponential function
+        \emph{given a graph}, using transformations of the parent function.
+  \item \texttt{AFDA.AF.1f} --- graph a function \emph{given its equation}, using transformations of
+        the parent function. \emph{Use technology to verify transformations of functions.}
+\end{itemize}
+\textbf{Skills students leave with:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Locate the \textbf{anchor point} of an image from its equation, and carry four more points
+        with it onto a pre-drawn grid.
+  \item Read a graph's landmark --- \textbf{vertex}, \textbf{asymptote}, or \textbf{two points} ---
+        and write the equation from it.
+  \item Solve for $a$ in $y=a(x-h)^2+k$ from one additional point, and say what $|a|$ does to the
+        shape.
+  \item Type an equation into a TI-84 correctly (parentheses, the \texttt{(-)} key) and set a
+        \textbf{window} from the anchor point without graphing first.
+  \item \textbf{Verify by substitution}, and explain why a matching screen is not proof.
+\end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{2.2 asked them to \emph{describe} a move they were shown. 2.3 asks them to
+        \emph{produce} the other representation.} That is the whole difference, and it is why
+        \texttt{1d} and \texttt{1f} are one lesson: they are the same translation run in opposite
+        directions.
+  \item \textbf{An anchor point is the entire method.} The AFDA guidance calls the parent graph an
+        ``anchor graph from which other graphs are derived''; one tracked point turns a
+        transformation into arithmetic on coordinates.
+  \item \textbf{``Use technology to \emph{verify}'' is the standard's own word, and verify means
+        check --- not decide.} A screen is a picture at pixel resolution; a substitution is a number.
+        When they disagree, the number wins and there is a typo to find.
+  \item \textbf{The parentheses question from 2.2 is now literally a keystroke.}
+        \texttt{2\^{}X-5} versus \texttt{2\^{}(X-5)} is outside-versus-inside with a calculator
+        attached, which is why the hook is a typing error.
+  \item \textbf{The guidance singles out lines: ``the equation of a linear function can be determined
+        by two points\dots or by the slope and a point.''} It says that because for a line the
+        transformations are not distinguishable --- $2f(x)$ and $f(2x)$ are the same graph. Teach the
+        two-point method there and say why.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Anchor point & The one point on the parent you track through a transformation: the turning point of
+    a parabola, the point $(0,1)$ on an exponential. Where it lands gives both translations. \\
+Pre-image and image & The graph before the transformation is the \emph{pre-image}; the graph after
+    it is the \emph{image}. (The AFDA guidance's own words.) \\
+Transformation form & An equation written so every move is visible: $y=a\,f(x-h)+k$ for parent $f$.
+    For a quadratic, \TallMath{y=a(x-h)^2+k} with vertex $(h,k)$. \\
+Viewing window & The rectangle of the plane the calculator screen shows, set by \texttt{Xmin},
+    \texttt{Xmax}, \texttt{Ymin}, \texttt{Ymax}. A correct graph can be entirely off-screen. \\
+Substitution check & Putting one input into your equation and comparing the output with the graph or
+    the \textsc{table}. The only thing that proves an equation matches a picture. \\
+Stretch factor $a$ & The number multiplying the parent. $|a|>1$ narrower and steeper; $0<|a|<1$
+    flatter and wider; $a<0$ also flips it. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{The warm-up is five items, and item 2 is the hook planted:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item A table for $f(x)=(x-2)^2$, plus which input gives the smallest output --- feeds notes box 1
+  \item $2^x-5$ versus $2^{x-5}$ at $x=5$ --- the whole hook, before it is asked
+  \item Name the parent and the transformation (Lesson 2.2 spiral)
+  \item Domain and range in interval notation (Lesson 2.1 spiral)
+  \item Last night's item 10: what did you predict the calculator would show?
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 2 tells you who can already keep a number inside the
+parentheses --- $27$ against $1$ from the same input. Item 3(c) is the negative-key trap in advance.
+Item 5 is homework accountability: if nobody can answer it, box 1 will need the time you budgeted
+for box 3.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{Two students, one instruction, two different screens.} Put both keystroke strings on the
+board: \texttt{Y1=2\^{}X-5} and \texttt{Y1=2\^{}(X-5)}. The instruction they were both given was
+\emph{graph the exponential parent moved $5$ units to the right}. \textbf{Pose it this way:} ``Both of
+them got a curve on the screen. Only one of them followed the instruction. How do you decide which,
+without asking me?'' \textbf{Do not take a vote this time} --- 2.2's hook already spent the vote, and
+today's point is the opposite one: you do not need consensus, you need one number. Moved right $5$
+means the image at $x=5$ must show what the parent showed at $x=0$, namely $2^0=1$. A gives
+$2^5-5=27$; B gives $2^{5-5}=1$. \textbf{That is the whole lesson in two lines}, and it is why
+\texttt{AF.1f} says \emph{verify}, not \emph{look}.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Equation $\to$ graph (12 min).} Work the routine on $y=(x-2)^2-3$. Fill the four in-text
+blanks together, then the parent-to-image table, then \textbf{let them plot} --- the grid is
+pre-drawn and the parent is already on it, so nobody sketches from a blank page. \textbf{Ask:} ``What
+did the five image points cost you?'' The answer --- adding $2$ and subtracting $3$, five times --- is
+the point. Close with where the anchor sits for the other two parents.
+
+\textbf{2. Graph $\to$ equation (14 min).} Three panels, three landmarks. Do the quadratic and the
+exponential as a class; assign the line. \textbf{The exponential row is the one to slow down on:}
+students look for a vertex and there isn't one. Point at the dashed line and ask what it used to be.
+Then the $a$ subsection: vertex gives two numbers, a second point gives the third, a \emph{third}
+point checks all three. \textbf{Read the warning about lines aloud} --- it is honest mathematics, and
+it is the guidance's own reason for the two-point rule.
+
+\textbf{3. The calculator (12 min).} Resolve the hook on the two panels, then the three traps. If
+you have a TI-84 on the projector, type \texttt{2\^{}X-5} live, then add the parentheses and let them
+watch the curve jump. \textbf{Trap 3 is worth a demonstration:} type $y=(x-20)^2+900$, press
+\texttt{ZOOM}\,\texttt{6}, and let the empty screen sit there for ten seconds before anyone explains
+it.
+
+\textbf{4. The rule (4 min).} ``A matching picture is not proof.'' Give them $(x-3)^2$ against
+$(x-3)^2+0.5$ and let the class try to find a window that tells them apart. Then substitute.
+
+\textbf{5. Guided practice --- the hoodie (12 min).} Vertex, then $a$ from $(5,0)$, then $P(23)=864$.
+\textbf{Ask before they start:} ``Why can't you just read \$23 off the graph?'' The honest answer ---
+because it falls between the gridlines, and so does the profit --- is the reason the whole lesson
+exists.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: The Two Directions, and the Check]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Equation $\to$ graph (\texttt{AF.1f}):}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Name the parent.
+  \item Move the \textbf{anchor point}, using 2.2's outside/inside rule.
+  \item Carry four of the parent's points by the same slide.
+  \item Join them; state the domain and range.
+\end{enumerate}
+\textbf{Graph $\to$ equation (\texttt{AF.1d}):}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Name the family from the shape.
+  \item Read the landmark: \textbf{vertex} / \textbf{asymptote and the $y$-axis point} /
+        \textbf{two points}.
+  \item If the shape is not the parent's, substitute one more point and solve for $a$.
+  \item \textbf{Check at a point you have not used yet.}
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four errors to name before they happen:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{The parentheses typed wrong.} \texttt{2\^{}X-5} for ``right 5.'' The hook, and Tier E
+        item 1(a).
+  \item \textbf{\texttt{(-X)\^{}2} for a reflection.} It draws the parent, because $(-x)^2=x^2$ ---
+        2.2's warm-up item 3, as keystrokes. Tier E item 1(b).
+  \item \textbf{Sign error reading a vertex.} A vertex at $(-3,2)$ gives $(x+3)^2+2$. Have them
+        substitute $x=-3$ and confirm they get $2$; nothing else convinces.
+  \item \textbf{$a$ read as the $y$-value instead of solved for.} Insist on writing the equation with
+        $a$ in it and \emph{then} substituting the point.
+\end{itemize}
+\textbf{Say this out loud:} ``The calculator draws exactly what you typed. Never what you meant.''
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes box 1, the plotting:} watch for students plotting the \emph{parent's} $y$-values
+        at the \emph{image's} $x$-values --- they applied one slide and forgot the other. The prompt
+        is ``read me your anchor point.''
+  \item \textbf{Notes box 2, the exponential row:} anyone hunting for a vertex needs redirecting to
+        the dashed line. Ask ``where was that line before?''
+  \item \textbf{Notes box 2, the $a$ example:} listen for ``$a=3$ because the point is $3$.'' Make
+        them write the equation with $a$ in it first.
+  \item \textbf{Activity, Tier A item 1:} groups often get $a=1$ by reading the vertex as the second
+        point. Two \emph{different} points are needed; say so.
+  \item \textbf{Cold-call prompts:} ``Name the parent.'' ``Where's the anchor?'' ``What landmark did
+        you read?'' ``What point did you check with?'' ``What would the \textsc{table} show?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item $y=(x+1)^2-4$: anchor point, table, plot on a pre-drawn grid.
+  \item Same shape, lowest point $(4,0)$ --- write it, then check at $x=6$.
+  \item Which of the domain and range did the $-4$ move?
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item A parabola with a stretch: vertex and $(4,1)$ give $a=3$.
+  \item Verify it at $x=5$ against the graph.
+  \item An exponential read from its asymptote: $y=2^x+2$, range $(2,\infty)$.
+  \item A gym line from two points: $C(x)=15x+40$, then $C(7)$.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Find two typos: \texttt{2\^{}X-5} and \texttt{(-X)\^{}2}.
+  \item An empty screen: explain it from the anchor, then fix the window from the equation.
+  \item Justify: a matching screen proves nothing --- $(x-3)^2$ against $(x-3)^2+0.5$.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard[16]
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} (1) $y=(x+2)^2-1$ --- the anchor point, the table, and five
+points plotted on a pre-drawn grid (\texttt{AF.1f}); (2) an exponential given only by its asymptote
+$y=-3$ and the point $(0,-2)$, so the equation must come from the two landmarks, plus the range
+(\texttt{AF.1d}); (3) \textbf{the conceptual check} --- a classmate typed \texttt{2\^{}X-3} for ``moved
+right $3$,'' which is \emph{the same expression item 2 just produced for a legitimate reason}, and the
+student must settle it with one substitution and give the correct keystrokes.
+
+\textbf{Using the results:} item 3 is the one to read, and the pairing with item 2 is deliberate ---
+the same keystrokes are right for one job and wrong for another, so no answer can be reached by
+pattern-matching. Sort into three piles: \emph{substituted a number}, \emph{restated the rule}, and
+\emph{answered from the picture}. The second pile is the biggest and goes to Tier R in 2.4. A student
+who writes ``because the $3$ is outside the parentheses'' has repeated 2.2 correctly and answered
+nothing today --- the item asks for an input and an output.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (10 items): five fluency items --- anchor points, one equation graphed on a
+pre-drawn grid, three equations written from verbal descriptions (one per family), one $a$ to solve
+for, and a \textbf{keystroke matching table} covering all four of the day's typing cases --- then a
+four-part read of \textbf{the yearbook's profit curve}, $P(x)=-2(x-30)^2+1800$, where the staff needs
+the profit at \$35 and neither \$35 nor \$1750 sits on a gridline. That is the lesson's argument for
+why an equation is worth having.
+
+\textbf{Item 10 is the bridge to Lesson 2.4 and needs no new equation.} It asks the same yearbook
+graph for its two zeros, its absolute maximum \emph{with location}, and the two stretches of prices
+where profit rises and falls --- all in plain English. Accept plain English; \emph{zero},
+\emph{absolute maximum}, and \emph{increasing interval} are 2.4's words to introduce. Insisting on the
+vocabulary today buys nothing and costs the bridge.
+
+\textbf{Extension (optional):} $y=-2(x-4)^2+8$ --- all three moves at once, the two inputs where
+$y=0$ solved for ($2$ and $6$), and a window that shows them. Then part (c) changes $-2$ to
+$-\tfrac12$ and nothing else: the vertex does not move, the parabola flattens, and the two inputs
+spread to $0$ and $8$. \textbf{One change to $a$, two visible consequences and one non-consequence}
+--- that is the cleanest evidence in the lesson that $a$ controls shape and nothing else.
+
+\textbf{Preview of Lesson 2.4 (\texttt{AFDA.AF.2b--d}):} intercepts, zeros, absolute maximum and
+minimum, and the intervals where a graph increases, decreases, or stays constant --- all read from a
+graph.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 % Teacher-only prose lives HERE, never in a _key: a note is the one block in a
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
+\boxguard[18]
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{8 minutes, then score it together.} Answers: (1) $4,1,0,1,4$, and $x=2$ gives $0$;
+    (2) $2^5-5=27$ and $2^{5-5}=2^0=1$; (3) (a) parent $x^2$, left $4$; (b) parent $2^x$, down $6$;
+    (c) parent $x^2$, reflected over the $x$-axis; (4) domain $(-\infty,\infty)$, range
+    $[3,\infty)$; (5) the parent parabola shifted $2$ left, lowest point $(-2,0)$. \textbf{Item 2 is
+    the hook, so score it and stop.} Confirm the two numbers, do not explain them, and do not let
+    anyone announce which typing is ``right'' --- the hook is worthless if it is resolved here. Item
+    1 is not filler: those five outputs are the same arithmetic notes box 1 asks for, done once
+    already with no transformation language attached, and a student who is slow here will be slow at
+    the plotting. Item 3(c) is the negative-key trap in advance; note who writes $9$ for $-3^2$.
+    Item 5 is homework accountability --- if the room is silent, box 1 needs the minutes you
+    budgeted for box 3.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{Box 1 must include actual plotting; do not narrate it.} The single most common way this
+    lesson fails is the teacher filling the image table on the board and then drawing the curve too.
+    Fill the table together, then stop talking and let them plot five points --- it takes ninety
+    seconds and it is the only place \texttt{AF.1f} is genuinely practised in the notes. The grid is
+    pre-drawn with the parent on it, so nobody is sketching from nothing. \textbf{In box 2, the
+    exponential row is the hard one and the vocabulary is the reason:} students have been trained for
+    a week to find a turning point, and an exponential has none. Point at the dashed line, ask ``where
+    was that line before it moved?'' and let them answer $y=0$. The $a$ subsection needs one
+    insistence: \emph{write the equation with $a$ in it, then substitute}. Students who substitute
+    first produce $a=3$ by coincidence and cannot repeat it. \textbf{Read the warning about lines
+    aloud} --- $2f(x)$ and $f(2x)$ both being $y=2x$ is not a technicality, it is why the SOL guidance
+    gives lines their own rule, and saying so buys you credibility for the rest of the unit. Box 3 is
+    best with a calculator on the projector; if you have one, type the hook's two strings live. If
+    time runs short, assign box 3's trap list as reading, but never cut the plotting in box 1.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is one equation graphed
+    and one written, and a group that clears it in four minutes should move straight on. Expect Tier R
+    item 2 to produce five correct table values and a curve drawn through only three of them --- ask
+    for all five plotted before they draw anything. \textbf{Tier A item 1 is where groups reliably go
+    wrong}: they use the vertex \emph{as} the second point, get $a=1$, and write the parent's shape
+    over a graph that visibly is not. The fix is a question, not a correction: \emph{which two
+    different points did you use?} Tier A item 3's range is the parenthesis check ($2$ is never
+    reached) --- 2.1's bracket rule paying its fourth dividend. Tier A item 4(c) asks them to justify
+    the two-point rule for lines in their own words; a group that gets there has understood something
+    most Algebra 2 students have not. \textbf{Tier E item 3 is the share-out that matters.} Read the
+    claim aloud --- ``my screen looks exactly like the printed graph, so my equation is right'' --- and
+    let the class argue before the group answers. Half of them will defend it, which is exactly why
+    the item exists. A group that can say ``half a unit is one pixel'' has the idea; push them to
+    finish with the substitution at $x=3$, because naming the flaw is not the same as knowing the
+    remedy.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Answers: (1) anchor $(-2,-1)$, table
+    $3,0,-1,0,3$, five points plotted; (2) $y=2^x-3$ from the asymptote at $y=-3$ and the point
+    $(0,-2)$, with range $(-3,\infty)$ --- a parenthesis; (3) no: right $3$ requires the image at
+    $x=3$ to equal the parent's $2^0=1$, but $2^3-3=5$, so \texttt{2\^{}X-3} is a slide \emph{down}
+    $3$ and the correct keystrokes are \texttt{2\^{}(X-3)}. \textbf{Items 2 and 3 are the same
+    expression on purpose.} Item 2 produces $2^x-3$ as a correct answer; item 3 shows the identical
+    keystrokes failing a different instruction. A student cannot pattern-match their way through
+    both, and one who marks item 3 ``correct'' because it matches what they just wrote has told you
+    exactly what they are doing. Grade item 3 on whether a \emph{number} appears: ``the $3$ is
+    outside the parentheses'' is 2.2's answer, not today's. Do not grade this for points --- use it
+    to build the 2.4 groups, where every characteristic gets read off a graph and a student who
+    answers from the picture rather than the values will be wrong quietly.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 25--30 minutes.} Item 5 (the keystroke table) is the fastest thing to grade and the
+    most diagnostic: the answers run (d), (a), (b), (c), and a student who mismatches (c) and (d) has
+    the negative-key confusion that will cost them a whole graph on the test. Item 3(b) is the
+    exponential written from an asymptote with no picture at all --- the hardest fluency item here,
+    and the one to reteach if it fails. Item 4 is the only place $a$ is solved for without a graph;
+    check that the equation is written with $a$ in it before the substitution. \textbf{The yearbook
+    items (6--9) are the argument for the whole lesson}, and item 9 is where to spend your grading
+    attention: it wants a reason the graph is insufficient (\$35 and \$1750 both fall between
+    gridlines), the keystrokes, a window, the \textsc{table} value $1750$, and the range answer.
+    Partial credit is fine; ``you can't tell'' with no mention of gridlines is not. \textbf{Item 10 is
+    the 2.4 bridge and must be graded on the mathematics, not the vocabulary} --- ``it goes up until
+    \$30 then comes down'' is a complete answer today. Insist only on 2.0's rule in 10(b): an extreme
+    is a value \emph{and} a location, so \$1800 alone is half an answer. The extension is genuinely
+    optional; its part (c) is the best item in the set, because changing $a$ alone moves the two zeros
+    and leaves the vertex exactly where it was.
 \end{teachernote}
 \end{document}

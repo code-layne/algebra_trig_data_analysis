@@ -3,18 +3,205 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
-\pageheader{Unit 2, Lesson 2.3}{Group Activity}
+\pageheader{Unit 2, Lesson 2.3}{Group Activity --- Both Directions}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
 % cover this component is stapled behind. See references/conventions.md.
 
 \vspace{0.15in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+Half of today's work goes equation $\to$ graph, and half goes graph $\to$ equation. Every time you
+write an equation, \textbf{finish with a substitution check}: pick one point you can read off the
+graph, put its $x$ into your equation, and confirm you get its $y$. An unchecked equation is a
+guess. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+\textbf{Equation $\to$ graph.} Build the graph of $y=(x+1)^2-4$ from the parent.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item Name the parent, then give the anchor point of the image. Say which slide came from the
+        number inside the parentheses and which came from the number outside.
+
+\writelines{2}
+
+  \item Complete the table, then plot your five points on the grid and join them with a smooth
+        curve. The parent is already drawn.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+\hline
+$x$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ \\ \hline
+$y=(x+1)^2-4$ & \blank{1.0cm} & \blank{1.0cm} & \blank{1.0cm} & \blank{1.0cm} & \blank{1.0cm} \\
+\hline
+\end{tabular}
+\smallskip
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.4cm, height=5.4cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-4.4, xmax=3.4, ymin=-5.4, ymax=5.4,
+    xtick={-4,-3,-2,-1,0,1,2,3}, ytick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize},
+    legend entries={{$y=x^2$ (the parent)}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=2}]
+  \addplot[royal, very thick, domain=-2.2:2.2, samples=80]{x^2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+  \item \textbf{Graph $\to$ equation, the easy direction.} A parabola has exactly the same shape as
+        $y=x^2$, and its lowest point is at $(4,0)$. Write its equation, then check it by
+        substituting $x=6$.
+
+\writelines{2}
+
+  \item Which of the domain and the range did the $-4$ in $y=(x+1)^2-4$ move? Give the range of the
+        image in interval notation.
+
+\writelines{1}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+\textbf{Graph $\to$ equation.} Now the pictures are handed to you and the shapes are not all the
+parent's.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.6cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.6cm, height=4.4cm, title={\scriptsize (a) a parabola},
+    xmin=0, xmax=6.4, ymin=-4.4, ymax=11.4,
+    xtick={0,1,2,3,4,5,6}, ytick={-3,0,3,6,9}, minor y tick num=2,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=1:5, samples=90]{3*(x-3)^2-2};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.6cm, height=4.4cm, title={\scriptsize (b) an exponential},
+    xmin=-3.4, xmax=2.4, ymin=0, ymax=7.4,
+    xtick={-3,-2,-1,0,1,2}, ytick={0,2,4,6}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}]
+  \addplot[linegray, thick, dashed, domain=-3.3:2.3, samples=2]{2};
+  \addplot[royal, very thick, domain=-3.3:2.2, samples=90]{2^x+2};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Graph (a).} Read the vertex, then use the point $(4,1)$ to find $a$. Write the
+        equation in transformation form.
+\begin{work}
+  1 &= a(4-3)^2-2 \\
+  1 &= a-2 \\
+  3 &= a
+\end{work}
+
+  \item Check your equation from item 1 at $x=5$, and say what the graph must show there if you are
+        right.
+
+\writelines{2}
+
+  \item \textbf{Graph (b).} The dashed line is the flat line this curve crawls along. Give its
+        equation, give the point the curve passes through on the $y$-axis, and write the function.
+        Then state the range in interval notation --- bracket or parenthesis, and why.
+
+\writelines{3}
+
+  \item \textbf{In context.} A gym charges a joining fee plus a flat monthly rate. The graph of the
+        total cost $C(x)$ after $x$ months is a straight line through $(0,40)$ and $(4,100)$.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item Find the monthly rate from the two points, and write $C(x)$.
+
+\writelines{1}
+
+          \item Use your equation to find the total cost after $7$ months.
+\begin{work}
+  C(7) &= 15(7)+40 \\
+       &= 105+40 \\
+       &= 145
+\end{work}
+
+          \item The notes said that for a \emph{line} you report two points rather than naming a
+                transformation. Give the reason, in your own words.
+
+\writelines{2}
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Find the typo.} Each student below typed something into a graphing calculator and
+        got a graph that does not match what they were asked for. Name the error and give the
+        keystrokes that fix it.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item Asked for: the exponential parent moved \emph{right} $5$. Typed:
+                \texttt{Y1=2\^{}X-5}.
+
+\writelines{2}
+
+          \item Asked for: the quadratic parent \emph{reflected over the $x$-axis}. Typed:
+                \texttt{Y1=(-X)\^{}2}. The screen showed a parabola opening \emph{upward}.
+
+\writelines{2}
+        \end{enumerate}
+
+  \item \textbf{The window.} A classmate typed $y=(x-15)^2-40$ correctly and pressed
+        \texttt{ZOOM}\,\texttt{6}, which sets the standard window $-10 \le x \le 10$,
+        $-10 \le y \le 10$. The screen came up empty.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item Explain why the screen is empty, using the anchor point.
+
+\writelines{1}
+
+          \item Give four window values that would show the vertex and both sides of the curve, and
+                say how you chose them \emph{from the equation}, without graphing anything.
+
+\writelines{2}
+        \end{enumerate}
+
+  \item \textbf{Justify.} A classmate says: ``My calculator screen looks exactly like the printed
+        graph, so my equation must be right.'' Explain why that is not proof --- use $y=(x-3)^2$ and
+        $y=(x-3)^2+0.5$ as your example --- and then say what \emph{would} be proof.
+
+\writelines{3}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

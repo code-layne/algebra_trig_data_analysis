@@ -5,25 +5,31 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-05** — Authored **Unit 2 Lesson 2.2 (Parent Functions and Transformations,
-`AFDA.AF.1a–b`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework,
-all five keys, and the deck. This is the unit's **first transformation lesson** and the first to
-use the AFDA guidance's own six-notation list. `make -C unit02/lesson02 all` and `check` both
-pass; every numeric claim in both blank and key was verified in pure Python first. The boxguard
-eyeball pass found **two real violations invisible to the gate** (a stranded write-line atop
-homework p4, a stranded single line atop plan p4), both fixed. **11 of 59 lessons authored.**
+**2026-08-05** — Authored **Unit 2 Lesson 2.3 (Equations and Graphs in Both Directions,
+`AFDA.AF.1d, f`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework,
+all five keys, and the deck. This is the unit's **first both-directions lesson** and the course's
+**first technology lesson** (the TI-84 as a verification tool, not an oracle).
+`make -C unit02/lesson03 all` and `check` both pass; every numeric claim in both blank and key was
+verified in pure Python first. The boxguard eyeball pass found **one real violation invisible to the
+gate** (the homework's remindbox alone on p4) plus a **figure defect no check can see** (a pgfplots
+legend printing on top of its own panel title), both fixed. **12 of 59 lessons authored.**
 
-*Previous run (same day): authored **Unit 2 Lesson 2.1 (Function Fundamentals: Notation, Domain,
+*Previous run (same day): authored **Unit 2 Lesson 2.2 (Parent Functions and Transformations,
+`AFDA.AF.1a–b`)** in full — the unit's first transformation lesson and the first to use the AFDA
+guidance's own six-notation list. The boxguard pass found two real violations invisible to the gate
+(a stranded write-line atop homework p4, a stranded single line atop plan p4), both fixed.*
+
+*Earlier run (same day): authored **Unit 2 Lesson 2.1 (Function Fundamentals: Notation, Domain,
 and Range, `AFDA.AF.2a, e`)** in full. The unit's first content lesson and the first to teach set
 and interval notation; the boxguard pass found no violations.*
 
-*Earlier run (same day): authored **Unit 2 Lesson 2.0 (Unit Opener: Functions as Models)** in full.
+*Earlier still (same day): authored **Unit 2 Lesson 2.0 (Unit Opener: Functions as Models)** in full.
 This is **the first lesson of the AFDA half** and the course's **first graph-reading lesson**:
 seven pre-drawn `pgfplots` figures, no sketching anywhere. The boxguard eyeball pass found **one
 real violation invisible to the gate** (a stranded stub atop homework p3) plus two dead-space wins;
 all resolved.*
 
-*Earlier run (same day): built **Unit 1's summative layer** — the `unit01/unit_cover/` +
+*Earlier still (same day): built **Unit 1's summative layer** — the `unit01/unit_cover/` +
 `unit_cover_key/` pair (the course's first unit cover) and all four unit assessments
 (`tests/practice_test`, `tests/actual_test`, `test_keys/practice_test_key`,
 `test_keys/actual_test_key`). All four are 4 pages blank and key; the cover is 1 pp student /
@@ -49,8 +55,131 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (11 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`,
-  `unit02/lesson01`, and `unit02/lesson02`.** Every component written, built, and gated.
+- **Authored (12 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`,
+  `unit02/lesson01`, `unit02/lesson02`, and `unit02/lesson03`.** Every component written, built, and
+  gated.
+- **`unit02/lesson03` — Equations and Graphs in Both Directions (`AFDA.AF.1d, f`).** Unit 2's
+  first both-directions lesson, and **the course's first technology lesson.**
+  - Spine: **2.2 asked students to *describe* a move they were shown; 2.3 asks them to *produce* the
+    other representation.** That is why `1d` and `1f` are one lesson — they are the same translation
+    run in opposite directions. The second sentence is **"verify" is the standard's own word, and
+    verify means check, not decide.**
+  - **The best idea in the lesson: a matching picture is not proof.** $y=(x-3)^2$ and
+    $y=(x-3)^2+0.5$ differ by half a unit everywhere, which on a screen showing $-10$ to $10$ in
+    ~$63$ pixel rows is one or two pixels — the two look identical and are different functions. Only
+    a substitution settles it. This is stated in notes box 3, framed on its own deck slide, and
+    assessed as Tier E item 3. It is the lesson's answer to "the calculator said so."
+  - **Hook is a typing error, and it is 2.2's spine wearing keystrokes.** Two students are told to
+    graph $2^x$ moved right $5$; A types `Y1=2^X-5`, B types `Y1=2^(X-5)`. 2.2's outside-or-inside
+    question is now literally *did you type the parentheses*. Resolved with one number: right $5$
+    means the image at $x=5$ shows the parent's $2^0=1$; A gives $27$, B gives $1$.
+    **Deliberately no vote this time** — 2.2's hook spent the vote, and today's point is the
+    opposite one (you do not need consensus, you need a number). The plan says so explicitly.
+  - **Warm-up item 2 is the hook planted** ($2^x-5$ vs $2^{x-5}$ at $x=5$, giving $27$ and $1$) and
+    the teachernote says to score it and stop — resolving it kills the hook. Item 1's table for
+    $(x-2)^2$ is not filler: it is the same arithmetic notes box 1 asks for, done once with no
+    transformation language attached. Item 3(c) ($-x^2$) is the negative-key trap in advance.
+  - **The no-sketching rule was satisfied four times and the pattern is now settled**: a pre-drawn,
+    pre-scaled grid with **the parent already plotted**, a table of image points to complete, and
+    "plot your five points and join them." Used in notes box 1, activity Tier R, exit ticket item 1,
+    and homework item 2. **The key adds the image curve plus `only marks` dots inside the same
+    axis** — identical axis dimensions, so parity is free. Reuse this verbatim for 2.4–2.7.
+  - **Grids meant for plotting need a gridline at every integer**; grids meant for *reading* need
+    sparse tick labels plus `minor x/y tick num` so values land on a visible line without crowding
+    the labels. Both forms are in this lesson (box 1 vs box 2) and the distinction is worth keeping.
+  - Notes = 5 vocab terms (anchor point, pre-image and image, transformation form, viewing window,
+    substitution check) + three boxes: **equation $\to$ graph** (the anchor routine on
+    $y=(x-2)^2-3$, anchor $(0,0)\to(2,-3)$, five points carried, then plotted); **graph $\to$
+    equation** (three panels, one landmark each) ; and **the calculator** (the four keys, the hook
+    resolved on two panels, three traps, and the not-proof rule). In-text blanks: *anchor*,
+    *inside*, *right*, *outside*, *down*, *$(2,-3)$*, *shape*, *vertex*, *asymptote*, *two points*,
+    *steeper*, *B*, *parentheses*, *window*, *substituting*.
+  - **Box 2's three landmarks are the content of `AF.1d`**: quadratic $\to$ the **vertex**;
+    exponential $\to$ the **asymptote** plus the point on the $y$-axis; linear $\to$ **two
+    points**. The exponential row is the hard one and the reason is structural — students have been
+    trained for a week to hunt for a turning point and an exponential has none. The prompt in the
+    plan is *where was that dashed line before it moved?*
+  - **The line gets its own honest warning, and it is the guidance's own reason.** The AFDA guidance
+    says a linear function's equation "can be determined by two points… or by the slope and a
+    point" — because for a line the transformations are *not distinguishable*: $2f(x)$ and $f(2x)$
+    are both $y=2x$, and a sideways slide looks identical to a vertical one. 2.2's log flagged both
+    coincidences; 2.3 states them out loud and tells students to stop asking which move "really"
+    happened. Tier A item 4(c) asks them to justify that.
+  - **Finding $a$ is taught as three numbers and three checks**: the vertex gives $h$ and $k$, a
+    *second* point gives $a$, and a *third* point checks all three. The insistence that matters is
+    **write the equation with $a$ in it, then substitute** — students who substitute first get the
+    right $a$ by coincidence and cannot repeat it. Guided practice, Tier A item 1, and homework
+    items 4 and 7 all run it.
+  - **The three calculator traps, all real and all worth teaching**: (1) the **parentheses**
+    (`2^X-5` vs `2^(X-5)`); (2) the **two minus keys** — `(-)` negates, `-` subtracts, and
+    `-X^2` gives $-x^2$ while `(-X)^2` gives $x^2$, i.e. the parent again (2.2's warm-up item 3 as
+    keystrokes); (3) the **window** — $y=(x-20)^2+900$ shows nothing in ZStandard, and the fix is
+    read off the anchor point with no graphing. All three are assessed (homework item 5's keystroke
+    matching table, Tier E items 1 and 2).
+  - **Every context exists because the graph cannot answer the question**, which is the honest
+    motive for wanting an equation at all: guided practice **hoodie** $P(x)=-4(x-20)^2+900$
+    (vertex $(20,900)$, zeros $5$ and $35$, $a$ from $(5,0)$) asked at $P(23)=864$ — and $23$ and
+    $864$ both fall between gridlines; homework **yearbook** $P(x)=-2(x-30)^2+1800$ (vertex
+    $(30,1800)$, zeros $0$ and $60$, $a$ from $(60,0)$) asked at $P(35)=1750$, likewise unreadable.
+    "You can't tell" with no mention of gridlines earns nothing.
+  - Other verified numbers: box 2 panels $(x+3)^2+2$, $2^x-4$ (zero at $x=2$, asymptote $-4$),
+    $2x-3$; the $a$ example vertex $(2,1)$ through $(3,3)$ giving $a=2$, checked at $(4,9)$;
+    Tier R $(x+1)^2-4$ ($0,-3,-4,-3,0$) and vertex $(4,0)$; Tier A $3(x-3)^2-2$ (from $(4,1)$,
+    checked at $(5,10)$), $2^x+2$ (range $(2,\infty)$), gym $C(x)=15x+40$ from $(0,40)$ and
+    $(4,100)$, $C(7)=145$; Tier E window $y=(x-15)^2-40$ (anchor $(15,-40)$, $y=60$ at $x=5$ and
+    $25$); exit ticket $(x+2)^2-1$ ($3,0,-1,0,3$) and $2^x-3$; homework $(x-3)^2-2$ ($2,-1,-2,-1,2$),
+    vertex $(1,2)$ through $(2,5)$ giving $a=3$ checked at $(3,14)$; extension $-2(x-4)^2+8$ (zeros
+    $2$, $6$) and the same with $a=-\tfrac12$ (zeros $0$, $8$).
+  - **Exit ticket items 2 and 3 are the same expression on purpose, and it is the sharpest
+    assessment design in the unit so far.** Item 2's *correct* answer is $y=2^x-3$ (asymptote $-3$,
+    through $(0,-2)$); item 3 shows those identical keystrokes *failing* the instruction "moved right
+    $3$" ($2^3-3=5$, not $1$). A student cannot pattern-match through both, and one who marks item 3
+    correct because it matches what they just wrote has told you exactly what they are doing.
+  - **Homework item 10 bridges to 2.4 and deliberately needs no new equation** — it re-asks the
+    yearbook graph for its zeros, its absolute maximum *with location*, and the two stretches where
+    profit rises and falls, all in plain English. *Zero*, *absolute maximum*, and *increasing
+    interval* are 2.4's words. The one thing to insist on is **2.0's rule that an extreme is a value
+    \emph{and} a location** — \$1800 alone is half an answer.
+  - **The extension's part (c) is the cleanest evidence in the lesson that $a$ controls shape and
+    nothing else**: change $-2$ to $-\tfrac12$ and nothing else, and the vertex $(4,8)$ does not
+    move while the two zeros spread from $2,6$ to $0,8$. One change, two consequences and one
+    non-consequence.
+  - Guard sizes: bare on vocab, `[12]` hook, `[30]`/`[30]`/`[30]` on the three notesboxes, `[30]`
+    practice, `[30]` on all three activity tiers, `[24]`/`[30]`/`[24]`/`[26]` on the homework's
+    boxes, `[18]` on the plan's Reinforcement box and each of the five teachernotes, `[16]` on the
+    plan's Individual Work box (2.2's finding, applied pre-emptively and correct first pass).
+  - **Boxguard finding — and the first case in this course where `\tcbbreak` was the right answer
+    on the first build.** The homework's remindbox landed **alone on p4**, a ~0.75in strip on an
+    otherwise blank page, with `make check` clean throughout (the key stranded the same box, so
+    parity was perfect at 4/4). **`\workrowsep` was swept 8pt $\to$ 6, 5, 4, 2, 0pt and never bought
+    the page back**, so the 4th page is unavoidable — this is the counter-case to Unit 1's tests,
+    where 8pt did buy a page. The fix is a `\tcbbreak` before extension part (c), sending it over
+    with the remindbox so p4 carries ~2.7in of real content. **Breaking one item earlier (before part
+    (b)) was also tested: still 4 pages, but it left half of p3 empty**, so the later placement is
+    the better balance. Both the sweep and the placement verdict are recorded in comments in the
+    blank and the key. **Note this does not repeal 2.0's rule** — no `\tcbbreak` was authored until
+    the build proved one necessary, which is exactly the rule working.
+  - **A figure defect that no check and no page count can see: a pgfplots `legend` at
+    `at={(0.5,1.02)}, anchor=south` prints on top of the axis `title`.** Notes box 2 panel (a) had
+    both, and "parent | image" overprinted "(a) Quadratic." **Never combine `title` with a legend
+    placed above the axis.** The fix — and the better pattern for a multi-panel row — is to drop the
+    per-panel legend and put one `\scriptsize` caption sentence under the whole row naming the
+    dashed/solid convention once. 2.2's log established that legends above the axis beat crowded node
+    labels; this is its limit.
+  - **Pagination findings, both accepted after the test-then-restore check.** (1) The practice box's
+    guard was lowered `[30]` $\to$ `[16]` to try to fill notes p4's lower half; it split the box and
+    **stranded only the two-line scenario paragraph** at the foot of p4, with the figure and all four
+    items on p5 — worse, and 5 pages either way. Restored, verdict in a comment in both files.
+    (2) **The lesson plan runs 6 pages with the Homework teachernote alone on p6.** Plan pp. 3–4 are
+    completely full and p5 holds four teachernotes with no slack, so the break is forced. The note is
+    a *complete, substantial box*, not a stranded stub, so this is dead space rather than a boxguard
+    violation — accepted, and worth knowing that five teachernotes at this length overflow a 5-page
+    plan.
+  - **A wide Beamer table wants the `X` column on the prose column here too** (2.1's rule, second
+    confirmation): the landmark frame at `p{2.3cm} p{4.6cm} X` hyphenated "two points you can read
+    ex-actly"; `p{2.1cm} p{5.2cm} X` fixed it with no overfull anywhere in the deck.
+  - Page counts: cover 1, warm-up 1/1, notes 5/5, activity 3/3, exit ticket 1/1, homework 4/4;
+    student and key packets 20 pages each. Plan 6 pp, slides 11 frames (4 pp printed 3-up).
 - **`unit02/lesson02` — Parent Functions and Transformations (`AFDA.AF.1a–b`).** Unit 2's first
   transformation lesson.
   - Spine: **every transformation answers one question — did the *outputs* change or did the
@@ -714,28 +843,30 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
 
 ## Next steps
 
-1. Commit / PR **Lesson 2.2** (user to confirm).
-2. Then author **Unit 2's remaining content lessons, 2.3 → 2.7**, in order. The threads are planted:
-   2.3 gets 2.2's six notations *and* 2.2's homework item 10 (both equations written from one
-   figure, plus a prediction of the calculator screen); 2.4 gets 2.0's five reads; 2.5 gets the
-   asymptote preview from 2.0's homework item 9, 2.1's restricted-domain box, and **2.2's
-   $(0,\infty)$ range for $2^x$**, which is already flagged in the notes as "Lesson 2.5 gives that
-   behaviour a name"; 2.7 gets 2.0's adding-vs-multiplying test, which 2.2 restated in notes box 1
-   and assessed in homework item 2.
-   **2.3 is `AFDA.AF.1d, f` — equation $\leftrightarrow$ graph in both directions, verified on the
-   TI-84.** Its first job is turning 2.2's *describe the move* into *produce the graph* and
-   *produce the equation*. **`AF.1f` says "graph a function… using transformations," so this is the
-   lesson where the course's no-sketching rule bites hardest** — satisfy it with a pre-drawn,
-   pre-scaled grid students complete (plot the transformed key points on given axes), plus TI-84
-   output shown as a figure, never a blank coordinate plane.
-   **Carry 2.2's two habits forward**: say which of the domain and the range moved, and settle
-   every horizontal question by *evaluating at an input*, never by "the sign flips."
+1. Commit / PR **Lesson 2.3** (user to confirm).
+2. Then author **Unit 2's remaining content lessons, 2.4 → 2.7**, in order. The threads are planted:
+   **2.4 gets 2.0's five reads *and* 2.3's homework item 10**, which already asked the yearbook curve
+   for its zeros, its absolute maximum with location, and its two rising/falling stretches in plain
+   English — so 2.4 opens by *naming* what the class produced itself, which is the move 2.2 and 2.3
+   both used; 2.5 gets the asymptote preview from 2.0's homework item 9, 2.1's restricted-domain box,
+   **2.2's $(0,\infty)$ range for $2^x$** (flagged in 2.2's notes as "Lesson 2.5 gives that behaviour
+   a name"), and **2.3's asymptote-as-a-landmark box 2 row**, where students already read a shifted
+   asymptote off a graph; 2.7 gets 2.0's adding-vs-multiplying test, restated in 2.2's notes box 1 and
+   assessed in 2.2's homework item 2.
+   **2.4 is `AFDA.AF.2b–d` — intercepts, zeros, absolute max/min, and increasing/decreasing
+   intervals.** Two habits must carry forward: **2.0's rule that an extreme is a value \emph{and} a
+   location** (\$1800 alone is half an answer — 2.3's homework item 10(b) already drilled it), and
+   **2.3's substitution check**, since `AF.2d`'s zeros are exactly where a substitution gives $0$.
 3. **Every Unit 2 lesson is a graph-reading lesson — pre-draw and pre-scale every axis.** 2.0's
    seven `pgfplots` figures are the model for style (`axis lines=left`, `grid=both` at
-   `linegray!45`, `\scriptsize` tick/label fonts, `royal` plot, integer-friendly tick marks). The
-   course rule against sketching from a blank page bites hardest in this unit; satisfy `AF.1f`
-   ("graph a function… using transformations") in 2.3 with a pre-drawn, pre-scaled grid students
-   complete, plus TI-84 output shown as a figure.
+   `linegray!45`, `\scriptsize` tick/label fonts, `royal` plot, integer-friendly tick marks).
+   **2.3 settled the no-sketching pattern for the rest of the unit** and it should be reused
+   verbatim: a pre-drawn, pre-scaled grid with **the parent already plotted**, a table of image
+   points to complete, and "plot your five points and join them" — with **the key adding the image
+   curve plus an `only marks` plot inside the same axis**, so the axis dimensions and therefore the
+   page parity are unchanged. Also carry 2.3's grid distinction: **a grid meant for plotting needs a
+   gridline at every integer; a grid meant for reading needs sparse tick labels plus
+   `minor x/y tick num`** so values land on a visible line without crowding the labels.
 4. **Unit 2's cover and tests have a model** — copy the shape from `unit01/unit_cover/body.tex`
    and the four `unit01` test files rather than re-deriving: the four-part 100-point blueprint,
    Part C's one-item-per-lesson spine, `work`-blocks-not-`\vspace` for parity, `\workrowsep` at
@@ -754,7 +885,14 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
    **every box in the lesson plan needs a guard, not just the trailing ones** (its Individual Work
    box stranded a line); **a tall `\ans` in a table cell needs a shared strut in the blank** so the
    row height cannot differ; and **check `Overfull \vbox` in the deck's log**, since a wide
-   Beamer table silently overruns the frame.
+   Beamer table silently overruns the frame. From 2.3, add three more: **never combine a pgfplots
+   `title` with a legend placed above the axis** (the legend overprints the title, and no check or
+   page count can see it — use one caption sentence under a multi-panel row instead); **`\workrowsep`
+   does not always buy a page back** (swept 8pt$\to$0pt on 2.3's homework with no change, the
+   counter-case to Unit 1's tests), so when a trailing box strands, reach for a `\tcbbreak` that
+   sends a *substantial* chunk over rather than shaving row separation; and **five teachernotes at
+   full length overflow a 5-page plan** — a complete note alone on a final page is dead space, not a
+   boxguard violation, and is worth accepting once pp. 3–5 are measured full.
 6. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
    For every later unit, check by hand what the gate would have caught: blank/key page parity on
    both test forms, no `teachernote` in any test key, no `\ans` inside math. The Unit 1 run's two
