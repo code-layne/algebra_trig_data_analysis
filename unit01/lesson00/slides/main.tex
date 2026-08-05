@@ -17,10 +17,128 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{The Fourth of July Shell}
+  \sectionlabel[goldacc]{hook}
+  A shell is launched from a platform on a $64$-foot cliff. Its height above the water,
+  in feet, $t$ seconds after launch:
+  \[ h(t) = -16t^2+48t+64 \qquad\text{and also}\qquad h(t) = -16(t-4)(t+1) \]
+  \begin{block}{These are the same function.}
+    The \textbf{safety officer} needs to know when the shell hits the water.\\
+    The \textbf{announcer} needs to know how high the platform is.\\[2pt]
+    Which form would you hand to each one --- and why?
+  \end{block}
+\end{frame}
+
+% ── ARE THEY REALLY THE SAME? ─────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{First: Are They Really the Same?}
+  \sectionlabel{verify by expanding}
+  \[
+  \begin{aligned}
+    -16(t-4)(t+1) &= -16\big(t^2+t-4t-4\big) \\
+                  &= -16\big(t^2-3t-4\big) \\
+                  &= -16t^2+48t+64
+  \end{aligned}
+  \]
+  \begin{block}{The error to avoid}
+    The $-16$ reaches \textbf{every} term inside the parentheses --- not just the first one.
+    This expand-and-compare check verifies every factoring answer you will write this year.
+  \end{block}
+\end{frame}
+
+% ── TWO FORMS, TWO QUESTIONS ──────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Two Forms, Two Questions}
+  \sectionlabel{what each form shows}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{@{}p{4.6cm} p{2.6cm} X@{}}
+    \textbf{The question} & \textbf{Form} & \textbf{What you read off} \\
+    \hline
+    How high is the platform? & expanded & the constant, $64$ feet \\
+    When does it hit the water? & factored & the zero, $t=4$ seconds \\
+  \end{tabularx}
+  \vspace{0.5cm}
+
+  Neither form is ``better.'' \textbf{Fluency is being able to move between them on demand.}
+\end{frame}
+
+% ── THE ZERO THAT DOESN'T COUNT ───────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Two Zeros, One Answer}
+  \sectionlabel{interpret in context}
+  The factored form gives two zeros: $\;t=4\;$ and $\;t=-1$.
+  \vspace{0.3cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.35cm}
+    \item Both are real numbers. Both make $h(t)=0$.
+    \item Only $t=4$ describes the shell --- $t=-1$ is one second \emph{before} the launch.
+    \item Every model has a domain the situation allows. Compute, then ask:
+          \textbf{does this answer mean anything here?}
+  \end{itemize}
+\end{frame}
+
+% ── ROADMAP ───────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Unit 1 Roadmap}
+  \sectionlabel{where we are going}
+  \renewcommand{\arraystretch}{1.25}
+  \small
+  \begin{tabularx}{\textwidth}{@{}c p{2.7cm} X@{}}
+    \textbf{Lesson} & \textbf{Standard} & \textbf{What you will be able to do} \\
+    \hline
+    1.1 & \texttt{A2.EO.3a}    & Exponent rules; add, subtract, multiply polynomials \\
+    1.2 & \texttt{A2.EO.2a--c} & Radicals and rational exponents \\
+    1.3 & \texttt{A2.EO.3b}    & Factor with a GCF and by grouping \\
+    1.4 & \texttt{A2.EO.3b}    & Factor trinomials \\
+    1.5 & \texttt{A2.EO.3b, d} & Special forms and polynomial identities \\
+    1.6 & \texttt{A2.EI.2b, EI.6a--b} & Solve polynomial equations by factoring \\
+    1.7 & \texttt{A2.EO.1a--b} & Simplify rational expressions \\
+  \end{tabularx}
+\end{frame}
+
+% ── WHERE THE ALGEBRA GETS SPENT ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Where This Algebra Gets Spent}
+  \sectionlabel[goldacc]{the bridge}
+  \begin{itemize}
+    \setlength{\itemsep}{0.4cm}
+    \item \textbf{Exponent rules} (1.1) become the \textbf{properties of logarithms} in Unit 3:
+          $\log(ab)=\log a+\log b$ is the same idea written backwards.
+    \item \textbf{Factoring} (1.3--1.5) is what makes equations solvable in 1.6 --- and every
+          trigonometric equation in Unit 8 ends the same way.
+    \item \textbf{Simplifying quotients} (1.7) reduces the counting and probability formulas of
+          Unit 4 to numbers you can compute by hand.
+  \end{itemize}
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: The Spirit-Wear Sale}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  At a price of $x$ dollars per shirt, the robotics club expects to sell $120-4x$ shirts.
+  Revenue, in dollars:
+  \[ R(x) = x(120-4x) \]
+  \begin{block}{Your job}
+    Expand it. Find its zeros. Then explain, in context, why the club takes in \emph{nothing} at
+    \textbf{both} of those prices --- for two different reasons.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.35cm}
+    \item Expand $3x(x-4)$ and compare it with $3x^2-12x$.
+    \item Read the zeros off $H(t)=-2(t-9)(t+1)$ and circle the one that describes the flight.
+    \item ``The factored form is just the better form.'' Do you agree? Name a question the
+          \textbf{expanded} form answers faster.
+  \end{enumerate}
+  \vspace{0.3cm}
+  {\color{royal}\bfseries Next: Lesson 1.1 --- Simplifying Expressions and Exponent Rules.}
 \end{frame}
 
 \end{document}

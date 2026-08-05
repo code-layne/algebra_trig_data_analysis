@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{12pt}
 
 \begin{document}
 
@@ -12,9 +13,33 @@
 
 \vspace{0.15in}
 
-% TODO: author the Exit Ticket. See references/components.md for the expected structure.
-\begin{notesbox}{Exit Ticket}
-\writelines{4}
+\begin{notesbox}{Two Forms, Two Questions --- On Your Own}
+\small
+Notes closed. Three items.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=6pt]
+
+\item Show that $3x(x-4)$ and $3x^2-12x$ are equivalent by expanding the first one.
+\begin{work}
+  3x(x-4) &= 3x^2-12x
+\end{work}
+
+\item A drone's height above a launch pad, in meters, $t$ seconds after takeoff is modeled by
+$H(t) = -2(t-9)(t+1)$. List the zeros of $H$, then circle the one that actually describes the
+drone's flight.
+\begin{work}
+  t-9 &= 0 \text{ or } t+1 = 0 \\
+    t &= 9 \text{ or } t = -1 \\
+    t &= 9 \text{ is the landing time; } t=-1 \text{ is before takeoff}
+\end{work}
+
+\item A classmate says, ``The factored form is just the better form --- it gives you the
+answers.'' Do you agree? Answer in one or two sentences, and name a question the \emph{expanded}
+form answers faster.
+
+\writelines{2}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}
