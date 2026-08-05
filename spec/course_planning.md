@@ -5,19 +5,21 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-05** — Built **Unit 1's summative layer**: the `unit01/unit_cover/` + `unit_cover_key/`
-pair (the course's first unit cover) and all four unit assessments — `tests/practice_test`,
-`tests/actual_test`, `test_keys/practice_test_key`, `test_keys/actual_test_key`. All four are
-**4 pages, blank and key**; the cover is **1 pp student / 2 pp key**. Every numeric claim in both
-forms was verified in pure Python (exact `Fraction` sampling, ~95 rational points per identity)
-before authoring. A **teachernote and boxguard pass** on the six new files found **two real
-boxguard violations, both invisible to any page count**, and both are fixed (see the entry below).
-**Unit 1 is now complete end to end: 8 lessons + cover + two parallel test forms + two keys.**
+**2026-08-05** — Authored **Unit 2 Lesson 2.0 (Unit Opener: Functions as Models)** in full — plan,
+cover, warm-up, guided notes, activity, exit ticket, homework, all five keys, and the deck. This is
+**the first lesson of the AFDA half** and the course's **first graph-reading lesson**:
+seven pre-drawn `pgfplots` figures, no sketching anywhere. `make -C unit02/lesson00 all` and
+`check` both pass; every numeric claim in both blank and key was verified in Python first. The
+boxguard eyeball pass found **one real violation invisible to the gate** (a stranded stub atop
+homework p3) plus two dead-space wins; all resolved. **9 of 59 lessons authored.**
 
-*Previous run (same day): authored **Unit 1 Lesson 1.7 (Simplifying Rational Expressions,
-`A2.EO.1a–b`)** in full — plan, cover, warm-up, notes, activity, exit ticket, homework, all five
-keys, and the deck. `make -C unit01/lesson07 all` and `check` both pass; 90 numeric claims verified
-in Python. That completed Unit 1's seven content lessons plus the opener (8 of 59).*
+*Previous run (same day): built **Unit 1's summative layer** — the `unit01/unit_cover/` +
+`unit_cover_key/` pair (the course's first unit cover) and all four unit assessments
+(`tests/practice_test`, `tests/actual_test`, `test_keys/practice_test_key`,
+`test_keys/actual_test_key`). All four are 4 pages blank and key; the cover is 1 pp student /
+2 pp key. Every numeric claim in both forms was verified in pure Python before authoring, and a
+teachernote/boxguard pass found and fixed two real boxguard violations invisible to any page
+count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test forms + two keys.*
 
 ## Course-wide rules set by the user (2026-08-04)
 
@@ -37,8 +39,72 @@ in Python. That completed Unit 1's seven content lessons plus the opener (8 of 5
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (8 of 59): `unit01/lesson00` through `unit01/lesson07` — Unit 1's lessons are
-  complete.** Every component written, built, and gated.
+- **Authored (9 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete) and
+  `unit02/lesson00`.** Every component written, built, and gated.
+- **`unit02/lesson00` — Unit 2 opener (no new content). The course's first graph-reading lesson.**
+  - Spine: **in Unit 1 you were handed an expression and asked to rewrite it; in Unit 2 you are
+    handed a graph and asked what it says.** That is not a teaching preference — the AFDA
+    "Understanding the Standards" guidance says outright that in AFDA the characteristics of
+    functions are investigated **only from a graph** (analysis from equations is Algebra 2). Say it
+    out loud on day one; it is the rule the whole unit runs on.
+  - Hook and notes box 1 are **one graph that answers every question the unit asks**: a hiker's
+    elevation, $(0,800) \to (2,1600) \to (3,1600) \to (4,2000) \to (6,1000)$, piecewise linear with
+    clean integer reads. It yields domain $[0,6]$, the $E$-intercept $800$, a **constant** stretch
+    ($t=2$ to $3$), absolute max $2000$ at $t=4$, absolute min $800$ at $t=0$, a rate comparison
+    (climb $400$ ft/hr vs. descent $500$ ft/hr) — and, deliberately, **no zeros at all**: the
+    hikers never reach sea level. Students arrive believing every graph crosses the $x$-axis; kill
+    that here, cheaply.
+  - **Two phrases are drilled and both are assessed as errors in Tier E**: an extreme is reported
+    as **value \emph{and} location** ("2000 feet" is half an answer), and **"absolute" means over
+    the whole domain** (on the battery graph the max is $100\%$ at $t=0$, not the $80\%$ top of the
+    charging stretch). The other Tier E critique is domain/range swapped.
+  - Notes box 2 previews the three families with pre-drawn parents $f(x)=x$, $g(x)=x^2$,
+    $h(x)=2^x$; the discriminating question is **adding vs. multiplying**, since a line and an
+    exponential both rise forever. Tier E's three tables make it concrete: $A$ adds $3$ (linear),
+    $B$ multiplies by $2$ (exponential), $C=3x^2$ has constant **second** differences of $6$
+    (quadratic). Groups that only check first differences stall on $C$ — prompt them to difference
+    the differences.
+  - Warm-up = the **Unit 2 diagnostic**, five items, figure-free so it holds one page: function
+    notation *and solving $f(x)=k$* (2.1), an excluded value (2.1/2.5), rate of change from a table
+    (2.2/2.7), intercepts of a line (2.4), evaluate-and-interpret. **Item 1's second half predicts
+    the period** — evaluating is automatic, solving requires knowing which slot the number goes in.
+  - **The Unit 1 → Unit 2 bridge is carried end to end and is the lesson's best thread**: warm-up
+    item 2 is a 1.7 excluded value, notes box 4 names it a *domain restriction*, and homework item 9
+    takes 1.7's own $f(x)=\frac{x+1}{x-3}$, tabulates $f$ at $2.9, 2.99, 3.01, 3.1$
+    ($-39, -399, 401, 41$), and lets students name the vertical asymptote themselves. Accept any
+    description of the graph shooting off; *asymptote* is 2.5's word to introduce, not today's to
+    demand.
+  - Other verified numbers: guided practice $R(p)=-5p^2+60p$ (zeros $0$ and $12$, max $180$ at
+    $p=6$); Tier R $C(m)=2m+3$; Tier A battery $(0,100),(2,70),(3,70),(7,30),(9,80),(10,65)$ — every
+    segment slope an integer, min at $t=7$ = 2 p.m.; exit ticket $h(t)=-16t^2+64t$ (max $64$ ft at
+    $t=2$, range $[0,64]$); homework views $2^d$ hundreds and the savings-plan extension where
+    \$20 doubling passes \$100$+$\$50/month in **month 4** ($320$ vs.\ $300$).
+  - **`pgfplots` needs no per-file load in components** (`atda-article` provides it) but **does** in
+    the deck — the slides carry `\usepackage{pgfplots}` + `\pgfplotsset{compat=1.18}`, per 1.6's
+    finding. The Beamer frames are **light**, so pgfplots axes there use the default (dark) tick
+    labels and a `royal` plot line; do not copy dark-background axis styling into them.
+  - **Three-panel parent-function figures need explicit column gaps.** `@{}ccc@{}` butts the axis
+    boxes together and the quadratic's arms crowd the neighbouring panel. Use
+    `@{}c@{\hspace{0.5cm}}c@{\hspace{0.5cm}}c@{}` (0.9cm on a slide) and size each panel to fit.
+  - **Boxguard findings, one real.** (1) `\tcbbreak` was authored speculatively at two points in
+    the activity and was **wrong both times** — it cost a whole page and left pp. 2–4 roughly 55%
+    empty. Removing both took the activity from 4 pages to 3 with every box complete. Fifth lesson
+    confirming `\tcbbreak` is a per-lesson judgement: **do not author one until a build proves it is
+    needed.** (2) Notes box 2's guard at `[30]` pushed it off a page it could hold; `[22]` (its true
+    height) closed a half page of dead space. (3) The homework look-ahead box at `[24]` was lowered
+    to `[20]` to reclaim dead space and **broke, stranding item 9(c) alone atop p3** — `make check`
+    passed clean throughout, because the key stranded the same lines. Restored to `[24]` with the
+    reason in a comment in both files. **The box measures ~23 baselines; a guard must exceed the
+    box, not approximate it.**
+  - Guard sizes that held: bare on vocab and notesbox 4, `[12]` hook, `[30]`/`[22]`/`[26]` on
+    notesboxes 1–3, `[30]` practice (it opens on a pgfplots axis), `[30]` on all three activity
+    tiers, `[24]`/`[30]`/`[24]`/`[22]` on the homework's boxes, `[18]` on the plan's Reinforcement
+    box **and on each of the five teachernotes** (1.7's finding, applied pre-emptively — the plan
+    came out clean first pass).
+  - Notes p3–p4 each run ~55% full: the practice box measures ~5.4in against ~4.4in free on p3, so
+    the break is the natural one and `[30]` is right-sized. Accepted per 1.5's rule.
+  - Page counts: cover 1, warm-up 1/1, notes 4/4, activity 3/3, exit ticket 1/1, homework 3/3;
+    student and key packets 18 pages each. Plan 5 pp, slides 10 frames (4 pp printed 3-up).
 - **`unit01/unit_cover/` + `unit_cover_key/` — the course's FIRST unit cover pair. Reuse its
   shape for every later unit.**
   - The sheet is `unit_cover/body.tex`; **both** wrappers `\input` it (`unit_cover_key` as
@@ -456,44 +522,56 @@ in Python. That completed Unit 1's seven content lessons plus the opener (8 of 5
 - **Confirmed while authoring 1.3:** the 1.2 guard sizes transferred verbatim to a lesson of the
   same shape (listed in the 1.3 entry above) with no re-measuring and no `\tcbbreak`. Treat that
   set as the default opening bid for an ordinary Unit 1 lesson, then tune per box.
-- **Everything else is still scaffold skeletons**: units 02–08 in full, plus each unit's `tests/`,
-  `test_keys/`, `sample_test/`, `sample_test_key/`.
+- **Everything else is still scaffold skeletons**: `unit02/lesson01`–`lesson07`, units 03–08 in
+  full, plus each unit's `tests/`, `test_keys/`, `sample_test/`, `sample_test_key/`.
 - **Unit 1 is the only unit with a `unit_cover/` pair or authored tests.** `finals/` has not been
   created.
 - Lessons 1.0–1.6 are merged to `main` (PR #4, commit `ca47f7e`; PR #6, commit `248c0c8`; PR #8,
   commit `6a72235`; PR #9, commit `c6b1e1d`; PR #10, commit `5c04bb1`). Lesson 1.7 is merged
-  (PR #11, commit `6578d42`). The unit cover pair and the four test files are on worktree branch
-  `claude/lesson-planning-unit-cover-tests-352ce7`, **not yet committed**.
+  (PR #11, commit `6578d42`); the Unit 1 cover pair and the four test files are merged
+  (PR #12, commit `4ba8611`). Lesson 2.0 is on worktree branch
+  `claude/lesson-planning-generation-2-df1f67`, **not yet committed**.
 
 ## Next steps
 
-1. Commit / PR the Unit 1 cover pair and tests (user to confirm). **Include
-   `unit01/sample_test/main.pdf` and `unit01/sample_test_key/main.pdf`** — they are build outputs,
-   but `unit.mk` reads them from the source tree, so the unit packets cannot merge without them.
-2. Then start **Unit 2 — Functions, Transformations, and Graph Analysis** (`AFDA.AF.1`,
-   `AFDA.AF.2`). 1.7's homework item 13 already hands it the opening: an excluded value is a domain
-   restriction, and in 2.5 it becomes a vertical asymptote.
-3. **Unit 2's cover and tests now have a model** — copy the shape from `unit01/unit_cover/body.tex`
+1. Commit / PR **Lesson 2.0** (user to confirm).
+2. Then author **Unit 2's content lessons, 2.1 → 2.7**, in order. 2.0 has already planted every
+   thread they need: 2.1 gets the excluded value and the "a context sets the domain" line, 2.2 gets
+   the three parents, 2.4 gets the five reads, 2.5 gets the asymptote preview from homework item 9,
+   and 2.7 gets the adding-vs-multiplying test.
+   **2.1 is `AFDA.AF.2a, e` — function notation, and domain and range in context.** Its first job is
+   the input/output confusion 2.0's warm-up item 1 diagnoses, and its second is set and interval
+   notation (the "Understanding the Standards" table on p4 of `12AFDAUnderstanding the Standards.pdf`
+   is the scope: equation/inequality, set notation, interval notation, and $\emptyset$).
+3. **Every Unit 2 lesson is a graph-reading lesson — pre-draw and pre-scale every axis.** 2.0's
+   seven `pgfplots` figures are the model for style (`axis lines=left`, `grid=both` at
+   `linegray!45`, `\scriptsize` tick/label fonts, `royal` plot, integer-friendly tick marks). The
+   course rule against sketching from a blank page bites hardest in this unit; satisfy `AF.1f`
+   ("graph a function… using transformations") in 2.3 with a pre-drawn, pre-scaled grid students
+   complete, plus TI-84 output shown as a figure.
+4. **Unit 2's cover and tests have a model** — copy the shape from `unit01/unit_cover/body.tex`
    and the four `unit01` test files rather than re-deriving: the four-part 100-point blueprint,
    Part C's one-item-per-lesson spine, `work`-blocks-not-`\vspace` for parity, `\workrowsep` at
    8pt as the opening bid, `\parthead` carrying `\boxguard[9]`, and the rationale on
    `unit_cover_key` page 2.
-4. The model now holds across eight lessons. If the parallel-dispatch pattern is used from Unit 2 on
+5. The model now holds across nine lessons. If the parallel-dispatch pattern is used from here on
    (coordinator scaffolds, one subagent per lesson, coordinator builds and gates), give each agent
    the boxguard tuning rule, the 1.2–1.7 guard sizes above, 1.5's "test the guard, then restore it"
    finding, **and 1.6's and 1.7's finding that `make check` passes on a stranded stub** — guard
    placement is the one thing no automated check can catch, so the coordinator must open every PDF.
-   Tell them a `teachernote` in the plan needs a guard too (1.7), and that `\ans` cells holding
-   fractions need `\dfrac` (1.7).
-5. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
+   Tell them a `teachernote` in the plan needs a guard too (1.7), that `\ans` cells holding
+   fractions need `\dfrac` (1.7), and — from 2.0 — that a guard must **exceed** its box, never
+   approximate it, and that **no `\tcbbreak` may be authored until a build proves it is needed**.
+6. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
    For every later unit, check by hand what the gate would have caught: blank/key page parity on
    both test forms, no `teachernote` in any test key, no `\ans` inside math. The Unit 1 run's two
    real findings were *both* boxguard problems that no count could see (a stub page, and a split
    multiple-choice item), so **open all four test PDFs page by page** — that is the only way.
-6. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
+7. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
    guidance in the skill). Unit 1's Part D prompts are the model for the final's synthesis items.
 
 ### Open questions
 
-- None pending. The unit-opener component shape is demonstrated by `unit01/lesson00` and the
+- None pending. The unit-opener component shape is demonstrated by `unit01/lesson00` and
+  `unit02/lesson00` (the latter is the model for a **graph-reading** opener), and the
   ordinary-lesson shape by `unit01/lesson01`; reuse them rather than re-deriving.

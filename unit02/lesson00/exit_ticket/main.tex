@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,41 @@
 
 \vspace{0.15in}
 
-% TODO: author the Exit Ticket. See references/components.md for the expected structure.
-\begin{notesbox}{Exit Ticket}
-\writelines{4}
+\begin{notesbox}{Reading a Graph --- On Your Own}
+\small
+Notes closed. Three items. A soccer ball is kicked straight up from the ground; $h$ is its height
+in feet, $t$ seconds after the kick.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.8cm, height=4.6cm,
+    xlabel={$t$ (seconds)}, ylabel={$h$ (feet)},
+    xmin=0, xmax=4.4, ymin=0, ymax=75,
+    xtick={0,1,2,3,4}, ytick={0,16,32,48,64},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:4, samples=60]{-16*x^2+64*x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=4pt]
+
+\item State the domain and the range of this function in this situation, with units.
+
+\writelines{1}
+
+\item Give the absolute maximum: its value, where it happens, and what it means for the ball.
+
+\writelines{1}
+
+\item A classmate says, ``The domain of every function is all real numbers --- you can always put
+any number in.'' Do you agree? Answer in one or two sentences, using this graph.
+
+\writelines{2}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

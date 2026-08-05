@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,154 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+Today nobody hands you an equation. You get pictures, and every answer is in the picture. Work
+with your group. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R without
+help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+A rideshare charges a flat pickup fee plus a fixed amount per mile. Its cost $C$, in dollars, for
+a ride of $m$ miles is graphed below.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.6cm, height=4.8cm,
+    xlabel={$m$ (miles)}, ylabel={$C$ (dollars)},
+    xmin=0, xmax=10.5, ymin=0, ymax=25,
+    xtick={0,2,4,6,8,10}, ytick={0,5,10,15,20},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:10, samples=2]{2*x+3};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item Read $C(4)$ off the graph. What does that number mean for a rider?
+
+\ansline{$C(4)=11$: a 4-mile ride costs \$11.}\\
+
+  \item Where does the graph meet the vertical axis, and what does that value mean before the
+        car has gone anywhere?
+
+\ansline{At $(0,3)$ --- the \$3 pickup fee, charged for a ride of zero miles.}\\
+
+  \item A rider is charged \$13. How many miles was the ride?
+\begin{work}
+  2m+3 &= 13 \\
+    2m &= 10 \\
+     m &= 5
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+$B$ is the charge left in a phone's battery, in percent, $t$ hours after $7$ a.m.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11.6cm, height=5.2cm,
+    xlabel={$t$ (hours after 7 a.m.)}, ylabel={$B$ (percent charge)},
+    xmin=0, xmax=10.5, ymin=0, ymax=110,
+    xtick={0,1,2,3,4,5,6,7,8,9,10}, ytick={0,20,40,60,80,100},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, mark=*, mark size=1.6pt]
+    coordinates {(0,100) (2,70) (3,70) (7,30) (9,80) (10,65)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item State the domain and the range of this function, with units.
+
+\ansline{Domain $0 \le t \le 10$ hours; range $30 \le B \le 100$ percent.}\\
+
+  \item List every interval on which $B$ is increasing, decreasing, and constant.
+
+\ansline{Decreasing: $0<t<2$, $3<t<7$, and $9<t<10$.}\\
+\ansline{Constant: $2<t<3$. \quad Increasing: $7<t<9$.}\\
+
+  \item Give the absolute maximum and the absolute minimum --- the value \emph{and} where each
+        one happens. Then convert each $t$ to a clock time.
+
+\ansline{Absolute maximum $100\%$ at $t=0$, which is 7 a.m.}\\
+\ansline{Absolute minimum $30\%$ at $t=7$, which is 2 p.m.}\\
+
+  \item Between $t=7$ and $t=9$ the battery went from $30\%$ to $80\%$. What was happening, and
+        at what rate, in percent per hour?
+\begin{work}
+  \text{rate} &= \dfrac{80-30}{9-7} \\
+              &= 25 \text{ percent per hour}
+\end{work}
+
+  \item The phone was in airplane mode for one stretch of the morning. Which piece of the graph
+        shows it, and what is that piece called?
+
+\ansline{The flat piece from $t=2$ to $t=3$ --- a constant interval.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Critique the work.} Two students answered questions about the battery graph.
+        Each is wrong. Name the error and give the correct answer.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item ``Domain: $30 \le B \le 100$. \quad Range: $0 \le t \le 10$.''
+
+\ansline{Swapped: domain is the inputs $0 \le t \le 10$, range the outputs $30 \le B \le 100$.}\\
+
+          \item ``The absolute maximum is $80\%$, because that is the highest the battery ever
+                charged back up to.''
+
+\ansline{Absolute means over the whole domain: the maximum is $100\%$ at $t=0$.}\\
+        \end{enumerate}
+
+  \item \textbf{Which family?} Each table below comes from one of the three families. Decide
+        which, and give the evidence you used.
+        \smallskip
+
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabular}{@{}|c|c|c|c|c|@{}}
+        \hline
+        $x$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+        $A$ & $5$ & $8$ & $11$ & $14$ \\ \hline
+        $B$ & $4$ & $8$ & $16$ & $32$ \\ \hline
+        $C$ & $0$ & $3$ & $12$ & $27$ \\ \hline
+        \end{tabular}
+        \smallskip
+
+\ansline{$A$ is linear: it adds $3$ every step, so the rate of change is constant.}\\
+\ansline{$B$ is exponential: it multiplies by $2$ every step.}\\
+\ansline{$C$ is quadratic: differences $3, 9, 15$ grow by a constant $6$ (it is $3x^2$).}\\
+
+  \item \textbf{Justify.} A classmate says, ``Any graph that keeps going up is exponential.'' Use
+        two of the tables above to show that is wrong.
+
+\ansline{$A$ and $C$ both rise the whole way and neither is exponential:}\\
+\ansline{$A$ adds a constant and $C$ has no constant multiplier ($3/0$ is not even defined).}\\
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
