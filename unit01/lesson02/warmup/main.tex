@@ -3,18 +3,48 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.2}{Warm-Up}
+\pageheader{Unit 1, Lesson 1.2}{Warm-Up --- Undoing a Power}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
 % cover this component is stapled behind. See references/conventions.md.
 
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\begin{notesbox}{Four Moves Today's Lesson Runs On}
+\small
+Item 4 is the one to slow down on --- it uses a rule you already know to force out a rule you
+have not met yet. Show your work on all four.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item \textbf{Spiral --- Lesson 1.1.} Simplify: $\left(5y^3\right)^2$
+\begin{work}
+  \left(5y^3\right)^2 &= 5^2\left(y^3\right)^2 \\
+                      &= 25y^6
+\end{work}
+
+\item \textbf{Perfect powers.} Evaluate each: $\sqrt{144}$, \quad $\sqrt[3]{64}$, \quad $\sqrt{81}$
+\begin{work}
+  \sqrt{144} &= 12 \qquad \sqrt[3]{64} = 4 \qquad \sqrt{81} = 9
+\end{work}
+
+\item \textbf{Hunting perfect squares.} Rewrite each number as (largest perfect-square factor)
+$\times$ (what is left over): \quad $72$, \quad $48$, \quad $200$
+\begin{work}
+  72 &= 36 \cdot 2 \qquad 48 = 16 \cdot 3 \qquad 200 = 100 \cdot 2
+\end{work}
+
+\item \textbf{Discovery.} Lesson 1.1's product rule says $a^m \cdot a^n = a^{m+n}$. Apply it to
+$9^{1/2} \cdot 9^{1/2}$, then finish the sentence: ``So $9^{1/2}$ must be the number that\ldots''
+\begin{work}
+  9^{1/2} \cdot 9^{1/2} &= 9^{\frac12+\frac12} = 9^1 = 9 \\
+  \text{So } 9^{1/2} &\text{ is the number that squares to } 9, \text{ namely } 3.
+\end{work}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,146 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\boxguard[16]
+\begin{notesbox}{Practice --- Radicals and Rational Exponents}
+\small
+Show your work. Leave every answer in exact simplified form: no perfect power left inside a
+radical, and no radical left in a denominator.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item Simplify: $\sqrt{80}$
+\begin{work}
+  \sqrt{80} &= \sqrt{16 \cdot 5} \\
+            &= 4\sqrt{5}
+\end{work}
+
+\item Simplify: $\sqrt[3]{250}$
+\begin{work}
+  \sqrt[3]{250} &= \sqrt[3]{125 \cdot 2} \\
+                &= 5\sqrt[3]{2}
+\end{work}
+
+\item Simplify: $\sqrt{54x^6y^3}$
+\begin{work}
+  \sqrt{54x^6y^3} &= \sqrt{9x^6y^2 \cdot 6y} \\
+                  &= 3x^3y\sqrt{6y}
+\end{work}
+
+\item Combine: $\sqrt{18}+\sqrt{50}-\sqrt{8}$
+\begin{work}
+  \sqrt{18}+\sqrt{50}-\sqrt{8} &= 3\sqrt{2}+5\sqrt{2}-2\sqrt{2} \\
+                               &= 6\sqrt{2}
+\end{work}
+
+\item Multiply: $\left(3\sqrt{2}\right)\left(4\sqrt{6}\right)$
+\begin{work}
+  \left(3\sqrt{2}\right)\left(4\sqrt{6}\right) &= 12\sqrt{12} \\
+                                               &= 12 \cdot 2\sqrt{3} = 24\sqrt{3}
+\end{work}
+
+\item Multiply: $\left(\sqrt{7}+2\right)\left(\sqrt{7}-5\right)$
+\begin{work}
+  \left(\sqrt{7}+2\right)\left(\sqrt{7}-5\right) &= 7-5\sqrt{7}+2\sqrt{7}-10 \\
+                                                 &= -3-3\sqrt{7}
+\end{work}
+
+\item Divide and rationalize: $\dfrac{15}{\sqrt{3}}$
+\begin{work}
+  \dfrac{15}{\sqrt{3}} &= \dfrac{15\sqrt{3}}{3} \\
+                       &= 5\sqrt{3}
+\end{work}
+
+\item Convert each: write $x^{4/5}$ in radical form, and write $\sqrt[3]{y^7}$ with a rational
+exponent.
+\begin{work}
+  x^{4/5} &= \sqrt[5]{x^4} \qquad \sqrt[3]{y^7} = y^{7/3}
+\end{work}
+
+\item Evaluate without a calculator: $81^{3/4}$ and $32^{-2/5}$
+\begin{work}
+  81^{3/4} &= \left(\sqrt[4]{81}\right)^3 = 3^3 = 27 \\
+  32^{-2/5} &= \dfrac{1}{\left(\sqrt[5]{32}\right)^2} = \dfrac{1}{4}
+\end{work}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{scenariobox}[In Context --- Kepler's Third Law]{royal}
+\small
+A planet's distance from the Sun is measured in \emph{astronomical units} (AU); one AU is Earth's
+distance. Kepler's third law says a planet at distance $a$ takes
+\[ T = a^{3/2} \quad \text{Earth years to complete one orbit.} \]
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt, start=10]
+
+\item Rewrite $T=a^{3/2}$ in radical form two different ways.
+\begin{work}
+  T &= \sqrt{a^3} = \left(\sqrt{a}\right)^3
+\end{work}
+
+\item An asteroid orbits at $a=4$ AU. Find its period exactly, without a calculator.
+\begin{work}
+  T &= 4^{3/2} = \left(\sqrt{4}\right)^3 \\
+    &= 2^3 = 8 \text{ years}
+\end{work}
+
+\item Jupiter orbits at about $a=5.2$ AU. Find $T$ to the nearest tenth of a year, then write one
+sentence saying what that means for someone watching Jupiter from Earth.
+\begin{work}
+  T &= 5.2^{3/2} \\
+    &\approx 11.9 \text{ years}
+\end{work}
+\ansline{Jupiter takes almost $12$ Earth years to circle the Sun once.}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[14]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt, start=13]
+
+\item Simplifying $\sqrt{72}$ meant hunting for the largest perfect-square factor and pulling it
+out front. Factoring uses the same habit on a polynomial: find the largest factor every term
+shares and pull it out front. Try it --- rewrite $12x^3-18x^2$ as (that shared factor)
+$\times$ (what is left). This is where Lesson 1.3 begins.
+\begin{work}
+  12x^3-18x^2 &= 6x^2(2x)-6x^2(3) \\
+              &= 6x^2(2x-3)
+\end{work}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[22]
+\begin{extensionbox}
+\small
+\textbf{When does a radical scale proportionally?} A square gate of side $s$ feet needs a diagonal
+brace of length $s\sqrt{2}$ feet. Find the brace for a $6$-foot gate and for a $12$-foot gate.
+Then explain why doubling the side \emph{doubles} the brace, even though quadrupling the drop
+tower's height only \emph{doubled} the fall time.
+\begin{work}
+  6\sqrt{2} &\approx 8.49 \text{ feet} \\
+  12\sqrt{2} &\approx 16.97 \text{ feet}
+\end{work}
+\ansline{$s\sqrt2$ is $s$ times a constant, so it scales with $s$; $\sqrt h$ scales with $\sqrt{\,}$ of $h$.}
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{Next: Lesson 1.3 --- Factoring: GCF and Grouping} (\texttt{A2.EO.3b}). Item 13 already had
+you pull a shared factor out front. Lesson 1.3 gives that move its name and pushes it further, so
+that by Lesson 1.6 you can solve a polynomial equation by reading its factors.
+\end{remindbox}
 
 \end{document}

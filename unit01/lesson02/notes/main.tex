@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,191 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item simplify a radical with a \textbf{numeric or algebraic radicand} by pulling out every
+        perfect $n$th-power factor;
+  \item add, subtract, multiply, and divide radical expressions, including \textbf{rationalizing}
+        a denominator, and simplify the result;
+  \item convert between a radical and a \textbf{rational exponent} in both directions, and
+        evaluate expressions like $27^{2/3}$ without a calculator;
+  \item use a square-root model from a real situation --- speed from a skid mark ---
+        to answer a question and say what the answer means.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together.
+\termblanklong{Radical, radicand, and index}
+\termblanklong{Principal square root}
+\termblanklong{Simplified radical form}
+\termblanklong{Rational exponent}
+\termblanklong{Rationalizing the denominator}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{Reading a skid mark.} Crash investigators estimate how fast a car was going from the
+length of its skid marks. On a road with drag factor $f$, a skid of $d$ feet means the car was
+travelling about
+\[ s = \sqrt{30fd} \quad \text{miles per hour.} \]
+Two cars skid to a stop on the same dry asphalt ($f=0.8$). Car A leaves a $60$-foot skid;
+Car B leaves a $240$-foot skid --- \textbf{four times as long}.
+
+Was Car B going four times as fast? Decide first, then check it.
+
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{1. Simplifying a Radical --- Pull Out the Perfect Powers}
+\small
+$\sqrt[n]{a}$ asks: what number, raised to the $n$th power, gives $a$? The $n$ is the
+\textbf{index}, and $a$ is the \textbf{radicand}. Two properties do all the work:
+\[ \sqrt[n]{ab}=\sqrt[n]{a}\cdot\sqrt[n]{b} \qquad\text{and}\qquad
+   \sqrt[n]{\dfrac{a}{b}}=\dfrac{\sqrt[n]{a}}{\sqrt[n]{b}} \quad (b \ne 0). \]
+So: find the largest perfect $n$th-power factor inside, take its root, and leave the rest.
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{}p{4.4cm} p{4.6cm} X@{}}
+\rowcolor{mist}
+\textbf{Radical} & \textbf{Split off the perfect power} & \textbf{Simplified} \\
+\hline
+$\sqrt{50}$          & $\sqrt{25 \cdot 2}$        & \blank{2.6cm} \\
+$\sqrt[3]{54}$       & $\sqrt[3]{27 \cdot 2}$     & \blank{2.6cm} \\
+$\sqrt{72x^5}$       & $\sqrt{36x^4 \cdot 2x}$    & \blank{2.6cm} \\
+$\sqrt[3]{40y^7}$    & $\sqrt[3]{8y^6 \cdot 5y}$  & \blank{2.6cm} \\
+$\sqrt{\dfrac{49}{16}}$ & $\dfrac{\sqrt{49}}{\sqrt{16}}$ & \blank{2.6cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Careful:} a radical is only simplified when \emph{no} perfect $n$th-power factor is left
+inside. Splitting $\sqrt{72}$ as $\sqrt{4}\cdot\sqrt{18}$ is true but not \blank{3.0cm} --- there
+is still a perfect square hiding in the $18$.
+
+\textbf{Back to the hook} --- Car A's skid, exactly and then as a decimal:
+\begin{work}
+  s &= \sqrt{30(0.8)(60)} \\
+    &= \sqrt{1440} \\
+    &= \sqrt{144 \cdot 10} \\
+    &= 12\sqrt{10} \approx 37.9 \text{ mph}
+\end{work}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[22]
+\begin{notesbox}{2. Rational Exponents --- Nobody Chose These Either}
+\small
+In Lesson 1.1 the zero and negative exponents were \emph{forced} on us by the quotient rule.
+Fractional exponents are forced the same way, by the product rule:
+\[ 9^{1/2}\cdot 9^{1/2} = 9^{\frac12+\frac12} = 9^1 = 9, \]
+so $9^{1/2}$ has to be the number that squares to $9$. That is exactly what $\sqrt{9}$ means.
+
+\begin{itemize}[leftmargin=1.3em, itemsep=3pt, topsep=3pt]
+  \item $a^{1/n} = \sqrt[n]{a}$ \quad --- the denominator of the exponent is the
+        \blank{2.4cm} of the radical.
+  \item $a^{m/n} = \sqrt[n]{a^m} = \left(\sqrt[n]{a}\right)^m$ \quad --- the numerator is the
+        power; take the root first, since the numbers stay smaller.
+\end{itemize}
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{}p{4.2cm} X | p{3.6cm} X@{}}
+\rowcolor{mist}
+\textbf{Radical form} & \textbf{Rational exponent} & \textbf{Evaluate} & \textbf{Value} \\
+\hline
+$\sqrt[3]{x^5}$          & \blank{2.2cm} & $27^{2/3}$   & \blank{2.0cm} \\
+$\sqrt[4]{y^3}$          & \blank{2.2cm} & $16^{-1/2}$  & \blank{2.0cm} \\
+$\sqrt{t}\cdot\sqrt[3]{t}$ & \blank{2.2cm} & $81^{3/4}$ & \blank{2.0cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Every exponent rule from Lesson 1.1 still holds} --- the exponents just became fractions:
+\begin{work}
+  \left(32x^{10}\right)^{3/5} &= 32^{3/5}\left(x^{10}\right)^{3/5} \\
+                              &= \left(\sqrt[5]{32}\right)^3 x^{6} \\
+                              &= 8x^6
+\end{work}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{notesbox}{3. Adding, Subtracting, Multiplying, and Dividing Radicals}
+\small
+\textbf{Adding and subtracting: like radicals only.} Two radicals combine when they have the same
+index \emph{and} the same \blank{2.6cm} --- exactly the like-terms rule from Lesson 1.1, with
+$\sqrt{3}$ playing the part of $x$. Simplify first; radicals that look unlike often are not.
+\begin{work}
+  3\sqrt{12}+\sqrt{75} &= 3\left(2\sqrt{3}\right)+5\sqrt{3} \\
+                       &= 6\sqrt{3}+5\sqrt{3} \\
+                       &= 11\sqrt{3}
+\end{work}
+
+\textbf{Multiplying: every term times every term}, then simplify what lands inside.
+\begin{work}
+  \left(2\sqrt{5}\right)\left(3\sqrt{10}\right) &= 6\sqrt{50} \\
+                                                &= 6 \cdot 5\sqrt{2} \\
+                                                &= 30\sqrt{2}
+\end{work}
+\begin{work}
+  \left(\sqrt{7}+3\right)\left(\sqrt{7}-2\right) &= 7-2\sqrt{7}+3\sqrt{7}-6 \\
+                                                 &= 1+\sqrt{7}
+\end{work}
+
+\textbf{Dividing: rationalize the denominator.} A simplified answer carries no radical downstairs.
+Multiply top and bottom by whatever makes the denominator a perfect power --- you are multiplying
+by $1$, so the value never changes.
+\begin{work}
+  \dfrac{6}{\sqrt{3}} &= \dfrac{6}{\sqrt{3}}\cdot\dfrac{\sqrt{3}}{\sqrt{3}} \\
+                      &= \dfrac{6\sqrt{3}}{3} \\
+                      &= 2\sqrt{3}
+\end{work}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{practicebox}
+\small
+\textbf{The accident report.} A car skids to a stop on \emph{wet} asphalt, where the drag factor
+drops to $f=0.5$. The investigator measures the skid at $d=120$ feet. The posted limit on that
+road is $35$ mph.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+  \item Use $s=\sqrt{30fd}$ to find the speed. Give the exact simplified radical, then round to
+        the nearest tenth.
+\begin{work}
+  s &= \sqrt{30(0.5)(120)} \\
+    &= \sqrt{1800} \\
+    &= \sqrt{900 \cdot 2} \\
+    &= 30\sqrt{2} \approx 42.4 \text{ mph}
+\end{work}
+
+  \item Was the driver speeding? Answer with a number and a sentence.
+
+\writeline
+
+  \item The investigator wants to know how long a skid would mean the car was going
+        \emph{twice} this fast. Explain, using the radical, why the answer is $480$ feet and not
+        $240$ feet.
+\begin{work}
+  \sqrt{30(0.5)(480)} &= \sqrt{7200} \\
+                      &= 60\sqrt{2} \approx 84.9 \text{ mph}
+\end{work}
+\writelines{2}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}
