@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,232 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+Every question today is answered by reading a graph. \textbf{The rule for the whole activity: every
+time you name an asymptote, write it as an \emph{equation} of a line --- $y=$ something or $x=$
+something --- never as a bare number.} And whenever you are tempted to say a graph ``reaches'' a
+value, check whether it really gets there or only gets closer. \textbf{Everyone starts at Tier R.}
+When your whole group can do Tier R without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+The graph shows $D(t)$, the amount of a medicine still in a patient's bloodstream in milligrams,
+$t$ hours after a single dose. The dashed line is a landmark, not part of the graph.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.8cm,
+    xlabel={$t$ (hours after the dose)}, ylabel={$D$ (milligrams)},
+    xmin=0, xmax=8, ymin=-8, ymax=70,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={-8,0,8,16,24,32,40,48,56,64},
+    minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=0:8, samples=2]{0};
+  \addplot[royal, very thick, domain=0:8, samples=120]{64*(0.5)^x};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(0,64) (1,32) (2,16) (3,8) (4,4)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item Read the graph and fill in the table. Then describe the end behavior in words: as $t$ runs
+        off to the right, what do the outputs do?
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$t$ (hours) & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+$D(t)$ (mg) & \ans{$64$} & \ans{$32$} & \ans{$16$} & \ans{$8$} & \ans{$4$} \\
+\hline
+\end{tabular}
+
+\ansline{As $t \to \infty$ the outputs level off toward $0$ --- they keep halving and stay positive.}\\
+
+  \item Give the horizontal asymptote as an \emph{equation}, and say what that line means about the
+        medicine.
+
+\ansline{The horizontal asymptote is $y=0$ (the line, not the bare number $0$).}\\
+\ansline{The amount in the blood keeps shrinking toward zero but never becomes exactly zero.}\\
+
+  \item Answer each one, with a reason in a few words.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item Does $D$ have a zero?
+          \item Does $D$ have an absolute maximum? If so, give its value and location.
+          \item Does $D$ have an absolute minimum?
+        \end{enumerate}
+
+\ansline{(a) No. $D(t)$ is positive for every $t$, so no input makes the output $0$.}\\
+\ansline{(b) Yes: $64$ mg, at $t=0$ --- an endpoint, the moment the dose was taken.}\\
+\ansline{(c) No. Every hour is lower than the one before, so no output is the lowest one.}\\
+
+  \item The bottle says the medicine is \emph{``out of your system in 24 hours.''} Using this graph,
+        is that literally true? Write one sentence a pharmacist could say instead that is both honest
+        and useful.
+
+\ansline{Not literally. By this model some medicine is always left --- the amount approaches $0$}\\
+\ansline{without reaching it. Honest version: ``After 24 hours less than a millionth of the dose is}\\
+\ansline{left, which is far too little to have any effect.'' Small enough to ignore is not zero.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Graph (a) shows $S(w)$, a student's typing speed in words per minute after $w$ weeks of daily
+practice. Graph (b) shows a function $h$ with no context attached. In both, the dashed lines are
+landmarks.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.6cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.6cm, height=4.6cm, title={\scriptsize (a) $S$, typing speed},
+    xlabel={$w$ (weeks of practice)}, ylabel={$S$ (words per minute)},
+    xmin=0, xmax=6, ymin=0, ymax=90,
+    xtick={0,1,2,3,4,5,6}, ytick={0,20,40,60,80}, minor y tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\tiny}]
+  \addplot[linegray, thick, dashed, domain=0:6, samples=2]{80};
+  \addplot[royal, very thick, domain=0:6, samples=120]{80-64*(0.5)^x};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(0,16) (1,48) (2,64) (3,72)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.2cm, height=4.6cm, title={\scriptsize (b) $h$},
+    xmin=-8, xmax=8, ymin=-8, ymax=8,
+    xtick={-8,-6,-4,-2,0,2,4,6,8}, ytick={-8,-6,-4,-2,0,2,4,6,8},
+    minor x tick num=1, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[linegray, thick, dashed, domain=-8:8, samples=2]{0};
+  \addplot[linegray, thick, dashed] coordinates {(-2,-8) (-2,8)};
+  \addplot[royal, very thick, domain=-8:-2.55, samples=120]{4/(x+2)};
+  \addplot[royal, very thick, domain=-1.45:8, samples=120]{4/(x+2)};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Graph (a).} Read the four values off the graph, then describe the end behavior as
+        $w$ runs off to the right and give the horizontal asymptote as an equation.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|@{}}
+\hline
+$w$ (weeks) & $0$ & $1$ & $2$ & $3$ \\ \hline
+$S(w)$ (wpm) & \ans{$16$} & \ans{$48$} & \ans{$64$} & \ans{$72$} \\
+\hline
+\end{tabular}
+
+\ansline{As $w \to \infty$ the speed levels off toward $80$ words per minute --- the gains keep}\\
+\ansline{halving. The horizontal asymptote is $y=80$.}\\
+
+  \item \textbf{Graph (a), the two questions that matter.} Will this student ever type $80$ words per
+        minute? Will they ever type $85$? Answer each and give a different reason for each.
+
+\ansline{$80$: no. The graph approaches $y=80$ and never reaches it --- closer is not there.}\\
+\ansline{$85$: no, and for a stronger reason. $85$ is \emph{above} the asymptote; the graph never}\\
+\ansline{even gets to $80$, so it is nowhere near crossing above it. Two different ``no''s.}\\
+
+  \item \textbf{Graph (a).} Does $S$ have an absolute maximum? Does it have an absolute minimum? For
+        each, give a value and a location or explain why there is none.
+
+\ansline{No absolute maximum: the outputs climb toward $80$ without any output being the highest.}\\
+\ansline{Absolute minimum $16$ wpm at $w=0$ --- an endpoint, the week practice started.}\\
+
+  \item \textbf{Graph (b).} Give both asymptotes as equations, give the domain of $h$, and describe
+        the end behavior at both ends.
+
+\ansline{Vertical asymptote $x=-2$; horizontal asymptote $y=0$.}\\
+\ansline{Domain: every real number except $-2$ --- the one input with no point on the graph.}\\
+\ansline{As $x \to \infty$ the outputs level off toward $0$ from above; as $x \to -\infty$, toward $0$ from below.}\\
+
+  \item \textbf{Graph (b), the transformation question.} The parent here is $y=\dfrac{4}{x}$, whose
+        asymptotes are $x=0$ and $y=0$. Graph (b) is that parent moved \emph{left $2$} (Lesson 2.2).
+        Which asymptote moved, which one did not, and why?
+
+\ansline{The \emph{vertical} asymptote moved, $x=0 \to x=-2$. The horizontal one stayed at $y=0$.}\\
+\ansline{A horizontal slide changes \emph{inputs}, and a vertical asymptote is named by an input, so}\\
+\ansline{it travels. A horizontal line is named by an output, and no output changed --- 2.2's rule.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Two claims, and each one confuses ``close'' with ``there.''} Name the mistake and give
+        the correct statement.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item About the coffee graph in your notes: \emph{``The coffee reaches $20^\circ$C at about
+                $t=8$ hours, because the curve is sitting right on the dashed line there.''}
+
+\ansline{The curve is close enough to the line to look like it, not on it: at $t=8$ the gap is}\\
+\ansline{$0.25^\circ$C. Correct: $C$ approaches $20^\circ$C and never reaches it. $y=20$ is an asymptote.}\\
+
+          \item About $f(x)=\dfrac{x+1}{x-3}$ in your notes: \emph{``This function has a zero at
+                $x=3$, because that is where the graph meets the vertical line.''}
+
+\ansline{A zero and a vertical asymptote are opposites. At a zero the function \emph{has} a value and}\\
+\ansline{that value is $0$; at $x=3$ the function has no value at all --- $3$ is not in the domain, so}\\
+\ansline{there is no point there. The zero is $x=-1$, where the curve crosses the horizontal axis.}\\
+        \end{enumerate}
+
+  \item \textbf{Possible or impossible?} For each description, either name a graph from today that
+        does it, or explain why nothing can.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item Outputs that climb without bound on the right and level off toward a number on the
+                left.
+
+\ansline{Possible: $y=2^x$ (notes box 1, panel (c)). Levels toward $0$ on the left, climbs on the right.}\\
+
+          \item Outputs that level off toward the same number at \emph{both} ends.
+
+\ansline{Possible: $h(x)=\dfrac{4}{x+2}$ above, and $f(x)=\dfrac{x+1}{x-3}$ in the notes (toward $1$).}\\
+
+          \item A graph that crosses its own \emph{vertical} asymptote.
+
+\ansline{Impossible. A vertical asymptote sits at an input that is \emph{not in the domain}, so the}\\
+\ansline{function has no output there and there is no point to plot --- nothing to cross with.}\\
+        \end{enumerate}
+
+  \item \textbf{Where does the asymptote go?} The graph of $y=2^x$ has the horizontal asymptote
+        $y=0$. Give the horizontal asymptote of each function below, then explain why the third one
+        behaves differently from the first two.
+\smallskip
+
+\hspace{1.2em} (a) $y=2^x+3$ \qquad (b) $y=2^x-1$ \qquad (c) $y=2^{x-3}$
+
+\ansline{(a) $y=3$ \qquad (b) $y=-1$ \qquad (c) $y=0$, unchanged.}\\
+\ansline{(a) and (b) change every \emph{output}, so the line the outputs approach moves with them.}\\
+\ansline{(c) is inside the exponent --- it changes \emph{inputs} and slides the graph sideways, and}\\
+\ansline{sliding sideways cannot move a horizontal line. Outside moves it, inside does not (2.2).}\\
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

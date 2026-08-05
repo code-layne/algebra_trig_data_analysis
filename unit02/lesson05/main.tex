@@ -16,79 +16,359 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can describe the end behavior of a graph --- what the outputs do as
+    the inputs run off to the far left and the far right --- using one of three answers: climbs
+    without bound, falls without bound, or levels off toward a number. I can identify horizontal and
+    vertical asymptotes from a graph and name each one as the \emph{equation} of a line, connect a
+    vertical asymptote to the input missing from the domain, and explain why ``gets closer and
+    closer'' is not ``arrives'' --- interpreting both kinds of asymptote in the situation the graph
+    models.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Standards covered:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{AFDA.AF.2f} --- describe the end behavior of a function given its graph.
+  \item \texttt{AFDA.AF.2g} --- identify horizontal and/or vertical asymptotes from the graph of a
+        function, \emph{if they exist}.
+\end{itemize}
+\textbf{Skills students leave with:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Answer the two end-behavior questions ($x \to -\infty$ and $x \to \infty$) with one of
+        \textbf{three} phrases, never with a shrug.
+  \item Name every asymptote as an \textbf{equation of a line} --- $y=20$, $x=3$ --- never as a bare
+        number.
+  \item Tie a vertical asymptote to the \textbf{input missing from the domain}, and say why the graph
+        cannot cross it.
+  \item Distinguish \textbf{approaches} from \textbf{reaches}, and use it to explain no zeros, no
+        absolute maximum, and a range with a parenthesis.
+  \item Interpret both kinds of asymptote in context --- the level a quantity settles toward, and the
+        input a model will not take.
+\end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Getting closer and closer is not arriving.} This is the whole lesson in one sentence,
+        and it is the honest answer to the objection students raised in 2.4 --- ``but it gets so
+        close.''
+  \item \textbf{An asymptote is a \emph{line}, so it gets an equation.} 2.4 built the habit: an
+        intercept is a point, a zero is a number. Today's addition finishes the set.
+  \item \textbf{End behavior is 2.4's axis discipline extended off the page.} The \emph{question} is
+        about inputs running off to $\pm\infty$; the \emph{answer} is about outputs. Two axes, one
+        sentence, again.
+  \item \textbf{A vertical asymptote is the opposite of a zero.} At a zero the function has a value
+        and it is $0$; at a vertical asymptote it has no value at all. The guidance's own domain rule
+        (2.1) is what makes this true.
+  \item \textbf{The guidance's wording is the scope.} ``Asymptotes\dots{} describe local behavior and
+        end behavior''; ``end behavior describes a function's values as $x$ approaches positive or
+        negative infinity.'' Everything today is read \textbf{off a graph}.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+End behavior & What the \emph{outputs} do as the \emph{inputs} run off to the far left and far right:
+    as $x \to -\infty$ and as $x \to \infty$. Three possible answers per end. \\
+Horizontal asymptote & A horizontal line $y=c$ the graph gets arbitrarily close to at one end or
+    both, without reaching it. Named by an equation. \\
+Vertical asymptote & A vertical line $x=a$ at which the outputs run off without bound. The input $a$
+    is \emph{not} in the domain, so the graph has no point there and cannot cross. \\
+Approaches ($\to$) & Gets closer and closer to, without necessarily arriving. ``$x \to \infty$'' is
+    read ``as $x$ approaches infinity.'' \\
+Without bound & Past every ceiling (or below every floor) you could name. Outputs that climb without
+    bound have no absolute maximum. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{The warm-up is five items, and items 1 and 4 are the two plants:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Keep halving $64$; will the list ever reach $0$? --- the hook, in arithmetic
+  \item Last night's coffee: what number did it approach, and did it get there?
+  \item Where is $\frac{4}{x-2}$ undefined, and what is the domain? (Lessons 1.7, 2.1)
+  \item $g(x)=2^x$ at $3, 0, -2, -4$ --- and is any output zero or negative? (Lesson 2.2)
+  \item Interval notation with $\infty$, both directions (Lesson 2.1)
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 4's last question is notes box 1's punchline arriving three
+minutes early --- if the room can say ``all four are positive,'' the exponential's left end will land
+without argument. Item 3 is the whole of vertical asymptotes waiting for a graph: the excluded input
+is \emph{already} the answer.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{Two students, and both of them are telling the truth.} Put last night's coffee back up: the
+gap between the flask and the $20^\circ$C room halves every hour --- $64, 32, 16, 8, 4, 2, 1$. Ask
+\emph{does the coffee ever actually reach $20^\circ$C?} \quad Student A: \textbf{``Yes --- after 12
+hours the gap is $\tfrac{1}{64}$ of a degree, and no thermometer in this school can read that.''}
+Student B: \textbf{``No --- half of a positive number is positive, so the gap is never zero.''}
+\textbf{Pose it this way:} ``Nobody here is wrong about a fact. So are they disagreeing about the
+thermometer, or about the function?'' \textbf{Let them sit with it.} 2.4's hook was settled by naming
+an axis; this one is settled by noticing the two students answered \emph{different questions}. B
+answered the one that was asked. A is right about measurement --- which is a fact about instruments,
+not about $C$. That distinction is the lesson, and every ``it's basically there'' error in the packet
+is a violation of it.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. End behavior (12 min).} Fill the four in-text blanks, then the three-panel table. Insist
+on the \emph{form} of the answer: one of three phrases, per end. \textbf{Two things to land:} the
+question is about inputs running off the page and the answer is about outputs (2.4's rule, extended),
+and panel (c)'s left end is the new one. \textbf{Ask:} ``Going left, does $y=2^x$ ever become
+negative? Ever become zero?'' Then close the loop out loud --- that is why 2.4 found it has no zeros
+and 2.2 found its range was $(0,\infty)$ with a parenthesis.
+
+\textbf{2. Horizontal asymptotes (14 min).} Fill the gap row \emph{before} you define anything; the
+row $64, 32, 16, 8, 4, 2, 1$ is the definition. \textbf{Then resolve the hook} on rule 2 --- do not
+resolve it earlier. Rule 3 is the one to drill: \emph{it is a line, so it gets an equation}. Then the
+three consequences (no zeros, no absolute minimum, range $(20,84]$) --- this is the whole unit in one
+graph, so slow down. Close on the travelling asymptote.
+
+\textbf{3. Vertical asymptotes (12 min).} Open with 2.0's own table ($-39, -399, 401, 41$) and the
+graph it came from. The three rules take five minutes. \textbf{Spend the time on the trap:} a zero
+and a vertical asymptote both make you point at the horizontal axis, and they are opposites. \textbf{Ask
+before you explain:} ``What is $f(3)$?'' There is no such number --- that is the whole idea.
+
+\textbf{4. Guided practice --- the booster club (12 min).} The \$240 setup fee spread thinner and
+thinner. Item 4 (``we can get it down to \$5'') is the payoff: \$5 is \emph{below} the asymptote, so
+ordering more cannot help. \textbf{Ask:} ``What is the cheapest a shirt could ever be?''
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Approaches Is Not Reaches]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The one-page summary students should be able to reproduce:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item \textbf{End behavior} --- two questions ($x \to -\infty$, $x \to \infty$), three possible
+        answers each.
+  \item \textbf{Horizontal asymptote} --- the line an \emph{end} levels off toward. Write $y=c$.
+  \item \textbf{Vertical asymptote} --- the line at an input the domain does not contain. Write
+        $x=a$.
+  \item \textbf{A graph never crosses a vertical asymptote} --- there is no point there to plot.
+  \item \textbf{``Approaches'' $\ne$ ``reaches.''} That is what makes ``none'' the right answer to so
+        many questions.
+\end{enumerate}
+\textbf{Say this out loud:} ``An intercept is a point. A zero is a number. An asymptote is a line.
+Tell me which kind of thing your answer is.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four errors to name before they happen:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{An asymptote written as a bare number.} ``The asymptote is $20$.'' It is $y=20$.
+        Notes rule 3, and every activity tier.
+  \item \textbf{Reading the graph as touching the line.} At $t=8$ the coffee is $0.25^\circ$ away and
+        looks welded to it. Tier E item 1(a), exit-ticket item 3.
+  \item \textbf{Calling a vertical asymptote a zero.} Both make you point at the horizontal axis.
+        Tier E item 1(b), homework item 3.
+  \item \textbf{Assuming ``it levels off'' means ``it stops.''} The reservoir rises every week
+        forever; it just never reaches $100\%$. Homework items 8 and 9.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes box 1, the table:} listen for ``it goes down'' on panel (c)'s left end. It does
+        go down --- and it levels off, which is the answer they need.
+  \item \textbf{Notes box 2, rule 3:} circulate for bare numbers. The correction is one word: ``as an
+        equation.''
+  \item \textbf{Notes box 3:} ask two or three students ``what is $f(3)$?'' A student who names a
+        number has not understood the domain claim.
+  \item \textbf{Activity Tier A item 2:} the two ``no''s have \emph{different} reasons, and groups
+        give one reason twice. Prompt: ``Is $85$ ruled out the same way $80$ is?''
+  \item \textbf{Cold-call prompts:} ``Line, point, or number?'' ``Does it reach it, or approach it?''
+        ``Which input is missing from the domain?'' ``What would the answer be if you ran the graph
+        another mile to the right?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item A drug leaving the bloodstream: read $64, 32, 16, 8, 4$.
+  \item The asymptote $y=0$ as an equation, and what it means.
+  \item No zero, no absolute minimum --- with reasons.
+  \item ``Out of your system in 24 hours'': true or useful?
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Typing speed with a ceiling of $80$ wpm.
+  \item Will they ever type $80$? $85$? \emph{Two different reasons.}
+  \item A graph with both asymptotes, and its domain.
+  \item Which asymptote moved when the graph slid left $2$?
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Two claims that confuse ``close'' with ``there.''
+  \item Possible or impossible? --- including crossing a vertical asymptote.
+  \item Where the asymptote goes under $+3$, $-1$, and $x-3$.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard[16]
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} one warming soda, $T(t)$ in degrees Fahrenheit in a
+$72^\circ$ room. (1) end behavior as $t \to \infty$, the horizontal asymptote \emph{as an equation},
+and what the line means (\texttt{AF.2f}, \texttt{AF.2g}); (2) absolute maximum and minimum --- there
+is \textbf{no maximum} but there \textbf{is} a minimum, $8^\circ$F at $t=0$; (3) \textbf{the
+conceptual check} --- a classmate says the soda reaches $72^\circ$ at $t=5$ ``because the graph is
+sitting on the dashed line.''
+
+\textbf{Using the results:} item 3 is the one to read, and its pairing with item 1 is deliberate ---
+$72$ and the line $y=72$ are both \emph{correct} answers to item 1 and both fail here, exactly as 2.4
+paired its items 2 and 3. Sort into three piles: \emph{said approaches, not reaches}, \emph{restated
+the definition}, and \emph{agreed with the classmate}. \textbf{Item 2's flip is the second trap} ---
+students trained all period on ``no absolute minimum'' will say ``no minimum'' here out of rhythm,
+when the minimum is sitting at the left endpoint. The third pile goes to Tier R in 2.6, where a
+piecewise graph asks them to read one stretch at a time and a student who reads a picture as ``close
+enough'' will merge the pieces.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (10 items): five fluency items --- an end-behavior table off three graphs, the
+asymptotes of four transformed exponentials, a \emph{name-the-term} classification table, a ``how
+many asymptotes and why'' set with no graphing, and a full read of $h(x)=\frac{6}{x-2}$ --- then a
+four-part read of \textbf{the reservoir refilling}, which rises every week forever and is never full.
+
+\textbf{Item 5 has a sting in the tail}: after three questions about the missing input, it asks why
+the graph has no $y$-intercept --- and it \emph{has} one, at $(0,-3)$. A vertical asymptote removes
+one input, not the whole axis. Expect a good number of students to answer the question they were
+primed for rather than the one asked.
+
+\textbf{Item 10 is the bridge to Lesson 2.6.} A delivery fee, flat \$5 for three miles and \$2 a mile
+after, needs \emph{two rules on two stretches} with a hand-off at $m=3$ --- and it has no horizontal
+asymptote, because the fee climbs without bound. Accept plain English; \emph{piecewise} is 2.6's word
+to introduce.
+
+\textbf{Extension (optional):} $2^x$ against $x^2$ for $x=1,\dots,5,10$. They tie at $x=2$ and $x=4$,
+$x^2$ leads at $x=3$, and by $x=10$ it is $1024$ against $100$. \textbf{Same end behavior, wildly
+different graphs} --- which is the honest limit of what end behavior tells you, and the opening
+argument of Unit 3.
+
+\textbf{Preview of Lesson 2.6 (\texttt{AFDA.AF.2}):} piecewise-defined functions --- reading a graph
+that takes more than one rule, and finding all of Unit 2's characteristics on it.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 % Teacher-only prose lives HERE, never in a _key: a note is the one block in a
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
+\boxguard[18]
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{8 minutes, then score it together.} Answers: (1) $4$, $2$, and (a) $1$; (b) no --- half
+    of a positive number is positive; (2) $20^\circ$C, and it never reaches it; (3) undefined at
+    $x=2$, domain every real number except $2$; (4) $8$, $1$, $\tfrac14$, $\tfrac{1}{16}$, and no
+    output is zero or negative; (5) (a) $(20,\infty)$, (b) $x<0$. \textbf{Item 1(b) is the hook in
+    arithmetic and you must not resolve it} --- take the answers, write them on the board, and move
+    on. The word ``asymptote'' has not been said yet and it is worth more after the graph. \textbf{Item
+    4's last question is the item to score slowly}: a room that can say ``all four outputs are
+    positive'' will accept panel (c)'s left end in notes box 1 without a fight, and a room that cannot
+    will argue that $2^{-4}$ ``is basically zero'' --- which is today's error, arriving early and for
+    free. Note who says it. Item 3 looks like Unit 1 revision and is actually the entire content of
+    notes box 3: the excluded input \emph{is} the vertical asymptote, and all box 3 adds is a picture
+    of what happens near it.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{Fill the gap row before defining anything.} Box 2's bottom row --- $64, 32, 16, 8, 4, 2,
+    1$ --- is the definition of a horizontal asymptote written in numbers, and a class that produces
+    it themselves will not need the definition read to them. \textbf{Resolve the hook on rule 2, not
+    before.} The resolution to insist on is not ``B is right'': it is that A and B answered
+    \emph{different questions}, and only one of them was asked. Students who have spent a week being
+    told to check units will want a units answer, and there isn't one --- both students are talking
+    about degrees. \textbf{Rule 3 is the drill of the day.} Every asymptote gets an equation, out
+    loud, every time, from here to the end of the year; it is the third member of 2.4's set (a point,
+    a number, a line). \textbf{Box 2's three consequences are the best five minutes in the lesson} ---
+    no zeros, no absolute minimum, and a range with a parenthesis, all of them questions the class has
+    already asked about this exact graph, all answered by one line. Do not rush them to get to box 3.
+    \textbf{In box 3, ask ``what is $f(3)$?'' before you explain anything.} There is no such number,
+    and that single fact generates all three rules. If time runs short, assign the travelling-asymptote
+    table as reading, but never cut the booster-club practice --- it is the only place both kinds of
+    asymptote are interpreted in one context.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is one graph read four
+    ways; a fluent group clears it in five minutes. Watch for bare numbers where an equation was
+    asked for --- ``the asymptote is $0$'' --- and correct it every single time, because it is the
+    habit the rest of the year depends on. \textbf{Tier R item 4 is worth reading aloud to the room}:
+    the bottle's claim is false as literally written and is still good advice, which is exactly the
+    hook's distinction landing in a second context. \textbf{Tier A item 2 is where groups reliably
+    give one reason twice.} $80$ is ruled out because the graph approaches it without reaching it;
+    $85$ is ruled out because it is on the far side of the asymptote entirely. A group that produces
+    both reasons has understood what an asymptote does. \textbf{Tier A item 5 is the stretch and it
+    pays 2.2 back}: sliding a graph sideways changes inputs, so the \emph{vertical} asymptote travels
+    and the horizontal one does not. \textbf{Tier E item 1(b) is the share-out.} A zero and a vertical
+    asymptote are opposites --- value $0$ versus no value at all --- and that sentence is the one to
+    get on the board before the exit ticket. Item 2(c) is its formal version: nothing can cross a
+    vertical asymptote, because there is no point there to cross with.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Answers: (1) as $t \to \infty$ the
+    outputs level off toward $72$; horizontal asymptote $y=72$; the soda warms toward room temperature
+    and never quite gets there. (2) No absolute maximum; absolute minimum $8^\circ$F at $t=0$, an
+    endpoint. (3) The curve is $2^\circ$ away at $t=5$ and only \emph{looks} welded to the line;
+    correct statement is that $T$ approaches $72^\circ$ and never equals it. \textbf{Items 1 and 3 are
+    the same number on purpose}, the 2.4 pattern reused: $72$ and $y=72$ are correct answers to item 1
+    and wrong ones here, so a student who accepts item 3 because it matches what they just wrote has
+    told you exactly what they are doing. \textbf{Item 2 is the second trap and it flips the period's
+    rhythm} --- everything today has had ``no minimum'' or ``no maximum'' as the answer, and here
+    there is a genuine minimum sitting at the left endpoint. Grade item 3 on whether the words
+    \emph{approaches}, \emph{never}, or \emph{asymptote} appear at all. Do not grade for points; use
+    it to build the 2.6 groups, where a piecewise graph must be read one stretch at a time and a
+    student who reads pictures as ``close enough'' will smear the pieces together.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 25--30 minutes.} Item 3 (name the term) is the fastest to grade and the most
+    diagnostic: end behavior, horizontal asymptote, vertical asymptote, zero, $y$-intercept. A student
+    who swaps the middle two has the confusion the whole lesson is about. Item 4 needs no graphing and
+    is the hardest fluency item --- (a) none/none, (b) one horizontal $y=0$, (c) none/none, (d) one
+    horizontal $y=0$; if it fails, reteach from notes box 1, not from the homework. \textbf{Item 5 is
+    the trap and it is deliberate}: after three questions about the input that is missing, it asks
+    about the $y$-intercept, and there is one, at $(0,-3)$. A vertical asymptote deletes one input,
+    not the whole axis. \textbf{The reservoir items (6--9) are the argument for the lesson}, and item 8
+    is where to spend your attention: no absolute maximum, but a real absolute minimum at $w=0$ --- the
+    same flip the exit ticket runs. Item 9 wants the true-and-useful sentence, and $99.75\%$ is the
+    number that makes it. \textbf{Item 10 is the 2.6 bridge and must be graded on the mathematics, not
+    the vocabulary} --- ``it's flat and then it goes up, and it changes at 3 miles'' is a complete
+    answer today. Its part (d) is the one to check: no horizontal asymptote, because outputs that
+    climb without bound rule one out. The extension is genuinely optional and its part (c) is the best
+    item in the set --- same end behavior, and by $x=10$ one function is ten times the other.
 \end{teachernote}
 \end{document}

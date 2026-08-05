@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,295 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
+\boxguard[24]
+\begin{notesbox}{Practice --- The Ends of the Picture}
+\small
+Every asymptote you name gets written as an \emph{equation} of a line, never as a bare number.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item \textbf{End behavior from three graphs.} Fill the table. Each answer is one of: \emph{climbs
+without bound}, \emph{falls without bound}, or \emph{levels off toward \underline{\hspace{0.7cm}}}.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.4cm}}c@{\hspace{0.4cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=3.9cm, title={\scriptsize (a) $y=-x^2+4$},
+    xmin=-3.4, xmax=3.4, ymin=-5.4, ymax=5.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={-4,-2,0,2,4}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-3:3, samples=90]{-x^2+4};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=3.9cm, title={\scriptsize (b) $y=3^x$},
+    xmin=-3.4, xmax=2.4, ymin=-1.4, ymax=10.4,
+    xtick={-3,-2,-1,0,1,2}, ytick={0,2,4,6,8,10}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[linegray, thick, dashed, domain=-3.3:2.3, samples=2]{0};
+  \addplot[royal, very thick, domain=-3.3:2.1, samples=90]{3^x};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=3.9cm, title={\scriptsize (c) $y=-2x+2$},
+    xmin=-3.4, xmax=3.4, ymin=-4.4, ymax=8.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={-4,-2,0,2,4,6,8}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-3.3:3.3, samples=2]{-2*x+2};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}p{1.4cm} X X p{2.9cm}@{}}
+\rowcolor{mist}
+\textbf{Graph} & \textbf{Far left ($x \to -\infty$)} & \textbf{Far right ($x \to \infty$)} &
+    \textbf{Horizontal}\newline\textbf{asymptote?} \\
+\hline
+(a) & \blank{3.6cm} & \blank{3.6cm} & \blank{2.4cm} \\
+(b) & \blank{3.6cm} & \blank{3.6cm} & \blank{2.4cm} \\
+(c) & \blank{3.6cm} & \blank{3.6cm} & \blank{2.4cm} \\
+\end{tabularx}
+
+\item \textbf{The asymptote travels with the graph} (Lesson 2.2 spiral). The graph of $y=2^x$ has the
+horizontal asymptote $y=0$. Give the horizontal asymptote of each function below as an equation.
+\smallskip
+
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}X p{3.0cm} X p{3.0cm}@{}}
+\rowcolor{mist}
+\textbf{Function} & \textbf{Asymptote} & \textbf{Function} & \textbf{Asymptote} \\
+\hline
+$y=2^x+3$ & \blank{2.6cm} & $y=2^{x+4}$ & \blank{2.6cm} \\
+$y=2^x-1$ & \blank{2.6cm} & $y=-2^x$ & \blank{2.6cm} \\
+\end{tabularx}
+
+\item \textbf{Which one is it?} Label each description with a term from the bank.
+\smallskip
+
+{\footnotesize\textbf{Bank:} zero \quad$\cdot$\quad $y$-intercept \quad$\cdot$\quad end behavior
+\quad$\cdot$\quad horizontal asymptote \quad$\cdot$\quad vertical asymptote}
+\smallskip
+
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}X p{3.6cm}@{}}
+\rowcolor{mist}
+\textbf{The name for\dots} & \textbf{is\dots} \\
+\hline
+what the outputs do as the inputs run off both edges & \blank{3.2cm} \\
+a line the graph nears as the inputs run off to the right & \blank{3.2cm} \\
+an input at which the function has no value and the outputs blow up & \blank{3.2cm} \\
+an input at which the output is exactly $0$ & \blank{3.2cm} \\
+the point where the graph crosses the vertical axis & \blank{3.2cm} \\
+\end{tabularx}
+
+\item \textbf{How many asymptotes?} For each function, say how many horizontal asymptotes and how
+many vertical asymptotes its graph has, and give the reason in a few words. No graphing.
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item $y=x^2-5$
+  \item $y=4^x$
+  \item $y=3x+1$
+  \item $y=\left(\tfrac12\right)^x$
+\end{enumerate}
+
 \writelines{4}
+
+\item \textbf{A graph with a hole in its domain.} Use the graph of $h$ below.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.4cm, height=4.6cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-6, xmax=10, ymin=-8, ymax=8,
+    xtick={-6,-4,-2,0,2,4,6,8,10}, ytick={-8,-6,-4,-2,0,2,4,6,8},
+    minor x tick num=1, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=-6:10, samples=2]{0};
+  \addplot[linegray, thick, dashed] coordinates {(2,-8) (2,8)};
+  \addplot[royal, very thick, domain=-6:1.25, samples=140]{6/(x-2)};
+  \addplot[royal, very thick, domain=2.75:10, samples=140]{6/(x-2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Give the vertical asymptote as an equation, the horizontal asymptote as an equation, the domain of
+$h$, and the end behavior at both ends. Then say why this graph has no $y$-intercept\dots{} or does
+it? Check the picture before you answer.
+
+\writelines{4}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{scenariobox}[In Context --- The Reservoir Refills]{royal}
+\small
+A drought left the town reservoir at $36\%$ of capacity. Each week the inflow refills half of
+whatever is still missing. The graph shows $R(w)$, the percent of capacity $w$ weeks after the rains
+began. The dashed line is a landmark.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.6cm, height=4.6cm,
+    xlabel={$w$ (weeks after the rains began)}, ylabel={$R$ (percent of capacity)},
+    xmin=0, xmax=6, ymin=0, ymax=110,
+    xtick={0,1,2,3,4,5,6}, ytick={0,20,40,60,80,100}, minor y tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=0:6, samples=2]{100};
+  \addplot[royal, very thick, domain=0:6, samples=140]{100-64*(0.5)^x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=6]
+
+\item Read the graph and fill in the table. Then describe the end behavior as $w$ runs off to the
+right.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$w$ (weeks) & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+$R(w)$ (\% full) & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+\hline
+\end{tabular}
+
+\writelines{2}
+
+\item Give the horizontal asymptote as an equation and say what that line means about the reservoir.
+Then name the interval on which $R$ is increasing (Lesson 2.4 spiral).
+
+\writelines{3}
+
+% Unguarded, item 8's stem and two of its three write-line slots sat at the foot of
+% p2 with the third opening p3 -- an answer a student starts at the bottom of one
+% page and finishes at the top of the next. \boxguard is inert inside a breakable
+% tcolorbox, so \tcbbreak is the only lever. Mirrored in homework_key.
+\tcbbreak
+\item Does $R$ have an absolute maximum? Does it have an absolute minimum? Give a value and a
+location where one exists, and say why not where one does not.
+
+\writelines{3}
+
+\item The water authority announces: \emph{``The reservoir will be completely full in 8 weeks.''}
+Using this model, settle the claim. Then write a statement they could make instead that is both true
+and useful to the town. (At $w=8$ the missing share is $0.25\%$.)
+
+\writelines{4}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=10]
+
+\item A delivery service charges a flat \$5 for the first $3$ miles and \$2 per mile after that. The
+graph shows $F(m)$, the fee in dollars for a delivery of $m$ miles. Answer in plain English where you
+do not have the vocabulary yet --- Lesson 2.6 will give you the word.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.6cm, height=4.2cm,
+    xlabel={$m$ (miles)}, ylabel={$F$ (fee, \$)},
+    xmin=0, xmax=8, ymin=0, ymax=16,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={0,5,10,15}, minor y tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,5) (3,5) (8,15)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item Read $F(2)$ and $F(6)$ off the graph, and say what each one means.
+
+\writelines{2}
+
+  \item This graph takes \emph{two} rules to describe: one for the first stretch and one for the
+        rest. Write the two sentences, and say which input is the hand-off point.
+
+\writelines{2}
+
+  \item Describe the end behavior as $m$ runs off to the right, and say what it means about the fee.
+
+\writelines{2}
+
+  \item Does $F$ have a horizontal asymptote? Answer yes or no and give the reason.
+
+\writelines{2}
+\end{enumerate}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[26]
+\begin{extensionbox}
+\small
+\textbf{Same end behavior, very different graphs.} Both $y=2^x$ and $y=x^2$ climb without bound as
+$x$ runs off to the right. That does not mean they climb the same way.
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item Complete the table.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|c|@{}}
+\hline
+$x$ & $1$ & $2$ & $3$ & $4$ & $5$ & $10$ \\ \hline
+$2^x$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} &
+    \blank{1.1cm} \\ \hline
+$x^2$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} &
+    \blank{1.1cm} \\
+\hline
+\end{tabular}
+
+  \item Which is bigger at $x=3$? Which is bigger at $x=10$? Name every input in your table where the
+        two are equal.
+
+\writelines{2}
+
+  \item Both functions have the same end behavior on the right. Write one sentence saying what end
+        behavior \emph{does} tell you and one saying what it does \emph{not}.
+
+\writelines{3}
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{Next: Lesson 2.6 --- Piecewise-Defined Functions} (\texttt{AFDA.AF.2}). Item 10's delivery fee
+needed \emph{two} rules on two different stretches of the domain, with a hand-off at $m=3$. Next
+lesson names that a \textbf{piecewise-defined} function and shows you how to read one, write one, and
+find its characteristics --- including the ones you learned today.
+\end{remindbox}
 
 \end{document}

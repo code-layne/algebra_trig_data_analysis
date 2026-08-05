@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,54 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{One Warming Soda, and a Graph Put On the Line}
+\small
+Notes closed. Three items. A cold soda is taken out of the refrigerator into a room held at
+$72^\circ$F. The graph shows $T(t)$, its temperature in degrees Fahrenheit, $t$ hours later. The
+dashed line is a landmark, not part of the graph.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.2cm, height=4.6cm,
+    xlabel={$t$ (hours out of the refrigerator)}, ylabel={$T$ (degrees F)},
+    xmin=0, xmax=5, ymin=0, ymax=80,
+    xtick={0,1,2,3,4,5}, ytick={0,20,40,60,80}, minor y tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=0:5, samples=2]{72};
+  \addplot[royal, very thick, domain=0:5, samples=120]{72-64*(0.5)^x};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(0,8) (1,40) (2,56) (3,64) (4,68)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=7pt, topsep=4pt]
+
+\item Describe the end behavior of $T$ as $t$ runs off to the right. Give the horizontal asymptote as
+an \emph{equation}, and say in a sentence what that line means about the soda.
+
+\ansline{As $t \to \infty$ the outputs level off toward $72$ --- the gap keeps halving: $64, 32, 16, 8, 4$.}\\
+\ansline{Horizontal asymptote: $y=72$.}\\
+\ansline{The soda warms toward room temperature and gets arbitrarily close without ever reaching it.}\\
+
+\item Does $T$ have an absolute maximum? Does it have an absolute minimum? For each, give a value
+\emph{and} a location, or explain why there is none.
+
+\ansline{No absolute maximum: the outputs climb toward $72$ and no output is the highest one.}\\
+\ansline{Absolute minimum $8^\circ$F at $t=0$ --- at an endpoint, the moment it left the refrigerator.}\\
+
+\item A classmate writes: \emph{``The soda reaches $72^\circ$F at $t=5$ hours --- you can see the
+graph sitting on the dashed line there.''} The number $72$ and the line are both correct answers to
+item 1. Explain what is wrong with the sentence anyway, and write the correct statement.
+
+\ansline{``Approaches'' is not ``reaches.'' At $t=5$ the gap is $2^\circ$F --- the curve only \emph{looks}}\\
+\ansline{like it is on the line at this scale. $y=72$ is an asymptote, so no input ever puts an output on it.}\\
+\ansline{Correct: $T$ approaches $72^\circ$F as $t$ runs off to the right, and never equals it.}\\
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

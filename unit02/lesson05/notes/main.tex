@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,350 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item describe the \textbf{end behavior} of a graph --- what the \emph{outputs} do as the
+        \emph{inputs} run off to the far left and the far right --- with one of three answers: climbs
+        without bound, falls without bound, or levels off toward a number;
+  \item identify a \textbf{horizontal asymptote} from a graph and name it as an \emph{equation} of a
+        line, never as a bare number;
+  \item identify a \textbf{vertical asymptote} from a graph, connect it to the input missing from the
+        domain, and explain why the graph can never cross it;
+  \item explain why ``gets closer and closer'' is not ``arrives'' --- and interpret both kinds of
+        asymptote in the situation the graph models.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together. Every one of them is read straight off a graph.
+\termblanklong{End behavior}
+\termblanklong{Horizontal asymptote}
+\termblanklong{Vertical asymptote}
+\termblanklong{Approaches ($\to$)}
+\termblanklong{Without bound}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{Two students, and both of them are telling the truth.} Last night's coffee cooled in an
+insulated flask in a $20^\circ$C room. Each hour, the gap between the coffee and the room is cut in
+half: the gap runs $64, 32, 16, 8, 4, 2, 1, \dots$ degrees. The question is simple:
+\emph{does the coffee ever actually reach $20^\circ$C?}
+
+\smallskip
+Student A: \textbf{``Yes. After 12 hours the gap is $\tfrac{1}{64}$ of a degree. No thermometer in
+this school can read that --- the coffee \emph{is} at room temperature.''}
+
+\smallskip
+Student B: \textbf{``No. The gap starts at $64$ and gets halved every hour. Half of a positive number
+is positive. It is never zero.''}
+
+\smallskip
+\textbf{Here is the question: are they disagreeing about the thermometer, or about the function?}
+Decide which one answered the question that was asked, and say what the other one is right about.
+
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{1. End Behavior --- Reading the Ends You Cannot See}
+\small
+Every characteristic you have read so far was somewhere you could put a finger: an intercept, a
+turning point, an interval. \textbf{End behavior is the one question about the part of the graph that
+runs off the page.} It always comes in the same two halves.
+
+\vspace{4pt}
+\textbf{As the inputs run off to the \blank{2.2cm}} --- written $x \to \infty$, read ``as $x$
+approaches infinity'' --- what do the outputs do?
+
+\vspace{2pt}
+\textbf{As the inputs run off to the \blank{2.2cm}} --- written $x \to -\infty$ --- what do the
+outputs do?
+
+\vspace{4pt}
+And for each end there are only \textbf{three} possible answers:
+\begin{enumerate}[leftmargin=1.5em, itemsep=1pt, topsep=3pt]
+  \item the outputs climb \blank{3.0cm} (they pass every ceiling you could name);
+  \item the outputs fall without bound;
+  \item the outputs \blank{2.6cm} toward a single number.
+\end{enumerate}
+
+\vspace{4pt}
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.4cm}}c@{\hspace{0.4cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=4.2cm, title={\scriptsize (a) $y=x^2$},
+    xmin=-3.4, xmax=3.4, ymin=-1.0, ymax=10.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={0,2,4,6,8,10}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-3.15:3.15, samples=90]{x^2};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=4.2cm, title={\scriptsize (b) $y=2x-4$},
+    xmin=-3.4, xmax=3.4, ymin=-10.4, ymax=4.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={-10,-8,-6,-4,-2,0,2,4}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-3.3:3.3, samples=2]{2*x-4};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.0cm, height=4.2cm, title={\scriptsize (c) $y=2^x$},
+    xmin=-3.4, xmax=3.4, ymin=-1.4, ymax=8.4,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={0,2,4,6,8}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-3.3:3, samples=90]{2^x};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.5}
+% 2.4's rule: a label column narrow enough to wrap breaks in the wrong place. At
+% \small "(b) $y=2x-4$" overran p{1.5cm} and broke as "(b) y =" / "2x-4".
+% p{2.3cm} holds every row on one line. Mirrored in notes_key.
+\begin{tabularx}{\linewidth}{@{}p{2.3cm} X X@{}}
+\rowcolor{mist}
+\textbf{Graph} & \textbf{Far left}\newline\textbf{(as $x \to -\infty$)} &
+    \textbf{Far right}\newline\textbf{(as $x \to \infty$)} \\
+\hline
+(a) $y=x^2$ & \blank{4.4cm} & \blank{4.4cm} \\
+(b) $y=2x-4$ & \blank{4.4cm} & \blank{4.4cm} \\
+(c) $y=2^x$ & \blank{4.4cm} & \blank{4.4cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Panel (c)'s left end is the new idea, and it is the one to write down.} Going left, the
+outputs of $y=2^x$ never become \blank{1.4cm} and never become negative --- every output is
+\blank{2.0cm}, exactly as your warm-up showed. The curve keeps dropping toward the horizontal axis
+and \blank{1.8cm} arrives. That single fact explains two things you already met: in Lesson 2.4 this
+graph had \textbf{no zeros}, and in Lesson 2.2 its range was $(0,\infty)$ --- with a parenthesis.
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{2. Horizontal Asymptotes --- The Line It Never Reaches}
+\small
+When an end of a graph levels off toward a number, that number names a \textbf{line}, and the line
+has a name.
+
+\vspace{4pt}
+A \textbf{horizontal asymptote} is a horizontal line $y=c$ that a graph gets \blank{4.0cm} to as the
+inputs run off to the left or to the right, without ever \blank{2.6cm} it.
+
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.8cm,
+    xlabel={$t$ (hours after pouring)}, ylabel={$C$ (degrees C)},
+    xmin=0, xmax=6, ymin=0, ymax=90,
+    xtick={0,1,2,3,4,5,6}, ytick={0,20,40,60,80}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=0:6, samples=2]{20};
+  \addplot[royal, very thick, domain=0:6, samples=100]{64*(0.5)^x+20};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-4pt}
+{\scriptsize Last night's flask: $C(t)$ is the coffee's temperature in degrees Celsius, $t$ hours
+after pouring, in a room held at $20^\circ$C. The dashed line is a landmark, not part of the graph.}
+
+\vspace{4pt}
+\textbf{Fill the bottom row --- how far above the room the coffee still is.}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}|l|c|c|c|c|c|c|c|@{}}
+\hline
+$t$ (hours) & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ \hline
+$C(t)$ & $84$ & $52$ & $36$ & $28$ & $24$ & $22$ & $21$ \\ \hline
+Gap above $20$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} &
+    \blank{0.9cm} & \blank{0.9cm} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\textbf{Three rules that settle the hook.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt, topsep=3pt]
+  \item \textbf{A horizontal asymptote is a statement about \blank{3.2cm}.} It describes the far left
+        or the far right of the picture (or both) and promises nothing about the middle.
+  \item \textbf{The graph never gets there.} The gap halves every hour, and half of a positive number
+        is \blank{2.0cm}. There is no hour at which the gap equals $0$. \textbf{Student B answered
+        the question}; student A is right about the thermometer, which is a fact about measuring, not
+        about the function.
+  \item \textbf{It is a line, so it gets an equation.} Write $y=$ \blank{1.4cm}, not the bare number.
+        This is Lesson 2.4's habit in new clothes: an intercept is a \emph{point}, a zero is a
+        \emph{number}, and an asymptote is a \emph{line}.
+\end{enumerate}
+
+\vspace{4pt}
+\textbf{One asymptote settles three questions at once} --- all of them from last night:
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item $C$ has no \blank{2.0cm}: the outputs never drop below $20$, so they certainly never reach $0$.
+  \item $C$ has no absolute \blank{2.2cm}: every hour is lower than the one before, so no output is
+        the lowest one.
+  \item The range of $C$ is \blank{2.6cm} --- a parenthesis at $20$ because it is never attained, and
+        a bracket at $84$ because it is.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{And the asymptote travels with the graph} (Lessons 2.2 and 2.3):
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.4}
+% 2.4's header rule: "Horizontal asymptote" at \small overran p{3.2cm} and broke
+% mid-word as "asymp-/tote". Break a two-part header explicitly. Mirrored in notes_key.
+\begin{tabularx}{\linewidth}{@{}p{4.6cm} p{3.2cm} X@{}}
+\rowcolor{mist}
+\textbf{Function} & \textbf{Horizontal}\newline\textbf{asymptote} & \textbf{What moved it} \\
+\hline
+$y=2^x$ & $y=0$ & --- \\
+$y=2^x-4$ (Lesson 2.3) & \blank{2.4cm} & \blank{4.0cm} \\
+$y=64(0.5)^t+20$ & \blank{2.4cm} & \blank{4.0cm} \\
+\end{tabularx}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{3. Vertical Asymptotes --- Where an Input Goes Missing}
+\small
+In Lesson 2.0 you tabulated $f(x)=\dfrac{x+1}{x-3}$ on either side of $x=3$ and watched the outputs
+explode. Here is the graph those numbers came from.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=5.4cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-8, xmax=12, ymin=-9, ymax=11,
+    xtick={-8,-6,-4,-2,0,2,4,6,8,10,12}, ytick={-8,-6,-4,-2,0,2,4,6,8,10},
+    minor x tick num=1, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=-8:12, samples=2]{1};
+  \addplot[linegray, thick, dashed] coordinates {(3,-9) (3,11)};
+  \addplot[royal, very thick, domain=-8:2.5, samples=140]{(x+1)/(x-3)};
+  \addplot[royal, very thick, domain=3.5:12, samples=140]{(x+1)/(x-3)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-4pt}
+{\scriptsize Your Lesson 2.0 table, unchanged: $f(2.9)=-39$, \ $f(2.99)=-399$, \ $f(3.01)=401$, \
+$f(3.1)=41$. Those four outputs are far off the top and bottom of this picture --- which is the point.}
+
+\vspace{4pt}
+A \textbf{vertical asymptote} is a vertical line $x=a$ at which the outputs run off
+\blank{3.2cm} as the inputs close in on $a$ --- upward on one side, downward on the other.
+
+\vspace{4pt}
+\textbf{Three things are true every single time.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt, topsep=3pt]
+  \item \textbf{The input $a$ is not in the \blank{2.4cm}.} Here $x=3$ makes the denominator $0$, so
+        there is no point on this graph at $x=3$ at all. The domain is every real number
+        \blank{2.6cm}.
+  \item \textbf{The graph can never cross it} --- not because the line is a wall, but because there
+        is \blank{2.6cm} there to plot.
+  \item \textbf{Name it with an equation:} $x=$ \blank{1.2cm}.
+\end{enumerate}
+
+\vspace{4pt}
+\textbf{The trap, and it is worth a line in your notes.} A zero and a vertical asymptote both make
+you point at a spot on the horizontal axis, so they get confused. They are opposites:
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item At a \textbf{zero} the function \emph{has} a value, and that value is \blank{1.2cm}. On this
+        graph the zero is $x=$ \blank{1.4cm}.
+  \item At a \textbf{vertical asymptote} the function has \blank{3.4cm}. On this graph that is
+        $x=3$.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{This graph has a horizontal asymptote too, and that is why \texttt{AF.2g} says ``and/or.''}
+Read the far right: the outputs come down toward \blank{1.2cm}. Read the far left: they come up
+toward the same number. So $y=1$ is a horizontal asymptote, and one graph can carry both kinds at
+once.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{practicebox}
+\small
+The booster club prints spirit shirts. A one-time setup fee of \$240 is charged no matter how many
+shirts are ordered, and each shirt costs \$6 to print. The graph shows $A(x)$, the \emph{average cost
+per shirt} in dollars, when $x$ shirts are ordered.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.6cm, height=4.8cm,
+    xlabel={$x$ (shirts ordered)}, ylabel={$A$ (average cost per shirt, \$)},
+    xmin=0, xmax=130, ymin=0, ymax=45,
+    xtick={0,20,40,60,80,100,120}, ytick={0,5,10,15,20,25,30,35,40,45},
+    minor x tick num=1, minor y tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[linegray, thick, dashed, domain=0:130, samples=2]{6};
+  \addplot[royal, very thick, domain=6.5:130, samples=200]{6+240/x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt]
+  \item Read these average costs off the graph.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$x$ (shirts) & $10$ & $20$ & $40$ & $60$ & $120$ \\ \hline
+$A(x)$ (\$ each) & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+\hline
+\end{tabular}
+
+  \item Describe the end behavior as $x$ runs off to the right. Give the horizontal asymptote as an
+        \emph{equation}, and say what that number is in this story.
+
+\writelines{3}
+
+  \item What happens to the average cost as $x$ gets close to $0$? Give the vertical asymptote as an
+        equation, and say why $x=0$ is not in the domain of this model.
+
+\writelines{3}
+
+  \item A club member says: \emph{``If we order enough shirts, we can get the average cost down to
+        \$5 each.''} Settle it, and use the asymptote in your reason.
+
+\writelines{3}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}
