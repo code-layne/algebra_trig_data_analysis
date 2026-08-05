@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
@@ -12,9 +13,40 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Four Moves Today's Lesson Runs On}
+\small
+Item 4 uses your own answer from item 2 --- do them in order. Show your work on all four.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item \textbf{Spiral --- Lesson 1.2.} Simplify: $\sqrt{48x^3}$
+\begin{work}
+  \sqrt{48x^3} &= \sqrt{16x^2 \cdot 3x} \\
+               &= 4x\sqrt{3x}
+\end{work}
+
+\item \textbf{Spiral --- Lesson 1.1.} Multiply out: \quad (a) $5x(3x-7)$ \quad
+(b) $(x+2)\left(x^2+3\right)$
+\begin{work}
+  5x(3x-7) &= 15x^2-35x \\
+  (x+2)\left(x^2+3\right) &= x^3+2x^2+3x+6
+\end{work}
+
+\item \textbf{Greatest common factor.} Find the largest number that divides both (or all):
+\quad $24$ and $36$; \quad $15$ and $25$; \quad $14$, $21$, and $35$
+\begin{work}
+  24, 36 &\Rightarrow 12 \qquad 15, 25 \Rightarrow 5 \qquad 14, 21, 35 \Rightarrow 7
+\end{work}
+
+\item \textbf{Discovery.} Take your answer to 2(b), $x^3+2x^2+3x+6$. Cover the last two terms and
+pull out what the \emph{first} two share; then do the same for the last two. What do the two
+leftovers have in common?
+\begin{work}
+  x^3+2x^2+3x+6 &= x^2(x+2)+3(x+2) \\
+  \text{Both leftovers are } &(x+2) \text{, so it can be pulled out of the whole thing.}
+\end{work}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

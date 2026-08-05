@@ -3,18 +3,150 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.3}{Group Activity}
+\pageheader{Unit 1, Lesson 1.3}{Group Activity --- The Stage Extension}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
 % cover this component is stapled behind. See references/conventions.md.
 
 \vspace{0.15in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+The drama club is extending the auditorium stage with \textbf{two rectangular platforms} pushed
+together along one edge. The builder sends the total floor area as a single polynomial and nothing
+else --- no drawing, no dimensions. Your job is to recover the shape from the polynomial.
+
+Work with your group. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R
+without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Five fluency moves. Every one of them shows up again in Tier A. Check each answer by multiplying
+back.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Factor completely: $9x+15$
+\begin{work}
+  9x+15 &= 3(3x) + 3(5) \\
+        &= 3(3x+5)
+\end{work}
+
+  \item Factor completely: $8x^2-20x$
+\begin{work}
+  8x^2-20x &= 4x(2x) - 4x(5) \\
+           &= 4x(2x-5)
+\end{work}
+
+  \item Factor completely: $6a^2b+15ab^2$
+\begin{work}
+  6a^2b+15ab^2 &= 3ab(2a) + 3ab(5b) \\
+               &= 3ab(2a+5b)
+\end{work}
+
+  \item Factor completely: $12y^3-18y^2+30y$
+\begin{work}
+  12y^3-18y^2+30y &= 6y\left(2y^2\right) - 6y(3y) + 6y(5) \\
+                  &= 6y\left(2y^2-3y+5\right)
+\end{work}
+
+  \item Factor by grouping: $x^3+2x^2+7x+14$
+\begin{work}
+  x^3+2x^2+7x+14 &= x^2(x+2) + 7(x+2) \\
+                 &= (x+2)\left(x^2+7\right)
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+The builder's first design gives the two platforms a total floor area of
+\[ A(x) = 6x^3+9x^2+8x+12 \quad \text{square feet.} \]
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Factor $A(x)$ by grouping.
+\begin{work}
+  6x^3+9x^2+8x+12 &= 3x^2(2x+3) + 4(2x+3) \\
+                  &= (2x+3)\left(3x^2+4\right)
+\end{work}
+
+  \item The two platforms are pushed together along a shared edge. Which factor is the length of
+        that shared edge, and how do you know?
+
+\writeline
+
+  \item The club builds the $x=2$ version. Find the shared edge, the combined length, and the total
+        area --- then check your area against the original polynomial.
+\begin{work}
+  2x+3 &= 7 \text{ ft} \qquad 3x^2+4 = 16 \text{ ft} \\
+  7 \cdot 16 &= 112 \text{ sq ft} \\
+  6(8)+9(4)+8(2)+12 &= 112 \text{ sq ft} \quad\checkmark
+\end{work}
+
+  \item A second design comes in as $A(x)=10x^3+4x^2+15x+6$. Factor it and give the shared edge.
+\begin{work}
+  10x^3+4x^2+15x+6 &= 2x^2(5x+2) + 3(5x+2) \\
+                   &= (5x+2)\left(2x^2+3\right)
+\end{work}
+
+  \item A third design is $A(x)=4x^3+8x^2+12x+24$. Factor it \textbf{completely} --- watch what
+        every term shares before you group.
+\begin{work}
+  4x^3+8x^2+12x+24 &= 4\left(x^3+2x^2+3x+6\right) \\
+                   &= 4\left[x^2(x+2) + 3(x+2)\right] \\
+                   &= 4(x+2)\left(x^2+3\right)
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item \textbf{Critique the work.} A student turned in these two answers. Neither is acceptable.
+        Write the correct factorization for each, then name the mistake.
+        \[ 18x^3-24x^2 = 3x^2(6x-8) \qquad\text{and}\qquad
+           x^3+3x^2-2x-6 = x^2(x+3)-2(x-3) \]
+\begin{work}
+  18x^3-24x^2 &= 6x^2(3x-4) \\
+  x^3+3x^2-2x-6 &= x^2(x+3) - 2(x+3) = (x+3)\left(x^2-2\right)
+\end{work}
+\writeline
+
+  \item \textbf{Out of order.} A design arrives written as $2x^3-15-5x^2+6x$. Grouping it as
+        written fails. Rewrite the terms in descending order first, then factor by grouping.
+\begin{work}
+  2x^3-15-5x^2+6x &= 2x^3-5x^2+6x-15 \\
+                  &= x^2(2x-5) + 3(2x-5) \\
+                  &= (2x-5)\left(x^2+3\right)
+\end{work}
+\writeline
+
+  \item \textbf{Justify.} A rectangular storage box under the stage has volume
+        $V(x)=2x^3+6x^2+5x+15$ cubic feet and a height of $(x+3)$ feet. Find the area of its base,
+        and explain how the grouping guaranteed that the height divides the volume exactly.
+\begin{work}
+  2x^3+6x^2+5x+15 &= 2x^2(x+3) + 5(x+3) \\
+                  &= (x+3)\left(2x^2+5\right)
+\end{work}
+\writelines{2}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

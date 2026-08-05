@@ -16,56 +16,260 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can find the greatest common factor of a polynomial in one or two
+    variables and pull it out front, and I can factor a four-term polynomial by grouping ---
+    including when a pair needs a negative factored out. I can factor completely, GCF first, and
+    check my answer by multiplying back. I can read a factored area or volume model --- a patio, a
+    stage platform, a shipping crate --- to recover the dimensions of the figure it describes and
+    say what they mean.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Knowledge \& Skills covered --- \texttt{A2.EO.3b}:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{3b} --- Factor polynomials \textbf{completely}, in \textbf{one and two variables},
+        with \textbf{no more than four terms}, \textbf{over the integers}.
+  \item This lesson takes the first two methods: the \textbf{greatest common factor} (any number of
+        terms) and \textbf{grouping} (four terms). Trinomials are Lesson 1.4; the special forms are
+        Lesson 1.5.
+\end{itemize}
+\textbf{Supporting fluency (Lessons 1.1--1.2, not new codes):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item The distributive property and ``every term times every term'' (\texttt{A2.EO.3a}) --- today
+        it runs backwards, and it is also the \emph{check}.
+  \item The exponent rules: the GCF of $x^5$ and $x^3$ is $x^3$ because $x^5=x^3\cdot x^2$.
+  \item ``Largest, not first'' (\texttt{A2.EO.2a}) --- the habit that made $\sqrt{72}=6\sqrt2$
+        rather than $2\sqrt{18}$ is the same habit that makes a factorization complete.
+\end{itemize}
+\textbf{Where this code goes next:} \texttt{A2.EO.3b} continues in 1.4 (trinomials --- and grouping
+is literally the engine) and 1.5 (special forms); \texttt{A2.EI.6a--b} in 1.6, where a factored
+polynomial set equal to zero is a solved equation; \texttt{A2.EO.1a--b} in 1.7, where common
+factors are what cancel in a rational expression.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Factoring is not a new operation --- it is multiplication read right to left.}
+        Students who can distribute can already check every answer they will produce today, which
+        is why ``multiply it back'' is the standing instruction.
+  \item \textbf{Multiplying erases the dimensions; factoring restores them.} $24x^2+36x$ is an
+        area with no shape attached. $12x(2x+3)$ is a patio. That is what factored form buys.
+  \item \textbf{``Completely'' means largest, not first.} $6x(4x+6)$ is a true statement and a
+        wrong answer --- the exact structure of $\sqrt{72}=\sqrt4\cdot\sqrt{18}$ from Lesson 1.2.
+        Name the parallel out loud; it is the same instinct one day apart.
+  \item \textbf{Grouping is the GCF move applied twice.} Nothing new is introduced --- the second
+        pass just pulls out a binomial instead of a monomial, because the distributive property
+        never cared what the shared factor was.
+  \item \textbf{The two leftovers must be identical.} That is the whole diagnostic. A mismatch means
+        a sign or a pairing, not a broken method.
+  \item \textbf{A factor divides evenly.} $V(x)=(x+3)\left(2x^2+5\right)$ means a height of $(x+3)$
+        fits the volume exactly --- the idea that becomes the Factor Theorem later in the course.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Factoring & Writing a sum or difference as a \emph{product}. The distributive property, reversed:
+    $12x+30 = 6(2x+5)$. \\
+Greatest common factor & The largest monomial dividing every term: the greatest common integer
+    factor of the coefficients, times each variable common to all terms with its \emph{smallest}
+    exponent. \\
+Factored completely & The terms inside every factor share no common factor but $1$. \\
+Factoring by grouping & Split four terms into two pairs, take the GCF of each pair, then factor out
+    the binomial both pairs left behind. \\
+Common binomial factor & A whole binomial, e.g. $(x+3)$, shared by both parts and pulled out front
+    exactly as a monomial is. \\
+Prime polynomial & A polynomial that cannot be factored further over the integers --- e.g.
+    $x^2+3$. Say the phrase now; 1.4 and 1.5 need it. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{Four items, about 6 minutes:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Spiral from 1.2: simplify $\sqrt{48x^3}$
+  \item Spiral from 1.1: multiply $5x(3x-7)$ and $(x+2)\left(x^2+3\right)$
+  \item Numeric GCF: $24$ and $36$; $15$ and $25$; $14$, $21$, $35$
+  \item \emph{Discovery}: group the answer to 2(b) into pairs and pull out what each pair shares
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 2(b) is not review --- it is the answer to item 4 handed out
+in advance, so students meet grouping as \emph{their own multiplication reversed} rather than as a
+procedure. Take item 4 out loud before the hook. Item 3 is the diagnostic that matters: a student
+who offers $6$ for $24$ and $36$ will offer $6x$ for the patio and stop early all period.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{The blueprint with the dimensions erased.} A contractor's plan gives a rectangular patio's
+area as $A(x)=24x^2+36x$ square feet, where $x$ is how many feet the owner widens the design. The
+tile crew does not need the area --- they need the two \textbf{side lengths}, and multiplying
+erased them. \textbf{Pose it this way:} ``Can you get the dimensions back out of the area? Decide
+before you compute.'' Then do it on the board:
+\[ 24x^2+36x = 12x(2x) + 12x(3) = 12x(2x+3), \]
+so the patio is $12x$ feet by $(2x+3)$ feet; at $x=5$ that is $60$ ft by $13$ ft, and
+$60 \cdot 13 = 780 = 24(25)+36(5)$ square feet. \textbf{Then put up the trap:}
+$24x^2+36x=6x(4x+6)$ is also true. Ask which one the tile crew can build from. \textbf{Name the
+Lesson 1.2 connection out loud:} $\sqrt{72}=\sqrt4\cdot\sqrt{18}$ was true and unsimplified for
+exactly the same reason --- somebody grabbed the first shared piece instead of the largest.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. The GCF (12 min).} Build the rule from the numbers first: warm-up item 3 is the
+coefficient half, and the variable half is just the exponent rules read backwards. \textbf{Ask:}
+``Why is the GCF of $x^5$ and $x^3$ the \emph{smaller} power?'' Fill the table together. Do
+$6a^2b+9ab^2$ slowly --- it is the standard's two-variable case and the first time students must
+check each variable separately. Close with $-4y^3-12y^2$: factoring out a negative is a choice, and
+it is the one that makes the leading term inside positive.
+
+\textbf{2. Grouping (12 min).} Run warm-up item 4 back on the board \emph{as the students' own
+multiplication reversed}. Nothing new is being introduced: the second pass pulls out a binomial
+instead of a monomial. \textbf{Ask:} ``What must be true about the two leftovers?'' Then the table.
+Row 3 is the sign row --- $-3x+15=-3(x-5)$ --- and it is where the period is won or lost.
+
+\textbf{3. Factoring completely (10 min).} Give the order and defend it: GCF first because it makes
+every later number smaller, not because it is a rule. Work $2x^3+10x^2+6x+30$ both ways if a
+student pushes back --- skipping the GCF is not fatal, just uglier, and seeing that is worth two
+minutes.
+
+\textbf{4. Guided practice (8 min).} The deck job. Item 1 is the computation, item 2 is the
+interpretation with units, item 3 is the justification --- and item 3 is the one to protect if time
+runs short, because it is the hook's idea stated in the students' own words.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Factoring by Grouping]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four steps students record:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{GCF first.} Pull out anything shared by all four terms before pairing.
+  \item \textbf{Pair them} --- first two, last two --- in descending order. Rearrange first if the
+        terms arrive out of order.
+  \item \textbf{Take the GCF of each pair.} If the third term is negative, factor out a
+        \emph{negative} GCF so the leftover binomials can match.
+  \item \textbf{Read the shared binomial out front}, then check by multiplying back.
+\end{enumerate}
+\textbf{Say this out loud:} ``If the two leftovers do not match, the method is fine --- your sign or
+your pairing is not.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example (the sign case):}
+\[
+\begin{aligned}
+x^3-5x^2-3x+15 &= x^2(x-5) - 3(x-5) \\
+               &= (x-5)\left(x^2-3\right)
+\end{aligned}
+\]
+The second pair is $-3x+15$. Factoring out $+3$ gives $3(-x+5)$, which does \emph{not} match
+$(x-5)$; factoring out $-3$ gives $-3(x-5)$, which does. \textbf{The error to name before it
+happens:} writing $-3(x+5)$ --- the sign of the second term inside changes too.
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes, box 1:} watch for a partial GCF ($4$ instead of $8$, $x$ instead of $x^2$)
+        and for the dropped term --- $14x^3-7x^2+21x$ factored as $7x\left(2x^2-x\right)$, with the
+        $+3$ lost because $7x \div 7x = 1$ feels like nothing.
+  \item \textbf{Notes, box 2, row 3:} the sign row. Expect $-3(x+5)$. Do not correct it --- ask the
+        student to multiply $-3(x+5)$ back out and compare.
+  \item \textbf{Notes, box 3:} watch for students who group first and then discover the GCF. It
+        still works; ask them which version had smaller numbers.
+  \item \textbf{Activity, Tier A item 2:} the interpretation item. A group that factors correctly
+        but cannot say \emph{which} factor is the shared edge has not connected the algebra to the
+        stage yet --- that is the conversation to have, not more items.
+  \item \textbf{Cold-call prompts:} ``Is $6x(4x+6)$ wrong?'' ``What must the two leftovers have in
+        common?'' ``How do you know you are done?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Five one-line fluency items: two numeric-plus-variable GCFs, a two-variable GCF, a
+        three-term GCF, and one grouping.
+  \item Support: have the group write the GCF \emph{before} writing any parentheses, and multiply
+        every answer back.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Factor the stage's $A(x)=6x^3+9x^2+8x+12$ and name the shared edge.
+  \item Evaluate at $x=2$ and check $112$ sq ft against the polynomial.
+  \item A second design, then a third that needs the GCF pulled before grouping.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique two wrong answers --- an incomplete GCF and a sign error --- and name each
+        mistake.
+  \item Rearrange $2x^3-15-5x^2+6x$ into descending order, then group.
+  \item Justify: a height of $(x+3)$ divides the volume exactly \emph{because} grouping produced it
+        as a factor.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} (1) factor $18x^3-24x^2$ completely --- answer
+$6x^2(3x-4)$; (2) factor $x^3+7x^2+2x+14$ by grouping --- answer $(x+7)\left(x^2+2\right)$;
+(3) \textbf{the conceptual check} --- a student factors $20x^2+30x$ as $5x(4x+6)$; is it correct, is
+it complete, and what is the complete factorization ($10x(2x+3)$)?
+
+\textbf{Using the results:} the three items sample the lesson's three moves in order --- GCF,
+grouping, ``completely'' --- so a wrong item names what to reteach. Item 1 wrong is usually a
+partial GCF; item 2 wrong is almost always the pairing or the sign, and the student's own work
+shows which; item 3 wrong is the one that matters most, because a student who calls $5x(4x+6)$
+finished will call every trinomial in Lesson 1.4 finished too. Sort the tickets by \emph{which}
+item is wrong; that sort is your Tier R grouping for Lesson 1.4.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (13 items): nine fluency items --- five GCFs (including a two-variable one, a
+three-term one, and a negative GCF) and four groupings (including the sign case and one that needs
+the GCF pulled first) --- then a three-part shipping-crate model
+($V(x)=8x^3+12x^2+10x+15$, factoring to $(2x+3)\left(4x^2+5\right)$, evaluated at $x=3$ as $9$ ft
+$\times$ $41$ sq ft $=369$ cubic feet), and one look-ahead item.
+
+\textbf{Extension (optional):} factor $x(x+4)+3(x+4)$, where the shared piece is a whole binomial,
+then multiply back to $x^2+7x+12$ and explain why a binomial GCF works for exactly the same reason
+a monomial one does --- the distributive property never asked what the shared factor was.
+
+\textbf{Preview of Lesson 1.4 (\texttt{A2.EO.3b}):} factoring trinomials. Homework item 13 makes the
+link explicit --- split $7x$ into $5x+2x$ and $x^2+7x+10$ becomes a four-term grouping problem the
+students can already do. Lesson 1.4 supplies the reliable way to find that split.
+
+\textbf{Connections.} Covers \texttt{A2.EO.3b} (factor completely, one and two variables, at most
+four terms, over the integers) --- specifically the GCF and grouping methods. Builds directly on
+\texttt{A2.EO.3a} (Lesson 1.1, the distributive property, which is also the check) and on
+\texttt{A2.EO.2a}'s ``largest, not first'' habit (Lesson 1.2); feeds \texttt{A2.EO.3b} in 1.4--1.5,
+\texttt{A2.EI.6a--b} in 1.6 (solving by factoring), and \texttt{A2.EO.1a--b} in 1.7 (common factors
+are what cancel).
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +277,58 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{6 minutes, and do the items in order --- item 4 depends on item 2.} Answers:
+    (1) $4x\sqrt{3x}$; (2) $15x^2-35x$ and $x^3+2x^2+3x+6$; (3) $12$, $5$, $7$;
+    (4) $x^2(x+2)+3(x+2)$, both leftovers $(x+2)$. Item 4 is the pivot of the lesson: students
+    multiplied $(x+2)\left(x^2+3\right)$ out in item 2 and are now walking it backwards without
+    being told that is what they are doing. Do not collect it silently --- put both lines on the
+    board and let a student say ``so we could put the $(x+2)$ back out front.'' Item 3 is the
+    cheap diagnostic: a student who answers $6$ for $24$ and $36$ has the exact habit that produces
+    $6x(4x+6)$ twenty minutes later, so fix it here, at the level of whole numbers.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{The tables in boxes 1 and 2 are fill-ins, not handouts.} Answers, box 1: $4$ /
+    $4(2x+5)$; $5x^2$ / $5x^2(3x-5)$; $3ab$ / $3ab(2a+3b)$; $7x$ / $7x\left(2x^2-x+3\right)$;
+    $-4y^2$ / $-4y^2(y+3)$; the in-text blank is \emph{complete}. Box 2: $(x+4)\left(x^2+3\right)$,
+    $(2x-3)\left(3x^2+2\right)$, $(x-5)\left(x^2-3\right)$; the blank is \emph{pairing}. The fourth
+    row of box 1 is the one to work aloud --- students drop the $+3$ because $7x \div 7x = 1$ looks
+    like nothing left. Box 2's third row is the sign case and deserves more time than the other two
+    combined. If the period runs behind, cut box 3's alternate-order discussion (keep the worked
+    example) rather than shortening guided practice.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is five one-liners; a
+    group still on it at six minutes needs you, not more time. In Tier A, item 2 is the real
+    assessment --- a group can factor $6x^3+9x^2+8x+12$ correctly and still not be able to say that
+    $(2x+3)$ is the shared edge, and that gap is the point of the whole activity. Item 3's check
+    against the original polynomial ($112$ square feet both ways) is what convinces the skeptics
+    that the factored form is the same object. Item 5 is the one groups rush: they group first,
+    reach $4\left(x^3+2x^2+3x+6\right)$ the long way, and it still works --- ask them which route
+    had smaller numbers. Tier E item 1 is the one to share out; both errors will be in the room
+    whether or not anyone admits to them.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} The three items are GCF, grouping,
+    and ``completely'' in order, so read the tickets by \emph{which} item is wrong rather than by a
+    score out of three. Item 1 wrong is a partial GCF ($3x^2$ or $6x$ instead of $6x^2$); item 2
+    wrong is a pairing or sign slip and the student's own work will show which; item 3 wrong is the
+    one to act on, because it is a belief, not a slip. On item 3 accept any sentence that says the
+    multiplication checks out but the leftover still shares a $2$ --- the required evidence is the
+    complete factorization $10x(2x+3)$, not the vocabulary.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 20--25 minutes.} Items 1--5 are GCFs and 6--9 are groupings, deliberately
+    unmixed, so a student can tell you which \emph{kind} of problem broke. Item 5 is the negative
+    GCF and item 8 is the sign case --- check those two first when you spot-grade. Item 9 is the
+    only one needing both moves, so a student who factors it as $3(x+2)\left(x^2+5\right)$ has the
+    whole lesson. Items 10--12 are the crate: item 12 asks what the factored form tells the company
+    that the expanded form does not, and the answer wanted is ``the actual dimensions.'' Item 13 is
+    the bridge into Lesson 1.4 --- students split $7x$ into $5x+2x$ and then run the grouping they
+    have practiced all period, so nobody needs a method they have not met. The extension is
+    genuinely optional and is the best follow-up for whoever finished Tier E early.
 \end{teachernote}
 \end{document}

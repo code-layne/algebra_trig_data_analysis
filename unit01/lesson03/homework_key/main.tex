@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,148 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\boxguard[16]
+\begin{notesbox}{Practice --- GCF and Grouping}
+\small
+Show your work. Factor \textbf{completely} every time: when you are done, the terms inside each
+factor should share nothing but $1$. Check by multiplying back.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item Factor: $12x+30$
+\begin{work}
+  12x+30 &= 6(2x) + 6(5) \\
+         &= 6(2x+5)
+\end{work}
+
+\item Factor: $9x^3-15x^2$
+\begin{work}
+  9x^3-15x^2 &= 3x^2(3x) - 3x^2(5) \\
+             &= 3x^2(3x-5)
+\end{work}
+
+\item Factor: $8a^2b^2+20ab^3$
+\begin{work}
+  8a^2b^2+20ab^3 &= 4ab^2(2a) + 4ab^2(5b) \\
+                 &= 4ab^2(2a+5b)
+\end{work}
+
+\item Factor: $16y^4-24y^3+40y^2$
+\begin{work}
+  16y^4-24y^3+40y^2 &= 8y^2\left(2y^2\right) - 8y^2(3y) + 8y^2(5) \\
+                    &= 8y^2\left(2y^2-3y+5\right)
+\end{work}
+
+\item Factor out a \emph{negative} GCF: $-6x^2-15x$
+\begin{work}
+  -6x^2-15x &= -3x(2x) - 3x(5) \\
+            &= -3x(2x+5)
+\end{work}
+
+\item Factor by grouping: $x^3+6x^2+4x+24$
+\begin{work}
+  x^3+6x^2+4x+24 &= x^2(x+6) + 4(x+6) \\
+                 &= (x+6)\left(x^2+4\right)
+\end{work}
+
+\item Factor by grouping: $10x^3-15x^2+8x-12$
+\begin{work}
+  10x^3-15x^2+8x-12 &= 5x^2(2x-3) + 4(2x-3) \\
+                    &= (2x-3)\left(5x^2+4\right)
+\end{work}
+
+\item Factor by grouping (watch the sign): $x^3-2x^2-7x+14$
+\begin{work}
+  x^3-2x^2-7x+14 &= x^2(x-2) - 7(x-2) \\
+                 &= (x-2)\left(x^2-7\right)
+\end{work}
+
+\item Factor completely --- GCF first, then group: $3x^3+6x^2+15x+30$
+\begin{work}
+  3x^3+6x^2+15x+30 &= 3\left(x^3+2x^2+5x+10\right) \\
+                   &= 3\left[x^2(x+2) + 5(x+2)\right] \\
+                   &= 3(x+2)\left(x^2+5\right)
+\end{work}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{scenariobox}[In Context --- The Shipping Crate]{royal}
+\small
+A packing company builds a rectangular crate whose volume is
+\[ V(x) = 8x^3+12x^2+10x+15 \quad \text{cubic feet,} \]
+where $x$ is the size setting on the cutting machine, in feet.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt, start=10]
+
+\item Factor $V(x)$ completely by grouping.
+\begin{work}
+  8x^3+12x^2+10x+15 &= 4x^2(2x+3) + 5(2x+3) \\
+                    &= (2x+3)\left(4x^2+5\right)
+\end{work}
+
+\item The crate's height is $(2x+3)$ feet. Write the expression for the area of its base, then
+find the height, the base area, and the volume when $x=3$. Include units.
+\begin{work}
+  \text{base area} &= 4x^2+5 \\
+  x=3: \quad 2x+3 &= 9 \text{ ft}, \qquad 4x^2+5 = 41 \text{ sq ft} \\
+  V &= 9 \cdot 41 = 369 \text{ cubic feet}
+\end{work}
+
+\item In one sentence, say what the factored form tells the packing company that the expanded form
+does not.
+
+\ansline{It gives the crate's actual dimensions --- height $(2x+3)$ ft and base area $\left(4x^2+5\right)$ sq ft.}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt, start=13]
+
+\item Grouping needs four terms --- but a three-term polynomial can be \emph{turned into} four.
+Factor $x^2+7x+10$ this way: find two numbers that multiply to $10$ and add to $7$, use them to
+split the middle term $7x$ into two terms, then group. This is exactly how Lesson 1.4 factors
+trinomials.
+\begin{work}
+  x^2+7x+10 &= x^2+5x+2x+10 \\
+            &= x(x+5) + 2(x+5) \\
+            &= (x+5)(x+2)
+\end{work}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[18]
+\begin{extensionbox}
+\small
+\textbf{When the common factor is not a monomial.} A rectangle's area is written
+$A(x) = x(x+4)+3(x+4)$. Both pieces share the whole binomial $(x+4)$, so it can be pulled out front
+just like a monomial GCF. Factor it, then multiply your answer back out. Why does treating a
+binomial as ``the shared piece'' work for exactly the same reason a monomial does?
+\begin{work}
+  x(x+4)+3(x+4) &= (x+4)(x+3) \\
+                &= x^2+7x+12 \quad\checkmark
+\end{work}
+\ansline{The distributive property never asked what the shared factor was --- only that it be shared.}
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{Next: Lesson 1.4 --- Factoring Trinomials} (\texttt{A2.EO.3b}). Item 13 already ran the
+engine: split the middle term, then group. Lesson 1.4 gives you a reliable way to find the two
+numbers to split it with, so three-term polynomials stop being guesswork.
+\end{remindbox}
 
 \end{document}
