@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,371 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item read a graph that takes \textbf{more than one rule}, and evaluate it by first asking
+        \emph{which piece owns this input} and then using that piece's rule and only that one;
+  \item explain why a piecewise-defined function is still \textbf{one} function --- every input in
+        the domain belongs to exactly one piece, so every input still has exactly one output;
+  \item use the \textbf{open and closed circles} at a boundary to say what the function's value is
+        there, and to write a range with a bracket or a parenthesis;
+  \item decide whether a graph is \textbf{continuous} at a boundary, and tell a \emph{corner} from a
+        \emph{break};
+  \item find all of Unit 2's characteristics on a piecewise graph --- domain and range, zeros and
+        intercepts, increasing/decreasing/constant intervals, absolute maximum and minimum, end
+        behavior, and asymptotes.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together. Every one of them is read straight off a graph.
+\vocabans{Piecewise-defined function}{one function described by more than one rule, where each rule
+    applies only on its own stretch of the domain. The stretches do not overlap, so every input still
+    has exactly one output.}
+\vocabans{Piece}{one of those rules together with the stretch of inputs it owns. ``Which piece owns
+    this input?'' is the first question you ask before evaluating.}
+\vocabans{Boundary point}{an input where one piece hands off to the next --- $m=3$ on the delivery
+    fee, $h=40$ on the paycheck. It is the input to check whenever anything looks strange.}
+\vocabans{Open circle / closed circle}{the marks at the end of a piece. A \emph{closed} (filled)
+    circle means that endpoint is part of the graph; an \emph{open} circle means it is not. Exactly
+    one filled circle sits above each input of the domain.}
+\vocabans{Continuous / discontinuous}{a graph is \emph{continuous} on an interval if it is defined
+    everywhere on it and can be traced without lifting the pencil. If you must lift the pencil, it is
+    \emph{discontinuous} there, and the gap is called a \textbf{jump}.}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{Two students, one paycheck, and \$60 that nobody can find.} A garden center pays \$12 an hour
+for the first $40$ hours of a week, and \$18 an hour for every hour beyond $40$. A student worked
+$45$ hours. \emph{What is the pay for that week?}
+
+\smallskip
+Student A: \textbf{``$45$ hours at \$12 is \$540, and there were $5$ overtime hours at \$18, which is
+another \$90. So \$630.''}
+
+\smallskip
+Student B: \textbf{``$40$ hours at \$12 is \$480, and $5$ hours at \$18 is \$90. So \$570.''}
+
+\smallskip
+\textbf{Here is the question: which hours does each rate apply to?} Both students used both rates and
+neither made an arithmetic mistake. Decide who is right, and say exactly which hours the other one
+paid twice.
+
+\ansline{Student B. Hours $41$--$45$ are overtime hours, so they are paid at \$18 \emph{instead of} \$12,}\\
+\ansline{not on top of it. Student A paid those $5$ hours twice --- $5 \times \$12 = \$60$ too much.}\\
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{1. One Function, Written in Pieces}
+\small
+Last night's delivery fee took two sentences to describe: \emph{flat \$5 for the first three miles,
+then \$2 a mile after that.} There is a name for a function like that, and there is a way to write it
+down.
+
+\vspace{4pt}
+A \textbf{piecewise-defined function} is \ans{one} function described by more than one rule, with
+each rule applying only on its own stretch of the \ans{domain}. Each rule together with the stretch
+of inputs it owns is called a \textbf{piece}.
+
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.4cm,
+    xlabel={$m$ (miles)}, ylabel={$F$ (fee, \$)},
+    xmin=0, xmax=8, ymin=0, ymax=16,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={0,5,10,15}, minor y tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,5) (3,5) (8,15)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(1,5) (3,5) (4,7) (6,11) (8,15)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-4pt}
+{\scriptsize Last night's item 10: $F(m)$ is the fee in dollars for a delivery of $m$ miles, for
+deliveries up to $8$ miles.}
+
+\vspace{4pt}
+Here is the same graph written in symbols. Read the brace as the word \emph{if}:
+\[
+  F(m) = \begin{cases}
+    5 & \text{if } 0 \le m \le 3,\\[2pt]
+    5 + 2(m-3) & \text{if } 3 < m \le 8.
+  \end{cases}
+\]
+
+\vspace{2pt}
+\textbf{Which piece owns which inputs?} Fill the right-hand column.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}p{4.4cm} X@{}}
+\rowcolor{mist}
+\textbf{Rule} & \textbf{The inputs it owns} \\
+\hline
+$F(m)=5$ & \ans{$0 \le m \le 3$, that is $[0,3]$} \\
+$F(m)=5+2(m-3)$ & \ans{$3 < m \le 8$, that is $(3,8]$} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Evaluating takes one extra step, and it is always the same step.} Before you use a rule, ask
+\textbf{which piece owns this input}. Then use that rule and \ans{only that one}.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$m$ (miles) & $1$ & $3$ & $4$ & $6$ & $8$ \\ \hline
+Which piece? (1st or 2nd) & \ans{1st} & \ans{1st} & \ans{2nd} & \ans{2nd} &
+    \ans{2nd} \\ \hline
+$F(m)$ (\$) & \ans{$5$} & \ans{$5$} & \ans{$7$} & \ans{$11$} & \ans{$15$} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\textbf{The sentence that runs the whole lesson.} A piecewise function is \ans{one} function, not
+several. The pieces are not allowed to overlap, so every input in the domain belongs to exactly
+\ans{one} piece --- which means every input still has exactly \ans{one output}. That is Lesson 2.1's
+definition of a function, and it has not changed.
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{2. Where Each Rule Lives --- and Why the Paycheck Was Wrong}
+\small
+Here is the garden center's pay function. $P(h)$ is one week's pay in dollars for $h$ hours worked,
+and the week is capped at $50$ hours.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.8cm,
+    xlabel={$h$ (hours worked in the week)}, ylabel={$P$ (pay, \$)},
+    xmin=0, xmax=50, ymin=0, ymax=700,
+    xtick={0,5,10,15,20,25,30,35,40,45,50}, ytick={0,120,240,360,480,600},
+    minor y tick num=1, minor x tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,0) (40,480) (50,660)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(10,120) (20,240) (40,480) (45,570) (50,660)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+\[
+  P(h) = \begin{cases}
+    12h & \text{if } 0 \le h \le 40,\\[2pt]
+    480 + 18(h-40) & \text{if } 40 < h \le 50.
+  \end{cases}
+\]
+
+\vspace{2pt}
+\textbf{Read these five values off the graph.}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$h$ (hours) & $10$ & $20$ & $40$ & $45$ & $50$ \\ \hline
+$P(h)$ (\$) & \ans{$120$} & \ans{$240$} & \ans{$480$} & \ans{$570$} & \ans{$660$} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\textbf{Now settle the hook.} Student A said \$630 for a $45$-hour week. The graph at $h=45$ says
+\$\ans{$570$}. \textbf{Student \ans{B} answered the question.} Student A charged the \$12 rate
+to \emph{all $45$} hours and then added overtime on top, so hours $41$ through $45$ got paid
+\ans{twice}. \textbf{A rule applies only on the stretch of inputs it \ans{owns}} --- that is the
+whole content of the word \emph{piecewise}, and it is the error to watch for all year.
+
+\vspace{6pt}
+\textbf{What happens at the boundary $h=40$?} Check both rules there: $12(40)=480$, and the second
+rule starts at $480$ too. The two rules \ans{agree} at the boundary, so the graph has no break ---
+you can trace it from end to end without lifting your pencil. A graph like that is called
+\ans{continuous}.
+
+\vspace{4pt}
+\textbf{And here is the distinction to write down.} At $h=40$ the graph turns a sharp
+\ans{corner} --- the line gets steeper because the pay rate went up. That is a change of
+\emph{slope}, not a hole in the graph. \textbf{A corner is not a \ans{break}.}
+
+\vspace{6pt}
+\textbf{Every characteristic from this unit still works.} Fill the table --- one graph, all of Unit 2.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}p{5.0cm} X@{}}
+\rowcolor{mist}
+\textbf{Characteristic} & \textbf{For $P$} \\
+\hline
+Domain (Lesson 2.1) & \ans{$0 \le h \le 50$, that is $[0,50]$} \\
+Range (Lesson 2.1) & \ans{$0 \le P \le 660$, that is $[0,660]$} \\
+Zeros and $y$-intercept (2.4) & \ans{one zero at $h=0$; $y$-intercept $(0,0)$ --- no hours, no pay} \\
+Increasing / decreasing /\newline constant (2.4) & \ans{increasing on all of $[0,50]$; never constant
+    or decreasing} \\
+Absolute max and min (2.4) & \ans{max \$660 at $h=50$; min \$0 at $h=0$ --- both at endpoints} \\
+End behavior, asymptotes (2.5) & \ans{none of either --- the domain stops at $50$, so nothing runs off} \\
+\end{tabularx}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{3. When the Pieces Disagree --- Jumps, and What the Dots Mean}
+\small
+A shipping company charges by weight: \$6 for a package weighing up to and including $2$ pounds, \$10
+for one over $2$ pounds up to and including $5$, and \$16 for one over $5$ pounds up to and including
+$10$. Nothing in between --- the price changes all at once.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.6cm,
+    xlabel={$w$ (pounds)}, ylabel={$S$ (shipping cost, \$)},
+    xmin=0, xmax=10.6, ymin=0, ymax=20,
+    xtick={0,1,2,3,4,5,6,7,8,9,10}, ytick={0,2,4,6,8,10,12,14,16,18},
+    grid=both, grid style={linegray!45},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,6) (2,6)};
+  \addplot[royal, very thick] coordinates {(2,10) (5,10)};
+  \addplot[royal, very thick] coordinates {(5,16) (10,16)};
+  \addplot[royal, only marks, mark=*, mark size=2pt] coordinates {(2,6) (5,10) (10,16)};
+  \addplot[royal, only marks, mark=*, mark size=2pt, mark options={fill=white}]
+    coordinates {(0,6) (2,10) (5,16)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-4pt}
+{\scriptsize A \textbf{filled} circle means that endpoint \emph{is} part of the graph. An
+\textbf{open} circle means it is not.}
+
+\vspace{4pt}
+\textbf{The question the dots exist to answer: what is $S(2)$?} Look straight up from $w=2$. There
+are two circles there --- one filled at \$6 and one open at \$10 --- so $S(2)=\$$\ans{$6$}. There
+is exactly \ans{one} filled circle above every input, and there has to be, because a function
+gives each input \ans{one output}.
+
+\vspace{4pt}
+\textbf{Fill in each cost.}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|c|@{}}
+\hline
+$w$ (pounds) & $1$ & $2$ & $3$ & $5$ & $7$ & $10$ \\ \hline
+$S(w)$ (\$) & \ans{$6$} & \ans{$6$} & \ans{$10$} & \ans{$10$} & \ans{$16$} &
+    \ans{$16$} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\textbf{Three things this graph does that last box's graph did not.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt, topsep=3pt]
+  \item \textbf{It breaks.} To trace it you must lift your pencil at $w=$ \ans{$2$} and at $w=$
+        \ans{$5$}. A graph with a break in it is \ans{discontinuous}. The break itself is called a
+        \textbf{jump}: here the cost jumps by \$4 and then by \$6.
+  \item \textbf{Its range is a list, not an interval.} The only outputs this function ever produces
+        are \ans{$\{6, 10, 16\}$}. No interval notation can say that --- you write the set, exactly as you did
+        with the hot dogs in Lesson 2.1.
+  \item \textbf{It is never increasing.} On each of its three stretches the graph is
+        \ans{constant}, and a stretch is the only place ``increasing'' can be measured. The cost does
+        go up --- but it goes up \emph{at} the jumps, and a jump happens over \ans{no interval} at all.
+\end{enumerate}
+
+\vspace{4pt}
+\textbf{And the dots decide a bracket or a parenthesis.} The first piece owns the inputs
+\ans{$0 < w \le 2$}: open at $0$ because a package with no weight is not a package, closed at $2$ because a
+$2$-pound package pays \$6. That is Lesson 2.1's rule, back again --- a bracket \ans{includes}
+the endpoint and a parenthesis leaves it out.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{practicebox}
+\small
+A delivery drone takes off, climbs, cruises at a fixed altitude, then descends to the ground. The
+graph shows $A(t)$, its altitude in feet, $t$ seconds after take-off. It takes \emph{three} pieces.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.6cm, height=4.6cm,
+    xlabel={$t$ (seconds after take-off)}, ylabel={$A$ (altitude, feet)},
+    xmin=0, xmax=14, ymin=0, ymax=60,
+    xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14}, ytick={0,10,20,30,40,50},
+    minor y tick num=4,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:5, samples=60]{20*x-2*x^2};
+  \addplot[royal, very thick] coordinates {(5,50) (9,50) (14,0)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(0,0) (2,32) (5,50) (8,50) (11,30) (14,0)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt]
+  \item Read these altitudes off the graph, and name which piece --- climb, cruise, or descent ---
+        owns each input.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|c|@{}}
+\hline
+$t$ (seconds) & $0$ & $2$ & $5$ & $8$ & $11$ & $14$ \\ \hline
+$A(t)$ (feet) & \ans{$0$} & \ans{$32$} & \ans{$50$} & \ans{$50$} & \ans{$30$} &
+    \ans{$0$} \\ \hline
+Which piece? & \ans{climb} & \ans{climb} & \ans{climb} & \ans{cruise} & \ans{desc.} &
+    \ans{desc.} \\
+\hline
+\end{tabular}
+
+  \item Give the domain and the range of $A$, then give its zeros and its $y$-intercept. Say what
+        each zero means about the flight.
+
+\ansline{Domain $[0,14]$ seconds; range $[0,50]$ feet. Zeros at $t=0$ and $t=14$; $y$-intercept $(0,0)$.}\\
+\ansline{The zero at $t=0$ is the moment of take-off and the zero at $t=14$ is the moment of landing ---}\\
+\ansline{those are the two times the drone is on the ground.}\\
+
+  \item Name the interval on which $A$ is increasing, the interval on which it is constant, and the
+        interval on which it is decreasing. Then give the absolute maximum --- \emph{value and
+        location}. Read the location carefully.
+
+\ansline{Increasing on $[0,5]$, constant on $[5,9]$, decreasing on $[9,14]$.}\\
+\ansline{Absolute maximum: $50$ feet. Its \emph{location} is not one point --- the drone is at $50$ feet}\\
+\ansline{at every second from $t=5$ to $t=9$, so the maximum is attained on the whole interval $[5,9]$.}\\
+
+  \item Is this graph continuous? Answer yes or no with a reason. Then answer the Lesson 2.5
+        questions: what is the end behavior of $A$, and does it have any asymptotes?
+
+\ansline{Yes --- the pieces meet at $t=5$ and $t=9$ with no gap, so you can trace the whole flight}\\
+\ansline{without lifting your pencil. (There is a corner at $t=9$, and a corner is not a break.)}\\
+\ansline{No end behavior and no asymptotes: the domain stops at $t=14$, so nothing runs off to infinity.}\\
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

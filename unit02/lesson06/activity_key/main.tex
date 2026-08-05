@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,248 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+Every question today is answered by reading a graph. \textbf{The rule for the whole activity: before
+you use a rule or read a value, say out loud which piece owns the input.} And whenever a boundary
+point is involved, \textbf{let the dots decide} --- filled means included, open means not.
+\textbf{Everyone starts at Tier R.} When your whole group can do Tier R without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+A phone plan costs \$30 a month for anything up to $10$ gigabytes of data, and \$5 for each gigabyte
+beyond $10$. The graph shows $C(g)$, the monthly cost in dollars when $g$ gigabytes are used. The plan
+shuts data off at $20$ gigabytes.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.6cm,
+    xlabel={$g$ (gigabytes used)}, ylabel={$C$ (monthly cost, \$)},
+    xmin=0, xmax=20, ymin=0, ymax=90,
+    xtick={0,2,4,6,8,10,12,14,16,18,20}, ytick={0,10,20,30,40,50,60,70,80},
+    minor x tick num=1, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,30) (10,30) (20,80)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(4,30) (10,30) (14,50) (18,70) (20,80)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item Read the graph and fill in both rows. For the second row write \emph{flat} or \emph{climbing}
+        to say which piece owns that input.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$g$ (gigabytes) & $4$ & $10$ & $14$ & $18$ & $20$ \\ \hline
+$C(g)$ (\$) & \ans{$30$} & \ans{$30$} & \ans{$50$} & \ans{$70$} & \ans{$80$} \\ \hline
+Which piece? & \ans{flat} & \ans{flat} & \ans{climb.} & \ans{climb.} & \ans{climb.} \\
+\hline
+\end{tabular}
+
+  \item Give the \emph{boundary point} --- the input where one rule hands off to the next --- and say
+        in one sentence what it means to a customer.
+
+\ansline{The boundary point is $g=10$ gigabytes. Up to and including $10$ GB the bill is a flat \$30 no}\\
+\ansline{matter how little you use; past $10$ GB every extra gigabyte adds \$5 to that same \$30 base.}\\
+
+  \item Name the interval of inputs on which $C$ is constant and the interval on which $C$ is
+        increasing. Then say whether the graph is continuous, and how you can tell from the picture.
+
+\ansline{Constant on $[0,10]$; increasing on $[10,20]$.}\\
+\ansline{Yes, continuous. Both pieces meet at the same point $(10,30)$ --- there is no gap and no}\\
+\ansline{open circle, so the whole graph can be traced without lifting the pencil.}\\
+
+  \item Give the domain and the range of $C$. Then give the absolute maximum and the absolute
+        minimum, each with a \emph{value and a location}. Read the minimum's location carefully ---
+        it is not a single point.
+
+\ansline{Domain $[0,20]$ gigabytes; range $[30,80]$ dollars.}\\
+\ansline{Absolute maximum \$80 at $g=20$ --- a single point, at the right endpoint.}\\
+\ansline{Absolute minimum \$30, attained at \emph{every} $g$ from $0$ to $10$: the whole interval $[0,10]$.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Graph (a) shows $G(h)$, the cost in dollars of parking in a city garage for $h$ hours: \$4 for up to
+and including $1$ hour, \$7 for over $1$ up to and including $3$, and \$12 for over $3$ up to and
+including $6$. Graph (b) shows a function $f$ with no context attached. \textbf{In both graphs, filled
+circles are part of the graph and open circles are not.}
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.5cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.5cm, height=4.4cm, title={\scriptsize (a) $G$, garage cost},
+    xlabel={$h$ (hours parked)}, ylabel={$G$ (\$)},
+    xmin=0, xmax=6.4, ymin=0, ymax=15,
+    xtick={0,1,2,3,4,5,6}, ytick={0,2,4,6,8,10,12,14},
+    grid=both, grid style={linegray!45},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\tiny}]
+  \addplot[royal, very thick] coordinates {(0,4) (1,4)};
+  \addplot[royal, very thick] coordinates {(1,7) (3,7)};
+  \addplot[royal, very thick] coordinates {(3,12) (6,12)};
+  \addplot[royal, only marks, mark=*, mark size=1.9pt] coordinates {(1,4) (3,7) (6,12)};
+  \addplot[royal, only marks, mark=*, mark size=1.9pt, mark options={fill=white}]
+    coordinates {(0,4) (1,7) (3,12)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.3cm, height=4.4cm, title={\scriptsize (b) $f$},
+    xmin=-3, xmax=7, ymin=-3, ymax=7,
+    xtick={-3,-2,-1,0,1,2,3,4,5,6,7}, ytick={-2,0,2,4,6},
+    minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-2:2, samples=60]{x^2};
+  \addplot[royal, very thick] coordinates {(2,6) (6,-2)};
+  \addplot[royal, only marks, mark=*, mark size=1.9pt] coordinates {(-2,4) (2,4) (6,-2)};
+  \addplot[royal, only marks, mark=*, mark size=1.9pt, mark options={fill=white}]
+    coordinates {(2,6)};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Graph (a).} Fill in the costs, then answer the boundary question underneath.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$h$ (hours) & $1$ & $2$ & $3$ & $4$ & $6$ \\ \hline
+$G(h)$ (\$) & \ans{$4$} & \ans{$7$} & \ans{$7$} & \ans{$12$} & \ans{$12$} \\
+\hline
+\end{tabular}
+\smallskip
+
+A driver parks for \emph{exactly} $3$ hours and is charged \$12. Using the dots, say what they should
+have been charged and which circle proves it.
+
+\ansline{They should have been charged \$7. The \emph{filled} circle at $(3,7)$ is on the graph, so $G(3)=7$;}\\
+\ansline{the circle at $(3,12)$ is \emph{open}, so $12$ is not the cost at $3$ hours --- only past $3$ hours.}\\
+
+  \item \textbf{Graph (a).} Give the range of $G$. Then say whether $G$ is continuous, naming every
+        input where you would have to lift your pencil.
+
+\ansline{Range: the list $\{4, 7, 12\}$ --- only three costs are ever charged, so no interval describes it.}\\
+\ansline{Discontinuous: you must lift the pencil at $h=1$ and at $h=3$. Two jumps, of \$3 and of \$5.}\\
+
+  \item \textbf{Graph (a), the one that sounds wrong at first.} The cost clearly goes up as you park
+        longer. Is there \emph{any} interval on which $G$ is increasing? Answer, and explain using
+        what the graph does on each piece.
+
+\ansline{No --- there is no interval on which $G$ is increasing. On each of its three pieces the graph}\\
+\ansline{is \emph{constant}. The cost does rise, but it rises \emph{at} the two jumps, and a jump happens}\\
+\ansline{at a single input, not across an interval. $G$ is constant on $(0,1]$, $(1,3]$ and $(3,6]$.}\\
+
+  \item \textbf{Graph (b).} Give $f(-2)$, $f(0)$, $f(2)$, $f(4)$ and $f(6)$. Then give the domain of
+        $f$, its zeros, and its $y$-intercept.
+
+\ansline{$f(-2)=4$, \ $f(0)=0$, \ $f(2)=4$ (the \emph{filled} circle), \ $f(4)=2$, \ $f(6)=-2$.}\\
+\ansline{Domain $[-2,6]$. Two zeros: $x=0$ and $x=5$. $y$-intercept $(0,0)$.}\\
+
+  \item \textbf{Graph (b), the stretch.} Give the range of $f$, then give the absolute maximum and
+        the absolute minimum. \emph{Look at the open circle before you answer} --- one of these two
+        does not exist, and Lesson 2.5 gave you the words for why.
+
+\ansline{Range $[-2,6)$ --- a parenthesis at $6$, because the circle at $(2,6)$ is open.}\\
+\ansline{There is \textbf{no absolute maximum}: outputs just past $x=2$ get as close to $6$ as you like}\\
+\ansline{and never reach it, so no output is the highest. Absolute minimum $-2$ at $x=6$.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Two claims, and each one misreads a piece.} Name the mistake and give the correct
+        statement.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item About the shipping graph in your notes: \emph{``At $w=2$ the cost is both \$6 and
+                \$10, so $S$ is not a function.''}
+
+\ansline{The open circle was counted as part of the graph. Above $w=2$ there is exactly one \emph{filled}}\\
+\ansline{circle, at \$6, so $S(2)=\$6$ and $S$ is a function --- one output for that input, like every other.}\\
+
+          \item About the garden centre's pay: \emph{``A $46$-hour week pays $46 \times \$12$ plus
+                $6 \times \$18$, which is \$660.''}
+
+\ansline{The first rule was applied to inputs it does not own. It covers only hours $1$--$40$; hours $41$--$46$}\\
+\ansline{are paid at \$18 \emph{instead of} \$12. Correct: $40(12) + 6(18) = 480 + 108 = \$588$.}\\
+        \end{enumerate}
+
+  \item \textbf{Possible or impossible?} For each description, either name a graph from today that
+        does it, or explain why nothing can.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item A piecewise function that is continuous everywhere and still has a sharp corner.
+
+\ansline{Possible --- the paycheck $P$ at $h=40$, and the drone at $t=9$. A corner is not a break.}\\
+
+          \item A piecewise function whose graph gives two different outputs at one input.
+
+\ansline{Impossible. The pieces are not allowed to overlap, so each input belongs to exactly one piece.}\\
+\ansline{Two outputs at one input is not a function at all --- which is what the open circles prevent.}\\
+
+          \item A piecewise function that is constant on every one of its pieces, yet whose outputs
+                are larger at the right end than at the left.
+
+\ansline{Possible --- the shipping cost $S$ and the garage cost $G$ both do it. Every piece is flat, and}\\
+\ansline{all of the rising happens \emph{at} the jumps between pieces rather than along any piece.}\\
+        \end{enumerate}
+
+  \item \textbf{Write the rules.} A pool charges a flat \$3 to enter and then \$2 for each hour after
+        the second. The graph of $h(x)$, the total cost in dollars for $x$ hours, is below. Write the
+        two rules \emph{and} the stretch of inputs each one owns, then check your second rule by
+        computing the cost at $x=6$ and comparing it with the graph.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=8.4cm, height=3.6cm,
+    xlabel={$x$ (hours)}, ylabel={$h$ (total cost, \$)},
+    xmin=0, xmax=6, ymin=0, ymax=13,
+    xtick={0,1,2,3,4,5,6}, ytick={0,3,5,7,9,11},
+    grid=both, grid style={linegray!45},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\tiny}]
+  \addplot[royal, very thick] coordinates {(0,3) (2,3) (6,11)};
+  \addplot[keyred, only marks, mark=*, mark size=1.7pt]
+    coordinates {(0,3) (2,3) (4,7) (6,11)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\ansline{First piece: $h(x)=3$, owning $0 \le x \le 2$, that is $[0,2]$ --- the flat entry fee.}\\
+\ansline{Second piece: $h(x)=3+2(x-2)$, owning $2 < x \le 6$, that is $(2,6]$ --- \$2 an hour after hour $2$.}\\
+\ansline{Check at $x=6$: $3+2(6-2)=3+8=11$, and the graph reads \$11 at $x=6$. The rules match the picture.}\\
+\ansline{Note the boundary: both rules give \$3 at $x=2$, so the graph has a corner there but no break.}\\
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

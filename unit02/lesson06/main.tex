@@ -16,79 +16,355 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can read a graph that takes more than one rule by first asking
+    \emph{which piece owns this input}, and explain why a piecewise-defined function is still
+    \textbf{one} function. I can use the open and closed circles at a boundary to say what the
+    function's value is there and whether a range gets a bracket or a parenthesis, decide whether a
+    graph is continuous, tell a \emph{corner} from a \emph{break}, and find every characteristic this
+    unit has taught --- domain and range, zeros and intercepts, increasing/decreasing/constant
+    intervals, absolute maximum and minimum, end behavior and asymptotes --- on a piecewise graph in
+    context.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Standards covered:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{AFDA.AF.2} --- investigate and analyze characteristics of the graphs of linear,
+        quadratic, exponential, and \textbf{piecewise-defined} functions. Today is the lettered list
+        \texttt{a}--\texttt{h} run once more, on a graph that takes more than one rule.
+  \item \texttt{AFDA.AF.2h} in particular --- \emph{describe and relate} the characteristics of those
+        graphs, including in contextual situations.
+\end{itemize}
+\textbf{Skills students leave with:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Ask \textbf{which piece owns this input} before using any rule, and use that rule
+        \emph{only}.
+  \item Read \textbf{open and closed circles} at a boundary to give the function's value there ---
+        and to decide a bracket or a parenthesis.
+  \item Decide whether a graph is \textbf{continuous}, and distinguish a \textbf{corner} from a
+        \textbf{break}.
+  \item Run Unit 2's whole characteristics checklist on a piecewise graph, including a range that is
+        a \textbf{list} and an extreme attained on a whole \textbf{interval}.
+  \item Interpret a boundary point in context --- the mile, the hour, the kilowatt-hour where the
+        deal changes.
+\end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{A piecewise function is one function, not several.} This is the whole lesson in one
+        sentence. Every question the unit has taught gets asked \emph{once}, of the whole thing.
+  \item \textbf{A rule owns only its own stretch of the domain.} That is the entire content of the
+        word \emph{piecewise}, and misplacing a rule is the error that produces every wrong answer
+        today --- starting with the hook's paycheck.
+  \item \textbf{The pieces cannot overlap, so each input still gets one output.} Lesson 2.1's
+        definition has not changed; the open circles are what enforce it.
+  \item \textbf{A corner is not a break.} A change of \emph{rule} is not a hole in the graph. The
+        guidance's own test settles it: can you draw it without lifting your pencil?
+  \item \textbf{The guidance's wording is the scope.} ``A function is continuous on an interval if
+        the function is defined for every value in the interval and there are no breaks in the
+        graph.'' Everything today is read \textbf{off a graph}.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{4.1cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Piecewise-defined function & One function described by more than one rule, each rule applying only on
+    its own stretch of the domain. The stretches do not overlap. \\
+Piece & One rule together with the stretch of inputs it owns. ``Which piece owns this input?'' is the
+    first question, every time. \\
+Boundary point & The input where one piece hands off to the next --- $m=3$, $h=40$, $k=500$. The
+    input to check whenever anything looks strange. \\
+Open / closed circle & A closed (filled) circle means the endpoint \emph{is} on the graph; an open
+    circle means it is not. Exactly one filled circle sits above each input. \\
+Continuous / discontinuous & Continuous on an interval means defined everywhere on it with no breaks
+    --- traceable without lifting the pencil. A break is called a \textbf{jump}. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{The warm-up is five items, and item 2 is the plant:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Last night's delivery fee: $F(2)$, $F(6)$, and how many \emph{rules} it took
+  \item A gym at \$25 a month, then \$40 --- and the cost of a full year
+  \item Interval notation, both directions (Lesson 2.1)
+  \item Two small graphs: which can be traced without lifting the pencil?
+  \item Constant and increasing stretches off graph (a) (Lesson 2.4)
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 2(c) is the hook in a second costume --- a student who writes
+$12(25)+6(40)$ has already made student A's mistake, before the word \emph{piecewise} has been said.
+Note who does. Item 4 is continuity with no vocabulary attached, and item 3's bracket-versus-paren\-thesis
+is what the dots will mean in notes box 3.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{Two students, one paycheck, and \$60 nobody can find.} A garden center pays \$12 an hour for
+the first $40$ hours of a week and \$18 an hour beyond $40$. A student worked $45$ hours. \quad
+Student A: \textbf{``$45$ hours at \$12 is \$540, plus $5$ overtime hours at \$18 is \$90 --- so
+\$630.''} \ Student B: \textbf{``$40$ at \$12 is \$480, plus $5$ at \$18 is \$90 --- so \$570.''}
+\textbf{Pose it this way:} ``Both of them used both rates. Neither made an arithmetic mistake. So
+the only thing left to disagree about is \emph{which hours each rate applies to}.'' \textbf{Let them
+sit with it.} 2.5's hook turned on \emph{approaches versus reaches}; this one turns on nothing of the
+sort --- it is about \textbf{where a rule lives}, and that is the only genuinely new idea in the
+lesson. Resolve it on notes box 2, not before.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. One function, written in pieces (11 min).} Open on last night's delivery fee --- the class
+already answered every part of it in plain English, so box 1 only supplies the \emph{name} and the
+\emph{notation}. Read the brace out loud as the word ``if.'' \textbf{The one habit to install:} before
+using a rule, say which piece owns the input. Close on the sentence that runs the lesson --- the
+pieces cannot overlap, so every input still has exactly one output.
+
+\textbf{2. The paycheck, and where each rule lives (14 min).} Fill the five reads first, then
+\textbf{resolve the hook off the graph}: $P(45)=570$, so hours $41$--$45$ got paid twice. Then the
+boundary: both rules give $480$ at $h=40$, so there is no break --- and the graph turns a
+\textbf{corner}, which is not the same thing. Finish with the checklist table; it is the proof that
+nothing about the unit has changed.
+
+\textbf{3. The jump, and what the dots mean (14 min).} \textbf{Ask ``what is $S(2)$?'' before
+explaining anything.} The dots answer it, and the reason there is exactly one filled circle is
+Lesson 2.1's definition, not a drawing convention. Then the three surprises --- it breaks, its range
+is a \emph{list}, and it is \emph{never increasing}. That last one takes the most time and is worth it.
+
+\textbf{4. Guided practice --- the drone (11 min).} Three pieces, one flight. \textbf{The item that
+earns the time is the absolute maximum:} $50$ feet, attained on the whole interval $[5,9]$. 2.4 taught
+``a value \emph{and} a location''; today the location got wider.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Which Piece Owns This Input?]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The one-page summary students should be able to reproduce:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item \textbf{Find the piece first.} Which stretch of the domain contains this input?
+  \item \textbf{Use that rule and only that one.} Never add a second piece's contribution on top.
+  \item \textbf{At a boundary, read the dots.} Filled is on the graph; open is not.
+  \item \textbf{Continuous?} Do the two rules give the same value at the boundary? If yes, no break
+        --- even if there is a corner.
+  \item \textbf{Then ask every Unit 2 question once}, of the whole function.
+\end{enumerate}
+\textbf{Say this out loud:} ``A piecewise function is one function, not several. Which piece owns
+this input?''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four errors to name before they happen:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Applying a rule outside its stretch.} The hook, Tier E item 1(b), and every
+        tiered-price item in the homework.
+  \item \textbf{Counting the open circle as a value.} ``$S(2)$ is both \$6 and \$10.'' Tier E item
+        1(a), homework item 4.
+  \item \textbf{Calling a corner a break.} The exit ticket's whole item 3, and homework item 3.
+  \item \textbf{Reporting an extreme's location as a single point when it is an interval.} Tier R
+        item 4, exit-ticket item 2, guided practice item 3.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes box 1, the evaluation table:} listen for students computing $F(6)$ as
+        $5+2(6)$. They used the second rule but forgot it starts \emph{at} $m=3$.
+  \item \textbf{Notes box 2:} after the hook resolves, ask two or three students ``which hours does
+        the \$18 rate own?'' A student who says ``all of them past the start'' has not got it yet.
+  \item \textbf{Notes box 3:} ask ``what is $S(2)$?'' cold. Anyone who says ``\$6 or \$10'' is
+        reading the open circle as a value.
+  \item \textbf{Activity Tier A item 5:} groups will name $4$ as the absolute maximum because it is
+        the biggest \emph{filled} dot they can point at. Prompt: ``What is $f(2.1)$?''
+  \item \textbf{Cold-call prompts:} ``Which piece owns that?'' ``Filled or open?'' ``Corner or
+        break?'' ``Is that location a point or a stretch?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item A phone plan: \$30 flat, then \$5 a gigabyte.
+  \item The boundary point, and what it means to a customer.
+  \item Constant stretch, increasing stretch, continuity.
+  \item A minimum whose location is a whole interval.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item A garage priced in steps, and the driver charged \$12 for exactly $3$ hours.
+  \item A range that is a list; where you lift the pencil.
+  \item ``The cost goes up --- so where is it increasing?''
+  \item A graph with an open circle on top: \emph{no absolute maximum}.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Two claims, each misreading a piece.
+  \item Possible or impossible? --- including two outputs at one input.
+  \item Write both rules \emph{and} the inputs each owns, then check one.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard[16]
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} one babysitting rate --- \$40 flat for up to four hours,
+then \$15 an hour. (1) $B(3)$ and $B(6)$, which piece owns each, and the boundary point
+(\texttt{AF.2h}); (2) absolute maximum and minimum with \emph{value and location} --- the minimum
+\$40 is attained on the whole interval $[0,4]$ (\texttt{AF.2c}); (3) \textbf{the conceptual check} ---
+a classmate says the graph ``has a break at $h=4$, because that is where the rule changes.''
+
+\textbf{Using the results:} item 3 is the one to read, and its pairing with item 1 is deliberate ---
+naming $h=4$ is the \emph{correct} answer to item 1's last part and the \emph{wrong} conclusion here,
+exactly as 2.4 and 2.5 paired their items. Sort into three piles: \emph{said the rules agree there},
+\emph{said corner not break without a reason}, and \emph{agreed with the classmate}. \textbf{Item 2's
+minimum is the second trap} --- a whole unit of practice says an extreme sits at one point, and this
+one sits on a stretch. The third pile goes to Tier R in 2.7, where choosing a model means reading a
+graph's shape correctly in the first place.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (10 items): five fluency items --- reading a piecewise graph with a jump, evaluating
+from the \emph{rules} with no graph at all, a continuous-or-not classification table, a bike-share
+priced in steps, and then a full characteristics read of item 1's graph --- then a four-part read of
+\textbf{a tiered electricity bill}, which is continuous, turns a corner at $500$ kWh, and is the
+lesson's best context.
+
+\textbf{Item 9 is the interpret item of the set}: a customer doubled their usage, the bill went from
+\$50 to \$130, and they are certain they are being overcharged. The company's arithmetic is fine and
+the customer's \emph{expectation} is what is wrong --- $500(\$0.10)=\$50$ and $500(\$0.16)=\$80$, and
+the extra \$30 is exactly $500$ kWh times the six-cent difference. That is what a tiered rate is for.
+
+\textbf{Item 10 is the bridge to Lesson 2.7.} Four stories, one function family each, and the
+characteristic that gives it away. Its last question is the real one: \emph{two of these could be
+confused if you only saw part of the graph} --- the gym (linear) and the tax (piecewise), because
+below the boundary the tax graph \emph{is} a straight line. Accept plain English; \emph{model} is
+2.7's word.
+
+\textbf{Extension (optional):} $A(x)=-x$ for $x<0$ and $A(x)=x$ for $x \ge 0$. The table gives $3, 2,
+1, 0, 1, 2, 3$ and the shape is a V --- \textbf{the absolute value function, arriving honestly as a
+piecewise definition}. Continuous at $0$, a corner and not a break, minimum $0$ at the corner, and
+outputs climbing without bound at \emph{both} ends.
+
+\textbf{Preview of Lesson 2.7 (\texttt{AFDA.AF.1c, e, g}; \texttt{AFDA.AF.2h}):} choosing and comparing
+models in context --- deciding which family fits a situation and defending the choice with the
+characteristics this unit has taught.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 % Teacher-only prose lives HERE, never in a _key: a note is the one block in a
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
+\boxguard[18]
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{8 minutes, then score it together.} Answers: (1) $F(2)=\$5$, $F(6)=\$11$, and it took
+    \textbf{two} rules handing off at $m=3$; (2) \$25, \$40, and $6(25)+6(40)=\$390$; (3)
+    (a) $(2,5]$, (b) $0 \le h \le 40$; (4) (a) yes, (b) no --- it jumps at $x=3$; (5) constant on
+    $[0,3]$, increasing on $[3,6]$. \textbf{Item 2(c) is the hook in arithmetic and you must not
+    resolve it} --- take the answers, write both \$390 and \$540 on the board if both appear, and move
+    on. A student who wrote $12(25)+6(40)=\$540$ charged the first rate to months it does not own,
+    which is student A's mistake with no graph and no vocabulary in the way. \textbf{Note who} --- it
+    is the best predictor you will get of who needs Tier R. Item 4 is the entire idea of continuity
+    with the word withheld; if the room can answer it in ten seconds, notes box 3's ``lift your
+    pencil'' test will land without argument. Item 1 looks like a recap and is actually box 1's
+    opening: the class produced those two values last night, so today only names them.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{Install one habit and everything else follows: before you use a rule, say which piece owns
+    the input.} Say it in box 1, require it out loud in box 2, and correct it every time in the
+    practice. \textbf{Resolve the hook on box 2, not before.} Fill the five reads first, then point at
+    $h=45$ --- the graph says \$570, and student A's \$630 is not on the curve at all. The resolution
+    to insist on is not ``B is right'': it is that \emph{hours $41$--$45$ are paid at \$18 instead of
+    \$12, not on top of it}, and A paid five hours twice. \textbf{The corner-versus-break distinction
+    is the sentence students will need in every remaining lesson}, so put it on the board and leave it
+    there --- a change of rule is not a hole in the graph. \textbf{In box 3, ask ``what is $S(2)$?''
+    before you explain anything.} The dots answer it, and the reason there is exactly one filled circle
+    is Lesson 2.1's definition of a function, not a drawing convention --- say that out loud. Box 3's
+    third surprise (\emph{never increasing}) is the one that generates argument, and it is worth the
+    argument: the cost does rise, but it rises at the jumps, and a jump happens at a single input
+    rather than across an interval. If time runs short, assign box 3's bracket-versus-parenthesis
+    paragraph as reading, but never cut the drone practice --- it is the only place all three pieces
+    and all of the unit's characteristics appear on one graph.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is one graph read four
+    ways and a fluent group clears it in five minutes; the only item that slows them is item 4's
+    minimum, whose location is the whole interval $[0,10]$ rather than a point. Correct that every
+    time --- it is assessed again on the exit ticket. \textbf{Tier A item 1 is the fastest diagnostic
+    in the lesson}: a driver parked exactly three hours and was charged \$12, and the filled circle at
+    $(3,7)$ says otherwise. A group that cannot name the circle has not understood what the dots are
+    for. \textbf{Tier A item 3 is the one that sounds wrong and is not} --- the garage cost obviously
+    goes up, and there is still no interval on which $G$ is increasing. Let groups argue before you
+    settle it. \textbf{Tier A item 5 is the stretch and it pays 2.5 back}: the open circle at $(2,6)$
+    means the outputs get as close to $6$ as you like and never reach it, so there is \emph{no
+    absolute maximum} --- ``approaches is not reaches,'' with a circle instead of an asymptote. Most
+    groups will answer $4$, because it is the biggest filled dot they can point at; the prompt that
+    fixes it is ``what is $f(2.1)$?'' \textbf{Tier E item 2(b) is the share-out.} Two outputs at one
+    input is not a hard case --- it is not a function at all, and the open circles are precisely what
+    prevent it.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Answers: (1) $B(3)=\$40$ (flat
+    piece), $B(6)=\$70$ (hourly piece, $40+15(2)$); boundary point $h=4$. (2) Absolute maximum \$100
+    at $h=8$; absolute minimum \$40 attained at every $h$ in $[0,4]$. (3) A change of rule is not a
+    break --- both pieces give \$40 at $h=4$, so they meet with no gap; the graph is continuous there
+    and turns a corner. \textbf{Items 1 and 3 are the same number on purpose}, the pattern 2.4 and 2.5
+    both used: $h=4$ is the correct answer to item 1's last part and the wrong conclusion in item 3, so
+    a student who accepts item 3 because it matches what they just wrote has told you exactly what they
+    are doing. \textbf{Item 2 is the second trap} --- an entire unit of practice has put extremes at
+    single points, and this minimum sits on a stretch. Expect ``\$40 at $h=0$,'' which is not wrong so
+    much as incomplete; give partial credit and correct the location. Grade item 3 on whether the words
+    \emph{corner}, \emph{meet}, or \emph{no gap} appear at all. Do not grade for points; use it to
+    build the 2.7 groups, where choosing a model starts with reading the shape of a graph correctly.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 25--30 minutes.} Item 3 (continuous or not) is the fastest to grade and the most
+    diagnostic: rows 1 and 3 are continuous, rows 2 and 4 are jumps. A student who marks row 3
+    discontinuous has read a corner as a break and needs the exit-ticket conversation again. Item 2 is
+    the only item in the lesson with no graph at all, and it is the honest test of the habit --- a
+    student who evaluates $g(5)$ with the second rule instead of the third has not checked which piece
+    owns $5$. \textbf{Item 5(a) and 5(d) are the two hardest fluency answers in the set}: the range is
+    $[-2,5)$ with a parenthesis because the circle at $(-1,5)$ is open, and for the same reason there
+    is \emph{no absolute maximum}. Both are Tier A's item 5 assessed again, so if the activity went
+    badly, reteach from the open circle rather than from the homework. \textbf{The electricity items
+    (6--9) are the argument for the lesson}, and item 9 is where to spend your attention: the
+    arithmetic is right and the \emph{expectation} is wrong, which is a genuinely useful thing for a
+    seventeen-year-old to be able to say to a utility company. \textbf{Item 10 is the 2.7 bridge and
+    must be graded on the reasoning, not the vocabulary} --- ``it's straight so the rate never
+    changes'' is a complete answer for the gym. Its last part is the one to check: the gym and the tax
+    look identical below the boundary, and only what happens \emph{past} it tells them apart. The
+    extension is genuinely optional and is the best item in the set --- students meet $|x|$ for the
+    first time and meet it correctly, as two rules on two stretches with a corner where they join.
 \end{teachernote}
 \end{document}

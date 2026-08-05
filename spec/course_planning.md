@@ -5,18 +5,25 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-05** — Authored **Unit 2 Lesson 2.5 (End Behavior and Asymptotes, `AFDA.AF.2f–g`)** in
-full — plan, cover, warm-up, guided notes, activity, exit ticket, homework, all five keys, and the
-deck. This is the lesson where **five lessons' worth of plants get harvested at once** (2.0's
-rational table, 2.1's excluded value, 2.2's $(0,\infty)$ range, 2.3's asymptote landmark, 2.4's
-coffee). `make -C
-unit02/lesson05 all` and `check` both pass; every numeric claim in both blank and key was verified in
-pure Python first. The boxguard eyeball pass found **one real violation invisible to the gate**
-(homework item 8's answer space split 2+1 across a page break) plus **two table defects no check can
-see** (a label column wrapping mid-equation, and a header wrapping mid-word). **14 of 59 lessons
-authored.**
+**2026-08-05** — Authored **Unit 2 Lesson 2.6 (Piecewise-Defined Functions, `AFDA.AF.2`, esp.
+`AF.2h`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework, all five
+keys, and the deck. This is the unit's **synthesis lesson**: the whole `AF.2` checklist run once more
+on a graph that takes more than one rule. `make -C unit02/lesson06 all` and `check` both pass; every
+numeric claim in both blank and key was verified in pure Python first. The boxguard eyeball pass
+found **one real violation invisible to the gate** (homework item 4's stem and figure at the foot of
+p1 with its question and all four answer lines opening p2) plus **the first slide-deck defect in the
+course that no log reports** (two text lines overprinting under a `\[...\]` display). **15 of 59
+lessons authored.**
 
-*Previous run (same day): authored **Unit 2 Lesson 2.4 (Intercepts, Zeros, and Extrema,
+*Previous run (same day): authored **Unit 2 Lesson 2.5 (End Behavior and Asymptotes,
+`AFDA.AF.2f–g`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework, all
+five keys, and the deck. This is the lesson where **five lessons' worth of plants get harvested at
+once** (2.0's rational table, 2.1's excluded value, 2.2's $(0,\infty)$ range, 2.3's asymptote
+landmark, 2.4's coffee). The boxguard eyeball pass found **one real violation invisible to the gate**
+(homework item 8's answer space split 2+1 across a page break) plus **two table defects no check can
+see** (a label column wrapping mid-equation, and a header wrapping mid-word).*
+
+*Earlier run (same day): authored **Unit 2 Lesson 2.4 (Intercepts, Zeros, and Extrema,
 `AFDA.AF.2b–d`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework, all five keys, and the
 deck. This is the unit's **first pure graph-reading lesson**: no equation is required anywhere in the
 activity, exit ticket, or the context items, which is the AFDA guidance's own scope
@@ -73,9 +80,107 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (14 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`,
-  `unit02/lesson01`, `unit02/lesson02`, `unit02/lesson03`, `unit02/lesson04`, and
-  `unit02/lesson05`.** Every component written, built, and gated.
+- **Authored (15 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`,
+  `unit02/lesson01`, `unit02/lesson02`, `unit02/lesson03`, `unit02/lesson04`, `unit02/lesson05`, and
+  `unit02/lesson06`.** Every component written, built, and gated.
+- **`unit02/lesson06` — Piecewise-Defined Functions (`AFDA.AF.2`, esp. `AF.2h`).** The unit's
+  **synthesis lesson**: no new characteristic is introduced, the whole `AF.2` checklist is simply run
+  once more on a graph that takes more than one rule.
+  - Spine: **a piecewise function is one function, not several.** Every question the unit has taught
+    gets asked \emph{once}, of the whole thing. The second sentence is **a rule owns only its own
+    stretch of the domain** — which is the entire content of the word \emph{piecewise} and the source
+    of every wrong answer in the lesson. The habit to install is one question: **which piece owns this
+    input?**
+  - **The hook is a paycheck, and it is a new \emph{mechanism}, not a new costume.** 2.4's hook was
+    settled by naming an axis and 2.5's by \emph{approaches versus reaches}; this one is settled by
+    neither. A garden center pays \$12/hr for the first $40$ hours and \$18/hr beyond. For a $45$-hour
+    week, student A says $45(12)+5(18)=\$630$ and student B says $40(12)+5(18)=\$570$. **Both used both
+    rates and neither made an arithmetic mistake** — A charged the \$12 rate to hours it does not own,
+    paying hours $41$–$45$ twice, which is exactly \$60. Resolve on notes box 2 off the graph
+    ($P(45)=570$), never earlier.
+  - **The two sentences worth the whole lesson.** (1) **A corner is not a break** — a change of
+    \emph{rule} is not a hole in the graph, and the guidance's own test settles it (can you draw it
+    without lifting your pencil?). (2) **Exactly one filled circle sits above every input, and it has
+    to** — the open circles are not a drawing convention, they are 2.1's definition of a function being
+    enforced at the seam. Ask ``what is $S(2)$?'' before explaining anything.
+  - **Three plants harvested.** 2.5's homework item 10 (the delivery fee, flat \$5 then \$2/mile) is
+    reused \emph{unchanged} as notes box 1's opening — the class already answered every part of it in
+    plain English, so box 1 supplies only the \emph{name} and the \emph{notation}; 2.1's ``some ranges
+    are lists interval notation cannot express'' (the hot dogs) returns as the step function's range
+    $\{6,10,16\}$; and 2.1's bracket-versus-parenthesis rule returns as what the dots mean.
+  - Notes = 5 vocab terms (piecewise-defined function, piece, boundary point, open/closed circle,
+    continuous/discontinuous) + three boxes. In-text blanks: *one*, *domain*, *only that one*, *one*,
+    *one*, *one output*, *570*, *B*, *twice*, *owns*, *agree*, *continuous*, *corner*, *break*, *6*,
+    *one*, *one output*, *2*, *5*, *discontinuous*, *$\{6,10,16\}$*, *constant*, *no interval*,
+    *$0<w\le2$*, *includes*.
+  - **Box 3's third surprise is the sharpest idea in the lesson and it generates argument:** the step
+    function is **never increasing**. Every piece is constant, and a piece is the only place
+    ``increasing'' can be measured; the cost does rise, but it rises \emph{at} the jumps, and a jump
+    happens at a single input rather than across an interval. Let the room argue before settling it.
+  - **The new wrinkle on `AF.2c` is that an extreme's \emph{location} can be an interval.** 2.4 drilled
+    ``a value \emph{and} a location'' and every location so far has been a point. Guided practice's
+    drone is at $50$ ft for all of $[5,9]$; Tier R's phone plan sits at its \$30 minimum on all of
+    $[0,10]$; the exit ticket's \$40 minimum covers $[0,4]$. Students reliably name one endpoint.
+  - **Every context was chosen so the boundary means a different \emph{kind} of thing.** Notes: the
+    delivery fee (a mile), the paycheck $P(h)$ (an hour, continuous, corner at $h=40$), shipping
+    $S(w)$ (a weight, two jumps, a range that is a list). Guided practice **drone**
+    $20t-2t^2 / 50 / 50-10(t-9)$ on $[0,14]$, three pieces, continuous, all reads even. Tier R **phone
+    plan** $C(g)$ (\$30 flat then \$5/GB, boundary $g=10$). Tier A **garage** $G(h)=4/7/12$ (steps) and
+    a decontextualized $f$: $x^2$ on $[-2,2]$, $-2x+10$ on $(2,6]$. Exit ticket **babysitting**
+    $B(h)$ (\$40 flat then \$15/hr). Homework **tiered electricity** $E(k)$ (10¢ then 16¢, boundary
+    $500$ kWh) and a **bike-share** in steps.
+  - **Tier A item 5 is the item that separates the room, and it pays 2.5 back in a new costume.** The
+    open circle at $(2,6)$ means the outputs get as close to $6$ as you like and never reach it, so
+    the range is $[-2,6)$ and there is **no absolute maximum** — ``approaches is not reaches'' with a
+    *circle* instead of an asymptote. Most groups answer $4$, the biggest filled dot they can point at;
+    the prompt that fixes it is ``what is $f(2.1)$?'' Assessed again as homework item 5(a) and 5(d).
+  - **Exit ticket items 1 and 3 are the same number on purpose**, the 2.4/2.5 pattern reused a third
+    time: naming $h=4$ as the boundary point is the *correct* answer to item 1 and the *wrong*
+    conclusion in item 3 (``the graph has a break at $h=4$, because that is where the rule changes'').
+    **Item 2 is the second trap** — the minimum's location is the interval $[0,4]$, not a point.
+  - **Homework item 9 is the best interpret item in the unit.** A customer doubled usage $500 \to 1000$
+    kWh, the bill went \$50 $\to$ \$130, and they are certain they are being overcharged. **The
+    arithmetic is right and the \emph{expectation} is wrong**: $500(0.10)=50$ and $500(0.16)=80$, and
+    the extra \$30 is exactly $500$ kWh times the six-cent difference. Doubling the input doubles the
+    output only when one rate covers the whole range.
+  - **Homework item 10 bridges to 2.7** — four stories, one family each (gym → linear, bacteria →
+    exponential, thrown ball → quadratic, tiered tax → piecewise) plus the real question: **which two
+    could be confused from part of the graph?** The gym and the tax, because below the boundary the tax
+    graph *is* a straight line. *Model* is 2.7's word.
+  - **The extension introduces $|x|$ honestly** as $-x$ for $x<0$ and $x$ for $x \ge 0$ — a V, continuous
+    at $0$, minimum $0$ at the corner, climbing without bound at both ends. It adds no parent to the
+    required list and it is the cleanest possible statement of ``a corner is not a break.''
+  - Guard sizes: bare on vocab, `[12]` hook, `[30]`$\times$3 on the notesboxes, `[30]` practice,
+    `[30]` on all three activity tiers, `[24]`/`[30]`/`[24]`/`[26]` on the homework's boxes, `[18]` on
+    the plan's five teachernotes, `[16]` on the plan's Individual Work box, bare on the plan's Lesson,
+    Explicit Instruction and Group Work boxes. **2.4's set transferred verbatim for the third lesson
+    running, clean on the plan first pass.**
+  - **Boxguard finding, and the fourth lesson running where `\tcbbreak` was right on the first build.**
+    Homework item 4's stem \emph{and its whole graph} sat at the foot of p1 with the question and all
+    four write-line slots opening p2 — a student answering on one page while the figure they must read
+    is on the previous one. Same defect class as 2.4's item 4 and 2.5's item 8, and again invisible to
+    `make check` (the key stranded the same way, so parity was perfect at 4/4). `\tcbbreak` before
+    item 4 **cost nothing**: still 4 pages, and it *filled* p4, which had been ~45% empty. Still no
+    `\tcbbreak` authored before a build proved one necessary.
+  - **Pagination verdict, measured and recorded in comments in both files.** After the `\tcbbreak`,
+    homework p2 ends ~55% full with the electricity box opening p3. Lowering that box's guard `[30]`
+    $\to$ `[22]` was tested and **changed nothing at all** — the box's first unbreakable chunk
+    (scenario paragraph + the 4.4cm figure, ~2.9in) is larger than p2's free space, so the break is
+    natural and the guard is not the lever. Restored per 1.5's test-then-restore rule.
+  - **A slide-deck defect that no log reports, and the first of its kind in this course.** On the
+    notation frame, a `\vspace{-0.2cm}` between a `\[...\]` display and the paragraph beneath it made
+    the paragraph's **first two lines overprint each other** — with `grep Overfull` on the deck log
+    returning **zero**. The rule: **never pull text up under a display on a Beamer frame** (the
+    display's depth is already absorbed by `\belowdisplayskip`); shrink the figure instead. This is
+    also the standing argument for eyeballing the *deck*, not just the components.
+  - **Open/closed circles in pgfplots**, the pattern to reuse for every step function from here on:
+    filled is `\addplot[royal, only marks, mark=*, mark size=1.9pt]`, open is the same with
+    `mark options={fill=white}`. Both belong in the **blank** (they are the data students read), so
+    `keyred` marks are added only where the key supplies a *reading*, never on the dots themselves.
+  - Page counts: cover 1, warm-up 1/1, notes 5/5, activity 3/3, exit ticket 1/1, homework 4/4;
+    student and key packets 20 pages each. Plan 6 pp, slides 11 frames (4 pp printed 3-up). No
+    overfull box anywhere beyond the structural page banner (6.0pt, identical in verified 2.5) and the
+    cover's name row, and **none at all in the deck**.
 - **`unit02/lesson05` — End Behavior and Asymptotes (`AFDA.AF.2f–g`).** The lesson where **four
   lessons' worth of plants get harvested at once**, and the only one in the unit whose whole content
   is a distinction rather than a procedure.
@@ -1060,24 +1165,29 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
 
 ## Next steps
 
-1. Commit / PR **Lesson 2.5** (user to confirm).
-2. Then author **Unit 2's remaining content lessons, 2.6 and 2.7**, in order. The threads are planted:
-   **2.6 is `AFDA.AF.2` — piecewise-defined functions**, and its plant is **2.5's homework item 10**
-   (the delivery fee, flat \$5 for three miles then \$2 a mile, which already made students write
-   *two rules on two stretches with a hand-off at $m=3$* in plain English). 2.6 opens by naming that
-   **piecewise** — the fifth consecutive lesson using the move (2.2 named 2.1's translation, 2.3 named
-   2.2's parentheses, 2.4 named 2.3's extremes, 2.5 named 2.4's "gets closer and never arrives").
-   2.6 is also the natural place to run **every Unit 2 characteristic on one piecewise graph** —
-   domain and range, intercepts and zeros, intervals, extremes, end behavior — since it is the last
-   content lesson before 2.7's model-choosing.
-   2.7 gets 2.0's adding-vs-multiplying test, restated in 2.2's notes box 1 and assessed in 2.2's
-   homework item 2.
-   **Three habits must carry into 2.6:** 2.4's axis discipline; **2.5's rule that an asymptote is a
-   line and gets an equation** (drill it in 2.6 too — a piecewise graph can carry one); and 2.5's
-   exit-ticket pile 3 (the students who agreed the graph was "on the line") is the **Tier R roster**,
-   because a student who reads a picture as "close enough" will smear a piecewise graph's stretches
-   together at the hand-off point.
-3. **Every Unit 2 lesson is a graph-reading lesson — pre-draw and pre-scale every axis.** 2.0's
+1. Commit / PR **Lesson 2.6** (user to confirm). Lesson 2.5 is already merged to `main`.
+2. Then author **Unit 2's last content lesson, 2.7 — Choosing and Comparing Models in Context**
+   (`AFDA.AF.1c, e, g`; `AFDA.AF.2h`), which closes the unit. Its plants are already down:
+   **2.6's homework item 10** is the whole lesson in miniature (four stories, one family each, plus
+   *which two could be confused if you only saw part of the graph* — the gym and the tiered tax,
+   because below the boundary the tax graph *is* a straight line), and **2.0's adding-vs-multiplying
+   test**, restated in 2.2's notes box 1 and assessed in 2.2's homework item 2, is the tool that
+   separates linear from exponential off a table. 2.7 opens by naming what 2.6's item 10 produced —
+   the sixth consecutive lesson using the move (2.2 named 2.1's translation, 2.3 named 2.2's
+   parentheses, 2.4 named 2.3's extremes, 2.5 named 2.4's "gets closer and never arrives", 2.6 named
+   2.5's "two rules on two stretches").
+   **Three habits must carry into 2.7:** 2.4's axis discipline; **2.5's rule that an asymptote is a
+   line and gets an equation**; and 2.6's **"which piece owns this input?"**, which generalizes in 2.7
+   to *which family owns this situation, and what would have to be true for a different one to fit?*
+   2.6's exit-ticket pile 3 (the students who agreed a corner was a break) is the **Tier R roster** —
+   choosing a model starts with reading a graph's shape correctly in the first place.
+   `AF.2h` is deliberately cited by **both** 2.6 and 2.7: 2.6 *describes* the characteristics of a
+   piecewise graph, 2.7 *relates* them across families.
+3. After 2.7, **Unit 2 is complete as lessons** and the remaining work is its summative layer —
+   `unit02/unit_cover/` + `unit_cover_key/` and the four assessments in `unit02/tests/` and
+   `unit02/test_keys/` (scaffolded, still skeletons). Copy the shape from Unit 1 rather than
+   re-deriving it; see item 6 below.
+4. **Every Unit 2 lesson is a graph-reading lesson — pre-draw and pre-scale every axis.** 2.0's
    seven `pgfplots` figures are the model for style (`axis lines=left`, `grid=both` at
    `linegray!45`, `\scriptsize` tick/label fonts, `royal` plot, integer-friendly tick marks).
    **2.3 settled the no-sketching pattern for the rest of the unit** and it should be reused
@@ -1087,12 +1197,12 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
    page parity are unchanged. Also carry 2.3's grid distinction: **a grid meant for plotting needs a
    gridline at every integer; a grid meant for reading needs sparse tick labels plus
    `minor x/y tick num`** so values land on a visible line without crowding the labels.
-4. **Unit 2's cover and tests have a model** — copy the shape from `unit01/unit_cover/body.tex`
+5. **Unit 2's cover and tests have a model** — copy the shape from `unit01/unit_cover/body.tex`
    and the four `unit01` test files rather than re-deriving: the four-part 100-point blueprint,
    Part C's one-item-per-lesson spine, `work`-blocks-not-`\vspace` for parity, `\workrowsep` at
    8pt as the opening bid, `\parthead` carrying `\boxguard[9]`, and the rationale on
    `unit_cover_key` page 2.
-5. The model now holds across nine lessons. If the parallel-dispatch pattern is used from here on
+6. The model now holds across fifteen lessons. If the parallel-dispatch pattern is used from here on
    (coordinator scaffolds, one subagent per lesson, coordinator builds and gates), give each agent
    the boxguard tuning rule, the 1.2–1.7 guard sizes above, 1.5's "test the guard, then restore it"
    finding, **and 1.6's and 1.7's finding that `make check` passes on a stranded stub** — guard
@@ -1122,7 +1232,16 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
    "Horizontal asymptote" wrapped mid-word as "asymp-/tote"), and **a table's label column must be
    wide enough to hold its longest entry on one line**, or it breaks in the wrong place (2.5's
    `p{1.5cm}` split "(b) $y=2x-4$" after the equals sign). Both are invisible to `make check` and to
-   every page count; only the rendered PDF shows them.
+   every page count; only the rendered PDF shows them. From 2.6, add three: **never pull text up
+   under a `\[...\]` display on a Beamer frame with a negative `\vspace`** — 2.6's notation frame
+   overprinted its paragraph's first two lines while `grep Overfull` on the deck log returned
+   **zero**, so shrink the figure instead and *eyeball the deck, not just the components*;
+   **a figure and the question that reads it must not straddle a page break** (2.6's homework item 4
+   put the stem and graph on p1 and the question plus all four answer lines on p2 — the same defect
+   family as 2.4's item 4 and 2.5's item 8, and `\tcbbreak` fixed it free); and **when a guard change
+   produces no change at all, the break is natural and the guard is not the lever** — measure the
+   box's first unbreakable chunk against the page's free space before touching the number, which is
+   2.4's rule in its sharpest form.
 6. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
    For every later unit, check by hand what the gate would have caught: blank/key page parity on
    both test forms, no `teachernote` in any test key, no `\ans` inside math. The Unit 1 run's two

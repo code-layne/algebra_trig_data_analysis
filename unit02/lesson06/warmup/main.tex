@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
@@ -12,9 +13,68 @@
 
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\begin{notesbox}{Two Rules, and a Pencil You Do Not Have to Lift}
+\small
+Five quick items. Item 2 is the one to slow down on --- read the policy twice before you compute.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+
+\item \textbf{Last night's homework.} Item 10 graphed a delivery fee: a flat \$5 for the first $3$
+miles, then \$2 per mile after that. Give $F(2)$ and $F(6)$, and say how many \emph{rules} it took to
+describe the whole graph.
+
+\writelines{1}
+
+\item \textbf{A gym membership.} The plan charges \$25 a month for the first $6$ months and \$40 a
+month for every month after that. \quad (a) What do you pay in month $3$? \quad (b) In month $9$?
+\quad (c) What do you pay for a full $12$ months?
+
+\writelines{1}
+
+\item \textbf{Interval notation, both directions} (Lesson 2.1). \quad (a) Write $2 < w \le 5$ in
+interval notation. \quad (b) Write $[0,40]$ as an inequality.
+
+\writelines{1}
+
+\item \textbf{Can you trace it without lifting your pencil?} Answer yes or no for each graph.
+\smallskip
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.7cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.4cm, height=3.6cm, title={\scriptsize (a)},
+    xmin=0, xmax=6, ymin=0, ymax=8,
+    xtick={0,1,2,3,4,5,6}, ytick={0,2,4,6,8},
+    grid=both, grid style={linegray!45},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick] coordinates {(0,2) (3,2) (6,8)};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.4cm, height=3.6cm, title={\scriptsize (b)},
+    xmin=0, xmax=6, ymin=0, ymax=8,
+    xtick={0,1,2,3,4,5,6}, ytick={0,2,4,6,8},
+    grid=both, grid style={linegray!45},
+    axis lines=left, tick label style={font=\tiny}]
+  \addplot[royal, very thick] coordinates {(0,2) (3,2)};
+  \addplot[royal, very thick] coordinates {(3,6) (6,6)};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-2pt}
+(a) \blank{1.6cm} \qquad (b) \blank{1.6cm}
+
+\item \textbf{Reading intervals off a graph} (Lesson 2.4). Use graph (a) above. Name the stretch of
+inputs on which the graph is \emph{constant}, and the stretch on which it is \emph{increasing}.
+
+\writelines{1}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

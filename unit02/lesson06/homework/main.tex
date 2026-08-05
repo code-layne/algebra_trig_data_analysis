@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,282 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
+\boxguard[24]
+\begin{notesbox}{Practice --- Which Piece Owns This Input?}
+\small
+Before you use a rule, say which piece owns the input. At a boundary, let the dots decide.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item \textbf{Reading a piecewise graph.} Use the graph of $f$ below. Fill both rows --- for the
+second row write \emph{1st} or \emph{2nd} to say which piece owns that input.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.8cm, height=4.4cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-5, xmax=5, ymin=-3, ymax=6,
+    xtick={-5,-4,-3,-2,-1,0,1,2,3,4,5}, ytick={-2,-1,0,1,2,3,4,5},
+    grid=both, grid style={linegray!45},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(-4,-2) (-1,1)};
+  \addplot[royal, very thick] coordinates {(-1,5) (4,0)};
+  \addplot[royal, only marks, mark=*, mark size=1.9pt] coordinates {(-4,-2) (-1,1) (4,0)};
+  \addplot[royal, only marks, mark=*, mark size=1.9pt, mark options={fill=white}]
+    coordinates {(-1,5)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$x$ & $-3$ & $-1$ & $0$ & $2$ & $4$ \\ \hline
+$f(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\ \hline
+Which piece? & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+\hline
+\end{tabular}
+
+\item \textbf{The other direction --- from the rules, with no graph.} Let
+\[
+  g(x) = \begin{cases}
+    x+4 & \text{if } -4 \le x \le 0,\\[2pt]
+    4 & \text{if } 0 < x \le 3,\\[2pt]
+    4-2(x-3) & \text{if } 3 < x \le 6.
+  \end{cases}
+\]
+Fill both rows. Name the piece by its rule number (1st, 2nd or 3rd).
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|@{}}
+\hline
+$x$ & $-2$ & $0$ & $2$ & $5$ & $6$ \\ \hline
+Which piece? & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\ \hline
+$g(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+\hline
+\end{tabular}
+
+\item \textbf{Continuous or not?} Each line describes what happens at one boundary point. Write
+\emph{continuous} or \emph{discontinuous}, and give the reason in a few words.
+\smallskip
+
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}X p{3.4cm}@{}}
+\rowcolor{mist}
+\textbf{At the boundary\dots} & \textbf{The graph is\dots} \\
+\hline
+both rules give the value $12$ there & \blank{3.0cm} \\
+the left rule gives $5$ and the right rule gives $9$ & \blank{3.0cm} \\
+the graph turns a sharp corner, and both pieces reach the same point & \blank{3.0cm} \\
+there is a filled circle at $(3,2)$ and an open circle at $(3,7)$ & \blank{3.0cm} \\
+\end{tabularx}
+
+% Unguarded, item 4's stem and its whole graph sat at the foot of p1 with the
+% question and all four write-line slots opening p2 -- a student answering on one
+% page while the figure they must read is on the previous one. Same defect class
+% as 2.4's item 4 and 2.5's item 8. \boxguard is inert inside a breakable
+% tcolorbox, so \tcbbreak is the only lever, and here it costs nothing: still 4
+% pages, and it fills p4, which was otherwise ~45% empty. Mirrored in homework_key.
+\tcbbreak
+\item \textbf{A bike-share priced in steps.} A city bike costs \$2 for a ride of up to and including
+$30$ minutes, \$5 for over $30$ up to and including $60$, and \$9 for over $60$ up to and including
+$120$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.8cm, height=3.8cm,
+    xlabel={$t$ (minutes of the ride)}, ylabel={$R$ (cost, \$)},
+    xmin=0, xmax=126, ymin=0, ymax=12,
+    xtick={0,15,30,45,60,75,90,105,120}, ytick={0,2,4,6,8,10},
+    minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,2) (30,2)};
+  \addplot[royal, very thick] coordinates {(30,5) (60,5)};
+  \addplot[royal, very thick] coordinates {(60,9) (120,9)};
+  \addplot[royal, only marks, mark=*, mark size=1.9pt] coordinates {(30,2) (60,5) (120,9)};
+  \addplot[royal, only marks, mark=*, mark size=1.9pt, mark options={fill=white}]
+    coordinates {(0,2) (30,5) (60,9)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Give $R(30)$ and $R(60)$, naming the circle that settles each. Then give the range of $R$, and name
+every input where you would have to lift your pencil.
+
 \writelines{4}
+
+\item \textbf{The full read.} Go back to the graph of $f$ in item 1 and answer all of it.
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item Domain and range. (One of them needs a parenthesis --- look at the open circle.)
+  \item The zeros and the $y$-intercept.
+  \item The interval on which $f$ is increasing and the interval on which it is decreasing.
+  \item The absolute maximum and the absolute minimum, each with a value and a location. One of the
+        two does not exist --- say which, and why.
+  \item Is $f$ continuous? If not, name the input where it breaks and give $f$ there.
+\end{enumerate}
+
+\writelines{5}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+% p2 ends ~55% full and this box opens p3. Lowering the guard [30] -> [22] was
+% tested and changed nothing at all: the box's first unbreakable chunk (scenario
+% paragraph + the 4.4cm figure, ~2.9in) is larger than p2's free space, so the
+% break is the natural one, not a guard problem. Restored per 1.5's
+% test-then-restore rule. Mirrored in homework_key.
+\boxguard[30]
+\begin{scenariobox}[In Context --- A Tiered Electricity Bill]{royal}
+\small
+A power company charges $10$ cents per kilowatt-hour (kWh) for the first $500$ kWh a household uses
+in a month, and $16$ cents per kWh for everything above $500$. The graph shows $E(k)$, the monthly
+bill in dollars for $k$ kilowatt-hours, for households using up to $1000$ kWh.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.6cm, height=4.4cm,
+    xlabel={$k$ (kilowatt-hours used)}, ylabel={$E$ (bill, \$)},
+    xmin=0, xmax=1000, ymin=0, ymax=140,
+    xtick={0,100,200,300,400,500,600,700,800,900,1000},
+    ytick={0,20,40,60,80,100,120}, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize}]
+  \addplot[royal, very thick] coordinates {(0,0) (500,50) (1000,130)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=6]
+
+\item Read the graph and fill in both rows. Then give the boundary point of $E$ and say what it means
+on a customer's bill.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|@{}}
+\hline
+$k$ (kWh) & $200$ & $500$ & $750$ & $1000$ \\ \hline
+$E(k)$ (\$) & \blank{1.3cm} & \blank{1.3cm} & \blank{1.3cm} & \blank{1.3cm} \\ \hline
+Which piece? & \blank{1.3cm} & \blank{1.3cm} & \blank{1.3cm} & \blank{1.3cm} \\
+\hline
+\end{tabular}
+
+\writelines{2}
+
+\item Name the interval on which $E$ is increasing. Then say whether $E$ is continuous at $k=500$,
+and what the graph does there instead of breaking.
+
+\writelines{3}
+
+\item Give the absolute maximum and the absolute minimum of $E$, each with a value and a location.
+Then give the zero of $E$ and say what it means about a household.
+
+\writelines{3}
+
+\item A customer writes to the company: \emph{``I used $500$ kWh in April and \$50 was fair. In May I
+used $1000$ kWh --- exactly double --- and you charged me \$130. Doubling my usage should have
+doubled my bill. You are overcharging me.''} Settle the complaint using the two pieces. Is the
+company's arithmetic wrong, or is the customer's expectation wrong?
+
+\writelines{4}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=10]
+
+\item Every function family in this unit describes some situations well and others badly. For each
+story below, name the family you would use --- \emph{linear}, \emph{quadratic}, \emph{exponential},
+or \emph{piecewise} --- and give the one characteristic of the graph that gives it away (a constant
+rate of change, a turning point, a horizontal asymptote, a boundary point, and so on). Answer in
+plain English; Lesson 2.7 will give you the rest of the vocabulary.
+\smallskip
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}X p{2.5cm} p{3.6cm}@{}}
+\rowcolor{mist}
+\textbf{The situation} & \textbf{Family} & \textbf{What gives it away} \\
+\hline
+A gym charges a \$50 joining fee plus \$30 a month. & \blank{2.1cm} & \blank{3.2cm} \\
+A colony of bacteria doubles every hour. & \blank{2.1cm} & \blank{3.2cm} \\
+A ball is thrown straight up; it rises, turns, and falls back. & \blank{2.1cm} & \blank{3.2cm} \\
+A tax is $10\%$ on the first \$10{,}000 earned and $20\%$ on everything above that. & \blank{2.1cm} &
+    \blank{3.2cm} \\
+\end{tabularx}
+
+\smallskip
+Then answer: two of these four could be confused with each other if you only saw part of the graph.
+Which two, and what would you have to look at to tell them apart?
+
+\writelines{3}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[26]
+\begin{extensionbox}
+\small
+\textbf{A graph you already know, hiding in two pieces.} Consider the function
+\[
+  A(x) = \begin{cases}
+    -x & \text{if } x < 0,\\[2pt]
+    x & \text{if } x \ge 0.
+  \end{cases}
+\]
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item Complete the table. Watch $x=0$ carefully --- which of the two pieces owns it?
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|l|c|c|c|c|c|c|c|@{}}
+\hline
+$x$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+$A(x)$ & \blank{1.0cm} & \blank{1.0cm} & \blank{1.0cm} & \blank{1.0cm} & \blank{1.0cm} &
+    \blank{1.0cm} & \blank{1.0cm} \\
+\hline
+\end{tabular}
+
+  \item Describe the shape of this graph in one sentence. Is $A$ continuous at $x=0$? What does the
+        graph do there?
+
+\writelines{2}
+
+  \item Give the interval on which $A$ is decreasing and the interval on which it is increasing, the
+        zeros of $A$, the absolute minimum with its location, and the end behavior at both ends
+        (Lesson 2.5).
+
+\writelines{3}
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{Next: Lesson 2.7 --- Choosing and Comparing Models in Context} (\texttt{AFDA.AF.1c, e, g};
+\texttt{AFDA.AF.2h}). Item 10 asked you to pick a function family from a story. Next lesson turns that
+into a method: given data or a situation, decide \emph{which} family models it, defend the choice
+using the characteristics you have spent this whole unit learning to read, and say what the model can
+and cannot tell you.
+\end{remindbox}
 
 \end{document}
