@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
@@ -12,9 +13,42 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Four Moves Today's Lesson Runs On}
+\small
+Item 1 is the one to slow down on --- writing the factors out is how today's first rule gets
+discovered instead of memorized. Show your work on all four.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item \textbf{Exponents are repeated multiplication.} Write $x^3 \cdot x^4$ out as a string of
+$x$'s, count them, and rewrite the product as a single power of $x$.
+\begin{work}
+  x^3 \cdot x^4 &= (x\cdot x\cdot x)(x\cdot x\cdot x\cdot x) \\
+                &= x^7
+\end{work}
+
+\item \textbf{Like terms.} Combine: $5m^2-3m+8-2m^2+7m$
+\begin{work}
+  5m^2-3m+8-2m^2+7m &= (5m^2-2m^2)+(-3m+7m)+8 \\
+                    &= 3m^2+4m+8
+\end{work}
+
+\item \textbf{Distributing.} Simplify: $-3(2y-5)+4y$
+\begin{work}
+  -3(2y-5)+4y &= -6y+15+4y \\
+              &= -2y+15
+\end{work}
+
+\item \textbf{Spiral --- Lesson 1.0.} A rectangular pen uses $30$ feet of fence on three sides
+against a barn wall, so its area in square feet is $A(x)=x(30-3x)$. Expand $A(x)$ and write it
+in standard form.
+\begin{work}
+  A(x) &= x(30-3x) \\
+       &= 30x-3x^2 \\
+       &= -3x^2+30x
+\end{work}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

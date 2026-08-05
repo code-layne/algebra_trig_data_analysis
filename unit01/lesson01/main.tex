@@ -16,56 +16,253 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can simplify monomial expressions in one and two variables with
+    the exponent rules, add and subtract polynomials by combining like terms, and multiply
+    polynomials so that every term of one factor reaches every term of the other. I can build a
+    polynomial from a situation --- revenue, cost, profit, volume --- evaluate it, and say what
+    the number means.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Knowledge \& Skills covered --- \texttt{A2.EO.3a}:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Determine \textbf{sums} and \textbf{differences} of polynomials in one and two variables,
+        writing the result in standard form.
+  \item Determine \textbf{products} of polynomials: monomial $\times$ polynomial, binomial
+        $\times$ binomial (one and two variables), binomial $\times$ trinomial.
+\end{itemize}
+\textbf{Supporting fluency (Algebra 1--2 review, not a new code):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item The exponent rules: product, quotient, power of a power, power of a product, power of a
+        quotient, and the zero and negative exponents.
+  \item Combining like terms; degree and standard form in one and two variables.
+\end{itemize}
+\textbf{Where these codes go next:} \texttt{A2.EO.2a--c} in Lesson 1.2 (the same rules extended
+to fractional exponents); \texttt{A2.EO.3b} in 1.3--1.5, which is this lesson's multiplication
+run backwards; \texttt{A2.F.1} in Unit 3, where the product rule reappears as
+$\log(ab)=\log a+\log b$.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{An exponent counts factors --- every rule is bookkeeping on that count.} Written
+        out, $x^3\cdot x^4$ is seven $x$'s. Students who can reconstruct a rule in five seconds
+        never need to guess between adding and multiplying exponents.
+  \item \textbf{Coefficients multiply; exponents add.} These are two different operations happening
+        in one expression, and confusing them is the single most common error of the lesson.
+  \item \textbf{Zero and negative exponents are forced, not chosen.} $x^0=1$ and $x^{-n}=1/x^n$ are
+        what the quotient rule \emph{requires}; presenting them as definitions to memorize is what
+        makes students believe $x^{-2}$ is negative.
+  \item \textbf{Subtraction is distribution in disguise.} $-(a+b)$ is $-a-b$. The minus sign in
+        front of a polynomial reaches every term, exactly as the $-16$ did in Lesson 1.0.
+  \item \textbf{Products are exhaustive, not patterned.} FOIL is a special case, not a rule ---
+        ``every term times every term'' scales to a trinomial and FOIL does not.
+  \item \textbf{Polynomials come from situations.} Revenue $-$ cost is a subtraction students can
+        check against the story; that check is what makes the algebra worth doing.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Base and exponent & In $x^7$, $x$ is the base and $7$ is the exponent. The exponent counts the
+    factors of the base being multiplied. \\
+Like terms & Terms with exactly the same variables raised to exactly the same powers. $5m^2$ and
+    $-2m^2$ combine; $5m^2$ and $7m$ do not. \\
+Degree & The largest total exponent in any one term. In two variables, add the exponents within
+    a term: $3a^2b^3$ has degree $5$. \\
+Standard form & Terms ordered from highest degree to lowest, ending with the constant. \\
+Distributive property & $a(b+c)=ab+ac$. The reason a factor outside parentheses reaches every
+    term inside --- and the engine behind every product in this lesson. \\
+Monomial / binomial / trinomial & Polynomials with one, two, and three terms. Naming them makes
+    ``a binomial times a trinomial gives six products'' a usable check. \\
+Product of powers & $a^m\cdot a^n=a^{m+n}$. Quotient: $a^m/a^n=a^{m-n}$. Power of a power:
+    $(a^m)^n=a^{mn}$. Power of a product: $(ab)^n=a^nb^n$. \\
+Zero \& negative exponent & $a^0=1$ and $a^{-n}=1/a^n$, for $a \ne 0$. Both follow from the
+    quotient rule; neither makes a value negative. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{Four items, about 6 minutes:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Write $x^3\cdot x^4$ out as factors and count them (\emph{discovers} the product rule)
+  \item Combine like terms in $5m^2-3m+8-2m^2+7m$
+  \item Distribute and simplify $-3(2y-5)+4y$
+  \item Spiral from 1.0: expand $A(x)=x(30-3x)$
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 1 is not a review question --- it is the lesson's first two
+minutes. Take answers to it \emph{before} the hook and write the seven $x$'s on the board; the
+product rule should be stated by a student, not by you. Items 2--4 are diagnostic for anyone who
+missed warm-up items 1--2 on the Unit 1 opener.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{The Party Size tub.} A theater's regular popcorn tub is a cylinder $3$ inches in radius
+and $8$ inches tall. The \emph{Party Size} is twice as wide and twice as tall --- radius $6$,
+height $16$ --- and costs \textbf{three times} as much. \textbf{Pose it this way:} ``Twice as wide,
+twice as tall, three times the price. Good deal or bad deal? Vote before you compute.'' Most rooms
+vote ``bad deal,'' reasoning that twice the size should be about twice the popcorn. Then compute
+with $V=\pi r^2h$:
+\[ \pi(2r)^2(2h) = \pi\cdot 4r^2\cdot 2h = 8\pi r^2h. \]
+Eight times the popcorn for three times the price. Concretely: $72\pi \approx 226$ cubic inches
+becomes $576\pi \approx 1810$. The exponent on $r$ is what the intuition missed --- doubling a
+squared quantity quadruples it. \textbf{That is the whole lesson in one line:} the exponent rules
+are not notation, they are how quantities actually scale.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Build the rules by counting (10 min).} Start from the warm-up's seven $x$'s and fill
+the notes table together. Do \emph{not} present five rules to memorize --- derive each one by
+writing factors out, then let students state it. \textbf{Ask:} ``Why does $(2d)^4$ start with
+$16$?'' The exponent is outside the parentheses, so it reaches the $2$ as well. Work the two
+examples, naming the coefficients-multiply/exponents-add split out loud.
+
+\textbf{2. Force the zero and negative exponents (8 min).} $\dfrac{x^5}{x^5}$ is $x^0$ by the
+quotient rule and $1$ by cancelling, so $x^0=1$. $\dfrac{x^3}{x^7}$ is $x^{-4}$ and $\dfrac{1}{x^4}$,
+so those are equal. \textbf{Ask:} ``Is $2^{-3}$ negative?'' Get the answer $\tfrac18$ and the
+sentence ``a negative exponent moves the factor across the fraction bar.'' This is the
+misconception to kill today; it costs points in Lesson 1.2 and again in Unit 3.
+
+\textbf{3. Sums and differences (7 min).} Do the two generic examples side by side so the only
+difference visible is the sign handling. \textbf{Ask:} ``What happened to the $-9$?'' Then build
+the concession-stand model: revenue, cost, profit. Have students check $P(8)=380$ against the
+story ($70$ trays $\times$ \$8 $=$ \$560, minus \$180 in costs) --- that verification is the habit
+worth more than the answer.
+
+\textbf{4. Products (10 min).} State the one rule --- every term times every term --- and use the
+$2\times 3$ product count as a check. Work all three examples; the two-variable one is where to
+slow down, because $-15ab$ and $+2ab$ combining surprises students who think $ab$ terms cannot
+combine at all. Name FOIL as a special case that does not extend, then move on.
+
+\textbf{5. Guided practice (8 min).} The tray problem. Multiply the two binomials first, then
+distribute the $x$; students who start with $x(10-2x)$ get there too but with messier bookkeeping.
+Item 3 (why $x<4$) is the interpretation item --- do not let it get skipped for time.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Multiplying Any Two Polynomials]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four steps students record:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Count the products you expect: (terms in the first) $\times$ (terms in the second).
+  \item Multiply every term of the first by every term of the second. Coefficients multiply;
+        exponents add.
+  \item Check that you wrote down that many products before combining anything.
+  \item Combine like terms and write the result in standard form.
+\end{enumerate}
+\textbf{Say this out loud:} ``FOIL is what this rule looks like when both factors happen to have
+two terms. It is not the rule.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example (two variables):}
+\[
+\begin{aligned}
+(3a+2b)(a-5b) &= 3a^2-15ab+2ab-10b^2 \\
+              &= 3a^2-13ab-10b^2
+\end{aligned}
+\]
+Four products, then two of them combine. \textbf{The error to name before it happens:} treating
+$-15ab$ and $+2ab$ as unlike terms because two letters are involved. They have the same variables
+to the same powers, so they combine --- the answer has three terms, not four.
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes, box 1:} watch for $(2m^3n)^4$ answered as $2m^{12}n^4$ --- the coefficient
+        left untouched. Ask ``what is the base of that fourth power?''
+  \item \textbf{Notes, box 2:} watch for $4a^4b^{-3}$ written as $-\dfrac{4a^4}{b^3}$. The sign of
+        the exponent is not the sign of the value.
+  \item \textbf{Notes, box 3:} the giveaway error is $-10x^2+150x-20x+340$ --- the minus reached
+        only the first term. Point at the parentheses, do not supply the fix.
+  \item \textbf{Activity, Tier A item 3:} the second polynomial is $-9x+195$, so subtracting it
+        \emph{adds} $9x$. Expect this to be the sticking point for a full third of the room.
+  \item \textbf{Cold-call prompts:} ``Why is the Party Size eight times, not four?'' ``Is $3^{-2}$
+        negative?'' ``How many products before you combine, and how do you know?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Five one-line fluency items: a monomial product, a power of a product, a quotient, a
+        polynomial sum, and a monomial times a trinomial.
+  \item Support: have the group write the factors out longhand on the first one.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item The school-store model: build $R(x)$, $C(x)$, then $P(x)=R-C$ --- the minus-sign item.
+  \item Evaluate $P(6)=183$ and interpret it in context.
+  \item A two-variable product, $(2x+5y)(3x-y)$.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique two wrong answers, $(4x^3)^2$ and $(2m+3)^2$, and name the rule each breaks.
+  \item Scaling: a cube of edge $3s$ has $27$ times the volume but only $9$ times the surface.
+  \item Justify why $P(0)=-195$ is correct, not an arithmetic error.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} (1) simplify $\dfrac{12a^5b^3}{3a^2b^7}$ with no negative
+exponents --- answer $\dfrac{4a^3}{b^4}$; (2) subtract $\left(5x^2-3x+7\right)-\left(2x^2+4x-9\right)$
+--- answer $3x^2-7x+16$; (3) \textbf{the conceptual check} --- a classmate writes
+$\left(3x^2\right)^3=3x^6$; give the correct answer and say in one sentence what was forgotten.
+
+\textbf{Using the results:} sort into three piles --- \emph{clean}, \emph{one rule slipping},
+\emph{cannot start}. Item 1 isolates the negative exponent, item 2 isolates the distributed minus,
+item 3 isolates the coefficient under a power. Because each item tests a different failure, the
+pile a student lands in names the fix, and that is your Tier R grouping for Lesson 1.2.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (12 items): seven fluency items covering all three exponent-rule families and
+all three polynomial operations, a three-part concession-stand profit model paralleling the
+activity with new numbers, and two look-ahead items --- a cube-scaling justification and a square
+whose area is $49x^6$.
+
+\textbf{Extension (optional):} simplify the surface-area-to-volume ratio of a cube, $\dfrac{6s^2}{s^3}
+= \dfrac{6}{s}$, and use it to explain why one large block of ice outlasts the same ice in small
+cubes. It is the hook's scaling idea turned into a quotient.
+
+\textbf{Preview of Lesson 1.2 (\texttt{A2.EO.2a--c}):} radicals and rational exponents. Homework
+item 12 asks students to undo a square; Lesson 1.2 gives that move a symbol and shows the same
+exponent rules survive when the exponents become fractions.
+
+\textbf{Connections.} Covers \texttt{A2.EO.3a} (sums, differences, and products of polynomials in
+one and two variables), supported by Algebra 1--2 exponent-rule review. Builds on Lesson 1.0's
+expand-and-compare; feeds \texttt{A2.EO.2a--c} (1.2), \texttt{A2.EO.3b} (1.3--1.5, this lesson
+reversed), and \texttt{A2.F.1} in Unit 3, where the product rule becomes a property of logarithms.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +270,54 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{6 minutes, then take item 1 out loud before anything else.} Answers: (1) $x^7$, after
+    writing seven $x$'s; (2) $3m^2+4m+8$; (3) $-2y+15$; (4) $-3x^2+30x$. Item 1 is the pivot of
+    the whole lesson --- if you score it silently and move on, you have spent the discovery and
+    bought nothing. Put the seven $x$'s on the board and ask who can state the rule. Items 2 and 3
+    tell you who is still losing signs; item 4 is the Lesson 1.0 spiral, and a student who cannot
+    expand $x(30-3x)$ tonight will not survive the profit model in the activity.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{The table in box 1 is a fill-in, not a handout --- resist reading the five rules
+    aloud.} Answers across the ``Try it'' column: $x^{13}$, $y^7$, $c^{15}$, $16d^4$,
+    $\dfrac{k^2}{9}$. The three blanks elsewhere are \emph{coefficient}, \emph{negative}, and
+    \emph{every}; box 4's count is \emph{six}. Box 2 is short but it is the box that pays off in
+    Lesson 1.2 --- do not cut it for time. If the period is running behind, cut the second worked
+    product in box 4 (the two-variable one is the keeper) rather than the tray in guided practice.
+    On the tray, expect at least one group to multiply $x(10-2x)$ first; that is not wrong, so let
+    them finish and compare the two routes at the board.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is five one-liners;
+    a group still working on it at six minutes needs you, not more time. Tier A item 3 is the
+    lesson's real assessment: subtracting $-9x+195$ requires adding $9x$, and roughly a third of
+    the room will write $-9x$ instead. Do not correct it --- ask them to check $P(6)$ against the
+    story ($54$ bottles at \$6 is \$324; costs are \$60 $+$ \$81 $=$ \$141; profit \$183) and let
+    the mismatch send them back. Tier E item 3 is the one to share out: a negative profit at a
+    price of zero is not a broken model, it is a stand that gave away $90$ bottles and still owes
+    \$195.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Each item isolates one failure
+    mode on purpose --- negative exponent, distributed minus, coefficient under a power --- so
+    read the tickets by \emph{which} item is wrong, not by a score out of three. A student who
+    misses only item 1 needs five minutes on notation; a student who misses only item 2 is losing
+    signs and will lose them again in 1.3 when factoring out a negative GCF. Item 3 asks for a
+    sentence: accept anything that says the exponent applies to the $3$, and do not require the
+    phrase ``power of a product.''
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 20--25 minutes.} Items 1--7 are deliberately unmixed by type so a student can
+    tell you which \emph{kind} of problem broke, not just that homework was hard. Item 3 is the
+    only one with both a negative and a zero exponent, so check it first when you spot-grade.
+    Items 8--10 repeat the activity's model with new numbers, on purpose: a group that leaned on
+    its partners in class has to carry it alone the same night. Item 12 is the bridge into Lesson
+    1.2 --- students are asked to \emph{check} $7x^3$ by squaring rather than to find a square
+    root, so nobody needs a symbol they have not met. The extension is genuinely optional; it is
+    the best follow-up for whoever finished Tier E early.
 \end{teachernote}
 \end{document}

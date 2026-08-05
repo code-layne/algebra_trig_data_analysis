@@ -17,10 +17,148 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{The Party Size Tub}
+  \sectionlabel[goldacc]{hook --- vote before you compute}
+  The regular popcorn tub is a cylinder: radius $3$ in, height $8$ in.\\
+  The \textbf{Party Size} is twice as wide and twice as tall --- and costs \textbf{three times}
+  as much.
+  \[ V = \pi r^2 h \]
+  \begin{block}{Good deal or bad deal?}
+    Most people say bad: twice as big should be about twice the popcorn.\\[2pt]
+    Vote first. Then we compute.
+  \end{block}
+\end{frame}
+
+% ── HOOK PAYOFF ───────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Eight Times, Not Twice}
+  \sectionlabel{the exponent is what your intuition missed}
+  \[
+  \begin{aligned}
+    \pi(2r)^2(2h) &= \pi \cdot 4r^2 \cdot 2h \\
+                  &= 8\pi r^2 h
+  \end{aligned}
+  \]
+  Regular: $72\pi \approx 226$ in\textsuperscript{3}. \qquad
+  Party Size: $576\pi \approx 1810$ in\textsuperscript{3}.
+  \begin{block}{Eight times the popcorn for three times the price.}
+    Doubling a \emph{squared} quantity quadruples it. The exponent rules are not notation ---
+    they are how quantities actually scale.
+  \end{block}
+\end{frame}
+
+% ── THE RULES ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Every Rule Is Just Counting Factors}
+  \sectionlabel{you fill these in --- do not memorize them}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabularx}{\textwidth}{@{}p{4.2cm} p{4.4cm} X@{}}
+    \textbf{Rule} & \textbf{In symbols} & \textbf{Try it} \\
+    \hline
+    Product of powers   & $a^m \cdot a^n = a^{m+n}$      & $x^4 \cdot x^9$ \\
+    Quotient of powers  & $a^m / a^n = a^{m-n}$          & $y^{11}/y^4$ \\
+    Power of a power    & $\left(a^m\right)^n = a^{mn}$  & $\left(c^3\right)^5$ \\
+    Power of a product  & $(ab)^n = a^n b^n$             & $(2d)^4$ \\
+  \end{tabularx}
+  \vspace{0.4cm}
+
+  {\color{royal}\bfseries Coefficients multiply. Exponents add. Two different operations.}
+\end{frame}
+
+% ── ZERO AND NEGATIVE ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Zero and Negative Exponents Are Forced}
+  \sectionlabel{nobody chose these --- the quotient rule did}
+  \begin{itemize}
+    \setlength{\itemsep}{0.35cm}
+    \item $\dfrac{x^5}{x^5}$ is $x^0$ by the rule, and $1$ by cancelling. So $x^0=1$.
+    \item $\dfrac{x^3}{x^7}$ is $x^{-4}$ by the rule, and $\dfrac{1}{x^4}$ by cancelling.
+          So $x^{-4}=\dfrac{1}{x^4}$.
+  \end{itemize}
+  \vspace{0.3cm}
+  \begin{block}{Is $2^{-3}$ negative?}
+    No --- it is $\tfrac18$. A negative exponent moves the factor across the fraction bar.
+    It never changes the sign of the value.
+  \end{block}
+\end{frame}
+
+% ── SUMS AND DIFFERENCES ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Adding Is Easy. Subtracting Is the Trap.}
+  \sectionlabel{the minus reaches every term}
+  \[
+  \begin{aligned}
+    \left(4x^2-7x+2\right)+\left(x^2+3x-9\right) &= 5x^2-4x-7 \\[6pt]
+    \left(4x^2-7x+2\right)-\left(x^2+3x-9\right) &= 4x^2-7x+2-x^2-3x+9 \\
+                                                 &= 3x^2-10x+11
+  \end{aligned}
+  \]
+  \begin{block}{Watch the $-9$}
+    It became $+9$. Subtracting a polynomial means distributing the minus sign to
+    \textbf{every} term --- the same move as the $-16$ in Lesson 1.0.
+  \end{block}
+\end{frame}
+
+% ── PROFIT MODEL ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Where Subtraction Comes From: Profit}
+  \sectionlabel{the concession stand}
+  At \$$x$ per nacho tray the stand sells $150-10x$ trays. It pays \$40 flat plus \$2 per tray.
+  \[
+  \begin{aligned}
+    R(x) &= x(150-10x) = -10x^2+150x \\
+    C(x) &= 40+2(150-10x) = -20x+340 \\
+    P(x) &= R(x)-C(x) = -10x^2+170x-340
+  \end{aligned}
+  \]
+  \begin{block}{Always check the algebra against the story}
+    $P(8)=380$. At \$8 the stand sells $70$ trays for \$560 and pays \$180. Same answer.
+  \end{block}
+\end{frame}
+
+% ── PRODUCTS ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{One Rule for Every Product}
+  \sectionlabel{every term times every term}
+  \[
+  \begin{aligned}
+    (3a+2b)(a-5b)              &= 3a^2-15ab+2ab-10b^2 \;=\; 3a^2-13ab-10b^2 \\[4pt]
+    (x+3)\left(x^2-2x+5\right) &= x^3-2x^2+5x+3x^2-6x+15 \;=\; x^3+x^2-x+15
+  \end{aligned}
+  \]
+  \begin{block}{Count first, multiply second}
+    $2$ terms times $3$ terms gives \textbf{six} products before combining. And note
+    $-15ab+2ab=-13ab$ --- two letters does not mean unlike terms.
+  \end{block}
+  {\color{goldacc}\bfseries FOIL is this rule's two-by-two special case. It does not extend.}
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: The School Store Fundraiser}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  At \$$x$ per water bottle the store sells $90-6x$ bottles. It pays a \$60 booth fee plus
+  \$1.50 per bottle sold.
+  \begin{block}{Your job}
+    Build $R(x)$, then $C(x)$, then $P(x)=R(x)-C(x)$. Evaluate $P(6)$ --- and check it against
+    the story before you believe it.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.35cm}
+    \item Simplify $\dfrac{12a^5b^3}{3a^2b^7}$ with no negative exponents.
+    \item Subtract $\left(5x^2-3x+7\right)-\left(2x^2+4x-9\right)$.
+    \item A classmate writes $\left(3x^2\right)^3=3x^6$. Correct it, and say what was forgotten.
+  \end{enumerate}
+  \vspace{0.3cm}
+  {\color{royal}\bfseries Next: Lesson 1.2 --- Radicals and Rational Exponents.}
 \end{frame}
 
 \end{document}

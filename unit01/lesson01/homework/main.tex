@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,141 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\boxguard[16]
+\begin{notesbox}{Practice --- Exponent Rules and Polynomial Operations}
+\small
+Show your work. Write every answer in standard form, with no negative exponents.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item Simplify: $\left(-3u^4v^2\right)\left(6u^3v^5\right)$
+\begin{work}
+  \left(-3u^4v^2\right)\left(6u^3v^5\right) &= (-3)(6)\,u^{4+3}\,v^{2+5} \\
+                                            &= -18u^7v^7
+\end{work}
+
+\item Simplify: $\left(4x^3y\right)^3$
+\begin{work}
+  \left(4x^3y\right)^3 &= 4^3x^{9}y^3 \\
+                       &= 64x^9y^3
+\end{work}
+
+\item Simplify: $\dfrac{20m^6n^2}{5m^8n^2}$
+\begin{work}
+  \dfrac{20m^6n^2}{5m^8n^2} &= 4\,m^{6-8}\,n^{2-2} \\
+                            &= 4m^{-2}n^0 \\
+                            &= \dfrac{4}{m^2}
+\end{work}
+
+\item Add: $\left(6k^2-4k+1\right)+\left(3k^2+9k-8\right)$
+\begin{work}
+  \left(6k^2-4k+1\right)+\left(3k^2+9k-8\right) &= 9k^2+5k-7
+\end{work}
+
+\item Subtract: $\left(7y^2+2y-5\right)-\left(4y^2-6y+3\right)$
+\begin{work}
+  \left(7y^2+2y-5\right)-\left(4y^2-6y+3\right) &= 7y^2+2y-5-4y^2+6y-3 \\
+                                                &= 3y^2+8y-8
+\end{work}
+
+\item Multiply: $(2p-7q)(3p+q)$
+\begin{work}
+  (2p-7q)(3p+q) &= 6p^2+2pq-21pq-7q^2 \\
+                &= 6p^2-19pq-7q^2
+\end{work}
+
+\item Multiply: $(x-2)\left(x^2+4x-3\right)$
+\begin{work}
+  (x-2)\left(x^2+4x-3\right) &= x^3+4x^2-3x-2x^2-8x+6 \\
+                             &= x^3+2x^2-11x+6
+\end{work}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{scenariobox}[In Context --- The Concession Stand]{royal}
+\small
+A concession stand sells hot dogs. At a price of $x$ dollars each it expects to sell $180-12x$
+hot dogs. Its costs are a \$150 permit plus \$2 per hot dog sold.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt, start=8]
+
+\item Write the revenue $R(x)$ and the cost $C(x)$, each in standard form.
+\begin{work}
+  R(x) &= x(180-12x) = -12x^2+180x \\
+  C(x) &= 150+2(180-12x) = -24x+510
+\end{work}
+
+\item Find the profit $P(x)=R(x)-C(x)$ in standard form.
+\begin{work}
+  P(x) &= \left(-12x^2+180x\right)-\left(-24x+510\right) \\
+       &= -12x^2+180x+24x-510 \\
+       &= -12x^2+204x-510
+\end{work}
+
+\item Find $P(5)$, then write one sentence saying what it means for the stand.
+\begin{work}
+  P(5) &= -12(5)^2+204(5)-510 \\
+       &= -300+1020-510 \\
+       &= 210
+\end{work}
+\writeline
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[14]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt, start=11]
+
+\item A storage bin is a cube with edge length $s$ inches. A larger bin has edge length $3s$
+inches. Show that the larger bin holds $27$ times as much, and explain in one sentence why
+tripling every edge does \emph{not} triple the volume.
+\begin{work}
+  (3s)^3 &= 3^3s^3 \\
+         &= 27s^3
+\end{work}
+\writeline
+
+\item A square solar panel has area $A = 49x^6$ square inches. What is the length of one side?
+(Check your answer by squaring it --- this is where Lesson 1.2 begins.)
+\begin{work}
+  \left(7x^3\right)^2 &= 7^2x^{6} \\
+                      &= 49x^6
+\end{work}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{extensionbox}
+\small
+\textbf{Why big things cool slowly.} For a cube of edge $s$, the surface area is $6s^2$ and the
+volume is $s^3$. Simplify the ratio of surface area to volume, then use it to explain why a
+single large block of ice lasts longer than the same ice cut into small cubes.
+\begin{work}
+  \dfrac{6s^2}{s^3} &= 6s^{2-3} \\
+                    &= 6s^{-1} = \dfrac{6}{s}
+\end{work}
+\writeline
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{Next: Lesson 1.2 --- Radicals and Rational Exponents} (\texttt{A2.EO.2a--c}). Item 12
+asked you to undo a square, which is what a radical does. In Lesson 1.2 that move gets a symbol
+of its own, and the same exponent rules you used tonight turn out to work for fractional
+exponents too.
+\end{remindbox}
 
 \end{document}
