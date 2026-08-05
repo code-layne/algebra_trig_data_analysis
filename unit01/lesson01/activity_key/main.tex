@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,139 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+The school store is running a spring fundraiser on refillable water bottles. Their survey says
+that at a price of $x$ dollars per bottle they will sell about $90-6x$ bottles. The store pays a
+flat \$60 booth fee plus \$1.50 per bottle sold.
+
+Work with your group. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R
+without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Five fluency moves. Every one of them shows up again in Tier A.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Simplify: $\left(5x^3\right)\left(-2x^4\right)$
+\begin{work}
+  \left(5x^3\right)\left(-2x^4\right) &= (5)(-2)\,x^{3+4} \\
+                                      &= -10x^7
+\end{work}
+
+  \item Simplify: $\left(a^2b^5\right)^3$
+\begin{work}
+  \left(a^2b^5\right)^3 &= a^{2\cdot 3}b^{5\cdot 3} \\
+                        &= a^6b^{15}
+\end{work}
+
+  \item Simplify: $\dfrac{18c^7}{6c^3}$
+\begin{work}
+  \dfrac{18c^7}{6c^3} &= 3c^{7-3} \\
+                      &= 3c^4
+\end{work}
+
+  \item Add: $\left(3w^2+8w-1\right)+\left(5w^2-2w+6\right)$
+\begin{work}
+  \left(3w^2+8w-1\right)+\left(5w^2-2w+6\right) &= 8w^2+6w+5
+\end{work}
+
+  \item Multiply: $4n\left(n^2-3n+2\right)$
+\begin{work}
+  4n\left(n^2-3n+2\right) &= 4n^3-12n^2+8n
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Now build the store's model. Price is $x$ dollars per bottle; the store sells $90-6x$ bottles.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item \textbf{Revenue} is the price times the number sold. Write $R(x)$ and expand it into
+        standard form.
+\begin{work}
+  R(x) &= x(90-6x) \\
+       &= 90x-6x^2 \\
+       &= -6x^2+90x
+\end{work}
+
+  \item \textbf{Cost} is the \$60 booth fee plus \$1.50 for each bottle sold. Write $C(x)$ and
+        simplify it.
+\begin{work}
+  C(x) &= 60+1.5(90-6x) \\
+       &= 60+135-9x \\
+       &= -9x+195
+\end{work}
+
+  \item \textbf{Profit} is revenue minus cost. Find $P(x)$ in standard form. Watch the minus sign.
+\begin{work}
+  P(x) &= \left(-6x^2+90x\right)-\left(-9x+195\right) \\
+       &= -6x^2+90x+9x-195 \\
+       &= -6x^2+99x-195
+\end{work}
+
+  \item Find $P(6)$, then write one sentence saying what it means for the store.
+\begin{work}
+  P(6) &= -6(6)^2+99(6)-195 \\
+       &= -216+594-195 \\
+       &= 183
+\end{work}
+\ansline{At \$6 per bottle the store clears \$183 on the fundraiser.}
+
+  \item The store also orders a rectangular display banner measuring $(2x+5y)$ feet by
+        $(3x-y)$ feet. Write its area as a polynomial in standard form.
+\begin{work}
+  (2x+5y)(3x-y) &= 6x^2-2xy+15xy-5y^2 \\
+                &= 6x^2+13xy-5y^2
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item \textbf{Critique the work.} A student turned in these two answers. Both are wrong.
+        Write the correct answer for each, then name the rule the student broke.
+        \[ \left(4x^3\right)^2 = 4x^6 \qquad\text{and}\qquad (2m+3)^2 = 4m^2+9 \]
+\begin{work}
+  \left(4x^3\right)^2 &= 4^2x^{6} = 16x^6 \\
+  (2m+3)^2 &= 4m^2+6m+6m+9 \\
+           &= 4m^2+12m+9
+\end{work}
+\ansline{Power of a product: the outer exponent hits the coefficient and every term.}
+
+  \item \textbf{Scaling.} A storage cube has edge length $s$; a bigger one has edge $3s$. Use the
+        exponent rules to show the volume is $27$ times as large and the surface area only $9$
+        times. Then say why ``three times as big'' is a misleading phrase.
+\begin{work}
+  (3s)^3 &= 27s^3 \\
+  6(3s)^2 &= 6\cdot 9s^2 = 9\left(6s^2\right)
+\end{work}
+\ansline{Tripling a length triples nothing else: area grows by $3^2$, volume by $3^3$.}
+
+  \item \textbf{Justify.} Your profit model gives $P(0)=-195$. A group member says that has to be
+        an arithmetic mistake, because profit cannot be negative. Use the situation to explain
+        why $-195$ is exactly right.
+
+\ansline{At \$0 the store gives away all $90$ bottles and takes in nothing.}\\
+\ansline{It still owes the \$60 fee and \$135 in bottles, so it loses \$195.}\\
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
