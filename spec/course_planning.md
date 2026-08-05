@@ -5,15 +5,19 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-05** — Authored **Unit 1 Lesson 1.7 (Simplifying Rational Expressions, `A2.EO.1a–b`)** in
-full: lesson plan, cover, warm-up, guided notes, group activity, exit ticket, homework, all five
-keys, and the slide deck. `make -C unit01/lesson07 all` and `make -C unit01/lesson07 check` both
-pass (`✓ check passed — 1 lesson, no convention violations`); every page of both packets and the
-plan eyeballed for boxguard, and **two real violations were found and fixed** (see the 1.7 entry).
-All 90 numeric claims — factorizations, cancellations, excluded values, the four operations, and
-every contextual evaluation — verified in pure Python before authoring, by **cross-multiplication
-of the rational functions plus agreement at ~58 sampled rational points per identity**.
-**This completes Unit 1's seven content lessons plus the opener (8 of 59).**
+**2026-08-05** — Built **Unit 1's summative layer**: the `unit01/unit_cover/` + `unit_cover_key/`
+pair (the course's first unit cover) and all four unit assessments — `tests/practice_test`,
+`tests/actual_test`, `test_keys/practice_test_key`, `test_keys/actual_test_key`. All four are
+**4 pages, blank and key**; the cover is **1 pp student / 2 pp key**. Every numeric claim in both
+forms was verified in pure Python (exact `Fraction` sampling, ~95 rational points per identity)
+before authoring. A **teachernote and boxguard pass** on the six new files found **two real
+boxguard violations, both invisible to any page count**, and both are fixed (see the entry below).
+**Unit 1 is now complete end to end: 8 lessons + cover + two parallel test forms + two keys.**
+
+*Previous run (same day): authored **Unit 1 Lesson 1.7 (Simplifying Rational Expressions,
+`A2.EO.1a–b`)** in full — plan, cover, warm-up, notes, activity, exit ticket, homework, all five
+keys, and the deck. `make -C unit01/lesson07 all` and `check` both pass; 90 numeric claims verified
+in Python. That completed Unit 1's seven content lessons plus the opener (8 of 59).*
 
 ## Course-wide rules set by the user (2026-08-04)
 
@@ -35,6 +39,59 @@ of the rational functions plus agreement at ~58 sampled rational points per iden
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
 - **Authored (8 of 59): `unit01/lesson00` through `unit01/lesson07` — Unit 1's lessons are
   complete.** Every component written, built, and gated.
+- **`unit01/unit_cover/` + `unit_cover_key/` — the course's FIRST unit cover pair. Reuse its
+  shape for every later unit.**
+  - The sheet is `unit_cover/body.tex`; **both** wrappers `\input` it (`unit_cover_key` as
+    `../unit_cover/body.tex`), so page 1 cannot drift. Never edit a wrapper.
+  - Page 1 (student): banner → one-paragraph overview → an **8-row lesson table** (#, lesson,
+    SOL code, "the one idea") → `spiralbox` of the unit's **five big ideas** → `remindbox`
+    stating the test blueprint. Both wrapper preambles need `ltablex` + `\keepXColumns`.
+  - The five big ideas are the unit's two error streaks made explicit — "an operation does not
+    reach inside a sum" (1.1/1.2/1.7) and "completely means largest, not first" (1.3–1.6) —
+    plus factoring-recovers-information, zero-is-the-only-useful-product, and the scar.
+  - Page 2 (key only, teacher): four `teachernote` blocks — Part A letters for both forms, Part B
+    rationale, Part C scoring with **two named deductions**, Part D rubric. This is where the
+    test prose lives; see the teachernote note in the tests entry below.
+- **`unit01/tests/` + `unit01/test_keys/` — the course's FIRST unit test set. Reuse the
+  blueprint.**
+  - **Blueprint, 100 pts, four parts:** A vocabulary matching 8×1 (10 definitions, **two are
+    distractors** so six known terms cannot yield the last two by elimination); B multiple choice
+    6×2; C short answer 10×5, **one item per lesson in lesson order** (1.1 exponent rules →
+    1.7 dividing, then an applied area item and a factor-completely item); D extended response
+    2×15. Scale the counts, but keep Part C's per-lesson spine — it is what makes it summative.
+  - **Part D is the two prompts the unit earned.** D1 = verify an identity by multiplying
+    (`A2.EO.3d`), then judge the claim that the simplified quotient equals the original *for
+    every $x$* (`A2.EO.1b`) — the algebra is right and the claim is still wrong, which is 1.7's
+    "scar" as an assessment item. D2 = a projectile $-16(t-r_1)(t-r_2)$ (`A2.EI.6a–b`): reject
+    $t=-1$, but in part (c) **keep both** $t=0$ and the way down — the two-sided interpretation.
+  - **Parallel forms.** Practice $-16t^2+64t+80 = -16(t-5)(t+1)$, D1 on $x^3-64$; actual
+    $-16t^2+96t+112 = -16(t-7)(t+1)$, D1 on $x^3+27$. Vocabulary terms are reordered and the
+    definitions reworded and relettered, so practice answer letters transfer nothing.
+  - **Parity mechanism: every computation is a `work` block, byte-identical blank↔key.** No raw
+    `\vspace` work room anywhere — the block reserves exactly the answer's height in the blank
+    and prints it in the key, so the four documents cannot drift. Prose answers use
+    `\writelines{n}` against exactly `n` short `\ansline{…}\\` lines.
+  - **`\workrowsep` is the tuning knob, and it is documentwide.** At 10pt the practice test ran
+    **5 pages with item D2(d) alone on page 5** — a stub in both files, so page parity was
+    perfect and nothing flagged it. 9pt still gave 5; **8pt gave 4**, and 7pt also gave 4. **8pt
+    was kept** — the largest value that buys the page back, per 1.5's "test, then restore" rule.
+    This is the test-document analogue of the boxguard tuning rule: on a test, reach for
+    `\workrowsep` before reaching for a guard, because it moves all four files at once.
+  - **`\parthead` carries its own `\boxguard[9]`** so a part strip can never be stranded at a page
+    foot. Define it identically in all four files.
+  - **Second boxguard finding: a multiple-choice item split across a page.** On the actual test,
+    Part B item 4's stem and options (A)–(B) sat at the foot of p1 with (C)–(D) atop p2. **A
+    multiple-choice item must never break** — a student cannot compare options they have to turn
+    a page to see. `\boxguard[7]` before the `\item` (mirrored in the key) moved it whole; the
+    page count held at 4. Note this guard is in an `enumerate`, not a `tcolorbox`, so
+    `\Needspace` works normally — the "inert inside a breakable tcolorbox" limit does not apply.
+  - **No `teachernote` in any of the four test files** — the practice test is published to
+    `sample_test/` and rides in the **student** packet, so its rationale would reach students.
+    All of it is on `unit_cover_key/` page 2 instead (key packet only).
+  - `make -C unit01/tests all` and `make -C unit01/test_keys all` publish
+    `unit01/sample_test/main.pdf` and `unit01/sample_test_key/main.pdf`. **Those two PDFs are
+    build outputs that must be committed** — `unit.mk` reads them from the source tree, so a
+    fresh clone cannot merge the unit packets without them.
 - **`unit01/lesson07` — Simplifying Rational Expressions (`A2.EO.1a–b`).** The last content lesson
   of Unit 1.
   - Spine: **nothing about fractions changed — the letters are the only new thing.** $12/18 = 2/3$
@@ -401,25 +458,26 @@ of the rational functions plus agreement at ~58 sampled rational points per iden
   set as the default opening bid for an ordinary Unit 1 lesson, then tune per box.
 - **Everything else is still scaffold skeletons**: units 02–08 in full, plus each unit's `tests/`,
   `test_keys/`, `sample_test/`, `sample_test_key/`.
-- No `unit_cover/` pair exists for any unit yet, and `finals/` has not been created.
+- **Unit 1 is the only unit with a `unit_cover/` pair or authored tests.** `finals/` has not been
+  created.
 - Lessons 1.0–1.6 are merged to `main` (PR #4, commit `ca47f7e`; PR #6, commit `248c0c8`; PR #8,
-  commit `6a72235`; PR #9, commit `c6b1e1d`; PR #10, commit `5c04bb1`). Lesson 1.7 is on worktree
-  branch `claude/lesson-1-7-generation-dfe2d4`, **not yet committed**.
+  commit `6a72235`; PR #9, commit `c6b1e1d`; PR #10, commit `5c04bb1`). Lesson 1.7 is merged
+  (PR #11, commit `6578d42`). The unit cover pair and the four test files are on worktree branch
+  `claude/lesson-planning-unit-cover-tests-352ce7`, **not yet committed**.
 
 ## Next steps
 
-1. Commit / PR Lesson 1.7 (user to confirm).
-2. Author `unit01/tests/` (practice + actual) and `unit01/test_keys/`, and add the
-   `unit01/unit_cover/` + `unit_cover_key/` pair (the test rationale and Part D scoring go on page 2
-   of the key cover, never in a test key). **Unit 1 now has eight lessons of item banks to sample.**
-   `A2.EO.3d` (verifying an identity), `A2.EI.6b` (number and type of solutions), and
-   `A2.EO.1b` (justify that a simplified rational expression is equivalent — *and name where it is
-   not*) are the three natural Part D prompts. The unit's two error streaks are ready-made
-   critique items: "true but incomplete" (1.3–1.6) and "an operation does not reach inside a sum"
-   (1.1, 1.2, 1.7).
-3. Then start **Unit 2 — Functions, Transformations, and Graph Analysis** (`AFDA.AF.1`,
+1. Commit / PR the Unit 1 cover pair and tests (user to confirm). **Include
+   `unit01/sample_test/main.pdf` and `unit01/sample_test_key/main.pdf`** — they are build outputs,
+   but `unit.mk` reads them from the source tree, so the unit packets cannot merge without them.
+2. Then start **Unit 2 — Functions, Transformations, and Graph Analysis** (`AFDA.AF.1`,
    `AFDA.AF.2`). 1.7's homework item 13 already hands it the opening: an excluded value is a domain
    restriction, and in 2.5 it becomes a vertical asymptote.
+3. **Unit 2's cover and tests now have a model** — copy the shape from `unit01/unit_cover/body.tex`
+   and the four `unit01` test files rather than re-deriving: the four-part 100-point blueprint,
+   Part C's one-item-per-lesson spine, `work`-blocks-not-`\vspace` for parity, `\workrowsep` at
+   8pt as the opening bid, `\parthead` carrying `\boxguard[9]`, and the rationale on
+   `unit_cover_key` page 2.
 4. The model now holds across eight lessons. If the parallel-dispatch pattern is used from Unit 2 on
    (coordinator scaffolds, one subagent per lesson, coordinator builds and gates), give each agent
    the boxguard tuning rule, the 1.2–1.7 guard sizes above, 1.5's "test the guard, then restore it"
@@ -427,8 +485,13 @@ of the rational functions plus agreement at ~58 sampled rational points per iden
    placement is the one thing no automated check can catch, so the coordinator must open every PDF.
    Tell them a `teachernote` in the plan needs a guard too (1.7), and that `\ans` cells holding
    fractions need `\dfrac` (1.7).
-5. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
-   guidance in the skill).
+5. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
+   For every later unit, check by hand what the gate would have caught: blank/key page parity on
+   both test forms, no `teachernote` in any test key, no `\ans` inside math. The Unit 1 run's two
+   real findings were *both* boxguard problems that no count could see (a stub page, and a split
+   multiple-choice item), so **open all four test PDFs page by page** — that is the only way.
+6. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
+   guidance in the skill). Unit 1's Part D prompts are the model for the final's synthesis items.
 
 ### Open questions
 
