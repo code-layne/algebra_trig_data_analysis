@@ -5,13 +5,13 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-04** — Authored **Unit 1 Lesson 1.3 (Factoring: GCF and Grouping, `A2.EO.3b`)** in full:
+**2026-08-04** — Authored **Unit 1 Lesson 1.4 (Factoring Trinomials, `A2.EO.3b`)** in full:
 lesson plan, cover, warm-up, guided notes, group activity, exit ticket, homework, all five keys,
-and the slide deck. `make -C unit01/lesson03 all` and `make -C unit01/lesson03 check` both pass
+and the slide deck. `make -C unit01/lesson04 all` and `make -C unit01/lesson04 check` both pass
 (`✓ check passed — 1 lesson, no convention violations`); every page of both packets and the plan
-eyeballed for boxguard — no stranded stubs, every guard moved its box whole on the first pass.
-All 46 factorizations verified in pure Python (random rational evaluation) before authoring. The
-structural model set by 1.0--1.2 held with no adjustment.
+eyeballed for boxguard. All 45 factorizations verified in pure Python (random rational evaluation)
+before authoring, including that every $ac$-pair used in the lesson is **unique**. The structural
+model set by 1.0--1.3 held, with one new pagination finding recorded under 1.4 below.
 
 ## Course-wide rules set by the user (2026-08-04)
 
@@ -31,8 +31,54 @@ structural model set by 1.0--1.2 held with no adjustment.
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (4 of 59): `unit01/lesson00`, `unit01/lesson01`, `unit01/lesson02`,
-  `unit01/lesson03`.** Every component written, built, and gated.
+- **Authored (5 of 59): `unit01/lesson00`, `unit01/lesson01`, `unit01/lesson02`,
+  `unit01/lesson03`, `unit01/lesson04`.** Every component written, built, and gated.
+- **`unit01/lesson04` — Factoring Trinomials (`A2.EO.3b`).**
+  - Spine: **nothing new is introduced today.** A trinomial has three terms; splitting the middle
+    term gives four; four terms group — 1.3, unedited. The only new move is knowing *which* split
+    to make. Hook is the sign shop's banner order listing area only, $A(x)=6x^2+19x+10$: unlike
+    1.3's patio it has **no** common factor, so 1.3's method stalls and guessing is deliberately
+    unpleasant ($ac=60$, pair $4,15$, giving $(3x+2)(2x+5)$ — at $x=2$, $8 \times 9 = 72$ sq ft).
+  - Warm-up item 2 groups $2x^2+6x+5x+15$; item 4 reveals those four terms came from
+    $2x^2+11x+15$, so students *derive* the $ac$ rule from their own numbers ($6+5=11$ and
+    $6 \cdot 5 = 30 = 2 \cdot 15$). Same pivot structure as 1.3's item 4, one level up. Item 3
+    (product/sum pairs) is the arithmetic diagnostic that predicts who stalls on $a \ne 1$.
+  - Notes = 5 vocab terms (trinomial, standard form, leading coefficient, splitting the middle
+    term, prime) + the $a=1$ table derived from $(x+p)(x+q)=x^2+(p+q)x+pq$
+    ($(x+4)(x+5)$, $(x-3)(x-4)$, $(x+5)(x-2)$, $(x-5)(x+3)$, and **$x^2+5x+7$ prime** as row 5) +
+    the $ac$ table ($(2x+1)(x+3)$, $(3x-4)(x-2)$, $(2x+5)(2x-3)$ — the third is the mixed-sign
+    case) + factor-completely worked on $3x^3+21x^2+30x=3x(x+5)(x+2)$, whose inner trinomial is
+    **1.3's homework item 13**. Guided practice is the second banner, $8x^2+22x+15=(4x+5)(2x+3)$,
+    $17 \times 9 = 153$ sq ft at $x=3$.
+  - The two in-text blanks are *opposite* and *prime*. Row 5 of box 1 is the first genuinely
+    **deductive** item of the course — running out of factor pairs is a proof, not a surrender.
+  - Context thread is one recovered rectangle per component: notes/sign-shop banners;
+    activity/cafeteria mural $6x^2+17x+5=(3x+1)(2x+5)$, $10 \times 11 = 110$ sq ft and $42$ ft of
+    border tape at $x=3$; homework/garden bed $6x^2+13x+6=(3x+2)(2x+3)$, $14 \times 11 = 154$ sq ft
+    and $50$ ft of edging at $x=4$.
+  - Activity tiers R/A/E; Tier R covers all four sign cases plus one $a \ne 1$. Tier E is error
+    critique (incomplete $(3x+6)(x+3)$ and the sign slip $(x-4)(x-3)$), a negative-GCF item
+    ($-2x^2+2x+24=-2(x-4)(x+3)$), and the finite-list proof that $x^2+4x+6$ is prime.
+  - Homework 13 items (5 with $a=1$ incl. a **prime**, 4 with $a \ne 1$ incl. GCF-first
+    $4x^3+14x^2+6x=2x(2x+1)(x+3)$, the garden bed, the look-ahead) + a **two-variable** extension
+    ($x^2+7xy+12y^2=(x+3y)(x+4y)$ — the standard's two-variable clause). Item 13 factors $x^2-9$
+    (rewritten $x^2+0x-9$) and $x^2+10x+25$ with today's search, so 1.5 opens by *naming* two
+    patterns the class already produced.
+  - Exit ticket samples $a=1$ / $a \ne 1$ / "completely" in order; item 3 critiques
+    $(2x+4)(x+6)$ — deliberately the same belief that produced 1.3's $5x(4x+6)$, one method later.
+  - Guard sizes: bare on vocab, `[12]` hook, `[24]`/`[24]`/`[20]` on the three notesboxes, `[20]`
+    practice, `[16]`/`[16]`/`[30]` on Tiers R/A/E, `[16]`--`[18]` on the homework's trailing boxes,
+    `[18]` on the plan's Reinforcement box — i.e. the 1.2/1.3 set, transferred verbatim again.
+  - **New pagination finding — when the natural break beats `\tcbbreak`.** Notes box 2 cannot fit
+    whole on a page (measured slack on p2 was $\approx 49$pt against the table's $\approx 85$pt),
+    and `\boxguard` is inert inside a breakable `tcolorbox`. The natural break carries the
+    *complete* fill-in table (header + three rows) to p3 — a substantial chunk, not a stub. Moving
+    the split earlier with `\tcbbreak` balanced the halves but pushed notes to **4 pages** and
+    stranded a single write-line alone on p4. The natural break was kept and the verdict recorded
+    in a comment in both `notes/` and `notes_key/`. This is the third lesson confirming that
+    `\tcbbreak` is a per-lesson judgement, never a carried convention.
+  - Page counts: cover 1, warm-up 1/1, notes 3/3, activity 3/3, exit ticket 1/1, homework 3/3;
+    student and key packets 18 pages each. Plan 5 pp, slides 11 frames (4 pp printed 3-up).
 - **`unit01/lesson03` — Factoring: GCF and Grouping (`A2.EO.3b`).**
   - Spine: **multiplying erases the dimensions; factoring puts them back.** Hook is the blueprint
     with the dimensions erased — a patio quoted only as $A(x)=24x^2+36x$, which factors to
@@ -167,20 +213,21 @@ structural model set by 1.0--1.2 held with no adjustment.
 - **Confirmed while authoring 1.3:** the 1.2 guard sizes transferred verbatim to a lesson of the
   same shape (listed in the 1.3 entry above) with no re-measuring and no `\tcbbreak`. Treat that
   set as the default opening bid for an ordinary Unit 1 lesson, then tune per box.
-- **Everything else is still scaffold skeletons**: unit01 lessons 1.4–1.7, units 02–08 in full,
+- **Everything else is still scaffold skeletons**: unit01 lessons 1.5–1.7, units 02–08 in full,
   plus each unit's `tests/`, `test_keys/`, `sample_test/`, `sample_test_key/`.
 - No `unit_cover/` pair exists for any unit yet, and `finals/` has not been created.
-- Lessons 1.0–1.2 are merged to `main` (PR #4, commit `ca47f7e`, PR #6). Lesson 1.3 is on worktree
-  branch `claude/lesson-1-3-generation-305294`, **not yet committed**.
+- Lessons 1.0–1.3 are merged to `main` (PR #4, commit `ca47f7e`, PR #6, commit `248c0c8`). Lesson
+  1.4 is on worktree branch `claude/lesson-1-4-generation-76a895`, **not yet committed**.
 
 ## Next steps
 
-1. Commit / PR Lesson 1.3 (user to confirm).
-2. Author **Unit 1 Lesson 1.4 — Factoring Trinomials** (`A2.EO.3b`). Lesson 1.3's homework item 13,
-   its remind box, and its closing slide all promise it, and item 13 already has students split
-   $7x$ into $5x+2x$ and group $x^2+7x+10$ into $(x+5)(x+2)$ — so 1.4 opens by giving them a
-   reliable way to *find* that split (the $ac$ method) rather than a new method.
-3. Then 1.5–1.7 in order. The model now holds across four lessons, so the parallel-dispatch
+1. Commit / PR Lesson 1.4 (user to confirm).
+2. Author **Unit 1 Lesson 1.5 — Special Forms** (`A2.EO.3b, d`): difference of squares, sum and
+   difference of cubes, perfect square trinomials. Lesson 1.4's homework item 13, its remind box,
+   and its closing slide all promise it — item 13 already has students factor $x^2-9$ (rewritten
+   $x^2+0x-9$) into $(x+3)(x-3)$ and $x^2+10x+25$ into $(x+5)^2$ with the product-and-sum search,
+   so 1.5 opens by *naming* two patterns the class has already produced, then adds the cubes.
+3. Then 1.6–1.7 in order. The model now holds across five lessons, so the parallel-dispatch
    pattern (coordinator scaffolds, one subagent per lesson, coordinator builds and gates) is
    reasonable to try — but give each agent the boxguard tuning rule and the 1.2/1.3 guard sizes
    above, since guard sizing is the one thing `make check` cannot catch.

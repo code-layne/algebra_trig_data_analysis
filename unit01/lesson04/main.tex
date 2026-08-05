@@ -16,56 +16,263 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can factor a trinomial $x^2+bx+c$ by finding two integers whose
+    product is $c$ and whose sum is $b$, and I can factor $ax^2+bx+c$ with $a \ne 1$ by splitting
+    the middle term into two terms and grouping. I can factor completely, GCF first, and I can
+    decide --- and defend --- when a trinomial is prime over the integers. I can read a factored
+    area model --- a banner, a mural, a garden bed --- to recover the dimensions of the figure it
+    describes and say what they mean.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Knowledge \& Skills covered --- \texttt{A2.EO.3b}:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{3b} --- Factor polynomials \textbf{completely}, in \textbf{one and two variables},
+        with \textbf{no more than four terms}, \textbf{over the integers}.
+  \item This lesson takes the \textbf{three-term} case: product-and-sum when $a=1$, and the
+        \textbf{$ac$ method} when $a \ne 1$. GCF and grouping were Lesson 1.3; the special forms
+        are Lesson 1.5.
+  \item ``Over the integers'' is what makes \textbf{prime} a provable verdict rather than a
+        shrug --- the search is a finite list of factor pairs.
+\end{itemize}
+\textbf{Supporting fluency (Lessons 1.1--1.3, not new codes):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Binomial products (\texttt{A2.EO.3a}) --- $(x+p)(x+q)=x^2+(p+q)x+pq$ is where the whole
+        method comes from, and it is also the check.
+  \item Factoring by grouping (Lesson 1.3) --- unchanged, and it is the \emph{engine} of the $ac$
+        method rather than a separate topic.
+  \item ``Largest, not first'' (\texttt{A2.EO.2a}, \texttt{A2.EO.3b}) --- GCF first is what keeps
+        $ac$ small, and it is still what ``completely'' means.
+\end{itemize}
+\textbf{Where this code goes next:} \texttt{A2.EO.3b, d} in 1.5 (special forms --- today's homework
+item 13 factors both of them the long way first); \texttt{A2.EI.6a--b} in 1.6, where a factored
+trinomial set equal to zero is a solved quadratic; \texttt{A2.EO.1a--b} in 1.7, where factored
+trinomials are what cancel in a rational expression.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Nothing new is being introduced today.} A trinomial has three terms; splitting the
+        middle term gives four; four terms group. Say this out loud in the first two minutes --- it
+        is the difference between a method and a trick.
+  \item \textbf{The rule is read off the multiplication.} $(x+p)(x+q)=x^2+(p+q)x+pq$ --- the sum
+        lands in the middle, the product lands at the end. Students who can distribute can rebuild
+        the rule from scratch when they forget it.
+  \item \textbf{$ac$ is the same idea, one level up.} When $a \ne 1$ the two split numbers multiply
+        to $a \cdot c$, not to $c$ --- the warm-up has students \emph{discover} this from their own
+        numbers rather than receive it.
+  \item \textbf{Guessing is not a method.} The hook's $6x^2+19x+10$ is deliberately past the point
+        where guess-and-check is pleasant. That discomfort is what the $ac$ method is for.
+  \item \textbf{``Prime'' is a proof, not a surrender.} Only finitely many integer pairs multiply
+        to $c$, so exhausting them settles the question. This is the first genuinely deductive
+        argument of the unit.
+  \item \textbf{Factoring restores the dimensions.} $6x^2+19x+10$ is an area with no shape; the
+        factored form is a banner the shop can cut. Same idea as 1.3, harder polynomial.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Trinomial & A polynomial with exactly three terms, e.g. $x^2+7x+10$. \\
+Quadratic trinomial in standard form & $ax^2+bx+c$ with $a \ne 0$, written in descending order of
+    exponents. Put it in this order \emph{before} doing anything else. \\
+Leading coefficient & The coefficient $a$ of the highest-degree term once the polynomial is in
+    descending order. \\
+Splitting the middle term ($ac$ method) & Rewriting $bx$ as two terms whose coefficients multiply
+    to $a \cdot c$ and add to $b$, turning three terms into four so they can be grouped. \\
+Prime polynomial & A polynomial that cannot be factored further over the integers --- no integer
+    pair works, e.g. $x^2+5x+7$. Named in 1.3; today it is \emph{proved}. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{Four items, about 6 minutes:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Spiral from 1.1: multiply $(x+4)(x+7)$ and $(2x+3)(x-5)$
+  \item Spiral from 1.3: group $2x^2+6x+5x+15$
+  \item Number pairs: product/sum for $12, 7$; $-18, 3$; $24, -11$
+  \item \emph{Discovery}: item 2's four terms came from $2x^2+11x+15$ --- compare the split
+        numbers $6$ and $5$ to the $2$ and the $15$
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 4 is the whole lesson, discovered rather than delivered ---
+$6+5=11$ and $6 \cdot 5 = 30 = 2 \cdot 15$. Take it out loud before the hook and write both lines
+on the board. Item 3 is the diagnostic that matters: a student who cannot produce $-3$ and $-8$ for
+product $24$, sum $-11$ will stall on every $a \ne 1$ problem today, and the fix is arithmetic, not
+algebra.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{The banner with no dimensions on the order.} A sign shop takes an order for a rectangular
+vinyl banner listing only the area, $A(x)=6x^2+19x+10$ square feet. The cutting table needs the two
+\textbf{side lengths}. \textbf{Pose it this way:} ``Lesson 1.3 recovered a patio's sides because the
+area had a shared factor. Check this one --- does it?'' It does not, and that is the point. Then
+invite guessing: the first coefficient could split $1 \cdot 6$ or $2 \cdot 3$, the last could split
+$1 \cdot 10$ or $2 \cdot 5$, and the signs and the order multiply the cases further. \textbf{Ask:}
+``How many guesses are you willing to make before you want a rule?'' Then run the warm-up's
+discovery on it: $ac = 60$, and $4+15=19$, so
+\[ 6x^2+19x+10 = 6x^2+4x+15x+10 = 2x(3x+2)+5(3x+2) = (3x+2)(2x+5), \]
+a banner $(3x+2)$ ft by $(2x+5)$ ft --- at $x=2$, $8$ ft by $9$ ft and $72$ square feet either way.
+\textbf{Name the through-line:} the last two steps are Lesson 1.3, unedited.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Leading coefficient $1$ (12 min).} Derive the rule, do not state it: multiply
+$(x+p)(x+q)$ on the board and let the class read off that the sum lands in the middle and the
+product lands at the end. Fill the table together. \textbf{Ask:} ``If $c$ is negative, what must be
+true about the two numbers?'' Row 5 is the prime row --- do not rush past it; it is the first time
+this course asks students to prove a \emph{negative}.
+
+\textbf{2. The $ac$ method (14 min).} Run warm-up item 4 back as the students' own discovery. The
+five steps go on the board once; then work the hook. \textbf{Ask:} ``Why $a \cdot c$ and not just
+$c$?'' --- the honest answer is that it is what makes the two pairs share a binomial, and the check
+is that grouping works. Row 3 of the table ($4x^2+4x-15$) is the mixed-sign case and is where the
+period is won or lost.
+
+\textbf{3. Factoring completely (8 min).} Same order as 1.3 with one line added: three terms
+$\Rightarrow$ today's methods. Work $3x^3+21x^2+30x$ and point out that its inner trinomial is last
+night's homework item 13. \textbf{Say it:} GCF first also shrinks $ac$, which is a practical reason
+on top of the correctness reason.
+
+\textbf{4. Guided practice (8 min).} The second banner. Item 1 is the computation, item 2 the
+interpretation with units, item 3 the one where the GCF is a \emph{count} of objects, not a
+dimension --- protect item 3 if time runs short.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: The $ac$ Method]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The five steps students record:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{GCF first.} Always --- and it shrinks $ac$.
+  \item \textbf{Multiply $a \cdot c$.}
+  \item \textbf{Find two integers} with product $ac$ and sum $b$.
+  \item \textbf{Split $bx$} into those two terms.
+  \item \textbf{Group} (Lesson 1.3), then check by multiplying back.
+\end{enumerate}
+\textbf{Say this out loud:} ``Steps 4 and 5 are last week. The only new thing today is step 3 ---
+knowing \emph{which} split to make.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example (the mixed-sign case):}
+\[
+\begin{aligned}
+4x^2+4x-15 &= 4x^2+10x-6x-15 \\
+           &= 2x(2x+5) - 3(2x+5) \\
+           &= (2x+5)(2x-3)
+\end{aligned}
+\]
+Here $ac=-60$ and the pair is $10$ and $-6$. \textbf{The error to name before it happens:} writing
+$-3(2x-5)$ on the second pair. When the split's second number is negative, the negative comes out
+front and the sign inside the parentheses flips only once.
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes, box 1:} watch for sign confusion on rows 3 and 4 --- students get the pair
+        $5, 2$ and then guess where the minus goes. Send them back to the product: it must come out
+        negative.
+  \item \textbf{Notes, box 1, row 5:} a student who writes ``can't be done'' has the right answer
+        and the wrong claim. Ask for the list of pairs; \emph{that} is the answer.
+  \item \textbf{Notes, box 2:} watch for students who find the pair and then stop, or who split
+        correctly and forget to group. Both look like ``I did it'' on a glance around the room.
+  \item \textbf{Activity, Tier A item 2:} the interpretation item. A group that factors
+        $6x^2+17x+5$ correctly but cannot say \emph{which} factor is the width has not connected
+        the algebra to the wall --- that is the conversation to have, not more items.
+  \item \textbf{Cold-call prompts:} ``Why $a \cdot c$?'' ``What does the sign of $c$ tell you?''
+        ``How do you know there is no other pair?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Five one-line fluency items: four $x^2+bx+c$ trinomials covering all four sign cases, and
+        one $a \ne 1$.
+  \item Support: have the group write the two numbers \emph{before} writing any parentheses, and
+        multiply every answer back.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Factor the mural's $A(x)=6x^2+17x+5$ and name the width.
+  \item Evaluate at $x=3$: $10$ ft by $11$ ft, $110$ sq ft, $42$ ft of border tape.
+  \item A second design, then a third that needs the GCF pulled before $ac$.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique two wrong answers --- an incomplete factorization and a sign error --- and name
+        each mistake.
+  \item Factor $-2x^2+2x+24$ by pulling out the negative GCF first.
+  \item Justify that $x^2+4x+6$ is prime, and say why a finite check is certainty.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} (1) factor $x^2+9x+18$ --- answer $(x+3)(x+6)$;
+(2) factor $3x^2+11x+6$ --- answer $(3x+2)(x+3)$ via $ac=18$ and the pair $2, 9$;
+(3) \textbf{the conceptual check} --- a student factors $2x^2+16x+24$ as $(2x+4)(x+6)$; is it
+correct, is it complete, and what is the complete factorization ($2(x+2)(x+6)$)?
+
+\textbf{Using the results:} the three items sample the lesson's three moves in order --- $a=1$,
+$a \ne 1$, ``completely'' --- so a wrong item names what to reteach. Item 1 wrong is a sign or a
+pair; item 2 wrong is usually a correct pair followed by no grouping, and the student's own work
+shows it; item 3 wrong is the one that matters most, because it is the same belief that produced
+$5x(4x+6)$ on yesterday's ticket, and it will produce an unfactored $(2x+6)$ in Lesson 1.5. Sort
+the tickets by \emph{which} item is wrong; that sort is your Tier R grouping for Lesson 1.5.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (13 items): nine fluency items --- five with $a=1$ (all four sign cases plus one
+\textbf{prime}) and four with $a \ne 1$ (including one that needs the GCF pulled first) --- then a
+three-part garden-bed model ($A(x)=6x^2+13x+6$, factoring to $(3x+2)(2x+3)$, evaluated at $x=4$ as
+$14$ ft $\times$ $11$ ft $=154$ square feet with $50$ ft of edging), and one two-part look-ahead
+item.
+
+\textbf{Extension (optional):} factor $x^2+7xy+12y^2$ into $(x+3y)(x+4y)$ and explain why the same
+product-and-sum search works when the constant term carries a $y^2$ --- the standard's
+\textbf{two-variable} case, and the $y$ simply rides along.
+
+\textbf{Preview of Lesson 1.5 (\texttt{A2.EO.3b, d}):} special forms. Homework item 13 makes the
+link explicit --- students factor $x^2-9$ (rewritten as $x^2+0x-9$) and $x^2+10x+25$ with today's
+search, so 1.5 opens by \emph{naming} two patterns the class has already produced, then adds the
+sum and difference of cubes.
+
+\textbf{Connections.} Covers \texttt{A2.EO.3b} (factor completely, one and two variables, at most
+four terms, over the integers) --- specifically the trinomial methods. Builds directly on
+\texttt{A2.EO.3a} (Lesson 1.1, binomial products, which supply the rule and the check) and on
+Lesson 1.3's grouping, which is the $ac$ method's engine; feeds \texttt{A2.EO.3b, d} in 1.5,
+\texttt{A2.EI.6a--b} in 1.6 (solving quadratics by factoring), and \texttt{A2.EO.1a--b} in 1.7
+(factored trinomials are what cancel).
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +280,64 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{6 minutes, and do the items in order --- item 4 depends on items 2 and 3.} Answers:
+    (1) $x^2+11x+28$ and $2x^2-7x-15$; (2) $2x(x+3)+5(x+3)=(x+3)(2x+5)$; (3) $3$ and $4$; $6$ and
+    $-3$; $-3$ and $-8$; (4) $6+5=11$ and $6 \cdot 5 = 30 = 2 \cdot 15$. Item 4 is the pivot of the
+    lesson: the class derives the $ac$ rule from a grouping they just did, so the method arrives as
+    \emph{their} observation. Do not collect it silently --- put $2x^2+11x+15$ and $2x^2+6x+5x+15$
+    on the board one above the other and let a student say ``the two numbers multiply to $2$ times
+    $15$.'' Item 3 is the cheap diagnostic: a student who cannot find the pair for product $24$,
+    sum $-11$ will stall on every $a \ne 1$ problem today, and that is an arithmetic fix, so make it
+    here.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{The tables in boxes 1 and 2 are fill-ins, not handouts.} Answers, box 1: $4, 5$ /
+    $(x+4)(x+5)$; $-3, -4$ / $(x-3)(x-4)$; $5, -2$ / $(x+5)(x-2)$; $-5, 3$ / $(x-5)(x+3)$; no pair /
+    \emph{prime}; the in-text blanks are \emph{opposite} and \emph{prime}. Box 2: $6$; $1, 6$ /
+    $(2x+1)(x+3)$; $24$; $-4, -6$ / $(3x-4)(x-2)$; $-60$; $10, -6$ / $(2x+5)(2x-3)$. Box 1's fifth
+    row is worth three minutes on its own --- students want to write ``it doesn't work,'' and the
+    move you are teaching is to write the finite list instead. Box 2's third row is the mixed-sign
+    case and deserves more time than the other two combined. If the period runs behind, cut box 3's
+    negative-leading-coefficient remark (keep the worked example) rather than shortening guided
+    practice.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is five one-liners
+    covering all four sign cases; a group still on it at six minutes needs you, not more time. In
+    Tier A, item 2 is the real assessment --- a group can factor $6x^2+17x+5$ into $(3x+1)(2x+5)$
+    and still not be able to say that $(2x+5)$ is the width, and that gap is the point of the whole
+    activity. Item 3's border-tape figure ($42$ ft) is the one that makes the factored form feel
+    useful rather than decorative, and its check against the polynomial ($110$ square feet both
+    ways) is what convinces the skeptics. Item 5 is the one groups rush: they compute $ac=96$ before
+    noticing the shared $2$, and it still works --- ask them which route had smaller numbers. Tier E
+    item 3 is the one to share out; the finite-list argument is the first real proof of the unit and
+    most students will not produce it unprompted.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} The three items are $a=1$,
+    $a \ne 1$, and ``completely'' in order, so read the tickets by \emph{which} item is wrong rather
+    than by a score out of three. Item 1 wrong is a sign slip or a bad pair; item 2 wrong is most
+    often a correct pair with no grouping after it, and the student's own work shows which; item 3
+    wrong is the one to act on, because it is the same belief that produced $5x(4x+6)$ on
+    yesterday's ticket --- one day and one method later, unchanged. On item 3 accept any sentence
+    that says the multiplication checks out but $2x+4$ still shares a $2$; the required evidence is
+    the complete factorization $2(x+2)(x+6)$, not the vocabulary.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 20--25 minutes.} Items 1--5 have $a=1$ and 6--9 have $a \ne 1$, deliberately
+    unmixed, so a student can tell you which \emph{kind} of problem broke. Item 5 is the prime one
+    --- a student who leaves it blank has done the work and not recognized that the blank \emph{is}
+    the answer, so give credit for the pair list and fix the write-up. Item 9 is the only one
+    needing both moves, so a student who reaches $2x(2x+1)(x+3)$ has the whole lesson. Items 10--12
+    are the garden bed: item 12 asks what the factored form tells the class that the expanded form
+    does not, and the answer wanted is the side lengths, with the $50$ ft of edging as the evidence.
+    Item 13 is the bridge into Lesson 1.5 --- part (a) is a difference of squares reached by
+    rewriting $x^2-9$ as $x^2+0x-9$, part (b) a perfect square trinomial, and neither needs a method
+    the students have not met. The extension is the standard's two-variable case and is the best
+    follow-up for whoever finished Tier E early.
 \end{teachernote}
 \end{document}
