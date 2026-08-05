@@ -16,56 +16,274 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can state the \textbf{zero product property} and explain why the
+    product \emph{zero} is the only one that tells me anything about the factors. I can
+    \textbf{solve a polynomial equation by factoring} --- standard form first, then factor
+    completely, then set each factor equal to zero --- and I know why dividing both sides by a
+    variable throws a solution away. I can say how \textbf{many} solutions an equation has and what
+    \textbf{kind} they are, real or imaginary, and I can write a factored equation \textbf{from} its
+    solutions or from the $x$-intercepts of a graph. I can interpret each solution in context --- a
+    landing time, a launch instant --- and \textbf{reject} the ones the situation forbids.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Knowledge \& Skills covered --- \texttt{A2.EI.2b}, \texttt{A2.EI.6a--b}:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{EI.2b} --- \textbf{Solve a quadratic equation in one variable algebraically.} This
+        course takes the code as far as \textbf{factoring} reaches; the quadratic formula and the
+        complex solutions belong to Algebra 2 proper.
+  \item \texttt{EI.6a} --- \textbf{Determine a factored form of a polynomial equation of degree
+        three or higher, given its zeros or the $x$-intercepts} of the graph of its related
+        function. This is the \emph{backwards} direction, and it is box 4.
+  \item \texttt{EI.6b} --- \textbf{Determine the number and type of solutions} (real or imaginary)
+        of a polynomial equation of degree three or higher. Counting is the whole skill: the degree
+        gives the number, and a factor like $x^2+4$ is what makes two of them imaginary.
+  \item \textbf{Scope note.} Students \emph{count and name} imaginary solutions today; they do not
+        compute them. No $i$, no radicals in the answers --- every equation factors over the
+        integers.
+\end{itemize}
+\textbf{Supporting fluency (Lessons 1.3--1.5, not new codes):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Factoring completely (\texttt{A2.EO.3b}) --- unchanged. Today it is the \emph{engine} of a
+        solution rather than the answer.
+  \item ``GCF first'' --- now load-bearing in a new way: pulling out $x$ is what \emph{produces}
+        the solution $x=0$.
+  \item Lesson 1.5's \textbf{prime sum of squares} --- reappears as $x^2+4$ and is exactly why two
+        solutions are imaginary.
+\end{itemize}
+\textbf{Where these codes go next:} \texttt{A2.EO.1a--b} in 1.7, where the same ``set it to zero
+and factor'' move finds a rational expression's \textbf{excluded values}; and Unit 2, where a zero
+of a function is read straight off a graph.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Zero is the only number that tells you anything.} $ab=12$ says nothing about $a$;
+        $ab=0$ forces a factor. Say this in the first two minutes --- it is the entire lesson.
+  \item \textbf{Factoring did not change; the question did.} 1.3--1.5 asked ``what are the
+        dimensions?'' Today asks ``\emph{when}?'' The algebra is identical.
+  \item \textbf{Standard form is not a formality.} The property is a statement about the number
+        zero, so $(x-2)(x+5)=8$ is not solvable factor-by-factor. Students find this unfair.
+  \item \textbf{Dividing by a variable destroys evidence.} $2x^2=8x$ is the fourth appearance in
+        four lessons of ``true but incomplete.''
+  \item \textbf{The degree is a prediction.} Knowing there are three solutions before you find any
+        is what makes a missing one visible.
+  \item \textbf{Arithmetic proposes; the context disposes.} $t=-1$ is a perfectly good number and a
+        useless answer. Rejecting it is mathematics, not politeness.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Zero product property & If a product of factors equals $0$, at least one factor equals $0$. True
+    for $0$ and for no other number. \\
+Solution (root) & A value of the variable making the equation true; checked by substituting back. \\
+Zero of a function & An input whose output is $0$; on a graph, an $x$-intercept (\texttt{EI.6a}). \\
+Double root & A solution from a repeated factor, e.g.\ $x=3$ from $(x-3)^2=0$; counted twice. \\
+Imaginary solution & A solution that is not a real number, arising from a factor like $x^2+4$ that
+    no real number makes zero (\texttt{EI.6b}). \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{Four items, about 6 minutes:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Spiral from 1.4--1.5: factor $x^2-7x+12$ and $x^2-49$
+  \item Spiral from 1.1: evaluate $(x-3)(x+5)$ at $x=3$, $x=-5$, and $x=1$
+  \item \emph{Number sense}: if $ab=0$ and $a=4$, what is $b$? If $ab=12$ and $a=4$? If all you
+        know is $ab=12$?
+  \item \emph{Discovery}: how could you have found both zeros of $(x-3)(x+5)$ without testing
+        numbers --- and why is there no third?
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 3 is the lesson, and it is arithmetic --- every student can
+do it, which is the point. Take it out loud before the hook and write both conclusions on the
+board side by side. Item 4 is where the class states the zero product property in its own words;
+resist supplying the sentence. Item 2 exists only so item 4 has something concrete to generalize
+from, so keep it to sixty seconds. A student who cannot factor item 1 needs Tier R today, but that
+is a 1.4 problem, not a 1.6 one --- do not reteach factoring during the warm-up.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{The T-shirt launcher.} At the pep rally a shirt is fired from the top of the bleachers, $48$
+feet above the gym floor, and its height $t$ seconds later is $h(t)=-16t^2+32t+48$ feet. The crew
+needs the landing time. \textbf{Pose it this way:} ``You have factored for four lessons to recover
+\emph{dimensions}. Same algebra, new question --- \emph{when} is the height zero?'' Factoring gives
+\[ -16t^2+32t+48 = -16(t-3)(t+1), \]
+so $t=3$ or $t=-1$; the shirt lands $3$ seconds after launch and $t=-1$ is thrown out because time
+cannot be negative. \textbf{Name the through-line:} last night's homework item 13(b) already did
+every step of this --- factor, set a factor to zero, reject the negative length. Today the move gets
+its name.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. The zero product property (9 min).} Run warm-up item 3 back as the students' discovery,
+then work the hook. Fill the table together. \textbf{Ask:} ``Why does $ab=12$ tell you nothing?''
+Row 2 is where $x=0$ appears as a genuine solution for the first time; row 4 is the double root.
+
+\textbf{2. Standard form first (11 min).} The four steps, then the table. Row 2 ($x^2+5x=24$) is the
+one to slow down on --- students want to factor the left side immediately. Row 4 ($2x^2=8x$) is the
+trap and deserves the most air time in the lesson: work it both ways on the board, side by side, and
+let the class find the missing solution.
+
+\textbf{3. Degree three and higher (12 min).} Nothing new procedurally --- so lead with the
+\emph{count}. Work $x^3-9x$ and $x^3+2x^2-15x$, then $x^3+4x$, where 1.5's prime sum of squares
+finally has a consequence. \textbf{Ask:} ``How many solutions does it have? How many can you
+write down?'' That gap is \texttt{EI.6b}.
+
+\textbf{4. Running it backwards (10 min).} \texttt{EI.6a}. The table, then the pre-drawn graph.
+\textbf{Ask:} ``Is there only one equation with those three intercepts?'' --- the answer, no, is
+Tier E item 2.
+
+\textbf{5. Guided practice (8 min).} The second launcher. Item 3 is the one to protect: setting
+$h(t)=32$ forces standard form again, and here $t=0$ is \emph{kept}, not rejected.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Solve, Then Interpret]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four steps students record:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Standard form.} Every term to one side, $0$ on the other. Not optional --- the
+        property is a fact about zero.
+  \item \textbf{Factor completely.} The whole 1.3--1.5 order, GCF first.
+  \item \textbf{Set each factor equal to zero} and solve the small equations.
+  \item \textbf{Check} each solution --- in the equation \emph{and} against the story.
+\end{enumerate}
+\textbf{Say this out loud:} ``If the right-hand side is not zero, you do not have a factoring
+problem yet.'' And: ``Never divide both sides by a variable --- move it and let it be a factor.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example (the trap, both ways):}
+\[
+\begin{aligned}
+2x^2 = 8x \;\Rightarrow\; 2x &= 8 \;\Rightarrow\; x = 4 && \text{(incomplete)} \\
+2x^2-8x = 0 \;\Rightarrow\; 2x(x-4) &= 0 \;\Rightarrow\; x = 0, \; 4 && \text{(complete)}
+\end{aligned}
+\]
+Dividing by $x$ silently assumes $x \ne 0$, and here $x=0$ is a solution. \textbf{The point to make:}
+the first line is not wrong, it is \emph{partial} --- which is exactly what made $5x(4x+6)$,
+$(2x+4)(x+6)$, and $(2x+6)(x-3)$ wrong in the three previous lessons.
+
+\textbf{The error to name before it happens:} $(x-2)(x+5)=8$ ``solved'' as $x-2=8$ or $x+5=8$. It
+even produces one correct answer ($x=3$) by luck, which is why students trust it. Have them check
+$x=10$: $(8)(15)=120$, not $8$.
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes, box 1, row 2:} watch for students who drop $x=0$ because the factor ``has no
+        number in it.'' Ask what $3x$ equals when $x=0$.
+  \item \textbf{Notes, box 2, row 2:} a student factoring $x^2+5x$ on the left while $24$ sits on
+        the right has skipped step 1. Do not correct the factoring --- ask what the property
+        requires on the right-hand side.
+  \item \textbf{Notes, box 3:} watch for a student who writes ``$x^2+4=0$ has no solution.'' It has
+        no \emph{real} solution --- push for the distinction; that is the code.
+  \item \textbf{Notes, box 4:} a student writing $(x-{-2})$ instead of $(x+2)$ has the idea and not
+        the sign. Have them check by substituting $-2$.
+  \item \textbf{Activity, Tier A item 3:} the interpretation item. A group that solves $h(t)=128$
+        correctly but cannot say $t=0$ \emph{is} the launch has the algebra and not the meaning ---
+        that is the conversation to have, not more items.
+  \item \textbf{Cold-call prompts:} ``Is the right side zero yet?'' ``How many solutions should
+        there be?'' ``Which solution does the story allow?'' ``What did dividing by $x$ cost you?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Five equations: one already factored, two quadratics, one GCF case where $x=0$ is a
+        solution, and one cubic.
+  \item Support: have the group say ``standard form?'' out loud before touching any equation, and
+        substitute every answer back.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Factor the rocket's $h(t)=-16t^2+32t+128$ and find the recovery time ($t=4$; reject
+        $t=-2$).
+  \item Solve $h(t)=128$ and interpret \emph{both} answers ($t=0$ and $t=2$).
+  \item A ground-launched rocket where both solutions are kept, then $2x^2=14x$.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique two wrong answers --- the ``$=8$'' error and $x^2=9$ giving only $x=3$ --- and
+        name each mistake.
+  \item Build a degree-$3$ equation with solutions $-3$, $0$, $2$, then a \emph{different} one with
+        the same solutions.
+  \item Solve $x^3+9x=0$ over the reals and report the number and \textbf{type} of all three
+        solutions.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} (1) solve $x^2-3x-10=0$ --- answer $x=5$ or $x=-2$;
+(2) solve $x^3-16x=0$ --- answer $x=0, \, 4, \, -4$, three solutions, all real; (3) \textbf{the
+conceptual check} --- a student solves $3x^2=12x$ by dividing both sides by $3x$ and gets $x=4$; is
+it correct, is it complete, and what is every solution ($x=0$ or $x=4$)?
+
+\textbf{Using the results:} the three items sample the day in order --- a plain quadratic, a cubic
+with the count, and the dividing-by-a-variable trap --- so a wrong item names what to reteach. Item
+1 wrong is a 1.4 factoring problem, not a 1.6 one. Item 2 wrong usually means the GCF was skipped
+and $x=0$ was lost, which is the same error as item 3 wearing a different hat. Item 3 is the one
+that matters most: it is the \emph{fourth} appearance of ``true but incomplete'' in four lessons ---
+$5x(4x+6)$, $(2x+4)(x+6)$, $(2x+6)(x-3)$, and now $x=4$ alone --- so a student still missing it does
+not need more equations, they need the habit of asking ``is that all of them?'' Sort the tickets by
+\emph{which} item is wrong; that sort is your Tier R grouping for Lesson 1.7.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (13 items): nine fluency items --- one already factored, four quadratics
+(including a \textbf{double root}, $x^2+8x+16=0$, and one needing standard form, $x^2+3x=18$), one
+dividing-by-a-variable trap ($2x^2=10x$), and two cubics --- then a three-part water-balloon model
+($h(t)=-16t^2+80t+96$, factoring to $-16(t-6)(t+1)$, landing at $t=6$ s, and level with the $96$-ft
+press box at $t=0$ and $t=5$), and one two-part look-ahead item.
+
+\textbf{Extension (optional):} solve $x^4-16=0$ using \emph{Lesson 1.5's} complete factorization
+$\left(x^2+4\right)(x+2)(x-2)$, and report the count: four solutions, two real and two imaginary.
+It is \texttt{EI.6b} at degree four, on an expression the class has already factored.
+
+\textbf{Preview of Lesson 1.7 (\texttt{A2.EO.1a--b}):} simplifying rational expressions. Homework
+item 13 makes the link explicit --- students solve $x^2-4=0$ and then say why those two values must
+be \textbf{excluded} from $\frac{x+5}{x^2-4}$. Excluded values are today's method with tomorrow's
+name, and 1.5's differences of squares are the single most common thing that cancels.
+
+\textbf{Connections.} Covers \texttt{A2.EI.2b} (solve a quadratic equation in one variable
+algebraically --- by factoring, this course's reach for the code), \texttt{A2.EI.6a} (determine a
+factored form of a polynomial equation of degree three or higher from its zeros or the
+$x$-intercepts of its graph), and \texttt{A2.EI.6b} (determine the number and type of solutions,
+real or imaginary). Builds directly on \texttt{A2.EO.3b} (Lessons 1.3--1.5, factoring completely)
+and on 1.5's proof that a sum of squares is prime, which is what makes two solutions imaginary;
+feeds \texttt{A2.EO.1a--b} in 1.7 and the zeros-and-intercepts work of Unit 2.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +291,76 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{6 minutes, and do the items in order --- item 4 depends on items 2 and 3.} Answers:
+    (1) $(x-3)(x-4)$ and $(x+7)(x-7)$; (2) $0$, $0$, and $-12$; (3) $b=0$, then $b=3$, then no ---
+    $a$ could be anything, so only the product $0$ forces a factor; (4) set $x-3=0$ and $x+5=0$,
+    giving $x=3$ and $x=-5$, and there is no third because any other $x$ leaves both factors nonzero
+    and a product of two nonzero numbers is never zero. \textbf{Item 3 is the diagnostic and the
+    lesson at the same time}, which is unusual and worth exploiting: it is pure arithmetic, so every
+    student in the room can answer it, and the sentence they produce (``if it is zero, one of them
+    has to be zero'') is the theorem. Write $ab=12$ and $ab=0$ on the board one above the other and
+    let a student say it. Item 2 is scaffolding for item 4 only --- sixty seconds, no more. If a
+    student cannot factor item 1, note it for Tier R but do not reteach 1.4 here; today's method
+    does not depend on being fast at factoring, only on being able to.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{The tables in boxes 1, 2, and 4 are fill-ins, not handouts.} Answers, box 1: $x=4,-7$;
+    $x=0,5$; $x=\tfrac12,-6$; $x=3$ (double). Box 2: $(x-3)(x-4)=0$ / $x=3,4$; $(x+8)(x-3)=0$ /
+    $x=-8,3$; $(x+5)(x-5)=0$ / $x=\pm5$; $2x(x-4)=0$ / $x=0,4$. Box 4: $(x-5)(x+3)=0$, degree $2$;
+    $x(x-7)=0$, degree $2$; $(x+2)(x-1)(x-4)=0$, degree $3$; $x(x+3)(x-3)=0$, degree $3$; the graph
+    has $x$-intercepts $-2$, $0$, $3$, giving $x(x+2)(x-3)=0$. The three in-text blanks are
+    \emph{zero}, \emph{degree}, and \emph{imaginary}. \textbf{Box 2 row 4 deserves more time than
+    the other three rows combined} --- work it both ways on the board and let the class catch the
+    missing solution rather than announcing it. Box 3's $x^3+4x$ is the \texttt{EI.6b} moment: the
+    sentence you want is ``it has three solutions and I can only write one of them down,'' and most
+    classes will need the prompt ``how many should there be?'' to get there. Box 4's graph is
+    read-only --- students never plot anything today. If the period runs behind, cut box 3's
+    $x^3+2x^2-15x$ (keep $x^3-9x$ and $x^3+4x$) rather than shortening guided practice.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R item 4 is the one that
+    sorts the room: a group that writes only $x=-7$ for $x^2+7x=0$ has the same gap the exit ticket
+    tests, and they need it named now, not at the door. In Tier A, item 2's rejection of $t=-2$ is
+    usually fine --- students accept that time cannot run backwards --- but item 3 is the real
+    assessment: a group can solve $h(t)=128$ and get $t=0,2$ without ever noticing that $t=0$ is the
+    launch itself. Push them to say what the rocket is doing at each instant. Item 4 is the
+    deliberate contrast: same structure, and this time \emph{both} solutions survive, because the
+    rocket really is on the ground at $t=0$. Groups that treat ``reject the extra one'' as a rule
+    rather than a judgement will get item 4 wrong, and that is exactly what it is for. Tier E item 1
+    is the one to share out --- the ``$=8$'' error produces one correct answer by luck, so the class
+    needs to see that a right answer is not evidence of a right method.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} The three items are a quadratic,
+    a cubic with the count, and the dividing-by-a-variable trap, in that order, so read the tickets
+    by \emph{which} item is wrong rather than by a score out of three. Item 1 wrong is a Lesson 1.4
+    factoring problem and should be treated as one --- check whether the student set up
+    $(x-5)(x+2)$ correctly and simply mis-signed. Item 2 wrong splits two ways: no GCF pulled (so
+    $x=0$ is missing) or $16$ not recognized as a perfect square; the student's own work shows
+    which, and the second is a 1.5 arithmetic fix. Ask for the count in words --- ``three solutions,
+    all real'' --- and accept it without the word \emph{imaginary} appearing, since it does not here.
+    Item 3 is the one to act on: it is the fourth appearance of ``true but incomplete'' in four
+    lessons, so a student who misses it needs the habit of asking ``is that all of them?'' retaught,
+    not more equations. Accept any sentence saying the division assumed $x \ne 0$; the required
+    evidence is both solutions, $x=0$ and $x=4$, not the vocabulary.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 20--25 minutes.} Items 1--4 are the plain cases, 5 is the trap, 6 is the double
+    root, 7 needs standard form, and 8--9 are the cubics --- deliberately unmixed, so a student can
+    tell you which \emph{kind} of problem broke. Item 5 ($2x^2=10x$) and item 7 ($x^2+3x=18$) are
+    the two that predict the quiz: both punish starting to factor before the right-hand side is
+    zero. Item 6 is worth a comment in class --- a student who writes ``$x=-4$ and $x=-4$'' has
+    understood the double root better than one who writes ``$x=-4$'' with no explanation. Items
+    10--12 are the water balloon: item 12 is the interpretation item, and the answer wanted is that
+    $t=0$ is the launch from the press box and $t=5$ is the balloon falling back past it, not merely
+    ``two times.'' Item 13 is the bridge into Lesson 1.7 --- part (b) wants the observation that
+    finding excluded values \emph{is} solving ``denominator $=0$,'' so today's method is tomorrow's
+    first step; say that out loud when you go over it. The extension is \texttt{EI.6b} at degree
+    four on an expression 1.5 already factored, and it is the best follow-up for whoever finished
+    Tier E early.
 \end{teachernote}
 \end{document}

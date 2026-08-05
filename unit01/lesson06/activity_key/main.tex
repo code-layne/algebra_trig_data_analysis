@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,155 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+The rocketry club launches a model rocket from the roof of the field house, $128$ feet above the
+ground. The flight computer reports the rocket's height above the \emph{ground} as
+\[ h(t) = -16t^2+32t+128 \quad \text{feet, } t \text{ seconds after launch.} \]
+The club has to file a recovery window with the athletic director: \textbf{when is the rocket back
+on the ground?} Every question today is the same question --- set the polynomial equal to something
+and factor.
+
+Work with your group. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R
+without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Five equations. Standard form first, factor completely, then set each factor equal to zero. List
+\emph{every} solution.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Solve: $(x-6)(x+2)=0$
+\begin{work}
+  x-6 &= 0 \quad\Rightarrow\quad x = 6 \\
+  x+2 &= 0 \quad\Rightarrow\quad x = -2
+\end{work}
+
+  \item Solve: $x^2-9x+20=0$
+\begin{work}
+  (x-4)(x-5) &= 0 \\
+  x &= 4 \quad \text{or} \quad x = 5
+\end{work}
+
+  \item Solve: $x^2-36=0$
+\begin{work}
+  (x+6)(x-6) &= 0 \\
+  x &= -6 \quad \text{or} \quad x = 6
+\end{work}
+
+  \item Solve: $x^2+7x=0$ \quad (do not divide by $x$)
+\begin{work}
+  x(x+7) &= 0 \\
+  x &= 0 \quad \text{or} \quad x = -7
+\end{work}
+
+  \item Solve: $x^3-4x=0$ \quad (degree $3$, so expect three solutions)
+\begin{work}
+  x\left(x^2-4\right) &= 0 \\
+  x(x+2)(x-2) &= 0 \\
+  x &= 0, \quad x = -2, \quad x = 2
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+The rocket's height is $h(t) = -16t^2+32t+128$ feet.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Factor $h(t)$ completely. Pull the GCF first --- and $-16$ is part of it.
+\begin{work}
+  h(t) &= -16t^2+32t+128 \\
+       &= -16\left(t^2-2t-8\right) \\
+       &= -16(t-4)(t+2)
+\end{work}
+
+  \item Solve $h(t)=0$ to find the recovery time. Give both solutions and say which one the club
+        must reject, and why.
+\begin{work}
+  -16(t-4)(t+2) &= 0 \\
+  t &= 4 \quad \text{or} \quad t = -2 \\
+  t &= -2 \; \text{rejected --- the launch is at } t=0, \text{ so time cannot be negative}
+\end{work}
+
+  \item The club claims the rocket passes $128$ feet \textbf{twice}. Show they are right by solving
+        $h(t)=128$, then say what each solution means during the flight.
+\begin{work}
+  -16t^2+32t+128 &= 128 \\
+  -16t^2+32t &= 0 \\
+  -16t(t-2) &= 0 \\
+  t &= 0 \quad \text{or} \quad t = 2
+\end{work}
+\ansline{$t=0$ is the launch off the roof; $t=2$ is the rocket falling back past roof height.}
+
+  \item A second rocket is launched from the \emph{ground}, so $h(t) = -16t^2+48t$. Solve $h(t)=0$
+        and explain why \textbf{both} solutions are kept this time.
+\begin{work}
+  -16t(t-3) &= 0 \\
+  t &= 0 \; \text{(the launch)} \quad \text{or} \quad t = 3 \; \text{(the landing)}
+\end{work}
+
+  \item Solve $2x^2 = 14x$. List every solution, and do not divide both sides by $x$.
+\begin{work}
+  2x^2-14x &= 0 \\
+  2x(x-7) &= 0 \\
+  x &= 0 \quad \text{or} \quad x = 7
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item \textbf{Critique the work.} Two students turned in these solutions. Neither is acceptable.
+        Give the correct solutions for each, then name the mistake.
+        \[ \text{(a) } (x-2)(x+5)=8 \;\Rightarrow\; x-2=8 \text{ or } x+5=8 \;\Rightarrow\;
+           x=10, \, x=3 \]
+        \[ \text{(b) } x^2=9 \;\Rightarrow\; x=3 \]
+\begin{work}
+  (x-2)(x+5) &= 8 \\
+  x^2+3x-10 &= 8 \\
+  x^2+3x-18 &= 0 \\
+  (x+6)(x-3) &= 0 \quad\Rightarrow\quad x = -6 \text{ or } x = 3 \\
+  x^2-9 &= 0 \quad\Rightarrow\quad (x+3)(x-3) = 0 \quad\Rightarrow\quad x = 3 \text{ or } x = -3
+\end{work}
+\ansline{(a) $x=-6$ or $x=3$. The property only works against $0$: $x=10$ fails the check, and $x=3$ was luck.}\\
+\ansline{(b) $x=3$ or $x=-3$. Standard form first keeps the negative solution that $x=3$ alone throws away.}\\
+
+  \item \textbf{Build your own.} Write a polynomial equation of degree $3$ whose solutions are
+        exactly $-3$, $0$, and $2$. Then write a \textbf{different} equation with the same three
+        solutions, and explain why both work.
+\begin{work}
+  x(x+3)(x-2) &= 0 \quad\Rightarrow\quad x^3+x^2-6x = 0 \\
+  2x(x+3)(x-2) &= 0 \quad\Rightarrow\quad 2x^3+2x^2-12x = 0
+\end{work}
+\ansline{A nonzero constant factor is never zero, so it adds no solution and removes none.}
+
+  \item \textbf{How many, and what kind.} Solve $x^3+9x=0$ over the \textbf{real} numbers. Then say
+        how many solutions the equation has in total, how many are real, how many are imaginary,
+        and how you know.
+\begin{work}
+  x\left(x^2+9\right) &= 0 \\
+  x &= 0 \quad \text{or} \quad x^2 = -9 \\
+  x^2 &= -9 \; \text{has no real solution --- a square is never negative}
+\end{work}
+\ansline{Degree $3$, so three solutions: $x=0$ is the only real one, and the other two are imaginary.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

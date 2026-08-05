@@ -5,14 +5,16 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-04** — Authored **Unit 1 Lesson 1.5 (Factoring Special Forms, `A2.EO.3b, d`)** in full:
-lesson plan, cover, warm-up, guided notes, group activity, exit ticket, homework, all five keys,
-and the slide deck. `make -C unit01/lesson05 all` and `make -C unit01/lesson05 check` both pass
-(`✓ check passed — 1 lesson, no convention violations`); every page of both packets and the plan
-eyeballed for boxguard. All **50 identities** and every primality claim verified in pure Python
-before authoring (random rational evaluation for the identities; exhaustive integer factor-pair
-search for the primes). This is the **first lesson of the course to carry a second standard code**
-(`3d`, verify polynomial identities), and the first with **four** notes boxes.
+**2026-08-04** — Authored **Unit 1 Lesson 1.6 (Solving Polynomial Equations by Factoring,
+`A2.EI.2b`, `A2.EI.6a–b`)** in full: lesson plan, cover, warm-up, guided notes, group activity,
+exit ticket, homework, all five keys, and the slide deck. `make -C unit01/lesson06 all` and
+`make -C unit01/lesson06 check` both pass (`✓ check passed — 1 lesson, no convention violations`);
+every page of both packets and the plan eyeballed for boxguard, and **one real violation was found
+and fixed** (see the 1.6 entry). Every factorization, root set, and height evaluation verified in
+pure Python before authoring (coefficient-list polynomial arithmetic: expand the factored form and
+compare term-by-term, then integer-root scan). This is the **first lesson of the course to leave
+`A2.EO` for `A2.EI`**, the first to carry a **graph** (pgfplots), and the first to name **imaginary**
+solutions.
 
 ## Course-wide rules set by the user (2026-08-04)
 
@@ -32,9 +34,65 @@ search for the primes). This is the **first lesson of the course to carry a seco
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (6 of 59): `unit01/lesson00`, `unit01/lesson01`, `unit01/lesson02`,
-  `unit01/lesson03`, `unit01/lesson04`, `unit01/lesson05`.** Every component written, built, and
-  gated.
+- **Authored (7 of 59): `unit01/lesson00` through `unit01/lesson06`.** Every component written,
+  built, and gated.
+- **`unit01/lesson06` — Solving Polynomial Equations by Factoring (`A2.EI.2b`, `A2.EI.6a–b`).**
+  - Spine: **factoring did not change; the question did.** 1.3–1.5 asked "what are the dimensions?"
+    1.6 asks "*when*?" The engine is the **zero product property**, and the sentence being taught is
+    *zero is the only number that tells you anything* — $ab=12$ says nothing about $a$, $ab=0$ forces
+    a factor. 1.5's homework item 13(b) ran the whole method once already (factor $x^2-36$, reason to
+    $x=6$, reject $x=-6$), so 1.6 opens by *naming* what the class already did.
+  - **Scope decision, deliberate and recorded.** `EI.2b` says "over the set of complex numbers"; the
+    course spec caps it at *real solutions by factoring*, so no $i$ and no quadratic formula. `EI.6b`
+    ("number and type") is satisfied **without complex arithmetic**: degree gives the count, and a
+    factor $x^2+k$ with $k>0$ contributes two imaginary solutions because *a square is never
+    negative*. That claim is airtight; **do not generalize it to "any prime quadratic"** — $x^2-2$ is
+    prime over the integers and has two real roots.
+  - Warm-up **item 3 is the diagnostic and the theorem at once** — pure arithmetic ($ab=0$ vs
+    $ab=12$), so every student can answer it, and the sentence they produce *is* the property. Item 4
+    is the pivot, same structure as 1.3/1.4/1.5.
+  - Notes = 5 vocab terms (zero product property, solution/root, zero of a function, double root,
+    **imaginary solution**) + four boxes: the property with an already-factored table (incl. $3x(x-5)$
+    where $x=0$ is a real solution and $(x-3)^2$ the **double root**); standard form first, whose
+    **row 4 ($2x^2=8x$) is the trap of the day**; degree three and higher, where $x^3+4x$ makes 1.5's
+    prime sum of squares finally cost something; and the **backwards** direction (`EI.6a`) — a
+    solutions→equation table plus a **pre-drawn cubic graph** ($y=x^3-x^2-6x$, intercepts $-2,0,3$)
+    read for its intercepts. The three in-text blanks are *zero*, *degree*, *imaginary*.
+  - **"True but incomplete" reaches its fourth lesson**: $5x(4x+6)$ → $(2x+4)(x+6)$ → $(2x+6)(x-3)$ →
+    dividing $2x^2=8x$ by $x$ and losing $x=0$. The exit ticket's item 3 is that error; say the streak
+    out loud.
+  - Context thread is one height model per component, all factoring $-16(t-r_1)(t-r_2)$:
+    notes/T-shirt launcher $-16t^2+32t+48 = -16(t-3)(t+1)$, lands at $3$ s; guided practice
+    $-16t^2+16t+32=-16(t-2)(t+1)$, plus $h=32$ giving $t=0,1$; activity/model rocket
+    $-16t^2+32t+128=-16(t-4)(t+2)$, plus $h=128$ giving $t=0,2$; homework/water balloon
+    $-16t^2+80t+96=-16(t-6)(t+1)$, plus $h=96$ giving $t=0,5$.
+  - **The interpretation move is deliberately two-sided**, and it is the lesson's best idea: a
+    negative time is *rejected*, but $t=0$ is *kept* — it is the launch. Activity Tier A item 4 (a
+    ground-launched rocket, $-16t^2+48t$) exists to catch groups treating "throw out the extra one"
+    as a rule rather than a judgement.
+  - Activity tiers R/A/E; Tier E is error critique ($(x-2)(x+5)=8$ solved factor-by-factor — it
+    produces **one correct answer, $x=3$, by luck**, which is why students trust it; and $x^2=9$
+    giving only $x=3$), the same-zeros-different-equation item, and $x^3+9x=0$ for the count and type.
+  - Homework 13 items (one pre-factored, four quadratics incl. a double root $x^2+8x+16$ and a
+    standard-form case $x^2+3x=18$, the divide trap $2x^2=10x$, two cubics, the water balloon, the
+    look-ahead) + an extension solving $x^4-16=0$ **from 1.5's own factorization** — four solutions,
+    two real, two imaginary, `EI.6b` at degree four. Item 13 bridges to 1.7 by solving $x^2-4=0$ and
+    naming those values the **excluded values** of $\frac{x+5}{x^2-4}$.
+  - Guard sizes: bare on vocab, `[12]` hook, `[24]`/`[24]`/`[24]`/`[26]` on the four notesboxes,
+    `[20]` practice, `[16]`/`[16]`/`[30]` on Tiers R/A/E, `[16]`–`[18]` on the homework's trailing
+    boxes, `[18]` on the plan's Reinforcement box — the 1.2–1.5 set again, with `[26]` on the notesbox
+    that **opens onto a pgfplots axis** (an axis never splits, so it needs more than the default).
+  - **Boxguard finding — the gate passed and the PDF was still wrong.** `make check` reported clean
+    while notes p5 held nothing but two write-lines: page parity was perfect because the *key* stranded
+    the same two lines. A stub is invisible to every count, which is exactly why the PDF must be
+    opened. Fixed with `\tcbbreak` before guided-practice item 3 (mirrored in `notes/` and
+    `notes_key/`, with the reason in a comment in both), sending item 3 over whole. **Raising
+    `\boxguard` would not have helped** — it is inert inside a breakable `tcolorbox`.
+  - Page counts: cover 1, warm-up 1/1, notes 5/5, activity 3/3, exit ticket 1/1, homework 3/3;
+    student and key packets 20 pages each. Plan 5 pp, slides 12 frames (4 pp printed 3-up).
+  - **`pgfplots` is loaded by `atda-article` but NOT by `atda-beamer`.** The slide deck's graph frame
+    needs `\usepackage{pgfplots}` + `\pgfplotsset{compat=1.18}` in the deck's own preamble. Do this in
+    the lesson, never in `shared/`.
 - **`unit01/lesson05` — Factoring Special Forms (`A2.EO.3b`, `A2.EO.3d`).**
   - Spine: **these are not new rules — they are shortcuts the class already earned.** 1.4's homework
     item 13 factored $x^2-9$ and $x^2+10x+25$ with the product-and-sum search, so 1.5 opens by
@@ -270,34 +328,33 @@ search for the primes). This is the **first lesson of the course to carry a seco
 - **Confirmed while authoring 1.3:** the 1.2 guard sizes transferred verbatim to a lesson of the
   same shape (listed in the 1.3 entry above) with no re-measuring and no `\tcbbreak`. Treat that
   set as the default opening bid for an ordinary Unit 1 lesson, then tune per box.
-- **Everything else is still scaffold skeletons**: unit01 lessons 1.6–1.7, units 02–08 in full,
+- **Everything else is still scaffold skeletons**: unit01 lesson 1.7, units 02–08 in full,
   plus each unit's `tests/`, `test_keys/`, `sample_test/`, `sample_test_key/`.
 - No `unit_cover/` pair exists for any unit yet, and `finals/` has not been created.
-- Lessons 1.0–1.4 are merged to `main` (PR #4, commit `ca47f7e`; PR #6, commit `248c0c8`; PR #8,
-  commit `6a72235`). Lesson 1.5 is on worktree branch `claude/lesson-1-5-generation-e5a466`,
-  **not yet committed**.
+- Lessons 1.0–1.5 are merged to `main` (PR #4, commit `ca47f7e`; PR #6, commit `248c0c8`; PR #8,
+  commit `6a72235`; PR #9, commit `c6b1e1d`). Lesson 1.6 is on worktree branch
+  `claude/lesson-1-6-generation-872a0f`, **not yet committed**.
 
 ## Next steps
 
-1. Commit / PR Lesson 1.5 (user to confirm).
-2. Author **Unit 1 Lesson 1.6 — Solving Polynomial Equations by Factoring** (`A2.EI.2b`,
-   `A2.EI.6a–b`). Lesson 1.5's homework item 13(b), its remind box, and its closing slide all
-   promise it: students already factored $x^2-36$ and reasoned to $x=6$ from the factored form,
-   **rejecting $x=-6$ because a length cannot be negative**. So 1.6 opens by *naming* the move as
-   the **zero product property** and by picking up that domain-rejection reasoning, which the
-   context problems will need throughout.
-3. Then 1.7 (`A2.EO.1a–b`, rational expressions) — note that 1.5's differences of squares are the
-   single most common thing that cancels there, so pull examples from 1.5's item bank.
-4. The model now holds across six lessons, so the parallel-dispatch pattern (coordinator scaffolds,
-   one subagent per lesson, coordinator builds and gates) is reasonable to try for 1.6–1.7 — but
-   give each agent the boxguard tuning rule, the 1.2/1.3/1.4/1.5 guard sizes above, **and 1.5's
-   "test the guard, then restore it" finding**, since guard sizing is the one thing `make check`
-   cannot catch.
-5. After the Unit 1 lessons: author `unit01/tests/` (practice + actual) and `unit01/test_keys/`,
-   and add the `unit01/unit_cover/` + `unit_cover_key/` pair (the test rationale and Part D
-   scoring go on page 2 of the key cover, never in a test key). Unit 1's test now has six lessons
-   of item banks to sample, and `A2.EO.3d` (verifying an identity) is the natural Part D prompt.
-6. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
+1. Commit / PR Lesson 1.6 (user to confirm).
+2. Author **Unit 1 Lesson 1.7 — Simplifying Rational Expressions** (`A2.EO.1a–b`), the last content
+   lesson of the unit. 1.6's homework item 13 and its remind box both promise it: students solved
+   $x^2-4=0$ and were told those two values are the **excluded values** of $\frac{x+5}{x^2-4}$, so
+   1.7 opens by naming that and then cancels. Pull the numerators and denominators from **1.5's**
+   item bank — differences of squares are the single most common thing that cancels — and from 1.4's
+   trinomials. The excluded-values step is 1.6's method verbatim, so it costs no new machinery.
+3. After 1.7: author `unit01/tests/` (practice + actual) and `unit01/test_keys/`, and add the
+   `unit01/unit_cover/` + `unit_cover_key/` pair (the test rationale and Part D scoring go on page 2
+   of the key cover, never in a test key). Unit 1's test will have seven lessons of item banks to
+   sample; `A2.EO.3d` (verifying an identity) and `A2.EI.6b` (number and type of solutions) are the
+   two natural Part D prompts.
+4. The model now holds across seven lessons. If the parallel-dispatch pattern is used from Unit 2 on
+   (coordinator scaffolds, one subagent per lesson, coordinator builds and gates), give each agent
+   the boxguard tuning rule, the 1.2–1.6 guard sizes above, 1.5's "test the guard, then restore it"
+   finding, **and 1.6's finding that `make check` passes on a stranded stub** — guard placement is
+   the one thing no automated check can catch, so the coordinator must open every PDF.
+5. Down the road: `finals/` (cumulative final, balanced Algebra/Data/Trig per the blueprint
    guidance in the skill).
 
 ### Open questions

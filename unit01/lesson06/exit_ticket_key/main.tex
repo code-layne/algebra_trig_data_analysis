@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{10pt}
 
 \begin{document}
 
@@ -12,9 +13,36 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Solving by Factoring --- On Your Own}
+\small
+Notes closed. Three items. Standard form first, factor completely, and list \emph{every} solution.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=6pt]
+
+\item Solve: $x^2-3x-10=0$
+\begin{work}
+  (x-5)(x+2) &= 0 \\
+  x &= 5 \quad \text{or} \quad x = -2
+\end{work}
+
+\item Solve: $x^3-16x=0$. Then say how many solutions the equation has and what kind they are.
+\begin{work}
+  x\left(x^2-16\right) &= 0 \\
+  x(x+4)(x-4) &= 0 \\
+  x &= 0, \quad x = -4, \quad x = 4 \\
+  \text{degree } 3 &\Rightarrow \text{ three solutions, all real}
+\end{work}
+
+\item A student solves $3x^2 = 12x$ by dividing both sides by $3x$, getting $x=4$. Is the answer
+correct? Is it complete? Explain in one sentence, then give every solution.
+\begin{work}
+  3x^2-12x &= 0 \\
+  3x(x-4) &= 0 \\
+  x &= 0 \quad \text{or} \quad x = 4
+\end{work}
+\ansline{Correct but not complete --- dividing by $3x$ assumes $x \ne 0$ and throws away $x=0$.}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

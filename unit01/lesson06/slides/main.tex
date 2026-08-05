@@ -1,6 +1,8 @@
 %! Solving Polynomial Equations by Factoring — Unit 1, Lesson 1.6 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{atda-beamer}   % provides \royalheader{} and \sectionlabel[color]{}
+\usepackage{pgfplots}      % atda-beamer loads tikz but NOT pgfplots; needed for the graph frame
+\pgfplotsset{compat=1.18}
 
 \begin{document}
 
@@ -17,10 +19,183 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{The T-Shirt Launcher}
+  \sectionlabel[goldacc]{hook --- the crew needs to know \emph{when}}
+  Fired from the top of the bleachers, $48$ feet above the gym floor:
+  \[ h(t) = -16t^2+32t+48 \quad \text{feet.} \]
+  \begin{block}{When does the shirt hit the floor?}
+    That is the question $h(t)=0$. You already have every tool --- last night's item 13(b) ran the
+    whole method once, before it had a name.
+  \end{block}
+\end{frame}
+
+% ── THE WARM-UP IS THE LESSON ─────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Zero Is the Only Number That Tells You Anything}
+  \sectionlabel{warm-up item 3, said out loud}
+  \[ ab = 12 \;\Longrightarrow\; a \text{ could be } 1, \; 2, \; 3, \; 12, \; \tfrac12, \dots \]
+  \[ ab = 0 \;\Longrightarrow\; {\color{goldacc}a = 0 \;\text{ or }\; b = 0} \]
+  \begin{block}{The zero product property}
+    If a product of factors is $0$, at least one factor \textbf{is} $0$. It works for any number of
+    factors --- and for \textbf{no other number} on the right-hand side.
+  \end{block}
+\end{frame}
+
+% ── ALREADY FACTORED ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{A Factored Equation Is Almost Solved}
+  \sectionlabel{set each factor equal to zero}
+  \vspace{0.15cm}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{@{}p{3.6cm} p{4.6cm} X@{}}
+    \textbf{Equation} & \textbf{Each factor $=0$} & \textbf{Solutions} \\
+    \hline
+    $(x-4)(x+7)=0$  & $x-4=0$; \ $x+7=0$  & $x=4$, \ $x=-7$ \\
+    $3x(x-5)=0$     & $x=0$; \ $x-5=0$    & $x=0$, \ $x=5$ \\
+    $(2x-1)(x+6)=0$ & $2x-1=0$; \ $x+6=0$ & $x=\tfrac12$, \ $x=-6$ \\
+    $(x-3)^2=0$     & $x-3=0$ (twice)     & $x=3$ \ (double root) \\
+  \end{tabularx}
+  \vspace{0.3cm}
+
+  The constant $3$ is never zero --- but the factor $x$ is, and $x=0$ is a solution you must keep.
+\end{frame}
+
+% ── THE METHOD ────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Method --- Standard Form First}
+  \sectionlabel{the property only works against zero}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.2cm}
+    \item \textbf{Set the equation equal to zero.}
+    \item \textbf{Factor completely} --- the order from Lessons 1.3--1.5, GCF first.
+    \item \textbf{Set each factor equal to zero} and solve.
+    \item \textbf{Check} each solution in the original equation.
+  \end{enumerate}
+  \vspace{0.3cm}
+  {\color{goldacc}\bfseries $x^2+5x=24$ is not ready.} \quad
+  $x^2+5x-24=0 \;\Rightarrow\; (x+8)(x-3)=0 \;\Rightarrow\; x=-8, \; x=3$.
+\end{frame}
+
+% ── THE TRAP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Never Divide Both Sides by a Variable}
+  \sectionlabel[goldacc]{the trap of the day}
+  \[ 2x^2 = 8x \]
+  Divide by $x$ and you get $2x=8$, so $x=4$. True --- and \textbf{incomplete}.
+  \begin{block}{Move it instead}
+    \[ 2x^2-8x=0 \;\Rightarrow\; 2x(x-4)=0 \;\Rightarrow\;
+       {\color{goldacc}x=0} \;\text{ or }\; x=4 \]
+    Dividing by $x$ quietly assumes $x \ne 0$ --- and here $x=0$ is a solution.
+  \end{block}
+\end{frame}
+
+% ── DEGREE 3 ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Degree Three --- Count Before You Solve}
+  \sectionlabel{\texttt{A2.EI.6a--b} --- how many, and what kind}
+  \[
+  \begin{aligned}
+    x^3-9x &= 0 \\
+    x(x+3)(x-3) &= 0 \\
+    x &= 0, \quad x = -3, \quad x = 3
+  \end{aligned}
+  \]
+  \begin{block}{The degree is the count}
+    Degree $3$ $\Rightarrow$ \textbf{three} solutions, counting a double root twice. And the GCF
+    step is what produced $x=0$ --- pulling out $x$ is never optional.
+  \end{block}
+\end{frame}
+
+% ── REAL VS IMAGINARY ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{When a Solution Is Not a Real Number}
+  \sectionlabel[goldacc]{Lesson 1.5's prime sum of squares, cashed in}
+  \[
+  \begin{aligned}
+    x^3+4x &= 0 \\
+    x\left(x^2+4\right) &= 0 \\
+    x = 0 \quad&\text{or}\quad x^2 = -4
+  \end{aligned}
+  \]
+  \begin{block}{No real number squares to a negative}
+    So $x=0$ is the only \textbf{real} solution. Degree $3$ still means three solutions --- the
+    other two are \textbf{imaginary}. Count them and name the type.
+  \end{block}
+\end{frame}
+
+% ── BACKWARDS ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Running the Method Backwards}
+  \sectionlabel{\texttt{A2.EI.6a} --- from solutions to an equation}
+  A solution $x=r$ comes from the factor $(x-r)$. One factor per solution:
+  \vspace{0.15cm}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{@{}p{4.4cm} X@{}}
+    \textbf{Solutions wanted} & \textbf{Factored equation} \\
+    \hline
+    $5$ and $-3$          & $(x-5)(x+3)=0$ \\
+    $0$ and $7$           & $x(x-7)=0$ \\
+    $-2$, $1$, and $4$    & $(x+2)(x-1)(x-4)=0$ \\
+    $0$, $-3$, and $3$    & $x(x+3)(x-3)=0$ \\
+  \end{tabularx}
+\end{frame}
+
+% ── GRAPH ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{A Graph Hands You the Same Information}
+  \sectionlabel{an $x$-intercept \emph{is} a solution}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \vspace{-0.2cm}
+      \begin{tikzpicture}
+      \begin{axis}[width=6.4cm, height=4.6cm,
+          axis lines=middle, xlabel=$x$, ylabel=$y$,
+          xmin=-3.4, xmax=4.4, ymin=-11, ymax=11,
+          xtick={-3,-2,-1,1,2,3,4}, ytick={-8,-4,4,8},
+          tick label style={font=\tiny}, label style={font=\tiny},
+          samples=101, domain=-2.6:3.5]
+        \addplot[goldacc, very thick, smooth] {x^3 - x^2 - 6*x};
+      \end{axis}
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      Where the curve crosses the $x$-axis, the output is $0$ --- so each $x$-intercept is a
+      \textbf{zero of the function}.
+      \vspace{0.25cm}
+
+      Intercepts $-2$, $0$, $3$:
+      \[ x(x+2)(x-3)=0 \]
+      Any nonzero multiple works too.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: The Model Rocket}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  Launched from the field-house roof, $128$ feet up:
+  \[ h(t) = -16t^2+32t+128 \quad \text{feet.} \]
+  \begin{block}{File the recovery window}
+    When is the rocket back on the ground? Then: the club claims it passes $128$ feet
+    \textbf{twice}. Are they right?
+  \end{block}
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.35cm}
+    \item Solve: $x^2-3x-10=0$.
+    \item Solve: $x^3-16x=0$. How many solutions, and what kind?
+    \item A student solves $3x^2=12x$ by dividing by $3x$ and gets $x=4$. Correct? Complete?
+  \end{enumerate}
+  \vspace{0.3cm}
+  {\color{royal}\bfseries Next: Lesson 1.7 --- Simplifying Rational Expressions.}
 \end{frame}
 
 \end{document}
