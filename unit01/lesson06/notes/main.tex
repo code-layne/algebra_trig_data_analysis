@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,245 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item state the \textbf{zero product property} and explain why only the product \emph{zero}
+        tells you anything about the factors;
+  \item \textbf{solve a polynomial equation by factoring} --- standard form first, then factor
+        completely, then set each factor equal to zero;
+  \item say how \textbf{many} solutions a polynomial equation has and what \textbf{kind} they are
+        (real or imaginary), and write a factored equation \textbf{from} its solutions or from the
+        $x$-intercepts of its graph;
+  \item interpret solutions in context and \textbf{reject} the ones the situation forbids.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together.
+\termblanklong{Zero product property}
+\termblanklong{Solution (root) of an equation}
+\termblanklong{Zero of a function}
+\termblanklong{Double root}
+\termblanklong{Imaginary solution}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{The T-shirt launcher.} At the pep rally a shirt is fired from the top of the bleachers,
+$48$ feet above the gym floor. Its height above the floor $t$ seconds later is
+\[ h(t) = -16t^2+32t+48 \quad \text{feet.} \]
+The crew needs to know \textbf{when the shirt hits the floor} --- that is, when $h(t)=0$.
+
+You already have every tool for this. Factor the right-hand side completely, then use last night's
+item 13(b): a product is zero only when one of the factors \emph{is} zero. Which $t$ does the story
+allow?
+
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{1. The Zero Product Property --- Why Factoring Solves Anything}
+\small
+Warm-up item 3 is the whole idea. If $ab=12$ you learn nothing: $a$ could be $1$, $2$, $3$, $12$,
+or a fraction. But if $ab=0$, one of the two \emph{has} to be zero --- there is no other way to
+make a product vanish.
+
+\vspace{2pt}
+\textbf{The zero product property.} If $ab = 0$, then $a=0$ or $b=0$ (or both). It holds for any
+number of factors, and \blank{2.2cm} is the only number it works for.
+
+\vspace{2pt}
+\textbf{So an equation that is already factored is already almost solved.} Set each factor equal to
+zero and solve the small equations that fall out.
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{}p{3.4cm} p{4.2cm} X@{}}
+\rowcolor{mist}
+\textbf{Equation} & \textbf{Each factor $= 0$} & \textbf{Solutions} \\
+\hline
+$(x-4)(x+7)=0$  & \blank{3.6cm} & \blank{2.6cm} \\
+$3x(x-5)=0$     & \blank{3.6cm} & \blank{2.6cm} \\
+$(2x-1)(x+6)=0$ & \blank{3.6cm} & \blank{2.6cm} \\
+$(x-3)^2=0$     & \blank{3.6cm} & \blank{2.6cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Two things to notice.} In row 2 the constant factor $3$ is never zero, so it contributes no
+solution --- but the factor $x$ does, and $x=0$ is a real solution you must keep. In row 4 both
+factors are the same, so the two solutions collapse into one: $x=3$ is a \textbf{double root}.
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{2. Solving by Factoring --- Standard Form First}
+\small
+The property only works against \textbf{zero}. So before you factor anything, get every term onto
+one side:
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=3pt]
+  \item \textbf{Set the equation equal to zero} (standard form).
+  \item \textbf{Factor completely} --- the whole order from Lessons 1.3--1.5, GCF first.
+  \item \textbf{Set each factor equal to zero} and solve.
+  \item \textbf{Check} each solution in the original equation.
+\end{enumerate}
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{}p{3.2cm} p{4.4cm} X@{}}
+\rowcolor{mist}
+\textbf{Equation} & \textbf{Standard form, factored} & \textbf{Solutions} \\
+\hline
+$x^2-7x+12=0$  & \blank{3.8cm} & \blank{2.6cm} \\
+$x^2+5x=24$    & \blank{3.8cm} & \blank{2.6cm} \\
+$x^2-25=0$     & \blank{3.8cm} & \blank{2.6cm} \\
+$2x^2=8x$      & \blank{3.8cm} & \blank{2.6cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Row 4 is the trap of the day.} It is tempting to divide both sides of $2x^2=8x$ by $x$ and
+write $2x=8$, so $x=4$. That answer is true --- and it is not the whole answer, because dividing by
+$x$ quietly assumes $x \ne 0$, and $x=0$ \emph{is} a solution here:
+\begin{work}
+  2x^2 &= 8x \\
+  2x^2-8x &= 0 \\
+  2x(x-4) &= 0 \\
+  x &= 0 \quad \text{or} \quad x = 4 \\
+  \text{check } x=0: \; 2(0)^2 &= 8(0) \quad\checkmark \qquad \text{check } x=4: \; 2(16) = 8(4)
+      \quad\checkmark
+\end{work}
+\textbf{Never divide both sides by a variable.} Move it to the other side and let it be a factor.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{3. Degree Three and Higher --- How Many, and What Kind}
+\small
+Nothing changes: standard form, factor completely, set each factor to zero. What is new is that you
+can say \emph{in advance} how many solutions to expect --- the \blank{2.0cm} of the polynomial is
+the number of solutions, counting a double root twice.
+\begin{work}
+  x^3-9x &= 0 \\
+  x\left(x^2-9\right) &= 0 \\
+  x(x+3)(x-3) &= 0 \\
+  x &= 0, \quad x = -3, \quad x = 3
+\end{work}
+Degree $3$, three factors, three solutions --- and the GCF step is what produced the solution $x=0$.
+\begin{work}
+  x^3+2x^2-15x &= 0 \\
+  x\left(x^2+2x-15\right) &= 0 \\
+  x(x+5)(x-3) &= 0 \\
+  x &= 0, \quad x = -5, \quad x = 3
+\end{work}
+
+\vspace{2pt}
+\textbf{But not every solution is a real number.} Lesson 1.5 proved that a \emph{sum} of squares
+does not factor over the integers. Here is what that costs you:
+\begin{work}
+  x^3+4x &= 0 \\
+  x\left(x^2+4\right) &= 0 \\
+  x &= 0 \quad \text{or} \quad x^2+4 = 0 \\
+  x^2 &= -4 \quad \text{--- no real number squares to a negative}
+\end{work}
+So $x=0$ is the only \textbf{real} solution. The equation still has degree $3$, so it still has
+three solutions; the other two are \blank{2.4cm} --- numbers outside the real number line, which
+you will meet by name in Algebra 2. For now, \textbf{count them and name their type}: one real, two
+imaginary.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[26]
+\begin{notesbox}{4. Running the Method Backwards --- From Solutions to an Equation}
+\small
+Every lesson in this unit has had a backwards direction, and this one is no different. If you know
+what the solutions are, you can \textbf{build} the equation: a solution $x=r$ comes from the factor
+$(x-r)$, so put one factor in for each solution and set the product equal to zero.
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{}p{3.4cm} p{4.4cm} X@{}}
+\rowcolor{mist}
+\textbf{Solutions wanted} & \textbf{Factored equation} & \textbf{Degree} \\
+\hline
+$5$ and $-3$           & \blank{3.8cm} & \blank{1.8cm} \\
+$0$ and $7$            & \blank{3.8cm} & \blank{1.8cm} \\
+$-2$, $1$, and $4$     & \blank{3.8cm} & \blank{1.8cm} \\
+$0$, $-3$, and $3$     & \blank{3.8cm} & \blank{1.8cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{A graph hands you the same information.} Where a graph crosses the $x$-axis, the height is
+zero --- so an $x$-intercept of the graph is a \textbf{zero of the function} and a solution of the
+equation. Read the three $x$-intercepts below and write a factored equation with exactly those
+solutions.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8.2cm, height=4.6cm,
+    axis lines=middle, xlabel=$x$, ylabel=$y$,
+    xlabel style={font=\scriptsize, at={(ticklabel* cs:1.0)}, anchor=west},
+    ylabel style={font=\scriptsize, at={(ticklabel* cs:1.0)}, anchor=south},
+    xmin=-3.4, xmax=4.4, ymin=-11, ymax=11,
+    xtick={-3,-2,-1,1,2,3,4}, ytick={-8,-4,4,8},
+    tick label style={font=\scriptsize},
+    grid=both, grid style={line width=0.2pt, draw=linegray},
+    samples=101, domain=-2.6:3.5]
+  \addplot[royal, very thick, smooth] {x^3 - x^2 - 6*x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\writelines{2}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{practicebox}
+\small
+\textbf{The second launcher.} A smaller launcher is fired from a $32$-foot platform, so the shirt's
+height above the floor is $h(t) = -16t^2+16t+32$ feet.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+  \item Factor $h(t)$ completely. (GCF first --- and $-16$ is part of it.)
+\begin{work}
+  h(t) &= -16t^2+16t+32 \\
+       &= -16\left(t^2-t-2\right) \\
+       &= -16(t-2)(t+1)
+\end{work}
+
+  \item Solve $h(t)=0$. Give both solutions, say which one the story rejects, and why.
+\begin{work}
+  -16(t-2)(t+1) &= 0 \\
+  t-2 &= 0 \quad\Rightarrow\quad t = 2 \\
+  t+1 &= 0 \quad\Rightarrow\quad t = -1 \; \text{(rejected --- time cannot be negative)}
+\end{work}
+
+% BOXGUARD: \boxguard is inert inside a breakable tcolorbox, and without this
+% break the box splits after item 3's prompt, stranding two write-lines alone on
+% the last page. Breaking here sends item 3 over whole. Mirrored in notes_key.
+\tcbbreak
+  \item On its way up and again on its way down, the shirt passes $32$ feet. Find \textbf{both}
+        times --- set $h(t)=32$ and put the equation in standard form first --- then say what each
+        solution means at the rally.
+\begin{work}
+  -16t^2+16t+32 &= 32 \\
+  -16t^2+16t &= 0 \\
+  -16t(t-1) &= 0 \\
+  t &= 0 \quad \text{or} \quad t = 1
+\end{work}
+\writelines{2}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}
