@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,345 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item name the \textbf{parent function} of the linear, quadratic, and exponential families, and
+        recognize each one from its equation, its graph, or a table of values;
+  \item describe the transformation that turns a parent function into a given function, from the
+        \textbf{equation} or from the \textbf{graph} --- translation, reflection, or dilation;
+  \item explain why a number \emph{outside} the parentheses moves the graph the way you expect and
+        a number \emph{inside} moves it the opposite way;
+  \item say which of the \textbf{domain} and the \textbf{range} a transformation moved, and use
+        that as a check on my answer.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together. Every one of them is a name for something you have
+already done.
+\termblanklong{Parent function}
+\termblanklong{Function family}
+\termblanklong{Translation}
+\termblanklong{Reflection}
+\termblanklong{Dilation}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{The same shell, three seconds later.} In Lesson 2.0 you read the graph of a firework
+shell's height, $h_A(t)=-16t^2+64t$: it leaves the ground at $t=0$, tops out at $64$ feet when
+$t=2$, and lands at $t=4$.
+
+Tonight the crew fires \textbf{two identical shells}. The second one is launched \textbf{3 seconds
+after} the first. Same shell, same climb, same fall --- just later. \textbf{Here is the question:
+does the second shell's equation say $h_A(t+3)$ or $h_A(t-3)$?} Vote before you look at anything.
+
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{1. The Three Parent Functions}
+\small
+A \textbf{parent function} is the plainest member of a family --- the one with nothing done to it
+yet. Every other function in the family is this graph, moved, flipped, or stretched.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.45cm}}c@{\hspace{0.45cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=4.9cm, height=3.9cm, title={\scriptsize Linear},
+    xmin=-3.4, xmax=3.4, ymin=-3.4, ymax=3.4,
+    xtick={-3,0,3}, ytick={-3,0,3},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=-3:3, samples=2]{x};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=4.9cm, height=3.9cm, title={\scriptsize Quadratic},
+    xmin=-3.4, xmax=3.4, ymin=0, ymax=9.6,
+    xtick={-3,0,3}, ytick={0,3,6,9},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=-3:3, samples=80]{x^2};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=4.9cm, height=3.9cm, title={\scriptsize Exponential},
+    xmin=-3.4, xmax=3.4, ymin=0, ymax=8.6,
+    xtick={-3,0,3}, ytick={0,2,4,6,8},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=-3:3, samples=80]{2^x};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}p{2.0cm} p{2.3cm} X p{2.5cm} p{2.5cm}@{}}
+\rowcolor{mist}
+\textbf{Family} & \textbf{Parent}\newline\textbf{equation} & \textbf{What its graph does} & \textbf{Domain}
+    & \textbf{Range} \\
+\hline
+Linear & \blank{1.9cm} & a straight line through the origin & \blank{2.1cm} & \blank{2.1cm} \\
+Quadratic & \blank{1.9cm} & a U-shaped curve (a parabola) with its turning point at the origin
+    & \blank{2.1cm} & \blank{2.1cm} \\
+Exponential & \blank{1.9cm} & hugs the horizontal axis on the left, then climbs faster and faster
+    & \blank{2.1cm} & \blank{2.1cm} \\
+\end{tabularx}
+{\scriptsize (Use $a=2$ for the exponential parent, as in the warm-up.)}
+
+\vspace{6pt}
+\textbf{Telling a line from an exponential when both climb forever} (Lesson 2.0's test): step the
+input up by $1$ each time. A linear function \blank{2.2cm} the same amount every step; an
+exponential function \blank{2.2cm} by the same amount every step.
+
+\vspace{2pt}
+And notice the exponential's range: $2^x$ gets closer and closer to $0$ but never reaches it, so
+the range is $(0,\infty)$ --- a parenthesis, not a bracket. Lesson 2.5 gives that behaviour a name.
 \end{notesbox}
+
+\vspace{0.10in}
+
+% [16] was tested here (to let the box split after the figure+table) and still gave
+% 5 pages, so the break is the natural one. Restored to its box-sized value per 1.5.
+\boxguard[30]
+\begin{notesbox}{2. Sliding the Graph --- Translations}
+\small
+A \textbf{translation} slides a graph without changing its shape or size. Here is the quadratic
+parent with two of its children.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11.0cm, height=5.0cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-3.6, xmax=5.6, ymin=0, ymax=13,
+    xtick={-3,-2,-1,0,1,2,3,4,5}, ytick={0,3,6,9,12},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize},
+    legend entries={{$y=x^2$},{$y=x^2+3$},{$y=(x-2)^2$}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=3}]
+  \addplot[royal, very thick, domain=-3:3, samples=80]{x^2};
+  \addplot[goldacc, very thick, dashed, domain=-3:3, samples=80]{x^2+3};
+  \addplot[plumacc, very thick, dash dot, domain=-1:5, samples=80]{(x-2)^2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}p{4.0cm} p{4.2cm} X@{}}
+\rowcolor{mist}
+\textbf{Written from the parent $f(x)=x^2$} & \textbf{Is the number outside or inside the
+    parentheses?} & \textbf{Which way, and how far, the graph moves} \\
+\hline
+$g(x)=f(x)+3=x^2+3$ & \blank{3.6cm} & \blank{4.2cm} \\
+$g(x)=f(x)-4=x^2-4$ & \blank{3.6cm} & \blank{4.2cm} \\
+$g(x)=f(x-2)=(x-2)^2$ & \blank{3.6cm} & \blank{4.2cm} \\
+$g(x)=f(x+5)=(x+5)^2$ & \blank{3.6cm} & \blank{4.2cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{The rule, in two lines:}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item A number \blank{2.2cm} the parentheses changes the \textbf{outputs}. The graph moves
+        \textbf{up or down}, and it moves the way the sign tells you.
+  \item A number \blank{2.2cm} the parentheses changes the \textbf{inputs}. The graph moves
+        \textbf{left or right}, and it moves the \blank{2.2cm} way from the sign you see.
+\end{itemize}
+
+\vspace{2pt}
+\textbf{Why the opposite?} Read $f(x-2)$ at $x=5$: the rule first computes $5-2=3$, so the new
+graph at $x=5$ shows whatever the old graph showed at $x=3$. Everything the parent did has been
+copied $2$ units farther right.
+
+\vspace{4pt}
+\textbf{Back to the shells.} At $t=5$ the second shell has been in the air for $5-3=2$ seconds, so
+$h_B(5)=h_A(2)=64$ feet. The rule is $h_B(t)=h_A(t-3)$ --- a \textbf{minus}, even though the shell
+goes up \emph{later}. Its domain slid from $[0,4]$ to $[3,7]$ seconds; its range is still
+$[0,64]$ feet.
+
+\vspace{4pt}
+\textbf{The cheapest check you have} (Lesson 2.1's words): a vertical slide moves the
+\blank{2.2cm}; a horizontal slide moves the \blank{2.2cm}.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{3. Flipping and Stretching --- Reflections and Dilations}
+\small
+A \textbf{reflection} flips a graph across an axis. A \textbf{dilation} stretches or squashes it.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.5cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=7.4cm, height=4.6cm, title={\scriptsize Reflections of $h(x)=2^x$},
+    xmin=-3.4, xmax=4.6, ymin=-9.5, ymax=9.5,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={-8,-4,0,4,8},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=-3:3, samples=80]{2^x};
+  \addplot[goldacc, very thick, dashed, domain=-3:3, samples=80]{-(2^x)};
+  \addplot[plumacc, very thick, dash dot, domain=-3:3, samples=80]{2^(-x)};
+  \node[font=\scriptsize, anchor=west, royal]  at (axis cs:3.1,8)   {$2^x$};
+  \node[font=\scriptsize, anchor=west, goldacc] at (axis cs:3.1,-8)  {$-2^x$};
+  \node[font=\scriptsize, anchor=west, plumacc] at (axis cs:3.1,0.9) {$2^{-x}$};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=7.4cm, height=4.6cm, title={\scriptsize Dilations of $g(x)=x^2$},
+    xmin=-3.4, xmax=4.6, ymin=0, ymax=13,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={0,3,6,9,12},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=-3:3, samples=80]{x^2};
+  \addplot[goldacc, very thick, dashed, domain=-2:2, samples=80]{3*x^2};
+  \addplot[plumacc, very thick, dash dot, domain=-3:3, samples=80]{x^2/3};
+  \node[font=\scriptsize, anchor=west, royal]  at (axis cs:3.1,9)  {$x^2$};
+  \node[font=\scriptsize, anchor=west, goldacc] at (axis cs:2.1,12) {$3x^2$};
+  \node[font=\scriptsize, anchor=west, plumacc] at (axis cs:3.1,3)  {$\tfrac{1}{3}x^2$};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}p{3.4cm} X@{}}
+\rowcolor{mist}
+\textbf{Notation} & \textbf{What it does to the graph} \\
+\hline
+$-f(x)$ & every output changes sign --- the graph flips over the \blank{2.0cm}-axis \\
+$f(-x)$ & every input changes sign --- the graph flips over the \blank{2.0cm}-axis \\
+$k \cdot f(x)$ with $|k|>1$ & every output is multiplied by $k$: a vertical \blank{2.4cm}
+    (taller and steeper) \\
+$k \cdot f(x)$ with $0<|k|<1$ & every output is multiplied by $k$: a vertical \blank{2.4cm}
+    (flatter) \\
+$f(kx)$ with $|k|>1$ & a horizontal \emph{compression} --- the graph is squeezed toward the
+    vertical axis \\
+$f(kx)$ with $0<|k|<1$ & a horizontal \emph{stretch} --- the graph is pulled away from the
+    vertical axis \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Two things worth saying out loud.}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item $-f(x)$ and $f(-x)$ are \emph{different} flips. Warm-up item 3 already proved it:
+        $-x^2$ gave $-9$ and $(-x)^2$ gave $9$.
+  \item The parabola is its own reflection over the $y$-axis, because $(-x)^2=x^2$. A flip that
+        leaves the picture unchanged is still a flip --- it just has nothing to show for it.
+  \item $f(kx)$ is easiest to see when the domain is restricted. A machine that runs the same
+        cycle in \emph{half} the time has the same graph squeezed onto $[0,4]$ instead of $[0,8]$.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{4. The Card: Which One Moved, the Domain or the Range?}
+\small
+Six notations, one question each: does the number touch the \textbf{outputs} or the
+\textbf{inputs}? Fill the two blank columns and keep this page --- it is the whole lesson.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}p{2.2cm} p{2.4cm} X p{2.7cm}@{}}
+\rowcolor{mist}
+\textbf{Notation} & \textbf{It changes the\dots} & \textbf{So the graph\dots}
+    & \textbf{In context this moves the\dots} \\
+\hline
+$f(x)+k$ & \blank{2.0cm} & moves up or down, the way the sign says & \blank{2.3cm} \\
+$f(x+k)$ & \blank{2.0cm} & moves left or right, the \emph{opposite} way & \blank{2.3cm} \\
+$-f(x)$ & \blank{2.0cm} & flips over the $x$-axis & \blank{2.3cm} \\
+$f(-x)$ & \blank{2.0cm} & flips over the $y$-axis & \blank{2.3cm} \\
+$k \cdot f(x)$ & \blank{2.0cm} & stretches or compresses vertically & \blank{2.3cm} \\
+$f(kx)$ & \blank{2.0cm} & stretches or compresses horizontally & \blank{2.3cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Two errors to refuse before they happen:}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item ``$y=(x+5)^2$ moves right $5$.'' It moves \textbf{left} $5$. Inside the parentheses, the
+        sign you see is the opposite of the direction you get.
+  \item ``$-f(x)$ and $f(-x)$ both just flip it.'' They flip it over \emph{different} axes, and
+        the warm-up showed they can give different numbers from the same input.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{practicebox}
+\small
+The robotics club sells raffle tickets. Selling $x$ hundred tickets gives a profit of
+$P(x)=-x^2+8x$ hundred dollars, for $0 \le x \le 8$. Partway through, a sponsor promises a flat
+\$400 gift no matter how many tickets sell, so the new profit is $Q$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.8cm, height=4.8cm,
+    xlabel={$x$ (tickets sold, hundreds)}, ylabel={profit (hundreds of dollars)},
+    xmin=0, xmax=8.6, ymin=0, ymax=22,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={0,4,8,12,16,20},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize},
+    legend entries={{$P(x)=-x^2+8x$},{$Q$}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=2}]
+  \addplot[royal, very thick, domain=0:8, samples=80]{-x^2+8*x};
+  \addplot[goldacc, very thick, dashed, domain=0:8, samples=80]{-x^2+8*x+4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt]
+  \item Describe how the graph of $Q$ sits compared with the graph of $P$, then write $Q$ in
+        function notation, starting from $P$.
+
+\writelines{2}
+
+  \item State the domain and the range of $P$, then of $Q$, in interval notation. Which one moved
+        --- the domain or the range --- and why is that exactly what you should have expected?
+
+\writelines{3}
+
+  \item Describe the transformation of the \emph{parent} function each of these is. Name the
+        parent first. \quad (a) $y=x^2-6$ \quad (b) $y=(x+4)^2$ \quad (c) $y=-2^x$
+
+\writelines{3}
+
+  \item Check your reading of the highest point against the arithmetic: find $P(4)$, then $Q(4)$.
+\begin{work}
+  P(4) &= -(4)^2+8(4) \\
+       &= -16+32 \\
+       &= 16 \\
+  Q(4) &= P(4)+4 \\
+       &= 20
+\end{work}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

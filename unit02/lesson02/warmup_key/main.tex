@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
@@ -12,9 +13,64 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Where Does the Number Go In?}
+\small
+Five quick items. Items 2 and 3 look almost the same and are not --- read them slowly.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+
+\item \textbf{Two rules, one table.} Fill in every cell.
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|c|c|c|c|c|@{}}
+\hline
+$x$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+$f(x)=x^2$ & \ans{$0$} & \ans{$1$} & \ans{$4$} & \ans{$9$} \\ \hline
+$h(x)=2^x$ & \ans{$1$} & \ans{$2$} & \ans{$4$} & \ans{$8$} \\ \hline
+\end{tabular}
+\smallskip
+
+Now find $h(-1)$ and $h(-2)$ (Lesson 1.1 --- a negative exponent).
+\begin{work}
+  h(-1) &= 2^{-1} \\
+        &= \frac{1}{2} \\
+  h(-2) &= 2^{-2} \\
+        &= \frac{1}{4}
+\end{work}
+
+\item \textbf{Feeding the rule a different number.} Let $f(x)=x^2$. Find $f(5)$, then find
+$f(5-3)$.
+\begin{work}
+  f(5) &= 5^2 \\
+       &= 25 \\
+  f(5-3) &= f(2) \\
+         &= 4
+\end{work}
+
+\item \textbf{Where the minus sign sits.} Evaluate both of these at $x=3$.
+\begin{work}
+  -x^2 &= -(3)^2 \\
+       &= -9 \\
+  (-x)^2 &= (-3)^2 \\
+         &= 9
+\end{work}
+Are $-x^2$ and $(-x)^2$ the same rule? Say how you know.
+
+\ansline{No. At $x=3$ one gives $-9$ and the other $9$ --- squaring first, then negating, is not the same as negating first.}\\
+
+\item \textbf{Writing a set down} (Lesson 2.1). \quad (a) Write $y \ge 3$ in interval notation.
+\quad (b) Write $(-\infty, 0]$ as an inequality.
+
+\ansline{(a) $[3,\infty)$ \qquad (b) $x \le 0$}\\
+
+\item \textbf{Last night's homework, in one sentence.} You found that every output of
+$g(x)=x^2+3$ is exactly $3$ more than the matching output of $f(x)=x^2$. Without drawing
+anything, say how the graph of $g$ sits compared to the graph of $f$.
+
+\ansline{The graph of $g$ is the same shape as the graph of $f$, sitting $3$ units higher.}\\
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,53 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Name the Parent, Name the Move}
+\small
+Notes closed. Three items.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.8cm, height=4.4cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-3.5, xmax=6.5, ymin=0, ymax=9.6,
+    xtick={-3,-2,-1,0,1,2,3,4,5,6}, ytick={0,3,6,9},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize},
+    legend entries={{$y=f(x)$ (the parent)},{$y=g(x)$}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=2}]
+  \addplot[royal, very thick, domain=-3:3, samples=80]{x^2};
+  \addplot[goldacc, very thick, dashed, domain=0:6, samples=80]{(x-3)^2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=4pt]
+
+\item Name the parent function $f$ drawn above. Then describe how $g$ was made from it --- which
+way and how far --- and write $g$ two ways: in function notation starting from $f$, and as an
+equation in $x$.
+
+\ansline{The quadratic parent, $f(x)=x^2$. Its graph was translated \textbf{right $3$}.}\\
+\ansline{$g(x)=f(x-3)$, that is $g(x)=(x-3)^2$. Turning point $(3,0)$.}\\
+
+\item No graph for this one: $y=2^x-5$. Name the parent, describe the transformation, and state
+which of the \textbf{domain} and the \textbf{range} moved. Give both in interval notation.
+
+\ansline{Parent $h(x)=2^x$, translated \textbf{down $5$} (the $-5$ is outside the parentheses).}\\
+\ansline{Domain $(-\infty,\infty)$ --- unchanged.}\\
+\ansline{Range moved from $(0,\infty)$ to $(-5,\infty)$.}\\
+
+\item A classmate says: ``The equation for $g$ has a minus sign in it, so the graph should have
+moved \emph{left}.'' They are wrong. Using an input of your own choosing, explain what the minus
+sign actually does.
+
+\ansline{The $-3$ is subtracted from the input \emph{before} squaring. At $x=5$, $g$ computes}\\
+\ansline{$f(5-3)=f(2)=4$ --- so the new graph at $5$ shows what the parent showed at $2$.}\\
+\ansline{Every value has been copied $3$ units farther right, so the graph moved \textbf{right}.}\\
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

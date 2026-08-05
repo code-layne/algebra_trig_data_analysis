@@ -1,6 +1,8 @@
 %! Parent Functions and Transformations — Unit 2, Lesson 2.2 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{atda-beamer}   % provides \royalheader{} and \sectionlabel[color]{}
+\usepackage{pgfplots}      % atda-beamer does NOT load pgfplots
+\pgfplotsset{compat=1.18}
 
 \begin{document}
 
@@ -17,10 +19,241 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{The Same Shell, Three Seconds Later}
+  \sectionlabel[goldacc]{hook --- vote before you look}
+  In Lesson 2.0 you read this firework: $h_A(t)=-16t^2+64t$. Off the ground at $t=0$, $64$ feet at
+  $t=2$, back down at $t=4$.
+  \begin{block}{Tonight the crew fires two identical shells --- the second one 3 seconds later}
+    Same shell. Same climb. Same fall. Just later.\\[2pt]
+    \textbf{Does the second shell's equation say $h_A(t+3)$ or $h_A(t-3)$?}
+  \end{block}
+  \vspace{0.15cm}
+  Hands up. Commit to one.
+\end{frame}
+
+% ── THE SHELLS ────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{One Number Settles It}
+  \sectionlabel{later on the clock, less time in the air}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=10.4cm, height=4.6cm,
+      xlabel={$t$ (seconds)}, ylabel={height (feet)},
+      xmin=0, xmax=7.6, ymin=0, ymax=72,
+      xtick={0,1,2,3,4,5,6,7}, ytick={0,16,32,48,64},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}, label style={font=\tiny},
+      legend entries={{shell A},{shell B}},
+      legend style={font=\tiny, draw=none, fill=none,
+        at={(0.5,1.02)}, anchor=south, legend columns=2}]
+    \addplot[royal, very thick, domain=0:4, samples=80]{-16*x^2+64*x};
+    \addplot[plumacc, very thick, dashed, domain=3:7, samples=80]{-16*(x-3)^2+64*(x-3)};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.2cm}
+  At $t=5$, shell B has been in the air $5-3=2$ seconds, so it is at $h_A(2)=64$ feet.
+  \textbf{$h_B(t)=h_A(t-3)$ --- a minus.} Domain $[0,4] \to [3,7]$; range still $[0,64]$.
+\end{frame}
+
+% ── THE THREE PARENTS ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Three Parent Functions}
+  \sectionlabel{the plainest member of each family}
+  \begin{center}
+  \begin{tabular}{@{}c@{\hspace{0.9cm}}c@{\hspace{0.9cm}}c@{}}
+  \begin{tikzpicture}
+  \begin{axis}[width=4.6cm, height=3.6cm, title={\tiny Linear \ $f(x)=x$},
+      xmin=-3.4, xmax=3.4, ymin=-3.4, ymax=3.4, xtick={-3,0,3}, ytick={-3,0,3},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}]
+    \addplot[royal, very thick, domain=-3:3, samples=2]{x};
+  \end{axis}
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+  \begin{axis}[width=4.6cm, height=3.6cm, title={\tiny Quadratic \ $g(x)=x^2$},
+      xmin=-3.4, xmax=3.4, ymin=0, ymax=9.6, xtick={-3,0,3}, ytick={0,3,6,9},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}]
+    \addplot[royal, very thick, domain=-3:3, samples=80]{x^2};
+  \end{axis}
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+  \begin{axis}[width=4.6cm, height=3.6cm, title={\tiny Exponential \ $h(x)=2^x$},
+      xmin=-3.4, xmax=3.4, ymin=0, ymax=8.6, xtick={-3,0,3}, ytick={0,2,4,6,8},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}]
+    \addplot[royal, very thick, domain=-3:3, samples=80]{2^x};
+  \end{axis}
+  \end{tikzpicture}
+  \end{tabular}
+  \end{center}
+  \vspace{-0.15cm}
+  Ranges: $(-\infty,\infty)$, \quad $[0,\infty)$, \quad $(0,\infty)$ --- \textbf{a parenthesis},
+  because $2^x$ never reaches $0$. \\
+  Telling a line from an exponential: \textbf{a line adds, an exponential multiplies.}
+\end{frame}
+
+% ── TRANSLATIONS ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Translations: Sliding the Graph}
+  \sectionlabel{shape and size never change}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.8cm, height=4.4cm, xlabel={$x$}, ylabel={$y$},
+      xmin=-3.6, xmax=5.6, ymin=0, ymax=13,
+      xtick={-3,-2,-1,0,1,2,3,4,5}, ytick={0,3,6,9,12},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}, label style={font=\tiny},
+      legend entries={{$y=x^2$},{$y=x^2+3$},{$y=(x-2)^2$}},
+      legend style={font=\tiny, draw=none, fill=none,
+        at={(0.5,1.02)}, anchor=south, legend columns=3}]
+    \addplot[royal, very thick, domain=-3:3, samples=80]{x^2};
+    \addplot[goldacc, very thick, dashed, domain=-3:3, samples=80]{x^2+3};
+    \addplot[plumacc, very thick, dash dot, domain=-1:5, samples=80]{(x-2)^2};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.2cm}
+  \textbf{$f(x)+k$} --- outside the parentheses, changes the \emph{outputs}, moves up or down.
+  \quad
+  \textbf{$f(x+k)$} --- inside, changes the \emph{inputs}, moves left or right the opposite way.
+\end{frame}
+
+% ── WHY THE OPPOSITE ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Why ``Inside'' Runs Backwards}
+  \sectionlabel[goldacc]{this is substitution, not a trick}
+  \begin{block}{Read $f(x-2)$ at $x=5$}
+    \centering\large
+    $f(5-2)=f(3)$ \qquad$\Longrightarrow$\qquad the new graph at $5$ shows the old graph's value
+    at $3$
+  \end{block}
+  \begin{itemize}
+    \setlength{\itemsep}{0.3cm}
+    \item Everything the parent did has been copied \textbf{2 units farther right}.
+    \item Never say ``the sign flips.'' Say \textbf{``what does it compute?''} and put in a number.
+    \item Same sentence for the shells: at $t=5$ the second shell has lived $5-3=2$ seconds.
+  \end{itemize}
+\end{frame}
+
+% ── REFLECTIONS AND DILATIONS ─────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Reflections and Dilations}
+  \sectionlabel{flip it, or stretch it}
+  \begin{center}
+  \begin{tabular}{@{}c@{\hspace{0.9cm}}c@{}}
+  \begin{tikzpicture}
+  \begin{axis}[width=6.4cm, height=4.0cm, title={\tiny $2^x$, \ $-2^x$, \ $2^{-x}$},
+      xmin=-3.4, xmax=3.4, ymin=-9.5, ymax=9.5,
+      xtick={-3,0,3}, ytick={-8,-4,0,4,8},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}]
+    \addplot[royal, very thick, domain=-3:3, samples=80]{2^x};
+    \addplot[goldacc, very thick, dashed, domain=-3:3, samples=80]{-(2^x)};
+    \addplot[plumacc, very thick, dash dot, domain=-3:3, samples=80]{2^(-x)};
+  \end{axis}
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+  \begin{axis}[width=6.4cm, height=4.0cm, title={\tiny $x^2$, \ $3x^2$, \ $\tfrac{1}{3}x^2$},
+      xmin=-3.4, xmax=3.4, ymin=0, ymax=13,
+      xtick={-3,0,3}, ytick={0,3,6,9,12},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}]
+    \addplot[royal, very thick, domain=-3:3, samples=80]{x^2};
+    \addplot[goldacc, very thick, dashed, domain=-2:2, samples=80]{3*x^2};
+    \addplot[plumacc, very thick, dash dot, domain=-3:3, samples=80]{x^2/3};
+  \end{axis}
+  \end{tikzpicture}
+  \end{tabular}
+  \end{center}
+  \vspace{-0.15cm}
+  $-f(x)$ flips over the \textbf{$x$}-axis; $f(-x)$ flips over the \textbf{$y$}-axis --- and the
+  warm-up already showed they are different ($-9$ against $9$).
+\end{frame}
+
+% ── THE CARD ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Card: Which One Moved?}
+  \sectionlabel{six notations, one question each}
+  \renewcommand{\arraystretch}{1.25}
+  \small
+  \begin{tabularx}{\textwidth}{@{}p{2.0cm} p{2.2cm} X p{2.6cm}@{}}
+    \textbf{Notation} & \textbf{Changes the\dots} & \textbf{So the graph\dots}
+      & \textbf{In context, moves the\dots} \\
+    \hline
+    $f(x)+k$ & outputs & moves up or down, the way the sign says & range \\
+    $f(x+k)$ & inputs & moves left or right, the \emph{opposite} way & domain \\
+    $-f(x)$ & outputs & flips over the $x$-axis & range \\
+    $f(-x)$ & inputs & flips over the $y$-axis & domain \\
+    $k\,f(x)$ & outputs & stretches ($|k|>1$) or compresses ($0<|k|<1$) vertically & range \\
+    $f(kx)$ & inputs & compresses ($|k|>1$) or stretches ($0<|k|<1$) horizontally & domain \\
+  \end{tabularx}
+  \vspace{0.2cm}
+
+  The horizontal pair reads \textbf{opposite} to the vertical pair. That is not a typo.
+\end{frame}
+
+% ── GUIDED PRACTICE ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Guided Practice: The Robotics Fundraiser}
+  \sectionlabel{predict first --- domain or range?}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.6cm, height=4.2cm,
+      xlabel={$x$ (tickets, hundreds)}, ylabel={profit (hundreds)},
+      xmin=0, xmax=8.6, ymin=0, ymax=22,
+      xtick={0,1,2,3,4,5,6,7,8}, ytick={0,4,8,12,16,20},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}, label style={font=\tiny},
+      legend entries={{$P(x)=-x^2+8x$},{$Q$}},
+      legend style={font=\tiny, draw=none, fill=none,
+        at={(0.5,1.02)}, anchor=south, legend columns=2}]
+    \addplot[royal, very thick, domain=0:8, samples=80]{-x^2+8*x};
+    \addplot[plumacc, very thick, dashed, domain=0:8, samples=80]{-x^2+8*x+4};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.2cm}
+  A sponsor adds a flat \$400: $Q(x)=P(x)+4$. \quad Domain $[0,8]$ \textbf{both times}. \quad
+  Range $[0,16] \to [4,20]$. \quad \textbf{The range moved --- the $+4$ is outside.}
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: Moved, Flipped, Stretched}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  Every graph is a parent with something done to it. Three answers every time.
+  \begin{block}{Your job}
+    \textbf{1.} Name the parent. \quad \textbf{2.} Name the move --- and write it in
+    $f$-notation. \quad \textbf{3.} Say which moved, the domain or the range.
+  \end{block}
+  \vspace{0.15cm}
+  Tier E: two students who are confidently wrong, and a reflection that changes nothing at all.
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.3cm}
+    \item A parabola and its image: name the parent, name the move, write it two ways.
+    \item $y=2^x-5$ with no graph: the transformation, and which of the domain and range moved.
+    \item A classmate says the minus should have moved it left. Refute them \textbf{with a
+          number}, not with the rule.
+  \end{enumerate}
+  \vspace{0.25cm}
+  {\color{royal}\bfseries Next: Lesson 2.3 --- Equation $\leftrightarrow$ Graph, Both Directions,
+  on the TI-84.}
 \end{frame}
 
 \end{document}
