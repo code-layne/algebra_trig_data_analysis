@@ -31,7 +31,8 @@ General rules:
 `main.tex` at the lesson root — teacher-facing, never handed to students. Canonical section
 order:
 
-1. **Title block** — `\CourseName: \SchoolYear` + `\UnitNumberName \LessonNumberName`.
+1. **Title block** — `\CourseName` + `\UnitNumberName \LessonNumberName`. **No school year**
+   — see "No year on any document" in `conventions.md`.
 2. **Primary Objective** — a `tcolorbox` (mist/royal). One or two sentences in student terms
    stating what students will be able to do, interpret, and justify with the topic.
 3. **Priority Ideas & Skills** — `skillbox{goldbox}`, two `minipage`s. Left: the priority
@@ -84,8 +85,11 @@ The warm-up must fit **one page**, blank and key.
 
 `notes/` (+ `notes_key/`) — the student's fill-in notes. Structure:
 - `\pageheader{Unit X, Lesson Y.Z}{Guided Notes}` — **no name row** (namestrip).
-- `objectivebox` — "By the end of this lesson, I will be able to…" with `\writeline`s for
-  students to fill (the key uses `\ansline{...}`, one per priority idea/skill).
+- `objectivebox` — "By the end of this lesson, I will be able to…" **filled in, not blank.**
+  State the objectives outright, one per priority idea/skill, worded exactly as the cover's
+  learning targets. The student should be able to read what the lesson is for without waiting
+  for it to be dictated, so this box is **not** a fill-in — no `\writeline`s here, and the key
+  carries the identical text (which also makes it parity-proof).
 - `vocabbox` — `\termblanklong{Term}` per key term (key uses `\vocabans{Term}{definition}`).
   Write the intro sentence plainly: the term macros carry their own `\par` (vocabpar is enforced
   in the package), so **do not** add `\par\vspace{2pt}` — it double-spaces the box.

@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,173 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item explain what the \textbf{expanded} form of a model shows me and what the
+        \textbf{factored} form shows me, and choose the one that answers a given question;
+  \item show that two expressions are \textbf{equivalent} by expanding one and comparing it,
+        term by term, with the other;
+  \item use the algebra Unit 1 is built on: the exponent rules, the distributive property,
+        greatest common factors, and solving a linear equation;
+  \item name what each lesson of Unit 1 teaches and where that skill gets used later in this
+        course.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together. These five words carry the whole unit.
+\termblanklong{Equivalent expressions}
+\termblanklong{Polynomial}
+\termblanklong{Expanded form}
+\termblanklong{Factored form}
+\termblanklong{Zero of an expression}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{hookbox}
+\small
+\textbf{The Fourth of July shell.} A fireworks shell is launched from a platform on a $64$-foot
+cliff above the harbor. Its height above the water, in feet, $t$ seconds after launch is
+\[ h(t) = -16t^2+48t+64 \qquad\text{and also}\qquad h(t) = -16(t-4)(t+1). \]
+The safety officer needs to know \textbf{when the shell hits the water}. The announcer needs to
+know \textbf{how high the platform is}. Which form would you hand to each person, and why?
+
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[14]
+\begin{notesbox}{1. Are They Really the Same?}
+\small
+Before we trust either form, check them against each other. Expand the factored form and compare
+it, term by term, with the expanded form. This is the check that will verify every factoring
+answer you write this year.
+\begin{work}
+  -16(t-4)(t+1) &= -16\big(t^2+t-4t-4\big) \\
+                &= -16\big(t^2-3t-4\big) \\
+                &= -16t^2+48t+64
+\end{work}
+
+\textbf{Careful:} the $-16$ must reach \blank{2.6cm} term inside the parentheses, not just the
+first one. Two expressions are \textbf{equivalent} only when \emph{every} coefficient matches.
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{notesbox}{2. Two Forms, Two Questions}
+\small
+The two forms give the same output for every $t$. They differ only in what they let you see
+without doing any work.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}p{5.3cm} c X@{}}
+\rowcolor{mist}
+\textbf{The question} & \textbf{Form that answers it} & \textbf{What you read off} \\
+\hline
+How high is the launch platform? & \blank{2.2cm} & \blank{4.2cm} \\
+When does the shell hit the water? & \blank{2.2cm} & \blank{4.2cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+The factored form gives two zeros, $t=4$ and $t=-1$. Both are real numbers, but only one of them
+means anything for this shell. Which one, and why?
+
+\writelines{2}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[26]
+\begin{notesbox}{3. The Unit 1 Roadmap}
+\small
+Mark the last column for yourself using your warm-up results: \textbf{C} = confident,
+\textbf{R} = rusty, \textbf{N} = new to me. You will come back to this page before the unit test.
+
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{@{}c p{2.6cm} X c@{}}
+\rowcolor{mist}
+\textbf{Lesson} & \textbf{Standard} & \textbf{What I will be able to do} & \textbf{C/R/N} \\
+\hline
+1.1 & \texttt{A2.EO.3a} & Simplify expressions; add, subtract, and multiply polynomials using
+      the exponent rules & \blank{0.9cm} \\
+1.2 & \texttt{A2.EO.2a--c} & Simplify radicals and move between radicals and rational exponents
+      & \blank{0.9cm} \\
+1.3 & \texttt{A2.EO.3b} & Factor out a greatest common factor and factor a four-term polynomial
+      by grouping & \blank{0.9cm} \\
+1.4 & \texttt{A2.EO.3b} & Factor trinomials, with and without a leading coefficient
+      & \blank{0.9cm} \\
+1.5 & \texttt{A2.EO.3b, d} & Factor and verify special forms: difference of squares, sum and
+      difference of cubes, perfect square trinomials & \blank{0.9cm} \\
+1.6 & \texttt{A2.EI.2b}, \texttt{A2.EI.6a--b} & Solve polynomial equations by factoring, and
+      interpret the solutions in context & \blank{0.9cm} \\
+1.7 & \texttt{A2.EO.1a--b} & Simplify rational expressions by factoring and cancelling
+      & \blank{0.9cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+\textbf{My goal for this unit:} \writeline
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{notesbox}{4. Where This Algebra Gets Spent}
+\small
+None of this unit is algebra for its own sake. Every skill above is cashed in later this year:
+
+\begin{itemize}[leftmargin=1.3em, itemsep=3pt, topsep=3pt]
+  \item The \textbf{exponent rules} of Lesson 1.1 become the \blank{4.0cm} properties in
+        Unit 3, where $\log(ab)=\log a+\log b$ is the same idea written backwards.
+  \item \textbf{Factoring} (1.3--1.5) is what makes \blank{4.0cm} equations solvable in
+        Lesson 1.6 --- and every trigonometric equation you meet in Unit 8 ends the same way.
+  \item \textbf{Simplifying quotients} (1.7) is exactly the move that reduces the counting and
+        probability formulas in Unit 4 to numbers you can compute by hand.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[22]
+\begin{practicebox}
+\small
+A gardener has $40$ feet of fence for three sides of a rectangular plot; the fourth side is an
+existing wall. If the two sides perpendicular to the wall are each $x$ feet long, the enclosed
+area in square feet is $A(x)=x(40-2x)$.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+  \item Expand $A(x)$ and write it in standard form.
+\begin{work}
+  A(x) &= x(40-2x) \\
+       &= 40x-2x^2 \\
+       &= -2x^2+40x
+\end{work}
+
+  \item The factored form $A(x)=x(40-2x)$ has two zeros. Find them, then say what each one means
+        for the garden.
+\begin{work}
+  x &= 0 \text{ or } 40-2x = 0 \\
+  x &= 0 \text{ or } x = 20
+\end{work}
+\writeline
+
+  \item A parabola is symmetric, so the largest area sits exactly halfway between the two zeros.
+        Find that value of $x$ and the area it encloses.
+\begin{work}
+  x &= \dfrac{0+20}{2} = 10 \\
+  A(10) &= 10\big(40-2(10)\big) \\
+        &= 10(20) = 200
+\end{work}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

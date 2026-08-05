@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,109 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\boxguard[20]
+\begin{notesbox}{Practice --- The Skills Unit 1 Is Built On}
+\small
+Items 1--3 are the diagnostic skills again with new numbers. Show your work.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item Simplify: $(2a^3b)(-5a^2b^4)$
+\begin{work}
+  (2a^3b)(-5a^2b^4) &= (2)(-5)\,a^{3+2}\,b^{1+4} \\
+                    &= -10a^5b^5
+\end{work}
+
+\item Multiply and write in standard form: $(x-4)(x+9)$
+\begin{work}
+  (x-4)(x+9) &= x^2+9x-4x-36 \\
+             &= x^2+5x-36
+\end{work}
+
+\item Factor out the greatest common factor: $18m^4-24m^3$
+\begin{work}
+  18m^4-24m^3 &= 6m^3(3m)-6m^3(4) \\
+              &= 6m^3(3m-4)
+\end{work}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{scenariobox}[In Context --- Choosing the Right Form]{royal}
+\small
+A softball is tossed straight up from a raised mound. Its height above the ground, in feet,
+$t$ seconds after release is
+\[ h(t) = -16t^2+32t+48 \qquad\text{and also}\qquad h(t) = -16(t-3)(t+1). \]
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt, start=4]
+
+\item Which form tells you the height the ball was released from, and what is that height?
+
+\writelines{1}
+
+\item Which form tells you when the ball hits the ground, and when is that? (Remember: one of the
+two zeros does not describe the toss.)
+
+\writelines{1}
+
+\item Verify that the two forms really are equivalent by expanding the factored form.
+\begin{work}
+  -16(t-3)(t+1) &= -16\big(t^2+t-3t-3\big) \\
+                &= -16\big(t^2-2t-3\big) \\
+                &= -16t^2+32t+48
+\end{work}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[14]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt, start=7]
+
+\item You deposit \$500 in an account that grows by $4\%$ each year. After $t$ years the balance
+in dollars is $A(t)=500(1.04)^t$. Find $A(3)$, rounded to the nearest cent, then write one
+sentence saying what it means.
+\begin{work}
+  A(3) &= 500(1.04)^3 \\
+       &= 500(1.124864) \\
+       &\approx 562.43
+\end{work}
+\writeline
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{extensionbox}
+\small
+\textbf{The number trick.} Pick any number. Add $7$. Double the result. Subtract $4$. Divide by
+$2$. Now subtract the number you started with. You get $5$ --- every time.
+
+Let $n$ be the number you picked, write an expression for each step, and simplify to explain why
+the answer is always $5$.
+\begin{work}
+  \dfrac{2(n+7)-4}{2}-n &= \dfrac{2n+10}{2}-n \\
+                        &= (n+5)-n \\
+                        &= 5
+\end{work}
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{Next: Lesson 1.1 --- Simplifying Algebraic Expressions and Exponent Rules}
+(\texttt{A2.EO.3a}). Every ``expand and compare'' you did today runs on the exponent rules and
+the distributive property. Lesson 1.1 makes them fast and automatic --- and those same rules
+come back in Unit 3 as the properties of logarithms.
+\end{remindbox}
 
 \end{document}

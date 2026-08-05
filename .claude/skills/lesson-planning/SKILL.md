@@ -153,7 +153,7 @@ clean, detect project context:
 2. **Confirm the prefix.** `ls shared/*-colors.sty` → it is `atda`. All
    `\usepackage{atda-article}` etc. use it.
 3. **Course macros live in `shared/`.** `atda-article.sty` defines `\CourseName`,
-   `\CourseHeaderName`, `\SchoolYear`, `\MeetingLength`, so a lesson plan defines only
+   `\CourseHeaderName`, `\MeetingLength`, so a lesson plan defines only
    `\UnitNumberName` and `\LessonNumberName` (the scaffolder handles this).
 4. **Find the insertion point.** List `unit*/lesson*` to find the next unit/lesson number
    and whether the target lesson already exists.

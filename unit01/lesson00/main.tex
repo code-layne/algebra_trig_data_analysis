@@ -10,62 +10,251 @@
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can read the same quadratic model written two different ways
+    --- expanded and factored --- and explain what question each form answers. I can show two
+    expressions are equivalent by expanding, and I can name the algebra skills this unit will
+    rebuild and where each one is used later in the course.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{This opener (no new K\&S codes):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Read a quadratic model in \textbf{expanded} and \textbf{factored} form and say what each
+        form reveals: the starting value vs.\ the zeros.
+  \item Show two expressions are \textbf{equivalent} by expanding and comparing, term by term.
+  \item Diagnose the Algebra 1/2 toolkit this unit assumes: exponent rules, distributing,
+        greatest common factor, and solving a linear equation.
+  \item Name the unit's destinations and set a personal goal for Unit 1.
+\end{itemize}
+\textbf{Coming attractions --- the codes Unit 1 covers:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{A2.EO.3a} --- sums, differences, products of polynomials (1.1)
+  \item \texttt{A2.EO.2a--c} --- radicals and rational exponents (1.2)
+  \item \texttt{A2.EO.3b} --- factor completely, $\le 4$ terms (1.3--1.5)
+  \item \texttt{A2.EO.3d} --- verify polynomial identities (1.5)
+  \item \texttt{A2.EI.2b}, \texttt{A2.EI.6a--b} --- solve polynomial equations (1.6)
+  \item \texttt{A2.EO.1a--b} --- rational expressions (1.7)
+\end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Equivalent expressions are the same function wearing different clothes.}
+        $-16t^2+48t+64$ and $-16(t-4)(t+1)$ produce identical outputs for every $t$; they differ
+        only in what they make \emph{easy to see}. Rewriting is choosing the form that answers
+        the question in front of you (\texttt{A2.EO.3d}).
+  \item \textbf{Factoring is not a trick --- it is how a polynomial equation becomes a list of
+        zeros.} A product equals zero only when a factor equals zero, so a factored form hands
+        you the solutions (\texttt{A2.EI.6a}).
+  \item \textbf{This is a review-and-extend course.} Students have seen most of Unit 1 before.
+        The goal is \emph{fluency}: doing it quickly and correctly enough that it stops being
+        the obstacle when logarithms (Unit 3), probability formulas (Unit 4), and trigonometric
+        equations (Units 7--8) arrive.
+  \item \textbf{An opener is a diagnostic, not a grade.} The warm-up tells you --- and the
+        student --- which of the four prerequisite skills needs the most attention in 1.1--1.3.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Expression & A combination of numbers, variables, and operations with \emph{no} equal sign.
+    $-16t^2+48t+64$ is an expression; $h=-16t^2+48t+64$ is an equation. \\
+Equivalent expressions & Two expressions that give the same value for every allowed input.
+    Verified by rewriting one into the other. \\
+Term / coefficient & A term is a piece separated by $+$ or $-$; the coefficient is the number
+    multiplying the variable part. In $-16t^2$, the coefficient is $-16$. \\
+Polynomial & A sum of terms whose variable exponents are whole numbers, such as
+    $-16t^2+48t+64$. The degree is the largest exponent --- here, $2$. \\
+Expanded form & Written as a sum of terms. Shows the \textbf{starting value} (the constant) at a
+    glance. \\
+Factored form & Written as a product of factors. Shows the \textbf{zeros} at a glance. \\
+Zero & An input that makes the expression equal $0$. For $-16(t-4)(t+1)$, the zeros are
+    $t=4$ and $t=-1$. \\
+Zero Product Property & If $ab=0$, then $a=0$ or $b=0$. The reason factoring solves equations
+    (previewed here, used in Lesson 1.6). \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{The warm-up is this unit's diagnostic} --- five items, one per prerequisite skill:
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Exponent rules on a monomial product (feeds 1.1)
+  \item Multiplying two binomials (feeds 1.1, 1.4)
+  \item Greatest common factor (feeds 1.3)
+  \item Solving a linear equation (feeds 1.6)
+  \item Evaluating a function in context (feeds every unit)
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} score it with the class, item by item, and have students
+record which items they missed on the Unit 1 roadmap in their notes. Any item missed by more
+than a third of the class becomes the do-now for the lesson it feeds.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{The Fourth of July shell.} A fireworks shell is launched from a platform on a $64$-foot
+cliff above the harbor. Its height above the water, in feet, $t$ seconds after launch, is
+\[ h(t) = -16t^2 + 48t + 64 \qquad\text{and also}\qquad h(t) = -16(t-4)(t+1). \]
+\textbf{Pose it this way:} ``These are the same function. The safety officer needs to know when
+the shell hits the water. The announcer needs to know how high the platform is. \emph{Which form
+would you hand to each person, and why?}'' Take answers before confirming: the expanded form
+shows the starting height ($64$ feet, the constant) without any work; the factored form shows the
+zeros ($t=4$ and $t=-1$) without any work. Neither form is ``more correct'' --- they answer
+different questions. That is the whole unit in one slide: \emph{fluency is being able to move
+between the forms on demand}.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Establish equivalence before interpreting it (5 min).} Students should not take the
+two forms on faith. Expand the factored form on the board, one line per step:
+$-16(t-4)(t+1) = -16(t^2-3t-4) = -16t^2+48t+64$. \textbf{Ask:} ``What did the $-16$ do to every
+term inside?'' This is distribution --- Lesson 1.1 --- and it is the check that will verify every
+factoring answer in this unit.
+
+\textbf{2. Read each form (10 min).} Fill the notes table together. Expanded form: the constant
+$64$ is $h(0)$, the launch height; the $-16$ is gravity in feet per second squared. Factored
+form: setting each factor to zero gives $t=4$ and $t=-1$. \textbf{Ask:} ``Both zeros are real
+numbers. Why does only one of them mean anything here?'' ($t=-1$ is one second \emph{before}
+launch --- outside the domain of the situation. Domain-in-context is Unit 2's language; plant
+the seed now.)
+
+\textbf{3. Compute in context (5 min).} $h(2) = -64+96+64 = 96$ feet. \textbf{Ask:} ``Is the
+shell rising or falling at that moment, and how do you know?'' Compare with $h(1)=96$ and
+$h(1.5)=100$ --- same height twice, so the shell is on the way down at $t=2$.
+
+\textbf{4. Walk the roadmap (10 min).} Move through the Unit 1 table in the notes, naming what
+each lesson unlocks. Keep it concrete: 1.3--1.5 factor, 1.6 uses those factors to solve, 1.7
+uses them to cancel. Then say where the algebra is spent later --- exponent rules become
+logarithm properties in Unit 3, factorials and combinations in Unit 4 are the same simplifying
+moves, and solving equations is what every trigonometry problem ends with.
+
+\textbf{5. Self-assess (5 min).} Students mark each roadmap row \emph{Confident / Rusty /
+New} using their warm-up results, then write one goal. Collect nothing --- this page stays in
+their packet and gets revisited before the unit test.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Verifying Two Forms Are Equivalent]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four steps students record:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Multiply the two binomials first (inside out).
+  \item Distribute the number in front to \emph{every} term.
+  \item Write the result in standard form: highest exponent first.
+  \item Compare term by term with the other expression. Every coefficient must match.
+\end{enumerate}
+\textbf{Say this out loud:} ``Equivalent means \emph{every} coefficient matches, not just that
+the answers look similar.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example (the hook):}
+\[
+\begin{aligned}
+-16(t-4)(t+1) &= -16\big(t^2+t-4t-4\big) \\
+              &= -16\big(t^2-3t-4\big) \\
+              &= -16t^2+48t+64 \quad \checkmark
+\end{aligned}
+\]
+\textbf{The error to name before it happens:} distributing the $-16$ to only the first term
+($-16t^2-3t-4$). Have a student point at the parentheses and say ``every term.''
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Warm-up, item 1:} watch for students \emph{adding} exponents' coefficients or
+        multiplying the exponents. Correct answer $-12x^7y^4$: coefficients multiply, exponents
+        add.
+  \item \textbf{Warm-up, item 3:} watch for a partial GCF ($3a^2$ or $6a$ instead of $6a^2$).
+        Ask ``could you factor anything else out of what is left?''
+  \item \textbf{Activity, Tier R:} students who expand $(x+3)(x+5)$ as $x^2+15$ have skipped the
+        middle terms --- send them back to a rectangle diagram, do not re-teach FOIL as a rule.
+  \item \textbf{Cold-call prompts:} ``Which form would you hand the safety officer?''
+        ``Why is $t=-1$ a real zero but not a real answer?'' ``Name one place outside this unit
+        where you will need factoring.''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Expand two small products and match each to its expanded partner.
+  \item Identify the GCF of a two-term expression.
+  \item Support: a rectangle area diagram for each product.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item The revenue model $R(x)=x(120-4x)$: expand, evaluate, read the zeros from the factored
+        form, interpret both in context.
+  \item Decide which form answers the treasurer's question, and say why.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique a worked student solution with a distribution error --- find it, fix it,
+        explain it in a sentence.
+  \item Use symmetry between the two zeros to locate the maximum and interpret it.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} (1) verify a product by expanding; (2) read the zeros
+off a factored form; (3) \textbf{the conceptual check} --- ``A classmate says the factored form
+is the \emph{better} form. Do you agree? Answer in one or two sentences.'' A proficient response
+says neither is better in general and names a question each form answers directly.
+
+\textbf{Using the results:} sort the tickets into three piles --- \emph{distributes cleanly},
+\emph{expands but drops a term}, \emph{cannot start}. The third pile is your Tier R group for
+Lesson 1.1; the second pile needs the rectangle diagram one more time. Item 3 is scored for
+reasoning, not vocabulary.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (6 items): three fluency items mirroring the diagnostic (exponents,
+distributing, GCF), two ``which form answers this question'' items in context, and one
+interpretation item on a savings-account model. It is deliberately short --- night one of the
+year is for re-establishing habits, not volume.
+
+\textbf{Extension (optional):} a number-trick puzzle --- pick a number, apply four operations,
+and explain algebraically why the result is always $5$. It rehearses distributing and combining
+like terms with a payoff.
+
+\textbf{Preview of Lesson 1.1 (\texttt{A2.EO.3a}):} simplifying algebraic expressions and the
+exponent rules --- the machinery behind every ``expand and compare'' students did today, and the
+algebra underneath Unit 3's logarithm properties.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +262,51 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{8 minutes, then score it together.} This is a diagnostic, not a quiz --- say so
+    before students start, or the anxious ones will stall on item 1. Answers:
+    (1) $-12x^7y^4$; (2) $x^2-4x-21$; (3) $6a^2(2a-3)$; (4) $x=7$; (5) $96$ feet.
+    Item 5 asks for an interpretation sentence, not just a number --- that expectation is the
+    course's voice, and setting it on day one saves arguing for it in November. Record the
+    class miss-rate per item; anything above a third becomes the do-now for the lesson that item
+    feeds (1 and 2 $\to$ Lesson 1.1, 3 $\to$ Lesson 1.3, 4 $\to$ Lesson 1.6).
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{Do not let the vocabulary box become a copying exercise.} Fill \emph{expression},
+    \emph{equivalent}, and \emph{factored form} together; assign the rest to pairs and share
+    out. The roadmap table is the page students will return to --- have them mark each row
+    \emph{Confident / Rusty / New} from their own warm-up results before they leave, and tell
+    them the unit test blueprint follows these rows in order. The guided-practice garden problem
+    ($40$ feet of fence against a wall) is the one to work together at the board; if a student
+    asks why there is no $2x$ on the fourth side, that is the right question and worth a pause.
+    If time runs short, assign the ``where this algebra gets spent'' box as reading --- but do
+    not cut the two-forms comparison, which is the lesson.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is short on purpose
+    --- it is a fluency check, and a group that clears it in three minutes should move straight
+    to Tier A. Expect an argument at Tier A item 3: at $x=0$ the club sells the most shirts and
+    collects nothing, at $x=30$ it charges the most and sells nothing. Both zeros, opposite
+    reasons --- that is the item worth slowing down for. Tier E's critique is the one to share
+    out: read the flawed solution aloud and have the class find the error before the group
+    explains it.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Item 3 is the one that matters
+    --- it tells you who understands that form is a \emph{choice}. Expect a third of the class to
+    write ``factored is better because it gives the answers.'' That is a reasonable partial
+    answer; the follow-up in Lesson 1.1 is ``the answer to \emph{which} question?'' Do not
+    grade this for points on the first day of the unit; use it to build the Lesson 1.1 groups.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 15--20 minutes.} Items 1--3 are the diagnostic skills again with different
+    numbers, so a student who missed one in class gets a second, low-stakes attempt the same
+    night. Item 6 (the savings account) is the first place students see an exponential
+    expression in this course --- they only evaluate it, and the interpretation sentence is the
+    point. If a student asks what the $1.04$ means, answer it: it previews Unit 3. The extension
+    number trick is genuinely optional; assign it to the group that finished Tier E early.
 \end{teachernote}
 \end{document}

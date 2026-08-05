@@ -3,18 +3,129 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.0}{Group Activity}
+\pageheader{Unit 1, Lesson 1.0}{Group Activity --- The Spirit-Wear Sale}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
 % cover this component is stapled behind. See references/conventions.md.
 
 \vspace{0.15in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+The robotics club is pricing T-shirts for the fall sale. Their survey says that if they charge
+$x$ dollars per shirt, they will sell about $120-4x$ shirts. So the money the club takes in ---
+its \textbf{revenue}, in dollars --- is
+\[ R(x) = x(120-4x). \]
+Work with your group. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R
+without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Warm your hands up on the two moves the rest of the activity needs.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Multiply and write in standard form: $(x+3)(x+5)$
+\begin{work}
+  (x+3)(x+5) &= x^2+5x+3x+15 \\
+             &= x^2+8x+15
+\end{work}
+
+  \item Distribute: $2x(x-6)$
+\begin{work}
+  2x(x-6) &= 2x^2-12x
+\end{work}
+
+  \item Factor out the greatest common factor: $15y^3-25y^2$
+\begin{work}
+  15y^3-25y^2 &= 5y^2(3y)-5y^2(5) \\
+              &= 5y^2(3y-5)
+\end{work}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Now the club's revenue model, $R(x)=x(120-4x)$.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item Expand $R(x)$ and write it in standard form.
+\begin{work}
+  R(x) &= x(120-4x) \\
+       &= 120x-4x^2 \\
+       &= -4x^2+120x
+\end{work}
+
+  \item The factored form has two zeros. Find them.
+\begin{work}
+  x &= 0 \text{ or } 120-4x = 0 \\
+  x &= 0 \text{ or } x = 30
+\end{work}
+
+  \item Each zero is a price at which the club takes in \emph{no money}. Explain, in context, why
+        each one brings in nothing --- the two reasons are different.
+
+\writelines{2}
+
+\tcbbreak
+  \item Find $R(10)$ and write one sentence saying what it means for the club.
+\begin{work}
+  R(10) &= 10\big(120-4(10)\big) \\
+        &= 10(80) \\
+        &= 800
+\end{work}
+\writeline
+
+  \item Your treasurer asks, ``At what prices do we make nothing at all?'' Which form of $R$
+        answers that fastest, and why?
+
+\writelines{2}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[22]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+  \item \textbf{Critique the work.} A student expanded a different club's model like this:
+        \[ -4(x-5)(x+2) \;=\; -4\big(x^2-3x-10\big) \;=\; -4x^2-3x-10. \]
+        Exactly one step is wrong. Name the error, then write the correct expansion.
+\begin{work}
+  -4(x-5)(x+2) &= -4\big(x^2-3x-10\big) \\
+               &= -4x^2+12x+40
+\end{work}
+\writeline
+
+  \item \textbf{Use the symmetry.} A parabola is symmetric, so the price that earns the
+        \emph{most} revenue sits exactly halfway between the two zeros of $R(x)=x(120-4x)$.
+        Find that price and the revenue it brings in.
+\begin{work}
+  x &= \dfrac{0+30}{2} = 15 \\
+  R(15) &= 15\big(120-4(15)\big) \\
+        &= 15(60) = 900
+\end{work}
+
+  \item \textbf{Justify.} A club member argues, ``If we want more money, we should charge more.''
+        Use your answer to \#2 to explain why that reasoning fails here.
+
+\writelines{2}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
