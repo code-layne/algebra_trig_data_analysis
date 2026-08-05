@@ -177,7 +177,7 @@ Do not add `finals` to `shared/root.mk`/`unit.mk` — it builds only via its own
   review text-only, or (prefab) ensure the PDF is present as `warmup/main.pdf` so the thumbnail
   (`\includegraphics{warmup/main}`) resolves.
 - **`Undefined control sequence \CourseName`** → the course macros aren't defined. In this
-  course they live in `shared/atda-article.sty` (`\CourseName`, `\SchoolYear`,
+  course they live in `shared/atda-article.sty` (`\CourseName`,
   `\MeetingLength`); make sure the document loads `atda-article` and don't redefine them.
 - **`\includegraphics` fails for a screenshot** → put images in `images/` (the plan sets
   `\graphicspath{{images/}}`) and load `graphicx` (the plan does; `-article` does not).

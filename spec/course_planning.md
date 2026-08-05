@@ -9,7 +9,18 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 full: lesson plan, cover, warm-up, guided notes, group activity, exit ticket, homework, all
 five keys, and the slide deck. `make -C unit01/lesson00 all` and `make -C unit01/lesson00 check`
 both pass; PDFs eyeballed for boxguard. **This is now the course's model lesson** — open it
-before authoring anything else.
+before authoring anything else. Also applied two course-wide corrections from the user (below).
+
+## Course-wide rules set by the user (2026-08-04)
+
+1. **No school year on any document.** These materials are reused year over year, so nothing
+   printed on a lesson plan, packet, or test carries one. `\SchoolYear` was **deleted** from
+   `shared/atda-article.sty`, the `--year` flag was dropped from `new_lesson.py`, and all 59
+   scaffolded lesson plans now title on `\CourseName` alone. Do not reintroduce it.
+2. **The guided notes' Primary Objective is filled in, not blank.** State the objectives
+   outright, worded as on the cover's learning targets, identical in `notes/` and `notes_key/`.
+   Only that box changed — vocabulary, hook response, and in-lesson blanks stay fill-in.
+   `references/components.md` in the skill was updated to match.
 
 ## Current state
 

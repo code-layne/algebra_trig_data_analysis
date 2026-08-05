@@ -41,7 +41,7 @@ before using it.
 ```
 
 **Lesson plan** (`main.tex` at the lesson root): loads `-boxes` and `graphicx`. The course
-macros `\CourseName`, `\SchoolYear`, `\MeetingLength` are defined in `atda-article.sty`, so
+macros `\CourseName` and `\MeetingLength` are defined in `atda-article.sty`, so
 the plan defines only the lesson-specific ones:
 ```latex
 \newcommand{\UnitNumberName}{Unit 8: Right Triangle Trigonometry \quad}
@@ -69,8 +69,12 @@ scaffolder includes it):
 
 **Course macros** (`-article`): `\CourseName` is the full title, *Algebra, Trigonometry, and Data
 Analysis* — use it on covers and title slides. `\CourseHeaderName` is the short form the page
-banner prints, so the banner and the lesson id fit on one line. `\SchoolYear` and
-`\MeetingLength` round out the set.
+banner prints, so the banner and the lesson id fit on one line. `\MeetingLength` rounds out
+the set.
+
+**No year on any document.** These materials are reused year over year, so nothing printed on a
+lesson plan, packet, or test may carry a school year. There is deliberately **no `\SchoolYear`
+macro** — the plan's title block is `\CourseName` alone. Do not reintroduce one.
 
 **The `\noindent` trap is fixed in the package — `vocabpar` is automatic here.** `\termblank`,
 `\termblanklong` (blank) and `\vocabans` (key) each open with their **own `\par`**, so a `vocabbox`
