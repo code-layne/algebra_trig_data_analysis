@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,179 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+Every graph below gets asked \emph{both} questions: given an input, what is the output --- and
+given an output, which input produced it? Every answer also gets written as a point. Work with
+your group. \textbf{Everyone starts at Tier R.} When your whole group can do Tier R without help,
+move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+A candle is lit and burns at a steady rate. $L$ is its length in centimeters, $t$ hours after it
+was lit.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.6cm, height=4.6cm,
+    xlabel={$t$ (hours since lighting)}, ylabel={$L$ (length, cm)},
+    xmin=0, xmax=10.6, ymin=0, ymax=22,
+    xtick={0,2,4,6,8,10}, minor xtick={1,3,5,7,9}, ytick={0,4,8,12,16,20},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:10, samples=2]{20-2*x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item Read $L(6)$ off the graph. Write it as a point, then as a sentence about the candle.
+
+\ansline{$L(6)=8$, so $(6,8)$ is on the graph.}\\
+\ansline{Six hours after it was lit the candle is 8 cm long.}\\
+
+  \item Now the other direction: for what value of $t$ is $L(t)=4$? Read it off the graph, then
+        check it against the formula $L(t)=20-2t$.
+\begin{work}
+  20-2t &= 4 \\
+   -2t &= -16 \\
+     t &= 8
+\end{work}
+
+  \item State the domain and the range in this situation, with units, in inequality notation
+        \emph{and} in interval notation.
+
+\ansline{Domain: $0 \le t \le 10$ hours, or $[0,10]$.}\\
+\ansline{Range: $0 \le L \le 20$ centimeters, or $[0,20]$.}\\
+
+  \item Why does the domain stop at $t=10$? The formula would happily give $L(12)=-4$.
+
+\ansline{At $t=10$ the candle is gone; a candle cannot have a negative length.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+A skate park bowl is $12$ feet across. $H$ is the height of the concrete surface in feet above the
+lowest point of the bowl, measured $x$ feet in from the left rim.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.8cm,
+    xlabel={$x$ (feet in from the left rim)}, ylabel={$H$ (height, feet)},
+    xmin=0, xmax=12.6, ymin=0, ymax=13.5,
+    xtick={0,2,4,6,8,10,12}, minor xtick={1,3,5,7,9,11}, ytick={0,3,6,9,12},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=0:12, samples=80]{(x-6)^2/3};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item Read $H(3)$ off the graph. Write it as a point, then as a sentence about the bowl.
+
+\ansline{$H(3)=3$, so $(3,3)$ is on the graph.}\\
+\ansline{Three feet in from the left rim, the concrete is 3 feet above the bottom.}\\
+
+  \item Find \emph{every} value of $x$ for which $H(x)=3$. Say what those two answers mean for
+        somebody standing in the bowl.
+
+\ansline{$x=3$ and $x=9$.}\\
+\ansline{The bowl is symmetric: the same height occurs on the left wall and on the right wall.}\\
+
+  \item State the domain and the range, with units, in inequality notation \emph{and} in interval
+        notation.
+
+\ansline{Domain: $0 \le x \le 12$ feet, or $[0,12]$.}\\
+\ansline{Range: $0 \le H \le 12$ feet, or $[0,12]$.}\\
+
+  \item Exactly one height in the range comes from exactly one value of $x$. Which height, which
+        $x$, and why is it the only one?
+
+\ansline{$H=0$ at $x=6$ only --- the single lowest point of the bowl.}\\
+\ansline{Every other height is reached once on each wall, so it has two inputs.}\\
+
+  \item A contractor asks what $H(15)$ is. What do you tell them, and why is that not a question
+        about arithmetic?
+
+\ansline{There is no $H(15)$: $15$ is outside the domain, because the bowl is only 12 ft across.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Critique the work.} Two students wrote these about the Tier R candle. Each is
+        wrong. Name the error and give the correct answer.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item ``$L(6)=8$, so $L(8)=6$.''
+
+\ansline{Function notation does not flip. The input goes inside the parentheses,}\\
+\ansline{the output comes after the equals sign. In fact $L(8)=20-2(8)=4$.}\\
+
+          \item ``The range is $[20,0]$, because the candle starts at $20$ cm and ends at $0$ cm.''
+
+\ansline{An interval is always written smaller number first: the range is $[0,20]$.}\\
+        \end{enumerate}
+
+  \item \textbf{A graph made of dots.} At the concession stand a hot dog costs \$3, and a family
+        may buy at most $8$. $P(n)$ is the price paid for $n$ hot dogs.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=8.6cm, height=4.0cm,
+    xlabel={$n$ (hot dogs)}, ylabel={$P$ (price, dollars)},
+    xmin=-0.4, xmax=8.6, ymin=0, ymax=27,
+    xtick={0,1,2,3,4,5,6,7,8}, ytick={0,6,12,18,24},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, only marks, mark=*, mark size=1.6pt]
+    coordinates {(0,0) (1,3) (2,6) (3,9) (4,12) (5,15) (6,18) (7,21) (8,24)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item Write the domain and the range of $P$ in set notation.
+
+\ansline{Domain: $\{0, 1, 2, 3, 4, 5, 6, 7, 8\}$ hot dogs.}\\
+\ansline{Range: $\{0, 3, 6, 9, 12, 15, 18, 21, 24\}$ dollars.}\\
+
+          \item A student writes ``domain $[0,8]$, range $[0,24]$.'' Give one number that their
+                answer allows and the situation does not, and say why interval notation is the
+                wrong tool here.
+
+\ansline{$[0,8]$ allows $2.5$ hot dogs, and $[0,24]$ allows a price of \$7.}\\
+\ansline{An interval holds every number between its ends; this domain is a list of dots.}\\
+        \end{enumerate}
+
+  \item \textbf{Justify.} A classmate says: ``The skate bowl graph breaks the definition of a
+        function, because the height $3$ feet happens at two different places.'' Are they right?
+        Use the bowl to explain what the definition actually promises.
+
+\ansline{No. A function promises each \emph{input} exactly one output --- not the reverse.}\\
+\ansline{At $x=3$ the concrete is at exactly one height, and the same at $x=9$.}\\
+\ansline{Two inputs are allowed to share an output; one input may never have two.}\\
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

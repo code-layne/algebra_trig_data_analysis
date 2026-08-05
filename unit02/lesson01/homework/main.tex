@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,191 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\boxguard[24]
+\begin{notesbox}{Practice --- Notation Both Ways, and Writing a Set Down}
+\small
+Show your work. Items 3 and 4 are the same translation run in opposite directions.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item Let $f(x)=3x+7$. Find $f(-4)$, then find the value of $x$ for which $f(x)=1$.
+\begin{work}
+  f(-4) &= 3(-4)+7 \\
+        &= -5 \\
+   3x+7 &= 1 \\
+     3x &= -6 \\
+      x &= -2
+\end{work}
+
+\item Here is a function $g$ given by a table.
+\smallskip
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}|c|c|c|c|c|c|c|c|@{}}
+\hline
+$x$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+$g(x)$ & $5$ & $0$ & $-3$ & $-4$ & $-3$ & $0$ & $5$ \\ \hline
+\end{tabular}
+\smallskip
+
+Find $g(-1)$. Then find \emph{every} value of $x$ for which $g(x)=0$, and say why there is more
+than one.
+
+\writelines{2}
+
+\item Rewrite each in \textbf{interval} notation: \quad (a) $-3 \le x < 4$ \quad (b) $x > 7$
+\quad (c) $x \le 0$
+
+\writelines{1}
+
+\item Rewrite each as an \textbf{inequality}: \quad (a) $[2,9]$ \quad (b) $(-\infty, 5]$
+\quad (c) $(0, \infty)$
+
+\writelines{1}
+
+\item For each function below, state the domain, and name which of the three reasons restricts it
+--- \emph{the context}, \emph{the graph}, or \emph{the algebra}. If nothing restricts it, say so.
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item $h(x)=\dfrac{x}{x-8}$
+  \item $A(s)=s^2$, the area in square inches of a square tile whose side is $s$ inches
+  \item $f(x)=2x-9$, with no situation attached
+\end{enumerate}
+
+\writelines{3}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{scenariobox}[In Context --- The Highway Arch]{royal}
+\small
+A road passes under a stone arch. The graph gives $y$, the height of the arch above the road in
+feet, at a point $x$ feet to the side of the center line. Negative $x$ is to the left of center.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.0cm, height=4.6cm,
+    xlabel={$x$ (feet from the center line)}, ylabel={$y$ (height, feet)},
+    xmin=-11, xmax=11, ymin=0, ymax=22,
+    xtick={-10,-8,-6,-4,-2,0,2,4,6,8,10}, ytick={0,5,10,15,20},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize}]
+  \addplot[royal, very thick, domain=-10:10, samples=80]{20-x^2/5};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=6]
+
+\item Read $y(5)$ off the graph. Write it as a point, then as a sentence about the arch.
+
+\writelines{2}
+
+\item Now the other direction: find \emph{every} $x$ for which $y(x)=15$. Say what those two
+answers mean for the shape of the arch.
+
+\writelines{2}
+
+\item State the domain and the range in this situation, with units, in inequality notation
+\emph{and} in interval notation.
+
+\writelines{2}
+
+\item A moving truck is $12$ feet tall and $10$ feet wide. Driven down the center of the road, its
+outer edges are at $x=-5$ and $x=5$. Does it clear the arch? Justify with a value you read off the
+graph, not with a guess.
+
+\writelines{2}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=10]
+
+\item Two functions, one built from the other: $f(x)=x^2$ and $g(x)=x^2+3$.
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item Fill in the missing row.
+        \smallskip
+
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+        \hline
+        $x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ \\ \hline
+        $f(x)=x^2$ & $4$ & $1$ & $0$ & $1$ & $4$ \\ \hline
+        $g(x)=x^2+3$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} &
+            \blank{1.1cm} \\ \hline
+        \end{tabular}
+        \smallskip
+
+  \item Compare the two rows. What happened to \emph{every} output?
+
+\writelines{1}
+
+  \item Any real number may be squared, so both functions have domain $(-\infty, \infty)$. Write
+        the \textbf{range} of each in interval notation. Which one changed --- the domain or the
+        range?
+
+\writelines{2}
+
+  \item Without drawing anything, describe how the graph of $g$ sits compared to the graph of $f$.
+        Lesson 2.2 has a name for what you just described.
+
+\writelines{1}
+\end{enumerate}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[22]
+\begin{extensionbox}
+\small
+\textbf{The booster club, one lesson later.} In Lesson 1.7 the club's average cost per T-shirt was
+$A(x)=\dfrac{6x+240}{x}$, where $x$ is the number of shirts ordered. The printer will not take an
+order above $200$ shirts.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}|c|c|c|c|c|@{}}
+\hline
+$x$ shirts & $10$ & $20$ & $40$ & $60$ \\ \hline
+$A(x)$ dollars & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} \\ \hline
+\end{tabular}
+\smallskip
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item Write the domain of $A$ in this situation in set notation.
+
+\writelines{1}
+
+  \item Explain why the domain cannot be written as $(0, 200]$.
+
+\writelines{1}
+
+  \item In Lesson 1.7 you called $x=0$ an \emph{excluded value} of the expression. Here it is also
+        something the \emph{story} explains. Say both things in one sentence.
+
+\writelines{1}
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{Next: Lesson 2.2 --- Parent Functions and Transformations} (\texttt{AFDA.AF.1a--b}).
+Item 10 is the whole preview: $g(x)=x^2+3$ is $f(x)=x^2$ with every output pushed up by $3$, which
+lifts the range and leaves the domain alone. Lesson 2.2 names that move --- and the three others
+like it --- and reads them straight off a graph.
+\end{remindbox}
 
 \end{document}

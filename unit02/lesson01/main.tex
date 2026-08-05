@@ -16,79 +16,337 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can read a graph in both directions --- given an input, find the
+    output $f(x)$; given an output, find the input that produced it --- and write either read as a
+    point $(x, f(x))$. I can state a function's domain and range from its graph, with units, in
+    inequality, set, and interval notation, and explain what cuts a domain short: the situation,
+    the graph, or the algebra.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Standards covered:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{AFDA.AF.2a} --- determine the domain and range of a function given a graphical
+        representation, \emph{including those limited by contexts}.
+  \item \texttt{AFDA.AF.2e} --- describe and recognize the connection between points on the graph
+        and the value of a function.
+\end{itemize}
+\textbf{Skills students leave with:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Evaluate from a graph (\emph{input given}) and solve $f(x)=k$ from a graph
+        (\emph{output given}) --- and know they are different motions.
+  \item Translate freely among \textbf{sentence}, \textbf{function notation}, and \textbf{point}.
+  \item State a domain and range in \textbf{inequality}, \textbf{set}, and \textbf{interval}
+        notation, with units, including $\emptyset$.
+  \item Name which of three things restricted a domain: the context, the graph, or the algebra.
+  \item Justify why two inputs may share an output but one input may not have two.
+\end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{``$f(a)=b$'' and ``$(a,b)$ is on the graph'' are one sentence in two costumes.}
+        That equivalence is the whole of \texttt{AF.2e}, and it is what makes a graph readable
+        at all --- every point is a completed function statement.
+  \item \textbf{The notation is not symmetric.} $C(3)=10$ says nothing about $C(10)$. Students who
+        stalled on ``solve $f(x)=1$'' in the Lesson 2.0 diagnostic are stalling here.
+  \item \textbf{A domain is a decision, not a calculation.} The formula accepts $h=9$ happily; the
+        garage does not. \texttt{AF.2a}'s phrase ``\emph{including those limited by contexts}'' is
+        the standard telling you to teach exactly this.
+  \item \textbf{A set of numbers has three standard spellings.} The AFDA guidance lists them
+        explicitly --- equation/inequality, set notation, interval notation, and $\emptyset$ ---
+        so all three are fair game on the test.
+  \item \textbf{A function promises one output per input, and nothing in reverse.} The drone
+        passes 24 feet twice. That is allowed, and saying why is the reasoning item of the day.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Function notation & $f(x)$ is the output the rule $f$ gives the input $x$. $f(a)=b$ and the point
+    $(a,b)$ carry the same information. \\
+Domain & Every input the function is allowed to take --- read left to right on the horizontal
+    axis. \\
+Range & Every output the function produces --- read bottom to top on the vertical axis. \\
+Inequality notation & $0 \le h \le 8$. The everyday spelling; usually the easiest to read off a
+    graph. \\
+Set notation & $\{h \mid 0 \le h \le 8\}$, read ``the set of all $h$ such that\dots'' Also the
+    only way to write a list, $\{2,5\}$, or $\{\;\}$ for nothing. \\
+Interval notation & $[0,8]$ --- \textbf{smaller number first}. A bracket includes the endpoint, a
+    parenthesis excludes it, and $\infty$ never takes a bracket. \\
+Empty set $\emptyset$ & The set with nothing in it. Used when no input (or no output) works. \\
+Restricted domain & A domain cut short by the context, by where the graph stops, or by the
+    algebra (a zero denominator --- Lesson 1.7's excluded value). \\
+Discrete domain & A domain that is a list of whole numbers. Its graph is separate dots, and it
+    \emph{cannot} be written in interval notation. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{The warm-up is five items, and items 1 and 4 are the lesson in miniature:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item $f(x)=4x-9$: evaluate $f(5)$, then \emph{solve} $f(x)=7$ --- both directions
+  \item An excluded value of $\frac{2x}{x+6}$ (Lesson 1.7; feeds notes box 4)
+  \item Writing ``from $-2$ up to but not including $5$'' as an inequality (feeds notes box 3)
+  \item The same both-directions question read off a \emph{table} --- and $g(x)=5$ has two answers
+  \item Evaluate and interpret in context: a gym's $T(m)=15m+25$
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 1's second half and item 4's second half are the same skill.
+A student who gets the first but not the second belongs in the Tier R group. Item 4 also plants
+``two inputs, one output'' before the drone does --- do not resolve it during the warm-up, just
+note who spotted it.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{The downtown garage.} \$4 to enter, \$2 an hour billed by the minute, and you may not stay
+past 8 hours. One graph is posted by the gate.
+\textbf{Pose it this way:} ``Two people walk up to the same sign. One asks \emph{what will three
+hours cost me}. The other asks \emph{I only have \$16 --- how long can I stay}. Same graph. Are
+you reading it the same way both times?'' Take answers before revealing the graph; most students
+will say yes. Then reveal it and trace both reads with a finger --- up-then-across for the first,
+across-then-down for the second --- and let the class name the difference themselves. Close the
+hook by writing $C(3)=10$ and $(3,10)$ on the board side by side and saying they are the same
+sentence. That equivalence \emph{is} \texttt{AFDA.AF.2e}, and everything else today is bookkeeping
+on top of it.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Fill the notation table off the graph (10 min).} Four rows, and work them aloud in this
+order: words $\to$ notation $\to$ point. Row 2 is the one that matters --- ``I have \$16'' becomes
+$C(6)=16$, not $C(16)=6$. \textbf{Ask:} ``Which number went inside the parentheses, and how did you
+decide?''
+
+\textbf{2. Name the two motions (4 min).} Given the input, start on the horizontal axis and go up.
+Given the output, start on the vertical axis and go across. Have students trace both on their own
+copy. Then state the warning outright: $C(3)=10$ does \emph{not} mean $C(10)=3$.
+
+\textbf{3. Domain and range off the same picture (6 min).} How far left to right, how far bottom
+to top. \textbf{Ask:} ``Why doesn't the range start at \$0?'' (The entry fee is charged before the
+clock starts --- the range's low end is a fact about the \emph{story}.) Then: ``Why does the domain
+stop at 8 hours, when $2(9)+4=22$ is a perfectly good number?'' That question is
+\texttt{AFDA.AF.2a} in one line.
+
+\textbf{4. Three spellings of one set (10 min).} Work the notation table. The three rules that
+settle everything: bracket includes, parenthesis excludes, $\infty$ never gets a bracket. Then the
+fourth: an interval is written \emph{smaller number first}, no matter which way the graph runs ---
+a candle burning down still has range $[0,20]$. Finish with the two rows that are \emph{not}
+intervals: the list $\{2,5\}$ and the empty set.
+
+\textbf{5. What cuts a domain short (6 min).} Three reasons: the context, the graph, the algebra.
+Land the third on Lesson 1.7's $\frac{x+1}{x-3}$ --- the excluded value the class already found is
+now a hole in a domain. Add the whole-number case (a field trip cannot take $17.4$ students) and
+say plainly that such a domain \emph{cannot} be written in interval notation.
+
+\textbf{6. Guided practice --- the drone (8 min).} $A(2)=24$ read forward; then $A(t)=24$ read
+backward gives \textbf{two} answers. \textbf{Ask:} ``Is that allowed?'' It is --- and the reason is
+the definition: one output per \emph{input}. Close by checking the peak against the formula, so
+students see the graph and the algebra agree.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: The Two Reads --- and the Three Spellings]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The routine students record:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Which was I handed --- an input or an output?} That single question chooses the
+        motion.
+  \item \textbf{Input given:} horizontal axis $\to$ up to the graph $\to$ across. Write $f(a)=b$.
+  \item \textbf{Output given:} vertical axis $\to$ across to the graph $\to$ down. Write $f(a)=b$
+        again --- same statement, found from the other end.
+  \item \textbf{Write the point} $(a,b)$ every single time. It is free, and it is the habit
+        \texttt{AF.2e} is asking for.
+  \item \textbf{For domain and range:} how far left to right, how far bottom to top --- then say
+        it in all three notations, with units.
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The three errors to name before they happen:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Flipping the notation.} ``$L(6)=8$, so $L(8)=6$.'' Fix by pointing at the
+        parentheses and saying \emph{the input lives here} every time. This is Tier E item 1(a).
+  \item \textbf{Writing an interval backwards.} A decreasing graph tempts $[20,0]$. Interval
+        notation is always low-to-high, regardless of direction. Tier E item 1(b).
+  \item \textbf{Bracketing infinity.} $(3,\infty]$ appears every year. $\infty$ is a direction,
+        not a number, so there is nothing to include.
+\end{itemize}
+\textbf{Say this out loud:} ``A function promises each input one output. It promises \emph{nothing}
+about how many inputs share an output.''
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Warm-up, items 1 and 4:} a student who evaluates fine and stalls on ``solve
+        $f(x)=7$'' has the exact gap this lesson closes. Note the names before the notes start.
+  \item \textbf{Notes, box 1, row 2:} listen for ``$C(16)=6$.'' Do not correct it with a rule ---
+        ask ``is 16 dollars or hours?'' and let the units decide it.
+  \item \textbf{Notes, box 3:} watch for brackets on $\infty$ and for intervals written high-to-low.
+        Both are cheap to catch here and expensive on the test.
+  \item \textbf{Activity, Tier A item 4:} groups often say ``there is no such height.'' Push them
+        to the bottom of the bowl --- $H=0$ at $x=6$ and nowhere else.
+  \item \textbf{Cold-call prompts:} ``Was I handed an input or an output?'' ``Which axis does the
+        domain live on?'' ``Name the three things that can cut a domain short.'' ``Two inputs,
+        one output --- allowed or not?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item A burning candle, $L(t)=20-2t$: read $L(6)$, then solve $L(t)=4$ and check against the
+        formula.
+  \item Domain and range in two notations, with units.
+  \item Why the domain stops at $t=10$ although $L(12)=-4$ computes fine.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item A skate bowl, symmetric: read $H(3)$, then find \emph{both} $x$ with $H(x)=3$.
+  \item Domain and range in two notations.
+  \item The one height reached by a single input ($H=0$ at $x=6$), and what $H(15)$ means.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique two errors: flipped notation, and an interval written backwards.
+  \item A \textbf{dot} graph (hot dogs): domain and range in set notation, and why an interval is
+        the wrong tool.
+  \item Justify: is the bowl not a function because one height happens twice?
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} a draining pool, $W(t)=2400-300t$ shown as a graph ---
+(1) read $W(2)$ forward, as a point and as a sentence; (2) solve $W(t)=600$ and interpret it;
+(3) \textbf{the conceptual check} --- domain and range in two notations, then \emph{why $t=10$ is
+not in the domain even though $2400-300(10)$ is a number you can compute}.
+
+\textbf{Using the results:} sort into three piles --- \emph{both directions clean},
+\emph{forward only}, \emph{cannot start}. The middle pile is the largest and is the Tier R group
+for Lesson 2.2. Item 3's second half separates students who think a domain is something you
+calculate from students who understand it is something the situation decides; that distinction is
+worth more than the notation.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (10 items): five fluency items (notation both ways, a table read both ways,
+interval $\leftrightarrow$ inequality in each direction, and a three-part ``what restricts this
+domain?''), then a four-part read of a highway arch --- the first graph students meet with
+\textbf{negative inputs} --- ending in a clearance decision justified from the graph.
+
+\textbf{Item 10 is the bridge to Lesson 2.2 and is worth grading closely.} Students tabulate
+$f(x)=x^2$ against $g(x)=x^2+3$, see every output rise by $3$, and discover that the \emph{range}
+moved from $[0,\infty)$ to $[3,\infty)$ while the domain did not move at all. They describe the
+shift in their own words; \emph{translation} is 2.2's word to introduce, not today's to demand.
+
+\textbf{Extension (optional):} Lesson 1.7's booster-club average cost $A(x)=\frac{6x+240}{x}$,
+now asked as a domain question. Its domain is restricted \emph{twice} --- the algebra forbids
+$x=0$ and the context forbids fractions and caps the order at 200 --- so the answer is
+$\{1,2,3,\dots,200\}$ and interval notation cannot express it.
+
+\textbf{Preview of Lesson 2.2 (\texttt{AFDA.AF.1a--b}):} parent functions and transformations ---
+naming the move that item 10 just described.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 % Teacher-only prose lives HERE, never in a _key: a note is the one block in a
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
+\boxguard[18]
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{8 minutes, then score it together.} Answers: (1) $f(5)=11$, $x=4$; (2) $x=-6$;
+    (3) $-2 \le x < 5$; (4) $g(-1)=1$, and $g(x)=5$ at \emph{both} $x=-2$ and $x=2$;
+    (5) $T(6)=115$, i.e.\ \$115 paid in all after six months. Items 1 and 4 are deliberately the
+    same question in two representations --- a student fluent on the formula and stuck on the table
+    is reading the table one column at a time instead of scanning the output row. Item 4's second
+    half is the first appearance of ``two inputs, one output''; \textbf{do not resolve it during
+    the warm-up.} Let it sit until the drone in guided practice, then point back. Item 2 is
+    Lesson 1.7 returning as a domain question in notes box 4.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{Box 1 is the lesson; protect its time.} Do not let the vocabulary box become a copying
+    exercise --- fill \emph{function notation} and \emph{domain} together, assign the rest to pairs.
+    In box 1, work row 2 out loud: ``I have \$16'' is an \emph{output}, so 16 goes after the equals
+    sign. Insist on the point in the third column every time, even when it feels redundant; that
+    habit is \texttt{AF.2e}. Box 3 is the SOL-notation box and it is dense --- work rows 1 and 2
+    together and assign rows 3--5, then read the four rules aloud as a class. The two rows that are
+    \emph{not} intervals ($\{2,5\}$ and the empty set) are the ones students skip, so ask for them
+    by name. Box 4's three reasons are worth memorizing as a list; the whole-number paragraph
+    underneath is what Tier E item 2 tests. In guided practice, item 2 is the reasoning item ---
+    do not let the class answer ``because it's a parabola.'' Push for: at one instant the drone is
+    at one altitude, but one altitude can happen at two instants. If time runs short, assign box 4
+    as reading, but never cut box 1.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is short by design; a
+    group that clears it in four minutes should move straight on. Expect Tier R item 3 to produce
+    inequality notation only --- ask for the interval as well, every time. Tier A item 2 is where
+    groups slow down: many read only $x=3$ and stop, because they are scanning left to right and
+    quit at the first hit. Prompt with ``is the bowl symmetric?'' Tier A item 4 (the single input
+    at the bottom, $H=0$ at $x=6$) is the subtle one and is worth a share-out. Tier E item 1 is the
+    share-out that matters --- read both wrong answers aloud and have the class diagnose them
+    before the group explains. Tier E item 2(b) wants a \emph{specific} number that the interval
+    allows and the situation does not: accept $2.5$ hot dogs or a \$7 price, but do not accept
+    ``because you can't have decimals'' without a number attached. Tier E item 3 is the definition
+    stated properly; a group that gets it can be asked to write the sentence on the board.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Answers: (1) $W(2)=1800$, the
+    point $(2,1800)$ --- 1800 gallons left two hours in; (2) $t=6$ hours, with 600 gallons still
+    to pump; (3) domain $0 \le t \le 8$ hours $=[0,8]$, range $0 \le W \le 2400$ gallons
+    $=[0,2400]$, and $t=10$ is out because the pool is already empty at $t=8$ --- the formula's
+    $-600$ gallons is not a thing that exists. Item 3's second half is the one to read carefully:
+    a student who writes ``because the graph stops there'' has the graph reason, which is
+    acceptable, but push in Lesson 2.2 for the \emph{context} reason underneath it. Do not grade
+    this for points; use it to build the 2.2 groups.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 25--30 minutes.} Items 3 and 4 are the same translation in opposite directions
+    and should be graded as a pair --- a student who can do 3 but not 4 has memorized a symbol
+    rather than a meaning. Item 5 is the one to check first when planning the next do-now: 5(b)
+    requires deciding that a tile's side is positive, which is a judgement, not a computation, and
+    it is where most of the class will lose a point. The arch (6--9) is the first graph in this
+    course with \textbf{negative inputs}; expect some students to report the domain as
+    $0 \le x \le 10$ because they read only the right half. Item 9 must be justified from a value
+    on the graph --- ``it looks tall enough'' earns nothing. Item 10 is the Lesson 2.2 bridge
+    described in the plan above; accept any plain-English description of the upward shift. The
+    extension is genuinely optional --- assign it to groups that finished Tier E early, and note
+    that its domain is restricted \emph{twice}, which is the first time students have met that.
 \end{teachernote}
 \end{document}

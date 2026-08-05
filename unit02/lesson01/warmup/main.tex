@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}   % handwriting room; moves blank and key together
 
 \begin{document}
 
@@ -12,9 +13,59 @@
 
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\begin{notesbox}{Which Slot Does the Number Go In?}
+\small
+Five quick items. Items 1 and 4 are the same question asked two ways --- watch for that.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]
+
+\item \textbf{Both directions.} Let $f(x)=4x-9$. Find $f(5)$, then find the value of $x$ for which
+$f(x)=7$.
+\begin{work}
+  f(5) &= 4(5)-9 \\
+       &= 11 \\
+  4x-9 &= 7 \\
+    4x &= 16 \\
+     x &= 4
+\end{work}
+
+\item \textbf{A value the algebra will not allow.} For which value of $x$ is
+$\dfrac{2x}{x+6}$ undefined?
+\begin{work}
+  x+6 &= 0 \\
+    x &= -6
+\end{work}
+
+\item \textbf{Writing a set of numbers.} Write an inequality for ``every number from $-2$ up to
+$5$, with $-2$ included and $5$ left out.''
+
+\writelines{1}
+
+\item \textbf{Reading a table both ways.} Here is a function $g$ given by a table.
+\smallskip
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+\hline
+$x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ \\ \hline
+$g(x)$ & $5$ & $1$ & $-1$ & $1$ & $5$ \\ \hline
+\end{tabular}
+\smallskip
+
+Find $g(-1)$. Then find \emph{every} value of $x$ for which $g(x)=5$.
+
+\writelines{1}
+
+\item \textbf{In context.} A gym charges \$25 to join plus \$15 per month, so the total paid after
+$m$ months is $T(m)=15m+25$. Find $T(6)$, then write one sentence saying what that number means
+for a member.
+\begin{work}
+  T(6) &= 15(6)+25 \\
+       &= 115
+\end{work}
+\writeline
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}
