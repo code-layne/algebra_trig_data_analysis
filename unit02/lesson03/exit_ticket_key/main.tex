@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,65 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Both Directions, and One Substitution}
+\small
+Notes closed. Three items.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=7pt, topsep=4pt]
+
+\item \textbf{Equation $\to$ graph.} For $y=(x+2)^2-1$: give the anchor point, complete the table,
+then plot your five points on the grid and join them with a smooth curve. The parent is drawn.
+\smallskip
+
+Anchor point: \ans{$(-2,-1)$}
+\smallskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+\hline
+$x$ & $-4$ & $-3$ & $-2$ & $-1$ & $0$ \\ \hline
+$y=(x+2)^2-1$ & \ans{$3$} & \ans{$0$} & \ans{$-1$} & \ans{$0$} & \ans{$3$} \\
+\hline
+\end{tabular}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.2cm, height=4.6cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-5.4, xmax=3.4, ymin=-2.4, ymax=5.4,
+    xtick={-5,-4,-3,-2,-1,0,1,2,3}, ytick={-2,-1,0,1,2,3,4,5},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize},
+    legend entries={{$y=x^2$ (the parent)},{$y=(x+2)^2-1$}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=2}]
+  \addplot[royal, very thick, domain=-2.2:2.2, samples=80]{x^2};
+  \addplot[keyred, very thick, dashed, domain=-4.3:0.3, samples=80]{(x+2)^2-1};
+  \addplot[keyred, only marks, mark=*, mark size=1.6pt] coordinates
+    {(-4,3) (-3,0) (-2,-1) (-1,0) (0,3)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\item \textbf{Graph $\to$ equation, no picture given.} An exponential function has the flat line
+$y=-3$ as its asymptote, and its graph passes through $(0,-2)$. Write its equation, name the two
+things you used to get it, and give the range in interval notation.
+
+\ansline{$y=2^x-3$. The asymptote moved from $y=0$ to $y=-3$, so the vertical slide is \textbf{down $3$};}\\
+\ansline{the point $(0,-2)$ confirms it, since $2^0-3=1-3=-2$.}\\
+\ansline{Range $(-3,\infty)$ --- a parenthesis, because $2^x$ never reaches $0$, so $y$ never reaches $-3$.}\\
+
+\item A classmate was asked for \emph{the exponential parent moved $3$ units to the right} and typed
+\texttt{Y1=2\^{}X-3} into the calculator. Notice that this is the same expression you wrote in item
+2. Settle whether it followed the instruction, \textbf{using one substitution}, and give the
+keystrokes that would be correct.
+
+\ansline{No. Moved right $3$ means the image at $x=3$ must show what the parent showed at $x=0$, namely $2^0=1$.}\\
+\ansline{But $2^3-3=8-3=5$, not $1$ --- so \texttt{2\^{}X-3} is a slide \emph{down} $3$, which is exactly what item 2 wanted.}\\
+\ansline{Correct keystrokes for right $3$: \texttt{Y1=2\^{}(X-3)}, which gives $2^{3-3}=2^0=1$ at $x=3$.}\\
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,356 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt]
+  \item \textbf{graph} a linear, quadratic, or exponential function from its equation, by moving the
+        parent function's \textbf{anchor point} and carrying a few points along with it;
+  \item \textbf{write the equation} of a function from its graph --- reading the vertex, the
+        horizontal asymptote, or two points, depending on the family --- and find the stretch factor
+        $a$ from one extra point;
+  \item use a graphing calculator to \textbf{verify} a transformation: type it correctly, set a
+        window that actually shows the graph, and read the \textsc{table};
+  \item settle a disagreement between a picture and an equation by \textbf{substituting one input},
+        and explain why a matching screen is not proof.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together. The first one is the whole method in two words.
+\termblanklong{Anchor point}
+\termblanklong{Pre-image and image}
+\termblanklong{Transformation form}
+\termblanklong{Viewing window}
+\termblanklong{Substitution check}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+\textbf{Two students, one instruction, two different screens.} The instruction was: \emph{graph the
+exponential parent $h(x)=2^x$ moved $5$ units to the right.}
+
+\smallskip
+Student A typed \quad \texttt{Y1=2\^{}X-5} \qquad Student B typed \quad \texttt{Y1=2\^{}(X-5)}
+
+\smallskip
+Both pressed \textsc{graph}. Both got a curve. Only one of them followed the instruction.
+\textbf{Here is the question: how do you decide which screen is right without asking anybody?} You
+already have everything you need --- warm-up item 2 is the answer.
+
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{1. From an Equation to a Graph}
+\small
+You never build a graph point by point from nothing. You start from the parent, find the one point
+you can track --- the \textbf{anchor point} --- and carry the rest of the shape along with it.
+
+\vspace{4pt}
+\textbf{The routine:} \quad (1) name the parent \quad (2) move the \blank{2.6cm} point
+\quad (3) carry a few of the parent's points by the same slide \quad (4) join them.
+
+\vspace{6pt}
+\textbf{Worked example: $y=(x-2)^2-3$.} The parent is $f(x)=x^2$, and its anchor point is the
+turning point $(0,0)$. The $-2$ is \blank{2.2cm} the parentheses, so the graph moves
+\blank{2.0cm} $2$. The $-3$ is \blank{2.2cm} the parentheses, so it moves \blank{2.0cm} $3$. The
+anchor lands at \blank{1.8cm}. Nothing was flipped and nothing was stretched, so the
+\blank{2.0cm} is unchanged.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}p{2.9cm}|X|X|X|X|X@{}}
+\rowcolor{mist}
+\textbf{Parent $f(x)=x^2$} & $(-2,4)$ & $(-1,1)$ & $(0,0)$ & $(1,1)$ & $(2,4)$ \\
+\hline
+\textbf{Image: add $2$ to $x$,}\newline\textbf{subtract $3$ from $y$} & \blank{1.5cm} &
+    \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+Now plot your five image points on the grid below --- the parent is already drawn for you --- and
+join them with a smooth curve.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.6cm, height=5.8cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-3.4, xmax=5.4, ymin=-4.4, ymax=5.4,
+    xtick={-3,-2,-1,0,1,2,3,4,5},
+    ytick={-4,-3,-2,-1,0,1,2,3,4,5},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize},
+    legend entries={{$y=x^2$ (the parent)}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=2}]
+  \addplot[royal, very thick, domain=-2.3:2.3, samples=80]{x^2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+\textbf{Where the anchor is, for each parent:}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=3pt]
+  \item Quadratic $f(x)=x^2$: the \textbf{turning point}, at $(0,0)$.
+  \item Exponential $h(x)=2^x$: the point $(0,1)$, together with the flat line $y=0$ the curve
+        crawls along. For $y=2^x+1$ both rise by $1$: the point becomes $(0,2)$ and the flat line
+        becomes $y=1$. (Check it: $2^0+1=2$, and $2^2+1=5$.)
+  \item Linear $f(x)=x$: the point $(0,0)$ --- but a line has no bend to track, so for a line we
+        use \textbf{two points} instead. That is box 2's job.
+\end{itemize}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{2. From a Graph to an Equation}
+\small
+Now run the routine backwards. You are handed a picture and asked for the rule. Each family gives
+you a different landmark to read.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.35cm}}c@{\hspace{0.35cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.1cm, height=4.2cm, title={\scriptsize (a) Quadratic},
+    xmin=-7.4, xmax=3.4, ymin=0, ymax=12.4,
+    xtick={-6,-3,0,3}, ytick={0,3,6,9,12},
+    minor x tick num=2, minor y tick num=2,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}]
+  \addplot[linegray, thick, dashed, domain=-3.2:3.2, samples=80]{x^2};
+  \addplot[royal, very thick, domain=-6.1:0.1, samples=80]{(x+3)^2+2};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.1cm, height=4.2cm, title={\scriptsize (b) Exponential},
+    xmin=-3.4, xmax=3.4, ymin=-5.4, ymax=4.4,
+    xtick={-3,0,3}, ytick={-4,-2,0,2,4},
+    minor x tick num=2, minor y tick num=1,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}]
+  \addplot[linegray, thick, dashed, domain=-3.3:3.3, samples=2]{-4};
+  \addplot[royal, very thick, domain=-3.2:3, samples=80]{2^x-4};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=5.1cm, height=4.2cm, title={\scriptsize (c) Linear},
+    xmin=-2.4, xmax=4.4, ymin=-6.4, ymax=6.4,
+    xtick={-2,0,2,4}, ytick={-6,-3,0,3,6},
+    minor x tick num=1, minor y tick num=2,
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left,
+    tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-1.6:4.4, samples=2]{2*x-3};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-6pt}
+{\scriptsize In (a) and (b) the \textcolor{linegray}{\textbf{dashed gray}} curve or line is the
+\emph{parent}; the \textcolor{royal}{\textbf{solid blue}} one is the \emph{image} you are writing
+the equation for.}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}p{2.1cm} p{4.4cm} X p{3.0cm}@{}}
+\rowcolor{mist}
+\textbf{Family} & \textbf{What you look for} & \textbf{What it tells you} & \textbf{The equation} \\
+\hline
+Quadratic & the \blank{2.4cm} --- the turning point & the parent's $(0,0)$ landed there, so you can
+    read both slides straight off it & \blank{2.6cm} \\
+Exponential & the flat line the curve crawls along (its \blank{2.2cm}), plus the point directly
+    above or below $(0,1)$ & the flat line moved from $y=0$, so that is the vertical slide
+    & \blank{2.6cm} \\
+Linear & \blank{2.4cm} you can read exactly & the rise between them over the run gives the
+    steepness; where it crosses the $y$-axis gives the slide & \blank{2.6cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{When the image is not the same shape: finding $a$.} Sometimes the picture is a parabola in
+the right place but too narrow or too wide. Then the equation is in \textbf{transformation form}
+\[ y = a(x-h)^2+k, \]
+where $(h,k)$ is the vertex and $a$ is the stretch. To find $a$, use \emph{one more point} you can
+read off the graph.
+
+\vspace{2pt}
+\textbf{Example.} A parabola has vertex $(2,1)$ and passes through $(3,3)$. From the vertex,
+$h=2$ and $k=1$. Now substitute the second point and solve for $a$:
+\begin{work}
+  3 &= a(3-2)^2+1 \\
+  3 &= a(1)+1 \\
+  2 &= a
+\end{work}
+So $y=2(x-2)^2+1$. \textbf{Check it at a third point:} at $x=4$ this gives $2(2)^2+1=9$, and the
+graph should pass through $(4,9)$. If it does not, one of your three numbers is wrong.
+
+\vspace{4pt}
+When $|a|>1$ the parabola is \blank{2.4cm} than the parent (narrower); when $0<|a|<1$ it is flatter
+and wider. When $a$ is negative, it also opens downward.
+
+\vspace{4pt}
+\textbf{One honest warning about lines.} For the linear parent, several different-sounding
+descriptions produce the \emph{exact same graph} --- $2f(x)$ and $f(2x)$ are both $y=2x$, and sliding
+a line sideways looks identical to sliding it up or down. That is why, for a line, you report
+\textbf{two points} or \textbf{a point and the steepness}, and stop worrying about which
+transformation "really" happened.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{notesbox}{3. On the Calculator --- and the Check That Settles It}
+\small
+The standard \texttt{AFDA.AF.1f} asks you to \emph{use technology to verify} a transformation.
+\textbf{Verify} means check --- not decide. Here is the difference, and it is the most useful idea
+in this lesson.
+
+\vspace{4pt}
+\textbf{The four keys you need.} \quad \texttt{Y=} type the equation \quad$\cdot$\quad
+\texttt{WINDOW} set \texttt{Xmin}, \texttt{Xmax}, \texttt{Ymin}, \texttt{Ymax} \quad$\cdot$\quad
+\texttt{GRAPH} draw it \quad$\cdot$\quad \texttt{2nd}\,\texttt{GRAPH} the \textsc{table} of values.
+
+\begin{center}
+\begin{tabular}{@{}c@{\hspace{0.6cm}}c@{}}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.6cm, height=4.2cm, title={\scriptsize Student A: \texttt{Y1=2\^{}X-5}},
+    xmin=-2.2, xmax=6.2, ymin=-6.4, ymax=10.4,
+    xtick={-2,0,2,4,6}, ytick={-5,0,5,10},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}]
+  \addplot[royal, very thick, domain=-2.2:3.9, samples=90]{2^x-5};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    width=6.6cm, height=4.2cm, title={\scriptsize Student B: \texttt{Y1=2\^{}(X-5)}},
+    xmin=-2.2, xmax=6.2, ymin=-6.4, ymax=10.4,
+    xtick={-2,0,2,4,6}, ytick={-5,0,5,10},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}]
+  \addplot[goldacc, very thick, domain=-2.2:6.2, samples=90]{2^(x-5)};
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{-4pt}
+\textbf{Settle it with one number.} The instruction was "moved $5$ to the right," so whatever the
+parent did at $x=0$, the image must do at $x=5$. The parent gives $2^0=1$. Now test both:
+\begin{work}
+  \text{A at } x=5:\ 2^5-5 &= 32-5 \\
+                           &= 27 \\
+  \text{B at } x=5:\ 2^{5-5} &= 2^0 \\
+                             &= 1
+\end{work}
+Student \blank{1.2cm} followed the instruction. No vote, no argument, one substitution.
+
+\vspace{6pt}
+\textbf{Three ways the screen lies to you --- and none of them is the calculator's fault.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt, topsep=3pt]
+  \item \textbf{The \blank{2.6cm}.} \texttt{2\^{}X-5} puts the $5$ outside (down $5$);
+        \texttt{2\^{}(X-5)} puts it inside (right $5$). Same keys, different rule --- this is Lesson
+        2.2's outside-or-inside question, now as keystrokes.
+  \item \textbf{The negative keys are two different keys.} The \texttt{(-)} key negates; the
+        \texttt{-} key subtracts. And \texttt{-X\^{}2} squares first, then negates, so it gives
+        $-x^2$; \texttt{(-X)\^{}2} negates first, so it gives $x^2$ --- the same graph as the
+        parent. (Warm-up item 3(c) again.)
+  \item \textbf{The \blank{2.6cm} is too small or in the wrong place.} $y=(x-20)^2+900$ is a
+        perfectly ordinary parabola, and on the standard screen $-10 \le x \le 10$,
+        $-10 \le y \le 10$ you see \emph{nothing at all}. Set the window from the anchor point: put
+        \texttt{Xmin} and \texttt{Xmax} on either side of $20$, and \texttt{Ymin} and \texttt{Ymax}
+        on either side of $900$.
+\end{enumerate}
+
+\vspace{4pt}
+\textbf{And the rule to remember all year: a matching picture is not proof.} Two equations can draw
+the same-looking curve on a screen only $95$ pixels wide, so "it looks like the printed graph"
+proves nothing. What proves it is \blank{2.8cm} one input into your equation and comparing the
+output with the graph, or with the calculator's \textsc{table}. \textbf{The calculator draws exactly
+what you typed --- never what you meant.}
+\end{notesbox}
+
+\vspace{0.10in}
+
+% [16] was tested here (to fill p4's lower half by letting the box split) and it
+% stranded only the two-line scenario paragraph at the foot of p4, with the figure
+% and all four items on p5 -- worse than the whole box moving over. Page count was 5
+% either way. Restored to its box-sized value per 1.5's test-then-restore rule.
+\boxguard[30]
+\begin{practicebox}
+\small
+The school store is deciding what to charge for a hoodie. Last year's data gave the graph below:
+$P(x)$ is the store's profit, in dollars, when the price is $x$ dollars. The buyer wants to know the
+profit at a price of \$23 --- and \$23 is not marked on the graph.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.6cm, height=4.8cm,
+    xlabel={$x$ (price of a hoodie, dollars)}, ylabel={profit (dollars)},
+    xmin=0, xmax=40, ymin=0, ymax=1000,
+    xtick={0,5,10,15,20,25,30,35,40}, ytick={0,100,200,300,400,500,600,700,800,900,1000},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\tiny}, label style={font=\scriptsize},
+    legend entries={{$P$ (last year's profit curve)}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=1}]
+  \addplot[royal, very thick, domain=5:35, samples=90]{-4*(x-20)^2+900};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt]
+  \item Read the vertex off the graph. Starting from the parent $f(x)=x^2$, name the two
+        translations and the reflection that put it there.
+
+\writelines{2}
+
+  \item The parabola is not the same shape as the parent, so you need $a$. Use the point where the
+        curve meets the horizontal axis on the left, $(5,0)$, and solve.
+\begin{work}
+  0 &= a(5-20)^2+900 \\
+  0 &= 225a+900 \\
+  -900 &= 225a \\
+  -4 &= a
+\end{work}
+
+  \item Write the equation in transformation form, then answer the buyer's question: what is the
+        profit at a price of \$23? Show the substitution.
+\begin{work}
+  P(x) &= -4(x-20)^2+900 \\
+  P(23) &= -4(23-20)^2+900 \\
+        &= -4(9)+900 \\
+        &= 864
+\end{work}
+
+  \item Why could you not have answered item 3 from the graph alone? Then say what you would type
+        into the calculator and what the \textsc{table} should show at $\texttt{X}=23$ if your
+        equation is right.
+
+\writelines{3}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

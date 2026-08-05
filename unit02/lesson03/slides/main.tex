@@ -1,6 +1,8 @@
 %! Equations and Graphs in Both Directions — Unit 2, Lesson 2.3 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{atda-beamer}   % provides \royalheader{} and \sectionlabel[color]{}
+\usepackage{pgfplots}      % atda-beamer does NOT load pgfplots
+\pgfplotsset{compat=1.18}
 
 \begin{document}
 
@@ -17,10 +19,210 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{Two Students, One Instruction, Two Screens}
+  \sectionlabel[goldacc]{hook --- who is right, and how would you know?}
+  The instruction was: \textbf{graph the exponential parent $h(x)=2^x$ moved $5$ units to the
+  right.}
+  \begin{block}{Both of these were typed into a calculator, and both drew a curve}
+    \centering\large
+    Student A: \texttt{Y1=2\^{}X-5} \qquad\qquad Student B: \texttt{Y1=2\^{}(X-5)}
+  \end{block}
+  \vspace{0.15cm}
+  Only one followed the instruction. \textbf{Do not vote. You already have the tool} --- warm-up
+  item 2.
+\end{frame}
+
+% ── ONE NUMBER SETTLES IT ─────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{One Number Settles It}
+  \sectionlabel{the calculator draws what you typed, not what you meant}
+  \begin{center}
+  \begin{tabular}{@{}c@{\hspace{0.9cm}}c@{}}
+  \begin{tikzpicture}
+  \begin{axis}[width=6.0cm, height=3.8cm, title={\tiny A: \texttt{Y1=2\^{}X-5}},
+      xmin=-2.2, xmax=6.2, ymin=-6.4, ymax=10.4,
+      xtick={-2,0,2,4,6}, ytick={-5,0,5,10},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}]
+    \addplot[royal, very thick, domain=-2.2:3.9, samples=90]{2^x-5};
+  \end{axis}
+  \end{tikzpicture}
+  &
+  \begin{tikzpicture}
+  \begin{axis}[width=6.0cm, height=3.8cm, title={\tiny B: \texttt{Y1=2\^{}(X-5)}},
+      xmin=-2.2, xmax=6.2, ymin=-6.4, ymax=10.4,
+      xtick={-2,0,2,4,6}, ytick={-5,0,5,10},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}]
+    \addplot[goldacc, very thick, domain=-2.2:6.2, samples=90]{2^(x-5)};
+  \end{axis}
+  \end{tikzpicture}
+  \end{tabular}
+  \end{center}
+  \vspace{-0.25cm}
+  Moved right $5$ means the image at $x=5$ shows what the parent showed at $x=0$, namely $2^0=1$.\\
+  A gives $2^5-5=27$. \quad B gives $2^{5-5}=2^0=1$. \quad \textbf{B is right.}
+\end{frame}
+
+% ── EQUATION → GRAPH ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Equation $\rightarrow$ Graph: Move the Anchor}
+  \sectionlabel{you never plot from nothing --- you move the parent}
+  \begin{block}{The routine for $y=(x-2)^2-3$}
+    \textbf{1.} Parent $f(x)=x^2$. \quad \textbf{2.} Anchor $(0,0)$ $\to$ \textbf{right 2, down 3}
+    $\to$ $(2,-3)$. \quad \textbf{3.} Carry a few points. \quad \textbf{4.} Join them.
+  \end{block}
+  \vspace{0.1cm}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=8.6cm, height=3.9cm, xlabel={$x$}, ylabel={$y$},
+      xmin=-3.4, xmax=5.4, ymin=-4.4, ymax=5.4,
+      xtick={-3,-2,-1,0,1,2,3,4,5}, ytick={-4,-2,0,2,4},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}, label style={font=\tiny},
+      legend entries={{$y=x^2$},{$y=(x-2)^2-3$}},
+      legend style={font=\tiny, draw=none, fill=none,
+        at={(0.5,1.02)}, anchor=south, legend columns=2}]
+    \addplot[royal, very thick, domain=-2.3:2.3, samples=80]{x^2};
+    \addplot[goldacc, very thick, dashed, domain=-0.3:4.3, samples=80]{(x-2)^2-3};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.2cm}
+  $(-2,4) \to (0,1)$, \quad $(-1,1) \to (1,-2)$, \quad $(0,0) \to (2,-3)$, \quad
+  $(1,1) \to (3,-2)$, \quad $(2,4) \to (4,1)$.
+\end{frame}
+
+% ── THE THREE ANCHORS ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Graph $\rightarrow$ Equation: Each Family Has Its Own Landmark}
+  \sectionlabel{read the landmark, then check with a second point}
+  \renewcommand{\arraystretch}{1.3}
+  \small
+  \begin{tabularx}{\textwidth}{@{}p{2.1cm} p{5.2cm} X@{}}
+    \textbf{Family} & \textbf{What you look for} & \textbf{What it gives you} \\
+    \hline
+    Quadratic & the \textbf{vertex} & both slides at once: $y=a(x-h)^2+k$ with vertex $(h,k)$ \\
+    Exponential & the \textbf{asymptote} (the flat line the curve crawls along), plus the point on
+      the $y$-axis & the asymptote moved off $y=0$, and that move is the vertical slide \\
+    Linear & \textbf{two points} you can read exactly & rise over run gives the steepness; the
+      $y$-intercept gives the slide \\
+  \end{tabularx}
+  \vspace{0.25cm}
+
+  \textbf{Why a line is different:} $2f(x)$ and $f(2x)$ are \emph{both} $y=2x$, and sliding a line
+  sideways looks exactly like sliding it up. So for a line, report two points and stop asking which
+  transformation ``really'' happened.
+\end{frame}
+
+% ── FINDING a ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{When the Shape Is Wrong: Finding $a$}
+  \sectionlabel[goldacc]{the vertex gives you two numbers --- a second point gives the third}
+  \begin{block}{A parabola has vertex $(2,1)$ and passes through $(3,3)$}
+    \centering\large
+    $3 = a(3-2)^2+1 \quad\Longrightarrow\quad 3 = a+1 \quad\Longrightarrow\quad a=2$
+  \end{block}
+  \begin{itemize}
+    \setlength{\itemsep}{0.28cm}
+    \item So $y=2(x-2)^2+1$. \textbf{Now check at a third point:} at $x=4$ it gives
+          $2(2)^2+1=9$.
+    \item $|a|>1$ $\Rightarrow$ narrower and steeper. \quad $0<|a|<1$ $\Rightarrow$ flatter and
+          wider. \quad $a<0$ $\Rightarrow$ it also opens downward.
+    \item Three numbers, three checks. If the third point misses, one of the first two was misread.
+  \end{itemize}
+\end{frame}
+
+% ── THE CALCULATOR ────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Three Ways the Screen Lies to You}
+  \sectionlabel{none of them is the calculator's fault}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.3cm}
+    \item \textbf{The parentheses.} \texttt{2\^{}X-5} is \emph{down 5}; \texttt{2\^{}(X-5)} is
+          \emph{right 5}. Lesson 2.2's outside-or-inside question, now as keystrokes.
+    \item \textbf{Two different minus keys.} \texttt{(-)} negates, \texttt{-} subtracts. And
+          \texttt{-X\^{}2} gives $-x^2$ while \texttt{(-X)\^{}2} gives $x^2$ --- the parent again.
+    \item \textbf{The window.} $y=(x-20)^2+900$ is completely off the standard screen. Set
+          \texttt{Xmin}/\texttt{Xmax} around $20$ and \texttt{Ymin}/\texttt{Ymax} around $900$ ---
+          straight off the anchor point, with no graphing.
+  \end{enumerate}
+\end{frame}
+
+% ── VERIFY ≠ DECIDE ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{``Verify'' Means Check --- Not Decide}
+  \sectionlabel[goldacc]{a matching picture is not proof}
+  \begin{block}{$y=(x-3)^2$ \quad and \quad $y=(x-3)^2+0.5$}
+    \centering
+    On a screen $95$ pixels wide and $63$ tall, half a unit is one or two pixels.\\
+    \textbf{These two draw the same-looking curve. They are different functions.}
+  \end{block}
+  \begin{itemize}
+    \setlength{\itemsep}{0.3cm}
+    \item At $x=3$ one gives $0$ and the other gives $0.5$. \textbf{That} is proof.
+    \item Use \texttt{2nd}\,\texttt{GRAPH} --- the \textsc{table} gives you numbers, not a picture.
+    \item ``It looks like the printed graph'' earns nothing. A substitution earns everything.
+  \end{itemize}
+\end{frame}
+
+% ── GUIDED PRACTICE ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Guided Practice: What Should the Hoodie Cost?}
+  \sectionlabel{the graph cannot answer the question --- the equation can}
+  \begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[
+      width=9.4cm, height=4.0cm,
+      xlabel={$x$ (price, dollars)}, ylabel={profit (dollars)},
+      xmin=0, xmax=40, ymin=0, ymax=1000,
+      xtick={0,5,10,15,20,25,30,35,40}, ytick={0,200,400,600,800,1000},
+      grid=both, grid style={linegray!45}, axis lines=left,
+      tick label style={font=\tiny}, label style={font=\tiny},
+      legend entries={{$P$ (last year's profit curve)}},
+      legend style={font=\tiny, draw=none, fill=none,
+        at={(0.5,1.02)}, anchor=south, legend columns=1}]
+    \addplot[royal, very thick, domain=5:35, samples=90]{-4*(x-20)^2+900};
+  \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-0.25cm}
+  Vertex $(20,900)$, and it passes through $(5,0)$: \ $0=a(5-20)^2+900 \Rightarrow a=-4$.\\
+  \textbf{$P(x)=-4(x-20)^2+900$}, so $P(23)=-4(9)+900=\mathbf{864}$ --- a number no gridline
+  could have given you.
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: Both Directions}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  Half the work goes equation $\to$ graph, half goes graph $\to$ equation.
+  \begin{block}{The rule for every equation you write}
+    Finish with a \textbf{substitution check}: pick a point you can read off the graph, put its $x$
+    into your equation, and confirm you get its $y$. \emph{An unchecked equation is a guess.}
+  \end{block}
+  \vspace{0.15cm}
+  Tier E: two typos to find, one empty screen to explain, and a picture that matches and still
+  proves nothing.
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.3cm}
+    \item $y=(x+2)^2-1$: anchor point, complete the table, plot the five points.
+    \item An exponential with asymptote $y=-3$ through $(0,-2)$ --- write the equation and the range.
+    \item Somebody typed \texttt{2\^{}X-3} for ``moved right 3.'' Settle it \textbf{with one
+          substitution} and give the correct keystrokes.
+  \end{enumerate}
+  \vspace{0.25cm}
+  {\color{royal}\bfseries Next: Lesson 2.4 --- Intercepts, Zeros, Maximums and Minimums, and Where a
+  Graph Rises and Falls.}
 \end{frame}
 
 \end{document}
