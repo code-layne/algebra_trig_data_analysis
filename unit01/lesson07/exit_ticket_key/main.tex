@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,34 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Rational Expressions --- On Your Own}
+\small
+Notes closed. Three items. Factor first, cancel only \emph{factors}, and state every excluded value
+from the \emph{original} denominator.
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=6pt]
+
+\item Simplify and state every excluded value: \ \TallMath{\frac{x^2-25}{x^2+8x+15}}
+\begin{work}
+  \frac{x^2-25}{x^2+8x+15} &= \frac{(x+5)(x-5)}{(x+5)(x+3)} \\
+      &= \frac{x-5}{x+3} \qquad (x \ne -5, \; x \ne -3)
+\end{work}
+
+\item Multiply and simplify: \ \TallMath{\frac{x^2-9}{x+2} \cdot \frac{x^2-4}{x-3}}. State every
+excluded value.
+\begin{work}
+  \frac{(x+3)(x-3)}{x+2} \cdot \frac{(x+2)(x-2)}{x-3}
+      &= (x+3)(x-2) \qquad (x \ne -2, \; x \ne 3)
+\end{work}
+
+\item A student simplifies \ \TallMath{\frac{x+6}{x+2}} \ to $\dfrac62 = 3$. Test the claim at
+$x=2$, say in one sentence what the student did wrong, and give the correct simplest form.
+\begin{work}
+  \text{at } x=2: \; \frac{2+6}{2+2} &= \frac{8}{4} = 2, \quad \text{not } 3
+\end{work}
+\ansline{The $x$'s are terms, not factors --- nothing cancels, so $\frac{x+6}{x+2}$ is already simplest.}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

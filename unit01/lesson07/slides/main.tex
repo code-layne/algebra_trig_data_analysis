@@ -17,10 +17,154 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ──────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \royalheader{The Booster Club's T-Shirt Order}
+  \sectionlabel[goldacc]{hook --- does a shirt really cost \$246?}
+  A \$$240$ setup fee plus \$$6$ a shirt, so $x$ shirts cost $6x+240$ dollars:
+  \[ A(x) = \frac{6x+240}{x} \quad \text{dollars per shirt.} \]
+  \begin{block}{A student cancels the $x$'s and gets \$246}
+    Test it. $A(10)=\$30$, \quad $A(40)=\$12$, \quad $A(240)=\$7$. \\
+    Not \$246 --- not even close. And what happens at $x=0$?
+  \end{block}
+\end{frame}
+
+% ── THE WARM-UP IS THE LESSON ─────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Plus Signs Do Not Cancel}
+  \sectionlabel{warm-up item 3, in numbers you already trust}
+  \[ \frac{12}{18} = \frac{6 \cdot 2}{6 \cdot 3} = \frac{2}{3}
+     \qquad\qquad \frac{3 \cdot 4}{3 \cdot 5} = \frac{4}{5} \]
+  \[ \frac{3+4}{3+5} = \frac{7}{8}
+     \;{\color{goldacc}\ne}\; \frac{4}{5} \]
+  \begin{block}{The rule for the whole lesson}
+    You may divide out only common \textbf{factors} --- things being \emph{multiplied}. Terms
+    joined by $+$ or $-$ never cancel.
+  \end{block}
+\end{frame}
+
+% ── EXCLUDED VALUES ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{What Breaks a Rational Expression}
+  \sectionlabel{\texttt{A2.EO.1b} --- excluded values are Lesson 1.6}
+  Set the \textbf{denominator} equal to zero, factor, and use the zero product property.
+  \vspace{0.15cm}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabularx}{\textwidth}{@{}p{3.0cm} p{5.4cm} X@{}}
+    \textbf{Expression} & \textbf{Denominator $=0$} & \textbf{Excluded values} \\
+    \hline
+    $\frac{5}{x-3}$        & $x-3=0$              & $x=3$ \\
+    $\frac{x+1}{x^2-4}$    & $(x+2)(x-2)=0$       & $x=-2$, \ $x=2$ \\
+    $\frac{3x}{x^2+9}$     & no real solution     & {\color{goldacc}none at all} \\
+  \end{tabularx}
+  \vspace{0.25cm}
+
+  Row 3 is Lesson 1.5's prime sum of squares, paying a dividend.
+\end{frame}
+
+% ── SIMPLIFYING ───────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Simplifying --- Factor, Then Divide Out}
+  \sectionlabel{factor the top, factor the bottom, cancel what they share}
+  \[
+  \begin{aligned}
+    \frac{x^2-9}{x^2+7x+12}
+      &= \frac{(x+3)(x-3)}{(x+3)(x+4)} \\[0.15cm]
+      &= \frac{x-3}{x+4} \qquad {\color{goldacc}(x \ne -3, \; x \ne -4)}
+  \end{aligned}
+  \]
+  \begin{block}{Simplest form}
+    The top and bottom share no common factor except $1$. ``Simplify'' does not mean ``make
+    shorter'' --- sometimes there is nothing to divide out.
+  \end{block}
+\end{frame}
+
+% ── THE SCAR ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{A Cancelled Factor Leaves a Scar}
+  \sectionlabel[goldacc]{read the excluded values from the \emph{original} denominator}
+  \[ \frac{x^2-9}{x^2+7x+12} \quad\text{at } x=-3 \;\text{ reads }\; \frac{0}{0}
+     \quad\text{--- undefined} \]
+  \[ \frac{x-3}{x+4} \quad\text{at } x=-3 \;\text{ happily returns }\; -6 \]
+  \begin{block}{So they are equivalent --- but only where the original was defined}
+    Cancelling $(x+3)$ hides the restriction; it does not remove it. Carry $x \ne -3$ along with
+    the answer.
+  \end{block}
+\end{frame}
+
+% ── THE ERROR OF THE DAY ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{The Error of the Day}
+  \sectionlabel[goldacc]{third appearance in this unit}
+  \[ \frac{x+3}{x+5} \;{\color{goldacc}\ne}\; \frac{3}{5}
+     \qquad\text{at } x=1: \;\; \frac{4}{6} = \frac{2}{3} \]
+  \begin{block}{The same misconception, three lessons running}
+    Lesson 1.1: $(2m+3)^2 \ne 4m^2+9$. \quad Lesson 1.2: $\sqrt{9+16} \ne 3+4$. \quad
+    Today: you cannot cancel across a $+$. \\[0.2cm]
+    An operation does not reach inside a sum. \textbf{Refute it with a number, every time.}
+  \end{block}
+\end{frame}
+
+% ── MULTIPLY AND DIVIDE ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Multiplying and Dividing}
+  \sectionlabel{\texttt{A2.EO.1a} --- factor first, cancel across}
+  \[
+  \begin{aligned}
+    \frac{x+2}{x-5} \cdot \frac{x^2-25}{x^2-4}
+      &= \frac{x+2}{x-5} \cdot \frac{(x+5)(x-5)}{(x+2)(x-2)}
+       = \frac{x+5}{x-2}
+  \end{aligned}
+  \]
+  \begin{block}{To divide, multiply by the reciprocal}
+    \[ \frac{x^2-1}{3x} \div \frac{x+1}{6x^2}
+       = \frac{(x+1)(x-1)}{3x} \cdot \frac{6x^2}{x+1} = 2x(x-1) \]
+    Excluded values come from \textbf{every} denominator you ever wrote --- including the one you
+    flipped, so $x \ne -1$ survives.
+  \end{block}
+\end{frame}
+
+% ── ADD AND SUBTRACT ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Adding and Subtracting}
+  \sectionlabel{same bottom? combine the tops --- then simplify}
+  \[
+  \begin{aligned}
+    \frac{x^2}{x-3} - \frac{9}{x-3}
+      &= \frac{x^2-9}{x-3} = \frac{(x+3)(x-3)}{x-3} = x+3 \qquad (x \ne 3)
+  \end{aligned}
+  \]
+  \begin{block}{Different bottoms? Build a common one}
+    \[ \frac{4}{x-1} + \frac{3}{x+2}
+       = \frac{4(x+2) + 3(x-1)}{(x-1)(x+2)} = \frac{7x+5}{(x-1)(x+2)} \]
+    Check at $x=2$: \; $\tfrac41 + \tfrac34 = \tfrac{19}{4}$, and $\tfrac{19}{4}$ comes back out.
+  \end{block}
+\end{frame}
+
+% ── ACTIVITY LAUNCH ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Group Activity: The Drama Club Backdrop}
+  \sectionlabel{groups of three --- everyone starts at Tier R}
+  The panel's area and width are on the plan; nobody wrote down the length.
+  \[ A(x) = x^2+3x-28 \;\text{ sq ft}, \qquad \text{width } = (x-4) \text{ ft.} \]
+  \begin{block}{Same move as Lessons 1.3--1.5, one level up}
+    Factor, then divide out. Then: the paint bill is $C(x)=2x^2+6x-56$ --- what is the cost
+    \emph{per square foot}, and why is the answer a plain number?
+  \end{block}
+\end{frame}
+
+% ── CLOSE ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \royalheader{Exit Ticket}
+  \sectionlabel[goldacc]{notes closed --- 5 minutes}
+  \begin{enumerate}
+    \setlength{\itemsep}{0.35cm}
+    \item Simplify, with excluded values: \; $\dfrac{x^2-25}{x^2+8x+15}$.
+    \item Multiply and simplify: \; $\dfrac{x^2-9}{x+2} \cdot \dfrac{x^2-4}{x-3}$.
+    \item A student says $\dfrac{x+6}{x+2} = \dfrac62 = 3$. Test it at $x=2$.
+  \end{enumerate}
+  \vspace{0.3cm}
+  {\color{royal}\bfseries That closes Unit 1 --- next up, the unit test.}
 \end{frame}
 
 \end{document}

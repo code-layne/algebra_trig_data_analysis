@@ -16,56 +16,277 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can find the \textbf{excluded values} of a rational expression by
+    setting its denominator equal to zero and solving --- Lesson 1.6's method under a new name. I
+    can \textbf{simplify a rational expression} by factoring the top and the bottom and dividing out
+    common \textbf{factors}, and I can explain why terms joined by $+$ or $-$ never cancel. I can
+    \textbf{multiply, divide, add, and subtract} rational expressions and simplify the result. And I
+    can \textbf{justify} that my simplified expression is equivalent to the original --- for every
+    value except the excluded ones --- and say what a rational expression means in context.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Knowledge \& Skills covered --- \texttt{A2.EO.1a--b}:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{EO.1a} --- \textbf{Add, subtract, multiply, or divide rational algebraic
+        expressions, simplifying the result.} All four operations appear today; boxes 3 and 4 carry
+        them.
+  \item \texttt{EO.1b} --- \textbf{Justify and determine equivalent rational algebraic expressions
+        with monomial and binomial factors}, limited by the standard to linear and quadratic
+        expressions. Every denominator in this lesson is linear or quadratic; nothing is cubic.
+  \item \textbf{Scope note, deliberate.} Complex fractions (\texttt{EO.1c}) are \emph{not} in this
+        lesson map and are not taught here. Unlike denominators are covered, but only where the
+        common denominator is a product of the binomials already in front of the student --- no
+        least-common-multiple algorithm.
+\end{itemize}
+\textbf{Supporting fluency (Lessons 1.3--1.6, not new codes):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Factoring completely (\texttt{A2.EO.3b}) --- unchanged, and now the \emph{only} way to see
+        what cancels. A student who cannot factor cannot start.
+  \item Lesson 1.6's ``set it to zero and factor'' --- reappears verbatim as the way to find
+        excluded values. Nothing new is needed for it.
+  \item Lesson 1.5's \textbf{prime sum of squares} --- returns in notes box 1 row 5, where
+        $x^2+9$ gives an expression with \emph{no} excluded values.
+\end{itemize}
+\textbf{Where these codes go next:} Unit 2, where an excluded value becomes a \textbf{domain
+restriction} (\texttt{AFDA.AF.2a}) and a vertical asymptote (\texttt{AFDA.AF.2g}). Homework item 13
+makes that link explicitly.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Nothing about fractions changed.} $\tfrac{12}{18}=\tfrac23$ and
+        $\tfrac{(x+3)(x-3)}{(x+3)(x+4)}=\tfrac{x-3}{x+4}$ are the same move. Say this first --- the
+        letters are the only new thing.
+  \item \textbf{Only factors cancel.} A common factor is being \emph{multiplied}; terms joined by
+        $+$ or $-$ are not. This is the whole lesson, and warm-up item 3 proves it in arithmetic.
+  \item \textbf{A cancelled factor leaves a scar.} The excluded values are read from the
+        \emph{original} denominator. Simplifying does not un-forbid anything.
+  \item \textbf{``Equivalent'' has a footnote.} Two expressions are equivalent where both are
+        defined --- that footnote is precisely \texttt{EO.1b}'s word \emph{justify}.
+  \item \textbf{Simplify does not mean shorten.} $\tfrac{x+3}{x+5}$ is already in simplest form.
+        Students find this unsatisfying, which is why they cancel.
+  \item \textbf{An excluded value may or may not matter.} $x=0$ shirts is a real question with no
+        answer; $x=-4$ feet of width is a question nobody asks. Both are excluded; only one is
+        interesting.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Rational expression & A quotient of two polynomials, e.g.\ $\frac{x+1}{x^2-4}$. \\
+Excluded value & A value making the denominator $0$; the expression is undefined there. Found by
+    Lesson 1.6's method (\texttt{EO.1b}). \\
+Factor (vs.\ term) & A factor is multiplied; terms are joined by $+$ or $-$. Only common factors
+    may be divided out. \\
+Simplest form & Top and bottom share no common factor except $1$. \\
+Equivalent rational expressions & Same value at every input \emph{both} expressions allow --- the
+    excluded values still apply. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{Four items, about 6 minutes:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item Spiral from 1.4--1.5: factor $x^2+7x+12$ and $x^2-16$
+  \item Spiral from 1.6: solve $x^2-16=0$
+  \item \emph{Number sense}: simplify $\tfrac{12}{18}$; test ``cancelling the $3$s'' in
+        $\tfrac{3+4}{3+5}$; then simplify $\tfrac{3 \cdot 4}{3 \cdot 5}$
+  \item \emph{Discovery}: simplify $\tfrac{x^2+7x+12}{x^2-16}$ using items 1 and 3, then use item 2
+        to say which values of $x$ are forbidden
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 3 is the lesson, and it is arithmetic --- every student can
+do it, which is the point. Put $\tfrac{3+4}{3+5}$ and $\tfrac{3\cdot4}{3\cdot5}$ on the board one
+above the other and let a student say what makes them different. Item 4 then runs the same move on
+letters, and items 1 and 2 exist only so it can. Keep 1 and 2 to ninety seconds together. A student
+who cannot factor item 1 needs Tier R today, and this time it genuinely blocks them --- factoring
+is the only way to see what cancels.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{The booster club's T-shirt order.} The print shop charges a \$$240$ setup fee plus \$$6$ per
+shirt, so $x$ shirts cost $6x+240$ dollars and the average cost per shirt is
+$A(x)=\frac{6x+240}{x}$. A student cancels the $x$'s and announces that a shirt costs \$$246$.
+\textbf{Pose it this way:} ``Before we argue about the algebra, let us just check.'' The class
+computes $A(10)=\$30$, $A(40)=\$12$, $A(240)=\$7$ --- so the claim is not merely wrong, it is
+wrong by a factor of thirty-five, and the average cost \emph{falls} as the order grows because the
+setup fee is spread thinner. \textbf{Then ask the second question:} what happens at $x=0$? There is
+no cost \emph{per shirt} when there are no shirts, and $\frac{240}{0}$ is undefined --- the first
+excluded value of the course, and one the story itself explains.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Excluded values (8 min).} Run the hook, then define \emph{rational expression} and
+\emph{excluded value} and fill the table. \textbf{Ask:} ``Which part of a fraction can be zero
+safely?'' Row 5 ($x^2+9$) is the surprise --- no excluded values at all.
+
+\textbf{2. Simplifying (14 min).} Warm-up item 3 goes back on the board first; the rule comes from
+the class, not from you. Then the table. Row 1 is the monomial case, rows 2--4 the binomial cases.
+Reserve real time for the two paragraphs \emph{after} the table --- the scar and the error of the
+day. \textbf{Ask:} ``Is $\tfrac{x+3}{x+5}$ simplified? Prove it with a number.''
+
+\textbf{3. Multiplying and dividing (12 min).} Lead with $\tfrac23 \cdot \tfrac{9}{10}$ so
+cancelling-before-multiplying is a habit they already have. \textbf{Ask:} ``Where did $x \ne -1$
+come from? There is no fraction left in the answer.''
+
+\textbf{4. Adding and subtracting (10 min).} Like denominators first; the punchline is that the
+combined top \emph{factors}. Then one unlike pair. \textbf{Ask:} ``How do we check without redoing
+it?'' --- substitute a number.
+
+\textbf{5. Guided practice (8 min).} The banner. Item 3 is the one to protect: the cost per square
+foot simplifies to a plain $7$, and the sentence you want is why that is believable.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Simplify, Then Justify]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The four steps students record:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Excluded values first.} Set every denominator equal to zero and solve --- Lesson
+        1.6, unchanged. Write them down \emph{before} you touch anything.
+  \item \textbf{Factor completely}, top and bottom, using the whole 1.3--1.5 order.
+  \item \textbf{Divide out common factors.} Only factors. Across a multiplication sign is fine.
+  \item \textbf{Report both} the simplified expression and the restrictions.
+\end{enumerate}
+\textbf{Say this out loud:} ``If you cannot see a factor, you are not done factoring.'' And:
+``Cancelling hides a restriction; it never removes one.''
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example (the scar, both sides):}
+\[
+\begin{aligned}
+\frac{x^2-9}{x^2+7x+12} &= \frac{(x+3)(x-3)}{(x+3)(x+4)} = \frac{x-3}{x+4} \\
+\text{at } x=-3: \quad \frac{0}{0} \; &\text{(undefined)} \qquad\text{vs.}\qquad \frac{-6}{1} = -6
+\end{aligned}
+\]
+The two expressions agree everywhere the original is defined, and $x=-3$ was never one of those
+places. That sentence \emph{is} \texttt{EO.1b}.
+
+\textbf{The error to name before it happens:} $\frac{x+3}{x+5}=\frac35$. Do not rule it out ---
+\emph{test} it at $x=1$, where the truth is $\tfrac46=\tfrac23$. This is the third appearance in
+the unit of one belief: Lesson 1.1's $(2m+3)^2 \ne 4m^2+9$, Lesson 1.2's $\sqrt{9+16} \ne 7$, and
+now cancelling across a $+$. Name the streak out loud --- \textbf{an operation does not reach
+inside a sum}.
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Notes, box 1, row 5:} a student who writes ``$x=-9$'' has solved $x^2=-9$ by
+        instinct. Ask what number squares to $-9$; that is Lesson 1.6's distinction again.
+  \item \textbf{Notes, box 2, rows 2--4:} watch for a student who cancels correctly and then reads
+        the excluded values off the \emph{simplified} bottom. Ask which expression they were given.
+  \item \textbf{Notes, box 2:} the student who says ``$\tfrac{x+3}{x+5}$ can't be the answer, it
+        doesn't look simplified'' has the real misconception. Ask them what the word means.
+  \item \textbf{Notes, box 3:} a student who multiplies the tops out before cancelling is not
+        wrong, just about to have a bad time. Have them compare with a neighbour who factored.
+  \item \textbf{Activity, Tier A item 4:} the interpretation item. A group that gets $2$ and cannot
+        say it is \emph{dollars per square foot} has the algebra and not the meaning.
+  \item \textbf{Cold-call prompts:} ``Is that a factor or a term?'' ``What is forbidden here?''
+        ``Which denominator did you read that from?'' ``Can you check it with a number?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Two excluded-value items (a linear and a quadratic denominator), then three
+        simplifications: a monomial case and two binomial cases including a GCF-first one.
+  \item Support: have the group say ``factor or term?'' out loud before cancelling anything, and
+        write the restrictions before simplifying.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Factor the backdrop's $A(x)=x^2+3x-28$ and recover its length ($x+7$).
+  \item Evaluate at $x=9$ ($5 \times 16 = 80$) and check against $A(9)$.
+  \item Simplify $C(x)/A(x)$ to a constant \$$2$ per square foot and interpret it.
+  \item One multiplication with three excluded values.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique two claims --- cancelling terms, and a correct simplification asserted ``for
+        every $x$.''
+  \item A division whose excluded values include one that disappears from the answer.
+  \item Subtract, simplify to $x+5$, \textbf{verify at $x=7$}, and name the one value where the
+        two expressions part company.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} (1) simplify $\frac{x^2-25}{x^2+8x+15}$ --- answer
+$\frac{x-5}{x+3}$, $x \ne -5, -3$; (2) multiply $\frac{x^2-9}{x+2} \cdot \frac{x^2-4}{x-3}$ ---
+answer $(x+3)(x-2)$, $x \ne -2, 3$; (3) \textbf{the conceptual check} --- a student simplifies
+$\frac{x+6}{x+2}$ to $\frac62=3$; test at $x=2$ (the truth is $\tfrac84=2$), name the error, and
+give the correct simplest form (it is already simplest).
+
+\textbf{Using the results:} the three items sample the day in order --- simplify, operate,
+critique --- so a wrong item names what to reteach. Item 1 wrong splits two ways: a factoring slip
+(a 1.4/1.5 problem) or excluded values read from the wrong denominator (a 1.7 problem), and the
+student's own work shows which. Item 2 wrong is usually a student who multiplied the tops out
+first and then could not factor a quartic; that is a habit fix, not a concept fix. Item 3 is the
+one that matters most --- it is the third appearance in this unit of ``an operation does not reach
+inside a sum,'' so a student still missing it does not need more expressions, they need the habit
+of \emph{testing a claim at a number}. Sort the tickets by which item is wrong; that sort is your
+review grouping for the Unit 1 test.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (13 items): nine fluency items --- two excluded-value items, a monomial
+simplification, three binomial simplifications (including a \textbf{perfect square trinomial}
+denominator, $x^2-14x+49$, and a GCF-first numerator, $5x-20$), one multiplication, one division,
+and one subtraction whose combined top factors --- then a three-part community-garden model
+($A(x)=2x^2+14x+20 = 2(x+5)(x+2)$, width $x+2$, so the length is $2x+10$; at $x=3$ the bed is
+$5 \times 16 = 80$ sq ft, and the mulch bill $M(x)=6x^2+42x+60$ gives a flat \$$3$ per square
+foot), and one two-part look-ahead item.
+
+\textbf{Extension (optional):} add $\frac{3}{x-2}+\frac{5}{x^2-4}$, where one denominator already
+\emph{factors into} the other, so the common denominator is just $(x+2)(x-2)$; answer
+$\frac{3x+11}{(x+2)(x-2)}$, $x \ne \pm 2$, \textbf{verified at $x=3$} ($3+1=4$ both ways). It is
+\texttt{EO.1a} one step past the notes, with no new machinery.
+
+\textbf{Preview of Unit 2 (\texttt{AFDA.AF.2a}, \texttt{AF.2g}):} homework item 13 makes the link
+explicit --- students find the excluded value of $f(x)=\frac{x+1}{x-3}$ and then say what it tells
+them about the function's \textbf{domain} and about the graph near $x=3$. An excluded value is a
+domain restriction wearing today's clothes, and in Unit 2 it becomes a vertical asymptote.
+
+\textbf{Connections.} Covers \texttt{A2.EO.1a} (add, subtract, multiply, or divide rational
+algebraic expressions, simplifying the result) and \texttt{A2.EO.1b} (justify and determine
+equivalent rational algebraic expressions with monomial and binomial factors, linear and quadratic
+only). Builds directly on \texttt{A2.EO.3b} (Lessons 1.3--1.5, factoring completely), on
+\texttt{A2.EI.2b}/\texttt{A2.EI.6} (Lesson 1.6, which supplies the excluded-value method whole),
+and on 1.5's proof that a sum of squares is prime, which is why $\frac{3x}{x^2+9}$ excludes
+nothing. \textbf{This is the last content lesson of Unit 1} --- it feeds the unit test, and it
+feeds \texttt{AFDA.AF.2a} and \texttt{AF.2g} in Unit 2.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +294,87 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{6 minutes, and do the items in order --- item 4 depends on items 1, 2, and 3.} Answers:
+    (1) $(x+3)(x+4)$ and $(x+4)(x-4)$; (2) $x=-4$ or $x=4$; (3) $\tfrac{12}{18}=\tfrac23$ after
+    dividing out $6$, $\tfrac{3+4}{3+5}=\tfrac78$ (so ``cancelling the $3$s'' to get $\tfrac45$ is
+    simply false), and $\tfrac{3\cdot4}{3\cdot5}=\tfrac45$ --- the $3$s cancel only when they are
+    \emph{multiplying}; (4) $\tfrac{(x+3)(x+4)}{(x+4)(x-4)}=\tfrac{x+3}{x-4}$, forbidden at $x=4$
+    and $x=-4$. \textbf{Item 3 is the diagnostic and the lesson at the same time}, exactly as
+    Lesson 1.6's item 3 was: it is pure arithmetic, so every student in the room can answer it, and
+    the sentence they produce (``the $3$s only cancel when they're times, not plus'') is the
+    theorem. Write the two fractions one above the other and let a student say it; resist supplying
+    the word \emph{factor} until they have said the idea. Items 1 and 2 are scaffolding for item 4
+    only --- ninety seconds together, no more. Unlike 1.6, a student who cannot factor item 1
+    genuinely cannot start today, so note those names for Tier R before the notes begin.
 \end{teachernote}
 
+% BOXGUARD: without this the note breaks after its first dozen lines and strands
+% three lines alone at the top of the next page.
+\boxguard[18]
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{The tables in boxes 1 and 2 are fill-ins, not handouts.} Answers, box 1: $3x=0$,
+    $x=0$; $x-3=0$, $x=3$; $(x+2)(x-2)=0$, $x=\pm2$; $(x+5)(x-2)=0$, $x=-5,2$; $x^2+9=0$ has no
+    real solution, so \emph{no} excluded values. Box 2: $\tfrac{5x\cdot1}{5x\cdot3x} \to
+    \tfrac1{3x}$; $\tfrac{(x+3)(x-3)}{(x+3)(x+4)} \to \tfrac{x-3}{x+4}$;
+    $\tfrac{(x+2)(x+3)}{(x+2)(x-2)} \to \tfrac{x+3}{x-2}$; $\tfrac{2(x+4)}{(x+4)(x-4)} \to
+    \tfrac2{x-4}$; then the restrictions $x \ne 0$; $x \ne -3,-4$; $x \ne \pm2$; $x \ne \pm4$. The
+    three in-text blanks are \emph{zero}, \emph{factors}, and \emph{original}.
+    \textbf{Box 2's two closing paragraphs deserve more time than the table} --- the scar and the
+    error of the day are the assessed ideas, and the table is only fluency. Do not lecture the
+    error: test it at $x=1$ and let the arithmetic do the work, then name the streak back to 1.1 and
+    1.2 so students hear it as one belief rather than three unrelated mistakes. Box 1 row 5 will
+    produce ``$x=-9$'' or ``$x=\pm3$'' from someone; both are Lesson 1.6's real-versus-imaginary
+    distinction returning, and the fix is one question, not a reteach. If the period runs behind,
+    shorten box 4 to the like-denominator example only (the homework extension covers the unlike
+    case) rather than shortening guided practice.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R items 3--5 sort the
+    room: a group that writes $\tfrac{3x^2}{4}$ for item 3 but forgets $x \ne 0$ has the algebra and
+    not the discipline, and that is the habit the exit ticket and the test both check. In Tier A,
+    items 1--3 are the unit's familiar ``recover the missing dimension,'' now done by cancelling
+    instead of by inspection --- most groups move fast here. \textbf{Item 4 is the real
+    assessment.} A group can simplify $C(x)/A(x)$ to $2$ and have no idea what $2$ is; push until
+    somebody says ``two dollars for every square foot.'' It is worth asking why the answer has no
+    $x$ in it at all --- the paint bill was built as exactly twice the area, so the rate cannot
+    depend on the size, and that is a satisfying thing for a student to notice. Tier E item 1(b) is
+    the one to share out with the whole class: the simplification is \emph{correct}, and the student
+    is still wrong, which is a distinction most of them have never had to make. Tier E item 3's
+    verification at $x=7$ is the model for how to check any of today's work.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Read the tickets by \emph{which}
+    item is wrong rather than by a score out of three. Item 1 wrong splits two ways --- a factoring
+    slip (Lesson 1.4/1.5, treat it as one) or restrictions read off the simplified denominator
+    (today's, and the more important of the two); the student's own work shows which, so check
+    whether $\tfrac{x-5}{x+3}$ is correct before deciding. Item 2 wrong is usually a student who
+    multiplied the numerators out before cancelling and then stalled on a quartic --- a habit fix,
+    not a concept fix, and worth thirty seconds of ``factor first'' at the board. Item 3 is the one
+    to act on. Accept any sentence saying $x$ is a term rather than a factor; the required evidence
+    is the arithmetic check ($\tfrac84 = 2$, not $3$) and the statement that
+    $\tfrac{x+6}{x+2}$ is \emph{already} in simplest form. A student who writes ``you can't cancel''
+    with no number attached has learned a rule, not a reason --- and the rule will not survive to
+    the test. This is the third appearance in the unit of ``an operation does not reach inside a
+    sum''; sort by item 3 and that sort is your review grouping for the unit test.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 20--25 minutes.} Items 1--2 are excluded values alone, 3--6 are simplifications
+    of rising difficulty, and 7--9 are one of each operation --- deliberately unmixed, so a student
+    can tell you which \emph{kind} of problem broke. Item 4 is the one that predicts the quiz: the
+    denominator $x^2-14x+49$ is Lesson 1.5's perfect square trinomial, and a student who does not
+    recognize $(x-7)^2$ will cancel nothing. Item 8's answer, $\tfrac{x(x-2)}{2}$, keeps $x \ne -2$
+    even though no $x+2$ is visible anywhere in it --- expect that one to be dropped, and it is
+    worth a comment in class. Items 10--12 are the garden bed: item 12 is the interpretation item,
+    and the answer wanted is ``\$3 per square foot,'' not merely ``$3$.'' Item 13 is the bridge into
+    Unit 2 --- part (b) wants the observation that an excluded value is a hole in the
+    \textbf{domain}, and that the graph does something dramatic there; accept any description of the
+    graph shooting off near $x=3$, since the word \emph{asymptote} is Unit 2's to introduce. The
+    extension is the unlike-denominator case that the notes deliberately trimmed, chosen so that one
+    denominator factors into the other and no least-common-multiple work is needed; it is the best
+    follow-up for whoever finished Tier E early. \textbf{This is the last homework of Unit 1} --- the
+    closing reminder box points students at the unit test, so say when it is.
 \end{teachernote}
 \end{document}
