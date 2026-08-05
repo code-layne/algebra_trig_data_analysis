@@ -5,15 +5,19 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-05** — Authored **Unit 2 Lesson 2.1 (Function Fundamentals: Notation, Domain, and Range,
-`AFDA.AF.2a, e`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework,
-all five keys, and the deck. This is the unit's **first content lesson** and the first to teach
-**set and interval notation**. `make -C unit02/lesson01 all` and `check` both pass; every numeric
-claim in both blank and key was verified in pure Python first. The boxguard eyeball pass found
-**no violations** — the guard set transferred from 2.0 clean on the first pass. **10 of 59 lessons
-authored.**
+**2026-08-05** — Authored **Unit 2 Lesson 2.2 (Parent Functions and Transformations,
+`AFDA.AF.1a–b`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework,
+all five keys, and the deck. This is the unit's **first transformation lesson** and the first to
+use the AFDA guidance's own six-notation list. `make -C unit02/lesson02 all` and `check` both
+pass; every numeric claim in both blank and key was verified in pure Python first. The boxguard
+eyeball pass found **two real violations invisible to the gate** (a stranded write-line atop
+homework p4, a stranded single line atop plan p4), both fixed. **11 of 59 lessons authored.**
 
-*Previous run (same day): authored **Unit 2 Lesson 2.0 (Unit Opener: Functions as Models)** in full.
+*Previous run (same day): authored **Unit 2 Lesson 2.1 (Function Fundamentals: Notation, Domain,
+and Range, `AFDA.AF.2a, e`)** in full. The unit's first content lesson and the first to teach set
+and interval notation; the boxguard pass found no violations.*
+
+*Earlier run (same day): authored **Unit 2 Lesson 2.0 (Unit Opener: Functions as Models)** in full.
 This is **the first lesson of the AFDA half** and the course's **first graph-reading lesson**:
 seven pre-drawn `pgfplots` figures, no sketching anywhere. The boxguard eyeball pass found **one
 real violation invisible to the gate** (a stranded stub atop homework p3) plus two dead-space wins;
@@ -45,8 +49,100 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (10 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`
-  and `unit02/lesson01`.** Every component written, built, and gated.
+- **Authored (11 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete), `unit02/lesson00`,
+  `unit02/lesson01`, and `unit02/lesson02`.** Every component written, built, and gated.
+- **`unit02/lesson02` — Parent Functions and Transformations (`AFDA.AF.1a–b`).** Unit 2's first
+  transformation lesson.
+  - Spine: **every transformation answers one question — did the *outputs* change or did the
+    *inputs* change?** Outside the parentheses touches outputs, inside touches inputs. Everything
+    else in the lesson is a consequence, including the "backwards" horizontal rule.
+  - **The horizontal rule is taught as substitution, never as "the sign flips."** $f(x-2)$ at
+    $x=5$ computes $f(3)$, so the new graph at $5$ shows what the old one showed at $3$. The plan,
+    the notes, the deck, and the Active Monitoring box all say to *refuse* the sign-flip phrasing
+    and replace it with an evaluation. That is the single most repeated instruction in the lesson.
+  - **2.1's homework item 10 already made students describe a vertical translation in their own
+    words; 2.2 opens by naming it.** Warm-up item 5 asks for that sentence back, and if it takes
+    more than fifteen seconds the class did not do the homework — the plan says so.
+  - Hook is **the same firework shell, three seconds later**: 2.0's own exit-ticket function
+    $h_A(t)=-16t^2+64t$ (peak $64$ ft at $t=2$, down at $t=4$), fired again at $t=3$. Students
+    **vote** on whether shell B's equation says $h_A(t+3)$ or $h_A(t-3)$ before seeing anything;
+    most classes vote $+3$. Resolved with one number, not a rule: at $t=5$ shell B has lived
+    $5-3=2$ seconds, so it is at $h_A(2)=64$. Domain slid $[0,4] \to [3,7]$; range still $[0,64]$.
+    **Reusing a function the class already read makes the shift, not the model, the new thing.**
+  - **Warm-up item 2 is the diagnostic of the day**: $f(5)$ versus $f(5-3)$ for $f(x)=x^2$. A
+    student who writes $f(5-3)=25-3=22$ substituted *after* applying the rule instead of before,
+    and that one habit produces every backwards horizontal shift in the unit. Item 3 ($-x^2$ vs
+    $(-x)^2$ at $x=3$, giving $-9$ and $9$) plants the two reflections and is quoted verbatim in
+    notes box 3 and again in Tier E — **do not resolve it during the warm-up.**
+  - Notes = 5 vocab terms (parent function, function family, translation, reflection, dilation)
+    + four boxes: the **three parents** with pre-drawn panels and a domain/range table (the
+    exponential's $(0,\infty)$, a parenthesis, is 2.1's bracket rule paying off and previews 2.5);
+    **translations** off a three-curve figure, closing on the shells; **reflections and dilations**
+    off two figures; and **the card** — the SOL guidance's six notations in one table with an
+    outputs/inputs column and a domain/range column. In-text blanks: *adds*, *multiplies*,
+    *outside*, *inside*, *opposite*, *range*, *domain*, *$x$*, *$y$*, *stretch*, *compression*.
+  - **Box 4 (the card) is the study sheet and is deliberately not a duplicate of boxes 2–3**: boxes
+    2 and 3 build the moves with figures, box 4 collects them and adds the *which-one-moved*
+    column. It takes three minutes to fill and is what students revise from.
+  - **The parabola's own symmetry is the best small idea in the lesson.** $g(-x)=(-x)^2=x^2=g(x)$,
+    so reflecting $x^2$ over the $y$-axis really happens and shows nothing. Tier E item 3 asks
+    students to defend that, and to name a parent ($x$ or $2^x$) where the same flip is obvious.
+  - **Two coincidences to route around, both recorded because they will bite a later author.**
+    (1) For the *linear* parent a horizontal shift equals a vertical shift ($5(g-2)=5g-10$), so
+    **never demonstrate a horizontal translation on a line.** (2) For linear and quadratic parents
+    a horizontal dilation equals a vertical one ($(2x)^2=4x^2$), so $f(kx)$ is demonstrated on the
+    **exponential** ($2^{2x}=4^x$) and, in Tier A, on a **restricted-domain context** where the
+    domain visibly halves.
+  - Context thread, every read on a gridline: hook/shells $-16t^2+64t$; guided practice **robotics
+    fundraiser** $P(x)=-x^2+8x$ on $[0,8]$ (max $16$ at $x=4$) with a flat \$400 sponsor gift,
+    $Q=P+4$, range $[0,16] \to [4,20]$ and the domain untouched; activity Tier R $x^2$ with
+    $x^2-5$ and $(x+3)^2$; Tier A $x^2$ with $-x^2$ and $\tfrac13x^2$ plus a conveyor belt at
+    double speed, $C(2t)$, domain $[0,8] \to [0,4]$; exit ticket $(x-3)^2$ and $2^x-5$; homework
+    **two irrigation zones**, $F(t)=8t-t^2$ on $[0,8]$ and $G(t)=F(t-4)$ on $[4,12]$
+    ($G(6)=F(2)=12$, both flowing on hours $4$–$8$).
+  - **The $f(kx)$ item is where groups reliably go wrong** — they answer "the range moved, because
+    it is faster." The prompt that fixes it is in the plan: *does the arm reach a different height,
+    or the same height sooner?*
+  - Activity tiers R/A/E. Tier E is error critique (**$(x+5)^2$ "moves right"** and
+    **$-x^2 = (-x)^2$**, both refuted with a number, not a rule), a two-step $(x-3)^2+2$, and the
+    symmetric-parabola justification.
+  - Homework 10 items (families from equations, families from **three tables** — $A$ adds $3$, $B$
+    multiplies by $2$, $C=2x^2$ has constant second differences of $4$; six single transformations;
+    three ranges incl. $2^x-3 \to (-3,\infty)$; equations written from words; the four-part
+    irrigation read) + an extension. **Item 10 bridges to 2.3**: the parent drawn with $x^2-4$ and
+    $(x+2)^2$, both equations written, one checked by substitution, and a prediction of what the
+    TI-84 screen will show. Extension closes on **whether order matters** — $-(x^2)+9$ gives $8$ at
+    $x=1$ while $-(x^2+9)$ gives $-10$, settled by two numbers and no theory.
+  - Guard sizes: bare on vocab, `[12]` hook, `[30]`/`[30]`/`[30]`/`[24]` on notesboxes 1--4, `[30]`
+    practice, `[30]` on all three activity tiers, `[24]`/`[30]`/`[30]`/`[30]` on the homework's
+    boxes, `[18]` on the plan's Reinforcement box and each of the five teachernotes, plus a **new**
+    `[16]` on the plan's Individual Work box.
+  - **Two boxguard findings, both invisible to `make check` (which passed clean throughout).**
+    (1) The homework's extension box at `[22]` broke, stranding **one write-line plus the remind
+    box alone on p4**. `[30]` moves it whole; the page count stayed at 4. Lowering it to `[20]`
+    *and* trimming the look-ahead figure was then tested to try to buy the page back — still 4
+    pages, so everything was restored per 1.5's test-then-restore rule, with the reason in a
+    comment in both files. (2) **The lesson plan's Individual Work \& Assessment box stranded a
+    single line atop plan p4** — `\boxguard[16]` moved it whole and the plan held at 5 pages. 1.7
+    found this on a teachernote; **it applies to every plan box, not just the trailing ones.**
+  - **Pagination finding, consistent with 1.5.** Notes pp. 2–3 each hold one complete box with an
+    empty lower half. Lowering notes box 2's guard to `[16]` (to let it split after the
+    figure + table) was tested and **still gave 5 pages**, so the break is the natural one;
+    restored to `[30]` with the verdict in a comment in both files.
+  - **A `\tfrac` in an `\ans` table cell can outgrow the blank's row and break parity.** Tier A
+    item 4's $2^{-x}$ row answers with $\tfrac12$ and $\tfrac14$; the fix is a
+    `\rule[-0.75em]{0pt}{1.9em}` strut in the row's label cell, authored **in the blank and the
+    key both**, so the row height is set identically. This is the general form of 1.7's `\dfrac`
+    finding — **any tall answer in a cell whose blank counterpart is short needs a shared strut.**
+  - **Multi-curve figures use a pgfplots `legend` placed above the axis**
+    (`at={(0.5,1.02)}, anchor=south, legend columns=3`), never node labels crowded against the
+    curves. That region is always free and it survives a change of curve. Node labels are used
+    only where three curves end at distinct heights (notes box 3).
+  - **A wide table on a Beamer frame needs `\small`.** The card frame overflowed by 2.9pt at
+    `\arraystretch{1.35}`; `\small` plus `1.25` fixed it. Check `Overfull \vbox` in the deck log,
+    not just the components'.
+  - Page counts: cover 1, warm-up 1/1, notes 5/5, activity 3/3, exit ticket 1/1, homework 4/4;
+    student and key packets 20 pages each. Plan 5 pp, slides 11 frames (4 pp printed 3-up).
 - **`unit02/lesson01` — Function Fundamentals: Notation, Domain, and Range (`AFDA.AF.2a, e`).**
   Unit 2's first content lesson.
   - Spine: **``$f(3)=10$'' and ``the point $(3,10)$ is on the graph'' are one sentence in two
@@ -605,30 +701,35 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
 - **Confirmed while authoring 1.3:** the 1.2 guard sizes transferred verbatim to a lesson of the
   same shape (listed in the 1.3 entry above) with no re-measuring and no `\tcbbreak`. Treat that
   set as the default opening bid for an ordinary Unit 1 lesson, then tune per box.
-- **Everything else is still scaffold skeletons**: `unit02/lesson02`–`lesson07`, units 03–08 in
+- **Everything else is still scaffold skeletons**: `unit02/lesson03`–`lesson07`, units 03–08 in
   full, plus each unit's `tests/`, `test_keys/`, `sample_test/`, `sample_test_key/`.
 - **Unit 1 is the only unit with a `unit_cover/` pair or authored tests.** `finals/` has not been
   created.
 - Lessons 1.0–1.6 are merged to `main` (PR #4, commit `ca47f7e`; PR #6, commit `248c0c8`; PR #8,
   commit `6a72235`; PR #9, commit `c6b1e1d`; PR #10, commit `5c04bb1`). Lesson 1.7 is merged
   (PR #11, commit `6578d42`); the Unit 1 cover pair and the four test files are merged
-  (PR #12, commit `4ba8611`). Lesson 2.0 is merged (PR #13, commit `129173e`). Lesson 2.1 is on
-  worktree branch `claude/lesson-2-1-generation-78f4b7`, **not yet committed**.
+  (PR #12, commit `4ba8611`). Lesson 2.0 is merged (PR #13, commit `129173e`); Lesson 2.1 is
+  merged (commit `dec3b9b`). Lesson 2.2 is on worktree branch
+  `claude/lesson-2-2-generation-1331c7`, **not yet committed**.
 
 ## Next steps
 
-1. Commit / PR **Lesson 2.1** (user to confirm).
-2. Then author **Unit 2's remaining content lessons, 2.2 → 2.7**, in order. The threads are planted:
-   2.2 gets the three parents from 2.0 *and* 2.1's homework item 10 (the $x^2 \to x^2+3$ shift,
-   already described in students' own words); 2.4 gets 2.0's five reads; 2.5 gets the asymptote
-   preview from 2.0's homework item 9 and 2.1's restricted-domain box; 2.7 gets 2.0's
-   adding-vs-multiplying test.
-   **2.2 is `AFDA.AF.1a–b` — parent functions and transformations.** Its first job is naming the
-   move 2.1's homework item 10 made students describe. The notation scope is the AFDA guidance's
-   own list: $f(x)+k$, $f(x+k)$, $-f(x)$, $f(-x)$, $kf(x)$, $f(kx)$, with the $|k|>1$ / $0<|k|<1$
-   stretch-vs-compress rules stated there.
-   **Carry 2.1's domain/range language forward**: every transformation lesson should say which of
-   the domain and the range moved, since that is the cheapest check a student has.
+1. Commit / PR **Lesson 2.2** (user to confirm).
+2. Then author **Unit 2's remaining content lessons, 2.3 → 2.7**, in order. The threads are planted:
+   2.3 gets 2.2's six notations *and* 2.2's homework item 10 (both equations written from one
+   figure, plus a prediction of the calculator screen); 2.4 gets 2.0's five reads; 2.5 gets the
+   asymptote preview from 2.0's homework item 9, 2.1's restricted-domain box, and **2.2's
+   $(0,\infty)$ range for $2^x$**, which is already flagged in the notes as "Lesson 2.5 gives that
+   behaviour a name"; 2.7 gets 2.0's adding-vs-multiplying test, which 2.2 restated in notes box 1
+   and assessed in homework item 2.
+   **2.3 is `AFDA.AF.1d, f` — equation $\leftrightarrow$ graph in both directions, verified on the
+   TI-84.** Its first job is turning 2.2's *describe the move* into *produce the graph* and
+   *produce the equation*. **`AF.1f` says "graph a function… using transformations," so this is the
+   lesson where the course's no-sketching rule bites hardest** — satisfy it with a pre-drawn,
+   pre-scaled grid students complete (plot the transformed key points on given axes), plus TI-84
+   output shown as a figure, never a blank coordinate plane.
+   **Carry 2.2's two habits forward**: say which of the domain and the range moved, and settle
+   every horizontal question by *evaluating at an input*, never by "the sign flips."
 3. **Every Unit 2 lesson is a graph-reading lesson — pre-draw and pre-scale every axis.** 2.0's
    seven `pgfplots` figures are the model for style (`axis lines=left`, `grid=both` at
    `linegray!45`, `\scriptsize` tick/label fonts, `royal` plot, integer-friendly tick marks). The
@@ -649,7 +750,11 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
    fractions need `\dfrac` (1.7), and — from 2.0 — that a guard must **exceed** its box, never
    approximate it, and that **no `\tcbbreak` may be authored until a build proves it is needed**.
    From 2.1, add the `tabularx` rule: **put the `X` column on the prose column, not on the last
-   notation column**, or all the slack lands in one place and the words wrap.
+   notation column**, or all the slack lands in one place and the words wrap. From 2.2, add three:
+   **every box in the lesson plan needs a guard, not just the trailing ones** (its Individual Work
+   box stranded a line); **a tall `\ans` in a table cell needs a shared strut in the blank** so the
+   row height cannot differ; and **check `Overfull \vbox` in the deck's log**, since a wide
+   Beamer table silently overruns the frame.
 6. **Unit tests and unit covers are outside `make check`** — the gate walks `unitXX/lessonMM/` only.
    For every later unit, check by hand what the gate would have caught: blank/key page parity on
    both test forms, no `teachernote` in any test key, no `\ans` inside math. The Unit 1 run's two

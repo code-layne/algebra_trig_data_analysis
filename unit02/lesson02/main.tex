@@ -16,79 +16,337 @@
 
 \begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} I can name the parent function of the linear, quadratic, and
+    exponential families from an equation, a graph, or a table, and I can describe the
+    transformation that produced a given function --- translation, reflection, or dilation. I can
+    explain why a number outside the parentheses moves a graph the way the sign says while a number
+    inside moves it the opposite way, and I can say which of the domain and the range moved and use
+    that as a check.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Standards covered:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \texttt{AFDA.AF.1a} --- identify graphs and equations of parent functions for the linear,
+        quadratic, and exponential families.
+  \item \texttt{AFDA.AF.1b} --- describe the transformation from the parent function, \emph{given
+        the equation or the graph} of the function.
+\end{itemize}
+\textbf{Skills students leave with:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item Name the parent of a function from its \textbf{equation}, its \textbf{graph}, or a
+        \textbf{table} (adds vs.\ multiplies vs.\ constant second differences).
+  \item Describe all six moves in the standard's own notation: $f(x)+k$, $f(x+k)$, $-f(x)$,
+        $f(-x)$, $k f(x)$, $f(kx)$.
+  \item Decide \emph{outside or inside the parentheses}, and get the direction right on the
+        horizontal ones.
+  \item State the \textbf{domain} and \textbf{range} of the image and say which one moved.
+  \item Justify a claim about a transformation by evaluating at a chosen input.
+\end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Key Understandings (the \emph{why}):}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Every transformation answers one question: did the \emph{outputs} change or did the
+        \emph{inputs} change?} Outside the parentheses touches outputs; inside touches inputs.
+        Everything else on this page is a consequence.
+  \item \textbf{The horizontal ``backwards'' rule is not a trick --- it is substitution.} $f(x-3)$
+        at $x=5$ computes $f(2)$, so the new graph at $5$ shows what the old one showed at $2$.
+        Say it that way, never as ``the sign flips.''
+  \item \textbf{Lesson 2.1's homework already made them describe a translation.} Today it gets a
+        name. Naming something students produced themselves is the cheapest teaching there is.
+  \item \textbf{Which moved --- the domain or the range --- is a free check.} It is 2.1's language
+        doing a new job, and it catches most sign errors without any regraphing.
+  \item \textbf{The AFDA guidance is explicit that the six notations above, with the
+        $|k|>1$ / $0<|k|<1$ rules, are the scope.} Teach exactly that list, no more.
+\end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Term} & \textbf{Meaning students record} \\
+\hline
+Parent function & The plainest member of a family, before anything is done to it. Linear
+    $f(x)=x$; quadratic $g(x)=x^2$; exponential $h(x)=a^x$ (we use $a=2$). \\
+Function family & A parent together with every transformation of it; all share the parent's
+    shape. \\
+Transformation & A change to the size, shape, or position of a graph. The original is the
+    \emph{pre-image}, the result is the \emph{image}. \\
+Translation & A slide, no change of shape: $f(x)+k$ (vertical) or $f(x+k)$ (horizontal). \\
+Reflection & A flip across an axis: $-f(x)$ over the $x$-axis, $f(-x)$ over the $y$-axis. \\
+Dilation & A stretch or squash: $k f(x)$ scales outputs (vertical), $f(kx)$ scales inputs
+    (horizontal). \\
+Vertical stretch / compression & $|k|>1$ stretches, $0<|k|<1$ compresses --- in $k f(x)$. \\
+Horizontal compression / stretch & $|k|>1$ compresses, $0<|k|<1$ stretches --- in $f(kx)$. Note
+    that this pair reads \emph{opposite} to the vertical pair. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+\textbf{The warm-up is five items, and items 2 and 3 are the lesson in miniature:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt, topsep=2pt]
+  \item A table of $x^2$ and $2^x$, plus $2^{-1}$ and $2^{-2}$ (Lesson 1.1) --- feeds notes box 1
+  \item $f(5)$ versus $f(5-3)$ for $f(x)=x^2$ --- the whole mechanism behind a horizontal shift
+  \item $-x^2$ versus $(-x)^2$ at $x=3$ --- the two reflections, before they are named
+  \item Interval $\leftrightarrow$ inequality (Lesson 2.1 spiral)
+  \item Last night's item 10, said back in one sentence
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+\textbf{How to use the results:} item 2 is the single best predictor of the period. A student who
+writes $f(5-3)=f(5)-3=22$ has substituted into the wrong place and will get every horizontal shift
+backwards. Item 3 tells you who will conflate $-f(x)$ with $f(-x)$; both groups go to Tier R.
+\end{minipage}
+\end{tabularx}
 \end{fixedskillbox}
 
 \begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\textbf{The same shell, three seconds later.} Put Lesson 2.0's firework back up:
+$h_A(t)=-16t^2+64t$, off the ground at $t=0$, $64$ feet at $t=2$, down at $t=4$. Tonight the crew
+fires two identical shells, the second one \textbf{3 seconds after} the first.
+\textbf{Pose it this way:} ``Same shell, same climb, same fall, just later. Does the second shell's
+equation say $h_A(t+3)$ or $h_A(t-3)$?'' \textbf{Take a vote before showing anything} --- most
+classes vote $+3$, and they should, because ``later'' feels like ``more.'' Then resolve it with one
+number, not a rule: at $t=5$ the second shell has been in the air $5-3=2$ seconds, so it is at
+$h_A(2)=64$ feet. The clock says $5$; the shell has only lived $2$. That single sentence is
+\texttt{AFDA.AF.1b}'s horizontal case, and the rest of the period is bookkeeping on top of it.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. The three parents (8 min).} Work the table under the three pre-drawn graphs. Fill the
+equations and the domains together; assign the ranges. \textbf{Ask:} ``Why does the exponential get
+$(0,\infty)$ and the parabola get $[0,\infty)$?'' Land it on 2.1's bracket rule --- $2^x$ never
+reaches $0$. Close with 2.0's discriminator: a line \emph{adds}, an exponential \emph{multiplies}.
+
+\textbf{2. Translations (12 min).} Work the four-row table off the pre-drawn figure. Do the two
+vertical rows first and fast --- students already own them from last night. Slow down on
+$f(x-2)$. \textbf{Do not state a sign rule.} Instead evaluate: $f(x-2)$ at $x=5$ is $f(3)$, so the
+new graph at $5$ shows the old graph's value at $3$; the picture was copied $2$ farther right.
+Then close the hook: $h_B(t)=h_A(t-3)$, domain $[0,4] \to [3,7]$, range still $[0,64]$.
+
+\textbf{3. Reflections and dilations (12 min).} Two figures, one table. Point at warm-up item 3
+before you say anything: $-9$ and $9$ from the same input, so $-f(x)$ and $f(-x)$ cannot be the
+same move. \textbf{Ask:} ``What happens when you reflect $x^2$ over the $y$-axis?'' The answer
+--- nothing visible, because $(-x)^2=x^2$ --- is worth two minutes; it is Tier E item 3. State the
+$|k|$ rules from the card and note out loud that the horizontal pair reads \emph{opposite} to the
+vertical pair.
+
+\textbf{4. The card (6 min).} Fill the two blank columns as a class; it takes three minutes and
+becomes the study sheet. Read the two refused errors aloud and have students say them back.
+
+\textbf{5. Guided practice --- the fundraiser (10 min).} $Q(x)=P(x)+4$. \textbf{Ask:} ``Before you
+look --- which will move, the domain or the range?'' Then check the reading against the arithmetic
+so the graph and the algebra agree. Item 3 samples all three parents in one line.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Explicit Instruction: Outside or Inside --- and Which One Moved]{mist}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The routine students record:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Name the parent.} $x$, $x^2$, or $a^x$ --- nothing else is in scope.
+  \item \textbf{Find the number and ask where it sits.} Outside the parentheses, or inside?
+  \item \textbf{Outside $\Rightarrow$ outputs.} Up/down, flip over the $x$-axis, taller/flatter.
+        The sign says the direction.
+  \item \textbf{Inside $\Rightarrow$ inputs.} Left/right, flip over the $y$-axis,
+        squeezed/pulled sideways. The direction is the \emph{opposite} of the sign.
+  \item \textbf{Say which moved} --- the domain or the range --- and check it against step 2. If
+        those two disagree, you made a sign error.
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{The three errors to name before they happen:}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item \textbf{``$(x+5)^2$ moves right.''} The most common error in the lesson. Refuse the rule
+        ``the sign flips'' --- have the student evaluate at one input instead. Tier E item 1(a).
+  \item \textbf{``$-f(x)$ and $f(-x)$ are the same.''} Warm-up item 3 already disproved it.
+        Tier E item 1(b).
+  \item \textbf{Bracket drift on the exponential.} $2^x-3$ has range $(-3,\infty)$, not
+        $[-3,\infty)$ --- 2.1's rule, still in force. Homework item 4(c).
+\end{itemize}
+\textbf{Say this out loud:} ``The parentheses are a fence. Outside it, you are changing what comes
+out. Inside it, you are changing what goes in.''
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Warm-up, item 2:} anyone writing $f(5-3)=22$ has substituted outside the
+        parentheses. Note the names; they are the Tier R group and they will need step 4 twice.
+  \item \textbf{Notes, box 2, rows 3--4:} listen for ``the sign flips.'' Replace it every time with
+        an evaluation --- ``what does $f(x-2)$ compute when $x=5$?''
+  \item \textbf{Notes, box 3:} watch for a vertical/horizontal mix-up on the $|k|$ rules. The
+        useful prompt is ``is $k$ multiplying the whole function, or multiplying $x$?''
+  \item \textbf{Activity, Tier A item 3:} groups often answer ``the range'' because the belt is
+        faster. Push back: faster \emph{time}, same \emph{heights}.
+  \item \textbf{Cold-call prompts:} ``Name the parent.'' ``Outside or inside?'' ``Which moved, the
+        domain or the range?'' ``Why does a minus move it right?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item $x^2$ drawn with $x^2-5$ and $(x+3)^2$: name each move, then write it in $f$-notation.
+  \item Ranges of all three, and why only one changed.
+  \item Three equations with no graph, one per parent.
+  \item One sentence: why does $+3$ move it left?
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item $x^2$ drawn with $-x^2$ and $\tfrac13 x^2$: reflection vs.\ dilation.
+  \item Why a compression left the range alone and a reflection did not.
+  \item A conveyor belt at double speed --- $C(2t)$, domain $[0,8] \to [0,4]$.
+  \item A table for $2^{-x}$, then name the axis.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique two errors: $(x+5)^2$ ``moves right,'' and $-x^2 = (-x)^2$.
+  \item Two moves at once: $(x-3)^2+2$, turning point, domain and range.
+  \item Justify: is a reflection that changes nothing still a reflection?
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+% Unguarded, this box broke leaving ONE line stranded atop plan p4. [16] moves it whole.
+\boxguard[16]
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes):} (1) a pre-drawn parabola and its image $(x-3)^2$ ---
+name the parent, the move, and write the image two ways; (2) $y=2^x-5$ with no graph --- the
+transformation, and \emph{which} of the domain and range moved, in interval notation;
+(3) \textbf{the conceptual check} --- a classmate claims the minus sign should have moved the
+graph left, and the student must refute it \emph{by evaluating at an input of their own choosing}.
+
+\textbf{Using the results:} sort into three piles --- \emph{both directions clean},
+\emph{vertical only}, \emph{guessing}. The middle pile is the largest and is the Tier R group for
+Lesson 2.3, where a sign error now costs a whole graph. Item 3 is the one to read: a student who
+restates the rule (``inside means opposite'') without producing a number has memorized the
+sentence, not the reason, and will not survive two transformations at once.
 \end{skillbox}
 
+\boxguard[18]
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (10 items): five fluency items (families from equations, families from three
+\textbf{tables}, six single transformations, three ranges, and equations written from words), then
+a four-part read of \textbf{two irrigation zones} running the same program four hours apart --- the
+lesson's horizontal translation in a context with a restricted domain, where the domain visibly
+slides and the range visibly does not.
+
+\textbf{Item 10 is the bridge to Lesson 2.3 and is worth grading closely.} Students are given the
+quadratic parent with two children drawn on the same axes and must write \emph{both} equations,
+check one by substitution, and predict what the calculator screen will show. That is
+\texttt{AF.1d} and \texttt{AF.1f} in rehearsal --- next lesson does it for real, on the TI-84.
+
+\textbf{Extension (optional):} two moves at once, $(x-1)^2+4$ and $-x^2+9$, closing with the order
+question --- $-(x^2)+9$ gives $8$ at $x=1$ while $-(x^2+9)$ gives $-10$, so the parentheses decide
+what happens first.
+
+\textbf{Preview of Lesson 2.3 (\texttt{AFDA.AF.1d, f}):} equation $\leftrightarrow$ graph in both
+directions, verified on the TI-84.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 % Teacher-only prose lives HERE, never in a _key: a note is the one block in a
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
+\boxguard[18]
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    \textbf{8 minutes, then score it together.} Answers: (1) $f$: $0,1,4,9$; $h$: $1,2,4,8$; then
+    $h(-1)=\tfrac12$, $h(-2)=\tfrac14$; (2) $f(5)=25$, $f(5-3)=f(2)=4$; (3) $-9$ and $9$, so no ---
+    squaring first is not the same as negating first; (4) $[3,\infty)$ and $x \le 0$; (5) the graph
+    of $g$ is the same shape sitting $3$ units higher. \textbf{Item 2 is the diagnostic of the
+    day.} A student who writes $f(5-3)=25-3=22$ has substituted \emph{after} applying the rule
+    rather than before, and that single habit produces every backwards horizontal shift you will
+    see this week --- note those names now. Item 3 is a trap with a purpose: it is quoted verbatim
+    in notes box 3 and again in Tier E item 1(b), so do not resolve it beyond checking the two
+    numbers. Item 5 is last night's homework and should take fifteen seconds; if it does not, the
+    class did not do the homework and box 2 will need more time than the plan allows.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Guided Notes]
-    % TODO
+    \textbf{Box 2 is the lesson; protect its time.} Do not let the vocabulary box become a copying
+    exercise --- fill \emph{parent function} and \emph{translation} together, assign the other
+    three to pairs. In box 1, the three graphs are pre-drawn deliberately; nobody sketches anything
+    today. The row that earns discussion is the exponential's range, $(0,\infty)$ --- a parenthesis
+    because $2^x$ never lands on $0$. That is 2.1's bracket rule paying off, and it previews 2.5.
+    \textbf{In box 2, refuse the phrase ``the sign flips.''} Every time it comes up, replace it
+    with an evaluation at a specific input; the ``why the opposite'' paragraph is written to be
+    read aloud. Close box 2 by resolving the hook out loud --- the vote from the start of class is
+    still on the board, and being wrong together is the point. Box 3 is dense but the figures carry
+    it; the one thing to insist on is that the horizontal $|k|$ rules read opposite to the vertical
+    ones, which students will not believe until they have seen $C(2t)$ in Tier A. Box 4 is a
+    three-minute fill, and it is the study sheet for the test --- say so. If time runs short,
+    assign box 4 as reading, but never cut box 2.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{Groups of three, 15 minutes, all groups start at Tier R.} Tier R is short by design; a
+    group that clears it in four minutes should move straight on. Expect Tier R item 1 to produce
+    correct directions and no function notation --- ask for $f(x)-5$ and $f(x+3)$ by name, every
+    time, because 2.3 is written in that notation. Tier A item 2 is where groups slow down: many
+    will say the compression changed the range because ``the numbers got smaller.'' Push them to
+    write the range down; $\tfrac13 x^2$ still reaches every non-negative value, just later. Tier A
+    item 3 is the horizontal dilation and it is the only place in the lesson students meet one in
+    context --- expect ``the range moved, because it is faster,'' and answer it with a question:
+    \emph{does the arm reach a different height, or the same height sooner?} Tier E item 1 is the
+    share-out that matters; read both wrong answers aloud and have the class diagnose them before
+    the group explains. Tier E item 3 is the subtle one: a reflection that leaves the picture
+    unchanged still happened, and a group that can say why should write $g(-x)=(-x)^2=g(x)$ on the
+    board.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    \textbf{5 minutes, notes closed, hand it to me at the door.} Answers: (1) parent $f(x)=x^2$,
+    translated right $3$; $g(x)=f(x-3)=(x-3)^2$, turning point $(3,0)$; (2) parent $h(x)=2^x$,
+    translated down $5$; domain $(-\infty,\infty)$ unchanged, range moved from $(0,\infty)$ to
+    $(-5,\infty)$; (3) at $x=5$, $g$ computes $f(5-3)=f(2)=4$, so the new graph at $5$ shows what
+    the parent showed at $2$ --- everything was copied $3$ units right. \textbf{Item 3 is the one
+    to read carefully.} A student who writes ``because inside the parentheses the sign is
+    opposite'' has repeated the rule and answered nothing; the item asks for an input and a
+    computation, and only that earns credit. Item 2's parenthesis on $(-5,\infty)$ is the cheap
+    tell for who is carrying 2.1's bracket rule forward. Do not grade this for points; use it to
+    build the 2.3 groups, where a sign error costs an entire graph rather than one word.
 \end{teachernote}
 
+\boxguard[18]
 \begin{teachernote}[Homework]
-    % TODO
+    \textbf{Expect 25--30 minutes.} Item 2 is the one to check first when planning the next do-now:
+    $C$ has differences $2,6,10$, so students who only test first differences will call it
+    ``neither'' and stop --- prompt them to difference the differences, exactly as in Lesson 2.0's
+    Tier E. Item 3(d) and 3(f) are the two that separate the class: $2^{-x}$ is a $y$-axis
+    reflection, not a decay rule to be memorized, and $\tfrac12 x^2$ is a compression even though
+    the coefficient looks like a stretch to anyone reading only the fraction bar. The irrigation
+    zones (6--9) are the horizontal translation in context, and item 9's second half wants an
+    \emph{interval} read off the overlap, hours $4$ to $8$ --- ``in the middle'' earns nothing.
+    Item 10 is the Lesson 2.3 bridge described in the plan above; grade 10(c) hardest, since a
+    substitution check is the habit 2.3 depends on. The extension is genuinely optional --- assign
+    it to groups that finished Tier E early. Its part (c) is the first time students have been
+    asked whether the \emph{order} of two transformations matters, and the two numbers $8$ and
+    $-10$ settle it without any theory.
 \end{teachernote}
 \end{document}

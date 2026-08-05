@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
@@ -12,9 +13,200 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[The Scenario]{royal}
+\small
+Every graph below is one of the three parents with something done to it. Your group's job is the
+same every time: \textbf{name the parent, name what was done to it, and say which of the domain and
+the range moved.} Work together. \textbf{Everyone starts at Tier R.} When your whole group can do
+Tier R without help, move on.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+The quadratic parent $f(x)=x^2$ is drawn with two of its children.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.4cm, height=4.8cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-6.6, xmax=3.6, ymin=-6, ymax=10.5,
+    xtick={-6,-5,-4,-3,-2,-1,0,1,2,3}, ytick={-5,0,5,10},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize},
+    legend entries={{$y=x^2$},{$y=x^2-5$},{$y=(x+3)^2$}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=3}]
+  \addplot[royal, very thick, domain=-3:3, samples=80]{x^2};
+  \addplot[goldacc, very thick, dashed, domain=-3:3, samples=80]{x^2-5};
+  \addplot[plumacc, very thick, dash dot, domain=-6:0, samples=80]{(x+3)^2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item For each child, say which way and how far it moved, then write it in function notation
+        starting from $f(x)=x^2$.
+
+\ansline{$y=x^2-5$: down $5$; that is $f(x)-5$.}\\
+\ansline{$y=(x+3)^2$: left $3$; that is $f(x+3)$.}\\
+
+  \item State the range of all three. Which child changed the range, and how does the position of
+        its number (inside or outside the parentheses) explain that?
+
+\ansline{$x^2$: $[0,\infty)$. \quad $x^2-5$: $[-5,\infty)$. \quad $(x+3)^2$: $[0,\infty)$.}\\
+\ansline{Only $x^2-5$ changed it --- its $-5$ is outside the parentheses, so it changes outputs.}\\
+
+  \item No graph this time. Name the parent, then describe the move.
+        \quad (a) $y=x+7$ \quad (b) $y=(x-6)^2$ \quad (c) $y=2^x-1$
+
+\ansline{(a) parent $f(x)=x$; translated up $7$.}\\
+\ansline{(b) parent $g(x)=x^2$; translated right $6$.}\\
+\ansline{(c) parent $h(x)=2^x$; translated down $1$.}\\
+
+  \item In one sentence: why does $y=(x+3)^2$ move the graph \emph{left}, even though the equation
+        shows a plus sign?
+
+\ansline{The $+3$ is added to the input first, so the new graph at $x=-3$ shows what the parent showed at $0$.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+Same parent, but nothing here is a slide.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.0cm, height=4.8cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-3.6, xmax=3.6, ymin=-10, ymax=10,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={-9,-6,-3,0,3,6,9},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize},
+    legend entries={{$y=x^2$},{$y=-x^2$},{$y=\tfrac{1}{3}x^2$}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=3}]
+  \addplot[royal, very thick, domain=-3:3, samples=80]{x^2};
+  \addplot[goldacc, very thick, dashed, domain=-3:3, samples=80]{-x^2};
+  \addplot[plumacc, very thick, dash dot, domain=-3:3, samples=80]{x^2/3};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item Describe each child as a transformation of $f(x)=x^2$, in words and in function notation.
+
+\ansline{$y=-x^2$: reflected over the $x$-axis; that is $-f(x)$.}\\
+\ansline{$y=\tfrac{1}{3}x^2$: vertical compression by a factor of $\tfrac{1}{3}$; that is $\tfrac{1}{3}f(x)$.}\\
+
+  \item State the range of all three. Two of them share a range. Explain why the dilation left the
+        range alone while the reflection did not.
+
+\ansline{$x^2$: $[0,\infty)$. \quad $-x^2$: $(-\infty,0]$. \quad $\tfrac{1}{3}x^2$: $[0,\infty)$.}\\
+\ansline{Multiplying by $\tfrac{1}{3}$ shrinks outputs but keeps them positive; multiplying by $-1$ flips their sign.}\\
+
+  \item \textbf{In context.} A conveyor belt repeats one cycle, and $C(t)$ is the height of the
+        lifting arm $t$ seconds into the cycle, for $0 \le t \le 8$. The factory doubles the belt
+        speed, so the arm now does the identical motion in half the time. The new function is
+        $C(2t)$.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item What is the domain of the new function, and what is its range?
+
+\ansline{Domain $[0,4]$ seconds. The range is unchanged --- the arm reaches the same heights.}\\
+
+          \item Is this a horizontal stretch or a horizontal compression? Point to the value of
+                $|k|$ that decides it.
+
+\ansline{A horizontal compression, because $|k|=2>1$.}\\
+
+          \item Which moved --- the domain or the range --- and why is that the answer you should
+                have predicted before doing anything?
+
+\ansline{The domain. The $2$ sits inside the parentheses, so it works on inputs (time), not heights.}\\
+        \end{enumerate}
+
+  \item The exponential parent is $h(x)=2^x$, which climbs. Its reflection $h(-x)=2^{-x}$ falls.
+        Use the table below to say why, then name the axis it was flipped over.
+        \smallskip
+
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+        \hline
+        $x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ \\ \hline
+        $2^{-x}$\rule[-0.75em]{0pt}{1.9em} & \ans{$4$} & \ans{$2$} & \ans{$1$} &
+            \ans{$\tfrac{1}{2}$} & \ans{$\tfrac{1}{4}$} \\ \hline
+        \end{tabular}
+        \smallskip
+
+\ansline{The outputs fall as $x$ rises --- it is $2^x$ read backwards. Flipped over the $y$-axis.}\\
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, breakable]
+\small
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=2pt]
+  \item \textbf{Critique the work.} Each student below is wrong. Name the error and give the
+        correct answer.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item ``$y=(x+5)^2$ is the parabola moved \emph{right} $5$, because the $5$ is
+                positive.''
+
+\ansline{The $5$ is \emph{inside} the parentheses, so it acts on the input and the direction is}\\
+\ansline{the opposite of the sign. It moves \textbf{left} $5$; the turning point is $(-5,0)$.}\\
+
+          \item ``$y=-x^2$ and $y=(-x)^2$ are the same graph. A minus sign is a minus sign.''
+
+\ansline{$-x^2$ squares first, then negates: at $x=3$ it gives $-9$. $(-x)^2$ negates first:}\\
+\ansline{it gives $9$, and $(-x)^2=x^2$, so it \emph{is} the parent. Only $-x^2$ is flipped.}\\
+        \end{enumerate}
+
+  \item \textbf{Two moves at once.} Consider $y=(x-3)^2+2$.
+        \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+          \item Name the parent, then name \emph{both} transformations, saying which number is
+                inside the parentheses and which is outside.
+
+\ansline{Parent $f(x)=x^2$. The $-3$ is inside: right $3$. The $+2$ is outside: up $2$.}\\
+\ansline{In function notation, $y=f(x-3)+2$.}\\
+
+          \item Where is the turning point of the new graph? Check your answer by evaluating.
+\begin{work}
+  y &= (3-3)^2+2 \\
+    &= 0+2 \\
+    &= 2
+\end{work}
+
+          \item State the domain and the range of $y=(x-3)^2+2$ in interval notation. Which one
+                did the $+2$ move, and which one did the $-3$ move?
+
+\ansline{Domain $(-\infty,\infty)$; range $[2,\infty)$.}\\
+\ansline{The $+2$ lifted the range. The $-3$ slid the graph sideways, and since the parent already}\\
+\ansline{accepts every real number, the domain had nowhere left to move.}\\
+        \end{enumerate}
+
+  \item \textbf{Justify.} A classmate says: ``The graph of $g(x)=x^2$ can't ever have been
+        reflected over the $y$-axis --- it looks exactly the same afterwards, so nothing
+        happened.'' Are they right? Use the meaning of $f(-x)$ to answer, then give a parent
+        function for which the same flip obviously \emph{does} change the picture.
+
+\ansline{They are wrong about the reasoning. $g(-x)=(-x)^2=x^2=g(x)$, so the flip really was}\\
+\ansline{performed --- it just lands the graph back on itself, because the parabola is symmetric}\\
+\ansline{about the $y$-axis. For $f(x)=x$ or $h(x)=2^x$ the same flip changes the picture at once.}\\
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

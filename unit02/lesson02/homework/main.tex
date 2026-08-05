@@ -3,6 +3,7 @@
 \usepackage{atda-article}
 \usepackage{atda-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
@@ -12,9 +13,204 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\boxguard[24]
+\begin{notesbox}{Practice --- Name the Parent, Name the Move}
+\small
+Every item starts the same way: which family is this, and what was done to the parent?
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+\item Name the family --- linear, quadratic, or exponential.
+\quad (a) $y=x^2+9$ \quad (b) $y=5^x$ \quad (c) $y=x-2$ \quad (d) $y=(x-7)^2$
+\quad (e) $y=3^x+1$
+
+\writelines{1}
+
+\item Three functions are given by tables. Name the family of each, and give the reason you used.
+\smallskip
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}|c|c|c|c|c|@{}}
+\hline
+$x$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+$A(x)$ & $5$ & $8$ & $11$ & $14$ \\ \hline
+$B(x)$ & $3$ & $6$ & $12$ & $24$ \\ \hline
+$C(x)$ & $0$ & $2$ & $8$ & $18$ \\ \hline
+\end{tabular}
+\smallskip
+
+\writelines{3}
+
+\item Name the parent, then describe the transformation.
+\quad (a) $y=x^2+6$ \quad (b) $y=(x+1)^2$ \quad (c) $y=-x$ \quad (d) $y=2^{-x}$
+\quad (e) $y=4x^2$ \quad (f) $y=\tfrac{1}{2}x^2$
+
+\writelines{3}
+
+\item Each of the three parents has domain $(-\infty,\infty)$, and every function below keeps that
+domain. State the \textbf{range} of each in interval notation.
+\quad (a) $y=x^2+6$ \quad (b) $y=-x^2$ \quad (c) $y=2^x-3$
+
+\writelines{2}
+
+\item Go the other way --- write the equation, and also write it in function notation using the
+parent named.
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item The graph of $f(x)=x^2$, translated down $7$.
+  \item The graph of $h(x)=2^x$, translated right $2$.
+  \item The graph of $f(x)=x^2$, reflected over the $x$-axis.
+\end{enumerate}
+
+\writelines{2}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{scenariobox}[In Context --- Two Irrigation Zones]{royal}
+\small
+A greenhouse runs one watering program on two zones. Zone 1 starts the program at hour $0$; its
+flow, in gallons per minute, is $F(t)$. Zone 2 runs the \emph{identical} program starting $4$ hours
+later, and its flow is $G(t)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.8cm, height=4.6cm,
+    xlabel={$t$ (hours after the program starts)}, ylabel={flow (gal/min)},
+    xmin=0, xmax=12.6, ymin=0, ymax=18,
+    xtick={0,1,2,3,4,5,6,7,8,9,10,11,12}, ytick={0,4,8,12,16},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize},
+    legend entries={{$F$ (Zone 1)},{$G$ (Zone 2)}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=2}]
+  \addplot[royal, very thick, domain=0:8, samples=80]{8*x-x^2};
+  \addplot[goldacc, very thick, dashed, domain=4:12, samples=80]{8*(x-4)-(x-4)^2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=6]
+
+\item Read $G(6)$ off the graph. Then find the value of $F$ that equals it, and say why those two
+numbers have to match.
+
+\writelines{2}
+
+\item Write $G$ in function notation, starting from $F$. Explain in one sentence why the number in
+your answer is subtracted even though Zone 2 starts \emph{later}.
+
+\writelines{2}
+
+\item State the domain and the range of $F$, then of $G$, in interval notation, with units.
+
+\writelines{2}
+
+\item Which moved --- the domain or the range --- and why was that predictable from where the
+number sits? Then answer the gardener's question: during which hours are \emph{both} zones putting
+out water? Justify from the graph.
+
+\writelines{3}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{scenariobox}[A First Look Ahead]{goldacc}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=10]
+
+\item The quadratic parent is drawn with two of its children, $y_1$ and $y_2$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10.2cm, height=4.4cm,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-5.5, xmax=3.5, ymin=-5, ymax=9.6,
+    xtick={-5,-4,-3,-2,-1,0,1,2,3}, ytick={-4,0,4,8},
+    grid=both, grid style={linegray!45}, axis lines=left,
+    tick label style={font=\scriptsize}, label style={font=\scriptsize},
+    legend entries={{$y=x^2$ (parent)},{$y_1$},{$y_2$}},
+    legend style={font=\scriptsize, draw=none, fill=none,
+      at={(0.5,1.02)}, anchor=south, legend columns=3}]
+  \addplot[royal, very thick, domain=-3:3, samples=80]{x^2};
+  \addplot[goldacc, very thick, dashed, domain=-3:3, samples=80]{x^2-4};
+  \addplot[plumacc, very thick, dash dot, domain=-5:1, samples=80]{(x+2)^2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item Describe the move that produced $y_1$, then write its equation.
+
+\writelines{1}
+
+  \item Describe the move that produced $y_2$, then write its equation.
+
+\writelines{1}
+
+  \item Check one of your equations at a point you can read off the graph, and show the
+        substitution.
+
+\writelines{2}
+
+  \item In Lesson 2.3 you will type these into a graphing calculator to check them. Before you do,
+        say what you expect the screen to show if your equation for $y_2$ is right.
+
+\writelines{1}
+\end{enumerate}
+
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+% [22] let this box break, stranding one write-line and the remind box alone on p4.
+% [30] moves it whole. [20] plus a trimmed figure was tested and still gave 4 pages,
+% so nothing is bought by a lower guard -- restored per 1.5's test-then-restore rule.
+\boxguard[30]
+\begin{extensionbox}
+\small
+\textbf{Two moves at once --- and whether the order matters.}
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=5pt, topsep=4pt]
+  \item For $y=(x-1)^2+4$: name the parent, name both moves, give the turning point, and give the
+        domain and range in interval notation.
+
+\writelines{2}
+
+  \item For $y=-x^2+9$: name both moves, give the turning point, and give the range.
+
+\writelines{2}
+
+  \item Does the order matter? Compare $-(x^2)+9$ with $-(x^2+9)$ by evaluating both at $x=1$,
+        then say in one sentence what the notation is telling you to do first.
+\begin{work}
+  -(x^2)+9 &= -(1)^2+9 \\
+           &= 8 \\
+  -(x^2+9) &= -\left((1)^2+9\right) \\
+           &= -10
+\end{work}
+
+\writelines{1}
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{remindbox}
+\small
+\textbf{Next: Lesson 2.3 --- Equation $\leftrightarrow$ Graph, Both Directions}
+(\texttt{AFDA.AF.1d, f}). Today you described a move you were shown. Next lesson you go both ways:
+graph a function \emph{from} its equation using these transformations, write the equation
+\emph{from} a graph --- and check yourself on the TI-84 instead of taking anyone's word for it.
+Item 10 is the rehearsal.
+\end{remindbox}
 
 \end{document}
