@@ -5,7 +5,17 @@ update at the end. Overwrite stale entries — this is a state file, not a chang
 
 ## Last updated
 
-**2026-08-05** — Authored **Unit 2 Lesson 2.7 (Choosing and Comparing Models in Context,
+**2026-08-05** — Built **Unit 2's summative layer**: the `unit02/unit_cover/` + `unit_cover_key/`
+pair and all four unit assessments (`tests/practice_test`, `tests/actual_test`,
+`test_keys/practice_test_key`, `test_keys/actual_test_key`). All four tests are **6 pages blank and
+key**; the cover is 1 pp student / 2 pp key. Every numeric claim in both forms was verified in pure
+Python before authoring. **Unit 2 is now complete end to end: 8 lessons + cover + two parallel test
+forms + two keys.** `make -C unit02 check` passes (8 lessons, no violations); the unit packets come
+out 161 pp student / 162 pp key, the +1 being the key-only scoring-notes page by design. The
+boxguard eyeball pass found **three real violations invisible to every page count** — see the
+`unit02/tests` entry below.
+
+*Previous run (same day): authored **Unit 2 Lesson 2.7 (Choosing and Comparing Models in Context,
 `AFDA.AF.1c, e, g`; `AFDA.AF.2h`)** in full — plan, cover, warm-up, guided notes, activity, exit
 ticket, homework, all five keys, and the deck. **This closes Unit 2 as lessons.** It is the unit's
 only lesson whose content is a *decision procedure* rather than a reading skill: the family is chosen
@@ -14,9 +24,9 @@ by how the outputs **change**, not by what the graph looks like. `make -C unit02
 boxguard eyeball pass found **four real violations invisible to the gate** — one of them the worst
 stub the course has produced (an activity page 4 holding a single write-line) — plus **two
 table defects on the projected deck** (`flat-tens`, `ver-tex` hyphenated mid-word). **16 of 59
-lessons authored.**
+lessons authored.***
 
-*Previous run (same day): authored **Unit 2 Lesson 2.6 (Piecewise-Defined Functions, `AFDA.AF.2`, esp.
+*Earlier run (same day): authored **Unit 2 Lesson 2.6 (Piecewise-Defined Functions, `AFDA.AF.2`, esp.
 `AF.2h`)** in full — plan, cover, warm-up, guided notes, activity, exit ticket, homework, all five
 keys, and the deck. This is the unit's **synthesis lesson**: the whole `AF.2` checklist run once more
 on a graph that takes more than one rule. `make -C unit02/lesson06 all` and `check` both pass; every
@@ -90,10 +100,72 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
   vocab preview + roadmap, no new content). 59 lessons total. Full lesson maps with standard
   codes live in `spec/algebra_trig_data_analysis.md` ("The lesson maps"). The restructure and
   the scaffolds are merged to `main` (commits `b8addef`, `99a8c19`).
-- **Authored (16 of 59): `unit01/lesson00`–`unit01/lesson07` (Unit 1 complete) and
-  `unit02/lesson00`–`unit02/lesson07` (Unit 2 complete as lessons).** Every component written, built,
-  and gated. **Unit 2 still needs its summative layer** — `unit_cover/` + `unit_cover_key/` and the
-  four files in `tests/` and `test_keys/`, all still scaffold skeletons.
+- **Authored (16 of 59): `unit01/lesson00`–`unit01/lesson07` and
+  `unit02/lesson00`–`unit02/lesson07`.** Every component written, built, and gated. **Units 1 and 2
+  are both complete end to end** — 8 lessons + unit cover pair + two parallel test forms + two keys
+  each. **Unit 3 is the next unit to author** and has no lessons yet.
+- **`unit02/unit_cover/` + `unit_cover_key/` and `unit02/tests/` + `test_keys/` — Unit 2's summative
+  layer. This is the first unit test built for a GRAPH-READING unit, and its shape should be
+  reused for every later graph unit.**
+  - **The cover follows Unit 1's shape exactly** (banner → overview → 8-row lesson table → five big
+    ideas → test-blueprint remindbox; `body.tex` `\input` by both wrappers so page 1 cannot drift).
+    Unit 2's five big ideas are the unit's five error streaks made explicit: *say which axis the
+    number came from* (2.4), *did the outputs change or the inputs* (2.2), *getting closer is not
+    arriving* (2.5), *a rule owns only its own stretch* (2.6), and *a family is chosen by how the
+    outputs change, not by shape* (2.7).
+  - **Blueprint, 100 pts, four parts** — same as Unit 1 but re-spined for graph reading: A vocabulary
+    matching 8×1 (10 definitions, **two distractors**: a *dilation* and a *$y$-intercept*); B multiple
+    choice 6×2; C short answer 10×5, **one item per content lesson 2.1–2.7 in lesson order**, then
+    three synthesis items (interval notation + a doubly-restricted domain; `AF.1e` answered
+    algebraically *and* graphically; the characteristics checklist off an equation); D extended
+    response 2×15.
+  - **Part B is six items for the unit's six error classes, in lesson order**, so the miss pattern is
+    a diagnosis rather than a score: flipped notation (2.1), the backwards horizontal shift (2.2),
+    the axis error (2.4 — every option is in dollars, so units cannot settle it), approaches-is-not-
+    reaches (2.5), a corner is not a break (2.6), and ``it curves upward'' (2.7).
+  - **Part D is the two prompts the unit earned.** D1 reads *one* piecewise-linear profit graph
+    completely (domain/range, both zeros, three intervals, the extreme, then a judgement) — and its
+    assessed idea is that **the maximum sits on a flat stretch, so its location is an interval**
+    ($[7,10]$ P / $[6,9]$ A), which is where students name one endpoint. D2 is choose-justify-use-
+    then-know-the-limit: three difference/ratio rows, the model, a prediction, **the student whose
+    arithmetic is right and whose conclusion is wrong**, and an extrapolation question.
+  - **Parallel forms.** Practice: shares $8,24,72,216$ (ratio 3), $S(d)=8\cdot3^d$, $S(15)=114{,}791{,}256$;
+    profit graph $(0,-4),(4,0),(7,6),(10,6),(14,-2)$, zeros $4$ and $13$. Actual: rumor
+    $5,20,80,320$ (ratio 4), $N(h)=5\cdot4^h$, $N(12)=83{,}886{,}080$; profit graph
+    $(0,-6),(3,0),(6,9),(9,9),(13,-3)$, zeros $3$ and $12$. Vocabulary definitions are reworded and
+    relettered **and the multiple-choice options are reordered**, so no answer letter transfers
+    (P: 1--B, 2--C, 3--D, 4--B, 5--C, 6--D; A: 1--A, 2--B, 3--A, 4--C, 5--A, 6--B). That is a
+    deliberate change from Unit 1, which kept the MC letters identical.
+  - **Five pre-drawn `pgfplots` figures (C4, C5, C6, C9, D1) and no sketching anywhere.** That is the
+    AFDA guidance's own scope, and it is why this test runs **6 pages** against Unit 1's 4. A shared
+    `\pgfplotsset{testaxis/.style={...}}` is defined identically in all four files. Every read lands
+    on a gridline; the C4 graphs were designed backwards from integer zeros (check each segment's
+    slope divides evenly before drawing).
+  - **`\workrowsep` sweep, and the counter-case to Unit 1.** At 6pt the test ran 6 pages with page 6
+    holding only D2(c) and D2(d). The sweep gave **6 pages at 5, 4 and 3pt and 5 pages only at 2pt** —
+    and 2pt is far too little handwriting room for a Part C of ten computations. **Unit 1's rule
+    ("reach for `\workrowsep` before a guard") still holds as a rule, but here it had no acceptable
+    setting**, so the room stayed at 6pt and the pagination was fixed with guards instead.
+  - **Boxguard findings — three real violations, all invisible to every page count** (parity was a
+    perfect 6/6 throughout, because each key stranded exactly what its blank stranded).
+    (1) **Part C item 4's stem sat alone at the foot of p2** — the two lines that define what $A(t)$
+    *means*, and that $A<0$ is below the platform — with the figure and all four questions opening
+    p3. A student reading the context on one page and answering on the next; same class as 2.4 item
+    4, 2.5 item 8, 2.6 item 4. Fixed with `\boxguard[16]` (stem + the 5.2cm axis); cost nothing.
+    (2) **Part C item 10's stem sat at the foot of p4 with its whole five-row work block opening p5**
+    as an unlabelled blank strip above the Part D banner — five answers written on a page showing no
+    question. `\boxguard[14]`; cost nothing. **This is a new defect shape worth watching for: in the
+    blank the work block is a `\vphantom`, so a split answer space is literally invisible until you
+    look at the rendered page.** (3) **Page 6 held only D2(c) and D2(d)**, ~1.5in on an otherwise
+    blank page; `\boxguard[26]` sends item 2 over whole, so p5 and p6 now each carry one complete
+    extended-response item. All three guards are mirrored byte-identically in the keys, with the
+    reason in a comment in each file.
+  - **No `teachernote` in any of the four test files** — the practice test is published to
+    `sample_test/` and rides in the **student** packet. Both forms' rationale, the three named Part C
+    deductions, and the Part D rubrics are on `unit02/unit_cover_key/` page 2 (key packet only).
+  - `make -C unit02/tests all` and `make -C unit02/test_keys all` publish
+    `unit02/sample_test/main.pdf` and `unit02/sample_test_key/main.pdf`. **Those two PDFs are build
+    outputs that must be committed** — `unit.mk` reads them from the source tree.
 - **`unit02/lesson07` — Choosing and Comparing Models in Context (`AFDA.AF.1c, e, g`;
   `AFDA.AF.2h`).** Unit 2's **closing lesson**, and the only one whose content is a *decision
   procedure* rather than a reading skill.
@@ -1265,18 +1337,13 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
 
 ## Next steps
 
-1. Commit / PR **Lesson 2.7** (user to confirm). Lessons 2.5 and 2.6 are already merged to `main`.
-2. **Unit 2 is now complete as lessons (2.0–2.7).** The remaining Unit 2 work is its **summative
-   layer**, all four dirs scaffolded and still skeletons:
-   `unit02/unit_cover/` + `unit_cover_key/`, and `unit02/tests/{practice_test,actual_test}` +
-   `unit02/test_keys/{practice_test_key,actual_test_key}`. Copy the shape from Unit 1 rather than
-   re-deriving it; see item 5 below. **Part C's one-item-per-lesson spine maps cleanly onto this
-   unit:** 2.1 domain/range in interval notation, 2.2 name the transformation, 2.3 equation$\to$graph
-   and back, 2.4 intercepts/zeros/extrema off a graph, 2.5 end behavior and an asymptote's
-   \emph{equation}, 2.6 a piecewise read with a boundary point, 2.7 classify a table and justify with
-   the row that came out constant. **Part D should be 2.7-flavoured** — choose a model from a
-   representation and defend the choice — since that is the unit's only justify-first standard.
-3. After Unit 2's summative layer, author **Unit 3 — Exponential and Logarithmic Functions**, opening
+1. Commit / PR **Unit 2's summative layer** (user to confirm) — `unit02/unit_cover/`,
+   `unit02/unit_cover_key/`, the four test files, **and the two published PDFs
+   `unit02/sample_test/main.pdf` and `unit02/sample_test_key/main.pdf`**, which `unit.mk` reads from
+   the source tree and which a fresh clone cannot merge the unit packets without. Lesson 2.7 is
+   already merged to `main`.
+2. **Units 1 and 2 are both complete end to end.** Nothing is outstanding in either.
+3. Author **Unit 3 — Exponential and Logarithmic Functions**, opening
    with **Lesson 3.0 (unit opener: growth stories; diagnostic)**. 2.7's plants are already down for
    it: the **common ratio** is named and drilled, the **horizontal asymptote at $y=0$** has now
    decided a real question twice (the truck at year 8, the decay stories in homework item 10), and
@@ -1293,11 +1360,17 @@ count. Unit 1 is complete end to end: 8 lessons + cover + two parallel test form
    page parity are unchanged. Also carry 2.3's grid distinction: **a grid meant for plotting needs a
    gridline at every integer; a grid meant for reading needs sparse tick labels plus
    `minor x/y tick num`** so values land on a visible line without crowding the labels.
-5. **Unit 2's cover and tests have a model** — copy the shape from `unit01/unit_cover/body.tex`
-   and the four `unit01` test files rather than re-deriving: the four-part 100-point blueprint,
-   Part C's one-item-per-lesson spine, `work`-blocks-not-`\vspace` for parity, `\workrowsep` at
-   8pt as the opening bid, `\parthead` carrying `\boxguard[9]`, and the rationale on
-   `unit_cover_key` page 2.
+5. **Unit 3's cover and tests now have two models, and Unit 2's is the one to copy for any
+   graph-heavy unit.** Carry over from `unit02`: the four-part 100-point blueprint,
+   Part C's one-item-per-content-lesson spine, `work`-blocks-not-`\vspace` for parity, `\parthead`
+   carrying `\boxguard[9]`, the shared `\pgfplotsset{testaxis/.style={...}}` defined identically in
+   all four files, and the rationale on `unit_cover_key` page 2. Three lessons specific to a test
+   with figures: **design every graph backwards from integer zeros** (check each segment's slope
+   divides evenly before drawing); **`\workrowsep` may have no acceptable setting** — Unit 2's swept
+   6pt$\to$0pt and only 2pt bought a page, which is unusable writing room, so guards did the work
+   instead; and **guard the stem of every figure item and every item whose work block is tall**,
+   because in the blank a work block is a `\vphantom`, so an answer space split across a page break
+   is literally invisible until you look at the rendered PDF.
 6. The model now holds across sixteen lessons. If the parallel-dispatch pattern is used from here on
    (coordinator scaffolds, one subagent per lesson, coordinator builds and gates), give each agent
    the boxguard tuning rule, the 1.2–1.7 guard sizes above, 1.5's "test the guard, then restore it"

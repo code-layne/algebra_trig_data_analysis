@@ -1,13 +1,35 @@
 %! Unit 2: Functions, Transformations, and Graph Analysis — Summative Assessment — Unit Test (blank)
+%
+% PARALLEL FORM of tests/practice_test/main.tex: same blueprint (A 8x1, B 6x2,
+% C 10x5 with one item per content lesson in lesson order, D 2x15), same
+% difficulty, DIFFERENT numbers and contexts. The vocabulary definitions are
+% reworded and relettered AND the multiple-choice options are reordered, so no
+% answer letter from the practice form transfers. No "this is a practice test"
+% remindbox — this form is distributed at test time only and is never merged into
+% any packet.
+%
+% WORK RULE: every computation is followed by a \begin{work} block authored
+% byte-identically here and in ../../test_keys/actual_test_key/main.tex.
+% \workrowsep is the handwriting room and moves both files together.
 \documentclass[10pt]{article}
 \usepackage{atda-article}
 \usepackage{atda-boxes}
+\setlength{\workrowsep}{6pt}
 
-% Part-divider strip
+% Part-divider strip.
+% BOXGUARD: the guard lives inside the macro, so a part header can never be
+% stranded alone at the foot of a page, in the blank or the key — both files use
+% this identical definition.
 \newcommand{\parthead}[1]{%
+  \par\boxguard[9]%
   \vspace{6pt}\noindent
   \begin{headlinebox}{royal}{\color{white}\bfseries #1}\end{headlinebox}%
   \vspace{4pt}}
+
+% Shared axis styling for the five figures. Defined identically in all four files.
+\pgfplotsset{testaxis/.style={
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}, label style={font=\scriptsize}}}
 
 \begin{document}
 
@@ -16,18 +38,414 @@
 
 \vspace{0.06in}
 \noindent\textbf{Instructions:} Show all work. No notes unless your teacher says so.
+The test has four parts and is worth \textbf{100 points}.
 
 % ======================================================================
-\parthead{Part A --- Vocabulary}
-% TODO: matching / fill-in vocabulary items for this unit.
+\parthead{Part A --- Vocabulary \quad (8 items, 1 point each --- 8 points)}
 
-\parthead{Part B --- Multiple Choice}
-% TODO: multiple-choice items (concept checks).
+\noindent\small
+Write the letter of the best definition on the line beside each term. \textbf{Two definitions
+will not be used.}
 
-\parthead{Part C --- Short Answer \& Computation}
-% TODO: computation items; leave \vspace work room after each.
+\vspace{5pt}
+\noindent
+\begin{tabularx}{\linewidth}{@{} p{0.95cm} X p{0.95cm} X @{}}
+\blank{0.7cm} & \textbf{1.} Range
+  & \blank{0.7cm} & \textbf{5.} Horizontal asymptote \\[4pt]
+\blank{0.7cm} & \textbf{2.} Piecewise-defined function
+  & \blank{0.7cm} & \textbf{6.} Zero of a function \\[4pt]
+\blank{0.7cm} & \textbf{3.} Absolute maximum
+  & \blank{0.7cm} & \textbf{7.} Parent function \\[4pt]
+\blank{0.7cm} & \textbf{4.} Domain
+  & \blank{0.7cm} & \textbf{8.} Translation \\
+\end{tabularx}
 
-\parthead{Part D --- Extended Response}
-% TODO: one or two interpret/justify items ("what does this mean, and how do you know?").
+\vspace{6pt}
+\begin{enumerate}[label=(\Alph*), leftmargin=2.4em, itemsep=1pt, topsep=2pt, font=\bfseries]
+  \small
+  \item The point at which a graph crosses the vertical axis.
+  \item A slide of a graph up, down, left, or right; the shape does not change.
+  \item Every output value the function takes on.
+  \item A function that uses one rule on one part of its domain and a different rule on another.
+  \item A stretch or a squeeze --- it changes a graph's shape.
+  \item The greatest output the function reaches anywhere on its domain.
+  \item Every input value the function is allowed to take.
+  \item A value of $x$ for which $f(x)=0$.
+  \item The basic, untransformed member of a function family.
+  \item A horizontal line the graph gets closer and closer to at one or both ends, without ever
+        touching it.
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part B --- Multiple Choice \quad (6 items, 2 points each --- 12 points)}
+
+\noindent\small Circle the best answer.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=6pt, topsep=5pt]
+\small
+
+\item The point $(6,2)$ is on the graph of $f$. Which statement says the same thing?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item $f(6)=2$
+  \item $f(2)=6$
+  \item $f(2)=2$
+  \item $f(6)=6$
+\end{enumerate}
+
+\item The graph of $y=(x-6)^2$ is the graph of $y=x^2$ moved
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item up $6$
+  \item right $6$
+  \item left $6$
+  \item down $6$
+\end{enumerate}
+
+\item A concert's revenue is \$0 at ticket prices of \$0 and \$80, and rises to a high of \$3200 at
+a price of \$40. Over which \textbf{prices} is the revenue increasing?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item from $0$ to $40$
+  \item from $0$ to $3200$
+  \item from $0$ to $80$
+  \item from $40$ to $80$
+\end{enumerate}
+
+\item Which statement about the graph of $y=3^x$ is true?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item It has both an $x$-intercept and a $y$-intercept.
+  \item It crosses the $x$-axis at $x=0$.
+  \item It has no $x$-intercept: the curve approaches the line $y=0$ without reaching it.
+  \item It has an $x$-intercept somewhere far to the left.
+\end{enumerate}
+
+\item A pool charges a flat \$5 for the first $2$ hours and \$3 an hour after that. The graph of
+the cost $C(h)$ has a \textbf{corner} at $h=2$, where the rule changes. Which statement is true?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item $C$ is continuous at $h=2$: both rules give \$5 there, so the graph can be drawn without
+        lifting your pencil.
+  \item The graph has a break at $h=2$, so $C$ is discontinuous there.
+  \item $C(2)$ has two different values, one from each rule.
+  \item $h=2$ is not in the domain of $C$.
+\end{enumerate}
+
+\item A set of data curves \textbf{upward} as $x$ increases. What does that observation tell you
+about which family fits?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item The data must be quadratic.
+  \item It rules out linear --- and nothing more. You still have to check the differences and the
+        ratios.
+  \item The data must be exponential.
+  \item Nothing at all.
+\end{enumerate}
+
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part C --- Short Answer \& Computation \quad (10 items, 5 points each --- 50 points)}
+
+\noindent\small Show all work. An answer with no supporting work earns no credit.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=4pt, topsep=5pt]
+\small
+
+\item A generator burns fuel at a steady rate. After $t$ hours its tank holds
+$G(t) = 480-40t$ gallons, for $0 \le t \le 12$. \ (a) Find $G(3)$ and say what it means. \ (b) Solve
+$G(t)=200$ and say what it means. \ (c) Write the domain and the range in interval notation.
+\begin{work}
+  \text{(a)} \quad G(3) &= 480-40(3) = 360 \text{ gallons after 3 hours} \\
+  \text{(b)} \quad 480-40t = 200 \;\Rightarrow\; 40t &= 280 \;\Rightarrow\; t = 7 \text{ hours} \\
+  \text{(c)} \quad \text{domain } [0,12], \quad \text{range } &[0,480] \quad (G(12)=0,\; G(0)=480)
+\end{work}
+
+\item For each equation, describe the transformation from its parent function and give the range.
+\quad (a) $y=(x+3)^2-2$ \quad (b) $y=2^x+4$ \quad (c) $y=-2^x$
+\begin{work}
+  \text{(a)} \quad &x^2 \text{ shifted left } 3 \text{ and down } 2; \quad \text{range } [-2,\infty) \\
+  \text{(b)} \quad &2^x \text{ shifted up } 4; \quad \text{range } (4,\infty) \\
+  \text{(c)} \quad &2^x \text{ reflected over the } x\text{-axis}; \quad \text{range } (-\infty,0)
+\end{work}
+
+\item A parabola has vertex $(-1,4)$ and passes through the point $(1,-8)$. \ (a) Write its
+equation in the form $y=a(x-h)^2+k$. \ (b) Verify your equation by substituting the point
+$(0,1)$.
+\begin{work}
+  \text{(a)} \quad -8 &= a(1+1)^2 + 4 \\
+  -12 &= 4a \;\Rightarrow\; a = -3, \qquad y = -3(x+1)^2+4 \\
+  \text{(b)} \quad -3(0+1)^2+4 &= -3(1)+4 = 1 \quad \checkmark
+\end{work}
+
+% BOXGUARD: same finding as the practice form — item 4's stem, the lines that define
+% what E(t) means and that E<0 is below the trailhead, sat at the foot of p2 with the
+% figure and all four questions opening p3. Invisible to page counts (the key stranded
+% the same lines). [16] is sized to the stem plus the 5.2cm axis. Mirrored in the key.
+\boxguard[16]
+\item A hiker starts at a trailhead and drops into a valley before climbing out. $E(t)$ is her
+elevation in meters \textbf{relative to the trailhead} ($E<0$ means below it), $t$ hours into the
+hike.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[testaxis, width=11.0cm, height=5.2cm,
+    xlabel={$t$ (hours)}, ylabel={$E$ (meters)},
+    xmin=0, xmax=12, ymin=-5.4, ymax=9.4,
+    xtick={0,2,4,6,8,10,12}, ytick={-4,-2,0,2,4,6,8},
+    minor x tick num=1, minor y tick num=1]
+  \addplot[royal, very thick] coordinates {(0,8) (4,0) (6,-4) (9,2) (12,2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+(a) Give the $E$-intercept and say what it means. \ (b) Give both zeros and say what a zero means
+here. \ (c) Give the intervals on which $E$ is increasing, decreasing, and constant. \ (d) Give
+the absolute maximum and the absolute minimum --- each as a \textbf{value and a location}.
+\begin{work}
+  \text{(a)} \quad &(0,8): \text{ she starts } 8 \text{ m above the trailhead} \\
+  \text{(b)} \quad &t=4 \text{ and } t=8: \text{ she is level with the trailhead} \\
+  \text{(c)} \quad &\text{decreasing } (0,6), \quad \text{increasing } (6,9), \quad
+      \text{constant } (9,12) \\
+  \text{(d)} \quad &\text{maximum } 8 \text{ m at } t=0; \qquad
+      \text{minimum } -4 \text{ m at } t=6
+\end{work}
+
+\item A tank is filling. After $t$ hours it holds $V(t) = 500-400(0.5)^t$ gallons.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[testaxis, width=9.6cm, height=4.6cm,
+    xlabel={$t$ (hours)}, ylabel={$V$ (gallons)},
+    xmin=0, xmax=6, ymin=0, ymax=560,
+    xtick={0,1,2,3,4,5,6}, ytick={0,100,200,300,400,500}, minor y tick num=1]
+  \addplot[slate, dashed, thick, domain=0:6, samples=2]{500};
+  \addplot[royal, very thick, domain=0:6, samples=120]{500-400*0.5^x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+(a) Write the equation of the horizontal asymptote. \ (b) Describe the end behavior as
+$t \to \infty$. \ (c) Will the tank ever hold exactly $500$ gallons? \ (d) Could the tank ever hold
+$520$ gallons? \textbf{Give a different reason for (c) and for (d).}
+\begin{work}
+  \text{(a)} \quad &y = 500 \\
+  \text{(b)} \quad &\text{as } t \to \infty, \; V \text{ levels off toward } 500 \\
+  \text{(c)} \quad &\text{No --- the volume gets closer and closer to } 500
+      \text{ but never arrives.} \\
+  \text{(d)} \quad &\text{No --- } 520 \text{ is on the far side of the asymptote entirely.}
+\end{work}
+
+\item A city water bill is a flat \$20 for the first $4$ thousand gallons, then \$5 for each
+thousand gallons after that. The bill for $g$ thousand gallons is $C(g)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[testaxis, width=9.6cm, height=4.6cm,
+    xlabel={$g$ (thousand gallons)}, ylabel={$C$ (dollars)},
+    xmin=0, xmax=10, ymin=0, ymax=55,
+    xtick={0,1,2,3,4,5,6,7,8,9,10}, ytick={0,10,20,30,40,50}, minor y tick num=1]
+  \addplot[royal, very thick] coordinates {(0,20) (4,20) (10,50)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+(a) Find $C(2)$ and $C(8)$. \ (b) Name the boundary point. \ (c) Is $C$ continuous or
+discontinuous at the boundary? \textbf{Justify from the graph.} \ (d) In one sentence, say what
+the two rules mean to a customer.
+\begin{work}
+  \text{(a)} \quad C(2) &= 20 \text{ dollars}; \qquad C(8) = 20 + 5(8-4) = 40 \text{ dollars} \\
+  \text{(b)} \quad &g = 4 \\
+  \text{(c)} \quad &\text{Continuous: both rules give } \$20 \text{ at } g=4,
+      \text{ so the pieces meet.} \\
+  &\text{It is a corner, not a break --- no pencil comes off the paper.} \\
+  \text{(d)} \quad &\text{The first 4 thousand gallons cost a flat } \$20;
+      \text{ each thousand after adds } \$5.
+\end{work}
+
+\item For each table the $x$-values step by the same amount. Name the family --- \textbf{linear,
+quadratic, or exponential} --- and justify with the differences or the ratio.
+
+\vspace{3pt}
+\noindent
+\begin{tabularx}{\linewidth}{@{} X X X @{}}
+\begin{tabular}{@{}c|cccc@{}}
+\multicolumn{5}{@{}l}{\textbf{(a)}}\\
+$x$ & 0 & 1 & 2 & 3 \\ \hline
+$y$ & 9 & 15 & 21 & 27 \\
+\end{tabular}
+&
+\begin{tabular}{@{}c|cccc@{}}
+\multicolumn{5}{@{}l}{\textbf{(b)}}\\
+$x$ & 0 & 1 & 2 & 3 \\ \hline
+$y$ & 3 & 12 & 48 & 192 \\
+\end{tabular}
+&
+\begin{tabular}{@{}c|cccc@{}}
+\multicolumn{5}{@{}l}{\textbf{(c)}}\\
+$x$ & 0 & 1 & 2 & 3 \\ \hline
+$y$ & 4 & 6 & 12 & 22 \\
+\end{tabular}
+\end{tabularx}
+\begin{work}
+  \text{(a)} \quad &\text{first differences } 6,6,6 \text{ --- constant} \;\Rightarrow\;
+      \textbf{linear} \\
+  \text{(b)} \quad &\text{ratios } 4,4,4 \text{ --- constant} \;\Rightarrow\;
+      \textbf{exponential} \\
+  \text{(c)} \quad &\text{first differences } 2,6,10; \;
+      \text{second differences } 4,4 \;\Rightarrow\; \textbf{quadratic}
+\end{work}
+
+\item (a) Write $-5 < x \le 4$ in interval notation, and say what each bracket or parenthesis
+means. \ (b) Write ``all outputs less than or equal to $-2$'' in interval notation. \ (c) A school
+sells tickets for \$12 each and the gym seats at most $250$ people. Give the domain of $R(n)=12n$
+in this context, and explain why interval notation cannot express it.
+\begin{work}
+  \text{(a)} \quad &(-5,4]: \text{ the parenthesis excludes } -5, \text{ the bracket includes } 4 \\
+  \text{(b)} \quad &(-\infty,-2] \quad
+      (\infty \text{ never takes a bracket}) \\
+  \text{(c)} \quad &\{0,1,2,\dots,250\} \text{ --- only \emph{whole} tickets are sold, and an} \\
+  &\text{interval would include values like } 62.5, \text{ which is not a domain value.}
+\end{work}
+
+\item A club's post has $V(t) = 4 \cdot 2^{\,t}$ hundred views $t$ days after it is posted.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[testaxis, width=9.2cm, height=4.6cm,
+    xlabel={$t$ (days)}, ylabel={$V$ (hundred views)},
+    xmin=0, xmax=5, ymin=0, ymax=136,
+    xtick={0,1,2,3,4,5}, ytick={0,16,32,48,64,80,96,112,128}, minor x tick num=1]
+  \addplot[royal, very thick, domain=0:5, samples=120]{4*2^x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+(a) Find $V(5)$ \textbf{algebraically}. \ (b) Use the \textbf{graph} to find the day the post
+reaches $64$ hundred views. \ (c) Name which method you used for each, and say why (a) is the
+easier one to trust here.
+\begin{work}
+  \text{(a)} \quad V(5) &= 4 \cdot 2^5 = 4 \cdot 32 = 128 \text{ hundred views} \\
+  \text{(b)} \quad &\text{read across from } 64 \text{ to the curve, then down: } t = 4 \text{ days} \\
+  \text{(c)} \quad &\text{(a) is algebraic --- substitution; (b) is graphical --- a read.} \\
+  &\text{Substitution gives an exact value; a graph read is only as good as the grid.}
+\end{work}
+
+% BOXGUARD: same finding as the practice form — item 10's stem sat at the foot of p4
+% with its five work rows opening p5 as an unlabelled blank strip above the Part D
+% banner, invisible to the page count because the key filled the same rows. [14] is
+% the stem plus the five work rows at \workrowsep 6pt; it costs no page. Mirrored in the key.
+\boxguard[14]
+\item Let $g(x) = 2^x - 4$. Give (a) the domain, \ (b) the $y$-intercept, \ (c) the zero, \ (d) the
+equation of the horizontal asymptote and the range, \ (e) the end behavior at both ends.
+\begin{work}
+  \text{(a)} \quad &\text{all real numbers}, \; (-\infty,\infty) \\
+  \text{(b)} \quad g(0) &= 2^0 - 4 = 1-4 = -3, \text{ so } (0,-3) \\
+  \text{(c)} \quad 2^x - 4 = 0 \;\Rightarrow\; 2^x &= 4 \;\Rightarrow\; x = 2 \\
+  \text{(d)} \quad &y = -4; \quad \text{range } (-4,\infty) \\
+  \text{(e)} \quad &\text{as } x \to -\infty, \; g \text{ levels off toward } -4;
+      \text{ as } x \to \infty, \; g \text{ rises without bound}
+\end{work}
+
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part D --- Extended Response \quad (2 items, 15 points each --- 30 points)}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=8pt, topsep=5pt]
+\small
+
+\item \textbf{Read one graph completely.} A club's daily profit from its T-shirt table is $P(x)$,
+in \emph{hundreds of dollars}, when a shirt is priced at $x$ dollars, for $0 \le x \le 13$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[testaxis, width=11.4cm, height=5.4cm,
+    xlabel={$x$ (price, dollars)}, ylabel={$P$ (hundreds of dollars)},
+    xmin=0, xmax=13, ymin=-7.4, ymax=10.4,
+    xtick={0,2,4,6,8,10,12}, ytick={-6,-3,0,3,6,9},
+    minor x tick num=1, minor y tick num=2]
+  \addplot[royal, very thick] coordinates {(0,-6) (3,0) (6,9) (9,9) (13,-3)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=4pt, topsep=4pt]
+  \item Write the domain and the range in interval notation.
+\begin{work}
+  \text{domain } [0,13], \qquad \text{range } &[-6,9]
+\end{work}
+
+  \item Give both zeros, and say what a zero means for this club.
+\begin{work}
+  x = 3 \text{ and } x &= 12 \\
+  \text{these are the two break-even prices} &\text{ --- profit is } \$0 \text{ there}
+\end{work}
+
+  \item Give the intervals on which $P$ is increasing, decreasing, and constant.
+\begin{work}
+  \text{increasing } (0,6), \quad \text{constant } (6,9), \quad \text{decreasing } &(9,13)
+\end{work}
+
+  \item Give the absolute maximum as a \textbf{value and a location}. Read the location carefully
+        --- it is not a single price.
+\begin{work}
+  \text{maximum profit } \$900 \; (P=9), \text{ at every price from } &\$6 \text{ to } \$9 \\
+  \text{the location is the \emph{interval} } [6,9], \text{ not one point}&
+\end{work}
+
+  \item A club member says: ``charge as much as you can --- more money per shirt means more
+        profit.'' Use the graph to explain why that is wrong, and name the price you would
+        recommend and why.
+
+\writelines{3}
+\end{enumerate}
+
+% BOXGUARD: same finding as the practice form — page 6 held nothing but D2(c) and
+% D2(d), about 1.5in on an otherwise blank page, with page parity perfect at 6/6
+% because the key stranded the same two parts. The \workrowsep sweep (5, 4, 3pt all
+% gave 6 pages; only 2pt bought the page back, too cramped for ten computations)
+% was rejected, so this guard sends item 2 over whole instead. Mirrored in the key.
+\boxguard[26]
+\item \textbf{Choose a model, use it, and know where it stops.} A rumor spreads through a school.
+The table gives the number of students who have heard it at the end of each of the first four
+hours.
+
+\vspace{3pt}
+\begin{center}
+\begin{tabular}{@{}l|cccc@{}}
+Hour $h$ & 0 & 1 & 2 & 3 \\ \hline
+Students $N$ & 5 & 20 & 80 & 320 \\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=4pt, topsep=4pt]
+  \item Compute the first differences, the second differences, and the ratios. Name the family and
+        justify your choice with the row that is constant.
+\begin{work}
+  \text{first differences: } 15,\; 60,\; 240 &\quad \text{--- not constant} \\
+  \text{second differences: } 45,\; 180 &\quad \text{--- not constant} \\
+  \text{ratios: } 4,\; 4,\; 4 &\quad \text{--- constant} \;\Rightarrow\; \textbf{exponential}
+\end{work}
+
+  \item Write the model $N(h)$, then use it to predict the number of students at hour $5$.
+\begin{work}
+  N(h) &= 5 \cdot 4^{\,h} \\
+  N(5) &= 5 \cdot 4^5 = 5 \cdot 1024 = 5120 \text{ students}
+\end{work}
+
+  \item A student says: ``the jumps keep getting bigger --- $15$, then $60$, then $240$ --- so this
+        is quadratic.'' Every number the student wrote is correct. Explain what is still wrong with
+        the conclusion.
+
+\writelines{3}
+
+  \item This model predicts $N(12) = 5 \cdot 4^{12} = 83{,}886{,}080$ students --- far more than
+        attend any school on earth. Does that mean the model is \emph{wrong}? Answer in one or two
+        sentences using the word \textbf{extrapolation}.
+
+\writelines{2}
+\end{enumerate}
+
+\end{enumerate}
 
 \end{document}
