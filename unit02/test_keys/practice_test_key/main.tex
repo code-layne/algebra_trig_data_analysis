@@ -1,34 +1,452 @@
 %! Unit 2: Functions, Transformations, and Graph Analysis — Summative Assessment — Practice Test --- Study Copy (KEY)
+%
+% This file mirrors ../../tests/practice_test/main.tex line for line: same
+% preamble (with -key swapped in for -boxes), same \parthead and testaxis style,
+% same \namedateperiod and remindbox, same items and figures, and byte-identical
+% \begin{work} blocks. Only the answers differ — blanks become \ans{...},
+% write-lines become \ansline{...}.
+%
+% NO teachernote in this file. The practice test rides in the STUDENT packet
+% (tests.mk publishes it as sample_test), so its rationale must not be attached
+% here; and a note in a key is the one block with no counterpart in the blank,
+% which would break page parity. The answer rationale and Part C/D scoring live
+% on page 2 of unit02/unit_cover_key/main.tex — key packet only.
 \documentclass[10pt]{article}
 \usepackage{atda-article}
 \usepackage{atda-key}   % pulls in -boxes; do NOT also load -boxes
+\setlength{\workrowsep}{6pt}
 
-% Part-divider strip
+% Part-divider strip — identical to the blank, guard included.
 \newcommand{\parthead}[1]{%
+  \par\boxguard[9]%
   \vspace{6pt}\noindent
   \begin{headlinebox}{royal}{\color{white}\bfseries #1}\end{headlinebox}%
   \vspace{4pt}}
 
+% Shared axis styling for the five figures. Defined identically in all four files.
+\pgfplotsset{testaxis/.style={
+    grid=both, grid style={linegray!45}, minor grid style={linegray!30},
+    axis lines=left, tick label style={font=\tiny}, label style={font=\scriptsize}}}
+
 \begin{document}
 
 \pageheader{Unit 2: Functions, Transformations, and Graph Analysis}{Practice Test --- Study Copy --- Answer Key}
+\namedateperiod
 
-% Mirror the blank test EXACTLY, filling each answer with \ans{...} (inline) or
-% \ansline{...} (on a write-line), worked steps in a byte-identical work block.
-% NO teachernote here: the practice test rides in the STUDENT packet, and the
-% key must stay the same length as its blank. Answer rationale and Part D
-% scoring go on page 2 of unit2/unit_cover_key/main.tex (key packet only).
+\vspace{0.10in}
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is a practice test.} It mirrors the real Unit 2 test in length, format,
+and the ideas it covers, but the numbers and contexts differ. Work every problem
+with no notes, then check your answers against the key.
+\end{remindbox}
+
 % ======================================================================
-\parthead{Part A --- Vocabulary}
-% TODO: answers via \ans{...}
+\parthead{Part A --- Vocabulary \quad (8 items, 1 point each --- 8 points)}
 
-\parthead{Part B --- Multiple Choice}
-% TODO: mark correct options, e.g. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\noindent\small
+Write the letter of the best definition on the line beside each term. \textbf{Two definitions
+will not be used.}
 
-\parthead{Part C --- Short Answer \& Computation}
-% TODO: worked answers via \ans{...}
+\vspace{5pt}
+\noindent
+\begin{tabularx}{\linewidth}{@{} p{0.95cm} X p{0.95cm} X @{}}
+\ans{E} & \textbf{1.} Domain
+  & \ans{I} & \textbf{5.} Zero of a function \\[4pt]
+\ans{A} & \textbf{2.} Range
+  & \ans{J} & \textbf{6.} Absolute maximum \\[4pt]
+\ans{C} & \textbf{3.} Parent function
+  & \ans{B} & \textbf{7.} Horizontal asymptote \\[4pt]
+\ans{H} & \textbf{4.} Translation
+  & \ans{F} & \textbf{8.} Piecewise-defined function \\
+\end{tabularx}
 
-\parthead{Part D --- Extended Response}
-% TODO: sample response in a work block; scoring rubric on unit_cover_key p2.
+\vspace{6pt}
+\begin{enumerate}[label=(\Alph*), leftmargin=2.4em, itemsep=1pt, topsep=2pt, font=\bfseries]
+  \small
+  \item The set of all output values a function produces.
+  \item A horizontal line that a graph approaches at one or both ends without ever reaching it.
+  \item The simplest function in a family, before any shift, flip, stretch, or compression.
+  \item A stretch or a compression --- a change to the \emph{shape} of a graph.
+  \item The set of all input values a function is allowed to take.
+  \item A function defined by different rules on different stretches of its domain.
+  \item The point where a graph crosses the vertical axis.
+  \item A slide that moves a graph up, down, left, or right without changing its shape.
+  \item An input value for which the output is $0$.
+  \item The largest output value a function reaches over its \emph{entire} domain.
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part B --- Multiple Choice \quad (6 items, 2 points each --- 12 points)}
+
+\noindent\small Circle the best answer.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=6pt, topsep=5pt]
+\small
+
+\item The point $(3,10)$ is on the graph of $f$. Which statement says the same thing?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item $f(10)=3$
+  \item $f(3)=10$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $f(3)=3$
+  \item $f(10)=10$
+\end{enumerate}
+
+\item The graph of $y=(x+5)^2$ is the graph of $y=x^2$ moved
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item right $5$
+  \item up $5$
+  \item left $5$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item down $5$
+\end{enumerate}
+
+\item A yearbook's profit is \$0 at prices of \$0 and \$60, and rises to a high of \$1800 at a
+price of \$30. Over which \textbf{prices} is the profit increasing?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item from $0$ to $1800$
+  \item from $0$ to $60$
+  \item from $30$ to $60$
+  \item from $0$ to $30$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\end{enumerate}
+
+\item Which statement about the graph of $y=2^x$ is true?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item It crosses the $x$-axis at $x=0$.
+  \item It has no $x$-intercept: the curve approaches the line $y=0$ without reaching it.
+        \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item It has an $x$-intercept somewhere far to the left.
+  \item It has neither an $x$-intercept nor a $y$-intercept.
+\end{enumerate}
+
+\item A garden center pays \$12 an hour for the first $40$ hours of a week and \$18 an hour after
+that. The graph of a week's pay $P(h)$ has a \textbf{corner} at $h=40$, where the rule changes.
+Which statement is true?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item The graph has a break at $h=40$, so $P$ is discontinuous there.
+  \item $P(40)$ has two different values, one from each rule.
+  \item $P$ is continuous at $h=40$: both rules give the same pay there, so the graph can be drawn
+        without lifting your pencil. \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $h=40$ is not in the domain of $P$.
+\end{enumerate}
+
+\item A set of data curves \textbf{upward} as $x$ increases. What does that observation tell you
+about which family fits?
+\begin{enumerate}[label=(\Alph*), leftmargin=2.2em, itemsep=1pt, topsep=2pt]
+  \item The data must be exponential.
+  \item The data must be quadratic.
+  \item Nothing at all.
+  \item It rules out linear --- and nothing more. You still have to check the differences and the
+        ratios. \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\end{enumerate}
+
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part C --- Short Answer \& Computation \quad (10 items, 5 points each --- 50 points)}
+
+\noindent\small Show all work. An answer with no supporting work earns no credit.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=4pt, topsep=5pt]
+\small
+
+\item A pool is being drained. After $t$ hours it holds $W(t) = 3000-250t$ gallons, for
+$0 \le t \le 12$. \ (a) Find $W(4)$ and say what it means. \ (b) Solve $W(t)=750$ and say what it
+means. \ (c) Write the domain and the range in interval notation.
+\begin{work}
+  \text{(a)} \quad W(4) &= 3000-250(4) = 2000 \text{ gallons after 4 hours} \\
+  \text{(b)} \quad 3000-250t = 750 \;\Rightarrow\; 250t &= 2250 \;\Rightarrow\; t = 9 \text{ hours} \\
+  \text{(c)} \quad \text{domain } [0,12], \quad \text{range } &[0,3000] \quad (W(12)=0,\; W(0)=3000)
+\end{work}
+
+\item For each equation, describe the transformation from its parent function and give the range.
+\quad (a) $y=(x-4)^2+1$ \quad (b) $y=2^x-5$ \quad (c) $y=-x^2$
+\begin{work}
+  \text{(a)} \quad &x^2 \text{ shifted right } 4 \text{ and up } 1; \quad \text{range } [1,\infty) \\
+  \text{(b)} \quad &2^x \text{ shifted down } 5; \quad \text{range } (-5,\infty) \\
+  \text{(c)} \quad &x^2 \text{ reflected over the } x\text{-axis}; \quad \text{range } (-\infty,0]
+\end{work}
+
+\item A parabola has vertex $(2,-3)$ and passes through the point $(4,5)$. \ (a) Write its
+equation in the form $y=a(x-h)^2+k$. \ (b) Verify your equation by substituting the point
+$(1,-1)$.
+\begin{work}
+  \text{(a)} \quad 5 &= a(4-2)^2 - 3 \\
+  8 &= 4a \;\Rightarrow\; a = 2, \qquad y = 2(x-2)^2-3 \\
+  \text{(b)} \quad 2(1-2)^2-3 &= 2(1)-3 = -1 \quad \checkmark
+\end{work}
+
+% BOXGUARD: mirrored from ../../tests/practice_test/main.tex — see the note there.
+% Keeps item 4's stem with its figure; must stay byte-identical to the blank.
+\boxguard[16]
+\item A drone flies out over a canyon. $A(t)$ is its altitude in meters \textbf{relative to the
+launch platform} ($A<0$ means below the platform), $t$ minutes into the flight.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[testaxis, width=11.0cm, height=5.2cm,
+    xlabel={$t$ (minutes)}, ylabel={$A$ (meters)},
+    xmin=0, xmax=12, ymin=-7.4, ymax=7.4,
+    xtick={0,2,4,6,8,10,12}, ytick={-6,-4,-2,0,2,4,6},
+    minor x tick num=1, minor y tick num=1]
+  \addplot[royal, very thick] coordinates {(0,6) (2,0) (5,-6) (8,0) (10,4) (12,4)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+(a) Give the $A$-intercept and say what it means. \ (b) Give both zeros and say what a zero means
+here. \ (c) Give the intervals on which $A$ is increasing, decreasing, and constant. \ (d) Give
+the absolute maximum and the absolute minimum --- each as a \textbf{value and a location}.
+\begin{work}
+  \text{(a)} \quad &(0,6): \text{ the drone starts } 6 \text{ m above the platform} \\
+  \text{(b)} \quad &t=2 \text{ and } t=8: \text{ the drone is level with the platform} \\
+  \text{(c)} \quad &\text{decreasing } (0,5), \quad \text{increasing } (5,10), \quad
+      \text{constant } (10,12) \\
+  \text{(d)} \quad &\text{maximum } 6 \text{ m at } t=0; \qquad
+      \text{minimum } -6 \text{ m at } t=5
+\end{work}
+
+\item After $w$ weeks of practice a typist's speed is $S(w) = 90-80(0.5)^w$ words per minute.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[testaxis, width=9.6cm, height=4.6cm,
+    xlabel={$w$ (weeks)}, ylabel={$S$ (wpm)},
+    xmin=0, xmax=6, ymin=0, ymax=100,
+    xtick={0,1,2,3,4,5,6}, ytick={0,20,40,60,80,100}, minor y tick num=1]
+  \addplot[slate, dashed, thick, domain=0:6, samples=2]{90};
+  \addplot[royal, very thick, domain=0:6, samples=120]{90-80*0.5^x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+(a) Write the equation of the horizontal asymptote. \ (b) Describe the end behavior as
+$w \to \infty$. \ (c) Will this typist ever reach exactly $90$ wpm? \ (d) Could this typist ever
+reach $95$ wpm? \textbf{Give a different reason for (c) and for (d).}
+\begin{work}
+  \text{(a)} \quad &y = 90 \\
+  \text{(b)} \quad &\text{as } w \to \infty, \; S \text{ levels off toward } 90 \\
+  \text{(c)} \quad &\text{No --- the speed gets closer and closer to } 90
+      \text{ but never arrives.} \\
+  \text{(d)} \quad &\text{No --- } 95 \text{ is on the far side of the asymptote entirely.}
+\end{work}
+
+\item A rideshare charges a flat \$6 for the first $3$ miles, then \$2 for each mile after that.
+The fare for a ride of $m$ miles is $F(m)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[testaxis, width=9.6cm, height=4.6cm,
+    xlabel={$m$ (miles)}, ylabel={$F$ (dollars)},
+    xmin=0, xmax=10, ymin=0, ymax=22,
+    xtick={0,1,2,3,4,5,6,7,8,9,10}, ytick={0,4,8,12,16,20}, minor y tick num=1]
+  \addplot[royal, very thick] coordinates {(0,6) (3,6) (10,20)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+(a) Find $F(2)$ and $F(7)$. \ (b) Name the boundary point. \ (c) Is $F$ continuous or
+discontinuous at the boundary? \textbf{Justify from the graph.} \ (d) In one sentence, say what
+the two rules mean to a rider.
+\begin{work}
+  \text{(a)} \quad F(2) &= 6 \text{ dollars}; \qquad F(7) = 6 + 2(7-3) = 14 \text{ dollars} \\
+  \text{(b)} \quad &m = 3 \\
+  \text{(c)} \quad &\text{Continuous: both rules give } \$6 \text{ at } m=3,
+      \text{ so the pieces meet.} \\
+  &\text{It is a corner, not a break --- no pencil comes off the paper.} \\
+  \text{(d)} \quad &\text{The first 3 miles cost a flat } \$6;
+      \text{ every mile after that adds } \$2.
+\end{work}
+
+\item For each table the $x$-values step by the same amount. Name the family --- \textbf{linear,
+quadratic, or exponential} --- and justify with the differences or the ratio.
+
+\vspace{3pt}
+\noindent
+\begin{tabularx}{\linewidth}{@{} X X X @{}}
+\begin{tabular}{@{}c|cccc@{}}
+\multicolumn{5}{@{}l}{\textbf{(a)}}\\
+$x$ & 0 & 1 & 2 & 3 \\ \hline
+$y$ & 4 & 7 & 10 & 13 \\
+\end{tabular}
+&
+\begin{tabular}{@{}c|cccc@{}}
+\multicolumn{5}{@{}l}{\textbf{(b)}}\\
+$x$ & 0 & 1 & 2 & 3 \\ \hline
+$y$ & 5 & 10 & 20 & 40 \\
+\end{tabular}
+&
+\begin{tabular}{@{}c|cccc@{}}
+\multicolumn{5}{@{}l}{\textbf{(c)}}\\
+$x$ & 0 & 1 & 2 & 3 \\ \hline
+$y$ & 2 & 5 & 14 & 29 \\
+\end{tabular}
+\end{tabularx}
+\begin{work}
+  \text{(a)} \quad &\text{first differences } 3,3,3 \text{ --- constant} \;\Rightarrow\;
+      \textbf{linear} \\
+  \text{(b)} \quad &\text{ratios } 2,2,2 \text{ --- constant} \;\Rightarrow\;
+      \textbf{exponential} \\
+  \text{(c)} \quad &\text{first differences } 3,9,15; \;
+      \text{second differences } 6,6 \;\Rightarrow\; \textbf{quadratic}
+\end{work}
+
+\item (a) Write $-2 \le x < 7$ in interval notation, and say what each bracket or parenthesis
+means. \ (b) Write ``all outputs greater than $3$'' in interval notation. \ (c) A field trip costs
+\$8 per student and the bus holds at most $30$ students. Give the domain of $C(n)=8n$ in this
+context, and explain why interval notation cannot express it.
+\begin{work}
+  \text{(a)} \quad &[-2,7): \text{ the bracket includes } -2, \text{ the parenthesis excludes } 7 \\
+  \text{(b)} \quad &(3,\infty) \quad
+      (\infty \text{ never takes a bracket}) \\
+  \text{(c)} \quad &\{0,1,2,\dots,30\} \text{ --- only \emph{whole} students ride the bus, and an} \\
+  &\text{interval would include values like } 17.4, \text{ which is not a domain value.}
+\end{work}
+
+\item A school video has $V(t) = 3 \cdot 2^{\,t}$ thousand views $t$ days after it is posted.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[testaxis, width=9.2cm, height=4.6cm,
+    xlabel={$t$ (days)}, ylabel={$V$ (thousand views)},
+    xmin=0, xmax=5, ymin=0, ymax=100,
+    xtick={0,1,2,3,4,5}, ytick={0,12,24,36,48,60,72,84,96}, minor x tick num=1]
+  \addplot[royal, very thick, domain=0:5, samples=120]{3*2^x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2pt}
+(a) Find $V(5)$ \textbf{algebraically}. \ (b) Use the \textbf{graph} to find the day the video
+reaches $48$ thousand views. \ (c) Name which method you used for each, and say why (a) is the
+easier one to trust here.
+\begin{work}
+  \text{(a)} \quad V(5) &= 3 \cdot 2^5 = 3 \cdot 32 = 96 \text{ thousand views} \\
+  \text{(b)} \quad &\text{read across from } 48 \text{ to the curve, then down: } t = 4 \text{ days} \\
+  \text{(c)} \quad &\text{(a) is algebraic --- substitution; (b) is graphical --- a read.} \\
+  &\text{Substitution gives an exact value; a graph read is only as good as the grid.}
+\end{work}
+
+% BOXGUARD: mirrored from ../../tests/practice_test/main.tex — see the note there.
+% Keeps item 10's stem with its five work rows; byte-identical to the blank.
+\boxguard[14]
+\item Let $g(x) = 2^x - 8$. Give (a) the domain, \ (b) the $y$-intercept, \ (c) the zero, \ (d) the
+equation of the horizontal asymptote and the range, \ (e) the end behavior at both ends.
+\begin{work}
+  \text{(a)} \quad &\text{all real numbers}, \; (-\infty,\infty) \\
+  \text{(b)} \quad g(0) &= 2^0 - 8 = 1-8 = -7, \text{ so } (0,-7) \\
+  \text{(c)} \quad 2^x - 8 = 0 \;\Rightarrow\; 2^x &= 8 \;\Rightarrow\; x = 3 \\
+  \text{(d)} \quad &y = -8; \quad \text{range } (-8,\infty) \\
+  \text{(e)} \quad &\text{as } x \to -\infty, \; g \text{ levels off toward } -8;
+      \text{ as } x \to \infty, \; g \text{ rises without bound}
+\end{work}
+
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part D --- Extended Response \quad (2 items, 15 points each --- 30 points)}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=8pt, topsep=5pt]
+\small
+
+\item \textbf{Read one graph completely.} A food truck's daily profit is $P(x)$, in \emph{hundreds
+of dollars}, when its signature sandwich is priced at $x$ dollars, for $0 \le x \le 14$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[testaxis, width=11.4cm, height=5.4cm,
+    xlabel={$x$ (price, dollars)}, ylabel={$P$ (hundreds of dollars)},
+    xmin=0, xmax=14, ymin=-5.4, ymax=7.4,
+    xtick={0,2,4,6,8,10,12,14}, ytick={-4,-2,0,2,4,6},
+    minor x tick num=1, minor y tick num=1]
+  \addplot[royal, very thick] coordinates {(0,-4) (4,0) (7,6) (10,6) (14,-2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=4pt, topsep=4pt]
+  \item Write the domain and the range in interval notation.
+\begin{work}
+  \text{domain } [0,14], \qquad \text{range } &[-4,6]
+\end{work}
+
+  \item Give both zeros, and say what a zero means for this food truck.
+\begin{work}
+  x = 4 \text{ and } x &= 13 \\
+  \text{these are the two break-even prices} &\text{ --- profit is } \$0 \text{ there}
+\end{work}
+
+  \item Give the intervals on which $P$ is increasing, decreasing, and constant.
+\begin{work}
+  \text{increasing } (0,7), \quad \text{constant } (7,10), \quad \text{decreasing } &(10,14)
+\end{work}
+
+  \item Give the absolute maximum as a \textbf{value and a location}. Read the location carefully
+        --- it is not a single price.
+\begin{work}
+  \text{maximum profit } \$600 \; (P=6), \text{ at every price from } &\$7 \text{ to } \$10 \\
+  \text{the location is the \emph{interval} } [7,10], \text{ not one point}&
+\end{work}
+
+  \item A consultant tells the owner: ``charge as much as you can --- more money per sandwich
+        means more profit.'' Use the graph to explain why that is wrong, and name the price you
+        would recommend and why.
+
+\ansline{Wrong: past \$10 the graph falls, and past \$13 the profit is negative.}\\
+\ansline{At \$14 the truck loses \$200 a day --- too few people buy at that price.}\\
+\ansline{Recommend any price from \$7 to \$10: each one earns the \$600 maximum.}\\
+\end{enumerate}
+
+% BOXGUARD: mirrored from ../../tests/practice_test/main.tex — see the note there.
+% Page 6 was holding only D2(c) and D2(d); a \workrowsep sweep (5, 4, 3pt all gave
+% 6 pages; only 2pt bought the page back, too cramped to keep) was rejected, so the
+% guard sends item 2 over whole. This block must stay byte-identical to the blank.
+\boxguard[26]
+\item \textbf{Choose a model, use it, and know where it stops.} A fundraiser's post is shared
+online. The table gives the number of shares on each of the first four days.
+
+\vspace{3pt}
+\begin{center}
+\begin{tabular}{@{}l|cccc@{}}
+Day $d$ & 0 & 1 & 2 & 3 \\ \hline
+Shares $S$ & 8 & 24 & 72 & 216 \\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=4pt, topsep=4pt]
+  \item Compute the first differences, the second differences, and the ratios. Name the family and
+        justify your choice with the row that is constant.
+\begin{work}
+  \text{first differences: } 16,\; 48,\; 144 &\quad \text{--- not constant} \\
+  \text{second differences: } 32,\; 96 &\quad \text{--- not constant} \\
+  \text{ratios: } 3,\; 3,\; 3 &\quad \text{--- constant} \;\Rightarrow\; \textbf{exponential}
+\end{work}
+
+  \item Write the model $S(d)$, then use it to predict the number of shares on day $5$.
+\begin{work}
+  S(d) &= 8 \cdot 3^{\,d} \\
+  S(5) &= 8 \cdot 3^5 = 8 \cdot 243 = 1944 \text{ shares}
+\end{work}
+
+  \item A student says: ``the jumps keep getting bigger --- $16$, then $48$, then $144$ --- so this
+        is quadratic.'' Every number the student wrote is correct. Explain what is still wrong with
+        the conclusion.
+
+\ansline{Growing jumps rule out linear --- and that is all they rule out.}\\
+\ansline{Quadratic needs constant \emph{second} differences; here they are $32$ and $96$.}\\
+\ansline{The ratios are constant at $3$, so the family is exponential.}\\
+
+  \item This model predicts $S(15) = 8 \cdot 3^{15} = 114{,}791{,}256$ shares --- more people than
+        live in most countries. Does that mean the model is \emph{wrong}? Answer in one or two
+        sentences using the word \textbf{extrapolation}.
+
+\ansline{No --- it fits the four days it was built from; day $15$ is far outside them.}\\
+\ansline{That is extrapolation: the model is read outside its window, not broken.}\\
+\end{enumerate}
+
+\end{enumerate}
 
 \end{document}
