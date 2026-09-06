@@ -24,6 +24,7 @@ structure_source: standards
 spec_dir: spec
 course_index: spec/course_planning.md
 check_target: true
+point_size: 10
 ---
 
 # Lesson Shape — Algebra, Trigonometry, and Data Analysis
