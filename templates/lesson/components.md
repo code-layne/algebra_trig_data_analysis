@@ -1,10 +1,11 @@
 # Components
 
-The spec for authoring each file after scaffolding. The scaffolder (`scripts/new_lesson.py`)
-gives you a correctly-preambled skeleton with TODO markers; this file says what fills them.
-Once one lesson is built, **also open it as the gold reference** — this is a greenfield
-course, so the first lesson you build becomes the model for the rest. For macros and boxes
-see `references/conventions.md`; for where content comes from, `references/course-workflow.md`.
+The spec for authoring each file after scaffolding. The scaffolder
+(`~/.claude/skills/lesson-planning/scripts/new_lesson.py`) renders the skeletons in this directory
+into correctly-preambled files with TODO markers; this file says what fills them. **Also open the
+reference lesson named by `LESSON_SHAPE.md` (`reference_lesson`) as the gold reference** — the live
+lesson overrides every document. For macros and boxes see the shared skill's `references/conventions.md` (`~/.claude/skills/lesson-planning/`)
+and section 4 of `LESSON_SHAPE.md`; for where content comes from, `templates/lesson/course-workflow.md`.
 
 Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) ·
 [Guided notes](#guided-notes) · [Activity](#activity) · [Exit ticket](#exit-ticket) ·
@@ -23,7 +24,7 @@ General rules:
   and how do you know?"). Never ask students to *sketch/draw/construct* a graph from a blank
   page — give a pre-drawn, pre-scaled axis system to complete, a figure to read, a table to
   fill in, or a computation/interpretation task. (Several Trigonometry standards say "sketch";
-  the pre-drawn axes satisfy them — see `course-workflow.md`.)
+  the pre-drawn axes satisfy them — see `templates/lesson/course-workflow.md`.)
 - Use the project's boxes and fill-in macros rather than hand-rolling layout.
 
 ## Lesson plan
@@ -140,7 +141,7 @@ the lesson's instructional progression and written to the secondary-school audie
 ## Unit tests (summative assessments)
 
 Unit-level, not per-lesson — scaffolded once per unit under `unitXX/tests/` and
-`unitXX/test_keys/` (see SKILL "What a unit is" and `references/build.md`). Author **two blank
+`unitXX/test_keys/` (see `LESSON_SHAPE.md` section 6 and the shared skill's `references/build.md`). Author **two blank
 tests and their two keys**, all with `\pageheader{Unit X: <Title>}{...}` + `\namedateperiod` — tests
 are taken in a testing setting, not stapled behind a lesson cover, so they keep the name row:
 
@@ -225,4 +226,4 @@ test keys too):
 - Because the key matches the blank line-for-line, the two paginate identically. **Verify with
   `make -C unitXX/lessonYY check`**, which fails on a blank/key page mismatch, a warm-up or exit
   ticket over one page, `\ans` inside math, a `teachernote` in a key, and a name row on a
-  component. See `references/conventions.md` ("The convention gate").
+  component. See `LESSON_SHAPE.md` section 8 ("The convention gate").
